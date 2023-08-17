@@ -24,4 +24,7 @@
 @import url(../blocks/cards/__item-content-text-subtitle/cards__item-content-text-subtitle.css);
 @import url(../blocks/cards/__item-btn/cards__item-btn.css);
 @import url(../blocks/cards/__item-btn-like/cards__item-btn-like.css);
-
+@import url(../blocks/cards/__item_preview/cards__item_preview.css);
+@import url(../blocks/cards/__item_preview-content/cards__item_preview-content.css);
+@import url(../blocks/cards/__item-button/cards__item-button.css);
+@import url(../blocks/cards/__item-content_mobile/cards__item-content_mobile.css);

@@ -1,0 +1,13 @@
+.cards__item-button {
+  all: unset;
+  cursor: pointer;
+  width: 100%;
+  padding: 12px 0;
+  margin: 16px 0 auto;
+  text-align: center;
+  border-radius: 26px;
+  background-color: #7100FF;
+  font-size: 18px;
+  font-weight: 500;
+  color: #FCFAF7;
+}

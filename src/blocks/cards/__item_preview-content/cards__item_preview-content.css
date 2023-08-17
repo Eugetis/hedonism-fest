@@ -1,0 +1,9 @@
+.cards__item_preview-content {
+  max-width: 320px;
+}
+
+@media screen and (min-width: 360px) and (max-width: 576px) {
+  .cards__item_preview-content {
+    padding: 16px 0 20px 0;
+  }
+}

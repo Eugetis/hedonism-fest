@@ -1,0 +1,10 @@
+.cards__item_preview {
+  max-width: 360px;
+  box-shadow: 0px 4px 12px 0px rgba(59, 55, 72, 0.12);
+}
+
+@media screen and (min-width: 360px) and (max-width: 576px) {
+  .cards__item_preview {
+    border-radius: 26px 26px 0 0;
+  }
+}
