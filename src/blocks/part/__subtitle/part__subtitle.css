@@ -1,0 +1,8 @@
+.part__subtitle{
+    color: var(--dark-primary, #3B3748);
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 36px;
+    margin: 0;
+}

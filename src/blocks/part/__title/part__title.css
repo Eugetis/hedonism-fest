@@ -1,0 +1,8 @@
+.part__title{
+    color: var(--dark-primary, #3B3748);
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 44px;
+    margin: 0 0 40px;
+}
