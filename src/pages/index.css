@@ -8,12 +8,26 @@
 
 @import url(../blocks/header/header.css);
 
-
+/*footer styles*/
 @import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/__content/footer__content.css);
+@import url(../blocks/footer/__container/footer__container.css);
+@import url(../blocks/footer/__title/footer__title.css);
+@import url(../blocks/footer/__list/footer__list.css);
+@import url(../blocks/footer/__link/footer__link.css);
+@import url(../blocks/footer/__list-element/footer__list-element.css);
+@import url(../blocks/footer/__wrapper/footer__wrapper.css);
+@import url(../blocks/footer/__social/footer__social.css);
+/*footer modificators*/
+@import url(../blocks/footer/__list/_type/footer__list_type_socials.css);
+@import url(../blocks/footer/__social/_type/footer__social_type_vk.css);
+@import url(../blocks/footer/__link/_type/footer__link_type_mail.css);
 
 
 @import url(../blocks/field/field.css);
 
 
 @import url(../blocks/card/card.css);
+
+
 
