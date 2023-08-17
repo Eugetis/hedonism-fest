@@ -1,5 +1,4 @@
 .part__list-item{
-    padding: 20px;
     display: flex;
     flex-direction: column;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);

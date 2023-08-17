@@ -16,12 +16,19 @@
 @import url(../blocks/form/__steps/form__steps.css);
 @import url(../blocks/form/__title/form__title.css);
 @import url(../blocks/form/__options/form__options.css);
+@import url(../blocks/form/__content/form__content.css);
 @import url(../blocks/form/__button/__submit/form__button_submit.css);
+@import url(../blocks/form/__list/form__list.css);
+@import url(../blocks/form/__list-item/form__list-item.css);
+@import url(../blocks/form/__list-description/form__list-description.css);
+@import url(../blocks/form/__fields/form__fields.css);
+@import url(../blocks/form/__label/form__label.css);
+@import url(../blocks/form/__input/form__input.css);
 @import url(../blocks/field/field.css);
 
 @import url(../blocks/link-button/link-button.css);
 
-@import url(../blocks/title-box/title-box.css);
+@import url(../blocks/box-with-underline/box-with-underline.css);
 
 @import url(../blocks/buttons-block/buttons-block.css);
 @import url(../blocks/button/button.css);

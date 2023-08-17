@@ -1,0 +1,9 @@
+.form__label{
+    color: var(--dark-secondary, #96949E);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    margin-bottom: 8px;
+    padding: 0 20px;
+}

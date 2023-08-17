@@ -18,12 +18,12 @@
 
     <main>
       <form action="#" class="form">
-        <div class="title-box">
+        <div class="box-with-underline">
           <p class="form__steps">шаг 1 из 4</p>
           <h1 class="form__title">выберите категорию</h1>
         </div>
-        <div class="form__options ">
-          <input type="radio" id="pref1" class="form__input" name="preference" value="кафе/бар/ресторан">
+        <div class="form__options form__content">
+          <input type="radio" id="pref1" class="form__input" name="preference" value="кафе/бар/ресторан" checked>
           <label for="pref1">кафе/бар/ресторан</label>
 
           <input type="radio" id="pref2" class="form__input" name="preference" value="мастер-класс/лекция">
@@ -34,13 +34,14 @@
 
           <input type="radio" id="pref4" class="form__input" name="preference" value="другое">
           <label for="pref4">другое</label>
-
         </div>
         <div class="buttons-block">
           <a href="./for-participants.html" class="link-button">
             <input type="button" class="button" value="отмена">
           </a>
-          <input type="submit" class="button" value="продолжить">
+          <a href="./for-participants-step2.html" class="link-button">
+            <input type="button" class="button button_active" value="продолжить">
+          </a>
         </div>
       </form>
     </main>
@@ -48,6 +49,6 @@
     <footer>
 
     </footer>
-
+    <script src="../index.js"></script>
 </body>
 </html>

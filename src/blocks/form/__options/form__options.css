@@ -1,8 +1,5 @@
-.form__options{
+.form__options {
     padding: 20px;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
 }
 
 .form__options input[type=radio] {
