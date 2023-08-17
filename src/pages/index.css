@@ -11,7 +11,14 @@
 
 @import url(../blocks/footer/footer.css);
 
-
+@import url(../blocks/form/form.css);
+@import url(../blocks/form/__info/form__info.css);
+@import url(../blocks/form/__steps/form__steps.css);
+@import url(../blocks/form/__title/form__title.css);
+@import url(../blocks/form/__options/form__options.css);
+@import url(../blocks/form/__buttons/form__buttons.css);
+@import url(../blocks/form/__button/form__button.css);
+@import url(../blocks/form/__button/__submit/form__button_submit.css);
 @import url(../blocks/field/field.css);
 
 

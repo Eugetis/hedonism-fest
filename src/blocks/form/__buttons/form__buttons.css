@@ -1,0 +1,10 @@
+.form__buttons{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: #FCFAF7;
+    /* fixed bar */
+    box-shadow: 0px -8px 32px 0px rgba(59, 55, 72, 0.12);
+    flex-shrink: 0;
+
+}
