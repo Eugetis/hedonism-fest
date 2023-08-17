@@ -14,6 +14,14 @@
 
 @import url(../blocks/field/field.css);
 
-
-@import url(../blocks/card/card.css);
+@import url(../blocks/cards/cards.css);
+@import url(../blocks/cards/__item/cards__item.css);
+@import url(../blocks/cards/__item-img/cards__item-img.css);
+@import url(../blocks/cards/__item-content/cards__item-content.css);
+@import url(../blocks/cards/__item-content-info/cards__item-content-info.css);
+@import url(../blocks/cards/__item-content-info-text/cards__item-content-info-text.css);
+@import url(../blocks/cards/__item-content-text-title/cards__item-content-text-title.css);
+@import url(../blocks/cards/__item-content-text-subtitle/cards__item-content-text-subtitle.css);
+@import url(../blocks/cards/__item-btn/cards__item-btn.css);
+@import url(../blocks/cards/__item-btn-like/cards__item-btn-like.css);
 
