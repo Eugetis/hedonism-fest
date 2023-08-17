@@ -1,0 +1,7 @@
+.popup__content-text:first-of-type {
+  margin: 0;
+}
+
+.popup__content-text:last-of-type {
+  margin-bottom: 20px;
+}

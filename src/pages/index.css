@@ -28,3 +28,12 @@
 @import url(../blocks/cards/__item_preview-content/cards__item_preview-content.css);
 @import url(../blocks/cards/__item-button/cards__item-button.css);
 @import url(../blocks/cards/__item-content_mobile/cards__item-content_mobile.css);
+
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/__content/popup__content.css);
+@import url(../blocks/popup/__content_close/popup__content_close.css);
+@import url(../blocks/popup/__content-img/popup__content-img.css);
+@import url(../blocks/popup/__content-title/popup__content-title.css);
+@import url(../blocks/popup/__content-text/popup__content-text.css);
+@import url(../blocks/popup/__content-btn/popup__content-btn.css);
+

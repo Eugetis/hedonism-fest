@@ -1,0 +1,11 @@
+.popup {
+  max-width: 360px;
+  background-color: #FCFAF7;
+  box-shadow: 0 4px 12px 0 rgba(59, 55, 72, 0.12);
+  border-radius: 24px;
+  font-family: 'TT Firs Neue', serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #3B3748;
+}
