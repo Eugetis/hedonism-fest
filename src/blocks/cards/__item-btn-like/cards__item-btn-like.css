@@ -1,0 +1,17 @@
+.cards__item-btn-like {
+  all: unset;
+  cursor: pointer;
+  background-image: url("../../../images/icons/like-inactive.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 24px;
+  height: 24px;
+  padding: 12px;
+}
+
+@media screen and (min-width: 360px) and (max-width: 576px) {
+  .cards__item-btn-like {
+    width: 20px;
+    height: 20px;
+  }
+}

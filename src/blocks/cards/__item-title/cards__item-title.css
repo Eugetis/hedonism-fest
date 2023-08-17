@@ -1,0 +1,13 @@
+.cards__item-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #3B3748;
+}
+
+@media screen and (min-width: 360px) and (max-width: 576px) {
+  .cards__item-title {
+    line-height: 28px;
+  }
+}
