@@ -22,10 +22,6 @@
     transition: .3s;
 }
 
-.form__options label:hover{
-    opacity: .5;
-}
-
 .form__options label:not(:last-of-type) {
     margin-bottom: 12px;
 }
@@ -42,4 +38,15 @@
     height: 20px;
     position: absolute;
     right: 40px;
+}
+
+@media(hover:hover){
+    .form__options label:hover{
+        opacity: .5;
+    }
+}
+@media(hover:none){
+    .form__options label:active{
+        opacity: .5;
+    }
 }

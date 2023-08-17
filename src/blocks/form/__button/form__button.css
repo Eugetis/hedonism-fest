@@ -14,7 +14,13 @@
     cursor: pointer;
 }
 
-.form__button:hover{
-    opacity: .5;
+@media(hover:hover){
+    .form__button:hover{
+        opacity: .5;
+    }
 }
-
+@media(hover:none){
+    .form__button:active{
+        opacity: .5;
+    }
+}
