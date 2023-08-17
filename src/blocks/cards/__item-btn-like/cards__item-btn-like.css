@@ -1,7 +1,7 @@
 .cards__item-btn-like {
   all: unset;
   cursor: pointer;
-  background-image: url("../../../images/cards/black-like-icon.svg");
+  background-image: url("../../../images/icons/black-like-icon.svg");
   background-repeat: no-repeat;
   background-position: center;
   width: 24px;
