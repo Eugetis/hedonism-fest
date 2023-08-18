@@ -1,4 +1,4 @@
-.cards__item-title {
+.preview__title {
   margin: 0;
   font-size: 24px;
   font-weight: 500;
@@ -12,7 +12,7 @@
 }
 
 @media screen and (min-width: 360px) and (max-width: 576px) {
-  .cards__item-title {
+  .preview__title {
     line-height: 28px;
   }
 }

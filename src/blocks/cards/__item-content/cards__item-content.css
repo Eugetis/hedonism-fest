@@ -1,9 +1,8 @@
 .cards__item-content {
-  max-width: 282px;
-  margin: 0 auto;
-  padding: 20px 0;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
   gap: 16px;
+  overflow: hidden;
+  flex-grow: 1;
 }
