@@ -16,13 +16,14 @@
       
     </header>
 
-    <main>
+    <main class="part">
+      <h1 class="part__title part__title_hidden">стать участником</h1>
+      <div class="part__heading">
+        <p class="form__steps">шаг 1 из 4</p>
+        <h2 class="form__title">выберите категорию</h2>
+      </div>
       <form action="#" class="form">
-        <div class="box-with-underline">
-          <p class="form__steps">шаг 1 из 4</p>
-          <h1 class="form__title">выберите категорию</h1>
-        </div>
-        <div class="form__options form__content">
+        <div class="form__options">
           <input type="radio" id="pref1" class="form__input" name="preference" value="кафе/бар/ресторан" checked>
           <label for="pref1">кафе/бар/ресторан</label>
 
@@ -35,6 +36,7 @@
           <input type="radio" id="pref4" class="form__input" name="preference" value="другое">
           <label for="pref4">другое</label>
         </div>
+      </form>
         <div class="buttons-block">
           <a href="./for-participants.html" class="link-button">
             <input type="button" class="button" value="отмена">
@@ -43,7 +45,6 @@
             <input type="button" class="button button_active" value="продолжить">
           </a>
         </div>
-      </form>
     </main>
 
     <footer>

@@ -5,3 +5,12 @@
     font-weight: 500;
     line-height: 36px;
 }
+
+@media screen and (min-width: 1024px) {
+    .form__title{
+        font-size: 48px;
+        line-height: 52px;
+        letter-spacing: -0.48px;
+        min-width: 310px;
+    }
+}

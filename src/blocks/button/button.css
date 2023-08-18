@@ -25,3 +25,13 @@
         opacity: .5;
     }
 }
+
+@media screen and (min-width: 1024px) {
+    .button{
+        max-width: fit-content;
+        font-size: 18px;
+        line-height: 24px;
+        padding: 12px 24px;
+        margin-left: auto;
+    }
+}

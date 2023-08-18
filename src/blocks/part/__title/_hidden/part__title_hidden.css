@@ -1,0 +1,9 @@
+.part__title_hidden{
+    display: none;
+}
+
+@media screen and (min-width: 1024px) {
+    .part__title_hidden{
+        display: flex;
+    }
+}
