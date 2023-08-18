@@ -1,8 +1,11 @@
-.cards__item {
+.preview {
   position: relative;
   z-index: 0;
-  max-width: 320px;
-  height: 386px;
+  max-width: 360px;
+  height: 252px;
+  box-shadow: 0 4px 12px 0 rgba(59, 55, 72, 0.12);
+  box-sizing: border-box;
+  padding: 20px;
   border: 1px solid #EBE9ED;
   background-color: #FCFAF7;
   border-radius: 24px;
@@ -12,16 +15,17 @@
   line-height: 20px;
   font-weight: 400;
   cursor: pointer;
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
+  gap: 16px;
 }
 
 @media screen and (min-width: 360px) and (max-width: 576px) {
-  .cards__item {
-    border-radius: 0;
-    max-width: 360px;
-    height: 396px;
+  .preview {
+    border-radius: 26px 26px 0 0;
+    height: 272px;
+    padding: 16px 20px 20px;
+    border: 0;
   }
 }
-

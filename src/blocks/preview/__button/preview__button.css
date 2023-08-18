@@ -1,9 +1,8 @@
-.cards__item-button {
+.preview__button {
   all: unset;
   cursor: pointer;
   width: 100%;
   padding: 12px 0;
-  margin: 16px 0 auto;
   text-align: center;
   border-radius: 26px;
   background-color: #7100FF;
