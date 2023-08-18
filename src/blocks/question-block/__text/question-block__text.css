@@ -1,0 +1,16 @@
+.question-block__text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0;
+  padding: 0;
+  color: #3B3748;
+  ;
+}
+
+@media all and (max-width: 950px) {
+  .question-block__text {
+    font-size: 16px;
+    line-height: 20px;  
+  }
+}

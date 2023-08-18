@@ -57,3 +57,15 @@
 @import url(../blocks/preview/__title/preview__title.css);
 @import url(../blocks/preview/__description/preview__description.css);
 
+
+
+
+
+
+
+/*question-block styles*/
+@import url(../blocks/question-block/question-block.css);
+@import url(../blocks/question-block/__container/question-block__container.css);
+@import url(../blocks/question-block/__numbering/question-block__numbering.css);
+@import url(../blocks/question-block/__text/question-block__text.css);
+@import url(../blocks/question-block/__title/question-block__title.css);
