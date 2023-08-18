@@ -1,5 +1,8 @@
 .popup {
   max-width: 360px;
+  height: 492px;
+  box-sizing: border-box;
+  padding: 24px 20px;
   background-color: #FCFAF7;
   box-shadow: 0 4px 12px 0 rgba(59, 55, 72, 0.12);
   border-radius: 24px;
@@ -8,4 +11,9 @@
   font-weight: 400;
   line-height: 20px;
   color: #3B3748;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }

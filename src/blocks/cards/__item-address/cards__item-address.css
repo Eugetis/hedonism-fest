@@ -1,0 +1,5 @@
+.cards__item-address {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
