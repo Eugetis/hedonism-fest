@@ -1,0 +1,9 @@
+.popup__button {
+  all: unset;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 12px 20px;
+  border-radius: 22px;
+  border: 2px solid #3B3748;
+  align-self: flex-start;
+}

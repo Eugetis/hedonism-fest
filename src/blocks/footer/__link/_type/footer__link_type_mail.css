@@ -1,0 +1,13 @@
+.footer__link_type_mail {
+  color: #7100FF;
+}
+
+.footer__link_type_mail::after {
+  display: none;
+}
+
+@media all and (max-width: 950px) {
+  .footer__link_type_mail {
+    font-weight: 400;    
+  }
+}

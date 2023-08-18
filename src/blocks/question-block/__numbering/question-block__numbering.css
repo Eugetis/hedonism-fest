@@ -1,0 +1,18 @@
+.question-block__numbering {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 36px;
+  width: 77px;
+  margin: 0;
+  padding: 0;
+  color: #3B3748;
+}
+
+@media all and (max-width: 950px) {
+  .question-block__numbering {
+    font-size: 24px;
+    line-height: 28px;
+    width: 68px;
+    min-width: 68px;  
+  }
+}
