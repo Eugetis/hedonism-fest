@@ -1,0 +1,17 @@
+.part__title{
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 44px;
+    margin: 0;
+    padding: 20px 20px 0;
+}
+
+@media screen and (min-width: 1024px) {
+    .part__title{
+        font-size: 96px;
+        line-height: 96px;
+        letter-spacing: -1.92px;
+        padding: 40px;
+    }
+}

@@ -1,0 +1,48 @@
+
+
+.form__options input[type=radio] {
+    display: none;
+}
+
+.form__options label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+	cursor: pointer;
+	user-select: none;
+    border-radius: 22px;
+    border: 2px solid  #3B3748;
+    padding: 12px 20px;
+    transition: .3s;
+}
+
+.form__options label:not(:last-of-type) {
+    margin-bottom: 12px;
+}
+
+.form__options input[type=radio]:checked + label {
+    background: var(--color-primary, #7100FF);
+    color: var(--light-primary, #FCFAF7);
+}
+
+.form__options input[type=radio]:checked + label::after {
+    content: '';
+    background: url(../../../images/icons/check.svg);
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 40px;
+}
+
+@media(hover:hover){
+    .form__options label:hover{
+        opacity: .5;
+    }
+}
+@media(hover:none){
+    .form__options label:active{
+        opacity: .5;
+    }
+}
