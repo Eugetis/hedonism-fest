@@ -9,8 +9,9 @@
 
 @media screen and (min-width: 1024px) {
     .buttons-block{
-        padding: 0;
+        padding: 0 calc(50% - 472px);
         box-shadow: none;
         margin-top: 24px;
+        justify-content: flex-end;
     }
 }

@@ -9,5 +9,7 @@
 @media screen and (min-width: 1024px) {
     .part__list-item-text{
         max-width: 417px;
+        font-size: 18px;
+        line-height: 24px;
     }
 }

@@ -18,7 +18,8 @@
 
     <main class="part">
       <h1 class="part__title part__title_hidden">стать участником</h1>
-      <div class="part__heading">
+      <div class="part__content">
+        <div class="part__heading">
           <p class="form__steps">шаг 2 из 4</p>
           <h1 class="form__title">заполните форму</h1>
           <p class="form__list-description">Для участия вы можете выбрать:</p>
@@ -34,26 +35,31 @@
             </li>
           </ul>
         </div>
-        <div class="form__options part__heading">
-          <input type="radio" id="pref1" class="form__input" name="preference" value="кафе/бар/ресторан" checked>
-          <label for="pref1">кафе/бар/ресторан</label>
-        </div>
-        <form action="#" class="form">
-          <div class="form__fields">
-              <label class="form__label" for="place">название заведения</label>
-              <input class="form__input" type="text" name="place" id="place" placeholder="введите название заведения">
-
-              <label class="form__label" for="name">контактное лицо</label>
-              <input class="form__input" type="text" name="name" id="name" placeholder="введите ФИО">
-
-              <label class="form__label" for="tel">телефон для связи с организатором</label>
-              <input class="form__input" type="tel" name="tel" id="tel" value="+7(">
-
-              <label class="form__label" for="about">описание</label>
-              <textarea class="form__input" name="about" id="about" cols="30" rows="4" placeholder="Укажите, что из меню будет принимать участие в акции
-              "></textarea>
+        <div class="part__right-column">
+          <div class="form__options part__heading">
+            <input type="radio" id="pref1" class="form__input" name="preference" value="кафе/бар/ресторан" checked>
+            <label class="form__label" for="pref1">кафе/бар/ресторан</label>
           </div>
-        </form>
+          <form action="#" class="form">
+            <div class="form__fields">
+                <label class="form__label" for="place">название заведения</label>
+                <input class="form__input" type="text" name="place" id="place" placeholder="введите название заведения">
+  
+                <label class="form__label" for="name">контактное лицо</label>
+                <input class="form__input" type="text" name="name" id="name" placeholder="введите ФИО">
+  
+                <label class="form__label" for="tel">телефон для связи с организатором</label>
+                <input class="form__input" type="tel" name="tel" id="tel" value="+7(">
+  
+                <label class="form__label" for="about">описание</label>
+                <textarea class="form__input" name="about" id="about" cols="30" rows="4" placeholder="Укажите, что из меню будет принимать участие в акции
+                "></textarea>
+            </div>
+          </form>
+        </div>
+        
+      </div>
+      
         <div class="buttons-block">
           <a href="./for-participants-step1.html" class="link-button">
             <input type="button" class="button" value="назад">

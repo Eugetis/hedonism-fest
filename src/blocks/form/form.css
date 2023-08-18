@@ -4,3 +4,10 @@
     flex-direction: column;
     flex: 1 0 auto;
 }
+
+@media screen and (min-width: 1024px) {
+    .form{
+        padding: 0;
+        flex: 0 0 0;
+    }
+}

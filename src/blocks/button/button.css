@@ -28,10 +28,14 @@
 
 @media screen and (min-width: 1024px) {
     .button{
-        max-width: fit-content;
+        min-width: fit-content;
+        max-width: 204px;
         font-size: 18px;
         line-height: 24px;
         padding: 12px 24px;
-        margin-left: auto;
+        margin-left: 0;
+    }
+    .button:first-of-type{
+        margin-right: 12px;
     }
 }

@@ -13,6 +13,13 @@
     z-index: 10;
 }
 
+@media screen and (min-width: 1024px) {
+    .upload-container{
+        width: 532px;
+        box-sizing: border-box;
+    }
+}
+
 .upload-container .form__input-file {
     width: 0.1px;
     height: 0.1px;

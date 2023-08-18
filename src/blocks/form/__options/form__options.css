@@ -29,6 +29,7 @@
 .form__options input[type=radio]:checked + label::after {
     content: '';
     background: url(../../../images/icons/check.svg);
+    display: block;
     width: 20px;
     height: 20px;
     position: absolute;
