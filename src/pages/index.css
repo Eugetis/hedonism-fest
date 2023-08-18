@@ -24,9 +24,47 @@
 @import url(../blocks/footer/__social/_type/footer__social_type_vk.css);
 @import url(../blocks/footer/__link/_type/footer__link_type_mail.css);
 
-
+/* Form */
+@import url(../blocks/form/form.css);
+@import url(../blocks/form/__info/form__info.css);
+@import url(../blocks/form/__steps/form__steps.css);
+@import url(../blocks/form/__title/form__title.css);
+@import url(../blocks/form/__options/form__options.css);
+@import url(../blocks/form/__button/__submit/form__button_submit.css);
+@import url(../blocks/form/__list/form__list.css);
+@import url(../blocks/form/__list-item/form__list-item.css);
+@import url(../blocks/form/__list-description/form__list-description.css);
+@import url(../blocks/form/__fields/form__fields.css);
+@import url(../blocks/form/__label/form__label.css);
+@import url(../blocks/form/__input/form__input.css);
 @import url(../blocks/field/field.css);
 
+/* Forms button */
+@import url(../blocks/buttons-block/buttons-block.css);
+@import url(../blocks/button/button.css);
+@import url(../blocks/button/_active/button_active.css);
+@import url(../blocks/button/_type/button_type_long.css);
+
+/* Forms part */
+@import url(../blocks/part/part.css);
+@import url(../blocks/part/__content/part__content.css);
+@import url(../blocks/part/__right-column/part__right-column.css);
+@import url(../blocks/part/__heading/part__heading.css);
+@import url(../blocks/part/__title/part__title.css);
+@import url(../blocks/part/__title/_hidden/part__title_hidden.css);
+@import url(../blocks/part/__subtitle/part__subtitle.css);
+@import url(../blocks/part/__list/part__list.css);
+@import url(../blocks/part/__list-item/part__list-item.css);
+@import url(../blocks/part/__list-item-heading-group/part__list-item-heading-group.css);
+@import url(../blocks/part/__list-item-heading/part__list-item-heading.css);
+@import url(../blocks/part/__list-item-heading/_center/part__list-item-heading_center.css);
+@import url(../blocks/part/__list-item-text/part__list-item-text.css);
+
+/* Forms upload */
+@import url(../blocks/upload-container/upload-container.css);
+@import url(../blocks/center/center.css);
+
+@import url(../blocks/field/field.css);
 
 @import url(../blocks/link-button/link-button.css); 
 
