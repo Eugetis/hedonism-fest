@@ -1,11 +1,13 @@
 .footer__content {
-  display: flex;
-  justify-content:space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, auto));
+  column-gap: 40px;
   width: 100%;
 }
 
 @media all and (max-width: 767px) {
   .footer__content {
+    display: flex;
     flex-direction: column;
     row-gap: 48px;
     }

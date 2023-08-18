@@ -18,6 +18,7 @@
 @import url(../blocks/footer/__list-element/footer__list-element.css);
 @import url(../blocks/footer/__wrapper/footer__wrapper.css);
 @import url(../blocks/footer/__social/footer__social.css);
+@import url(../blocks/footer/__illustration/footer__illustration.css);
 /*footer modificators*/
 @import url(../blocks/footer/__list/_type/footer__list_type_socials.css);
 @import url(../blocks/footer/__social/_type/footer__social_type_vk.css);
@@ -28,6 +29,7 @@
 
 
 @import url(../blocks/card/card.css);
+
 
 
 
