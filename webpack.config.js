@@ -44,9 +44,44 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html'
+      template: path.resolve(__dirname, "src", "index.html"),
+      filename: 'index.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src", "pages", "about.html"),
+      filename: 'about.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src", "pages", "for-participants.html"),
+      filename: 'for-participants.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src", "pages", "catalog.html"),
+      filename: 'catalog.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src", "pages", "thanks-for-application.html"),
+      filename: 'thanks-for-application.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src", "pages", "thanks-for-support.html"),
+      filename: 'thanks-for-support.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src", "pages", "404.html"),
+      filename: '404.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src", "pages", "ui-kit.html"),
+      filename: 'ui-kit.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src", "pages", "footer.html"),
+      filename: 'footer.html'
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),
   ]
 }
+
+
