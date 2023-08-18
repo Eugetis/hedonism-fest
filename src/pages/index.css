@@ -40,6 +40,13 @@
 @import url(../blocks/cards/__item-info/cards__item-info.css);
 @import url(../blocks/cards/__item-address/cards__item-address.css);
 
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/_close/popup_close.css);
+@import url(../blocks/popup/__img/popup__img.css);
+@import url(../blocks/popup/__title/popup__title.css);
+@import url(../blocks/popup/__text/popup__text.css);
+@import url(../blocks/popup/__button/popup__button.css);
+
 @import url(../blocks/preview/preview.css);
 @import url(../blocks/preview/__address/preview__address.css);
 @import url(../blocks/preview/__button/preview__button.css);
@@ -55,11 +62,10 @@
 
 
 
+
 /*question-block styles*/
 @import url(../blocks/question-block/question-block.css);
 @import url(../blocks/question-block/__container/question-block__container.css);
 @import url(../blocks/question-block/__numbering/question-block__numbering.css);
 @import url(../blocks/question-block/__text/question-block__text.css);
 @import url(../blocks/question-block/__title/question-block__title.css);
-
-
