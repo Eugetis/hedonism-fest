@@ -1,4 +1,6 @@
-
+.form__options{
+    padding: 20px;
+}
 
 .form__options input[type=radio] {
     display: none;

@@ -1,4 +1,4 @@
-.buttons-block{
+.part__buttons-block{
     padding: 20px;
     display: flex;
     justify-content: space-between;
@@ -8,7 +8,7 @@
 }
 
 @media screen and (min-width: 1024px) {
-    .buttons-block{
+    .part__buttons-block{
         padding: 0 calc(50% - 472px);
         box-shadow: none;
         margin-top: 24px;

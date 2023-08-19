@@ -1,4 +1,4 @@
-.button{
+.form__button{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,18 +16,18 @@
 }
 
 @media(hover:hover){
-    .button:hover{
+    .form__button:hover{
         opacity: .5;
     }
 }
 @media(hover:none){
-    .button:active{
+    .form__button:active{
         opacity: .5;
     }
 }
 
 @media screen and (min-width: 1024px) {
-    .button{
+    .form__button{
         min-width: fit-content;
         max-width: 204px;
         font-size: 18px;
@@ -35,7 +35,7 @@
         padding: 12px 24px;
         margin-left: 0;
     }
-    .button:first-of-type{
-        margin-right: 12px;
+    .form__button:first-of-type{
+        margin-right: 14px;
     }
 }

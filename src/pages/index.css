@@ -26,6 +26,8 @@
 
 /* Form */
 @import url(../blocks/form/form.css);
+@import url(../blocks/form/_hidden/form_hidden.css);
+@import url(../blocks/form/__step/form__step.css);
 @import url(../blocks/form/__info/form__info.css);
 @import url(../blocks/form/__steps/form__steps.css);
 @import url(../blocks/form/__title/form__title.css);
@@ -38,17 +40,20 @@
 @import url(../blocks/form/__label/form__label.css);
 @import url(../blocks/form/__input/form__input.css);
 @import url(../blocks/field/field.css);
+@import url(../blocks/form/__right-column/form__right-column.css);
 
 /* Forms button */
-@import url(../blocks/buttons-block/buttons-block.css);
-@import url(../blocks/button/button.css);
-@import url(../blocks/button/_active/button_active.css);
-@import url(../blocks/button/_type/button_type_long.css);
+@import url(../blocks/form/__button/form__button.css);
+@import url(../blocks/form/__button/_active/form__button_active.css);
+@import url(../blocks/form/__button/_type/button_type_long.css);
 
 /* Forms part */
 @import url(../blocks/part/part.css);
+@import url(../blocks/part/__button/part__button.css);
+@import url(../blocks/part/__button/_active/part__button_active.css);
+@import url(../blocks/part/__buttons-block/part__buttons-block.css);
+
 @import url(../blocks/part/__content/part__content.css);
-@import url(../blocks/part/__right-column/part__right-column.css);
 @import url(../blocks/part/__heading/part__heading.css);
 @import url(../blocks/part/__title/part__title.css);
 @import url(../blocks/part/__title/_hidden/part__title_hidden.css);
@@ -60,9 +65,9 @@
 @import url(../blocks/part/__list-item-heading/_center/part__list-item-heading_center.css);
 @import url(../blocks/part/__list-item-text/part__list-item-text.css);
 
+
 /* Forms upload */
 @import url(../blocks/upload-container/upload-container.css);
-@import url(../blocks/center/center.css);
 
 @import url(../blocks/field/field.css);
 
