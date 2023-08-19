@@ -1,4 +1,4 @@
-.upload-container {
+.form__upload-container {
     display: flex;
     flex-direction: column;
     height: 220px;
@@ -14,13 +14,13 @@
 }
 
 @media screen and (min-width: 1024px) {
-    .upload-container{
+    .form__upload-container{
         width: 532px;
         box-sizing: border-box;
     }
 }
 
-.upload-container .form__input-file {
+.form__upload-container .form__input-file {
     width: 0.1px;
     height: 0.1px;
     opacity: 0;
@@ -28,7 +28,7 @@
     z-index: -10;
 }
 
-.upload-container .form__label-file {
+.form__upload-container .form__label-file {
     width: 100%;
     height: 100%;
     display: flex;
@@ -38,14 +38,14 @@
     transition: .3s;
 }
 
-.upload-container .form__label-file:hover {
+.form__upload-container .form__label-file:hover {
     cursor: pointer;
     opacity: .5;
 }
 
-.upload-container .form__label-file::before {
+.form__upload-container .form__label-file::before {
     content: '';
-    background: url(../../images/icons/upload.svg) no-repeat center;
+    background: url(../../../images/icons/upload.svg) no-repeat center;
     display: block;
     margin-bottom: 12px;
     width: 24px;

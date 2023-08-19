@@ -41,6 +41,7 @@
 @import url(../blocks/form/__input/form__input.css);
 @import url(../blocks/field/field.css);
 @import url(../blocks/form/__right-column/form__right-column.css);
+@import url(../blocks/form/__upload-container/form__upload-container.css);
 
 /* Forms button */
 @import url(../blocks/form/__button/form__button.css);
@@ -64,10 +65,6 @@
 @import url(../blocks/part/__list-item-heading/part__list-item-heading.css);
 @import url(../blocks/part/__list-item-heading/_center/part__list-item-heading_center.css);
 @import url(../blocks/part/__list-item-text/part__list-item-text.css);
-
-
-/* Forms upload */
-@import url(../blocks/upload-container/upload-container.css);
 
 @import url(../blocks/field/field.css);
 
