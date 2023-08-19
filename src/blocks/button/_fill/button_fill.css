@@ -1,0 +1,10 @@
+.button_fill {
+  background: var(--color-primary);
+  color: white;
+}
+
+.button_fill:hover {
+  background: var(--hover);
+  color: white;
+  cursor: pointer;
+}

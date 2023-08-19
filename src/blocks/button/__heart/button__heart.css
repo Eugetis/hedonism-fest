@@ -1,0 +1,3 @@
+.button__heart::before {
+  content: '\e818';
+}

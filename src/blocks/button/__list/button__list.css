@@ -1,0 +1,4 @@
+.button__list::before {
+  content: '\e803';
+}
+

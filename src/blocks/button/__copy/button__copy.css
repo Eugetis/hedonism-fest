@@ -1,0 +1,4 @@
+.button__copy::before {
+  content: '\e814';
+}
+

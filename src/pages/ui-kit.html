@@ -20,8 +20,66 @@
       <h1>UI Kit проекта ГедонизмФест</h1>
 
       <section class="uikit-section">
-        <h2>Кнопки</h2>
+      </section>
 
+      <section class="uikit-section">
+        <h2>Шрифт с иконками hf-icons-font</h2>
+        <object type="text/html" data="./hf-icons-font-demo.html" style="height:300px;">
+          <p></p>
+        </object>
+      </section>
+
+      <section class="uikit-section">
+        <h2>Кнопки</h2>
+          <!-- Иконки в кнопках подключаются как content: из созданного вариативного шрифта -->
+          <!-- файл вариативного шрифта hf-icons-font.woff(2) -->
+          <!-- файл hf-icons-font-demo.html отображает все иконки и их PUA коды-->
+          <!-- Все варианты кнопок вложены в грид 2 столбца на N строк -->
+          <div style="display: grid; grid-template-columns: repeat(2, 200px); gap: 20px; justify-items: center;">
+
+            <!-- медиа стили позволяют переключить заголовок Desktop/Mobile для проверки кнопок  -->
+            <style media="screen">
+              .title_text::after {
+                content: 'Desktop';
+              }
+            </style>
+            <style media="screen and (max-width: 576px)">
+              .title_text::after {
+                content: 'Mobile';
+              }
+            </style>
+            <h2 class="title_text"></h2><p></p>
+
+            <p>default/on click</p><p>disabled</p>
+
+            <button class="button button_fill button__list">кнопка</button>
+            <button class="button button_fill button__list" disabled>кнопка</button>
+
+            <button class="button button_fill button__right">кнопка</button>
+            <button class="button button_fill button__right" disabled>кнопка</button>
+
+            <button class="button button_fill">кнопка</button>
+            <button class="button button_fill" disabled>кнопка</button>
+
+            <button class="button button_border button__heart">кнопка</button>
+            <button class="button button_border button__heart" disabled>кнопка</button>
+
+            <button class="button button_border button__right">кнопка</button>
+            <button class="button button_border button__right" disabled>кнопка</button>
+
+            <button class="button button_border">кнопка</button>
+            <button class="button button_border" disabled>кнопка</button>
+
+            <button class="button">кнопка</button>
+            <button class="button" disabled>кнопка</button>
+
+            <button class="button button__copy">кнопка</button>
+            <button class="button button__copy" disabled>кнопка</button>
+
+            <button class="button button__right">кнопка</button>
+            <button class="button button__right" disabled>кнопка</button>
+
+          </div>
       </section>
 
       <section class="uikit-section">

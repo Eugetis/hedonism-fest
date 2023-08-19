@@ -1,0 +1,3 @@
+.button__right::after {
+  content: '\e821';
+}
