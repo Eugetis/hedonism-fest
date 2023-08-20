@@ -1,0 +1,16 @@
+.header-mobile-active__form {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 100%;
+  height: 120px;
+  margin: 20px auto 20px;
+}
+
+.header-mobile-active__form+label {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0px;
+  text-align: left;
+}
