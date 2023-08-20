@@ -13,3 +13,11 @@
     font-family: 'TT Firs Neue';
     font-weight: 500;
 }
+
+@font-face {
+  src:
+      url(./woff2/hf-icons-font.woff2) format('woff2'),
+      url(./woff/hf-icons-font.woff) format('woff');
+  font-family: 'HF Icons';
+  font-weight: normal;
+}

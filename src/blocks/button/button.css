@@ -1,3 +1,58 @@
 .button {
+  --color-primary: #7100FF;
+  --light-primary: #FCFAF7;
+  --dark-secodary: #96949E;
+  --light-secondary: #EBE9ED;
+  --hover:  #5100B8;
+  --dark-primary: #3B3748;
+}
 
+.button {
+  display: flex;
+  min-width: 164px;
+  max-height: 48px;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  border-radius: 26px;
+  box-sizing: border-box;
+  color: var(--dark-primary);
+  background: var(--light-primary);
+
+  text-align: center;
+  font-feature-settings: 'clig' off, 'liga' off;
+
+  font-family: 'TT Firs Neue';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+
+  transition: all .2s ease-in-out .2s;
+}
+
+.button:hover {
+  color: var(--hover);
+  cursor: pointer;
+}
+
+.button:disabled {
+  pointer-events: none;
+  background: var(--light-secondary);
+  color: var(--dark-secodary);
+  border: none;
+}
+
+@media screen and (max-width: 576px) {
+  .button {
+    min-width: 148px;
+    max-height: 44px;
+    padding: 12px 20px;
+    gap: 4px;
+
+    font-size: 16px;
+    line-height: 20px;
+  }
 }
