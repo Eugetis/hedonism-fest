@@ -45,12 +45,6 @@
   border: none;
 }
 
-.button::before, .button::after {
-  font-family: 'HF Icons';
-  font-weight: normal;
-  font-size: 24px;
-}
-
 @media screen and (max-width: 576px) {
   .button {
     min-width: 148px;
@@ -60,9 +54,5 @@
 
     font-size: 16px;
     line-height: 20px;
-  }
-
-  .button::before, .button::after {
-    font-size: 20px;
   }
 }

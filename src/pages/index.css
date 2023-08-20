@@ -4,13 +4,11 @@
 @import url(../blocks/uikit-section/uikit-section.css);
 
 @import url(../blocks/button/button.css);
-@import url(../blocks/button/__list/button__list.css);
-@import url(../blocks/button/__right/button__right.css);
-@import url(../blocks/button/__heart/button__heart.css);
-@import url(../blocks/button/__copy/button__copy.css);
+@import url(../blocks/button/__icon/button__icon.css);
 @import url(../blocks/button/_type/button_type_filled.css);
 @import url(../blocks/button/_type/button_type_border.css);
 
+@import url(../blocks/icon-fonts/icon-fonts.css);
 
 @import url(../blocks/header/header.css);
 

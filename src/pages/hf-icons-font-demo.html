@@ -98,7 +98,9 @@
       color: #999;
       font-size: 24.5px;
     }
-
+    h3 {
+      margin: 5px;
+    }
     body {
       margin-top: 90px;
     }
@@ -109,7 +111,7 @@
       margin-left: -480px;
       background-color: #fff;
       border-bottom: 1px solid #ddd;
-      padding-top: 10px;
+      padding-top: 0;
       z-index: 10;
     }
     .footer {
@@ -187,7 +189,7 @@
       /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
     }
     </style>
-    <link rel="stylesheet" href="css/animation.css"><!--[if IE 7]><link rel="stylesheet" href="css/" + font.fontname + "-ie7.css"><![endif]-->
+    <!-- <link rel="stylesheet" href="css/animation.css">[if IE 7]><link rel="stylesheet" href="css/" + font.fontname + "-ie7.css"><![endif] -->
     <script>
       function toggleCodes(on) {
         var obj = document.getElementById('icons');
@@ -202,7 +204,9 @@
   </head>
   <body>
     <div class="container header">
-      <h1>hf-icons-font <small>font demo</small></h1>
+      <h3><small>- импортировать css icon-fonts.css</small></h3>
+      <h3><small>- задать шрифт и размер через css класс, например: .element__icon { font-family: 'HF Icons'; font-weight: normal; font-size: 24px; } </small></h3>
+      <h3><small>- &lt;span class="element_icon icon-globe"&gt;&lt;/span&gt; : вставляет иконку глобуса</small></h3>
       <label class="switch">
         <input type="checkbox" onclick="toggleCodes(this.checked)">show codes
       </label>
