@@ -1,9 +1,9 @@
-.button_fill {
+.button_type_filled {
   background: var(--color-primary);
   color: white;
 }
 
-.button_fill:hover {
+.button_type_filled:hover {
   background: var(--hover);
   color: white;
   cursor: pointer;

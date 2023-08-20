@@ -8,8 +8,8 @@
 @import url(../blocks/button/__right/button__right.css);
 @import url(../blocks/button/__heart/button__heart.css);
 @import url(../blocks/button/__copy/button__copy.css);
-@import url(../blocks/button/_fill/button_fill.css);
-@import url(../blocks/button/_border/button_border.css);
+@import url(../blocks/button/_type/button_type_filled.css);
+@import url(../blocks/button/_type/button_type_border.css);
 
 
 @import url(../blocks/header/header.css);

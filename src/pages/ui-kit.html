@@ -35,7 +35,10 @@
           <!-- файл вариативного шрифта hf-icons-font.woff(2) -->
           <!-- файл hf-icons-font-demo.html отображает все иконки и их PUA коды-->
           <!-- Все варианты кнопок вложены в грид 2 столбца на N строк -->
-          <div style="display: grid; grid-template-columns: repeat(2, 200px); gap: 20px; justify-items: center;">
+          <style> .test_button_grid { display: grid; grid-template-columns: repeat(2, 200px);
+            gap: 20px; justify-items: center; align-items: center; grid-auto-rows: 70px;}
+          </style>
+          <div class="test_button_grid">
 
             <!-- медиа стили позволяют переключить заголовок Desktop/Mobile для проверки кнопок  -->
             <style media="screen">
@@ -52,23 +55,23 @@
 
             <p>default/on click</p><p>disabled</p>
 
-            <button class="button button_fill button__list">кнопка</button>
-            <button class="button button_fill button__list" disabled>кнопка</button>
+            <button class="button button_type_filled button__list">кнопка</button>
+            <button class="button button_type_filled button__list" disabled>кнопка</button>
 
-            <button class="button button_fill button__right">кнопка</button>
-            <button class="button button_fill button__right" disabled>кнопка</button>
+            <button class="button button_type_filled button__right">кнопка</button>
+            <button class="button button_type_filled button__right" disabled>кнопка</button>
 
-            <button class="button button_fill">кнопка</button>
-            <button class="button button_fill" disabled>кнопка</button>
+            <button class="button button_type_filled">кнопка</button>
+            <button class="button button_type_filled" disabled>кнопка</button>
 
-            <button class="button button_border button__heart">кнопка</button>
-            <button class="button button_border button__heart" disabled>кнопка</button>
+            <button class="button button_type_border button__heart">кнопка</button>
+            <button class="button button_type_border button__heart" disabled>кнопка</button>
 
-            <button class="button button_border button__right">кнопка</button>
-            <button class="button button_border button__right" disabled>кнопка</button>
+            <button class="button button_type_border button__right">кнопка</button>
+            <button class="button button_type_border button__right" disabled>кнопка</button>
 
-            <button class="button button_border">кнопка</button>
-            <button class="button button_border" disabled>кнопка</button>
+            <button class="button button_type_border">кнопка</button>
+            <button class="button button_type_border" disabled>кнопка</button>
 
             <button class="button">кнопка</button>
             <button class="button" disabled>кнопка</button>
