@@ -11,6 +11,41 @@
 @import url(../blocks/icon-fonts/icon-fonts.css);
 
 @import url(../blocks/header/header.css);
+@import url(../blocks/header/__logo-and-location/header__logo-and-location.css);
+@import url(../blocks/header/__logo/header__logo.css);
+@import url(../blocks/header/__city-select/header__city-select.css);
+@import url(../blocks/header/__form/header__form.css);
+@import url(../blocks/header/__menu-link/header__menu-link.css);
+@import url(../blocks/header/__buttons/header__buttons.css);
+@import url(../blocks/header/__button/header__button.css);
+@import url(../blocks/header/__button/_donate/header__button_donate.css);
+@import url(../blocks/header/__button/_donate-mobile/header__button_donate-mobile.css);
+@import url(../blocks/header/__button/_want-to-go/header__button_want-to-go.css);
+@import url(../blocks/header-mobile/header-mobile.css);
+@import url(../blocks/header-mobile/__container/header-mobile__container.css);
+@import url(../blocks/header-mobile/__nav-container/header-mobile__nav-container.css);
+@import url(../blocks/header-mobile/__checkbox/header-mobile__checkbox.css);
+@import url(../blocks/header-mobile/__hamburger-lines/header-mobile__hamburger-lines.css);
+@import url(../blocks/header-mobile/__hamburger-line/header-mobile__hamburger-line.css);
+@import url(../blocks/header-mobile/__hamburger-line/_line1/header-mobile__hamburger-line_line1.css);
+@import url(../blocks/header-mobile/__hamburger-line/_line2/header-mobile__hamburger-line_line2.css);
+@import url(../blocks/header-mobile/__hamburger-line/_line3/header-mobile__hamburger-line_line3.css);
+@import url(../blocks/header-mobile-active/header-mobile-active.css);
+@import url(../blocks/header-mobile-active/header-mobile-active__top/header-mobile-active__top.css);
+@import url(../blocks/header-mobile-active/__wrapper/_1/header-mobile-active__wrapper_1.css);
+@import url(../blocks/header-mobile-active/__wrapper/_2/header-mobile-active__wrapper_2.css);
+@import url(../blocks/header-mobile-active/__wrapper/_3/header-mobile-active__wrapper_3.css);
+@import url(../blocks/header-mobile-active/header-mobile-active__form/header-mobile-active__form.css);
+@import url(../blocks/header-mobile-active/__nav-title/header-mobile-active__nav-title.css);
+@import url(../blocks/header-mobile-active/__text/header-mobile-active__text.css);
+@import url(../blocks/header-mobile-active/__menu-items/header-mobile-active__menu-items.css);
+@import url(../blocks/header-mobile-active/__city-option/header-mobile-active__city-option.css);
+@import url(../blocks/header-mobile-active/__city-select/header-mobile-active__city-select.css);
+@import url(../blocks/header-mobile-active/__city-button/header-mobile-active__city-button.css);
+@import url(../blocks/header-mobile-active/__popup-city-select/header-mobile-active__popup-city-select.css);
+@import url(../blocks/button/arrow-back/button__arrow-back.css);
+
+
 
 /*footer styles*/
 @import url(../blocks/footer/footer.css);
@@ -27,6 +62,7 @@
 @import url(../blocks/footer/__list/_type/footer__list_type_socials.css);
 @import url(../blocks/footer/__social/_type/footer__social_type_vk.css);
 @import url(../blocks/footer/__link/_type/footer__link_type_mail.css);
+
 
 
 @import url(../blocks/field/field.css);
