@@ -1,0 +1,10 @@
+.button_type_border {
+  color: var(--dark-primary);
+  border: 2px solid var(--dark-primary);
+}
+
+.button_type_border:hover {
+  border-color: var(--hover);
+  color: var(--hover);
+  cursor: pointer;
+}
