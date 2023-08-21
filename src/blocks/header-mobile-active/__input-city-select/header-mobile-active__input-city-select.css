@@ -1,0 +1,9 @@
+.header-mobile-active__input-city-select {
+appearance: none;
+}
+
+.header-mobile-active__input-city-select:checked::after {
+  width: 40px;
+  display:flex;
+  content: '\f00c';
+}

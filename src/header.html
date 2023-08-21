@@ -44,23 +44,26 @@
   <header class="header-mobile">
     <div class="header-mobile__container header-mobile__nav-container">
       <img src="./images/Nochlezhka.svg" alt="название" class="header-mobile__logo">
+      <div style="position: fixed; z-index: 9999; top: 25px; right: 0px;">
       <input class="header-mobile__checkbox" type="checkbox" name="" id="" />
       <div class="header-mobile__hamburger-lines">
         <span class="header-mobile__hamburger-line header-mobile__hamburger-line_line1"></span>
         <span class="header-mobile__hamburger-line header-mobile__hamburger-line_line2"></span>
         <span class="header-mobile__hamburger-line header-mobile__hamburger-line_line3"></span>
       </div>
+      </div>
     </div>
   </header>
   <div class="header-mobile-active">
-    <div class="header-mobile-active__top">
+    <div class="header-mobile-active__top" style="position:fixed; width: 100%;">
       <!--<img src= "<%=require('./images/hedonism-fest-logo.png')%>" alt="Логотип" class="header__logo">-->
       <a href="#"><img src=./images/hedonism-fest-logo.png alt="Логотип" class="header__logo"></a>
-      <form class="header__buttons">
+      <form class="header__buttons" style="margin-right: 80px;">
         <button type="button" class="header__button header__button_want-to-go"><img src=./images/header-button-icon.svg
             alt="Heart"><span>хочу пойти</span></button>
       </form>
-    </div>
+
+  </div>
     <div class="header-mobile-active__wrapper_2">
       <div class="header-mobile-active__wrapper_1">
         <form class="header-mobile-active__form">
@@ -109,33 +112,32 @@
         </form>
       </div>
     </div>
-    <!--В разработке-->
-    <!---<div class="header-mobile-active__popup-city-select">
+
+    <div class="header-mobile-active__popup-city-select">
       <button type="button" class="button__arrow-back"><img src="./images/arrow-back.svg" alt="стрелка назад">назад</button>
       <p class="header-mobile-active__nav-title">Ваш город</p>
       <form class="header-mobile-active__form">
-        <div>
-          <label for="moscow">Москва</label>
-          <input class="" type="radio" name="city" id="moscow" value="moscow" />
-        </div>
-        <div>
-          <label for="moscow">Санкт-Петербург</label>
-          <input class="" type="radio" name="city" id="petersburg" value="petersburg" />
-        </div>
-        <div>
-          <label for="moscow">Сочи</label>
-          <input class="" type="radio" name="city" id="sochi" value="sochi" />
-        </div>
-        <div>
-          <label for="moscow">Калуга</label>
-          <input class="" type="radio" name="city" id="kaluga" value="kaluga" />
-        </div>
-        <div>
-          <label for="moscow">Екатеринбург</label>
-          <input class="" type="radio" name="city" id="ekatirinburg" value="ekatirinburg" />
-        </div>
+
+          <label for="moscow">Москва
+          <input class="header-mobile-active__input-city-select" type="radio" name="city" id="moscow" value="moscow" />
+        </label>
+
+          <label for="petersburg">Санкт-Петербург
+          <input class="header-mobile-active__input-city-select" type="radio" name="city" id="petersburg" value="petersburg" />
+        </label>
+          <label for="sochi">Сочи
+          <input class="header-mobile-active__input-city-select" type="radio" name="city" id="sochi" value="sochi" />
+        </label>
+
+          <label for="kaluga">Калуга
+          <input class="header-mobile-active__input-city-select" type="radio" name="city" id="kaluga" value="kaluga" />
+        </label>
+
+          <label for="ekatirinburg">Екатеринбург
+          <input class="header-mobile-active__input-city-select" type="radio" name="city" id="ekatirinburg" value="ekatirinburg" />
+        </label>
       </form>
-    </div>-->
+    </div>
   </div>
 
   <main>
