@@ -1,0 +1,17 @@
+.general-events__title {
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 52px;
+  letter-spacing: -0.48px;
+  text-transform: lowercase;
+  max-width: 840px;
+  margin: 0;
+  margin-bottom: 16px;
+}
+
+@media screen and (min-width: 360px) and (max-width: 576px) {
+  .general-events__title {
+    font-size: 32px;
+    line-height: 36px;
+  }
+}

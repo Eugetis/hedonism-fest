@@ -1,0 +1,17 @@
+.general-events__tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 65%;
+  row-gap: 16px;
+  column-gap: 12px;
+  margin-bottom: 40px;
+}
+
+@media screen and (min-width: 360px) and (max-width: 576px) {
+  .general-events__tags {
+    max-width: 320px;
+    row-gap: 12px;
+    margin-right: 0;
+  }
+}

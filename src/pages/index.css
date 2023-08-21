@@ -62,9 +62,14 @@
 @import url(../blocks/table-lines/__duration/table-lines__duration.css);
 @import url(../blocks/table-lines/__type/table-lines__type.css);
 
-
-
-
+@import url(../blocks/general-events/general-events.css);
+@import url(../blocks/general-events/__title/general-events__title.css);
+@import url(../blocks/general-events/__tags/general-events__tags.css);
+@import url(../blocks/general-events/__button/general-events__button.css);
+@import url(../blocks/general-events/__scroll/general-events__scroll.css);
+@import url(../blocks/general-events/_cards/general-events_cards.css);
+@import url(../blocks/general-events/__button-purple/general-events__button-purple.css);
+@import url(../blocks/general-events/__container/general-events__container.css);
 
 
 /*question-block styles*/

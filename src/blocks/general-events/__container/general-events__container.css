@@ -1,0 +1,14 @@
+.general-events__container {
+  max-width: 1440px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 80px 0 80px 40px;
+  color: #3B3748;
+}
+
+@media screen and (min-width: 360px) and (max-width: 576px) {
+  .general-events__container {
+    max-width: 320px;
+    padding: 40px 0;
+  }
+}
