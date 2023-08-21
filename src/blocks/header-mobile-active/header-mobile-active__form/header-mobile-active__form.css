@@ -7,10 +7,14 @@
   margin: 20px auto 20px;
 }
 
-.header-mobile-active__form+label {
+.header-mobile-active__form > label {
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
   letter-spacing: 0px;
   text-align: left;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }

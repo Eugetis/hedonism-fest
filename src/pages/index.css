@@ -17,6 +17,7 @@
 @import url(../blocks/header/__form/header__form.css);
 @import url(../blocks/header/__menu-link/header__menu-link.css);
 @import url(../blocks/header/__buttons/header__buttons.css);
+@import url(../blocks/header/__buttons/_mobile/header__buttons_mobile.css);
 @import url(../blocks/header/__button/header__button.css);
 @import url(../blocks/header/__button/_donate/header__button_donate.css);
 @import url(../blocks/header/__button/_donate-mobile/header__button_donate-mobile.css);
@@ -25,6 +26,7 @@
 @import url(../blocks/header-mobile/__container/header-mobile__container.css);
 @import url(../blocks/header-mobile/__nav-container/header-mobile__nav-container.css);
 @import url(../blocks/header-mobile/__checkbox/header-mobile__checkbox.css);
+@import url(../blocks/header-mobile/__logo/header-mobile__logo.css);
 @import url(../blocks/header-mobile/__hamburger-lines/header-mobile__hamburger-lines.css);
 @import url(../blocks/header-mobile/__hamburger-line/header-mobile__hamburger-line.css);
 @import url(../blocks/header-mobile/__hamburger-line/_line1/header-mobile__hamburger-line_line1.css);
@@ -43,6 +45,7 @@
 @import url(../blocks/header-mobile-active/__city-select/header-mobile-active__city-select.css);
 @import url(../blocks/header-mobile-active/__city-button/header-mobile-active__city-button.css);
 @import url(../blocks/header-mobile-active/__popup-city-select/header-mobile-active__popup-city-select.css);
+@import url(../blocks/header-mobile-active/__popup-city-select/_opened/header-mobile-active__popup-city-select_opened.css);
 @import url(../blocks/button/arrow-back/button__arrow-back.css);
 @import url(../blocks/header-mobile-active/__input-city-select/header-mobile-active__input-city-select.css);
 
