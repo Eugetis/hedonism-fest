@@ -1,0 +1,21 @@
+.table-lines__item {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  box-sizing: border-box;
+  padding: 12px;
+  max-height: 48px;
+  gap: 24px;
+}
+
+.table-lines__item:nth-child(2n) {
+  background-color: #EBE9ED;
+}
+
+@media screen and (min-width: 360px) and (max-width: 576px) {
+  .table-lines__item {
+    padding: 8px;
+    max-height: 36px;
+    gap: 16px;
+  }
+}

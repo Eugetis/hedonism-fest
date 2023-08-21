@@ -1,0 +1,4 @@
+.footer__list_type_socials {
+  flex-direction: row;
+  column-gap: 16px;
+}
