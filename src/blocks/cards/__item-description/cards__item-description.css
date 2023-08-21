@@ -1,0 +1,10 @@
+.cards__item-description {
+  margin: 0;
+  color: #3B3748;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+}
+

@@ -1,0 +1,11 @@
+.footer__list-element {
+  display: flex;
+  align-items: center;
+  transition-property: opacity;
+  transition-duration: 0.5s;
+}
+
+.footer__list-element:hover {
+  opacity: 0.7;
+}
+

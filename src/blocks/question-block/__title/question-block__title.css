@@ -1,0 +1,22 @@
+.question-block__title {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 36px;
+  width: 306px;
+  margin: 0 40px;
+  padding: 0;
+  color: #3B3748;
+}
+
+@media all and (max-width: 950px) {
+  .question-block__title {
+    font-size: 24px;
+    line-height: 28px; 
+  }
+}
+
+@media all and (max-width: 767px) {
+  .question-block__title {
+    margin: 0;
+  }
+}
