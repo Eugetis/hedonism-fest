@@ -10,15 +10,15 @@
     content="Евгений Тисленко, Никита Сазонов, Алексей Ефимов, Андрей Марахин, Георгий Медведский, Дмитрий Разумов">
   <title>ГедонизмФест - главная</title>
   <link rel="icon" href="" type="">
-  <link rel="stylesheet" href="./pages/index.css">
+  <!-- <link rel="stylesheet" href="./pages/index.css"> -->
 </head>
 
 <body class="page">
   <header class="header">
     <div class="header__logo-and-location">
       <!-- переписать ссылки в синтаксисе lodash -->
-      <!--<img src= "<%=require('./images/hedonism-fest-logo.png')%>" alt="Логотип" class="header__logo">-->
-      <a href="#"><img src=./images/hedonism-fest-logo.png alt="Логотип" class="header__logo"></a>
+      <!--<img src= "<%=require('../images/hedonism-fest-logo.png')%>" alt="Логотип" class="header__logo">-->
+      <a href="#"><img src="<%=require('../images/hedonism-fest-logo.png')%>" alt="Логотип" class="header__logo"></a>
       <form class="header__form">
         <label for="city-select"><span class="icon-marker"></span></label>
         <select class="header__city-select" name="city" id="city-select">
@@ -42,7 +42,7 @@
   </header>
   <header class="header-mobile">
     <div class=" header-mobile__nav-container">
-      <img src="./images/Nochlezhka.svg" alt="название" class="header-mobile__logo">
+      <img src="<%=require('../images/Nochlezhka.svg')%>" alt="название" class="header-mobile__logo">
       <div class="header-mobile__container">
         <input class="header-mobile__checkbox" type="checkbox" name="" id="" />
         <div class="header-mobile__hamburger-lines">
@@ -55,10 +55,10 @@
   </header>
   <div class="header-mobile-active">
     <div class="header-mobile-active__top">
-      <!--<img src= "<%=require('./images/hedonism-fest-logo.png')%>" alt="Логотип" class="header__logo">-->
-      <a href="#"><img src=./images/hedonism-fest-logo.png alt="Логотип" class="header__logo"></a>
+      <!--<img src= "<%=require('../images/hedonism-fest-logo.png')%>" alt="Логотип" class="header__logo">-->
+      <a href="#"><img src="<%=require('../images/hedonism-fest-logo.png')%>" alt="Логотип" class="header__logo"></a>
       <form class="header__buttons header__buttons_mobile">
-        <button type="button" class="header__button header__button_want-to-go"><img src=./images/header-button-icon.svg
+        <button type="button" class="header__button header__button_want-to-go"><img src="<%=require('../images/header-button-icon.svg')%>"
             alt="Heart"><span>хочу пойти</span></button>
       </form>
 
@@ -69,7 +69,7 @@
           <p class="header-mobile-active__nav-title">Ваш город</p>
           <button type="button" class="header-mobile-active__city-button"><span
               class="header-mobile-active__city-button-text">Санкт-Петербург</span><img
-              src="../src/images/header-button-strelka.svg" alt="стрелка"></button>
+              src="<%=require('../images/header-button-strelka.svg')%>" alt="стрелка"></button>
 
         </form>
 
@@ -136,13 +136,15 @@
 
     <!-- временно для навигации -->
     <div>
-      <a href="./pages/about.html">Каталог</a>
-      <a href="./pages/for-participants.html">Участникам</a>
-      <a href="./pages/about.html">О фестивале</a>
-      <a href="./pages/thanks-for-application.html">Спасибо за заявку</a>
-      <a href="./pages/thanks-for-support.html">Спасибо за помощь</a>
-      <a href="./pages/404.html">404</a>
-      <a href="./pages/ui-kit.html">UI Kit</a>
+      <a href="<%=('./catalog.html')%>">Каталог</a>
+      <a href="<%=('./for-participants.html')%>">Участникам</a>
+      <a href="<%=('./about.html')%>">О фестивале</a>
+      <a href="<%=('./thanks-for-application.html')%>">Спасибо за заявку</a>
+      <a href="<%=('./thanks-for-support.html')%>">Спасибо за помощь</a>
+      <a href="<%=('./404.html')%>">404</a>
+      <a href="<%=('./ui-kit.html')%>">UI Kit</a>
+      <a href="<%=('./footer.html')%>">Footer</a>
+      <a href="<%=('./header.html')%>">Header</a>
     </div>
 
   </main>

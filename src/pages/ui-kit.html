@@ -23,10 +23,63 @@
 
       <section class="uikit-section">
         <h2>Шрифт с иконками hf-icons-font</h2>
-        <object type="text/html" data="./hf-icons-font-demo.html" style="height:330px;">
-          <p></p>
-        </object>
+        <ul>
+          <li>импортировать css icon-fonts.css</li>
+          <li>задать шрифт и размер иконки в элементе через css класс
+            <p>например: .element__icon { font-family: 'HF Icons'; font-weight: normal; font-size: 24px; } </p></li>
+          <li>миксом css класса элемента для иконки и css класса имени иконки вставляем иконку
+            <p>например: &lt;span class="element_icon icon-globe"&gt;&lt;/span&gt; : вставляет иконку глобуса </p></li>
+        </ul>
+        <div>
+          <style> .test_icon_grid { display: grid; grid-template-columns: repeat(5, 300px); gap: 0px;
+                       justify-items: start; align-items: center; grid-auto-rows: 30px;}
+                  .test_icon { font-family: 'HF Icons'; font-weight: normal; font-size: 20px; flex-basis: 300px;}
+          </style>
+          <div class="test_icon_grid">
+            <span class="test_icon icon-menu-burger">&ThickSpace;icon-menu-burger</span>
+            <span class="test_icon icon-cross">&ThickSpace;icon-cross</span>
+            <span class="test_icon icon-calendar">&ThickSpace;icon-calendar</span>
+            <span class="test_icon icon-list">&ThickSpace;icon-list</span>
+            <span class="test_icon icon-clip">&ThickSpace;icon-clip</span>
+            <span class="test_icon icon-settings-sliders">&ThickSpace;icon-settings-sliders</span>
+            <span class="test_icon icon-link">&ThickSpace;icon-link</span>
+            <span class="test_icon icon-plus">&ThickSpace;icon-plus</span>
+            <span class="test_icon icon-search">&ThickSpace;icon-search</span>
+            <span class="test_icon icon-menu-dots-vertical">&ThickSpace;icon-menu-dots-vertical</span>
+            <span class="test_icon icon-marker">&ThickSpace;icon-marker</span>
+            <span class="test_icon icon-pointer">&ThickSpace;icon-pointer</span>
+            <span class="test_icon icon-trash">&ThickSpace;icon-trash</span>
+            <span class="test_icon icon-caret-down">&ThickSpace;icon-caret-down</span>
+            <span class="test_icon icon-caret-up">&ThickSpace;icon-caret-up</span>
+            <span class="test_icon icon-angle-small-down">&ThickSpace;icon-angle-small-down</span>
+            <span class="test_icon icon-angle-small-up">&ThickSpace;icon-angle-small-up</span>
+            <span class="test_icon icon-to-top">&ThickSpace;icon-to-top</span>
+            <span class="test_icon icon-cross-small">&ThickSpace;icon-cross-small</span>
+            <span class="test_icon icon-copy">&ThickSpace;icon-copy</span>
+            <span class="test_icon icon-call">&ThickSpace;icon-call</span>
+            <span class="test_icon icon-warning">&ThickSpace;icon-warning</span>
+            <span class="test_icon icon-cloud-upload">&ThickSpace;icon-cloud-upload</span>
+            <span class="test_icon icon-heart">&ThickSpace;icon-heart</span>
+            <span class="test_icon icon-heart-filled">&ThickSpace;icon-heart-filled</span>
+            <span class="test_icon icon-minus-small">&ThickSpace;icon-minus-small</span>
+            <span class="test_icon icon-plus-small">&ThickSpace;icon-plus-small</span>
+            <span class="test_icon icon-globe">&ThickSpace;icon-globe</span>
+            <span class="test_icon icon-info">&ThickSpace;icon-info</span>
+            <span class="test_icon icon-angle-small-right">&ThickSpace;icon-angle-small-right</span>
+            <span class="test_icon icon-angle-small-left">&ThickSpace;icon-angle-small-left</span>
+            <span class="test_icon icon-arrow-left">&ThickSpace;icon-arrow-left</span>
+            <span class="test_icon icon-arrow-right">&ThickSpace;icon-arrow-right</span>
+            <span class="test_icon icon-check">&ThickSpace;icon-check</span>
+            <span class="test_icon icon-radio">&ThickSpace;icon-radio</span>
+            <span class="test_icon icon-radio-filled">&ThickSpace;icon-radio-filled</span>
+            <span class="test_icon icon-arrow-down">&ThickSpace;icon-arrow-down</span>
+            <span class="test_icon icon-external-link">&ThickSpace;icon-external-link</span>
+            <span class="test_icon icon-arrow-up">&ThickSpace;icon-arrow-up</span>
+          </div>
+        </div>
       </section>
+
+
 
       <section class="uikit-section">
         <h2>Кнопки</h2>
@@ -98,7 +151,7 @@
         <h2>Футер</h2>
         <footer class="footer">
           <div class="footer__wrapper">
-            <img class="footer__illustration" src="<%=require('../images/footer_ilustration.svg')%>" alt="">
+            <img class="footer__illustration" src="<%=require('../images/footer_illustration.svg')%>" alt="">
             <div class="footer__content">
               <div class="footer__container">
                 <h2 class="footer__title">организатор:</h2>

@@ -95,6 +95,10 @@ module.exports = {
       template: path.resolve(__dirname, "src", "pages", "footer.html"),
       filename: 'footer.html'
     }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src", "pages", "header.html"),
+      filename: 'header.html'
+    }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),
   ]
