@@ -1,0 +1,86 @@
+@use '../vendor/normalize.css';
+@use '../fonts/fonts.scss';
+
+@use '../blocks/page/page.scss';
+@use '../blocks/uikit-section/uikit-section.scss';
+
+// @use '../blocks/button/button.scss';
+
+
+// @use '../blocks/header/header.scss';
+
+/*footer styles*/
+@use '../blocks/footer/footer.scss';
+@use '../blocks/footer/__content/footer__content.scss';
+@use '../blocks/footer/__container/footer__container.scss';
+@use '../blocks/footer/__title/footer__title.scss';
+@use '../blocks/footer/__list/footer__list.scss';
+@use '../blocks/footer/__link/footer__link.scss';
+@use '../blocks/footer/__list-element/footer__list-element.scss';
+@use '../blocks/footer/__wrapper/footer__wrapper.scss';
+@use '../blocks/footer/__social/footer__social.scss';
+@use '../blocks/footer/__illustration/footer__illustration.scss';
+/*footer modificators*/
+@use '../blocks/footer/__list/_type/footer__list_type_socials.scss';
+@use '../blocks/footer/__social/_type/footer__social_type_vk.scss';
+@use '../blocks/footer/__link/_type/footer__link_type_mail.scss';
+
+
+@use '../blocks/field/field.scss';
+
+
+
+@use '../blocks/cards/cards.scss';
+@use '../blocks/cards/__item/cards__item.scss';
+@use '../blocks/cards/__item-img/cards__item-img.scss';
+@use '../blocks/cards/__item-content/cards__item-content.scss';
+@use '../blocks/cards/__item-data/cards__item-data.scss';
+@use '../blocks/cards/__item-text/cards__item-text.scss';
+@use '../blocks/cards/__item-title/cards__item-title.scss';
+@use '../blocks/cards/__item-description/cards__item-description.scss';
+@use '../blocks/cards/__item-like/cards__item-like.scss';
+@use '../blocks/cards/__item-btn-like/cards__item-btn-like.scss';
+@use '../blocks/cards/__item-info/cards__item-info.scss';
+@use '../blocks/cards/__item-address/cards__item-address.scss';
+
+@use '../blocks/popup/popup.scss';
+@use '../blocks/popup/_close/popup_close.scss';
+@use '../blocks/popup/__img/popup__img.scss';
+@use '../blocks/popup/__title/popup__title.scss';
+@use '../blocks/popup/__text/popup__text.scss';
+@use '../blocks/popup/__button/popup__button.scss';
+
+@use '../blocks/preview/preview.scss';
+@use '../blocks/preview/__address/preview__address.scss';
+@use '../blocks/preview/__button/preview__button.scss';
+@use '../blocks/preview/__data/preview__data.scss';
+@use '../blocks/preview/__home/preview__home.scss';
+@use '../blocks/preview/__info/preview__info.scss';
+@use '../blocks/preview/__text/preview__text.scss';
+@use '../blocks/preview/__title/preview__title.scss';
+@use '../blocks/preview/__description/preview__description.scss';
+
+@use '../blocks/table-lines/table-lines.scss';
+@use '../blocks/table-lines/__item/table-lines__item.scss';
+@use '../blocks/table-lines/__duration/table-lines__duration.scss';
+@use '../blocks/table-lines/__type/table-lines__type.scss';
+
+
+
+
+
+
+
+/*question-block styles*/
+@use '../blocks/question-block/question-block.scss';
+@use '../blocks/question-block/__container/question-block__container.scss';
+@use '../blocks/question-block/__numbering/question-block__numbering.scss';
+@use '../blocks/question-block/__text/question-block__text.scss';
+@use '../blocks/question-block/__title/question-block__title.scss';
+
+
+
+// для проверки scss
+@use '../blocks/example/example-var.scss';
+@use '../blocks/example/example-mixin.scss';
+@use '../blocks/example/example-h1.scss';

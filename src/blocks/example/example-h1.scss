@@ -1,0 +1,6 @@
+@use 'variables' as *;
+
+.example-h1 {
+  font: $h1-desktop;
+  margin: 0;
+}

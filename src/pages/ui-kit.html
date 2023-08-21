@@ -8,7 +8,6 @@
     <meta name="author" content="Евгений Тисленко, Никита Сазонов, Алексей Ефимов, Андрей Марахин, Георгий Медведский, Дмитрий Разумов">
     <title>UI Kit проекта ГедонизмФест</title>
     <link rel="icon" href="" type="">
-    <link rel="stylesheet" href="./index.css">
 </head>
 
 <body class="page">
@@ -99,7 +98,7 @@
         <h2>Футер</h2>
         <footer class="footer">
           <div class="footer__wrapper">
-            <img class="footer__illustration" src="../images/footer_ilustration.svg" alt="">
+            <img class="footer__illustration" src="<%=require('../images/footer_ilustration.svg')%>" alt="">
             <div class="footer__content">
               <div class="footer__container">
                 <h2 class="footer__title">организатор:</h2>
@@ -189,7 +188,7 @@
         <h2>Всплывающие окна</h2>
         <article class="popup">
           <div class="popup_close"></div>
-          <img class="popup__img" src="../images/popup/popup-mobile-img.svg" alt="Изображение попапа">
+          <img class="popup__img" src="<%=require('../images/popup/popup-mobile-img.svg')%>" alt="Изображение попапа">
           <h2 class="popup__title">примите акцию у себя</h2>
           <p class="popup__text">Кто может принять участие в акции?<br><br>Абсолютно все. Продавайте кофе в своем кафе, устройте мастер-класс по вязанию или соберите друзей у себя дома. Помогать просто, узнайте подробности и заполните форму</p>
           <button class="popup__button">стать участником</button>
@@ -234,6 +233,15 @@
         </ul>
       </section>
 
+
+
+
+
+      <section class="uikit-section">
+        <p class="example-h1">Заголовок с переменной</p>
+        <p class="example-mixin">Подзаголовок с миксином</p>
+        <div class="example-var"></div>
+      </section>
 
     </main>
 
