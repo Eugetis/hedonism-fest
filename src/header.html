@@ -20,7 +20,7 @@
       <!--<img src= "<%=require('./images/hedonism-fest-logo.png')%>" alt="Логотип" class="header__logo">-->
       <a href="#"><img src=./images/hedonism-fest-logo.png alt="Логотип" class="header__logo"></a>
       <form class="header__form">
-        <label for="city-select"><img src=./images/city-icon.svg alt="город"></label>
+        <label for="city-select"><span class="icon-marker"></span></label>
         <select class="header__city-select" name="city" id="city-select">
           <option value="moscow">Москва</option>
           <option value="petersburg">Санкт-Петербург</option>
@@ -36,19 +36,20 @@
       <a href="#" class="header__menu-link">о&nbspфестивале</a>
     </nav>
     <form class="header__buttons">
-      <button type="button" class="header__button header__button_want-to-go"><img src=./images/header-button-icon.svg
-          alt="Heart"><span>хочу пойти</span></button>
+      <button type="button" class="header__button header__button_want-to-go"><span class="icon-heart"></span>хочу пойти</button>
       <button type="button" class="header__button header__button_donate">поддержать</button>
     </form>
   </header>
   <header class="header-mobile">
-    <div class="header-mobile__container header-mobile__nav-container">
+    <div class=" header-mobile__nav-container">
       <img src="./images/Nochlezhka.svg" alt="название" class="header-mobile__logo">
-      <input class="header-mobile__checkbox" type="checkbox" name="" id="" />
-      <div class="header-mobile__hamburger-lines">
-        <span class="header-mobile__hamburger-line header-mobile__hamburger-line_line1"></span>
-        <span class="header-mobile__hamburger-line header-mobile__hamburger-line_line2"></span>
-        <span class="header-mobile__hamburger-line header-mobile__hamburger-line_line3"></span>
+      <div class="header-mobile__container">
+        <input class="header-mobile__checkbox" type="checkbox" name="" id="" />
+        <div class="header-mobile__hamburger-lines">
+          <span class="header-mobile__hamburger-line header-mobile__hamburger-line_line1"></span>
+          <span class="header-mobile__hamburger-line header-mobile__hamburger-line_line2"></span>
+          <span class="header-mobile__hamburger-line header-mobile__hamburger-line_line3"></span>
+        </div>
       </div>
     </div>
   </header>
@@ -56,26 +57,20 @@
     <div class="header-mobile-active__top">
       <!--<img src= "<%=require('./images/hedonism-fest-logo.png')%>" alt="Логотип" class="header__logo">-->
       <a href="#"><img src=./images/hedonism-fest-logo.png alt="Логотип" class="header__logo"></a>
-      <form class="header__buttons">
+      <form class="header__buttons header__buttons_mobile">
         <button type="button" class="header__button header__button_want-to-go"><img src=./images/header-button-icon.svg
             alt="Heart"><span>хочу пойти</span></button>
       </form>
+
     </div>
-    <div class="header-mobile-active__wrapper_2">
+    <div class="header-mobile-active__wrapper_2"> <!--для скрытия контента добавить header-mobile-active__wrapper_closed-->
       <div class="header-mobile-active__wrapper_1">
         <form class="header-mobile-active__form">
           <p class="header-mobile-active__nav-title">Ваш город</p>
           <button type="button" class="header-mobile-active__city-button"><span
               class="header-mobile-active__city-button-text">Санкт-Петербург</span><img
               src="../src/images/header-button-strelka.svg" alt="стрелка"></button>
-          <!--<label for="city-select" class="header-mobile-active__nav-title">Ваш город</label>
-        <select class="header-mobile-active__city-select" name="city" id="city-select">
-          <option class="header-mobile-active__city-option" value="moscow">Москва</option>
-          <option class="header-mobile-active__city-option" value="petersburg">Санкт-Петербург</option>
-          <option class="header-mobile-active__city-option" value="sochi">Сочи</option>
-          <option class="header-mobile-active__city-option" value="kaluga">Калуга</option>
-          <option class="header-mobile-active__city-option" value="ekatirinburg">Екатеринбург</option>
-        </select>-->
+
         </form>
 
         <p class="header-mobile-active__nav-title">навигация</p>
@@ -109,33 +104,32 @@
         </form>
       </div>
     </div>
-    <!--В разработке-->
-    <!---<div class="header-mobile-active__popup-city-select">
-      <button type="button" class="button__arrow-back"><img src="./images/arrow-back.svg" alt="стрелка назад">назад</button>
+    <div class="header-mobile-active__popup-city-select ">
+      <!---header-mobile-active__popup-city-select_opened--><!--Добавить с помощью JS для показа блока-->
+      <button type="button" class="button__arrow-back">
+        <span class="icon-arrow-left"></span>
+        назад</button>
       <p class="header-mobile-active__nav-title">Ваш город</p>
       <form class="header-mobile-active__form">
-        <div>
-          <label for="moscow">Москва</label>
-          <input class="" type="radio" name="city" id="moscow" value="moscow" />
-        </div>
-        <div>
-          <label for="moscow">Санкт-Петербург</label>
-          <input class="" type="radio" name="city" id="petersburg" value="petersburg" />
-        </div>
-        <div>
-          <label for="moscow">Сочи</label>
-          <input class="" type="radio" name="city" id="sochi" value="sochi" />
-        </div>
-        <div>
-          <label for="moscow">Калуга</label>
-          <input class="" type="radio" name="city" id="kaluga" value="kaluga" />
-        </div>
-        <div>
-          <label for="moscow">Екатеринбург</label>
-          <input class="" type="radio" name="city" id="ekatirinburg" value="ekatirinburg" />
-        </div>
+        <label for="moscow">Москва
+          <input class="header-mobile-active__input-city-select" type="radio" name="city" id="moscow" value="moscow" />
+        </label>
+        <label for="petersburg">Санкт-Петербург
+          <input class="header-mobile-active__input-city-select" type="radio" name="city" id="petersburg"
+            value="petersburg" checked />
+        </label>
+        <label for="sochi">Сочи
+          <input class="header-mobile-active__input-city-select" type="radio" name="city" id="sochi" value="sochi" />
+        </label>
+        <label for="kaluga">Калуга
+          <input class="header-mobile-active__input-city-select" type="radio" name="city" id="kaluga" value="kaluga" />
+        </label>
+        <label for="ekatirinburg">Екатеринбург
+          <input class="header-mobile-active__input-city-select" type="radio" name="city" id="ekatirinburg"
+            value="ekatirinburg" />
+        </label>
       </form>
-    </div>-->
+    </div>
   </div>
 
   <main>

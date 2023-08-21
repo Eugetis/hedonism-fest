@@ -10,4 +10,5 @@
   display: flex;
   justify-content: space-between;
   cursor: pointer;
+  margin-top: 20px;
 }
