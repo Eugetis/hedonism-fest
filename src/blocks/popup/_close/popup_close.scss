@@ -1,11 +1,10 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
 .popup_close {
-  position: absolute;
+  @include position-absolute-mixin(24px, false, false, 20px, false);
   width: 20px;
   height: 20px;
-  background-image: url("../../../images/icons/close-icon.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  top: 24px;
-  right: 20px;
+  @include background("../../../images/icons/close-icon.svg");
   cursor: pointer;
 }

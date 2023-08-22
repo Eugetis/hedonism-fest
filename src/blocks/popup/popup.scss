@@ -1,19 +1,18 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
 .popup {
   max-width: 360px;
   height: 492px;
   box-sizing: border-box;
-  padding: 24px 20px;
-  background-color: #FCFAF7;
-  box-shadow: 0 4px 12px 0 rgba(59, 55, 72, 0.12);
-  border-radius: 24px;
-  font-family: 'TT Firs Neue', serif;
-  font-size: 16px;
-  font-weight: 400;
+  padding: $pad-24 $pad-20;
+  background-color: $light-primary;
+  box-shadow: $drop-shadow;
+  border-radius: $radius-large;
+  font: $text-mobile;
   line-height: 20px;
-  color: #3B3748;
+  color: $dark-primary;
   position: relative;
-
-  display: flex;
-  flex-direction: column;
+  @include flex-column-mixin;
   gap: 12px;
 }
