@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const stylesHandler = 'style-loader';
 
 module.exports = {
   entry: {
@@ -30,8 +31,23 @@ module.exports = {
         type: 'asset/resource',
       },
       {
+				test: /\.s[ac]ss$/i,
+				use: [
+					stylesHandler, 'css-loader', 'postcss-loader', 'resolve-url-loader',
+					{
+						loader: 'sass-loader',
+						options: {
+							sourceMap: true,
+							sassOptions: {
+								includePaths: ['src/scss'],
+							},
+						},
+					},
+				],
+			},
+      {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, {
+        use: [stylesHandler, MiniCssExtractPlugin.loader, {
             loader: 'css-loader',
             options: {
               importLoaders: 1
@@ -78,6 +94,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "src", "pages", "footer.html"),
       filename: 'footer.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src", "pages", "header.html"),
+      filename: 'header.html'
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),

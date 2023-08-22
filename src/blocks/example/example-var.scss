@@ -1,0 +1,9 @@
+@use 'variables' as *;
+
+.example-var {
+  background-color: $color-accident;
+  width: 100px;
+  height: 100px;
+  border: $border-bold;
+  border-radius: $radius-large;
+}
