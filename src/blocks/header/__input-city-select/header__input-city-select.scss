@@ -1,0 +1,27 @@
+.header__input-city-select {
+appearance: none;
+}
+
+.header__input-city-select:checked::after {
+  font-family: "HF Icons";
+  font-style: normal;
+  font-weight: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  text-align: center;
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: '\e822';
+}
+
+.header__input-city-select:focus + label {
+  background-color: rgba(235, 233, 237, 1);
+}
+
+.header__input-city-select:checked > label {
+  background-color: rgba(235, 233, 237, 1);
+}

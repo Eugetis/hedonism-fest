@@ -1,0 +1,11 @@
+.header__hamburger-lines {
+  height: 20px;
+  width: 26px;
+  position: absolute;
+  top: center;
+  right: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

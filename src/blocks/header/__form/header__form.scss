@@ -1,6 +1,13 @@
+@use 'variables' as *;
 .header__form {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   margin-left: 40px;
+}
+
+@media screen and (max-width: $tablet) {
+  .header__form {
+    display: none;
+  }
 }
