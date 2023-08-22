@@ -1,5 +1,6 @@
+@use 'mixins' as *;
+
 .cards__item-address {
-  display: flex;
-  align-items: center;
+  @include flex-center-row-mixin;
   justify-content: space-between;
 }

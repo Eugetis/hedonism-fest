@@ -1,7 +1,8 @@
 .general-events__scroll {
+  padding: 0 0 0 40px;
+  max-width: 1440px;
   overflow-x: scroll;
   padding-bottom: 24px;
-  margin-bottom: 32px;
 }
 
 .general-events__scroll::-webkit-scrollbar {
@@ -12,6 +13,7 @@
   background-color:  #FCFAF7;
   border-radius: 100px;
   margin-right: 40px;
+  margin-left: 40px;
 }
 
 .general-events__scroll::-webkit-scrollbar-thumb {
@@ -21,7 +23,6 @@
 
 @media screen and (min-width: 360px) and (max-width: 576px) {
   .general-events__scroll {
-    max-width: 320px;
     padding: 20px 0;
   }
 

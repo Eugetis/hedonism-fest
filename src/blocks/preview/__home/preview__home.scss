@@ -1,10 +1,12 @@
+@use 'variables' as *;
+
 .preview__home {
   display: none;
   margin: 0 auto;
   width: 40px;
   height: 4px;
-  border-radius: 100px;
-  background-color: #96949E;
+  border-radius: $radius-100;
+  background-color: $dark-secondary;
 }
 
 @media screen and (min-width: 360px) and (max-width: 576px) {

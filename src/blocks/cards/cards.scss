@@ -1,4 +1,5 @@
+@use 'mixins' as *;
+
 .cards {
-  display: flex;
-  align-items: center;
+  @include flex-center-row-mixin;
 }

@@ -1,7 +1,9 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
 .cards__item-content {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
+  padding: $pad-20;
+  @include flex-column-mixin;
   gap: 16px;
   overflow: hidden;
   flex-grow: 1;

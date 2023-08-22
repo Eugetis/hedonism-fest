@@ -1,12 +1,13 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
 .cards__item-btn-like {
   all: unset;
   cursor: pointer;
-  background-image: url("../../../images/icons/like-inactive.svg");
-  background-repeat: no-repeat;
-  background-position: center;
+  @include background("../../../images/icons/like-inactive.svg");
   width: 24px;
   height: 24px;
-  padding: 12px;
+  padding: $pad-12;
 }
 
 @media screen and (min-width: 360px) and (max-width: 576px) {
