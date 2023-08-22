@@ -140,20 +140,15 @@
 
 /* Form */
 @use '../blocks/form/form.scss';
-@use '../blocks/form/_hidden/form_hidden.scss';
 @use '../blocks/form/__step/form__step.scss';
-
 @use '../blocks/form/__steps/form__steps.scss';
 @use '../blocks/form/__title/form__title.scss';
 @use '../blocks/form/__options/form__options.scss';
-
 @use '../blocks/form/__list/form__list.scss';
-
 @use '../blocks/form/__list-description/form__list-description.scss';
 @use '../blocks/form/__fields/form__fields.scss';
 @use '../blocks/form/__label/form__label.scss';
 @use '../blocks/form/__input/form__input.scss';
-
 @use '../blocks/form/__right-column/form__right-column.scss';
 @use '../blocks/form/__upload-container/form__upload-container.scss';
 
@@ -167,7 +162,6 @@
 @use '../blocks/part/__button/part__button.scss';
 @use '../blocks/part/__button/_active/part__button_active.scss';
 @use '../blocks/part/__buttons-block/part__buttons-block.scss';
-
 @use '../blocks/part/__content/part__content.scss';
 @use '../blocks/part/__heading/part__heading.scss';
 @use '../blocks/part/__title/part__title.scss';
@@ -179,3 +173,6 @@
 @use '../blocks/part/__list-item-heading/part__list-item-heading.scss';
 @use '../blocks/part/__list-item-heading/_center/part__list-item-heading_center.scss';
 @use '../blocks/part/__list-item-text/part__list-item-text.scss';
+
+@use '../blocks/hidden/hidden.scss';
+@use '../blocks/for-participants/for-participants.scss';
