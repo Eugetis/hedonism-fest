@@ -1,6 +1,8 @@
+@use 'variables' as *;
+
 .cards__item-description {
   margin: 0;
-  color: #3B3748;
+  color: $dark-primary;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;

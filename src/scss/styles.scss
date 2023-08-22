@@ -100,11 +100,9 @@
 @use '../blocks/popup/__text/popup__text.scss';
 @use '../blocks/popup/__button/popup__button.scss';
 
-
 // стили превью карточки
 @use '../blocks/preview/preview.scss';
 @use '../blocks/preview/__address/preview__address.scss';
-@use '../blocks/preview/__button/preview__button.scss';
 @use '../blocks/preview/__data/preview__data.scss';
 @use '../blocks/preview/__home/preview__home.scss';
 @use '../blocks/preview/__info/preview__info.scss';
@@ -127,6 +125,13 @@
 @use '../blocks/question-block/__text/question-block__text.scss';
 @use '../blocks/question-block/__title/question-block__title.scss';
 
+// стили блока секции карточек со скроллом
+@use '../blocks/general-events/general-events.scss';
+@use '../blocks/general-events/__title/general-events__title.scss';
+@use '../blocks/general-events/__tags/general-events__tags.scss';
+@use '../blocks/general-events/__scroll/general-events__scroll.scss';
+@use '../blocks/general-events/_cards/general-events_cards.scss';
+@use '../blocks/general-events/__container/general-events__container.scss';
 
 // вспомогательно - для проверки scss
 @use '../blocks/example/example-var.scss';

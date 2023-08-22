@@ -1,9 +1,10 @@
+@use 'variables' as *;
+
 .cards__item-title {
   margin: 0;
-  font-size: 24px;
-  font-weight: 500;
+  font: $h4-desktop;
   line-height: 24px;
-  color: #3B3748;
+  color: $dark-primary;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;

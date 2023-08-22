@@ -1,6 +1,7 @@
+@use 'mixins' as *;
+
 .cards__item-info {
-  display: flex;
-  flex-direction: column;
+  @include flex-column-mixin;
   gap: 8px;
   flex-grow: 1;
 }
