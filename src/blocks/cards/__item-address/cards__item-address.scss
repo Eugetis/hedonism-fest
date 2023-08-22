@@ -1,0 +1,6 @@
+@use 'mixins' as *;
+
+.cards__item-address {
+  @include flex-center-row-mixin;
+  justify-content: space-between;
+}

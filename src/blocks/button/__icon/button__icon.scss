@@ -1,0 +1,11 @@
+.button__icon {
+  font-family: 'HF Icons';
+  font-weight: normal;
+  font-size: 24px;
+}
+
+@media screen and (max-width: 576px) {
+  .button__icon {
+    font-size: 20px;
+  }
+}

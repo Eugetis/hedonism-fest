@@ -1,0 +1,139 @@
+@use '../vendor/normalize.css';
+@use '../fonts/fonts.scss';
+@use '../blocks/page/page.scss';
+@use '../blocks/uikit-section/uikit-section.scss';
+
+
+// стили кнопки
+@use '../blocks/button/button.scss';
+@use '../blocks/button/__icon/button__icon.scss';
+@use '../blocks/button/_type/button_type_filled.scss';
+@use '../blocks/button/_type/button_type_border.scss';
+
+
+// стиль иконочного шрифта
+@use '../blocks/icon-fonts/icon-fonts.scss';
+
+
+// стили хедера (обсудить рефакторинг)
+@use '../blocks/header/header.scss';
+@use '../blocks/header/__logo-and-location/header__logo-and-location.scss';
+@use '../blocks/header/__logo/header__logo.scss';
+@use '../blocks/header/__city-select/header__city-select.scss';
+@use '../blocks/header/__form/header__form.scss';
+@use '../blocks/header/__menu-link/header__menu-link.scss';
+@use '../blocks/header/__buttons/header__buttons.scss';
+@use '../blocks/header/__buttons/_mobile/header__buttons_mobile.scss';
+@use '../blocks/header/__button/header__button.scss';
+@use '../blocks/header/__button/_donate/header__button_donate.scss';
+@use '../blocks/header/__button/_donate-mobile/header__button_donate-mobile.scss';
+@use '../blocks/header/__button/_want-to-go/header__button_want-to-go.scss';
+@use '../blocks/header-mobile/header-mobile.scss';
+@use '../blocks/header-mobile/__container/header-mobile__container.scss';
+@use '../blocks/header-mobile/__nav-container/header-mobile__nav-container.scss';
+@use '../blocks/header-mobile/__checkbox/header-mobile__checkbox.scss';
+@use '../blocks/header-mobile/__logo/header-mobile__logo.scss';
+@use '../blocks/header-mobile/__hamburger-lines/header-mobile__hamburger-lines.scss';
+@use '../blocks/header-mobile/__hamburger-line/header-mobile__hamburger-line.scss';
+@use '../blocks/header-mobile/__hamburger-line/_line1/header-mobile__hamburger-line_line1.scss';
+@use '../blocks/header-mobile/__hamburger-line/_line2/header-mobile__hamburger-line_line2.scss';
+@use '../blocks/header-mobile/__hamburger-line/_line3/header-mobile__hamburger-line_line3.scss';
+@use '../blocks/header-mobile-active/header-mobile-active.scss';
+@use '../blocks/header-mobile-active/header-mobile-active__top/header-mobile-active__top.scss';
+@use '../blocks/header-mobile-active/__wrapper/_1/header-mobile-active__wrapper_1.scss';
+@use '../blocks/header-mobile-active/__wrapper/_2/header-mobile-active__wrapper_2.scss';
+@use '../blocks/header-mobile-active/__wrapper/_3/header-mobile-active__wrapper_3.scss';
+@use '../blocks/header-mobile-active/header-mobile-active__form/header-mobile-active__form.scss';
+@use '../blocks/header-mobile-active/__nav-title/header-mobile-active__nav-title.scss';
+@use '../blocks/header-mobile-active/__text/header-mobile-active__text.scss';
+@use '../blocks/header-mobile-active/__menu-items/header-mobile-active__menu-items.scss';
+@use '../blocks/header-mobile-active/__city-option/header-mobile-active__city-option.scss';
+@use '../blocks/header-mobile-active/__city-select/header-mobile-active__city-select.scss';
+@use '../blocks/header-mobile-active/__city-button/header-mobile-active__city-button.scss';
+@use '../blocks/header-mobile-active/__popup-city-select/header-mobile-active__popup-city-select.scss';
+@use '../blocks/header-mobile-active/__popup-city-select/_opened/header-mobile-active__popup-city-select_opened.scss';
+@use '../blocks/button/arrow-back/button__arrow-back.scss';
+@use '../blocks/header-mobile-active/__input-city-select/header-mobile-active__input-city-select.scss';
+
+
+// стили футера
+@use '../blocks/footer/footer.scss';
+@use '../blocks/footer/__content/footer__content.scss';
+@use '../blocks/footer/__container/footer__container.scss';
+@use '../blocks/footer/__title/footer__title.scss';
+@use '../blocks/footer/__list/footer__list.scss';
+@use '../blocks/footer/__link/footer__link.scss';
+@use '../blocks/footer/__list-element/footer__list-element.scss';
+@use '../blocks/footer/__wrapper/footer__wrapper.scss';
+@use '../blocks/footer/__social/footer__social.scss';
+@use '../blocks/footer/__illustration/footer__illustration.scss';
+// модификаторы элементов футера
+@use '../blocks/footer/__list/_type/footer__list_type_socials.scss';
+@use '../blocks/footer/__social/_type/footer__social_type_vk.scss';
+@use '../blocks/footer/__link/_type/footer__link_type_mail.scss';
+
+
+// стили полей (пока пусто)
+@use '../blocks/field/field.scss';
+
+
+// стили блока с карточками (сам блок пока не расписан)
+@use '../blocks/cards/cards.scss';
+@use '../blocks/cards/__item/cards__item.scss';
+@use '../blocks/cards/__item-img/cards__item-img.scss';
+@use '../blocks/cards/__item-content/cards__item-content.scss';
+@use '../blocks/cards/__item-data/cards__item-data.scss';
+@use '../blocks/cards/__item-text/cards__item-text.scss';
+@use '../blocks/cards/__item-title/cards__item-title.scss';
+@use '../blocks/cards/__item-description/cards__item-description.scss';
+@use '../blocks/cards/__item-like/cards__item-like.scss';
+@use '../blocks/cards/__item-btn-like/cards__item-btn-like.scss';
+@use '../blocks/cards/__item-info/cards__item-info.scss';
+@use '../blocks/cards/__item-address/cards__item-address.scss';
+
+
+// стили попапа
+@use '../blocks/popup/popup.scss';
+@use '../blocks/popup/_close/popup_close.scss';
+@use '../blocks/popup/__img/popup__img.scss';
+@use '../blocks/popup/__title/popup__title.scss';
+@use '../blocks/popup/__text/popup__text.scss';
+@use '../blocks/popup/__button/popup__button.scss';
+
+// стили превью карточки
+@use '../blocks/preview/preview.scss';
+@use '../blocks/preview/__address/preview__address.scss';
+@use '../blocks/preview/__data/preview__data.scss';
+@use '../blocks/preview/__home/preview__home.scss';
+@use '../blocks/preview/__info/preview__info.scss';
+@use '../blocks/preview/__text/preview__text.scss';
+@use '../blocks/preview/__title/preview__title.scss';
+@use '../blocks/preview/__description/preview__description.scss';
+
+
+// стили строк таблицы
+@use '../blocks/table-lines/table-lines.scss';
+@use '../blocks/table-lines/__item/table-lines__item.scss';
+@use '../blocks/table-lines/__duration/table-lines__duration.scss';
+@use '../blocks/table-lines/__type/table-lines__type.scss';
+
+
+// стили блока пошаговой инструкции
+@use '../blocks/question-block/question-block.scss';
+@use '../blocks/question-block/__container/question-block__container.scss';
+@use '../blocks/question-block/__numbering/question-block__numbering.scss';
+@use '../blocks/question-block/__text/question-block__text.scss';
+@use '../blocks/question-block/__title/question-block__title.scss';
+
+// стили блока секции карточек со скроллом
+@use '../blocks/general-events/general-events.scss';
+@use '../blocks/general-events/__title/general-events__title.scss';
+@use '../blocks/general-events/__tags/general-events__tags.scss';
+@use '../blocks/general-events/__scroll/general-events__scroll.scss';
+@use '../blocks/general-events/_cards/general-events_cards.scss';
+@use '../blocks/general-events/__container/general-events__container.scss';
+
+// вспомогательно - для проверки scss
+@use '../blocks/example/example-var.scss';
+@use '../blocks/example/example-mixin.scss';
+@use '../blocks/example/example-h1.scss';

@@ -1,0 +1,24 @@
+  <header class="header">
+    <div class="header__logo-and-location">
+      <a href="#"><img src="<%=require('../images/hedonism-fest-logo.png')%>" alt="Логотип" class="header__logo"></a>
+      <form class="header__form">
+        <label for="city-select"><span class="icon-marker"></span></label>
+        <select class="header__city-select" name="city" id="city-select">
+          <option value="moscow">Москва</option>
+          <option value="petersburg">Санкт-Петербург</option>
+          <option value="sochi">Сочи</option>
+          <option value="kaluga">Калуга</option>
+          <option value="ekatirinburg">Екатеринбург</option>
+        </select>
+      </form>
+    </div>
+    <nav class="header__menu">
+      <a href="#" class="header__menu-link">куда&nbspпойти</a>
+      <a href="#" class="header__menu-link">стать&nbspучастником</a>
+      <a href="#" class="header__menu-link">о&nbspфестивале</a>
+    </nav>
+    <form class="header__buttons">
+      <button type="button" class="header__button header__button_want-to-go"><span class="icon-heart"></span>хочу пойти</button>
+      <button type="button" class="header__button header__button_donate">поддержать</button>
+    </form>
+  </header>

@@ -1,0 +1,19 @@
+@use 'variables' as *;
+
+.cards__item-title {
+  margin: 0;
+  font: $h4-desktop;
+  line-height: 24px;
+  color: $dark-primary;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+}
+
+@media screen and (min-width: 360px) and (max-width: 576px) {
+  .cards__item-title {
+    line-height: 28px;
+  }
+}
