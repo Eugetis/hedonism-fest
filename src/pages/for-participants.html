@@ -8,15 +8,219 @@
     <meta name="author" content="Евгений Тисленко, Никита Сазонов, Алексей Ефимов, Андрей Марахин, Георгий Медведский, Дмитрий Разумов">
     <title>Участникам</title>
     <link rel="icon" href="" type="">
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body class="page">
-    <%= require('html-loader!./header.html').default %>
+    <header>
+      
+    </header>
 
-    <main>
-      <h1>Участникам</h1>
+    <main class="part"> 
+        <h1 class="part__title">стать участником</h1>
+        <div class="part__heading">
+            <p class="part__subtitle">как участовать?</p>
+        </div>
+        <ul class="part__list">
+            <li class="part__list-item">
+                <div class="part__list-item-heading-group">
+                    <h3 class="part__list-item-heading">1</h3>
+                    <h3 class="part__list-item-heading part__list-item-heading_center">выбор категории</h3>
+                </div>
+                <p class="part__list-item-text">Определите, как вы хотите поддержать акцию: продавать напитки, блюда, провести мастер-класс или каким-то другим способом</p>
+            </li>
+            <li class="part__list-item">
+                <div class="part__list-item-heading-group">
+                    <h3 class="part__list-item-heading">2</h3>
+                    <h3 class="part__list-item-heading part__list-item-heading_center">фото и описание</h3>
+                </div>
+                <p class="part__list-item-text">Подготовьте описание и фото вашего заведения. Это нужно для создания карточки в нашем каталоге событий</p>
+            </li>
+            <li class="part__list-item">
+                <div class="part__list-item-heading-group">
+                    <h3 class="part__list-item-heading">3</h3>
+                    <h3 class="part__list-item-heading part__list-item-heading_center">ссылки и соцсети</h3>
+                </div>
+                <p class="part__list-item-text">Опубликуйте ссылку на вашу карточку в соцсетях, расскажите у себя на сайте, чтобы больше людей узнали о вашем участии</p>
+            </li>
+            <li class="part__list-item">
+                <div class="part__list-item-heading-group">
+                    <h3 class="part__list-item-heading">4</h3>
+                    <h3 class="part__list-item-heading part__list-item-heading_center">координатор</h3>
+                </div>
+                <p class="part__list-item-text">Далее с вами свяжется координатор акции, который будет помогать по любым вопросам до и во время акции</p>
+            </li>
+            <li class="part__list-item">
+                <div class="part__list-item-heading-group">
+                    <h3 class="part__list-item-heading">5</h3>
+                    <h3 class="part__list-item-heading part__list-item-heading_center">перевод средств</h3>
+                </div>
+                <p class="part__list-item-text">После акции переведите собранные пожертвования в Ночлежку через сайт или по безналичному расчету</p>
+            </li>
+        </ul>
+        <div class="part__buttons-block">
+            <button type="button" class="part__button part__button_active">заполнить форму</button>
+        </div>
     </main>
 
-    <%= require('html-loader!./footer.html').default %>
+    <footer>
+
+    </footer>
+
+    <form class="form">
+        
+        <fieldset class="form__step" id="step-1">
+            <h2 class="part__title part__title_hidden">стать участником</h2>
+            <div class="part__content">
+                <div class="part__heading">
+                    <legend class="form__steps">шаг 1 из 4</legend>
+                    <legend class="form__title">выберите категорию</legend>
+                </div>
+                <div class="form__options">
+                    <input type="radio" id="pref1" class="form__input" name="preference" value="кафе/бар/ресторан" checked>
+                    <label class="form__label" for="pref1">кафе/бар/ресторан</label>
+          
+                    <input type="radio" id="pref2" class="form__input" name="preference" value="мастер-класс/лекция">
+                    <label class="form__label" for="pref2">мастер-класс/лекция</label>
+          
+                    <input type="radio" id="pref3" class="form__input" name="preference" value="посиделки/вечеринка">
+                    <label class="form__label" for="pref3">посиделки/вечеринка</label>
+          
+                    <input type="radio" id="pref4" class="form__input" name="preference" value="другое">
+                    <label class="form__label" for="pref4">другое</label>
+                </div>
+            </div>
+            <div class="part__buttons-block">
+                <input type="button" class="form__button" value="отмена">
+                <input type="button" class="form__button form__button_active" value="продолжить">
+            </div>
+        </fieldset>
+
+        <fieldset class="form__step" id="step-2">
+            <h2 class="part__title part__title_hidden">стать участником</h2>
+            <div class="part__content">
+                <div class="part__heading">
+                    <legend class="form__steps">шаг 2 из 4</legend>
+                    <legend class="form__title">заполните форму</legend>
+                    <p class="form__list-description">Для участия вы можете выбрать:</p>
+                    <ul class="form__list">
+                        <li class="form__list-item">
+                            определенную позицию из меню 
+                        </li>
+                        <li class="form__list-item">
+                            группу позиций
+                        </li>
+                        <li class="form__list-item">
+                            процент от продаж определенных позиций или всего меню
+                        </li>
+                    </ul>
+                </div>
+                <div class="form__right-column">
+                    <div class="form__options part__heading">
+                        <input type="radio" id="pref1" class="form__input" name="preference" value="кафе/бар/ресторан" checked>
+                        <label class="form__label" for="pref1">кафе/бар/ресторан</label>
+                    </div>
+                    <div class="form__fields">
+                        <label class="form__label" for="place">название заведения</label>
+                        <input class="form__input" type="text" name="place" id="place" placeholder="введите название заведения">
+          
+                        <label class="form__label" for="name">контактное лицо</label>
+                        <input class="form__input" type="text" name="name" id="name" placeholder="введите ФИО">
+          
+                        <label class="form__label" for="tel">телефон для связи с организатором</label>
+                        <input class="form__input" type="tel" name="tel" id="tel" value="+7(">
+          
+                        <label class="form__label" for="about">описание</label>
+                        <textarea class="form__input" name="about" id="about" cols="30" rows="4" placeholder="Укажите, что из меню будет принимать участие в акции
+                        "></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="part__buttons-block">
+                <input type="button" class="form__button" value="назад">
+                <input type="button" class="form__button" value="продолжить">
+            </div>
+        </fieldset>
+
+        <fieldset class="form__step" id="step-3">
+            <h2 class="part__title part__title_hidden">стать участником</h2>
+            <div class="part__content">
+                <div class="part__heading">
+                  <legend class="form__steps">шаг 1 из 4</legend>
+                  <legend class="form__title">укажите контакты и часы работы</legend>
+                  <p class="form__list-description">Эти данные появятся в описании карточки вашего мероприятия в нашем каталоге событий</p>
+                </div>
+                <div class="form__right-column">
+                    <div class="form__fields">
+                        <label class="form__label" for="time">часы работы заведения</label>
+                        <input class="form__input" type="text" name="time" id="time" placeholder="например: 10:00-13:00, 13:00-19:00">
+            
+                        <label class="form__label" for="address">адрес заведения</label>
+                        <input class="form__input" type="text" name="address" id="address" placeholder="каждый адрес с новой строки">
+            
+                        <label class="form__label" for="tel-org">номер телефона заведения</label>
+                        <input class="form__input" type="tel" name="tel-org" id="tel-org" value="+7(">
+            
+                        <label class="form__label" for="link">ссылка на сайт</label>
+                        <input class="form__input" type="url" name="link" id="link" value="https://"></input>
+            
+                        <label class="form__label" for="link-soc">ссылки на соцсети</label>
+                        <input class="form__input" type="url" name="link-soc" id="link-soc" placeholder="каждую ссылку с новой строки"></input>
+            
+                        <label class="form__label" for="about-org">описание</label>
+                        <textarea class="form__input" name="about-org" id="about-org" cols="30" rows="5" placeholder="напишите небольшое приглашение своим посетителям. Людям нравятся простые обращения, дружественный тон 
+                        "></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="part__buttons-block">
+                <input type="button" class="form__button" value="назад">
+                <input type="button" class="form__button" value="продолжить">
+            </div>
+        </fieldset>
+
+        <fieldset class="form__step" id="step-4">
+            <h2 class="part__title part__title_hidden">стать участником</h2>
+            <div class="part__content">
+                <div class="part__heading">
+                  <legend class="form__steps">шаг 4 из 4</legend>
+                  <legend class="form__title">добавление фото</legend>
+                  <p class="form__list-description">Как правило, профессиональные фото выглядят более привлекательно.</p>
+                  <p class="form__list-description">Технические требования:</p>
+                  
+                  <ul class="form__list">
+                    <li class="form__list-item">
+                          формат: jpeg
+                    </li>
+                    <li class="form__list-item">
+                          вес: не более 5 МБ
+                    </li>
+                    <li class="form__list-item">
+                          альбомная ориентация
+                    </li>
+                    <li class="form__list-item">
+                          соотношение сторон: 16:9
+                    </li>
+                    <li class="form__list-item">
+                          ширина не менее 1600 пикселей
+                    </li>
+                  </ul>
+                </div>
+                <div class="form__right-column">
+                    <div class="form__fields">
+                        <div class="form__upload-container">
+                            <label class="form__label-file" for="file">загрузить с устройства</label>
+                            <input class="form__input-file" type="file" name="file" id="file">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="part__buttons-block section-padding">
+                <input type="button" class="form__button" value="назад">
+                <input type="button" class="form__button" value="завершить">
+            </div>
+        </fieldset>
+        
+    </form>
 </body>
 </html>

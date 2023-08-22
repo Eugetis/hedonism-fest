@@ -1,0 +1,16 @@
+.form__fields{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100vw;
+    padding: 20px;
+    box-sizing: border-box;
+
+}
+
+@media screen and (min-width: 1024px) {
+    .form__fields{
+        padding: 0;
+        width: 100%;
+    }
+}
