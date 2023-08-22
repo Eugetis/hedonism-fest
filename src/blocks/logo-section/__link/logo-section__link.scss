@@ -1,0 +1,19 @@
+@use 'variables' as *;
+
+.logo-section__link {
+  width: 44px;
+  height: 44px;
+  background-image: url('../../../images/logo-section__button.svg');
+  background-position: center;
+  background-size: 50%;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  background-color: $color-primary;
+  box-shadow: $drop-shadow;
+  display: block;
+  transition: 0.5s;
+  &:hover {
+    opacity: 0.5;
+  }
+
+}

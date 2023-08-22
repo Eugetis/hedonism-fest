@@ -3,6 +3,9 @@
 @use '../blocks/page/page.scss';
 @use '../blocks/uikit-section/uikit-section.scss';
 
+// стили html
+@use '../blocks/html/html.scss';
+
 
 // стили кнопки
 @use '../blocks/button/button.scss';
@@ -126,6 +129,61 @@
 @use '../blocks/question-block/__text/question-block__text.scss';
 @use '../blocks/question-block/__title/question-block__title.scss';
 
+
+//
+@use '../blocks/content/content.scss';
+
+//index.html sections
+//logo section
+@use '../blocks/logo-section/logo-section.scss';
+@use '../blocks/logo-section/__link/logo-section__link.scss';
+@use '../blocks/logo-section/__text/logo-section__text.scss';
+@use '../blocks/logo-section/__container/logo-section__container.scss';
+@use '../blocks/logo-section/__image/logo-section__image.scss';
+@use '../blocks/logo-section/__button/logo-section__button.scss';
+@use '../blocks/logo-section/__header/logo-section__header.scss';
+//about section
+@use '../blocks/about/about.scss';
+@use '../blocks/about/__title/about__title.scss';
+@use '../blocks/about/__container/about__container.scss';
+@use '../blocks/about/__text/about__text.scss';
+@use '../blocks/about/__wrapper/about__wrapper.scss';
+
+@use '../blocks/about/_type/about_type_event.scss';
+//figures section
+@use '../blocks/figures/figures.scss';
+@use '../blocks/figures/__container/figures__container.scss';
+@use '../blocks/figures/__image/figures__image.scss';
+@use '../blocks/figures/__stats/figures__stats.scss';
+@use '../blocks/figures/__text-container/figures__text-container.scss';
+@use '../blocks/figures/__text/figures__text.scss';
+@use '../blocks/figures/__title/figures__title.scss';
+
+
+//gallery section
+@use '../blocks/gallery/gallery.scss';
+@use '../blocks/gallery/__title/gallery__title.scss';
+@use '../blocks/gallery/__subtitle/gallery__subtitle.scss';
+@use '../blocks/gallery/__container/gallery__container.scss';
+@use '../blocks/gallery/__image/gallery__image.scss';
+
+@use '../blocks/gallery/__slider/gallery__slider.scss';
+@use '../blocks/gallery/__slider-line/gallery__slider-line.scss';
+@use '../blocks/gallery/__slider-btn/gallery__slider-btn.scss';
+@use '../blocks/gallery/__slider-radio/gallery__slider-radio.scss';
+@use '../blocks/gallery/__slider-radio/_active/gallery__slider-radio_active.scss';
+//team section
+@use '../blocks/team/team.scss';
+@use '../blocks/team/__title/team__title.scss';
+@use '../blocks/team/__list/team__list.scss';
+@use '../blocks/team/__link/team__link.scss';
+
+@use '../blocks/team/__link/_type/team__link_type_gallery.scss';
+@use '../blocks/team/__link/_type/team__link_type_market.scss';
+@use '../blocks/team/__link/_type/team__link_type_surf.scss';
+
+
+
 // стили блока секции карточек со скроллом
 @use '../blocks/general-events/general-events.scss';
 @use '../blocks/general-events/__title/general-events__title.scss';
@@ -134,10 +192,13 @@
 @use '../blocks/general-events/_cards/general-events_cards.scss';
 @use '../blocks/general-events/__container/general-events__container.scss';
 
+
 // вспомогательно - для проверки scss
 @use '../blocks/example/example-var.scss';
 @use '../blocks/example/example-mixin.scss';
 @use '../blocks/example/example-h1.scss';
+
+
 
 /* Form */
 @use '../blocks/form/form.scss';

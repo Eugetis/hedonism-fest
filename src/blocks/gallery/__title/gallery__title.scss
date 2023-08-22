@@ -1,0 +1,11 @@
+@use 'mixins' as *;
+
+.gallery__title {
+  @include h2-desktop;
+}
+
+@media all and (max-width: 767px) {
+  .gallery__title {
+    @include h2-mobile;
+  }
+}

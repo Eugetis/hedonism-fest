@@ -1,0 +1,22 @@
+@use 'mixins' as *;
+
+.about__text {
+  @include text-desktop;
+  margin: 8px 0 20px;
+  width: 100%;
+  &:last-of-type {
+    margin-bottom: 30px;
+  }
+}
+
+
+@media all and (max-width: 767px) {
+  .about__text {
+    @include text-mobile;
+    margin: 14px 0 0px;
+    &:last-of-type {
+      margin-bottom: 20px;
+    }
+  }
+
+}
