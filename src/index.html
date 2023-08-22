@@ -12,11 +12,7 @@
 </head>
 
 <body class="page">
-    <header>
-      <img src="<%=require('./images/hedonism-fest-logo.png')%>" alt="Логотип">
-    </header>
-
-
+    <%= require('html-loader!./pages/header.html').default %>
 
     <main>
       <h2>Тест</h2>
@@ -36,10 +32,7 @@
 
     </main>
 
-  <footer>
-
-  </footer>
-
+    <%= require('html-loader!./pages/footer.html').default %>
 </body>
 
 </html>
