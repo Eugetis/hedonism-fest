@@ -1,0 +1,11 @@
+.gallery__slider-radio {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #96949E;
+}
+
+.gallery__slider-radio:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}

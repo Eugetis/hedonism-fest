@@ -1,0 +1,19 @@
+.team {
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  padding: 0 40px 80px;
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 100%;
+}
+
+@media all and (max-width: 767px) {
+  .team {
+    padding: 40px 20px;
+    row-gap: 12px;
+    background-color: #EBE9ED;
+    ;
+  }
+}

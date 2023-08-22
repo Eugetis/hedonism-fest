@@ -1,0 +1,14 @@
+.about_type_event {
+  background-color:  #FFD400;
+  padding: 80px 40px;
+}
+
+
+
+@media all and (max-width: 767px) {
+  .about_type_event {
+    background-color: #F40934;
+    color: #fff;
+    padding: 40px 20px;    
+  }
+}

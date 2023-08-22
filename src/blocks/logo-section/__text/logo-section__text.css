@@ -1,0 +1,15 @@
+.logo-section__text {
+  color: #3B3748;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+@media all and (max-width: 767px) {
+  .logo-section__text {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}

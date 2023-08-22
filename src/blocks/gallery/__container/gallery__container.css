@@ -1,0 +1,14 @@
+.gallery__container {
+  display: none;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px;
+  box-sizing: border-box;
+  padding-right: 20px;
+}
+
+@media all and (max-width: 767px) {
+  .gallery__container {
+    display: none;
+  }
+}

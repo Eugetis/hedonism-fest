@@ -1,5 +1,6 @@
 @import url(../vendor/normalize.css);
 @import url(../fonts/fonts.css);
+@import url(../blocks/html/html.css);
 @import url(../blocks/page/page.css);
 @import url(../blocks/uikit-section/uikit-section.css);
 
@@ -7,6 +8,53 @@
 
 
 @import url(../blocks/header/header.css);
+
+@import url(../blocks/content/content.css);
+
+/*index.html sections*/
+/*logo section*/
+@import url(../blocks/logo-section/logo-section.css);
+@import url(../blocks/logo-section/__link/logo-section__link.css);
+@import url(../blocks/logo-section/__text/logo-section__text.css);
+/*about section*/
+@import url(../blocks/about/about.css);
+@import url(../blocks/about/__title/about__title.css);
+@import url(../blocks/about/__container/about__container.css);
+@import url(../blocks/about/__text/about__text.css);
+@import url(../blocks/about/__button/about__button.css);
+@import url(../blocks/about/__wrapper/about__wrapper.css);
+
+@import url(../blocks/about/_type/about_type_event.css);
+/*figures section*/
+@import url(../blocks/figures/figures.css);
+@import url(../blocks/figures/__container/figures__container.css);
+@import url(../blocks/figures/__image/figures__image.css);
+@import url(../blocks/figures/__stats/figures__stats.css);
+@import url(../blocks/figures/__text-container/figures__text-container.css);
+@import url(../blocks/figures/__text/figures__text.css);
+@import url(../blocks/figures/__title/figures__title.css);
+
+/*photo-grid section*/
+@import url(../blocks/gallery/gallery.css);
+@import url(../blocks/gallery/__title/gallery__title.css);
+@import url(../blocks/gallery/__subtitle/gallery__subtitle.css);
+@import url(../blocks/gallery/__container/gallery__container.css);
+@import url(../blocks/gallery/__image/gallery__image.css);
+
+@import url(../blocks/gallery/__slider/gallery__slider.css);
+@import url(../blocks/gallery/__slider-line/gallery__slider-line.css);
+@import url(../blocks/gallery/__slider-btn/gallery__slider-btn.css);
+@import url(../blocks/gallery/__slider-radio/gallery__slider-radio.css);
+@import url(../blocks/gallery/__slider-radio/_active/gallery__slider-radio_active.css);
+/*team section*/
+@import url(../blocks/team/team.css);
+@import url(../blocks/team/__title/team__title.css);
+@import url(../blocks/team/__list/team__list.css);
+@import url(../blocks/team/__link/team__link.css);
+
+@import url(../blocks/team/__link/_type/team__link_type_gallery.css);
+@import url(../blocks/team/__link/_type/team__link_type_market.css);
+@import url(../blocks/team/__link/_type/team__link_type_surf.css);
 
 /*footer styles*/
 @import url(../blocks/footer/footer.css);
@@ -28,7 +76,7 @@
 @import url(../blocks/field/field.css);
 
 
-@import url(../blocks/link-button/link-button.css); 
+/*@import url(../blocks/link-button/link-button.css); */
 
 @import url(../blocks/cards/cards.css);
 @import url(../blocks/cards/__item/cards__item.css);
@@ -67,9 +115,12 @@
 
 
 
+
 /*question-block styles*/
 @import url(../blocks/question-block/question-block.css);
 @import url(../blocks/question-block/__container/question-block__container.css);
 @import url(../blocks/question-block/__numbering/question-block__numbering.css);
 @import url(../blocks/question-block/__text/question-block__text.css);
 @import url(../blocks/question-block/__title/question-block__title.css);
+
+
