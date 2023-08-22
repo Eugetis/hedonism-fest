@@ -1,5 +1,7 @@
+@use 'variables' as *;
+
 .preview__text {
   margin: 0;
-  font-size: 16px;
-  color: #96949E;
+  font: $subtext-desktop;
+  color: $dark-secondary;
 }

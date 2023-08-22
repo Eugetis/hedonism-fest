@@ -1,9 +1,7 @@
+@use 'variables' as *;
+
 [class^="icon-"]:before, [class*=" icon-"]:before {
-  font-family: "HF Icons";
-  font-style: normal;
-  font-weight: normal;
-  display: inline-block;
-  text-decoration: inherit;
+  font: $icon-text;
   text-align: center;
   /* For safety - reset parent styles, that can break glyph codes*/
   font-variant: normal;

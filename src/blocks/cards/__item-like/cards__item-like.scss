@@ -1,8 +1,8 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
 .cards__item-like {
-  position: absolute;
-  z-index: 1;
-  top: 8px;
-  right: 8px;
-  background-color: #FCFAF7;
-  border-radius: 24px;
+  @include position-absolute-mixin(8px, false, false, 8px, 1);
+  background-color: $light-primary;
+  border-radius: $radius-large;
 }

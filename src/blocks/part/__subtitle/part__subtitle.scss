@@ -1,0 +1,17 @@
+.part__subtitle{
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 36px;
+    margin: 0;
+}
+
+@media screen and (min-width: 1024px) {
+    .part__subtitle{
+        font-size: 48px;
+        line-height: 52px;
+        letter-spacing: -0.48px;
+        padding: 0 0 24px 240px;
+        width: 500px;
+    }
+}

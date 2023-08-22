@@ -1,301 +1,300 @@
 <!DOCTYPE html>
 <html lang="RU">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="написать">
-    <meta name="keywords" content="HTML, CSS, JavaScript">
-    <meta name="author" content="Евгений Тисленко, Никита Сазонов, Алексей Ефимов, Андрей Марахин, Георгий Медведский, Дмитрий Разумов">
-    <title>UI Kit проекта ГедонизмФест</title>
-    <link rel="icon" href="" type="">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="написать">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="author" content="Евгений Тисленко, Никита Сазонов, Алексей Ефимов, Андрей Марахин, Георгий Медведский, Дмитрий Разумов">
+  <title>UI Kit проекта ГедонизмФест</title>
+  <link rel="icon" href="" type="">
 </head>
 
 <body class="page">
-      <%= require('html-loader!./header.html').default %>
+  <%= require('html-loader!./header.html').default %>
 
-    <main>
-      <h1>UI Kit проекта ГедонизмФест</h1>
+  <main>
+    <h1>UI Kit проекта ГедонизмФест</h1>
 
-      <section class="uikit-section">
-      </section>
+    <section class="uikit-section">
+    </section>
 
-      <section class="uikit-section">
-        <h2>Шрифт с иконками hf-icons-font</h2>
-        <ul>
-          <li>импортировать css icon-fonts.css</li>
-          <li>задать шрифт и размер иконки в элементе через css класс
-            <p>например: .element__icon { font-family: 'HF Icons'; font-weight: normal; font-size: 24px; } </p></li>
-          <li>миксом css класса элемента для иконки и css класса имени иконки вставляем иконку
-            <p>например: &lt;span class="element_icon icon-globe"&gt;&lt;/span&gt; : вставляет иконку глобуса </p></li>
-        </ul>
-        <div>
-          <style> .test_icon_grid { display: grid; grid-template-columns: repeat(5, 300px); gap: 0px;
-                       justify-items: start; align-items: center; grid-auto-rows: 30px;}
-                  .test_icon { font-family: 'HF Icons'; font-weight: normal; font-size: 20px; flex-basis: 300px;}
-          </style>
-          <div class="test_icon_grid">
-            <span class="test_icon icon-menu-burger">&ThickSpace;icon-menu-burger</span>
-            <span class="test_icon icon-cross">&ThickSpace;icon-cross</span>
-            <span class="test_icon icon-calendar">&ThickSpace;icon-calendar</span>
-            <span class="test_icon icon-list">&ThickSpace;icon-list</span>
-            <span class="test_icon icon-clip">&ThickSpace;icon-clip</span>
-            <span class="test_icon icon-settings-sliders">&ThickSpace;icon-settings-sliders</span>
-            <span class="test_icon icon-link">&ThickSpace;icon-link</span>
-            <span class="test_icon icon-plus">&ThickSpace;icon-plus</span>
-            <span class="test_icon icon-search">&ThickSpace;icon-search</span>
-            <span class="test_icon icon-menu-dots-vertical">&ThickSpace;icon-menu-dots-vertical</span>
-            <span class="test_icon icon-marker">&ThickSpace;icon-marker</span>
-            <span class="test_icon icon-pointer">&ThickSpace;icon-pointer</span>
-            <span class="test_icon icon-trash">&ThickSpace;icon-trash</span>
-            <span class="test_icon icon-caret-down">&ThickSpace;icon-caret-down</span>
-            <span class="test_icon icon-caret-up">&ThickSpace;icon-caret-up</span>
-            <span class="test_icon icon-angle-small-down">&ThickSpace;icon-angle-small-down</span>
-            <span class="test_icon icon-angle-small-up">&ThickSpace;icon-angle-small-up</span>
-            <span class="test_icon icon-to-top">&ThickSpace;icon-to-top</span>
-            <span class="test_icon icon-cross-small">&ThickSpace;icon-cross-small</span>
-            <span class="test_icon icon-copy">&ThickSpace;icon-copy</span>
-            <span class="test_icon icon-call">&ThickSpace;icon-call</span>
-            <span class="test_icon icon-warning">&ThickSpace;icon-warning</span>
-            <span class="test_icon icon-cloud-upload">&ThickSpace;icon-cloud-upload</span>
-            <span class="test_icon icon-heart">&ThickSpace;icon-heart</span>
-            <span class="test_icon icon-heart-filled">&ThickSpace;icon-heart-filled</span>
-            <span class="test_icon icon-minus-small">&ThickSpace;icon-minus-small</span>
-            <span class="test_icon icon-plus-small">&ThickSpace;icon-plus-small</span>
-            <span class="test_icon icon-globe">&ThickSpace;icon-globe</span>
-            <span class="test_icon icon-info">&ThickSpace;icon-info</span>
-            <span class="test_icon icon-angle-small-right">&ThickSpace;icon-angle-small-right</span>
-            <span class="test_icon icon-angle-small-left">&ThickSpace;icon-angle-small-left</span>
-            <span class="test_icon icon-arrow-left">&ThickSpace;icon-arrow-left</span>
-            <span class="test_icon icon-arrow-right">&ThickSpace;icon-arrow-right</span>
-            <span class="test_icon icon-check">&ThickSpace;icon-check</span>
-            <span class="test_icon icon-radio">&ThickSpace;icon-radio</span>
-            <span class="test_icon icon-radio-filled">&ThickSpace;icon-radio-filled</span>
-            <span class="test_icon icon-arrow-down">&ThickSpace;icon-arrow-down</span>
-            <span class="test_icon icon-external-link">&ThickSpace;icon-external-link</span>
-            <span class="test_icon icon-arrow-up">&ThickSpace;icon-arrow-up</span>
+    <section class="uikit-section">
+      <h2>Шрифт с иконками hf-icons-font</h2>
+      <ul>
+        <li>импортировать css icon-fonts.css</li>
+        <li>задать шрифт и размер иконки в элементе через css класс
+          <p>например: .element__icon { font-family: 'HF Icons'; font-weight: normal; font-size: 24px; } </p></li>
+        <li>миксом css класса элемента для иконки и css класса имени иконки вставляем иконку
+          <p>например: &lt;span class="element_icon icon-globe"&gt;&lt;/span&gt; : вставляет иконку глобуса </p></li>
+      </ul>
+      <div>
+        <style> .test_icon_grid { display: grid; grid-template-columns: repeat(5, 300px); gap: 0px;
+          justify-items: start; align-items: center; grid-auto-rows: 30px;}
+        .test_icon { font-family: 'HF Icons'; font-weight: normal; font-size: 20px; flex-basis: 300px;}
+        </style>
+        <div class="test_icon_grid">
+          <span class="test_icon icon-menu-burger">&ThickSpace;icon-menu-burger</span>
+          <span class="test_icon icon-cross">&ThickSpace;icon-cross</span>
+          <span class="test_icon icon-calendar">&ThickSpace;icon-calendar</span>
+          <span class="test_icon icon-list">&ThickSpace;icon-list</span>
+          <span class="test_icon icon-clip">&ThickSpace;icon-clip</span>
+          <span class="test_icon icon-settings-sliders">&ThickSpace;icon-settings-sliders</span>
+          <span class="test_icon icon-link">&ThickSpace;icon-link</span>
+          <span class="test_icon icon-plus">&ThickSpace;icon-plus</span>
+          <span class="test_icon icon-search">&ThickSpace;icon-search</span>
+          <span class="test_icon icon-menu-dots-vertical">&ThickSpace;icon-menu-dots-vertical</span>
+          <span class="test_icon icon-marker">&ThickSpace;icon-marker</span>
+          <span class="test_icon icon-pointer">&ThickSpace;icon-pointer</span>
+          <span class="test_icon icon-trash">&ThickSpace;icon-trash</span>
+          <span class="test_icon icon-caret-down">&ThickSpace;icon-caret-down</span>
+          <span class="test_icon icon-caret-up">&ThickSpace;icon-caret-up</span>
+          <span class="test_icon icon-angle-small-down">&ThickSpace;icon-angle-small-down</span>
+          <span class="test_icon icon-angle-small-up">&ThickSpace;icon-angle-small-up</span>
+          <span class="test_icon icon-to-top">&ThickSpace;icon-to-top</span>
+          <span class="test_icon icon-cross-small">&ThickSpace;icon-cross-small</span>
+          <span class="test_icon icon-copy">&ThickSpace;icon-copy</span>
+          <span class="test_icon icon-call">&ThickSpace;icon-call</span>
+          <span class="test_icon icon-warning">&ThickSpace;icon-warning</span>
+          <span class="test_icon icon-cloud-upload">&ThickSpace;icon-cloud-upload</span>
+          <span class="test_icon icon-heart">&ThickSpace;icon-heart</span>
+          <span class="test_icon icon-heart-filled">&ThickSpace;icon-heart-filled</span>
+          <span class="test_icon icon-minus-small">&ThickSpace;icon-minus-small</span>
+          <span class="test_icon icon-plus-small">&ThickSpace;icon-plus-small</span>
+          <span class="test_icon icon-globe">&ThickSpace;icon-globe</span>
+          <span class="test_icon icon-info">&ThickSpace;icon-info</span>
+          <span class="test_icon icon-angle-small-right">&ThickSpace;icon-angle-small-right</span>
+          <span class="test_icon icon-angle-small-left">&ThickSpace;icon-angle-small-left</span>
+          <span class="test_icon icon-arrow-left">&ThickSpace;icon-arrow-left</span>
+          <span class="test_icon icon-arrow-right">&ThickSpace;icon-arrow-right</span>
+          <span class="test_icon icon-check">&ThickSpace;icon-check</span>
+          <span class="test_icon icon-radio">&ThickSpace;icon-radio</span>
+          <span class="test_icon icon-radio-filled">&ThickSpace;icon-radio-filled</span>
+          <span class="test_icon icon-arrow-down">&ThickSpace;icon-arrow-down</span>
+          <span class="test_icon icon-external-link">&ThickSpace;icon-external-link</span>
+          <span class="test_icon icon-arrow-up">&ThickSpace;icon-arrow-up</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="uikit-section">
+      <h2>Кнопки</h2>
+      <!-- Иконки в кнопках подключаются как content: из созданного вариативного шрифта -->
+      <!-- файл вариативного шрифта hf-icons-font.woff(2) -->
+      <!-- файл hf-icons-font-demo.html отображает все иконки и их PUA коды-->
+      <!-- Все варианты кнопок вложены в грид 2 столбца на N строк -->
+      <style> .test_button_grid { display: grid; grid-template-columns: repeat(2, 220px);
+        gap: 20px; justify-items: center; align-items: center; grid-auto-rows: 70px;}
+      </style>
+      <div class="test_button_grid">
+
+        <!-- медиа стили позволяют переключить заголовок Desktop/Mobile для проверки кнопок  -->
+        <style media="screen">
+          .title_text::after {
+            content: 'Desktop';
+          }
+        </style>
+        <style media="screen and (max-width: 576px)">
+          .title_text::after {
+            content: 'Mobile';
+          }
+        </style>
+        <h2 class="title_text"></h2><p></p>
+
+        <p>default/on click</p><p>disabled</p>
+
+        <button class="button button_type_filled"><span class="button__icon icon-list"></span>кнопка</button>
+        <button class="button button_type_filled" disabled><span class="button__icon icon-list"></span>кнопка</button>
+
+        <button class="button button_type_filled">кнопка<span class="button__icon icon-arrow-right"></span></button>
+        <button class="button button_type_filled" disabled>кнопка<span class="button__icon icon-arrow-right"></span></button>
+
+        <button class="button button_type_filled">кнопка</button>
+        <button class="button button_type_filled" disabled>кнопка</button>
+
+        <button class="button button_type_border"><span class="button__icon icon-heart"></span>кнопка</button>
+        <button class="button button_type_border" disabled><span class="button__icon icon-heart"></span>кнопка</button>
+
+        <button class="button button_type_border">кнопка<span class="button__icon icon-arrow-right"></span></button>
+        <button class="button button_type_border" disabled>кнопка<span class="button__icon icon-arrow-right"></span></button>
+
+        <button class="button button_type_border">кнопка</button>
+        <button class="button button_type_border" disabled>кнопка</button>
+
+        <button class="button">кнопка</button>
+        <button class="button" disabled>кнопка</button>
+
+        <button class="button"><span class="button__icon icon-copy"></span>кнопка</button>
+        <button class="button" disabled><span class="button__icon icon-copy"></span>кнопка</button>
+
+        <button class="button">кнопка<span class="button__icon icon-arrow-right"></span></button>
+        <button class="button" disabled>кнопка<span class="button__icon icon-arrow-right"></span></button>
+
+        <style>.test_button_background { background: red;}</style>
+        <div class="test_button_background">
+          <button class="button button_type_white-mobile">стать участником</button>
+        </div>
+        <button class="button button_type_white-mobile" disabled>стать участником</button>
+        
+      </div>
+    </section>
+
+    <section class="uikit-section">
+      <h2>Поля</h2>
+
+    </section>
+
+    <section class="uikit-section">
+      <h2>Хедер</h2>
+
+    </section>
+
+    <section class="uikit-section">
+      <h2>Футер</h2>
+      <footer class="footer">
+        <div class="footer__wrapper">
+          <img class="footer__illustration" src="<%=require('../images/footer_illustration.svg')%>" alt="">
+          <div class="footer__content">
+            <div class="footer__container">
+              <h2 class="footer__title">организатор:</h2>
+              <ul class="footer__list">
+                <li class="footer__list-element">
+                  <a class="footer__link" href="https://homeless.ru/" target="_blank">Ночлежка</a>
+                </li>
+                <li class="footer__list-element">
+                  <a class="footer__link footer__link_type_mail" href="mailto:info@hedonismfest.ru">info@hedonismfest.ru</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__container">
+              <h2 class="footer__title">сделано с любовью:</h2>
+              <ul class="footer__list">
+                <li class="footer__list-element">
+                  <a class="footer__link" href="https://fastsol.digital/" target="_blank">Fastsol Digital</a>
+                </li>
+                <li class="footer__list-element">
+                  <a class="footer__link" href="https://shishki.co/" target="_blank">shishki.collective</a>
+                </li>
+                <li class="footer__list-element">
+                  <a class="footer__link" href="https://practicum.yandex.ru/" target="_blank">студентами Яндекс.Практикума</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__container">
+              <h2 class="footer__title">мы в соцсетях:</h2>
+              <ul class="footer__list footer__list_type_socials">
+                <li class="footer__list-element">
+                  <a class="footer__social footer__social_type_vk" href="https://vk.com/nochlezhka/" target="_blank"></a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </section>
+      </footer>
 
+    </section>
 
-
-      <section class="uikit-section">
-        <h2>Кнопки</h2>
-          <!-- Иконки в кнопках подключаются как content: из созданного вариативного шрифта -->
-          <!-- файл вариативного шрифта hf-icons-font.woff(2) -->
-          <!-- файл hf-icons-font-demo.html отображает все иконки и их PUA коды-->
-          <!-- Все варианты кнопок вложены в грид 2 столбца на N строк -->
-          <style> .test_button_grid { display: grid; grid-template-columns: repeat(2, 200px);
-            gap: 20px; justify-items: center; align-items: center; grid-auto-rows: 70px;}
-          </style>
-          <div class="test_button_grid">
-
-            <!-- медиа стили позволяют переключить заголовок Desktop/Mobile для проверки кнопок  -->
-            <style media="screen">
-              .title_text::after {
-                content: 'Desktop';
-              }
-            </style>
-            <style media="screen and (max-width: 576px)">
-              .title_text::after {
-                content: 'Mobile';
-              }
-            </style>
-            <h2 class="title_text"></h2><p></p>
-
-            <p>default/on click</p><p>disabled</p>
-
-            <button class="button button_type_filled"><span class="button__icon icon-list"></span>кнопка</button>
-            <button class="button button_type_filled" disabled><span class="button__icon icon-list"></span>кнопка</button>
-
-            <button class="button button_type_filled">кнопка<span class="button__icon icon-arrow-right"></span></button>
-            <button class="button button_type_filled" disabled>кнопка<span class="button__icon icon-arrow-right"></span></button>
-
-            <button class="button button_type_filled">кнопка</button>
-            <button class="button button_type_filled" disabled>кнопка</button>
-
-            <button class="button button_type_border"><span class="button__icon icon-heart"></span>кнопка</button>
-            <button class="button button_type_border" disabled><span class="button__icon icon-heart"></span>кнопка</button>
-
-            <button class="button button_type_border">кнопка<span class="button__icon icon-arrow-right"></span></button>
-            <button class="button button_type_border" disabled>кнопка<span class="button__icon icon-arrow-right"></span></button>
-
-            <button class="button button_type_border">кнопка</button>
-            <button class="button button_type_border" disabled>кнопка</button>
-
-            <button class="button">кнопка</button>
-            <button class="button" disabled>кнопка</button>
-
-            <button class="button"><span class="button__icon icon-copy"></span>кнопка</button>
-            <button class="button" disabled><span class="button__icon icon-copy"></span>кнопка</button>
-
-            <button class="button">кнопка<span class="button__icon icon-arrow-right"></span></button>
-            <button class="button" disabled>кнопка<span class="button__icon icon-arrow-right"></span></button>
-
+    <section class="uikit-section">
+      <h2>Карточки</h2>
+      <article class="cards__item">
+        <img class="cards__item-img" src="https://s3-alpha-sig.figma.com/img/7757/64eb/a164910d18475e81c5fd67bd8bb24572?Expires=1693180800&Signature=ptJFuK39u7G9tFyu8qxXFDrACABLRMX5mPM3Di-wuPgtHWINFWz5NAsxJKFFYFU0rzdtxNWtdTVctiZw~mfnxKA0AAGulHKeIXYJu91AV9VkS9h8CFCTyjPZY5cZM27outa2KaEsTX9KW1LYLaM9aB9TthiGH4ZhNd4yVHXyXxBw3mNYxVo703f51GkvzSRSdaiGHYpmYcjv9KSEWJrGtqeRAmyF2GgQWJIb7FiUt-j8dwYH0ZFPolAFsbEtnIPpOaCM39L7ixkh35O34hVeepzH2DrWk4l3UwOqyygAEO5Z0~p4B0Ep~9gHtMA-eUcmygTiV82ChAgFlIls9uJ9wg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="Изображение карточки">
+        <div class="cards__item-content">
+          <div class="cards__item-data">
+            <p class="cards__item-text">лекция</p>
+            <p class="cards__item-text">1 мая, 12:30-13:50</p>
           </div>
-      </section>
-
-      <section class="uikit-section">
-        <h2>Поля</h2>
-
-      </section>
-
-      <section class="uikit-section">
-        <h2>Хедер</h2>
-
-      </section>
-
-      <section class="uikit-section">
-        <h2>Футер</h2>
-        <footer class="footer">
-          <div class="footer__wrapper">
-            <img class="footer__illustration" src="<%=require('../images/footer_illustration.svg')%>" alt="">
-            <div class="footer__content">
-              <div class="footer__container">
-                <h2 class="footer__title">организатор:</h2>
-                <ul class="footer__list">
-                  <li class="footer__list-element">
-                    <a class="footer__link" href="https://homeless.ru/" target="_blank">Ночлежка</a>
-                  </li>
-                  <li class="footer__list-element">
-                    <a class="footer__link footer__link_type_mail" href="mailto:info@hedonismfest.ru">info@hedonismfest.ru</a>
-                  </li>
-
-                </ul>
-              </div>
-              <div class="footer__container">
-                <h2 class="footer__title">сделано с любовью:</h2>
-                <ul class="footer__list">
-                  <li class="footer__list-element">
-                    <a class="footer__link" href="https://fastsol.digital/" target="_blank">Fastsol Digital</a>
-                  </li>
-                  <li class="footer__list-element">
-                    <a class="footer__link" href="https://shishki.co/" target="_blank">shishki.collective</a>
-                  </li>
-                  <li class="footer__list-element">
-                    <a class="footer__link" href="https://practicum.yandex.ru/" target="_blank">студентами Яндекс.Практикума</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="footer__container">
-                <h2 class="footer__title">мы в соцсетях:</h2>
-                <ul class="footer__list footer__list_type_socials">
-                  <li class="footer__list-element">
-                    <a class="footer__social footer__social_type_vk" href="https://vk.com/nochlezhka/" target="_blank"></a>
-                  </li>
-
-                </ul>
-              </div>
-            </div>
+          <div class="cards__item-info">
+            <h2 class="cards__item-title">идентичность: почему нам сложно меняться?</h2>
+            <p class="cards__item-description">лектор: Мария Бархатова</p>
           </div>
-        </footer>
-
-      </section>
-
-      <section class="uikit-section">
-        <h2>Карточки</h2>
-        <article class="cards__item">
-          <img class="cards__item-img" src="https://s3-alpha-sig.figma.com/img/7757/64eb/a164910d18475e81c5fd67bd8bb24572?Expires=1693180800&Signature=ptJFuK39u7G9tFyu8qxXFDrACABLRMX5mPM3Di-wuPgtHWINFWz5NAsxJKFFYFU0rzdtxNWtdTVctiZw~mfnxKA0AAGulHKeIXYJu91AV9VkS9h8CFCTyjPZY5cZM27outa2KaEsTX9KW1LYLaM9aB9TthiGH4ZhNd4yVHXyXxBw3mNYxVo703f51GkvzSRSdaiGHYpmYcjv9KSEWJrGtqeRAmyF2GgQWJIb7FiUt-j8dwYH0ZFPolAFsbEtnIPpOaCM39L7ixkh35O34hVeepzH2DrWk4l3UwOqyygAEO5Z0~p4B0Ep~9gHtMA-eUcmygTiV82ChAgFlIls9uJ9wg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="Изображение карточки">
-          <div class="cards__item-content">
-            <div class="cards__item-data">
-              <p class="cards__item-text">лекция</p>
-              <p class="cards__item-text">1 мая, 12:30-13:50</p>
-            </div>
-            <div class="cards__item-info">
-              <h2 class="cards__item-title">идентичность: почему нам сложно меняться?</h2>
-              <p class="cards__item-description">лектор: Мария Бархатова</p>
-            </div>
-            <div class="cards__item-address">
-              <p class="cards__item-text">улица Блохина, 22</p>
-              <p class="cards__item-text">+ ещё 3</p>
-            </div>
+          <div class="cards__item-address">
+            <p class="cards__item-text">улица Блохина, 22</p>
+            <p class="cards__item-text">+ ещё 3</p>
           </div>
-          <div class="cards__item-like">
-            <button class="cards__item-btn-like"></button>
-          </div>
-        </article>
-      </section>
+        </div>
+        <div class="cards__item-like">
+          <button class="cards__item-btn-like"></button>
+        </div>
+      </article>
+    </section>
 
-      <section class="uikit-section">
-        <h2>Превью карточек</h2>
-        <article class="preview">
-          <div class="preview__home"></div>
-          <div class="preview__data">
-            <p class="preview__text">лекция</p>
-          </div>
-          <div class="preview__info">
-            <h2 class="preview__title">идентичность: почему нам сложно меняться?</h2>
-            <p class="preview__description">лектор: Мария Бархатова</p>
-          </div>
-          <div class="preview__address">
-            <p class="preview__text">улица Блохина, 22</p>
-            <p class="preview__text">+ ещё 3</p>
-          </div>
-          <button class="preview__button">подробнее</button>
-        </article>
-      </section>
+    <section class="uikit-section">
+      <h2>Превью карточек</h2>
+      <article class="preview">
+        <div class="preview__home"></div>
+        <div class="preview__data">
+          <p class="preview__text">лекция</p>
+        </div>
+        <div class="preview__info">
+          <h2 class="preview__title">идентичность: почему нам сложно меняться?</h2>
+          <p class="preview__description">лектор: Мария Бархатова</p>
+        </div>
+        <div class="preview__address">
+          <p class="preview__text">улица Блохина, 22</p>
+          <p class="preview__text">+ ещё 3</p>
+        </div>
+        <button class="button button_type_filled">подробнее</button>
+      </article>
+    </section>
 
-      <section class="uikit-section">
-        <h2>Всплывающие окна</h2>
-        <article class="popup">
-          <div class="popup_close"></div>
-          <img class="popup__img" src="<%=require('../images/popup/popup-mobile-img.svg')%>" alt="Изображение попапа">
-          <h2 class="popup__title">примите акцию у себя</h2>
-          <p class="popup__text">Кто может принять участие в акции?<br><br>Абсолютно все. Продавайте кофе в своем кафе, устройте мастер-класс по вязанию или соберите друзей у себя дома. Помогать просто, узнайте подробности и заполните форму</p>
-          <button class="popup__button">стать участником</button>
-        </article>
-      </section>
-
-
-      <section class="uikit-section">
-        <h2>Блок пошаговой инструкции</h2>
-        <article class="question-block">
-          <div class="question-block__container">
-            <p class="question-block__numbering">1</p>
-            <h3 class="question-block__title">выбор категории</h3>
-          </div>
-          <p class="question-block__text">Определите, как вы хотите поддержать акцию: продавать напитки, блюда, провести мастер-класс или каким-то другим способом</p>
-        </article>
-      </section>
-
-      <section class="uikit-section">
-        <h2>Строки таблицы</h2>
-        <ul class="table-lines">
-          <li class="table-lines__item">
-            <p class="table-lines__type">длительность</p>
-            <p class="table-lines__duration">1 час 20 минут</p>
-          </li>
-          <li class="table-lines__item">
-            <p class="table-lines__type">длительность</p>
-            <p class="table-lines__duration">1 час 20 минут</p>
-          </li>
-          <li class="table-lines__item">
-            <p class="table-lines__type">длительность</p>
-            <p class="table-lines__duration">1 час 20 минут</p>
-          </li>
-          <li class="table-lines__item">
-            <p class="table-lines__type">длительность</p>
-            <p class="table-lines__duration">1 час 20 минут</p>
-          </li>
-          <li class="table-lines__item">
-            <p class="table-lines__type">длительность</p>
-            <p class="table-lines__duration">1 час 20 минут</p>
-          </li>
-        </ul>
-      </section>
+    <section class="uikit-section">
+      <h2>Всплывающие окна</h2>
+      <article class="popup">
+        <div class="popup_close"></div>
+        <img class="popup__img" src="<%=require('../images/popup/popup-mobile-img.svg')%>" alt="Изображение попапа">
+        <h2 class="popup__title">примите акцию у себя</h2>
+        <p class="popup__text">Кто может принять участие в акции?<br><br>Абсолютно все. Продавайте кофе в своем кафе, устройте мастер-класс по вязанию или соберите друзей у себя дома. Помогать просто, узнайте подробности и заполните форму</p>
+        <button class="popup__button button button_type_border">кнопка</button>
+      </article>
+    </section>
 
 
+    <section class="uikit-section">
+      <h2>Блок пошаговой инструкции</h2>
+      <article class="question-block">
+        <div class="question-block__container">
+          <p class="question-block__numbering">1</p>
+          <h3 class="question-block__title">выбор категории</h3>
+        </div>
+        <p class="question-block__text">Определите, как вы хотите поддержать акцию: продавать напитки, блюда, провести мастер-класс или каким-то другим способом</p>
+      </article>
+    </section>
 
+    <section class="uikit-section">
+      <h2>Строки таблицы</h2>
+      <ul class="table-lines">
+        <li class="table-lines__item">
+          <p class="table-lines__type">длительность</p>
+          <p class="table-lines__duration">1 час 20 минут</p>
+        </li>
+        <li class="table-lines__item">
+          <p class="table-lines__type">длительность</p>
+          <p class="table-lines__duration">1 час 20 минут</p>
+        </li>
+        <li class="table-lines__item">
+          <p class="table-lines__type">длительность</p>
+          <p class="table-lines__duration">1 час 20 минут</p>
+        </li>
+        <li class="table-lines__item">
+          <p class="table-lines__type">длительность</p>
+          <p class="table-lines__duration">1 час 20 минут</p>
+        </li>
+        <li class="table-lines__item">
+          <p class="table-lines__type">длительность</p>
+          <p class="table-lines__duration">1 час 20 минут</p>
+        </li>
+      </ul>
+    </section>
 
+    <section class="uikit-section">
+      <p class="example-h1">Заголовок с переменной</p>
+      <p class="example-mixin">Подзаголовок с миксином</p>
+      <div class="example-var"></div>
+    </section>
 
-      <section class="uikit-section">
-        <p class="example-h1">Заголовок с переменной</p>
-        <p class="example-mixin">Подзаголовок с миксином</p>
-        <div class="example-var"></div>
-      </section>
+  </main>
 
-    </main>
-
-    <%= require('html-loader!./footer.html').default %>
+  <%= require('html-loader!./footer.html').default %>
 </body>
 </html>
+

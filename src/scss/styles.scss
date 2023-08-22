@@ -12,6 +12,7 @@
 @use '../blocks/button/__icon/button__icon.scss';
 @use '../blocks/button/_type/button_type_filled.scss';
 @use '../blocks/button/_type/button_type_border.scss';
+@use '../blocks/button/_type/button_type_white-mobile.scss';
 
 
 // стиль иконочного шрифта
@@ -103,11 +104,9 @@
 @use '../blocks/popup/__text/popup__text.scss';
 @use '../blocks/popup/__button/popup__button.scss';
 
-
 // стили превью карточки
 @use '../blocks/preview/preview.scss';
 @use '../blocks/preview/__address/preview__address.scss';
-@use '../blocks/preview/__button/preview__button.scss';
 @use '../blocks/preview/__data/preview__data.scss';
 @use '../blocks/preview/__home/preview__home.scss';
 @use '../blocks/preview/__info/preview__info.scss';
@@ -129,6 +128,7 @@
 @use '../blocks/question-block/__numbering/question-block__numbering.scss';
 @use '../blocks/question-block/__text/question-block__text.scss';
 @use '../blocks/question-block/__title/question-block__title.scss';
+
 
 //
 @use '../blocks/content/content.scss';
@@ -184,8 +184,57 @@
 
 
 
+// стили блока секции карточек со скроллом
+@use '../blocks/general-events/general-events.scss';
+@use '../blocks/general-events/__title/general-events__title.scss';
+@use '../blocks/general-events/__tags/general-events__tags.scss';
+@use '../blocks/general-events/__scroll/general-events__scroll.scss';
+@use '../blocks/general-events/_cards/general-events_cards.scss';
+@use '../blocks/general-events/__container/general-events__container.scss';
+
+
 // вспомогательно - для проверки scss
 @use '../blocks/example/example-var.scss';
 @use '../blocks/example/example-mixin.scss';
 @use '../blocks/example/example-h1.scss';
 
+
+
+/* Form */
+@use '../blocks/form/form.scss';
+@use '../blocks/form/__step/form__step.scss';
+@use '../blocks/form/__steps/form__steps.scss';
+@use '../blocks/form/__title/form__title.scss';
+@use '../blocks/form/__options/form__options.scss';
+@use '../blocks/form/__list/form__list.scss';
+@use '../blocks/form/__list-description/form__list-description.scss';
+@use '../blocks/form/__fields/form__fields.scss';
+@use '../blocks/form/__label/form__label.scss';
+@use '../blocks/form/__input/form__input.scss';
+@use '../blocks/form/__right-column/form__right-column.scss';
+@use '../blocks/form/__upload-container/form__upload-container.scss';
+
+/* Forms button */
+@use '../blocks/form/__button/form__button.scss';
+@use '../blocks/form/__button/_active/form__button_active.scss';
+@use '../blocks/form/__button/_type/button_type_long.scss';
+
+/* Forms part */
+@use '../blocks/part/part.scss';
+@use '../blocks/part/__button/part__button.scss';
+@use '../blocks/part/__button/_active/part__button_active.scss';
+@use '../blocks/part/__buttons-block/part__buttons-block.scss';
+@use '../blocks/part/__content/part__content.scss';
+@use '../blocks/part/__heading/part__heading.scss';
+@use '../blocks/part/__title/part__title.scss';
+@use '../blocks/part/__title/_hidden/part__title_hidden.scss';
+@use '../blocks/part/__subtitle/part__subtitle.scss';
+@use '../blocks/part/__list/part__list.scss';
+@use '../blocks/part/__list-item/part__list-item.scss';
+@use '../blocks/part/__list-item-heading-group/part__list-item-heading-group.scss';
+@use '../blocks/part/__list-item-heading/part__list-item-heading.scss';
+@use '../blocks/part/__list-item-heading/_center/part__list-item-heading_center.scss';
+@use '../blocks/part/__list-item-text/part__list-item-text.scss';
+
+@use '../blocks/hidden/hidden.scss';
+@use '../blocks/for-participants/for-participants.scss';
