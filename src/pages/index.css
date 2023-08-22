@@ -48,7 +48,7 @@
 @import url(../blocks/header-mobile-active/__popup-city-select/_opened/header-mobile-active__popup-city-select_opened.css);
 @import url(../blocks/button/arrow-back/button__arrow-back.css);
 @import url(../blocks/header-mobile-active/__input-city-select/header-mobile-active__input-city-select.css);
-
+@use '<>';
 
 
 /*footer styles*/
