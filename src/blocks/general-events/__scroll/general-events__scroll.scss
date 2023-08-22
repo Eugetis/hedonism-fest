@@ -1,8 +1,10 @@
+@use 'variables' as *;
+
 .general-events__scroll {
-  padding: 0 0 0 40px;
+  margin-left: 40px;
   max-width: 1440px;
   overflow-x: scroll;
-  padding-bottom: 24px;
+  padding-bottom: $pad-24;
 }
 
 .general-events__scroll::-webkit-scrollbar {
@@ -10,20 +12,20 @@
 }
 
 .general-events__scroll::-webkit-scrollbar-track {
-  background-color:  #FCFAF7;
-  border-radius: 100px;
+  background-color:  $light-primary;
+  border-radius: $radius-100;
   margin-right: 40px;
-  margin-left: 40px;
 }
 
 .general-events__scroll::-webkit-scrollbar-thumb {
-  background-color: #7100FF;
-  border-radius: 100px;
+  background-color: $color-primary;
+  border-radius: $radius-100;
 }
 
 @media screen and (min-width: 360px) and (max-width: 576px) {
   .general-events__scroll {
-    padding: 20px 0;
+    padding: $pad-20 0;
+    margin: 0;
   }
 
   .general-events__scroll::-webkit-scrollbar-track {

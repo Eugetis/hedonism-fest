@@ -1,8 +1,8 @@
+@use 'mixins' as *;
+
 .general-events__title {
-  font-size: 48px;
-  font-weight: 500;
+  @include h2-desktop;
   line-height: 52px;
-  letter-spacing: -0.48px;
   text-transform: lowercase;
   max-width: 840px;
   margin: 0;

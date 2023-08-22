@@ -1,7 +1,8 @@
+@use 'mixins' as *;
+
 .general-events__tags {
-  display: flex;
+  @include flex-center-row-mixin;
   flex-wrap: wrap;
-  align-items: center;
   max-width: 65%;
   row-gap: 16px;
   column-gap: 12px;

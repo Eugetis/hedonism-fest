@@ -1,4 +1,6 @@
+@use 'variables' as *;
+
 .general-events {
   width: 100%;
-  background-color: #EBE9ED;
+  background-color: $light-secondary;
 }

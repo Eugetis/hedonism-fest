@@ -1,21 +1,23 @@
+@use 'variables' as *;
+
 .general-events__container {
   max-width: 1440px;
   box-sizing: border-box;
-  padding: 80px 40px 0 40px;
-  color: #3B3748;
+  padding: $pad-80 $pad-40 0 $pad-40;
+  color: $dark-primary;
 }
 
 .general-events__container:last-of-type {
-  padding: 32px 0 80px 40px;
+  padding: $pad-32 0 $pad-80 $pad-40;
 }
 
 @media screen and (min-width: 360px) and (max-width: 576px) {
   .general-events__container {
     max-width: 320px;
-    padding: 40px 20px;
+    padding: $pad-40 $pad-20;
   }
 
   .general-events__container:last-of-type {
-    padding: 28px 0 40px 20px;
+    padding: $pad-28 0 $pad-40 $pad-20;
   }
 }
