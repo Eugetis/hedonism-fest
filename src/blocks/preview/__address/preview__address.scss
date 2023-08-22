@@ -1,0 +1,6 @@
+@use 'mixins' as *;
+
+.preview__address {
+  @include flex-center-row-mixin;
+  justify-content: space-between;
+}

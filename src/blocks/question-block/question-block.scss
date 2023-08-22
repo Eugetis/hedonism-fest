@@ -1,0 +1,16 @@
+.question-block {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 880px;
+}
+
+@media all and (max-width: 767px) {
+  .question-block {
+    flex-direction: column;
+    padding: 20px;
+    row-gap: 16px;
+    width: auto;
+  }
+}

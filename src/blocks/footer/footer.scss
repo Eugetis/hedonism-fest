@@ -1,0 +1,12 @@
+.footer {
+  background-color: #EBE9ED;
+  display: flex;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+@media all and (max-width: 767px) {
+  .footer {
+    background-color: #FFD400;
+  }
+}
