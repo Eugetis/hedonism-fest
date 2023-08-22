@@ -83,7 +83,7 @@
       <!-- файл вариативного шрифта hf-icons-font.woff(2) -->
       <!-- файл hf-icons-font-demo.html отображает все иконки и их PUA коды-->
       <!-- Все варианты кнопок вложены в грид 2 столбца на N строк -->
-      <style> .test_button_grid { display: grid; grid-template-columns: repeat(2, 200px);
+      <style> .test_button_grid { display: grid; grid-template-columns: repeat(2, 220px);
         gap: 20px; justify-items: center; align-items: center; grid-auto-rows: 70px;}
       </style>
       <div class="test_button_grid">
@@ -130,6 +130,12 @@
         <button class="button">кнопка<span class="button__icon icon-arrow-right"></span></button>
         <button class="button" disabled>кнопка<span class="button__icon icon-arrow-right"></span></button>
 
+        <style>.test_button_background { background: red;}</style>
+        <div class="test_button_background">
+          <button class="button button_type_white-mobile">стать участником</button>
+        </div>
+        <button class="button button_type_white-mobile" disabled>стать участником</button>
+        
       </div>
     </section>
 
@@ -158,7 +164,6 @@
                 <li class="footer__list-element">
                   <a class="footer__link footer__link_type_mail" href="mailto:info@hedonismfest.ru">info@hedonismfest.ru</a>
                 </li>
-
               </ul>
             </div>
             <div class="footer__container">

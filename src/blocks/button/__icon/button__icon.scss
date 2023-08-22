@@ -1,11 +1,11 @@
+@use 'variables' as *;
+
 .button__icon {
-  font-family: 'HF Icons';
-  font-weight: normal;
-  font-size: 24px;
+  font: $icon-text-desktop;
 }
 
 @media screen and (max-width: 576px) {
   .button__icon {
-    font-size: 20px;
+    font: $icon-text-mobile;
   }
 }
