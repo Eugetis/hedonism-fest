@@ -18,6 +18,11 @@
 // стиль иконочного шрифта
 @use '../blocks/icon-fonts/icon-fonts.scss';
 
+// стили кнопок действий с карточкой
+@use '../blocks/card-control/card-control.scss';
+@use '../blocks/card-control/__icon/card-control__icon.scss';
+@use '../blocks/card-control/__icon/_color_red/card-control__icon_color_red.scss';
+
 
 // стили хедера (обсудить рефакторинг)
 @use '../blocks/header/header.scss';
