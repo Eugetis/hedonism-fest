@@ -10,7 +10,7 @@
 
 @media all and (max-width: 767px) {
   .about__wrapper {
-    display: flex;
+    display: block;
     flex-direction: column;
   }
 }

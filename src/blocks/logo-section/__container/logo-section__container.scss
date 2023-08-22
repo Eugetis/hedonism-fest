@@ -1,8 +1,8 @@
-.logo-section {
+.logo-section__container {
   max-width: 1440px;
   min-height: 720px;
   
-  background-image: url('../../images/main-logo.svg');
+  background-image: url('../../../images/main-logo.svg');
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -16,8 +16,8 @@
 }
 
 @media all and (max-width: 767px) {
-  .logo-section {
-    background-image: url('../../images/main-logo-mobile.svg');
+  .logo-section__container {
+    background-image: url('../../../images/main-logo-mobile.svg');
     aspect-ratio: 1/2;
     background-position: top;
     background-size: contain;

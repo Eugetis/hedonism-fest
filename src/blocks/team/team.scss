@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 .team {
   max-width: 1440px;
   display: flex;
@@ -13,7 +15,6 @@
   .team {
     padding: 40px 20px;
     row-gap: 12px;
-    background-color: #EBE9ED;
-    ;
+    background-color: $light-secondary;    ;
   }
 }

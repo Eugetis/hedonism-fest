@@ -1,0 +1,11 @@
+@use 'mixins' as *;
+
+.team__title {
+  @include h2-desktop;
+}
+
+@media all and (max-width: 767px) {
+  .team__title {
+    @include h2-mobile;
+  }
+}

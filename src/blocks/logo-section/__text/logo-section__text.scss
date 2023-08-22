@@ -1,0 +1,11 @@
+@use 'mixins' as *;
+
+.logo-section__text {
+  @include text-desktop;
+}
+
+@media all and (max-width: 767px) {
+  .logo-section__text {
+    @include text-mobile;
+  }
+}

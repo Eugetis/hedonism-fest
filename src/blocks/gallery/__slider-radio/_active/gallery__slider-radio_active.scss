@@ -1,0 +1,5 @@
+@use 'variables' as *;
+
+.gallery__slider-radio_active {
+  background-color: $dark-primary;
+}

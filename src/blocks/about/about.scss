@@ -1,6 +1,8 @@
+@use 'variables' as *; 
+
 .about {
-  padding: 30px 40px 30px;
-  color: #3B3748;
+  padding: 30px 40px 80px;
+  color: $dark-primary;
   width: 100%;
   display: flex;
   flex-direction: column;
