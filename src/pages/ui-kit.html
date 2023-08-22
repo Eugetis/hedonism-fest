@@ -11,9 +11,7 @@
 </head>
 
 <body class="page">
-    <header>
-
-    </header>
+      <%= require('html-loader!./header.html').default %>
 
     <main>
       <h1>UI Kit проекта ГедонизмФест</h1>
@@ -298,9 +296,6 @@
 
     </main>
 
-    <footer>
-
-    </footer>
-
+    <%= require('html-loader!./footer.html').default %>
 </body>
 </html>
