@@ -1,5 +1,5 @@
-  <header style="position: fixed; width: 100%;">
   <header class="header">
+  <div class="header__wrapper">
     <div class="header__logo-and-location" style="z-index: 9999;">
       <a href="#"><img src="<%=require('../images/hedonism-fest-logo.png')%>" alt="Логотип" class="header__logo"></a>
       <form class="header__form">
@@ -32,7 +32,7 @@
     </div>
 
     <div class="header__slide-menu">
-      <div class="header__wrapper_2 header__wrapper_closed"> <!--для скрытия контента добавить header__wrapper_closed-->
+      <div class="header__wrapper_2"> <!--для скрытия контента добавить header__wrapper_closed-->
         <div class="header__wrapper_1">
           <form class="header__form-city">
             <p class="header__nav-title">Ваш город</p>
@@ -72,7 +72,7 @@
           </form>
         </div>
             </div>
-      <div class="header__popup-city-select header__popup-city-select_opened">
+      <div class="header__popup-city-select">
         <!---header__popup-city-select_opened--><!--Добавить с помощью JS для показа блока-->
         <button type="button" class="button__arrow-back">
           <span class="icon-arrow-left"></span>
@@ -100,7 +100,7 @@
       </div>
     </div>
 
-  </header>
+  </div>
 </header>
   <main>
     <div style="height: 100vh;"></div> <!--имитатор контента главной страницы-->

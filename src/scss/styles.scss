@@ -17,6 +17,7 @@
 
 // стили хедера (обсудить рефакторинг)
 @use '../blocks/header/header.scss';
+@use '../blocks/header/__wrapper/header__wrapper.scss';
 @use '../blocks/header/__logo-and-location/header__logo-and-location.scss';
 @use '../blocks/header/__logo/header__logo.scss';
 @use '../blocks/header/__city-select/header__city-select.scss';
