@@ -1,0 +1,13 @@
+@use 'mixins' as *;
+
+.event__data {
+  @include flex-center-row-mixin;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+@media screen and (min-width: 360px) and (max-width: 576px) {
+  .event__data {
+    margin-bottom: 16px;
+  }
+}

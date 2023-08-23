@@ -1,0 +1,15 @@
+@use 'variables' as *;
+
+.table-lines__url {
+  display: block;
+  color: $color-primary;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 360px) and (max-width: 576px) {
+  .table-lines__url {
+    font-weight: 400;
+    word-break: break-word;
+    max-width: 125px;
+  }
+}

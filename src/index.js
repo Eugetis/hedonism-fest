@@ -1,17 +1,33 @@
 import './scss/styles.scss';
+const modalButton = document.querySelector('.modal__button');
+const modalCloseButton = document.querySelector('.modal__container-close')
+const modal = document.querySelector('.modal');
+const modalContainer = document.querySelector('.modal__container');
+
+// Никита
+modalButton.addEventListener('click', (event) => {
+  modal.classList.add('modal_opened');
+  modalContainer.classList.add('modal__container_opened');
+})
+
+modalCloseButton.addEventListener('click', () => {
+  modal.classList.remove('modal_opened');
+  modalContainer.classList.remove('modal__container_opened');
+})
+// Никита -> end!
 
 console.log('hello');
 
 const sliderLine = document.querySelector('.gallery__slider-line');
 const sliderDots = document.querySelectorAll('.gallery__slider-radio');
 const sliderImages = document.querySelectorAll('.gallery__image');
-        
-// Переменные    
+
+// Переменные
 let sliderCount = 0;
 let sliderWidth;
 
 console.log(sliderImages);
-    
+
 
 window.addEventListener('resize', showSlide);
 
