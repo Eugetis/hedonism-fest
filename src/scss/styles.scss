@@ -240,3 +240,13 @@
 
 @use '../blocks/hidden/hidden.scss';
 @use '../blocks/for-participants/for-participants.scss';
+
+//page 404
+@use '../blocks/error-404/error-404.scss';
+@use '../blocks/error-404/__container/error-404__container.scss';
+@use '../blocks/error-404/__image/error-404__image.scss';
+@use '../blocks/error-404/__subtitle/error-404__subtitle.scss';
+@use '../blocks/error-404/__title/error-404__title.scss';
+
+//link
+@use '../blocks/link/link.scss';
