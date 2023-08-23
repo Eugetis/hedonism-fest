@@ -1,0 +1,12 @@
+.logo-section__image {
+  width: 243px;
+  height: 42px;
+  
+}
+
+@media all and (max-width: 767px) {
+  .logo-section__image {
+    width: 152px;
+    height: 20px;
+  }
+}

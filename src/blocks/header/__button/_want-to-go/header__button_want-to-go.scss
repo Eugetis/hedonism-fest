@@ -5,8 +5,9 @@
   align-items: center;
   margin-right: 32px;
   cursor: pointer;
+  z-index: 9999;
 }
 
 .header__button_want-to-go > span {
-  margin-left: 8px;
+  margin-right: 8px;
 }

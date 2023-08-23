@@ -1,0 +1,17 @@
+@use 'variables' as *;
+
+
+.about_type_event {
+  background-color: $color-accident;
+  padding: $pad-80 $pad-40;
+}
+
+
+
+@media all and (max-width: 767px) {
+  .about_type_event {
+    background-color: $warning-error;
+    color: $white;
+    padding: $pad-40 $pad-20;    
+  }
+}

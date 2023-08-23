@@ -1,0 +1,14 @@
+.gallery__slider-btn {
+  display: none;
+  
+}
+
+@media all and (max-width: 767px) {
+  .gallery__slider-btn {
+    display: flex;
+    column-gap: 12px;
+    margin-top: 12px;
+    align-self: center;
+    
+  }
+}

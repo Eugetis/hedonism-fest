@@ -1,10 +1,12 @@
+@use 'variables' as *;
+
 .button_type_filled {
-  background: var(--color-primary);
-  color: white;
+  background: $color-primary;
+  color: $white;
 }
 
 .button_type_filled:hover {
-  background: var(--hover);
-  color: white;
+  background: $hover;
+  color: $white;
   cursor: pointer;
 }

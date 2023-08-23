@@ -1,0 +1,20 @@
+.form__input{
+    border: 2px solid var(--dark-secondary, #96949E);
+    background: var(--white, #FFF);
+    border-radius: 22px;
+    padding: 12px 20px;
+    margin-bottom: 16px;
+}
+.form__input:last-child {
+    margin: 0;
+}
+.form__input:focus {
+    outline-color: var(--color-primary, #7100FF);
+}
+
+@media screen and (min-width: 1024px) {
+    .form__input{
+        
+        box-sizing: border-box;
+    }
+}

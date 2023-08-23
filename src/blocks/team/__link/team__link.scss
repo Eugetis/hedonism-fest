@@ -1,0 +1,10 @@
+.team__link {
+  width: 100%;
+  display: block;
+  transition: 0.5s;
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+

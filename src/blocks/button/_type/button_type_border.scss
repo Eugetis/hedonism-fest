@@ -1,10 +1,12 @@
+@use 'variables' as *;
+
 .button_type_border {
-  color: var(--dark-primary);
-  border: 2px solid var(--dark-primary);
+  color: $dark-primary;
+  border: $border-bold;
 }
 
 .button_type_border:hover {
-  border-color: var(--hover);
-  color: var(--hover);
+  border-color: $hover;
+  color: $hover;
   cursor: pointer;
 }

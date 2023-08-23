@@ -1,0 +1,10 @@
+.figures__image {
+  display: none;
+}
+
+@media all and (max-width: 767px) {
+  .figures__image {
+    display: block;
+    width: 100%;
+  }
+}

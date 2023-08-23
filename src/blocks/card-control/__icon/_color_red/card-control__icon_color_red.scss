@@ -1,0 +1,5 @@
+@use 'variables' as *;
+
+.card-control__icon_color_red {
+  color: $warning-error;
+}

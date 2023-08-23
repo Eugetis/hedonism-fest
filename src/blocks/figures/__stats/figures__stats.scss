@@ -1,0 +1,11 @@
+@use 'mixins' as *;
+
+.figures__stats {
+  @include h2-desktop;
+}
+
+@media all and (max-width: 767px) {
+  .figures__stats {
+    @include h3-desktop;
+  }
+}
