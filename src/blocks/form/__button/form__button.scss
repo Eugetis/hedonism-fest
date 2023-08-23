@@ -1,14 +1,14 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
 .form__button{
+    @include font-settings(16px, normal, 500, 20px);
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 12px 20px;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 20px;
-    border-radius: 22px;
-    border: 2px solid #3B3748;
+    border-radius: $radius-small;
+    border: $border-bold;
     background: none;
     cursor: pointer;
     width: 48%;
@@ -28,10 +28,9 @@
 
 @media screen and (min-width: 1024px) {
     .form__button{
+        @include font-settings(18px, normal, 500, 24px);
         min-width: fit-content;
         max-width: 204px;
-        font-size: 18px;
-        line-height: 24px;
         padding: 12px 24px;
         margin-left: 0;
     }

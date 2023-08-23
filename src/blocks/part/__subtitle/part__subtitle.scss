@@ -1,17 +1,15 @@
+@use 'mixins' as *;
+
 .part__subtitle{
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 36px;
+    @include font-settings(32px, normal, 500, 36px);
     margin: 0;
 }
 
 @media screen and (min-width: 1024px) {
     .part__subtitle{
-        font-size: 48px;
-        line-height: 52px;
+        @include font-settings(48px, normal, 500, 52px);
         letter-spacing: -0.48px;
-        padding: 0 0 24px 240px;
+        padding-bottom: 24px;
         width: 500px;
     }
 }

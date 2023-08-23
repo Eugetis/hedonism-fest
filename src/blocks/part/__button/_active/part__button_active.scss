@@ -1,4 +1,6 @@
+@use 'variables' as *;
+
 .part__button_active{
-    background: var(--color-primary, #7100FF);
-    color: var(--light-primary, #FCFAF7);
+    background: $color-primary;
+    color: $light-primary;
 }

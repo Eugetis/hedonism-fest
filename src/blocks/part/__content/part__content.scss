@@ -6,7 +6,7 @@
 
 @media screen and (min-width: 1024px) {
     .part__content{
-        flex-direction: row;
+        flex-direction: column;
         padding: 0 calc(50% - 472px);
         height: fit-content;
         justify-content: space-between;
