@@ -1,5 +1,7 @@
+@use 'variables' as *;
+
 .form__label{
-    color: var(--dark-secondary, #96949E);
+    color: $dark-secondary;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;

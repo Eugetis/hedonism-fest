@@ -17,7 +17,7 @@
     <main class="for-participants"> 
         <section class="part">
             <h1 class="part__title">стать участником</h1>
-            <div class="part__content hidden">
+            <div class="part__content">
                 <div class="part__heading">
                     <p class="part__subtitle">как участовать?</p>
                 </div>
@@ -62,9 +62,9 @@
                     <button type="button" class="part__button part__button_active">заполнить форму</button>
                 </div>
             </div>
-            <form class="form ">
+            <form class="form hidden">
         
-                <fieldset class="form__step " id="step-1">
+                <fieldset class="form__step hidden" id="step-1">
                     <div class="part__content">
                         <div class="part__heading">
                             <legend class="form__steps">шаг 1 из 4</legend>
@@ -214,9 +214,7 @@
                 
             </form>
         </section>
-    </main>
-
-    
+    </main>    
 
     <%= require('html-loader!./footer.html').default %>
 </body>

@@ -1,15 +1,13 @@
+@use 'mixins' as *;
+
 .part__list-item-heading{
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 28px;
+    @include font-settings(24px, normal, 500, 28px);
     margin: 0;
 }
 
 @media screen and (min-width: 1024px) {
     .part__list-item-heading{
-        font-size: 32px;
-        line-height: 36px;
+        @include font-settings(32px, normal, 500, 36px);
         letter-spacing: -0.32px;
     }
 }
