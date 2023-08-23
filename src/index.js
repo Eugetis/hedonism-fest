@@ -4,6 +4,7 @@ const modalCloseButton = document.querySelector('.modal__container-close')
 const modal = document.querySelector('.modal');
 const modalContainer = document.querySelector('.modal__container');
 
+// Никита
 modalButton.addEventListener('click', (event) => {
   modal.classList.add('modal_opened');
   modalContainer.classList.add('modal__container_opened');
@@ -13,6 +14,7 @@ modalCloseButton.addEventListener('click', () => {
   modal.classList.remove('modal_opened');
   modalContainer.classList.remove('modal__container_opened');
 })
+// Никита -> end!
 
 console.log('hello');
 
