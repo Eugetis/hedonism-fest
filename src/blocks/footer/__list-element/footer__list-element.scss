@@ -1,12 +1,6 @@
 .footer__list-element {
   display: flex;
-  align-items: center;
-  transition-property: opacity;
-  transition-duration: 0.5s;
-  &:hover {
-    opacity: 0.5;
-  }
-  
+  align-items: center;  
 }
 
 
