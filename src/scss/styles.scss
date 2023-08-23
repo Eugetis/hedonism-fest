@@ -200,6 +200,9 @@
 @use '../blocks/modal/modal.scss';
 @use '../blocks/modal/__img/modal__img.scss';
 @use '../blocks/modal/__container-close/modal__container-close.scss';
+@use '../blocks/modal/_opened/modal_opened.scss';
+@use '../blocks/modal/__container/modal__container.scss';
+@use '../blocks/modal/__container_opened/modal__container_opened.scss';
 
 // стили event в модалке
 @use '../blocks/event/event.scss';

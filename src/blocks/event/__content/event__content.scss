@@ -3,3 +3,23 @@
 .event__content {
   padding: $pad-40 $pad-32 $pad-40 $pad-40;
 }
+
+.event__content {
+  max-height: 620px;
+  overflow-y: scroll;
+}
+
+.event__content::-webkit-scrollbar {
+  width: 8px;
+  background-color: #EBE9ED;
+}
+
+.event__content::-webkit-scrollbar-track {
+  margin-right: 40px;
+  background-color: #EBE9ED;
+}
+
+.event__content::-webkit-scrollbar-thumb {
+  background-color: #96949E;
+  border-radius: 8px;
+}

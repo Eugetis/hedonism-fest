@@ -10,7 +10,6 @@
 <body class="page">
   <%= require('html-loader!./header.html').default %>
       <style>
-
         .page {
           position: relative;
           z-index: 0;
@@ -29,69 +28,6 @@
         .message {
           padding: 8px 40px;
           background-color: #FFD400;
-        }
-
-        .modal {
-          display: block;
-          align-items: center;
-          background: rgba(0, 0, 0, 0.80);
-          justify-content: center;
-          left: 0;
-          opacity: 0;
-          position: absolute;
-          z-index: 1;
-          right: 0;
-          top: 0;
-          transition: visibility 0s,opacity .2s linear;
-          visibility: hidden;
-          width: 100%;
-          height: 100%;
-        }
-
-        .modal_opened {
-          display: flex;
-          opacity: 1;
-          visibility: visible;
-          cursor: pointer;
-        }
-
-        .modal__container {
-          position: absolute;
-          top: 0;
-          right: -700px;
-          z-index: 2;
-          transition: right 10s ease-in-out;
-          box-sizing: border-box;
-          max-width: 700px;
-          max-height: 100vh;
-          display: flex;
-          flex-direction: column;
-          box-shadow: 0 4px 12px 0 rgba(59, 55, 72, 0.12);
-        }
-
-        .modal__container_opened {
-          right: 0;
-          cursor: default;
-        }
-
-        .event__content {
-          max-height: 620px;
-          overflow-y: scroll;
-        }
-
-        .event__content::-webkit-scrollbar {
-          width: 8px; /* Ширина скроллбара */
-          background-color: #EBE9ED;
-        }
-
-        .event__content::-webkit-scrollbar-track {
-          margin-right: 40px;
-          background-color: #EBE9ED;
-        }
-
-        .event__content::-webkit-scrollbar-thumb {
-          background-color: #96949E; /* Цвет ползунка */
-          border-radius: 5px; /* Закругление углов ползунка */
         }
 
       </style>
