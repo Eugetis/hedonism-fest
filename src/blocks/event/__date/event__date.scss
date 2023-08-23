@@ -1,0 +1,8 @@
+@use 'variables' as *;
+
+.event__date {
+  margin: 0;
+  font: $text-desktop;
+  line-height: 24px;
+  color: $dark-secondary;
+}

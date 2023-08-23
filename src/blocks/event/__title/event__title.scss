@@ -1,0 +1,10 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.event__title {
+  @include h3-desktop;
+  color: $dark-primary;
+  line-height: 36px;
+  margin: 0 0 16px 0;
+  max-width: 620px;
+}

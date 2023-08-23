@@ -1,0 +1,8 @@
+@use 'variables' as *;
+
+.event__type {
+  margin: 0;
+  font: $text-desktop;
+  line-height: 24px;
+  color: $dark-secondary;
+}

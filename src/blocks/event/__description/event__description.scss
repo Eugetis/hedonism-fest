@@ -1,0 +1,9 @@
+@use 'variables' as *;
+
+.event__description {
+  max-width: 620px;
+  margin: 0 0 32px 0;
+  font: $text-desktop;
+  line-height: 24px;
+  color: $dark-primary;
+}

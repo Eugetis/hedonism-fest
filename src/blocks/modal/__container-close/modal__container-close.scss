@@ -1,0 +1,7 @@
+@use 'variables' as *;
+
+.modal__container-close {
+  font: $icon-text-desktop;
+  padding: $pad-12;
+  border-radius: $radius-100;
+}

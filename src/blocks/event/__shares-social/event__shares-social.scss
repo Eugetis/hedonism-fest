@@ -1,0 +1,14 @@
+@use 'mixins' as *;
+
+.event__shares-social {
+  width: 48px;
+  height: 48px;
+}
+
+.event__shares-social_vk {
+  @include background('../../../images/vk-logo.svg')
+}
+
+.event__shares-social_tg {
+  @include background('../../../images/tg-logo.svg')
+}

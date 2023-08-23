@@ -1,0 +1,9 @@
+@use 'variables' as *;
+
+.event__shares-text {
+  margin: 0;
+  font: $text-desktop;
+  line-height: 24px;
+  color: $dark-primary;
+  margin-bottom: 16px;
+}

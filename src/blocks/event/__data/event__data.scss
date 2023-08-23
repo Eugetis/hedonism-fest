@@ -1,0 +1,7 @@
+@use 'mixins' as *;
+
+.event__data {
+  @include flex-center-row-mixin;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}

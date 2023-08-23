@@ -1,0 +1,6 @@
+@use 'mixins' as *;
+
+.event__shares-icons {
+  @include flex-center-row-mixin;
+  gap: 24px;
+}

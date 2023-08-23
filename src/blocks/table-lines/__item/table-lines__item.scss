@@ -6,7 +6,7 @@
   grid-template-columns: repeat(2, 1fr);
   box-sizing: border-box;
   padding: $pad-12;
-  max-height: 48px;
+  min-height: 48px;
   gap: 24px;
 }
 

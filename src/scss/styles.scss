@@ -116,6 +116,8 @@
 @use '../blocks/table-lines/__item/table-lines__item.scss';
 @use '../blocks/table-lines/__duration/table-lines__duration.scss';
 @use '../blocks/table-lines/__type/table-lines__type.scss';
+@use '../blocks/table-lines/__button/table-lines__button.scss';
+@use '../blocks/table-lines/__url/table-lines__url.scss';
 
 
 // стили блока пошаговой инструкции
@@ -132,6 +134,29 @@
 @use '../blocks/general-events/__scroll/general-events__scroll.scss';
 @use '../blocks/general-events/_cards/general-events_cards.scss';
 @use '../blocks/general-events/__container/general-events__container.scss';
+
+// стили модалки
+@use '../blocks/modal/modal.scss';
+@use '../blocks/modal/__img/modal__img.scss';
+@use '../blocks/modal/__container-close/modal__container-close.scss';
+
+// стили event в модалке
+@use '../blocks/event/event.scss';
+@use '../blocks/event/__content/event__content.scss';
+@use '../blocks/event/__data/event__data.scss';
+@use '../blocks/event/__actions/event__actions.scss';
+@use '../blocks/event/__button/event__button.scss';
+@use '../blocks/event/event-icon/event-icon.scss';
+@use '../blocks/event/__type/event__type.scss';
+@use '../blocks/event/__date/event__date.scss';
+@use '../blocks/event/__title/event__title.scss';
+@use '../blocks/event/__description/event__description.scss';
+@use '../blocks/event/__table/event__table.scss';
+@use '../blocks/event/__shares/event__shares.scss';
+@use '../blocks/event/__shares-text/event__shares-text.scss';
+@use '../blocks/event/__shares-icons/event__shares-icons.scss';
+@use '../blocks/event/__shares-social/event__shares-social.scss';
+@use '../blocks/event/__shares-items/event__shares-items.scss';
 
 // вспомогательно - для проверки scss
 @use '../blocks/example/example-var.scss';

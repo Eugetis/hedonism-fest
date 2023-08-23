@@ -1,0 +1,5 @@
+@use 'mixins' as *;
+
+.event__shares {
+  @include flex-column-mixin;
+}

@@ -1,0 +1,6 @@
+@use 'mixins' as *;
+
+.event__shares-items {
+  @include flex-center-row-mixin;
+  justify-content: space-between;
+}
