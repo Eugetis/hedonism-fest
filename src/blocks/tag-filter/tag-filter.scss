@@ -1,0 +1,36 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.tag-filter {
+  display: flex;
+  max-width: max-content;
+  max-height: 40px;
+  padding: $pad-8 $pad-16;
+  justify-content: center;
+  align-items: center;
+  gap: $gap-8;
+  border-radius: $radius-btn-100;
+  border: $border-thin;
+  box-sizing: border-box;
+  color: $dark-primary;
+  background: $light-primary;
+
+  @include text-desktop;
+  text-align: center;
+
+  transition: all .2s ease-in-out .2s;
+
+  &:hover {
+    color: $hover;
+    border: $border-hover;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .tag-filter {
+    max-height: 36px;
+    gap: $gap-4;
+    @include subtext-mobile;
+  }
+}
