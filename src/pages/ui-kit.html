@@ -162,7 +162,27 @@
 
       </div>
     </section>
+    
+    <section class="uikit-section">
+      <h2>Фильтр-тэги</h2>
+        <h2 class="test_title_text"></h2>
+        <!-- Иконки подключаются как content: из созданного вариативного шрифта -->
+        <!-- файл вариативного шрифта hf-icons-font.woff(2) -->
+        <!-- файл hf-icons-font-test_html отображает все иконки и их PUA коды-->
+        <!-- Варианты фильтров-тэгов вложены во флекс 3 столбца -->
+        <style> .test_tag-filter_flex { display: flex; gap: 20px; height: 60px; justify-items: center; align-items: center;}</style>
+        <div class="test_tag-filter_flex">
+          <p class="test_tag-filter_flex">default</p><p>selected &ldquo;все&ldquo;</p><p>selected кроме&ldquo;все&ldquo;</p>
+        </div>
+        <div class="test_tag-filter_flex">
 
+          <div class="tag-filter">фильтр</div>
+          <div class="tag-filter tag-filter_type_selected">все</div>
+          <div class="tag-filter tag-filter_type_selected">фильтр<span class="tag-filter__icon icon-cross-small"></span></div>
+
+        </div>
+
+    </section>
 
     <section class="uikit-section">
       <h2>Поля</h2>

@@ -1,0 +1,8 @@
+@use 'variables' as *;
+
+.tag-filter_type_selected {
+  background: $color-primary;
+  color: $light-primary;
+  pointer-events: none;
+  border: $border-none;
+}
