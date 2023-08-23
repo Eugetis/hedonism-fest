@@ -4,3 +4,10 @@
   @include flex-center-row-mixin;
   justify-content: space-between;
 }
+
+@media screen and (min-width: 360px) and (max-width: 576px) {
+  .event__shares-items {
+    @include flex-column-mixin;
+    gap: 12px;
+  }
+}

@@ -23,3 +23,10 @@
   background-color: #96949E;
   border-radius: 8px;
 }
+
+@media screen and (min-width: 360px) and (max-width: 576px) {
+  .event__content {
+    padding: $pad-20;
+    max-height: 382px;
+  }
+}

@@ -3,7 +3,7 @@
 .table-lines__item {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: max-content 1fr;
   box-sizing: border-box;
   padding: $pad-12;
   min-height: 48px;
@@ -17,7 +17,7 @@
 @media screen and (min-width: 360px) and (max-width: 576px) {
   .table-lines__item {
     padding: $pad-8;
-    max-height: 36px;
+    min-height: 36px;
     gap: 16px;
   }
 }

@@ -3,3 +3,9 @@
 .event__button {
   padding: $pad-12 $pad-89;
 }
+
+@media screen and (min-width: 360px) and (max-width: 576px) {
+  .event__button {
+    padding: $pad-12 $pad-20;
+  }
+}

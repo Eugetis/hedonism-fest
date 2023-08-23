@@ -7,3 +7,11 @@
   color: $dark-primary;
   margin-bottom: 16px;
 }
+
+@media screen and (min-width: 360px) and (max-width: 576px) {
+  .event__shares-text {
+    font: $text-mobile;
+    line-height: 20px;
+    margin-bottom: 12px;
+  }
+}

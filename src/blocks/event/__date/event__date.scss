@@ -6,3 +6,10 @@
   line-height: 24px;
   color: $dark-secondary;
 }
+
+@media screen and (min-width: 360px) and (max-width: 576px) {
+  .event__date {
+    font: $text-mobile;
+    line-height: 20px;
+  }
+}

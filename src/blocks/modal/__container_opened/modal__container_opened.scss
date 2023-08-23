@@ -3,3 +3,11 @@
   cursor: default;
   transition: right 0.5s ease;
 }
+
+@media screen and (min-width: 360px) and (max-width: 576px) {
+  .modal__container_opened {
+    right: unset;
+    bottom: 0;
+    transition: bottom 1.5s ease;
+  }
+}

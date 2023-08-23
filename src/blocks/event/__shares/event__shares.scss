@@ -3,3 +3,9 @@
 .event__shares {
   @include flex-column-mixin;
 }
+
+@media screen and (min-width: 360px) and (max-width: 576px) {
+  .event__shares {
+    align-items: center;
+  }
+}

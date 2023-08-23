@@ -9,3 +9,13 @@
   box-shadow: $drop-shadow;
   transition: right 0.5s ease;
 }
+
+@media screen and (min-width: 360px) and (max-width: 576px) {
+  .modal__container {
+    @include position-absolute-mixin(false, 50%, -100%, false, false);
+    max-width: 360px;
+    height: auto;
+    transform: translateX(-50%);
+    transition: bottom 1.5s ease;
+  }
+}

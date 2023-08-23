@@ -8,4 +8,11 @@
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.5s ease;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 360px) and (max-width: 576px) {
+  .modal {
+    transition: opacity 1.5s ease;
+  }
 }

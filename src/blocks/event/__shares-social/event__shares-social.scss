@@ -17,3 +17,18 @@
 .event__shares-social_tg {
   @include background('../../../images/tg-logo.svg')
 }
+
+@media screen and (min-width: 360px) and (max-width: 576px) {
+  .event__shares-social {
+    width: 32px;
+    height: 32px;
+  }
+
+  .event__shares-social_vk {
+    @include background('../../../images/vk-logo-mobile.svg')
+  }
+
+  .event__shares-social_tg {
+    @include background('../../../images/tg-logo-mobile.svg')
+  }
+}
