@@ -1,11 +1,11 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
 .modal__container {
-  display: flex;
-  flex-direction: column;
+  @include flex-column-mixin;
+  @include position-absolute-mixin(0, false, false, -700px, false);
   box-sizing: border-box;
   max-width: 700px;
-  position: absolute;
-  top: 0;
-  right: -700px;
-  box-shadow: 0 4px 12px 0 rgba(59, 55, 72, 0.12);
+  box-shadow: $drop-shadow;
   transition: right 0.5s ease;
 }
