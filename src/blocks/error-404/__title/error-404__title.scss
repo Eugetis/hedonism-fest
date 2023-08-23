@@ -1,0 +1,11 @@
+@use 'mixins' as *;
+
+.error-404__title {
+  @include h2-desktop;
+}
+
+@media all and (max-width: 767px) {
+  .error-404__title {
+    @include h2-mobile;
+  }
+}

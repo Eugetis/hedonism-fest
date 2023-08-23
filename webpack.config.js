@@ -99,6 +99,10 @@ module.exports = {
       template: path.resolve(__dirname, "src", "pages", "header.html"),
       filename: 'header.html'
     }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src", "pages", "modal.html"),
+      filename: 'modal.html'
+    }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),
   ]

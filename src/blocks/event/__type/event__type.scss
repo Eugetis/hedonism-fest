@@ -1,0 +1,15 @@
+@use 'variables' as *;
+
+.event__type {
+  margin: 0;
+  font: $text-desktop;
+  line-height: 24px;
+  color: $dark-secondary;
+}
+
+@media screen and (min-width: 360px) and (max-width: 576px) {
+  .event__type {
+    font: $text-mobile;
+    line-height: 20px;
+  }
+}
