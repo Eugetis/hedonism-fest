@@ -33,6 +33,14 @@
 @use '../blocks/floating-button/floating-button.scss';
 @use '../blocks/floating-button/__icon/floating-button__icon.scss';
 
+// стили amount controls
+@use '../blocks/amount-controls/amount-controls.scss';
+@use '../blocks/amount-controls/__icon/amount-controls__icon.scss';
+@use '../blocks/amount-controls/__minus-button/amount-controls__minus-button.scss';
+@use '../blocks/amount-controls/__plus-button/amount-controls__plus-button.scss';
+@use '../blocks/amount-controls/__input/amount-controls__input.scss';
+
+
 // стили хедера (обсудить рефакторинг)
 @use '../blocks/header/header.scss';
 @use '../blocks/header/__wrapper/header__wrapper.scss';

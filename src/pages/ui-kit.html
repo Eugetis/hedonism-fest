@@ -206,10 +206,20 @@
 
         </div>
 
-        <p class="test_controllers_flex">amount controller</p>
+        <p class="test_controllers_flex">amount controller (Desktop/Mobile)</p>
         <div class="test_controllers_flex">
 
+          <!-- контейнер контроллера amount controls-->
+          <div class="amount-controls">
+            <button class="amount-controls amount-controls__minus-button"><span class="amount-controls__icon icon-minus-small"></span></button>
+            <input id="amount-input" name="amount-input" placeholder="1" required disabled
+                class="amount-controls amount-controls__input" type="text" inputmode="numeric" value="1">
+            </input>
+            <button class="amount-controls amount-controls__plus-button"><span class="amount-controls__icon icon-plus-small"></span></button>
+          </div>
+
         </div>
+        
     </section>
 
     <section class="uikit-section">
