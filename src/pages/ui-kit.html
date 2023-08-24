@@ -191,9 +191,21 @@
         <!-- файл вариативного шрифта hf-icons-font.woff(2) -->
         <!-- файл hf-icons-font-test_html отображает все иконки и их PUA коды-->
         <!-- Варианты фильтров-тэгов вложены во флекс 3 столбца -->
-        <style> .test_controllers_flex { display: flex; margin:0; gap: 20px; height: 60px; justify-items: center; align-items: center;}</style>
+        <style> .test_controllers_flex { display: flex; margin:0; gap:  20px; height: 60px; justify-items: center; align-items: center;}</style>
         <div class="test_controllers_flex">
           <p class="test_controllers_flex">Map pointer</p><p>Map zoom</p>
+        </div>
+
+        <div class="test_controllers_flex">
+          <!-- map pointer -->
+          <button class="map-pointer"><span class="map-pointer__icon icon-pointer"></span></button>
+
+          <!-- контейнер контроллера map zoom -->
+          <div class="map-zoom">
+            <button class="map-zoom__in-button"><span class="map-zoom__icon icon-plus-small"></span></button>
+            <button class="map-zoom__out-button"><span class="map-zoom__icon icon-minus-small"></span></button>
+          </div>
+          
         </div>
 
         <p class="test_controllers_flex">float buttons</p>
@@ -219,7 +231,7 @@
           </div>
 
         </div>
-        
+
     </section>
 
     <section class="uikit-section">
