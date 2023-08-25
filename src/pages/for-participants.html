@@ -14,59 +14,59 @@
 <body class="page">
     <%= require('html-loader!./header.html').default %>
 
-    <main class="for-participants"> 
-        <section class="part">
-            <h1 class="part__title">стать участником</h1>
-            <div class="part__content hidden">
-                <div class="part__heading">
-                    <p class="part__subtitle">как участовать?</p>
+    <main class="participants"> 
+        <section class="participants__content">
+            <h1 class="participants__title">стать участником</h1>
+            <div class="participants__container participants_hidden">
+                <div class="participants__heading">
+                    <p class="participants__subtitle">как участовать?</p>
                 </div>
-                <ul class="part__list">
-                    <li class="part__list-item">
-                        <div class="part__list-item-heading-group">
-                            <h3 class="part__list-item-heading">1</h3>
-                            <h3 class="part__list-item-heading part__list-item-heading_center">выбор категории</h3>
+                <ul class="participants__list">
+                    <li class="participants__list-item">
+                        <div class="participants__list-item-heading-group">
+                            <h3 class="participants__list-item-heading">1</h3>
+                            <h3 class="participants__list-item-heading participants__list-item-heading_center">выбор категории</h3>
                         </div>
-                        <p class="part__list-item-text">Определите, как вы хотите поддержать акцию: продавать напитки, блюда, провести мастер-класс или каким-то другим способом</p>
+                        <p class="participants__list-item-text">Определите, как вы хотите поддержать акцию: продавать напитки, блюда, провести мастер-класс или каким-то другим способом</p>
                     </li>
-                    <li class="part__list-item">
-                        <div class="part__list-item-heading-group">
-                            <h3 class="part__list-item-heading">2</h3>
-                            <h3 class="part__list-item-heading part__list-item-heading_center">фото и описание</h3>
+                    <li class="participants__list-item">
+                        <div class="participants__list-item-heading-group">
+                            <h3 class="participants__list-item-heading">2</h3>
+                            <h3 class="participants__list-item-heading participants__list-item-heading_center">фото и описание</h3>
                         </div>
-                        <p class="part__list-item-text">Подготовьте описание и фото вашего заведения. Это нужно для создания карточки в нашем каталоге событий</p>
+                        <p class="participants__list-item-text">Подготовьте описание и фото вашего заведения. Это нужно для создания карточки в нашем каталоге событий</p>
                     </li>
-                    <li class="part__list-item">
-                        <div class="part__list-item-heading-group">
-                            <h3 class="part__list-item-heading">3</h3>
-                            <h3 class="part__list-item-heading part__list-item-heading_center">ссылки и соцсети</h3>
+                    <li class="participants__list-item">
+                        <div class="participants__list-item-heading-group">
+                            <h3 class="participants__list-item-heading">3</h3>
+                            <h3 class="participants__list-item-heading participants__list-item-heading_center">ссылки и соцсети</h3>
                         </div>
-                        <p class="part__list-item-text">Опубликуйте ссылку на вашу карточку в соцсетях, расскажите у себя на сайте, чтобы больше людей узнали о вашем участии</p>
+                        <p class="participants__list-item-text">Опубликуйте ссылку на вашу карточку в соцсетях, расскажите у себя на сайте, чтобы больше людей узнали о вашем участии</p>
                     </li>
-                    <li class="part__list-item">
-                        <div class="part__list-item-heading-group">
-                            <h3 class="part__list-item-heading">4</h3>
-                            <h3 class="part__list-item-heading part__list-item-heading_center">координатор</h3>
+                    <li class="participants__list-item">
+                        <div class="participants__list-item-heading-group">
+                            <h3 class="participants__list-item-heading">4</h3>
+                            <h3 class="participants__list-item-heading participants__list-item-heading_center">координатор</h3>
                         </div>
-                        <p class="part__list-item-text">Далее с вами свяжется координатор акции, который будет помогать по любым вопросам до и во время акции</p>
+                        <p class="participants__list-item-text">Далее с вами свяжется координатор акции, который будет помогать по любым вопросам до и во время акции</p>
                     </li>
-                    <li class="part__list-item">
-                        <div class="part__list-item-heading-group">
-                            <h3 class="part__list-item-heading">5</h3>
-                            <h3 class="part__list-item-heading part__list-item-heading_center">перевод средств</h3>
+                    <li class="participants__list-item">
+                        <div class="participants__list-item-heading-group">
+                            <h3 class="participants__list-item-heading">5</h3>
+                            <h3 class="participants__list-item-heading participants__list-item-heading_center">перевод средств</h3>
                         </div>
-                        <p class="part__list-item-text">После акции переведите собранные пожертвования в Ночлежку через сайт или по безналичному расчету</p>
+                        <p class="participants__list-item-text">После акции переведите собранные пожертвования в Ночлежку через сайт или по безналичному расчету</p>
                     </li>
                 </ul>
-                <div class="part__buttons-block">
-                    <button type="button" class="part__button part__button_active">заполнить форму</button>
+                <div class="participants__buttons-block">
+                    <button type="button" class="participants__button participants__button_active">заполнить форму</button>
                 </div>
             </div>
-            <form class="form ">
+            <form class="form">
         
-                <fieldset class="form__step " id="step-1">
-                    <div class="part__content">
-                        <div class="part__heading">
+                <fieldset class="form__step participants_hidden" id="step-1">
+                    <div class="form__container">
+                        <div class="form__heading">
                             <legend class="form__steps">шаг 1 из 4</legend>
                             <legend class="form__title">выберите категорию</legend>
                         </div>
@@ -84,15 +84,15 @@
                             <label class="form__label" for="pref4">другое</label>
                         </div>
                     </div>
-                    <div class="part__buttons-block">
+                    <div class="participants__buttons-block">
                         <input type="button" class="form__button" value="отмена">
                         <input type="button" class="form__button form__button_active" value="продолжить">
                     </div>
                 </fieldset>
         
-                <fieldset class="form__step hidden" id="step-2">
-                    <div class="part__content">
-                        <div class="part__heading">
+                <fieldset class="form__step participants_hidden" id="step-2">
+                    <div class="form__container">
+                        <div class="form__heading">
                             <legend class="form__steps">шаг 2 из 4</legend>
                             <legend class="form__title">заполните форму</legend>
                             <p class="form__list-description">Для участия вы можете выбрать:</p>
@@ -109,7 +109,7 @@
                             </ul>
                         </div>
                         <div class="form__right-column">
-                            <div class="form__options part__heading">
+                            <div class="form__options form__heading">
                                 <input type="radio" id="pref1" class="form__input" name="preference-checked" value="кафе/бар/ресторан" checked>
                                 <label class="form__label" for="preference-checked">кафе/бар/ресторан</label>
                             </div>
@@ -129,16 +129,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="part__buttons-block">
+                    <div class="participants__buttons-block">
                         <input type="button" class="form__button" value="назад">
                         <input type="button" class="form__button" value="продолжить">
                     </div>
                 </fieldset>
         
-                <fieldset class="form__step hidden" id="step-3">
-                    <div class="part__content">
-                        <div class="part__heading">
-                          <legend class="form__steps">шаг 1 из 4</legend>
+                <fieldset class="form__step participants_hidden" id="step-3">
+                    <div class="form__container">
+                        <div class="form__heading">
+                          <legend class="form__steps">шаг 3 из 4</legend>
                           <legend class="form__title">укажите контакты и часы работы</legend>
                           <p class="form__list-description">Эти данные появятся в описании карточки вашего мероприятия в нашем каталоге событий</p>
                         </div>
@@ -165,15 +165,15 @@
                             </div>
                         </div>
                     </div>
-                    <div class="part__buttons-block">
+                    <div class="participants__buttons-block">
                         <input type="button" class="form__button" value="назад">
                         <input type="button" class="form__button" value="продолжить">
                     </div>
                 </fieldset>
         
-                <fieldset class="form__step hidden" id="step-4">
-                    <div class="part__content">
-                        <div class="part__heading">
+                <fieldset class="form__step participants_hidden" id="step-4">
+                    <div class="form__container">
+                        <div class="form__heading">
                           <legend class="form__steps">шаг 4 из 4</legend>
                           <legend class="form__title">добавление фото</legend>
                           <p class="form__list-description">Как правило, профессиональные фото выглядят более привлекательно.</p>
@@ -206,7 +206,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="part__buttons-block section-padding">
+                    <div class="participants__buttons-block">
                         <input type="button" class="form__button" value="назад">
                         <input type="button" class="form__button" value="завершить">
                     </div>

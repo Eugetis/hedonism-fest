@@ -140,6 +140,8 @@
 
 /* Form */
 @use '../blocks/form/form.scss';
+@use '../blocks/form/__container/form__container.scss';
+@use '../blocks/form/__heading/form__heading.scss';
 @use '../blocks/form/__step/form__step.scss';
 @use '../blocks/form/__steps/form__steps.scss';
 @use '../blocks/form/__title/form__title.scss';
@@ -158,21 +160,20 @@
 @use '../blocks/form/__button/_type/button_type_long.scss';
 
 /* Forms part */
-@use '../blocks/part/part.scss';
-@use '../blocks/part/__button/part__button.scss';
-@use '../blocks/part/__button/_active/part__button_active.scss';
-@use '../blocks/part/__buttons-block/part__buttons-block.scss';
-@use '../blocks/part/__content/part__content.scss';
-@use '../blocks/part/__heading/part__heading.scss';
-@use '../blocks/part/__title/part__title.scss';
-@use '../blocks/part/__title/_hidden/part__title_hidden.scss';
-@use '../blocks/part/__subtitle/part__subtitle.scss';
-@use '../blocks/part/__list/part__list.scss';
-@use '../blocks/part/__list-item/part__list-item.scss';
-@use '../blocks/part/__list-item-heading-group/part__list-item-heading-group.scss';
-@use '../blocks/part/__list-item-heading/part__list-item-heading.scss';
-@use '../blocks/part/__list-item-heading/_center/part__list-item-heading_center.scss';
-@use '../blocks/part/__list-item-text/part__list-item-text.scss';
-
-@use '../blocks/hidden/hidden.scss';
-@use '../blocks/for-participants/for-participants.scss';
+@use '../blocks/participants/participants.scss';
+@use '../blocks/participants/__content/participants__content.scss';
+@use '../blocks/participants/__title/participants__title.scss';
+@use '../blocks/participants/__title/_hidden/participants__title_hidden.scss';
+@use '../blocks/participants/__container/participants__container.scss';
+@use '../blocks/participants/__heading/participants__heading.scss';
+@use '../blocks/participants/__subtitle/participants__subtitle.scss';
+@use '../blocks/participants/__list/participants__list.scss';
+@use '../blocks/participants/__list-item/participants__list-item.scss';
+@use '../blocks/participants/__list-item-heading/participants__list-item-heading.scss';
+@use '../blocks/participants/__list-item-heading/_center/participants__list-item-heading_center.scss';
+@use '../blocks/participants/__list-item-heading-group/participants__list-item-heading-group.scss';
+@use '../blocks/participants/__list-item-text/participants__list-item-text.scss';
+@use '../blocks/participants/__buttons-block/participants__buttons-block.scss';
+@use '../blocks/participants/__button/participants__button.scss';
+@use '../blocks/participants/__button/_active/participants__button_active.scss';
+@use '../blocks/participants/_hidden/participants_hidden.scss';

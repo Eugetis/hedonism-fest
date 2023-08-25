@@ -1,0 +1,14 @@
+.form__container {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+}
+
+@media screen and (min-width: 1024px) {
+    .form__container{
+        height: fit-content;
+        justify-content: space-between;
+        flex-direction: row;
+        padding: 0 calc(50% - 472px);
+    }
+}

@@ -1,0 +1,41 @@
+.participants__button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    border-radius: 22px;
+    border: 2px solid #3B3748;
+    background: none;
+    cursor: pointer;
+    width: 100%;
+    transition: .3s;
+}
+
+@media(hover:hover){
+    .participants__button:hover{
+        opacity: .5;
+    }
+}
+@media(hover:none){
+    .participants__button:active{
+        opacity: .5;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .participants__button{
+        min-width: fit-content;
+        max-width: 204px;
+        font-size: 18px;
+        line-height: 24px;
+        padding: 12px 24px;
+        margin-left: 0;
+    }
+    .participants__button:first-of-type{
+        margin-right: 12px;
+    }
+}
