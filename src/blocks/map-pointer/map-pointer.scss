@@ -1,16 +1,16 @@
 
 @use 'variables' as *;
 
-.floating-button {
+.map-pointer {
   display: flex;
   max-width: 44px;
   max-height: 44px;
   padding: $pad-12;
   justify-content: center;
   align-items: center;
-  border: $color-primary;
+  border: $border-none;
   border-radius: $radius-btn-100;
-  background: $color-primary;
+  background: $light-primary;
   box-shadow: $drop-shadow;
   cursor: pointer;
 }
