@@ -1,0 +1,14 @@
+.additional-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 160px 40px;
+}
+
+@media all and (max-width: 767px) {
+  .additional-section {
+    padding: 40px 20px;
+  }
+}
