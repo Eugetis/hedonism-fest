@@ -1,0 +1,11 @@
+@use 'variables' as *;
+
+.tag-filter__icon {
+  font: $icon-text-desktop;
+}
+
+@media screen and (max-width: 576px) {
+  .tag-filter__icon {
+    font: $icon-text-mobile;
+  }
+}

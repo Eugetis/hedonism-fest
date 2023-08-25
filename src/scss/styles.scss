@@ -3,24 +3,61 @@
 @use '../blocks/page/page.scss';
 @use '../blocks/uikit-section/uikit-section.scss';
 
+// стили html
+@use '../blocks/html/html.scss';
+
 
 // стили кнопки
 @use '../blocks/button/button.scss';
 @use '../blocks/button/__icon/button__icon.scss';
 @use '../blocks/button/_type/button_type_filled.scss';
 @use '../blocks/button/_type/button_type_border.scss';
+@use '../blocks/button/_type/button_type_white-mobile.scss';
 
 
 // стиль иконочного шрифта
 @use '../blocks/icon-fonts/icon-fonts.scss';
 
+// стили кнопок действий с карточкой
+@use '../blocks/card-control/card-control.scss';
+@use '../blocks/card-control/__icon/card-control__icon.scss';
+@use '../blocks/card-control/__icon/_color_red/card-control__icon_color_red.scss';
+
+// стили фильтр-тэгов
+@use '../blocks/tag-filter/tag-filter.scss';
+@use '../blocks/tag-filter/__icon/tag-filter__icon.scss';
+@use '../blocks/tag-filter/_type/tag-filter_type_selected.scss';
+
+// стили контроллеров
+// стили map pointer
+@use '../blocks/map-pointer/map-pointer.scss';
+@use '../blocks/map-pointer/__icon/map-pointer__icon.scss';
+
+// стили zoom contoller
+@use '../blocks/map-zoom/map-zoom.scss';
+@use '../blocks/map-zoom/__icon/map-zoom__icon.scss';
+@use '../blocks/map-zoom/__in-button/map-zoom__in-button.scss';
+@use '../blocks/map-zoom/__out-button/map-zoom__out-button.scss';
+
+// стили floating button
+@use '../blocks/floating-button/floating-button.scss';
+@use '../blocks/floating-button/__icon/floating-button__icon.scss';
+
+// стили amount controls
+@use '../blocks/amount-controls/amount-controls.scss';
+@use '../blocks/amount-controls/__icon/amount-controls__icon.scss';
+@use '../blocks/amount-controls/__minus-button/amount-controls__minus-button.scss';
+@use '../blocks/amount-controls/__plus-button/amount-controls__plus-button.scss';
+@use '../blocks/amount-controls/__input/amount-controls__input.scss';
 
 // стили хедера (обсудить рефакторинг)
 @use '../blocks/header/header.scss';
+@use '../blocks/header/__wrapper/header__wrapper.scss';
 @use '../blocks/header/__logo-and-location/header__logo-and-location.scss';
 @use '../blocks/header/__logo/header__logo.scss';
 @use '../blocks/header/__city-select/header__city-select.scss';
 @use '../blocks/header/__form/header__form.scss';
+@use '../blocks/header/__menu/header__menu.scss';
 @use '../blocks/header/__menu-link/header__menu-link.scss';
 @use '../blocks/header/__buttons/header__buttons.scss';
 @use '../blocks/header/__buttons/_mobile/header__buttons_mobile.scss';
@@ -28,32 +65,27 @@
 @use '../blocks/header/__button/_donate/header__button_donate.scss';
 @use '../blocks/header/__button/_donate-mobile/header__button_donate-mobile.scss';
 @use '../blocks/header/__button/_want-to-go/header__button_want-to-go.scss';
-@use '../blocks/header-mobile/header-mobile.scss';
-@use '../blocks/header-mobile/__container/header-mobile__container.scss';
-@use '../blocks/header-mobile/__nav-container/header-mobile__nav-container.scss';
-@use '../blocks/header-mobile/__checkbox/header-mobile__checkbox.scss';
-@use '../blocks/header-mobile/__logo/header-mobile__logo.scss';
-@use '../blocks/header-mobile/__hamburger-lines/header-mobile__hamburger-lines.scss';
-@use '../blocks/header-mobile/__hamburger-line/header-mobile__hamburger-line.scss';
-@use '../blocks/header-mobile/__hamburger-line/_line1/header-mobile__hamburger-line_line1.scss';
-@use '../blocks/header-mobile/__hamburger-line/_line2/header-mobile__hamburger-line_line2.scss';
-@use '../blocks/header-mobile/__hamburger-line/_line3/header-mobile__hamburger-line_line3.scss';
-@use '../blocks/header-mobile-active/header-mobile-active.scss';
-@use '../blocks/header-mobile-active/header-mobile-active__top/header-mobile-active__top.scss';
-@use '../blocks/header-mobile-active/__wrapper/_1/header-mobile-active__wrapper_1.scss';
-@use '../blocks/header-mobile-active/__wrapper/_2/header-mobile-active__wrapper_2.scss';
-@use '../blocks/header-mobile-active/__wrapper/_3/header-mobile-active__wrapper_3.scss';
-@use '../blocks/header-mobile-active/header-mobile-active__form/header-mobile-active__form.scss';
-@use '../blocks/header-mobile-active/__nav-title/header-mobile-active__nav-title.scss';
-@use '../blocks/header-mobile-active/__text/header-mobile-active__text.scss';
-@use '../blocks/header-mobile-active/__menu-items/header-mobile-active__menu-items.scss';
-@use '../blocks/header-mobile-active/__city-option/header-mobile-active__city-option.scss';
-@use '../blocks/header-mobile-active/__city-select/header-mobile-active__city-select.scss';
-@use '../blocks/header-mobile-active/__city-button/header-mobile-active__city-button.scss';
-@use '../blocks/header-mobile-active/__popup-city-select/header-mobile-active__popup-city-select.scss';
-@use '../blocks/header-mobile-active/__popup-city-select/_opened/header-mobile-active__popup-city-select_opened.scss';
+@use '../blocks/header/__hamburger-container/header__hamburger-container.scss';
+@use '../blocks/header/__hamburger-checkbox/header__hamburger-checkbox.scss';
+@use '../blocks/header/__hamburger-lines/header__hamburger-lines.scss';
+@use '../blocks/header/__hamburger-line/header__hamburger-line.scss';
+@use '../blocks/header/__hamburger-line/_line1/header__hamburger-line_line1.scss';
+@use '../blocks/header/__hamburger-line/_line2/header__hamburger-line_line2.scss';
+@use '../blocks/header/__hamburger-line/_line3/header__hamburger-line_line3.scss';
+@use '../blocks/header/__slide-menu/header__slide-menu.scss';
+@use '../blocks/header/__wrapper/_1/header__wrapper_1.scss';
+@use '../blocks/header/__wrapper/_2/header__wrapper_2.scss';
+@use '../blocks/header/__wrapper/_3/header__wrapper_3.scss';
+@use '../blocks/header/__wrapper/_closed/header__wrapper_closed.scss';
+@use '../blocks/header/__form-city/header__form-city.scss';
+@use '../blocks/header/__nav-title/header__nav-title.scss';
+@use '../blocks/header/__subtext/header__subtext.scss';
+@use '../blocks/header/__slide-menu-links/header__slide-menu-links.scss';
+@use '../blocks/header/__button/_city-selected/header__button_city-selected.scss';
+@use '../blocks/header/__popup-city-select/header__popup-city-select.scss';
+@use '../blocks/header/__popup-city-select/_opened/header__popup-city-select_opened.scss';
 @use '../blocks/button/arrow-back/button__arrow-back.scss';
-@use '../blocks/header-mobile-active/__input-city-select/header-mobile-active__input-city-select.scss';
+@use '../blocks/header/__input-city-select/header__input-city-select.scss';
 
 
 // стили футера
@@ -116,6 +148,8 @@
 @use '../blocks/table-lines/__item/table-lines__item.scss';
 @use '../blocks/table-lines/__duration/table-lines__duration.scss';
 @use '../blocks/table-lines/__type/table-lines__type.scss';
+@use '../blocks/table-lines/__button/table-lines__button.scss';
+@use '../blocks/table-lines/__url/table-lines__url.scss';
 
 
 // стили блока пошаговой инструкции
@@ -125,6 +159,61 @@
 @use '../blocks/question-block/__text/question-block__text.scss';
 @use '../blocks/question-block/__title/question-block__title.scss';
 
+
+//
+@use '../blocks/content/content.scss';
+
+//index.html sections
+//logo section
+@use '../blocks/logo-section/logo-section.scss';
+@use '../blocks/logo-section/__link/logo-section__link.scss';
+@use '../blocks/logo-section/__text/logo-section__text.scss';
+@use '../blocks/logo-section/__container/logo-section__container.scss';
+@use '../blocks/logo-section/__image/logo-section__image.scss';
+@use '../blocks/logo-section/__button/logo-section__button.scss';
+@use '../blocks/logo-section/__header/logo-section__header.scss';
+//about section
+@use '../blocks/about/about.scss';
+@use '../blocks/about/__title/about__title.scss';
+@use '../blocks/about/__container/about__container.scss';
+@use '../blocks/about/__text/about__text.scss';
+@use '../blocks/about/__wrapper/about__wrapper.scss';
+
+@use '../blocks/about/_type/about_type_event.scss';
+//figures section
+@use '../blocks/figures/figures.scss';
+@use '../blocks/figures/__container/figures__container.scss';
+@use '../blocks/figures/__image/figures__image.scss';
+@use '../blocks/figures/__stats/figures__stats.scss';
+@use '../blocks/figures/__text-container/figures__text-container.scss';
+@use '../blocks/figures/__text/figures__text.scss';
+@use '../blocks/figures/__title/figures__title.scss';
+
+
+//gallery section
+@use '../blocks/gallery/gallery.scss';
+@use '../blocks/gallery/__title/gallery__title.scss';
+@use '../blocks/gallery/__subtitle/gallery__subtitle.scss';
+@use '../blocks/gallery/__container/gallery__container.scss';
+@use '../blocks/gallery/__image/gallery__image.scss';
+
+@use '../blocks/gallery/__slider/gallery__slider.scss';
+@use '../blocks/gallery/__slider-line/gallery__slider-line.scss';
+@use '../blocks/gallery/__slider-btn/gallery__slider-btn.scss';
+@use '../blocks/gallery/__slider-radio/gallery__slider-radio.scss';
+@use '../blocks/gallery/__slider-radio/_active/gallery__slider-radio_active.scss';
+//team section
+@use '../blocks/team/team.scss';
+@use '../blocks/team/__title/team__title.scss';
+@use '../blocks/team/__list/team__list.scss';
+@use '../blocks/team/__link/team__link.scss';
+
+@use '../blocks/team/__link/_type/team__link_type_gallery.scss';
+@use '../blocks/team/__link/_type/team__link_type_market.scss';
+@use '../blocks/team/__link/_type/team__link_type_surf.scss';
+
+
+
 // стили блока секции карточек со скроллом
 @use '../blocks/general-events/general-events.scss';
 @use '../blocks/general-events/__title/general-events__title.scss';
@@ -133,10 +222,38 @@
 @use '../blocks/general-events/_cards/general-events_cards.scss';
 @use '../blocks/general-events/__container/general-events__container.scss';
 
+// стили модалки
+@use '../blocks/modal/modal.scss';
+@use '../blocks/modal/__img/modal__img.scss';
+@use '../blocks/modal/__container-close/modal__container-close.scss';
+@use '../blocks/modal/_opened/modal_opened.scss';
+@use '../blocks/modal/__container/modal__container.scss';
+@use '../blocks/modal/__container_opened/modal__container_opened.scss';
+
+// стили event в модалке
+@use '../blocks/event/event.scss';
+@use '../blocks/event/__content/event__content.scss';
+@use '../blocks/event/__data/event__data.scss';
+@use '../blocks/event/__actions/event__actions.scss';
+@use '../blocks/event/__button/event__button.scss';
+@use '../blocks/event/event-icon/event-icon.scss';
+@use '../blocks/event/__type/event__type.scss';
+@use '../blocks/event/__date/event__date.scss';
+@use '../blocks/event/__title/event__title.scss';
+@use '../blocks/event/__description/event__description.scss';
+@use '../blocks/event/__table/event__table.scss';
+@use '../blocks/event/__shares/event__shares.scss';
+@use '../blocks/event/__shares-text/event__shares-text.scss';
+@use '../blocks/event/__shares-icons/event__shares-icons.scss';
+@use '../blocks/event/__shares-social/event__shares-social.scss';
+@use '../blocks/event/__shares-items/event__shares-items.scss';
+
 // вспомогательно - для проверки scss
 @use '../blocks/example/example-var.scss';
 @use '../blocks/example/example-mixin.scss';
 @use '../blocks/example/example-h1.scss';
+
+
 
 /* Form */
 @use '../blocks/form/form.scss';
@@ -160,6 +277,7 @@
 @use '../blocks/form/__button/_type/button_type_long.scss';
 
 /* Forms part */
+<<<<<<< HEAD
 @use '../blocks/participants/participants.scss';
 @use '../blocks/participants/__content/participants__content.scss';
 @use '../blocks/participants/__title/participants__title.scss';
@@ -177,3 +295,33 @@
 @use '../blocks/participants/__button/participants__button.scss';
 @use '../blocks/participants/__button/_active/participants__button_active.scss';
 @use '../blocks/participants/_hidden/participants_hidden.scss';
+=======
+@use '../blocks/part/part.scss';
+@use '../blocks/part/__button/part__button.scss';
+@use '../blocks/part/__button/_active/part__button_active.scss';
+@use '../blocks/part/__buttons-block/part__buttons-block.scss';
+@use '../blocks/part/__content/part__content.scss';
+@use '../blocks/part/__heading/part__heading.scss';
+@use '../blocks/part/__title/part__title.scss';
+@use '../blocks/part/__title/_hidden/part__title_hidden.scss';
+@use '../blocks/part/__subtitle/part__subtitle.scss';
+@use '../blocks/part/__list/part__list.scss';
+@use '../blocks/part/__list-item/part__list-item.scss';
+@use '../blocks/part/__list-item-heading-group/part__list-item-heading-group.scss';
+@use '../blocks/part/__list-item-heading/part__list-item-heading.scss';
+@use '../blocks/part/__list-item-heading/_center/part__list-item-heading_center.scss';
+@use '../blocks/part/__list-item-text/part__list-item-text.scss';
+
+@use '../blocks/hidden/hidden.scss';
+@use '../blocks/for-participants/for-participants.scss';
+
+//page 404
+@use '../blocks/error-404/error-404.scss';
+@use '../blocks/error-404/__container/error-404__container.scss';
+@use '../blocks/error-404/__image/error-404__image.scss';
+@use '../blocks/error-404/__subtitle/error-404__subtitle.scss';
+@use '../blocks/error-404/__title/error-404__title.scss';
+
+//link
+@use '../blocks/link/link.scss';
+>>>>>>> develop

@@ -1,0 +1,12 @@
+@use 'variables' as *;
+
+.button_type_white-mobile {
+  color: $white;
+  border: $border-bold-white;
+}
+
+.button_type_white-mobile:hover {
+  border-color: $hover;
+  color: $hover;
+  cursor: pointer;
+}

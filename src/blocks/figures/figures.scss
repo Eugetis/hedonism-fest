@@ -1,0 +1,16 @@
+.figures {
+  max-width: 1440px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 80px 40px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+}
+
+@media all and (max-width: 767px) {
+  .figures {
+    padding: 40px 20px 0;
+    row-gap: 20px;
+  }
+}

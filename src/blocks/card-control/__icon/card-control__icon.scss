@@ -1,0 +1,11 @@
+@use 'variables' as *;
+
+.card-control__icon {
+  font: $icon-text-desktop;
+}
+
+@media screen and (max-width: 576px) {
+  .card-control__icon {
+    font: $icon-text-mobile;
+  }
+}

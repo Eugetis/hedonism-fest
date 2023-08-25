@@ -1,0 +1,12 @@
+@use 'variables' as *;
+
+.map-zoom__out-button {
+  padding: $pad-12;
+  border: $border-none;
+  border-radius: 0 0 $radius-small $radius-small;
+  background: $light-primary;
+  box-shadow: $drop-shadow;
+  max-width: 44px;
+  max-height: 44px;
+  cursor: pointer;
+}

@@ -1,0 +1,12 @@
+@use 'mixins' as *;
+
+.event__shares-icons {
+  @include flex-center-row-mixin;
+  gap: 24px;
+}
+
+@media screen and (min-width: 360px) and (max-width: 576px) {
+  .event__shares-icons {
+    gap: 16px;
+  }
+}

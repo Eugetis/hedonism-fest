@@ -1,8 +1,7 @@
+@use 'mixins' as *;
+
 .form__list{
+    @include font-settings(16px, normal, 400, 20px);
     padding: 0 0 0 25px;
     margin: 16px 0 0;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 20px;
 }

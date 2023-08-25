@@ -1,0 +1,16 @@
+.error-404__image {
+  width: 380px;
+  height: auto;
+  
+  transform: scale(-1, 1);
+  margin: 0 20px;
+}
+
+@media all and (max-width: 767px) {
+  .error-404__image {
+    transform: scale(1, 1);
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+}

@@ -13,8 +13,129 @@
 <body class="page">
     <%= require('html-loader!./header.html').default %>
 
-    <main>
-      <h1>Это 404</h1>
+    <main class="content">
+      <section class="error-404">
+        <img class="error-404__image" src="<%=require('../images/illustration404.svg')%>" alt="ошибка">
+        <div class="error-404__container">
+          <h1 class="error-404__title">ошибка 404</h1>
+          <p class="error-404__subtitle">похоже, такой страницы не существует</p>
+          <button class="button button_type_border">на главную</button>
+        </div>
+      </section>
+      <section class="general-events">
+        <div class="general-events__container">
+          <h2 class="general-events__title">Просто приятно посетить</h2>
+        </div>
+        <div class="general-events__scroll">
+          <div class="cards general-events_cards">
+            <article class="cards__item">
+              <img class="cards__item-img" src="https://s3-alpha-sig.figma.com/img/7757/64eb/a164910d18475e81c5fd67bd8bb24572?Expires=1693180800&Signature=ptJFuK39u7G9tFyu8qxXFDrACABLRMX5mPM3Di-wuPgtHWINFWz5NAsxJKFFYFU0rzdtxNWtdTVctiZw~mfnxKA0AAGulHKeIXYJu91AV9VkS9h8CFCTyjPZY5cZM27outa2KaEsTX9KW1LYLaM9aB9TthiGH4ZhNd4yVHXyXxBw3mNYxVo703f51GkvzSRSdaiGHYpmYcjv9KSEWJrGtqeRAmyF2GgQWJIb7FiUt-j8dwYH0ZFPolAFsbEtnIPpOaCM39L7ixkh35O34hVeepzH2DrWk4l3UwOqyygAEO5Z0~p4B0Ep~9gHtMA-eUcmygTiV82ChAgFlIls9uJ9wg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="Изображение карточки">
+              <div class="cards__item-content">
+                <div class="cards__item-data">
+                  <p class="cards__item-text">лекция</p>
+                  <p class="cards__item-text">1 мая, 12:30-13:50</p>
+                </div>
+                <div class="cards__item-info">
+                  <h2 class="cards__item-title">идентичность: почему нам сложно меняться?</h2>
+                  <p class="cards__item-description">лектор: Мария Бархатова</p>
+                </div>
+                <div class="cards__item-address">
+                  <p class="cards__item-text">улица Блохина, 22</p>
+                  <p class="cards__item-text">+ ещё 3</p>
+                </div>
+              </div>
+              <div class="cards__item-like">
+                <button class="cards__item-btn-like"></button>
+              </div>
+            </article>
+            <article class="cards__item">
+              <img class="cards__item-img" src="https://s3-alpha-sig.figma.com/img/7757/64eb/a164910d18475e81c5fd67bd8bb24572?Expires=1693180800&Signature=ptJFuK39u7G9tFyu8qxXFDrACABLRMX5mPM3Di-wuPgtHWINFWz5NAsxJKFFYFU0rzdtxNWtdTVctiZw~mfnxKA0AAGulHKeIXYJu91AV9VkS9h8CFCTyjPZY5cZM27outa2KaEsTX9KW1LYLaM9aB9TthiGH4ZhNd4yVHXyXxBw3mNYxVo703f51GkvzSRSdaiGHYpmYcjv9KSEWJrGtqeRAmyF2GgQWJIb7FiUt-j8dwYH0ZFPolAFsbEtnIPpOaCM39L7ixkh35O34hVeepzH2DrWk4l3UwOqyygAEO5Z0~p4B0Ep~9gHtMA-eUcmygTiV82ChAgFlIls9uJ9wg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="Изображение карточки">
+              <div class="cards__item-content">
+                <div class="cards__item-data">
+                  <p class="cards__item-text">лекция</p>
+                  <p class="cards__item-text">1 мая, 12:30-13:50</p>
+                </div>
+                <div class="cards__item-info">
+                  <h2 class="cards__item-title">идентичность: почему нам сложно меняться?</h2>
+                  <p class="cards__item-description">лектор: Мария Бархатова</p>
+                </div>
+                <div class="cards__item-address">
+                  <p class="cards__item-text">улица Блохина, 22</p>
+                  <p class="cards__item-text">+ ещё 3</p>
+                </div>
+              </div>
+              <div class="cards__item-like">
+                <button class="cards__item-btn-like"></button>
+              </div>
+
+
+            </article>
+            <article class="cards__item">
+              <img class="cards__item-img" src="https://s3-alpha-sig.figma.com/img/7757/64eb/a164910d18475e81c5fd67bd8bb24572?Expires=1693180800&Signature=ptJFuK39u7G9tFyu8qxXFDrACABLRMX5mPM3Di-wuPgtHWINFWz5NAsxJKFFYFU0rzdtxNWtdTVctiZw~mfnxKA0AAGulHKeIXYJu91AV9VkS9h8CFCTyjPZY5cZM27outa2KaEsTX9KW1LYLaM9aB9TthiGH4ZhNd4yVHXyXxBw3mNYxVo703f51GkvzSRSdaiGHYpmYcjv9KSEWJrGtqeRAmyF2GgQWJIb7FiUt-j8dwYH0ZFPolAFsbEtnIPpOaCM39L7ixkh35O34hVeepzH2DrWk4l3UwOqyygAEO5Z0~p4B0Ep~9gHtMA-eUcmygTiV82ChAgFlIls9uJ9wg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="Изображение карточки">
+              <div class="cards__item-content">
+                <div class="cards__item-data">
+                  <p class="cards__item-text">лекция</p>
+                  <p class="cards__item-text">1 мая, 12:30-13:50</p>
+                </div>
+                <div class="cards__item-info">
+                  <h2 class="cards__item-title">идентичность: почему нам сложно меняться?</h2>
+                  <p class="cards__item-description">лектор: Мария Бархатова</p>
+                </div>
+                <div class="cards__item-address">
+                  <p class="cards__item-text">улица Блохина, 22</p>
+                  <p class="cards__item-text">+ ещё 3</p>
+                </div>
+              </div>
+              <div class="cards__item-like">
+                <button class="cards__item-btn-like"></button>
+              </div>
+            </article>
+            <article class="cards__item">
+              <img class="cards__item-img" src="https://s3-alpha-sig.figma.com/img/7757/64eb/a164910d18475e81c5fd67bd8bb24572?Expires=1693180800&Signature=ptJFuK39u7G9tFyu8qxXFDrACABLRMX5mPM3Di-wuPgtHWINFWz5NAsxJKFFYFU0rzdtxNWtdTVctiZw~mfnxKA0AAGulHKeIXYJu91AV9VkS9h8CFCTyjPZY5cZM27outa2KaEsTX9KW1LYLaM9aB9TthiGH4ZhNd4yVHXyXxBw3mNYxVo703f51GkvzSRSdaiGHYpmYcjv9KSEWJrGtqeRAmyF2GgQWJIb7FiUt-j8dwYH0ZFPolAFsbEtnIPpOaCM39L7ixkh35O34hVeepzH2DrWk4l3UwOqyygAEO5Z0~p4B0Ep~9gHtMA-eUcmygTiV82ChAgFlIls9uJ9wg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="Изображение карточки">
+              <div class="cards__item-content">
+                <div class="cards__item-data">
+                  <p class="cards__item-text">лекция</p>
+                  <p class="cards__item-text">1 мая, 12:30-13:50</p>
+                </div>
+                <div class="cards__item-info">
+                  <h2 class="cards__item-title">идентичность: почему нам сложно меняться?</h2>
+                  <p class="cards__item-description">лектор: Мария Бархатова</p>
+                </div>
+                <div class="cards__item-address">
+                  <p class="cards__item-text">улица Блохина, 22</p>
+                  <p class="cards__item-text">+ ещё 3</p>
+                </div>
+              </div>
+              <div class="cards__item-like">
+                <button class="cards__item-btn-like"></button>
+              </div>
+            </article>
+            <article class="cards__item">
+              <img class="cards__item-img" src="https://s3-alpha-sig.figma.com/img/7757/64eb/a164910d18475e81c5fd67bd8bb24572?Expires=1693180800&Signature=ptJFuK39u7G9tFyu8qxXFDrACABLRMX5mPM3Di-wuPgtHWINFWz5NAsxJKFFYFU0rzdtxNWtdTVctiZw~mfnxKA0AAGulHKeIXYJu91AV9VkS9h8CFCTyjPZY5cZM27outa2KaEsTX9KW1LYLaM9aB9TthiGH4ZhNd4yVHXyXxBw3mNYxVo703f51GkvzSRSdaiGHYpmYcjv9KSEWJrGtqeRAmyF2GgQWJIb7FiUt-j8dwYH0ZFPolAFsbEtnIPpOaCM39L7ixkh35O34hVeepzH2DrWk4l3UwOqyygAEO5Z0~p4B0Ep~9gHtMA-eUcmygTiV82ChAgFlIls9uJ9wg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="Изображение карточки">
+              <div class="cards__item-content">
+                <div class="cards__item-data">
+                  <p class="cards__item-text">лекция</p>
+                  <p class="cards__item-text">1 мая, 12:30-13:50</p>
+                </div>
+                <div class="cards__item-info">
+                  <h2 class="cards__item-title">идентичность: почему нам сложно меняться?</h2>
+                  <p class="cards__item-description">лектор: Мария Бархатова</p>
+                </div>
+                <div class="cards__item-address">
+                  <p class="cards__item-text">улица Блохина, 22</p>
+                  <p class="cards__item-text">+ ещё 3</p>
+                </div>
+              </div>
+              <div class="cards__item-like">
+                <button class="cards__item-btn-like"></button>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="general-events__container">
+          <button class="button button_type_filled">смотреть все события</button>
+        </div>
+      </section>
     </main>
 
     <%= require('html-loader!./footer.html').default %>

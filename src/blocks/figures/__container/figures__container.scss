@@ -1,0 +1,19 @@
+.figures__container {
+  aspect-ratio: 17/9;
+  background-image: url('../../../images/figures_desctop.svg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+@media all and (max-width: 767px) {
+  .figures__container {
+    aspect-ratio: auto;
+    background-image: none;
+    align-items: center;
+  }
+}
+

@@ -83,7 +83,7 @@
       <!-- файл вариативного шрифта hf-icons-font.woff(2) -->
       <!-- файл hf-icons-font-demo.html отображает все иконки и их PUA коды-->
       <!-- Все варианты кнопок вложены в грид 2 столбца на N строк -->
-      <style> .test_button_grid { display: grid; grid-template-columns: repeat(2, 200px);
+      <style> .test_button_grid { display: grid; grid-template-columns: repeat(2, 220px);
         gap: 20px; justify-items: center; align-items: center; grid-auto-rows: 70px;}
       </style>
       <div class="test_button_grid">
@@ -130,7 +130,108 @@
         <button class="button">кнопка<span class="button__icon icon-arrow-right"></span></button>
         <button class="button" disabled>кнопка<span class="button__icon icon-arrow-right"></span></button>
 
+        <style>.test_button_background { background: red;}</style>
+        <div class="test_button_background">
+          <button class="button button_type_white-mobile">стать участником</button>
+        </div>
+        <button class="button button_type_white-mobile" disabled>стать участником</button>
+
       </div>
+    </section>
+
+    <section class="uikit-section">
+      <h2>Кнопки действий с карточкой</h2>
+      <!-- Иконки в кнопках подключаются как content: из созданного вариативного шрифта -->
+      <!-- файл вариативного шрифта hf-icons-font.woff(2) -->
+      <!-- файл hf-icons-font-demo.html отображает все иконки и их PUA коды-->
+      <!-- Все варианты кнопок вложены в грид 2 столбца на N строк -->
+      <style> .test_card-controls_grid { display: grid; grid-template-columns: repeat(3, 100px);
+        gap: 20px; justify-items: center; align-items: center; grid-auto-rows: 70px; background: rgb(185, 236, 185);}
+      </style>
+      <div class="test_card-controls_grid">
+
+        <!-- стиль позволяет переключить заголовок Desktop/Mobile для проверки кнопок  -->
+        <h2 class="title_text"></h2><p></p><p></p>
+
+        <!-- контрол для карточки close -->
+        <button class="card-control"><span class="card-control__icon icon-cross"></span></button>
+        <!-- контрол для карточки fav -->
+        <button class="card-control"><span class="card-control__icon icon-heart"></span></button>
+        <!-- контрол для карточки fav-filled -->
+        <button class="card-control"><span class="card-control__icon card-control__icon_color_red icon-heart-filled"></span></button>
+
+      </div>
+    </section>
+
+    <section class="uikit-section">
+      <h2>Фильтр-тэги</h2>
+        <h2 class="test_title_text"></h2>
+        <!-- Иконки подключаются как content: из созданного вариативного шрифта -->
+        <!-- файл вариативного шрифта hf-icons-font.woff(2) -->
+        <!-- файл hf-icons-font-test_html отображает все иконки и их PUA коды-->
+        <!-- Варианты фильтров-тэгов вложены во флекс 3 столбца -->
+        <style> .test_tag-filter_flex { display: flex; gap: 20px; height: 60px; justify-items: center; align-items: center;}</style>
+        <div class="test_tag-filter_flex">
+          <p class="test_tag-filter_flex">default</p><p>selected &ldquo;все&ldquo;</p><p>selected кроме&ldquo;все&ldquo;</p>
+        </div>
+        <div class="test_tag-filter_flex">
+
+          <button class="tag-filter">фильтр</button>
+          <button class="tag-filter tag-filter_type_selected">все</button>
+          <button class="tag-filter tag-filter_type_selected">фильтр<span class="tag-filter__icon icon-cross-small"></span></button>
+
+        </div>
+
+    </section>
+
+    <section class="uikit-section">
+      <h2>Контроллеры</h2>
+        <h2 class="test_title_text"></h2>
+        <!-- Иконки подключаются как content: из созданного вариативного шрифта -->
+        <!-- файл вариативного шрифта hf-icons-font.woff(2) -->
+        <!-- файл hf-icons-font-test_html отображает все иконки и их PUA коды-->
+        <!-- Варианты фильтров-тэгов вложены во флекс 3 столбца -->
+        <style> .test_controllers_flex { display: flex; margin:0; gap:  20px; height: 60px; justify-items: center; align-items: center;}</style>
+        <div class="test_controllers_flex">
+          <p class="test_controllers_flex">Map pointer</p><p>Map zoom</p>
+        </div>
+
+        <div class="test_controllers_flex">
+          <!-- map pointer -->
+          <button class="map-pointer"><span class="map-pointer__icon icon-pointer"></span></button>
+
+          <!-- контейнер контроллера map zoom -->
+          <div class="map-zoom">
+            <button class="map-zoom__in-button"><span class="map-zoom__icon icon-plus-small"></span></button>
+            <button class="map-zoom__out-button"><span class="map-zoom__icon icon-minus-small"></span></button>
+          </div>
+          
+        </div>
+
+        <p class="test_controllers_flex">float buttons</p>
+        <div class="test_controllers_flex">
+
+            <!-- floatting button стрелка вверх -->
+            <button class="floating-button"><span class="floating-button__icon icon-arrow-up"></span></button>
+            <!-- floatting button стрелка вниз -->
+            <button class="floating-button"><span class="floating-button__icon icon-arrow-down"></span></button>
+
+        </div>
+
+        <p class="test_controllers_flex">amount controller (Desktop/Mobile)</p>
+        <div class="test_controllers_flex">
+
+          <!-- контейнер контроллера amount controls-->
+          <div class="amount-controls">
+            <button class="amount-controls amount-controls__minus-button"><span class="amount-controls__icon icon-minus-small"></span></button>
+            <input id="amount-input" name="amount-input" placeholder="1" required disabled
+                class="amount-controls amount-controls__input" type="text" inputmode="numeric" value="1">
+            </input>
+            <button class="amount-controls amount-controls__plus-button"><span class="amount-controls__icon icon-plus-small"></span></button>
+          </div>
+
+        </div>
+
     </section>
 
     <section class="uikit-section">
@@ -158,7 +259,6 @@
                 <li class="footer__list-element">
                   <a class="footer__link footer__link_type_mail" href="mailto:info@hedonismfest.ru">info@hedonismfest.ru</a>
                 </li>
-
               </ul>
             </div>
             <div class="footer__container">

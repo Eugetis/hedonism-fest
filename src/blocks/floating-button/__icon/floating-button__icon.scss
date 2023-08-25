@@ -1,0 +1,6 @@
+@use 'variables' as *;
+
+.floating-button__icon {
+  font: $icon-text-mobile;
+  color: $white;
+}

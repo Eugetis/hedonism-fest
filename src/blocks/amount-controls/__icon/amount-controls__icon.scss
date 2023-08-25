@@ -1,0 +1,12 @@
+@use 'variables' as *;
+
+.amount-controls__icon {
+  font: $icon-text-desktop;
+  color: $white;
+}
+
+@media screen and (max-width: 576px) {
+  .amount-controls__icon {
+    font: $icon-text-mobile;
+  }
+}

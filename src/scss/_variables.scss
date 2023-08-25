@@ -11,6 +11,7 @@ $white: #fff;
 $hover: #5100b8;
 
 
+
 // ШРИФТЫ - здесь переменные только для основных свойств;
 // переменные применять через свойство font, например font: $h1-heading (предварительно подтянуть переменые через @use),
 // но проще будет делать @include mixin-name(предварительно подтянуть миксины через @use);
@@ -78,16 +79,28 @@ $pad-320: 320px;
 
 
 // АЛЕКСЕЙ
-
-
+$tablet: 768px;
 
 // АНДРЕЙ
 
 
 
 // ДМИТРИЙ
+$icon-text-desktop: normal normal 24px 'HF Icons'; // шрифт-иконка 24px/десктоп
+$icon-text-mobile: normal normal 20px 'HF Icons'; // шрифт-иконка 20px/мобила
+$icon-text-ico: normal normal 16px 'HF Icons'; // шрифт-иконка 16px/иконки мероприятий
+$icon-text: normal normal 100% 'HF Icons'; // шрифт-иконка без заданного размера по умолчанию
 
+$radius-btn-24: 24px;
+$radius-btn-26: 26px;
+$radius-btn-100: 100px;
 
+$gap-4: 4px;
+$gap-8: 8px;
+
+$border-bold-white: 2px solid $white;
+$border-bold-primary: 2px solid $color-primary;
+$border-hover: 1px solid $hover;
 
 // НИКИТА
 $border-light: 1px solid $light-secondary;
@@ -96,3 +109,4 @@ $radius-none: 0;
 $radius-100: 100px;
 $radius-top-26: 26px 26px 0 0;
 $pad-28: 28px;
+$pad-89: 89px;

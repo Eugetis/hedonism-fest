@@ -74,7 +74,28 @@
 
 
 // Дмитрий
-
-
+@mixin btn-text-desktop {
+  font: $btn-text-desktop;
+  font-feature-settings: 'clig' off, 'liga' off;
+  margin: 0;
+}
+@mixin btn-text-mobile {
+  font: $btn-text-mobile;
+  font-feature-settings: 'clig' off, 'liga' off;
+  margin: 0;
+}
 
 // Никита
+
+
+
+// Георгий
+@mixin font-settings ($size, $style, $weight, $height){
+  font-size: $size;
+  font-style: $style;
+  font-weight: $weight;
+  line-height: $height;
+}
+
+// @use 'mixins' as *;
+// @use 'variables' as *;

@@ -1,15 +1,13 @@
+@use 'mixins' as *;
+
 .form__title{
+    @include font-settings(32px, normal, 500, 36px);
     margin: 12px 0 0;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 36px;
 }
 
 @media screen and (min-width: 1024px) {
     .form__title{
-        font-size: 48px;
-        line-height: 52px;
+        @include font-settings(48px, normal, 500, 52px);
         letter-spacing: -0.48px;
     }
 }
