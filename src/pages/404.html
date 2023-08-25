@@ -14,12 +14,14 @@
     <%= require('html-loader!./header.html').default %>
 
     <main class="content">
-      <section class="error-404">
-        <img class="error-404__image" src="<%=require('../images/illustration404.svg')%>" alt="ошибка">
-        <div class="error-404__container">
-          <h1 class="error-404__title">ошибка 404</h1>
-          <p class="error-404__subtitle">похоже, такой страницы не существует</p>
-          <button class="button button_type_border">на главную</button>
+      <section class="additional-section">
+        <div class="additional-section__wrapper">
+          <div class="additional-section__container">
+            <h1 class="additional-section__title">ошибка 404</h1>
+            <p class="additional-section__subtitle">похоже, такой страницы не существует</p>
+            <a class="additional-section__button button button_type_border" href="../index.html">на главную</a>
+          </div>
+          <img class="additional-section__image additional-section__image_type_404" src="<%=require('../images/illustration404.svg')%>" alt="ошибка">
         </div>
       </section>
       <section class="general-events">

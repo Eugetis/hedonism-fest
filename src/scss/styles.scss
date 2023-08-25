@@ -294,12 +294,19 @@
 @use '../blocks/hidden/hidden.scss';
 @use '../blocks/for-participants/for-participants.scss';
 
-//page 404
-@use '../blocks/error-404/error-404.scss';
-@use '../blocks/error-404/__container/error-404__container.scss';
-@use '../blocks/error-404/__image/error-404__image.scss';
-@use '../blocks/error-404/__subtitle/error-404__subtitle.scss';
-@use '../blocks/error-404/__title/error-404__title.scss';
+
+//additional-pages styles
+@use '../blocks/additional-section/additional-section.scss';
+@use '../blocks/additional-section/__wrapper/additional-section__wrapper.scss';
+@use '../blocks/additional-section/__container/additional-section__container.scss';
+@use '../blocks/additional-section/__image/additional-section__image.scss';
+@use '../blocks/additional-section/__subtitle/additional-section__subtitle.scss';
+@use '../blocks/additional-section/__title/additional-section__title.scss';
+@use '../blocks/additional-section/__button/additional-section__button.scss';
+//additional-sections модификаторс
+@use '../blocks/additional-section/_type/additional-section_type_purple.scss';
+@use '../blocks/additional-section/__image/_type/additional-section__image_type_404.scss';
+
 
 //link
 @use '../blocks/link/link.scss';
