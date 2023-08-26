@@ -50,6 +50,11 @@
 @use '../blocks/amount-controls/__plus-button/amount-controls__plus-button.scss';
 @use '../blocks/amount-controls/__input/amount-controls__input.scss';
 
+// стили переключателя вкладок
+@use '../blocks/tab-switcher/tab-switcher.scss';
+@use '../blocks/tab-switcher/__icon/tab-switcher__icon.scss';
+@use '../blocks/tab-switcher/__button/tab-switcher__button.scss';
+
 // стили хедера (обсудить рефакторинг)
 @use '../blocks/header/header.scss';
 @use '../blocks/header/__wrapper/header__wrapper.scss';
