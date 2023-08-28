@@ -2,6 +2,7 @@
 
 .catalog__sidebar {
   width: 370px;
+  min-width: 370px;
   height: calc(100vh - 88px);
   display: flex;
   flex-direction: column;

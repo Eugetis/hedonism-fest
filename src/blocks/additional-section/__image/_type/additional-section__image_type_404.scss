@@ -1,18 +1,12 @@
-.additional-section__image_type_404 {
 @use 'variables' as *;
 
-.error-404__image {
-  width: 380px;
-  height: auto;
-
+.additional-section__image_type_404 {
   transform: scale(-1, 1);
-  padding: 0 20px;
+  padding: 0 $pad-20;
 }
 
-@media all and (max-width: 767px) {
-  .additional-section__image {
 @media all and (max-width: $mobile) {
-  .error-404__image {
+  .additional-section__image_type_404 {
     transform: scale(1, 1);
     width: 100%;
     height: auto;

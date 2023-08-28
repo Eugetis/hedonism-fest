@@ -79,9 +79,19 @@
             </div>
 
 
-            <section class="">
-             <!-- тут будет секция с сообщением, что результатов поиска нет
-              (стили additional page + обертка от блока catalog) -->
+            <!-- тут секция с сообщением, что результатов поиска нет
+            (чтобы сделать видимой, надо добавить класс catalog__events-container_opened) -->
+            <section class="catalog__events-container catalog__events-container_opened">
+              <div class="additional-section">
+                <div class="additional-section__wrapper">
+                  <div class="additional-section__container">
+                    <h1 class="additional-section__title">ой!</h1>
+                    <p class="additional-section__subtitle">в вашем списке сохранённых событий пока что пусто</p>
+                    <button class="additional-section__button button button_type_filled" type="button">смотреть все события</a>
+                  </div>
+                  <img class="additional-section__image" src="<%=require('../images/no-results.svg')%>" alt="расстроенный персонаж">
+                </div>
+              </div>
             </section>
 
 
@@ -93,7 +103,7 @@
 
 
             <!-- тут будет 12 заглушек карточек (в конце лежит template - его нужно при необходимости поправить и использовать) -->
-            <section class="catalog__events-container catalog__events-container_opened">
+            <section class="catalog__events-container">
               <ul class="cards cards_type_grid">
 
                 <li class="cards__item">

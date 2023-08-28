@@ -6,12 +6,9 @@
   margin: 16px 0 24px;
 }
 
-@media all and (max-width: 767px) {
+@media all and (max-width: $mobile) {
   .additional-section__subtitle {
     @include h4-mobile;
-@media all and (max-width: $mobile) {
-  .error-404__subtitle {
-    @include text-mobile;
     margin: 12px 0 20px;
   }
 }

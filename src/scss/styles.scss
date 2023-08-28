@@ -83,7 +83,7 @@
 @use '../blocks/header/__slide/header__slide.scss';
 @use '../blocks/header/__slide/_content/header__slide_content_cities.scss';
 @use '../blocks/header/__slide/_content/header__slide_content_menu.scss';
-
+// разобраться с тремя
 @use '../blocks/header/__wrapper/_1/header__wrapper_1.scss';
 @use '../blocks/header/__wrapper/_3/header__wrapper_3.scss';
 @use '../blocks/header/__wrapper/_closed/header__wrapper_closed.scss';
@@ -100,7 +100,7 @@
 
 // стили футера
 @use '../blocks/footer/footer.scss';
-@use '../blocks/footer/_type/footer_style_additional.scss';
+@use '../blocks/footer/_style/footer_style_additional.scss';
 @use '../blocks/footer/__content/footer__content.scss';
 @use '../blocks/footer/__container/footer__container.scss';
 @use '../blocks/footer/__title/footer__title.scss';
@@ -342,14 +342,6 @@
 //additional-sections модификаторс
 @use '../blocks/additional-section/_type/additional-section_type_purple.scss';
 @use '../blocks/additional-section/__image/_type/additional-section__image_type_404.scss';
-
-
-//page 404
-@use '../blocks/error-404/error-404.scss';
-@use '../blocks/error-404/__container/error-404__container.scss';
-@use '../blocks/error-404/__image/error-404__image.scss';
-@use '../blocks/error-404/__subtitle/error-404__subtitle.scss';
-@use '../blocks/error-404/__title/error-404__title.scss';
 
 //link
 @use '../blocks/link/link.scss';

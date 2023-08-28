@@ -1,21 +1,31 @@
-.additional-section {
-  width: 100%;
 @use 'variables' as *;
 
-.error-404 {
-  max-width: 880px;
+.additional-section {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
-  padding: 160px 40px;
+  padding: $pad-160 $pad-40;
 }
 
-@media all and (max-width: 767px) {
-  .additional-section {
 @media all and (max-width: $mobile) {
-  .error-404 {
-    flex-direction: column;
-    padding: 40px 20px;
+  .additional-section {
+    padding: $pad-40 $pad-20;
   }
 }
+
+// .error-404 {
+//   max-width: 880px;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+
+// }
+
+// @media all and (max-width: $mobile) {
+//   .error-404 {
+//     flex-direction: column;
+//     padding: 40px 20px;
+//   }
+// }

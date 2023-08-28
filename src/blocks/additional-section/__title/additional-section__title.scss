@@ -5,10 +5,8 @@
   @include h2-desktop;
 }
 
-@media all and (max-width: 767px) {
-  .additional-section__title {
 @media all and (max-width: $mobile) {
-  .error-404__title {
+  .additional-section__title {
     @include h2-mobile;
   }
 }
