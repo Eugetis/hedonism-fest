@@ -1,17 +1,28 @@
 @use 'variables' as *;
+@use 'mixins' as *;
 
 .tab-switcher__button {
+  display: flex;
   min-width: max-content;
-}
-
-.tab-switcher__button:disabled {
-  pointer-events:all;
-  cursor: pointer;
+  max-height: 48px;
+  padding: $pad-12 $pad-24;
+  justify-content: center;
+  align-items: center;
+  gap: $gap-8;
+  border: none;
+  border-radius: $radius-btn-26;
+  box-sizing: border-box;
   color: $dark-secondary;
   background-color: $light-secondary;
+  @include btn-text-desktop;
+  cursor: pointer;
 }
 
-.tab-switcher__button {
-  pointer-events: none;
-  cursor:none;
+@media screen and (max-width: $mobile) {
+  .tab-switcher__button {
+    max-height: 44px;
+    padding: $pad-12 $pad-20;
+    gap: $gap-4;
+    @include btn-text-mobile;
+  }
 }
