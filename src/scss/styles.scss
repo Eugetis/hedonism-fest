@@ -282,7 +282,6 @@
 @use '../blocks/form/__button/_type/button_type_long.scss';
 
 /* Forms part */
-<<<<<<< HEAD
 @use '../blocks/participants/participants.scss';
 @use '../blocks/participants/__content/participants__content.scss';
 @use '../blocks/participants/__title/participants__title.scss';
@@ -300,26 +299,6 @@
 @use '../blocks/participants/__button/participants__button.scss';
 @use '../blocks/participants/__button/_active/participants__button_active.scss';
 @use '../blocks/participants/_hidden/participants_hidden.scss';
-=======
-@use '../blocks/part/part.scss';
-@use '../blocks/part/__button/part__button.scss';
-@use '../blocks/part/__button/_active/part__button_active.scss';
-@use '../blocks/part/__buttons-block/part__buttons-block.scss';
-@use '../blocks/part/__content/part__content.scss';
-@use '../blocks/part/__heading/part__heading.scss';
-@use '../blocks/part/__title/part__title.scss';
-@use '../blocks/part/__title/_hidden/part__title_hidden.scss';
-@use '../blocks/part/__subtitle/part__subtitle.scss';
-@use '../blocks/part/__list/part__list.scss';
-@use '../blocks/part/__list-item/part__list-item.scss';
-@use '../blocks/part/__list-item-heading-group/part__list-item-heading-group.scss';
-@use '../blocks/part/__list-item-heading/part__list-item-heading.scss';
-@use '../blocks/part/__list-item-heading/_center/part__list-item-heading_center.scss';
-@use '../blocks/part/__list-item-text/part__list-item-text.scss';
-
-@use '../blocks/hidden/hidden.scss';
-@use '../blocks/for-participants/for-participants.scss';
-
 
 //additional-pages styles
 @use '../blocks/additional-section/additional-section.scss';
@@ -336,4 +315,3 @@
 
 //link
 @use '../blocks/link/link.scss';
->>>>>>> develop
