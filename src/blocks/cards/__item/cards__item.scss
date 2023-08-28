@@ -6,8 +6,8 @@
   position: relative;
   z-index: 0;
   max-width: 320px;
-  height: 386px;
-  border: $border-light;
+  height: 388px;
+  // border: $border-light;
   background-color: $light-primary;
   border-radius: $radius-large;
   overflow: hidden;
@@ -18,11 +18,11 @@
   flex-shrink: 0;
 }
 
-@media screen and (min-width: 360px) and (max-width: 576px) {
+@media screen and (max-width: $mobile) {
   .cards__item {
     border-radius: $radius-none;
     max-width: 360px;
-    height: 396px;
+    height: 398px;
   }
 }
 

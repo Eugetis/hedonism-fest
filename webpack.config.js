@@ -100,9 +100,26 @@ module.exports = {
       filename: 'header.html'
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "src", "pages", "modal.html"),
-      filename: 'modal.html'
+      template: path.resolve(__dirname, "src", "pages", "particle-events-scroll.html"),
+      filename: 'particle-events-scroll.html'
     }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src", "pages", "particle-modal-event.html"),
+      filename: 'particle-modal-event.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src", "pages", "particle-modal-payment.html"),
+      filename: 'particle-modal-payment.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src", "pages", "particle-modal-mobile-filters.html"),
+      filename: 'particle-modal-mobile-filters.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src", "pages", "particle-modal-mobile-preview.html"),
+      filename: 'particle-modal-mobile-preview.html'
+    }),
+
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),
   ]

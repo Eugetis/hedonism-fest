@@ -1,3 +1,5 @@
+@use 'variables' as *;
+
 .footer__content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(0, auto));
@@ -5,7 +7,7 @@
   width: 100%;
 }
 
-@media all and (max-width: 767px) {
+@media all and (max-width: $mobile) {
   .footer__content {
     display: flex;
     flex-direction: column;

@@ -3,7 +3,6 @@
 
 .button {
   display: flex;
-  min-width: 164px;
   max-height: 48px;
   padding: $pad-12 $pad-24;
   justify-content: center;
@@ -15,7 +14,8 @@
   color: $dark-primary;
   background: transparent;
   @include btn-text-desktop;
-  transition: all .2s ease-in-out .2s;
+  text-decoration: none;
+  // transition: all .2s ease-in-out .2s;
 }
 
 .button:hover {
@@ -30,7 +30,7 @@
   border: none;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: $mobile) {
   .button {
     min-width: 148px;
     max-height: 44px;

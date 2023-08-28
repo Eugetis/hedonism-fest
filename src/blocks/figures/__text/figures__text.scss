@@ -1,10 +1,11 @@
+@use 'variables' as *;
 @use 'mixins' as *;
 
 .figures__text {
   @include text-desktop;
 }
 
-@media all and (max-width: 767px) {
+@media all and (max-width: $mobile) {
   .figures__text {
     @include text-mobile;
     text-align: center;

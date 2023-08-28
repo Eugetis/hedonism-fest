@@ -1,19 +1,22 @@
 @use '../vendor/normalize.css';
 @use '../fonts/fonts.scss';
 @use '../blocks/page/page.scss';
+@use '../blocks/page/__title/page__title.scss';
 @use '../blocks/uikit-section/uikit-section.scss';
+@use '../blocks/section-constraints/section-constraints.scss';
+@use '../blocks/section-constraints/_size/section__constraints_size_large.scss';
+@use '../blocks/section-constraints/_size/section__constraints_size_small.scss';
 
-// стили html
+// стили html (тут плавный скролл по странице)
 @use '../blocks/html/html.scss';
-
 
 // стили кнопки
 @use '../blocks/button/button.scss';
 @use '../blocks/button/__icon/button__icon.scss';
 @use '../blocks/button/_type/button_type_filled.scss';
 @use '../blocks/button/_type/button_type_border.scss';
-@use '../blocks/button/_type/button_type_white-mobile.scss';
-
+@use '../blocks/button/_type/button_type_invert.scss';
+@use '../blocks/button/__arrow-back/button__arrow-back.scss'; // вытащил из хедера - понять, что это?
 
 // стиль иконочного шрифта
 @use '../blocks/icon-fonts/icon-fonts.scss';
@@ -23,7 +26,7 @@
 @use '../blocks/card-control/__icon/card-control__icon.scss';
 @use '../blocks/card-control/__icon/_color_red/card-control__icon_color_red.scss';
 
-// стили фильтр-тэгов
+// стили фильтр-тегов
 @use '../blocks/tag-filter/tag-filter.scss';
 @use '../blocks/tag-filter/__icon/tag-filter__icon.scss';
 @use '../blocks/tag-filter/_type/tag-filter_type_selected.scss';
@@ -57,65 +60,67 @@
 
 // стили хедера (обсудить рефакторинг)
 @use '../blocks/header/header.scss';
+@use '../blocks/header/__top/header__top.scss';
 @use '../blocks/header/__wrapper/header__wrapper.scss';
 @use '../blocks/header/__logo-and-location/header__logo-and-location.scss';
 @use '../blocks/header/__logo/header__logo.scss';
+@use '../blocks/header/__logo/_type/header__logo_type_dropdown.scss';
 @use '../blocks/header/__city-select/header__city-select.scss';
 @use '../blocks/header/__form/header__form.scss';
 @use '../blocks/header/__menu/header__menu.scss';
-@use '../blocks/header/__menu-link/header__menu-link.scss';
+@use '../blocks/header/__menu/_type/header__menu_type_desktop.scss';
+@use '../blocks/header/__menu/_type/header__menu_type_mobile.scss';
+@use '../blocks/header/__menu-item/header__menu-item.scss';
+@use '../blocks/header/__link/header__link.scss';
 @use '../blocks/header/__buttons/header__buttons.scss';
-@use '../blocks/header/__buttons/_mobile/header__buttons_mobile.scss';
 @use '../blocks/header/__button/header__button.scss';
 @use '../blocks/header/__button/_donate/header__button_donate.scss';
 @use '../blocks/header/__button/_donate-mobile/header__button_donate-mobile.scss';
 @use '../blocks/header/__button/_want-to-go/header__button_want-to-go.scss';
-@use '../blocks/header/__hamburger-container/header__hamburger-container.scss';
-@use '../blocks/header/__hamburger-checkbox/header__hamburger-checkbox.scss';
-@use '../blocks/header/__hamburger-lines/header__hamburger-lines.scss';
-@use '../blocks/header/__hamburger-line/header__hamburger-line.scss';
-@use '../blocks/header/__hamburger-line/_line1/header__hamburger-line_line1.scss';
-@use '../blocks/header/__hamburger-line/_line2/header__hamburger-line_line2.scss';
-@use '../blocks/header/__hamburger-line/_line3/header__hamburger-line_line3.scss';
-@use '../blocks/header/__slide-menu/header__slide-menu.scss';
+@use '../blocks/header/__burger-button/header__burger-button.scss';
+@use '../blocks/header/__slider/header__slider.scss';
+@use '../blocks/header/__slider/_state/header__slider_state_opened.scss';
+@use '../blocks/header/__slide/header__slide.scss';
+@use '../blocks/header/__slide/_content/header__slide_content_cities.scss';
+@use '../blocks/header/__slide/_content/header__slide_content_menu.scss';
+
 @use '../blocks/header/__wrapper/_1/header__wrapper_1.scss';
-@use '../blocks/header/__wrapper/_2/header__wrapper_2.scss';
 @use '../blocks/header/__wrapper/_3/header__wrapper_3.scss';
 @use '../blocks/header/__wrapper/_closed/header__wrapper_closed.scss';
+
 @use '../blocks/header/__form-city/header__form-city.scss';
 @use '../blocks/header/__nav-title/header__nav-title.scss';
 @use '../blocks/header/__subtext/header__subtext.scss';
-@use '../blocks/header/__slide-menu-links/header__slide-menu-links.scss';
+@use '../blocks/header/__subtext/_position/header__subtext_position_left.scss';
 @use '../blocks/header/__button/_city-selected/header__button_city-selected.scss';
-@use '../blocks/header/__popup-city-select/header__popup-city-select.scss';
-@use '../blocks/header/__popup-city-select/_opened/header__popup-city-select_opened.scss';
-@use '../blocks/button/arrow-back/button__arrow-back.scss';
 @use '../blocks/header/__input-city-select/header__input-city-select.scss';
-
+@use '../blocks/header/__mobile-section/header__mobile-section.scss';
+@use '../blocks/header/__mobile-section/_type/header__mobile-section_type_bottom.scss';
+@use '../blocks/header/__slide-bottom/header__slide-bottom.scss';
 
 // стили футера
 @use '../blocks/footer/footer.scss';
+@use '../blocks/footer/_type/footer_style_additional.scss';
 @use '../blocks/footer/__content/footer__content.scss';
 @use '../blocks/footer/__container/footer__container.scss';
 @use '../blocks/footer/__title/footer__title.scss';
 @use '../blocks/footer/__list/footer__list.scss';
+@use '../blocks/footer/__list/_type/footer__list_type_socials.scss';
 @use '../blocks/footer/__link/footer__link.scss';
+@use '../blocks/footer/__link/_type/footer__link_type_mail.scss';
 @use '../blocks/footer/__list-element/footer__list-element.scss';
 @use '../blocks/footer/__wrapper/footer__wrapper.scss';
 @use '../blocks/footer/__social/footer__social.scss';
-@use '../blocks/footer/__illustration/footer__illustration.scss';
-// модификаторы элементов футера
-@use '../blocks/footer/__list/_type/footer__list_type_socials.scss';
 @use '../blocks/footer/__social/_type/footer__social_type_vk.scss';
-@use '../blocks/footer/__link/_type/footer__link_type_mail.scss';
-
+@use '../blocks/footer/__illustration/footer__illustration.scss';
 
 // стили полей (пока пусто)
 @use '../blocks/field/field.scss';
 
-
-// стили блока с карточками (сам блок пока не расписан)
+// стили блока с карточками
 @use '../blocks/cards/cards.scss';
+@use '../blocks/cards/_type/cards_type_scroll.scss';
+@use '../blocks/cards/_type/cards_type_grid.scss';
 @use '../blocks/cards/__item/cards__item.scss';
 @use '../blocks/cards/__item-img/cards__item-img.scss';
 @use '../blocks/cards/__item-content/cards__item-content.scss';
@@ -127,7 +132,6 @@
 @use '../blocks/cards/__item-btn-like/cards__item-btn-like.scss';
 @use '../blocks/cards/__item-info/cards__item-info.scss';
 @use '../blocks/cards/__item-address/cards__item-address.scss';
-
 
 // стили попапа
 @use '../blocks/popup/popup.scss';
@@ -147,15 +151,13 @@
 @use '../blocks/preview/__title/preview__title.scss';
 @use '../blocks/preview/__description/preview__description.scss';
 
-
 // стили строк таблицы
 @use '../blocks/table-lines/table-lines.scss';
 @use '../blocks/table-lines/__item/table-lines__item.scss';
-@use '../blocks/table-lines/__duration/table-lines__duration.scss';
-@use '../blocks/table-lines/__type/table-lines__type.scss';
+@use '../blocks/table-lines/__property/table-lines__property.scss';
+@use '../blocks/table-lines/__value/table-lines__value.scss';
 @use '../blocks/table-lines/__button/table-lines__button.scss';
 @use '../blocks/table-lines/__url/table-lines__url.scss';
-
 
 // стили блока пошаговой инструкции
 @use '../blocks/question-block/question-block.scss';
@@ -165,26 +167,48 @@
 @use '../blocks/question-block/__title/question-block__title.scss';
 
 
-//
-@use '../blocks/content/content.scss';
-
 //index.html sections
-//logo section
-@use '../blocks/logo-section/logo-section.scss';
-@use '../blocks/logo-section/__link/logo-section__link.scss';
-@use '../blocks/logo-section/__text/logo-section__text.scss';
-@use '../blocks/logo-section/__container/logo-section__container.scss';
-@use '../blocks/logo-section/__image/logo-section__image.scss';
-@use '../blocks/logo-section/__button/logo-section__button.scss';
-@use '../blocks/logo-section/__header/logo-section__header.scss';
-//about section
-@use '../blocks/about/about.scss';
-@use '../blocks/about/__title/about__title.scss';
-@use '../blocks/about/__container/about__container.scss';
-@use '../blocks/about/__text/about__text.scss';
-@use '../blocks/about/__wrapper/about__wrapper.scss';
 
-@use '../blocks/about/_type/about_type_event.scss';
+//intro section
+@use '../blocks/intro/intro.scss';
+@use '../blocks/intro/__link/intro__link.scss';
+@use '../blocks/intro/__text/intro__text.scss';
+@use '../blocks/intro/__container/intro__container.scss';
+@use '../blocks/intro/__image/intro__image.scss';
+@use '../blocks/intro/__header/intro__header.scss';
+@use '../blocks/intro/__menu-button/intro__menu-button.scss';
+
+//info-section
+@use '../blocks/info-section/info-section.scss';
+@use '../blocks/info-section/_background/info-section_background_accident.scss';
+@use '../blocks/info-section/__wrapper/info-section__wrapper.scss';
+@use '../blocks/info-section/__wrapper/_size/info-section__wrapper_size_small.scss';
+@use '../blocks/info-section/__wrapper/_size/info-section__wrapper_size_large.scss';
+@use '../blocks/info-section/__wrapper/_align/info-section__wrapper_align_center.scss';
+@use '../blocks/info-section/__title/info-section__title.scss';
+@use '../blocks/info-section/__title/_type/info-section__title_type_figure.scss';
+@use '../blocks/info-section/__content/info-section__content.scss';
+@use '../blocks/info-section/__text/info-section__text.scss';
+@use '../blocks/info-section/__button/info-section__button.scss';
+@use '../blocks/info-section/__button/_style/info-section__button_style_invert.scss';
+@use '../blocks/info-section/__constraints/info-section__constraints.scss';
+@use '../blocks/info-section/__constraints/_position/info-section__constraints_position_center.scss';
+@use '../blocks/info-section/__constraints/_position/info-section__constraints_position_left.scss';
+@use '../blocks/info-section/__constraints/_position/info-section__constraints_position_right.scss';
+@use '../blocks/info-section/__figure-container/info-section__figure-container.scss';
+@use '../blocks/info-section/__figure-container/_type/info-section__figure-container_type_desktop.scss';
+@use '../blocks/info-section/__figure-container/_type/info-section__figure-container_type_mobile.scss';
+@use '../blocks/info-section/__figure-container/_content/info-section__figure-container_content_donation.scss';
+@use '../blocks/info-section/__figure-container/_content/info-section__figure-container_content_donation-mobile.scss';
+@use '../blocks/info-section/__figure-container/_content/info-section__figure-container_content_people.scss';
+@use '../blocks/info-section/__figure-container/_content/info-section__figure-container_content_people-mobile.scss';
+@use '../blocks/info-section/__figure-container/_content/info-section__figure-container_content_ubilei.scss';
+@use '../blocks/info-section/__figure-container/_content/info-section__figure-container_content_ubilei-mobile.scss';
+@use '../blocks/info-section/__figure-wrapper/info-section__figure-wrapper.scss';
+@use '../blocks/info-section/__stats-container/info-section__stats-container.scss';
+@use '../blocks/info-section/__stats-container/_position/info-section__stats-container_position_right.scss';
+@use '../blocks/info-section/__stats-container/_position/info-section__stats-container_position_left.scss';
+
 //figures section
 @use '../blocks/figures/figures.scss';
 @use '../blocks/figures/__container/figures__container.scss';
@@ -194,71 +218,78 @@
 @use '../blocks/figures/__text/figures__text.scss';
 @use '../blocks/figures/__title/figures__title.scss';
 
-
 //gallery section
 @use '../blocks/gallery/gallery.scss';
 @use '../blocks/gallery/__title/gallery__title.scss';
 @use '../blocks/gallery/__subtitle/gallery__subtitle.scss';
-@use '../blocks/gallery/__container/gallery__container.scss';
 @use '../blocks/gallery/__image/gallery__image.scss';
-
 @use '../blocks/gallery/__slider/gallery__slider.scss';
 @use '../blocks/gallery/__slider-line/gallery__slider-line.scss';
-@use '../blocks/gallery/__slider-btn/gallery__slider-btn.scss';
+@use '../blocks/gallery/__slider-button/gallery__slider-button.scss';
 @use '../blocks/gallery/__slider-radio/gallery__slider-radio.scss';
 @use '../blocks/gallery/__slider-radio/_active/gallery__slider-radio_active.scss';
+@use '../blocks/gallery/__constraints/gallery__constraints.scss';
+
 //team section
 @use '../blocks/team/team.scss';
 @use '../blocks/team/__title/team__title.scss';
 @use '../blocks/team/__list/team__list.scss';
 @use '../blocks/team/__link/team__link.scss';
-
 @use '../blocks/team/__link/_type/team__link_type_gallery.scss';
 @use '../blocks/team/__link/_type/team__link_type_market.scss';
 @use '../blocks/team/__link/_type/team__link_type_surf.scss';
 
 
-
 // стили блока секции карточек со скроллом
-@use '../blocks/general-events/general-events.scss';
-@use '../blocks/general-events/__title/general-events__title.scss';
-@use '../blocks/general-events/__tags/general-events__tags.scss';
-@use '../blocks/general-events/__scroll/general-events__scroll.scss';
-@use '../blocks/general-events/_cards/general-events_cards.scss';
-@use '../blocks/general-events/__container/general-events__container.scss';
+@use '../blocks/popular-events/popular-events.scss';
+@use '../blocks/popular-events/__title/popular-events__title.scss';
+@use '../blocks/popular-events/__tags/popular-events__tags.scss';
+@use '../blocks/popular-events/__container/popular-events__container.scss';
+@use '../blocks/popular-events/__button/popular-events__button.scss';
+@use '../blocks/popular-events/__constraints/popular-events__constraints.scss';
+
 
 // стили модалки
 @use '../blocks/modal/modal.scss';
-@use '../blocks/modal/__img/modal__img.scss';
-@use '../blocks/modal/__container-close/modal__container-close.scss';
+@use '../blocks/modal/_type/modal_type_center.scss';
+@use '../blocks/modal/_type/modal_type_high-mob.scss';
+@use '../blocks/modal/_type/modal_type_preview.scss';
 @use '../blocks/modal/_opened/modal_opened.scss';
+@use '../blocks/modal/__wrapper-for-side/modal__wrapper-for-side.scss';
 @use '../blocks/modal/__container/modal__container.scss';
+@use '../blocks/modal/__container/_type/modal__container_type_form.scss';
+@use '../blocks/modal/__container/_type/modal__container_type_side.scss';
+@use '../blocks/modal/__container/_type/modal__container_type_preview.scss';
 @use '../blocks/modal/__container_opened/modal__container_opened.scss';
+@use '../blocks/modal/__header/modal__header.scss';
+@use '../blocks/modal/__drag-line/modal__drag-line.scss';
+@use '../blocks/modal/__title/modal__title.scss';
+@use '../blocks/modal/__close_button/modal__close-button.scss';
+@use '../blocks/modal/__close_button/_type/modal__close-button_type_icon.scss';
+@use '../blocks/modal/__close_button/_type/modal__close-button_type_button.scss';
+@use '../blocks/modal/__body/modal__body.scss';
+@use '../blocks/modal/__grow-section/modal__grow-section.scss';
+@use '../blocks/modal/__button/modal__button.scss';
 
-// стили event в модалке
+// event (в модалке)
 @use '../blocks/event/event.scss';
+@use '../blocks/event/__header/event__header.scss';
+@use '../blocks/event/__image/event__image.scss';
 @use '../blocks/event/__content/event__content.scss';
 @use '../blocks/event/__data/event__data.scss';
+@use '../blocks/event/__type/event__type.scss';
+@use '../blocks/event/__date/event__date.scss';
+@use '../blocks/event/__info/event__info.scss';
+@use '../blocks/event/__title/event__title.scss';
+@use '../blocks/event/__text/event__text.scss';
+@use '../blocks/event/__table/event__table.scss';
 @use '../blocks/event/__actions/event__actions.scss';
 @use '../blocks/event/__button/event__button.scss';
 @use '../blocks/event/event-icon/event-icon.scss';
-@use '../blocks/event/__type/event__type.scss';
-@use '../blocks/event/__date/event__date.scss';
-@use '../blocks/event/__title/event__title.scss';
-@use '../blocks/event/__description/event__description.scss';
-@use '../blocks/event/__table/event__table.scss';
 @use '../blocks/event/__shares/event__shares.scss';
-@use '../blocks/event/__shares-text/event__shares-text.scss';
 @use '../blocks/event/__shares-icons/event__shares-icons.scss';
 @use '../blocks/event/__shares-social/event__shares-social.scss';
 @use '../blocks/event/__shares-items/event__shares-items.scss';
-
-// вспомогательно - для проверки scss
-@use '../blocks/example/example-var.scss';
-@use '../blocks/example/example-mixin.scss';
-@use '../blocks/example/example-h1.scss';
-
-
 
 /* Form */
 @use '../blocks/form/form.scss';
@@ -313,5 +344,37 @@
 @use '../blocks/additional-section/__image/_type/additional-section__image_type_404.scss';
 
 
+//page 404
+@use '../blocks/error-404/error-404.scss';
+@use '../blocks/error-404/__container/error-404__container.scss';
+@use '../blocks/error-404/__image/error-404__image.scss';
+@use '../blocks/error-404/__subtitle/error-404__subtitle.scss';
+@use '../blocks/error-404/__title/error-404__title.scss';
+
 //link
 @use '../blocks/link/link.scss';
+@use '../blocks/link/_type/link_type_text.scss';
+
+//catalog
+@use '../blocks/catalog/catalog.scss';
+@use '../blocks/catalog/__constraints/catalog__constraints.scss';
+@use '../blocks/catalog/__sidebar/catalog__sidebar.scss';
+@use '../blocks/catalog/__section/catalog__section.scss';
+@use '../blocks/catalog/__section/_type/catalog__section_type_grow.scss';
+@use '../blocks/catalog/__section/_type/catalog__section_type_bottom.scss';
+@use '../blocks/catalog/__title/catalog__title.scss';
+@use '../blocks/catalog/__subtitle/catalog__subtitle.scss';
+@use '../blocks/catalog/__text/catalog__text.scss';
+@use '../blocks/catalog/__text/_type/catalog__text_type_counter.scss';
+@use '../blocks/catalog/__filters-group/catalog__filters-group.scss';
+@use '../blocks/catalog/__content/catalog__content.scss';
+@use '../blocks/catalog/__header/catalog__header.scss';
+@use '../blocks/catalog/__events-container/catalog__events-container.scss';
+@use '../blocks/catalog/__events-container/_opened/catalog__events-container_opened.scss';
+@use '../blocks/catalog/__map-container/catalog__map-container.scss';
+@use '../blocks/catalog/__map-container/_opened/catalog__map-container_opened.scss';
+@use '../blocks/catalog/__mob-filters-button/catalog__mob-filters-button.scss';
+
+//fixed-bar
+@use '../blocks/fixed-bar/fixed-bar.scss';
+@use '../blocks/fixed-bar/_type/fixed-bar__desktop-sticky.scss';

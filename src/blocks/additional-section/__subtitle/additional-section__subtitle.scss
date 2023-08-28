@@ -1,3 +1,4 @@
+@use 'variables' as *;
 @use 'mixins' as *;
 
 .additional-section__subtitle {
@@ -8,6 +9,9 @@
 @media all and (max-width: 767px) {
   .additional-section__subtitle {
     @include h4-mobile;
+@media all and (max-width: $mobile) {
+  .error-404__subtitle {
+    @include text-mobile;
     margin: 12px 0 20px;
   }
 }

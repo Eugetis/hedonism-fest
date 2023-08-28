@@ -88,7 +88,7 @@
 // Никита
 
 
-
+// ЗАЧЕМ ОТДЕЛЬНАЯ ФУНКЦИЯ?
 // Георгий
 @mixin font-settings ($size, $style, $weight, $height){
   font-size: $size;
@@ -96,6 +96,3 @@
   font-weight: $weight;
   line-height: $height;
 }
-
-// @use 'mixins' as *;
-// @use 'variables' as *;

@@ -4,7 +4,7 @@
   font: $icon-text-desktop;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: $mobile) {
   .button__icon {
     font: $icon-text-mobile;
   }

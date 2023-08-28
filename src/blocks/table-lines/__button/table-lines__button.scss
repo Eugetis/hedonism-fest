@@ -1,5 +1,7 @@
+@use 'variables' as *;
+
 .table-lines__button {
-  color: #7100FF;
+  color: $color-primary;
   background-color: transparent;
   padding: 0;
 }

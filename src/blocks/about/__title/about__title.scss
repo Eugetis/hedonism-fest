@@ -4,7 +4,7 @@
   @include h2-desktop;
 }
 
-@media all and (max-width: 767px) {
+@media all and (max-width: $mobile) {
   .about__title {
     @include h2-mobile;
   }

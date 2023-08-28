@@ -1,12 +1,13 @@
+@use 'variables' as *;
+
 .footer {
-  background-color: #EBE9ED;
-  display: flex;
+  background-color: $light-secondary;
   transition-property: background-color;
   transition-duration: 0.5s;
 }
 
-@media all and (max-width: 767px) {
+@media all and (max-width: $mobile) {
   .footer {
-    background-color: #FFD400;
+    background-color: $color-accident;
   }
 }

@@ -1,3 +1,4 @@
+@use 'variables' as *;
 @use 'mixins' as *;
 
 .event__shares-social {
@@ -18,7 +19,7 @@
   @include background('../../../images/tg-logo.svg')
 }
 
-@media screen and (min-width: 360px) and (max-width: 576px) {
+@media screen and (max-width: $mobile) {
   .event__shares-social {
     width: 32px;
     height: 32px;

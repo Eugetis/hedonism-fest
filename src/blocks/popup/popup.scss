@@ -9,8 +9,7 @@
   background-color: $light-primary;
   box-shadow: $drop-shadow;
   border-radius: $radius-large;
-  font: $text-mobile;
-  line-height: 20px;
+  @include text-mobile;
   color: $dark-primary;
   position: relative;
   @include flex-column-mixin;

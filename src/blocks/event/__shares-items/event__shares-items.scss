@@ -1,11 +1,12 @@
 @use 'mixins' as *;
+@use 'variables' as *;
 
 .event__shares-items {
   @include flex-center-row-mixin;
   justify-content: space-between;
 }
 
-@media screen and (min-width: 360px) and (max-width: 576px) {
+@media screen and (max-width: $mobile) {
   .event__shares-items {
     @include flex-column-mixin;
     gap: 12px;

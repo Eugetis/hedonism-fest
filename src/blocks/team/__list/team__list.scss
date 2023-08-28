@@ -1,9 +1,17 @@
+@use 'variables' as *;
+
 .team__list {
   list-style: none;
   display: flex;
   align-items: center;
-  column-gap: 24px;
+  gap: 24px;
   overflow: hidden;
   margin: 0;
   padding: 0;
+}
+
+@media all and (max-width: $mobile) {
+  .team__list {
+    gap: 20px;
+  }
 }

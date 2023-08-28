@@ -1,4 +1,9 @@
 .footer__illustration {
+  background-image: url("../../../images/footer_illustration.svg");
+  aspect-ratio: 1/1;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   width: 193px;
   height: 193px;
 }
@@ -7,5 +12,4 @@
   .footer__illustration {
     display: none;
   }
-  
 }

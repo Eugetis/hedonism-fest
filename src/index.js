@@ -1,6 +1,6 @@
 import './scss/styles.scss';
 const modalButton = document.querySelector('.modal__button');
-const modalCloseButton = document.querySelector('.modal__container-close')
+const modalCloseButton = document.querySelector('.modal__close-button')
 const modal = document.querySelector('.modal');
 const modalContainer = document.querySelector('.modal__container');
 
@@ -16,7 +16,7 @@ modalCloseButton.addEventListener('click', () => {
 })
 // Никита -> end!
 
-console.log('hello');
+// console.log('hello');
 
 const sliderLine = document.querySelector('.gallery__slider-line');
 const sliderDots = document.querySelectorAll('.gallery__slider-radio');
@@ -26,7 +26,7 @@ const sliderImages = document.querySelectorAll('.gallery__image');
 let sliderCount = 0;
 let sliderWidth;
 
-console.log(sliderImages);
+// console.log(sliderImages);
 
 
 window.addEventListener('resize', showSlide);

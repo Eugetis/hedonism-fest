@@ -1,7 +1,13 @@
 @use 'variables' as *;
+@use 'mixins' as *;
 
 .preview__text {
-  margin: 0;
-  font: $subtext-desktop;
+  @include subtext-desktop;
   color: $dark-secondary;
+}
+
+@media screen and (max-width: $mobile) {
+  .preview__text {
+    @include text-mobile;
+  }
 }

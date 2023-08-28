@@ -1,6 +1,13 @@
 @use 'mixins' as *;
+@use 'variables' as *;
 
 .preview__data {
   @include flex-center-row-mixin;
   justify-content: space-between;
+}
+
+@media screen and (max-width: $mobile) {
+  .preview__data {
+    margin-top: 16px;
+  }
 }

@@ -1,5 +1,8 @@
+@use 'variables' as *;
+
 .header {
-  position: fixed;
+  position: fixed; // для index.html нужно дописать и включать модификатор, который управляет появлением шапки по скроллу
   width: 100%;
+  z-index: 1;
 }
 

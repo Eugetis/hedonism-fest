@@ -9,7 +9,7 @@
   box-shadow: $fixed-bar;
 }
 
-@media screen and (min-width: 360px) and (max-width: 576px) {
+@media screen and (max-width: $mobile) {
   .event__actions {
     padding: $pad-20;
   }

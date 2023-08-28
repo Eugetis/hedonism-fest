@@ -1,10 +1,12 @@
+@use 'variables' as *;
+
 .team__link_type_surf {
   width: 120px;
   height: 120px;
   background-image: url('../../../../images/surfлого-2.svg');
 }
 
-@media all and (max-width: 767px) {
+@media all and (max-width: $mobile) {
   .team__link_type_surf {
     background-image: url('../../../../images/surf-logo-mobile.svg');
   }

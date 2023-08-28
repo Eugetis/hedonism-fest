@@ -1,29 +1,32 @@
-
 @use 'variables' as *;
-@use 'mixins' as *;
+
 .header__wrapper {
+  min-height: 88px;
+  max-width: $desktop-max;
+  margin: $centered;
+  padding: $pad-20 $pad-40;
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 40px;
-  background-color: $color-accident;
-  min-height: 88px;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 24px;
-  letter-spacing: 0px;
-  box-shadow: $drop-shadow;
 }
 
-@media screen and (max-width: 860px) {
-  .header__wrapper {
-    padding: 0;
-  }
-}
+// @media screen and (max-width: 860px) {
+//   .header__wrapper {
+//     padding: 0;
+//   }
+// }
+
+// @media screen and (max-width: $tablet) {
+//   .header__wrapper {
+//     min-height: 68px;
+//   }
+// }
 
 @media screen and (max-width: $tablet) {
   .header__wrapper {
     min-height: 68px;
+    padding: $pad-12 $pad-20;
+    z-index: 5;
   }
 }
-

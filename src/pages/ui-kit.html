@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="RU">
+<html lang="RU" class="html">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -79,6 +79,9 @@
 
     <section class="uikit-section">
       <h2>Кнопки</h2>
+      <p>!!! для кнопок-ссылок на страницы используем тег a, вместо button !!!</p>
+      <!-- !!! для кнопок-ссылок на страницы используем тег a, вместо button !!! -->
+
       <!-- Иконки в кнопках подключаются как content: из созданного вариативного шрифта -->
       <!-- файл вариативного шрифта hf-icons-font.woff(2) -->
       <!-- файл hf-icons-font-demo.html отображает все иконки и их PUA коды-->
@@ -253,6 +256,14 @@
     <section class="uikit-section">
       <h2>Поля</h2>
 
+      <div class="form__options">
+        <input type="radio" id="pref1" class="form__input" name="preference" value="кафе/бар/ресторан" checked>
+        <label class="form__label" for="pref1">кафе/бар/ресторан</label>
+
+        <input type="radio" id="pref2" class="form__input" name="preference" value="мастер-класс/лекция">
+        <label class="form__label" for="pref2">мастер-класс/лекция</label>
+      </div>
+
     </section>
 
     <section class="uikit-section">
@@ -308,7 +319,7 @@
     <section class="uikit-section">
       <h2>Карточки</h2>
       <article class="cards__item">
-        <img class="cards__item-img" src="https://s3-alpha-sig.figma.com/img/7757/64eb/a164910d18475e81c5fd67bd8bb24572?Expires=1693180800&Signature=ptJFuK39u7G9tFyu8qxXFDrACABLRMX5mPM3Di-wuPgtHWINFWz5NAsxJKFFYFU0rzdtxNWtdTVctiZw~mfnxKA0AAGulHKeIXYJu91AV9VkS9h8CFCTyjPZY5cZM27outa2KaEsTX9KW1LYLaM9aB9TthiGH4ZhNd4yVHXyXxBw3mNYxVo703f51GkvzSRSdaiGHYpmYcjv9KSEWJrGtqeRAmyF2GgQWJIb7FiUt-j8dwYH0ZFPolAFsbEtnIPpOaCM39L7ixkh35O34hVeepzH2DrWk4l3UwOqyygAEO5Z0~p4B0Ep~9gHtMA-eUcmygTiV82ChAgFlIls9uJ9wg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4" alt="Изображение карточки">
+        <img class="cards__item-img" src="<%=require('../images/card-sample.jpg')%>" alt="Изображение карточки">
         <div class="cards__item-content">
           <div class="cards__item-data">
             <p class="cards__item-text">лекция</p>
@@ -323,9 +334,7 @@
             <p class="cards__item-text">+ ещё 3</p>
           </div>
         </div>
-        <div class="cards__item-like">
-          <button class="cards__item-btn-like"></button>
-        </div>
+        <button class="cards__item-like card-control"><span class="card-control__icon icon-heart"></span></button>
       </article>
     </section>
 

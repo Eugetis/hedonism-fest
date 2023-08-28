@@ -1,32 +1,16 @@
 @use 'variables' as *;
 
 .event__content {
-  padding: $pad-40 $pad-32 $pad-40 $pad-40;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: $pad-40;
+  flex-grow: 1;
 }
 
-.event__content {
-  max-height: 620px;
-  overflow-y: scroll;
-}
-
-.event__content::-webkit-scrollbar {
-  width: 8px;
-  background-color: #EBE9ED;
-}
-
-.event__content::-webkit-scrollbar-track {
-  margin-right: 40px;
-  background-color: #EBE9ED;
-}
-
-.event__content::-webkit-scrollbar-thumb {
-  background-color: #96949E;
-  border-radius: 8px;
-}
-
-@media screen and (min-width: 360px) and (max-width: 576px) {
+@media screen and (max-width: $mobile) {
   .event__content {
+    gap: 16px;
     padding: $pad-20;
-    max-height: 382px;
   }
 }

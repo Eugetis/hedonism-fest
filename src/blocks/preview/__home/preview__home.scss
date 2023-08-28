@@ -9,7 +9,7 @@
   background-color: $dark-secondary;
 }
 
-@media screen and (min-width: 360px) and (max-width: 576px) {
+@media screen and (max-width: $mobile) {
   .preview__home {
     display: block;
     line-height: 28px;
