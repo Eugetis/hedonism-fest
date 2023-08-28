@@ -1,0 +1,6 @@
+@use 'variables' as *;
+
+.link_type_text {
+  text-decoration: none;
+  color: $color-primary;
+}

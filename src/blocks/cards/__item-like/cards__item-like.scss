@@ -3,6 +3,4 @@
 
 .cards__item-like {
   @include position-absolute-mixin(8px, false, false, 8px, 1);
-  background-color: $light-primary;
-  border-radius: $radius-large;
 }

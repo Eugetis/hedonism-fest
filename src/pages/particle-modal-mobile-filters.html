@@ -1,0 +1,59 @@
+<!-- модалка с фильтрами для мобилы -->
+<!-- должна открываться по кнопке "фильтры" (catalog__mob-filters-button) в Каталоге -->
+<!-- через добавление секции класса modal_opened -->
+
+<section class="modal modal_type_center" aria-label="модальное окно с фильтрами">
+
+  <div class="modal__container modal__container_type_form">
+    <div class="modal__header">
+      <div class="modal__drag-line"></div>
+      <h2 class="modal__title">Фильтры</h2>
+      <button class="modal__close-button modal__close-button_type_icon" type="button"><span class="button__icon icon-cross link"></span></button>
+    </div>
+
+    <div class="modal__body">
+      <div class="catalog__section catalog__section_type_grow">
+        <div class="catalog__section">
+          <h3 class="catalog__subtitle">Тип события</h3>
+          <div class="catalog__filters-group">
+            <button class="tag-filter tag-filter_type_selected" type="button">все</button>
+            <button class="tag-filter" type="button">хочу пойти</button>
+            <button class="tag-filter" type="button">разное</button>
+            <button class="tag-filter" type="button">лекции</button>
+            <button class="tag-filter" type="button">мастер-классы</button>
+            <button class="tag-filter tag-filter_type_selected" type="button">кофе<span class="tag-filter__icon icon-cross-small"></span></button>
+            <button class="tag-filter" type="button">музеи</button>
+            <button class="tag-filter" type="button">экскурсии</button>
+            <button class="tag-filter" type="button">доставка</button>
+            <button class="tag-filter" type="button">магазины</button>
+          </div>
+        </div>
+        <div class="catalog__section">
+          <h3 class="catalog__subtitle">Дни</h3>
+          <div class="catalog__filters-group">
+            <button class="tag-filter tag-filter_type_selected" type="button">все</button>
+            <button class="tag-filter" type="button">все</button>
+            <button class="tag-filter" type="button">сегодня</button>
+            <button class="tag-filter" type="button">завтра</button>
+            <button class="tag-filter" type="button">послезавтра</button>
+            <button class="tag-filter tag-filter_type_selected" type="button">чт, 09 сен.<span class="tag-filter__icon icon-cross-small"></span></button>
+            <button class="tag-filter" type="button">пт, 10 сен.</button>
+            <button class="tag-filter" type="button">сб, 11 сен.</button>
+            <button class="tag-filter" type="button">вс, 12 сен.</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="catalog__section catalog__section_type_bottom">
+        <h3 class="catalog__subtitle">Хотите принять участие в акции?</h3>
+        <p class="catalog__text">заполните заявку, и мы с вами обязательно свяжемся.</p>
+        <a href="#" class="button button_type_border">узнать подробности<span class="button__icon icon-arrow-right"></span></a>
+      </div>
+    </div>
+
+    <div class="fixed-bar">
+      <button class="modal__button button button_type_filled" type="button" >показать</button>
+    </div>
+  </div>
+  <!-- конец модалки с фильтрами для мобилы -->
+</section>

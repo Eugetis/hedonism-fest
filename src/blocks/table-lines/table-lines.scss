@@ -3,18 +3,14 @@
 
 .table-lines {
   @include flex-column-mixin;
-  max-width: 628px;
+  @include text-desktop;
+  max-width: 100%;
   padding: 0;
-  margin: 0;
-  font: $text-desktop;
-  line-height: 24px;
   color: $dark-primary;
 }
 
-@media screen and (min-width: 360px) and (max-width: 576px) {
+@media screen and (max-width: $mobile) {
   .table-lines {
-    max-width: 320px;
-    font-size: 16px;
-    line-height: 20px;
+    @include text-mobile;
   }
 }

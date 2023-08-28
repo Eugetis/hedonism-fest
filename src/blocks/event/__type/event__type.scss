@@ -1,15 +1,13 @@
 @use 'variables' as *;
+@use 'mixins' as *;
 
 .event__type {
-  margin: 0;
-  font: $text-desktop;
-  line-height: 24px;
+  @include text-desktop;
   color: $dark-secondary;
 }
 
-@media screen and (min-width: 360px) and (max-width: 576px) {
+@media screen and (max-width: $mobile) {
   .event__type {
-    font: $text-mobile;
-    line-height: 20px;
+    @include text-mobile;
   }
 }

@@ -1,0 +1,12 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.catalog__subtitle {
+  @include h3-desktop;
+}
+
+@media screen and (max-width: $mobile) {
+  .catalog__subtitle {
+    @include h3-mobile;
+  }
+}

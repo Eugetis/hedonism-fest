@@ -27,7 +27,7 @@
   }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: $mobile) {
   .tag-filter {
     max-height: 36px;
     gap: $gap-4;

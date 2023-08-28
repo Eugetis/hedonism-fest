@@ -1,0 +1,11 @@
+@use 'variables' as *;
+
+.gallery__constraints {
+  padding-bottom: 0;
+}
+
+@media all and (max-width: $mobile) {
+  .gallery__constraints {
+    padding-bottom: $pad-40;
+  }
+}

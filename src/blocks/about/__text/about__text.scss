@@ -10,7 +10,7 @@
 }
 
 
-@media all and (max-width: 767px) {
+@media all and (max-width: $mobile) {
   .about__text {
     @include text-mobile;
     margin: 14px 0 0px;

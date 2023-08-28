@@ -1,9 +1,11 @@
+@use 'variables' as *;
+
 .page {
-  /*max-width: 1440px;*/
-  margin: 0 auto;
-  background-color: #fcfaf7;
+  width: 100%;
+  background-color: $light-primary;
   font-family: 'TT Firs Neue', Arial, sans-serif;
-  color: #0c0b0e;
+  color: $dark-primary;
+  position: relative;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -12,11 +14,3 @@
   -moz-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
 }
-
-
-
-/* @media screen and (max-width: 1439px) {
-  .page {
-    max-width: 100%;
-  }
-} */

@@ -1,0 +1,16 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.page__title {
+  @include h1-desktop;
+  margin: $centered;
+  max-width: $desktop-max;
+  padding: $pad-40 $pad-40 0 $pad-40;
+}
+
+@media screen and (max-width: $mobile) {
+  .page__title {
+    @include h1-mobile;
+    padding: $pad-20 $pad-20 0 $pad-20;
+  }
+}

@@ -1,5 +1,4 @@
 @use 'variables' as *;
-@use 'mixins' as *;
 
 .card-control {
   display: flex;
@@ -17,7 +16,7 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: $mobile) {
   .card-control {
     width: 44px;
     height: 44px;

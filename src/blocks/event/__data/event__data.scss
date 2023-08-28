@@ -1,13 +1,14 @@
+@use 'variables' as *;
 @use 'mixins' as *;
 
 .event__data {
   @include flex-center-row-mixin;
   justify-content: space-between;
-  margin-bottom: 32px;
+  gap: 28px
 }
 
-@media screen and (min-width: 360px) and (max-width: 576px) {
+@media screen and (max-width: $mobile) {
   .event__data {
-    margin-bottom: 16px;
+    gap: 16px
   }
 }

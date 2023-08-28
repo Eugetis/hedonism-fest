@@ -1,0 +1,13 @@
+@use 'variables' as *;
+
+.catalog__section_type_bottom {
+  padding: $pad-40;
+  gap: 12px;
+  border-top: $border-light;
+}
+
+@media screen and (max-width: $mobile) {
+  .catalog__section_type_bottom {
+    padding: $pad-20;
+  }
+}

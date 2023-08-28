@@ -1,5 +1,7 @@
+@use 'variables' as *;
+
 .footer__link_type_mail {
-  color: #7100FF;
+  color: $color-primary;
 }
 
 .footer__link_type_mail::after {
@@ -8,6 +10,6 @@
 
 @media all and (max-width: 950px) {
   .footer__link_type_mail {
-    font-weight: 400;    
+    font-weight: 400;
   }
 }

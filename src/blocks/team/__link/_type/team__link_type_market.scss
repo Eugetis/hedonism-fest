@@ -1,10 +1,12 @@
+@use 'variables' as *;
+
 .team__link_type_market {
   width: 170px;
   height: 165px;
   background-image: url('../../../../images/Рыноклого.svg');
 }
 
-@media all and (max-width: 767px) {
+@media all and (max-width: $mobile) {
   .team__link_type_market {
     background-image: url('../../../../images/rynok-logo-mobile.svg');
   }

@@ -1,14 +1,6 @@
+@use 'variables' as *;
+
 .gallery {
-  max-width: 1440px;
   display: flex;
   flex-direction: column;
-  padding: 80px 40px;
-  box-sizing: border-box;
-  width: 100%;
-}
-
-@media all and (max-width: 767px) {
-  .gallery {
-    padding: 30px 20px;
-  }
 }

@@ -1,0 +1,11 @@
+@use 'variables' as *;
+
+.intro__image {
+  height: 32px;
+}
+
+@media all and (max-width: $mobile) {
+  .intro__image {
+    height: 20px;
+  }
+}

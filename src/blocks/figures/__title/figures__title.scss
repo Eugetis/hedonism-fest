@@ -1,10 +1,11 @@
+@use 'variables' as *;
 @use 'mixins' as *;
 
 .figures__title {
   @include h2-desktop;
 }
 
-@media all and (max-width: 767px) {
+@media all and (max-width: $mobile) {
   .figures__title {
     @include h2-mobile;
   }

@@ -1,0 +1,11 @@
+@use 'variables' as *;
+
+.section__constraints_size_large {
+  padding: $pad-80 $pad-40;
+}
+
+@media all and (max-width: $mobile) {
+  .section__constraints_size_large {
+    padding: $pad-40 $pad-20;
+  }
+}

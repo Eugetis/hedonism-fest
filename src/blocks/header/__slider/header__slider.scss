@@ -1,0 +1,16 @@
+@use 'variables' as *;
+
+.header__slider {
+  display: none; // модификатор header__slider_state_opened переключает display на flex, чтобы выезжало мобильное меню
+}
+
+
+@media screen and (max-width: $tablet) {
+  .header__slider {
+    height: calc(100vh - 68px);
+    transition: transform 0.5s ease-in-out;
+    background-color: $light-primary;
+    position: relative;
+    overflow-x: hidden;
+  }
+}

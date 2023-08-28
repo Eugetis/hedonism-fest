@@ -1,0 +1,15 @@
+@use 'variables' as *;
+
+.intro {
+width: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+position: relative;
+}
+
+@media all and (max-width: $mobile) {
+  .intro {
+    position: relative;
+  }
+}

@@ -1,0 +1,14 @@
+@use 'variables' as *;
+
+.section-constraints {
+  margin: $centered;
+  max-width: $desktop-max;
+  box-sizing: border-box;
+}
+
+@media all and (max-width: $mobile) {
+  .section-constraints {
+    max-width: 100%;
+  }
+}
+

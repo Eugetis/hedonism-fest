@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="RU">
+<html lang="RU" class="html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,13 +10,387 @@
     <link rel="icon" href="" type="">
 </head>
 
+<!-- ВНИЗУ СТРАНИЦЫ - ШАБЛОН КАРТОЧКИ И МОДАЛКИ -->
+
 <body class="page">
     <%= require('html-loader!./header.html').default %>
 
     <main>
-      <h1>Каталог</h1>
+
+      <section class="catalog">
+
+        <div class="catalog__constraints">
+
+          <!-- начало сайдбара (виден только в десктопе) -->
+          <div class="catalog__sidebar">
+
+            <div class="catalog__section catalog__section_type_grow">
+              <div class="catalog__section">
+                <h2 class="catalog__title">Куда пойти</h2>
+              </div>
+              <div class="catalog__section">
+                <h3 class="catalog__subtitle">Тип события</h3>
+                <div class="catalog__filters-group">
+                  <button class="tag-filter tag-filter_type_selected" type="button">все</button>
+                  <button class="tag-filter" type="button">хочу пойти</button>
+                  <button class="tag-filter" type="button">разное</button>
+                  <button class="tag-filter" type="button">лекции</button>
+                  <button class="tag-filter" type="button">мастер-классы</button>
+                  <button class="tag-filter tag-filter_type_selected" type="button">кофе<span class="tag-filter__icon icon-cross-small"></span></button>
+                  <button class="tag-filter" type="button">музеи</button>
+                  <button class="tag-filter" type="button">экскурсии</button>
+                  <button class="tag-filter" type="button">доставка</button>
+                  <button class="tag-filter" type="button">магазины</button>
+                </div>
+              </div>
+              <div class="catalog__section">
+                <h3 class="catalog__subtitle">Дни</h3>
+                <div class="catalog__filters-group">
+                  <button class="tag-filter tag-filter_type_selected" type="button">все</button>
+                  <button class="tag-filter" type="button">все</button>
+                  <button class="tag-filter" type="button">сегодня</button>
+                  <button class="tag-filter" type="button">завтра</button>
+                  <button class="tag-filter" type="button">послезавтра</button>
+                  <button class="tag-filter tag-filter_type_selected" type="button">чт, 09 сен.<span class="tag-filter__icon icon-cross-small"></span></button>
+                  <button class="tag-filter" type="button">пт, 10 сен.</button>
+                  <button class="tag-filter" type="button">сб, 11 сен.</button>
+                  <button class="tag-filter" type="button">вс, 12 сен.</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="catalog__section catalog__section_type_bottom">
+              <h3 class="catalog__subtitle">Хотите принять участие в акции?</h3>
+              <p class="catalog__text">заполните заявку, и мы с вами обязательно свяжемся.</p>
+              <a href="./for-participants.html" class="button button_type_border">узнать подробности<span class="button__icon icon-arrow-right"></span></a>
+            </div>
+
+          </div>
+          <!-- конец сайдбара -->
+
+          <div class="catalog__content">
+
+            <div class="catalog__header">
+              <!-- после вставки свитчеров в хедер надо посмотреть, что будет на ширине 320px - скорее всего появится горизонтальный скролл -->
+              <button class="button button_type_filled" type="button">тут&nbsp;будут&nbsp;табы&#8209;свитчеры&nbsp;111</button>
+              <p class="catalog__text catalog__text_type_counter">Показано 1&#8209;13&nbsp;из&nbsp;129</p>
+              <!-- тут нужно js для расчета чисел (сначала для быстроты делаем рендеринг сразу всех, потом может будем подгружать по 12) -->
+              <button class="catalog__mob-filters-button button button_type_border" type="button"><span class="tag-filter__icon icon-settings-sliders"></span>фильтры</button>
+            </div>
+
+
+            <section class="">
+             <!-- тут будет секция с сообщением, что результатов поиска нет
+              (стили additional page + обертка от блока catalog) -->
+            </section>
+
+
+            <section class="catalog__map-container">
+              <!-- тут будет блок с яндекс картой -->
+              <!-- чтобы включить, нужно будет добавить класс catalog__map-container_opened -->
+              <!-- у убрать у следующего блока с гридом класс catalog__events-container_opened -->
+            </section>
+
+
+            <!-- тут будет 12 заглушек карточек (в конце лежит template - его нужно при необходимости поправить и использовать) -->
+            <section class="catalog__events-container catalog__events-container_opened">
+              <ul class="cards cards_type_grid">
+
+                <li class="cards__item">
+                  <img class="cards__item-img" src="<%=require('../images/card-sample.jpg')%>" alt="Изображение карточки">
+                  <div class="cards__item-content">
+                    <div class="cards__item-data">
+                      <p class="cards__item-text">лекция</p>
+                      <p class="cards__item-text">1 мая, 12:30-13:50</p>
+                    </div>
+                    <div class="cards__item-info">
+                      <h2 class="cards__item-title">идентичность: почему нам сложно меняться?</h2>
+                      <p class="cards__item-description">лектор: Мария Бархатова</p>
+                    </div>
+                    <div class="cards__item-address">
+                      <p class="cards__item-text">улица Блохина, 22</p>
+                      <p class="cards__item-text">+ ещё 3</p>
+                    </div>
+                  </div>
+                  <button class="cards__item-like card-control"><span class="card-control__icon icon-heart-filled"></span></button>
+                </li>
+
+                <li class="cards__item">
+                  <img class="cards__item-img" src="<%=require('../images/card-sample.jpg')%>" alt="Изображение карточки">
+                  <div class="cards__item-content">
+                    <div class="cards__item-data">
+                      <p class="cards__item-text">лекция</p>
+                      <p class="cards__item-text">1 мая, 12:30-13:50</p>
+                    </div>
+                    <div class="cards__item-info">
+                      <h2 class="cards__item-title">идентичность: почему нам сложно меняться?</h2>
+                      <p class="cards__item-description">лектор: Мария Бархатова</p>
+                    </div>
+                    <div class="cards__item-address">
+                      <p class="cards__item-text">улица Блохина, 22</p>
+                      <p class="cards__item-text">+ ещё 3</p>
+                    </div>
+                  </div>
+                  <button class="cards__item-like card-control"><span class="card-control__icon icon-heart"></span></button>
+                </li>
+
+                <li class="cards__item">
+                  <img class="cards__item-img" src="<%=require('../images/card-sample.jpg')%>" alt="Изображение карточки">
+                  <div class="cards__item-content">
+                    <div class="cards__item-data">
+                      <p class="cards__item-text">лекция</p>
+                      <p class="cards__item-text">1 мая, 12:30-13:50</p>
+                    </div>
+                    <div class="cards__item-info">
+                      <h2 class="cards__item-title">идентичность: почему нам сложно меняться?</h2>
+                      <p class="cards__item-description">лектор: Мария Бархатова</p>
+                    </div>
+                    <div class="cards__item-address">
+                      <p class="cards__item-text">улица Блохина, 22</p>
+                      <p class="cards__item-text">+ ещё 3</p>
+                    </div>
+                  </div>
+                  <button class="cards__item-like card-control"><span class="card-control__icon icon-heart"></span></button>
+                </li>
+
+                <li class="cards__item">
+                  <img class="cards__item-img" src="<%=require('../images/card-sample.jpg')%>" alt="Изображение карточки">
+                  <div class="cards__item-content">
+                    <div class="cards__item-data">
+                      <p class="cards__item-text">лекция</p>
+                      <p class="cards__item-text">1 мая, 12:30-13:50</p>
+                    </div>
+                    <div class="cards__item-info">
+                      <h2 class="cards__item-title">идентичность: почему нам сложно меняться?</h2>
+                      <p class="cards__item-description">лектор: Мария Бархатова</p>
+                    </div>
+                    <div class="cards__item-address">
+                      <p class="cards__item-text">улица Блохина, 22</p>
+                      <p class="cards__item-text">+ ещё 3</p>
+                    </div>
+                  </div>
+                  <button class="cards__item-like card-control"><span class="card-control__icon icon-heart"></span></button>
+                </li>
+
+                <li class="cards__item">
+                  <img class="cards__item-img" src="<%=require('../images/card-sample.jpg')%>" alt="Изображение карточки">
+                  <div class="cards__item-content">
+                    <div class="cards__item-data">
+                      <p class="cards__item-text">лекция</p>
+                      <p class="cards__item-text">1 мая, 12:30-13:50</p>
+                    </div>
+                    <div class="cards__item-info">
+                      <h2 class="cards__item-title">идентичность: почему нам сложно меняться?</h2>
+                      <p class="cards__item-description">лектор: Мария Бархатова</p>
+                    </div>
+                    <div class="cards__item-address">
+                      <p class="cards__item-text">улица Блохина, 22</p>
+                      <p class="cards__item-text">+ ещё 3</p>
+                    </div>
+                  </div>
+                  <button class="cards__item-like card-control"><span class="card-control__icon icon-heart"></span></button>
+                </li>
+
+                <li class="cards__item">
+                  <img class="cards__item-img" src="<%=require('../images/card-sample.jpg')%>" alt="Изображение карточки">
+                  <div class="cards__item-content">
+                    <div class="cards__item-data">
+                      <p class="cards__item-text">лекция</p>
+                      <p class="cards__item-text">1 мая, 12:30-13:50</p>
+                    </div>
+                    <div class="cards__item-info">
+                      <h2 class="cards__item-title">идентичность: почему нам сложно меняться?</h2>
+                      <p class="cards__item-description">лектор: Мария Бархатова</p>
+                    </div>
+                    <div class="cards__item-address">
+                      <p class="cards__item-text">улица Блохина, 22</p>
+                      <p class="cards__item-text">+ ещё 3</p>
+                    </div>
+                  </div>
+                  <button class="cards__item-like card-control"><span class="card-control__icon icon-heart"></span></button>
+                </li>
+
+                <li class="cards__item">
+                  <img class="cards__item-img" src="<%=require('../images/card-sample.jpg')%>" alt="Изображение карточки">
+                  <div class="cards__item-content">
+                    <div class="cards__item-data">
+                      <p class="cards__item-text">лекция</p>
+                      <p class="cards__item-text">1 мая, 12:30-13:50</p>
+                    </div>
+                    <div class="cards__item-info">
+                      <h2 class="cards__item-title">идентичность: почему нам сложно меняться?</h2>
+                      <p class="cards__item-description">лектор: Мария Бархатова</p>
+                    </div>
+                    <div class="cards__item-address">
+                      <p class="cards__item-text">улица Блохина, 22</p>
+                      <p class="cards__item-text">+ ещё 3</p>
+                    </div>
+                  </div>
+                  <button class="cards__item-like card-control"><span class="card-control__icon icon-heart"></span></button>
+                </li>
+
+                <li class="cards__item">
+                  <img class="cards__item-img" src="<%=require('../images/card-sample.jpg')%>" alt="Изображение карточки">
+                  <div class="cards__item-content">
+                    <div class="cards__item-data">
+                      <p class="cards__item-text">лекция</p>
+                      <p class="cards__item-text">1 мая, 12:30-13:50</p>
+                    </div>
+                    <div class="cards__item-info">
+                      <h2 class="cards__item-title">идентичность: почему нам сложно меняться?</h2>
+                      <p class="cards__item-description">лектор: Мария Бархатова</p>
+                    </div>
+                    <div class="cards__item-address">
+                      <p class="cards__item-text">улица Блохина, 22</p>
+                      <p class="cards__item-text">+ ещё 3</p>
+                    </div>
+                  </div>
+                  <div class="cards__item-like">
+                    <button class="cards__item-btn-like"></button>
+                  </div>
+                </li>
+
+                <li class="cards__item">
+                  <img class="cards__item-img" src="<%=require('../images/card-sample.jpg')%>" alt="Изображение карточки">
+                  <div class="cards__item-content">
+                    <div class="cards__item-data">
+                      <p class="cards__item-text">лекция</p>
+                      <p class="cards__item-text">1 мая, 12:30-13:50</p>
+                    </div>
+                    <div class="cards__item-info">
+                      <h2 class="cards__item-title">идентичность: почему нам сложно меняться?</h2>
+                      <p class="cards__item-description">лектор: Мария Бархатова</p>
+                    </div>
+                    <div class="cards__item-address">
+                      <p class="cards__item-text">улица Блохина, 22</p>
+                      <p class="cards__item-text">+ ещё 3</p>
+                    </div>
+                  </div>
+                  <button class="cards__item-like card-control"><span class="card-control__icon icon-heart"></span></button>
+                </li>
+
+                <li class="cards__item">
+                  <img class="cards__item-img" src="<%=require('../images/card-sample.jpg')%>" alt="Изображение карточки">
+                  <div class="cards__item-content">
+                    <div class="cards__item-data">
+                      <p class="cards__item-text">лекция</p>
+                      <p class="cards__item-text">1 мая, 12:30-13:50</p>
+                    </div>
+                    <div class="cards__item-info">
+                      <h2 class="cards__item-title">идентичность: почему нам сложно меняться?</h2>
+                      <p class="cards__item-description">лектор: Мария Бархатова</p>
+                    </div>
+                    <div class="cards__item-address">
+                      <p class="cards__item-text">улица Блохина, 22</p>
+                      <p class="cards__item-text">+ ещё 3</p>
+                    </div>
+                  </div>
+                  <button class="cards__item-like card-control"><span class="card-control__icon icon-heart"></span></button>
+                </li>
+
+                <li class="cards__item">
+                  <img class="cards__item-img" src="<%=require('../images/card-sample.jpg')%>" alt="Изображение карточки">
+                  <div class="cards__item-content">
+                    <div class="cards__item-data">
+                      <p class="cards__item-text">лекция</p>
+                      <p class="cards__item-text">1 мая, 12:30-13:50</p>
+                    </div>
+                    <div class="cards__item-info">
+                      <h2 class="cards__item-title">идентичность: почему нам сложно меняться?</h2>
+                      <p class="cards__item-description">лектор: Мария Бархатова</p>
+                    </div>
+                    <div class="cards__item-address">
+                      <p class="cards__item-text">улица Блохина, 22</p>
+                      <p class="cards__item-text">+ ещё 3</p>
+                    </div>
+                  </div>
+                  <button class="cards__item-like card-control"><span class="card-control__icon icon-heart"></span></button>
+                </li>
+
+                <li class="cards__item">
+                  <img class="cards__item-img" src="<%=require('../images/card-sample.jpg')%>" alt="Изображение карточки">
+                  <div class="cards__item-content">
+                    <div class="cards__item-data">
+                      <p class="cards__item-text">лекция</p>
+                      <p class="cards__item-text">1 мая, 12:30-13:50</p>
+                    </div>
+                    <div class="cards__item-info">
+                      <h2 class="cards__item-title">идентичность: почему нам сложно меняться?</h2>
+                      <p class="cards__item-description">лектор: Мария Бархатова</p>
+                    </div>
+                    <div class="cards__item-address">
+                      <p class="cards__item-text">улица Блохина, 22</p>
+                      <p class="cards__item-text">+ ещё 3</p>
+                    </div>
+                  </div>
+                  <button class="cards__item-like card-control"><span class="card-control__icon icon-heart"></span></button>
+                </li>
+
+                <li class="cards__item">
+                  <img class="cards__item-img" src="<%=require('../images/card-sample.jpg')%>" alt="Изображение карточки">
+                  <div class="cards__item-content">
+                    <div class="cards__item-data">
+                      <p class="cards__item-text">лекция</p>
+                      <p class="cards__item-text">1 мая, 12:30-13:50</p>
+                    </div>
+                    <div class="cards__item-info">
+                      <h2 class="cards__item-title">идентичность: почему нам сложно меняться?</h2>
+                      <p class="cards__item-description">лектор: Мария Бархатова</p>
+                    </div>
+                    <div class="cards__item-address">
+                      <p class="cards__item-text">улица Блохина, 22</p>
+                      <p class="cards__item-text">+ ещё 3</p>
+                    </div>
+                  </div>
+                  <button class="cards__item-like card-control"><span class="card-control__icon icon-heart"></span></button>
+                </li>
+
+                <!-- шаблон карточки -->
+                <template id="event-card">
+                  <li class="cards__item">
+                    <img class="cards__item-img" src="" alt="">
+                    <div class="cards__item-content">
+                      <div class="cards__item-data">
+                        <p class="cards__item-text">лекция</p>
+                        <p class="cards__item-text">1 мая, 12:30-13:50</p>
+                      </div>
+                      <div class="cards__item-info">
+                        <h2 class="cards__item-title">идентичность: почему нам сложно меняться?</h2>
+                        <p class="cards__item-description">лектор: Мария Бархатова</p>
+                      </div>
+                      <div class="cards__item-address">
+                        <p class="cards__item-text">улица Блохина, 22</p>
+                        <p class="cards__item-text">+ ещё 3</p>
+                      </div>
+                    </div>
+                    <button class="cards__item-like card-control"><span class="card-control__icon icon-heart"></span></button>
+                  </li>
+                </template>
+
+                <!-- конец заглушек карточек -->
+              </ul>
+
+            </section>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- подтягиваем модалку с мобильными фильтрами (открывается через добавление класса modal_opened) -->
+      <%= require('html-loader!./particle-modal-mobile-filters.html').default %>
+
+      <!-- подтягиваем модалку с просмотром мероприятия (открывается через добавление класса modal_opened) -->
+      <%= require('html-loader!./particle-modal-event.html').default %>
+
+      <!-- подтягиваем модалку с превьюшкой для мобилы (открывается через добавление класса modal_opened) -->
+      <%= require('html-loader!./particle-modal-mobile-preview.html').default %>
+
+      <!-- подтягиваем модалку с формой оплатой билетов (открывается через добавление класса modal_opened) -->
+      <%= require('html-loader!./particle-modal-payment.html').default %>
+
     </main>
 
-    <%= require('html-loader!./footer.html').default %>
+    <!-- в макетах показано, что тут не будет футера -->
+    <!-- <%= require('html-loader!./footer.html').default %> -->
 </body>
 </html>

@@ -1,0 +1,19 @@
+@use 'variables' as *;
+
+.modal__drag-line {
+  display: none;
+}
+
+@media screen and (max-width: $mobile) {
+  .modal__drag-line {
+    position: absolute;
+    left: calc(50% - 20px);
+    top: 16px;
+    display: block;
+    align-self: center;
+    width: 40px;
+    height: 4px;
+    border-radius: $radius-100;
+    background-color: $dark-secondary;
+  }
+}

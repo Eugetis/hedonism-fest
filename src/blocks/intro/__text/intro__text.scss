@@ -1,0 +1,13 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.intro__text {
+  @include text-desktop;
+  text-align: center;
+}
+
+@media all and (max-width: $mobile) {
+  .intro__text {
+    @include text-mobile;
+  }
+}

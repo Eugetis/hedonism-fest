@@ -1,13 +1,15 @@
+@use 'variables' as *;
+
 .gallery__slider-line {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
   gap: 20px;
   box-sizing: border-box;
-  padding-right: 20px;
+  padding-right: $pad-20;
 }
 
-@media all and (max-width: 767px) {
+@media all and (max-width: $mobile) {
   .gallery__slider-line {
     padding: 0;
     gap: 0;

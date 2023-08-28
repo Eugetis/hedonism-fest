@@ -1,0 +1,16 @@
+@use 'variables' as *;
+
+.catalog__content {
+  flex-grow: 1;
+  height: calc(100vh - 88px);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-y: scroll;
+}
+
+@media screen and (max-width: $tablet) {
+  .catalog__content {
+    height: calc(100vh - 68px);
+  }
+}

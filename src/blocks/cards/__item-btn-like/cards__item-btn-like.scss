@@ -10,7 +10,7 @@
   padding: $pad-12;
 }
 
-@media screen and (min-width: 360px) and (max-width: 576px) {
+@media screen and (max-width: $mobile) {
   .cards__item-btn-like {
     width: 20px;
     height: 20px;

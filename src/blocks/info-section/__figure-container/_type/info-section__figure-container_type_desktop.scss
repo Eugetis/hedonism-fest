@@ -1,0 +1,13 @@
+@use 'variables' as *;
+
+.info-section__figure-container_type_desktop {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+@media all and (max-width: $mobile) {
+  .info-section__figure-container_type_desktop {
+    display: none;
+  }
+}

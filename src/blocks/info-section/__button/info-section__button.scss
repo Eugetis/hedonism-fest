@@ -1,0 +1,12 @@
+@use 'variables' as *;
+
+.info-section__button {
+  margin-top: 32px;
+  max-width: fit-content;
+}
+
+@media all and (max-width: $mobile) {
+  .info-section__button {
+    margin-top: 20px;
+  }
+}

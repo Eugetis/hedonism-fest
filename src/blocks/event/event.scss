@@ -3,4 +3,25 @@
 .event {
   background-color: $light-primary;
   box-sizing: border-box;
+  flex-grow: 1;
+  overflow-y: scroll;
+  color: $dark-primary;
 }
+
+
+// отключил стили скролл-бара, потому что из-за него появлялась горизонтальная прокрутка
+
+// .event::-webkit-scrollbar {
+//   width: 8px;
+//   background-color: $light-secondary;
+// }
+
+// .event::-webkit-scrollbar-track {
+//   margin-right: 40px;
+//   background-color: $light-secondary;
+// }
+
+// .event::-webkit-scrollbar-thumb {
+//   background-color: $dark-secondary;
+//   border-radius: 8px;
+// }

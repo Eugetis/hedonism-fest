@@ -10,9 +10,10 @@
   cursor: pointer;
 }
 
-@media screen and (min-width: 360px) and (max-width: 576px) {
+@media screen and (max-width: $mobile) {
   .modal__container-close {
     font: $icon-text-mobile;
     @include position-absolute-mixin(8px, false, false, 8px, false);
   }
 }
+// поменять на кнопку

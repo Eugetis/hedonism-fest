@@ -1,0 +1,12 @@
+@use 'variables' as *;
+
+.button_type_invert {
+  color: $white;
+  border: $white;
+}
+
+.button_type_invert:hover {
+  border-color: $hover;
+  color: $hover;
+  cursor: pointer;
+}

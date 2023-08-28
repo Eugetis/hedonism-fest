@@ -1,9 +1,8 @@
 @use 'variables' as *;
+@use 'mixins' as *;
 
 .preview__title {
-  margin: 0;
-  font: $h4-desktop;
-  line-height: 24px;
+  @include h4-desktop;
   color: $dark-primary;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -12,8 +11,8 @@
   -webkit-line-clamp: 2;
 }
 
-@media screen and (min-width: 360px) and (max-width: 576px) {
+@media screen and (max-width: $mobile) {
   .preview__title {
-    line-height: 28px;
+    @include h3-mobile;
   }
 }

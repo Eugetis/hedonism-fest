@@ -1,10 +1,11 @@
+@use 'variables' as *;
 @use 'mixins' as *;
 
 .error-404__title {
   @include h2-desktop;
 }
 
-@media all and (max-width: 767px) {
+@media all and (max-width: $mobile) {
   .error-404__title {
     @include h2-mobile;
   }

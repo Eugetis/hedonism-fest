@@ -1,0 +1,7 @@
+@use 'variables' as *;
+
+.event__header {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}

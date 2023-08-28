@@ -1,5 +1,3 @@
-@use 'mixins' as *;
-
 .cards {
-  @include flex-center-row-mixin;
+  max-width: 100%;
 }

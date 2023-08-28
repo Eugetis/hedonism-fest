@@ -1,9 +1,11 @@
+@use 'variables' as *;
+
 .figures__text-container {
   width: 303px;
   position: absolute;
   display: flex;
   flex-direction: column;
-  row-gap: 8px;
+  gap: 8px;
 }
 
 .figures__text-container:nth-of-type(2) {
@@ -16,10 +18,10 @@
   bottom: 5.9%;
 }
 
-@media all and (max-width: 1200px) {
+@media all and (max-width: $tablet) {
   .figures__text-container:nth-of-type(1) {
     right: 10.7%;
-  bottom: 5.9%;
+    bottom: 5.9%;
   }
 }
 
@@ -28,14 +30,14 @@
     left: 0;
     top: 46%;
   }
-  
+
   .figures__text-container:nth-of-type(1) {
     right: 0;
     bottom: 0;
   }
 }
 
-@media all and (max-width: 767px) {
+@media all and (max-width: $mobile) {
   .figures__text-container {
     position: static;
     align-items: center;

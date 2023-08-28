@@ -1,12 +1,5 @@
 @use 'variables' as *;
-.header__logo {
-  width: 60px;
-  height: 44px;
-  z-index: 9999;
-}
 
-@media screen and (max-width: $tablet) {
-  .header__logo {
-    margin-left: 20px;
-  }
+.header__logo {
+  height: 44px;
 }

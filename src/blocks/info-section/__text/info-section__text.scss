@@ -1,0 +1,17 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.info-section__text {
+  @include text-desktop;
+  margin-bottom: 24px;
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+@media all and (max-width: $mobile) {
+  .info-section__text {
+    @include text-mobile;
+    margin-bottom: 12px;
+  }
+}

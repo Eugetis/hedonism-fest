@@ -1,6 +1,8 @@
 @use 'variables' as *;
-@media screen and (max-width: $tablet) {
-  .header__menu {
-    display: none;
-  }
+
+.header__menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }

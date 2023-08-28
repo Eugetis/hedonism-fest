@@ -1,0 +1,14 @@
+@use 'variables' as *;
+
+.modal__close-button_type_button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+@media screen and (max-width: $mobile) {
+  .modal__close-button_type_button {
+    top: 8px;
+    right: 8px;
+  }
+}

@@ -1,0 +1,16 @@
+@use 'variables' as *;
+
+.catalog__section {
+  width: 100%;
+  box-sizing: border-box;
+  padding: $pad-16 $pad-40;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media screen and (max-width: $mobile) {
+  .catalog__section {
+    padding: $pad-16 $pad-20;
+  }
+}
