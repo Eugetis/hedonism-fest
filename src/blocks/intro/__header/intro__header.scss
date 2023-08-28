@@ -1,0 +1,19 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.intro__header {
+  width: 100%;
+  padding: $pad-40 $pad-40 $pad-16;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+
+@media all and (max-width: $mobile) {
+  .intro__header {
+    justify-content: space-between;
+    width: 100%;
+    padding: $pad-24 $pad-20;
+  }
+}

@@ -1,0 +1,37 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.modal__container_type_side {
+  max-width: 700px;
+  transition: right 0.5s ease; //работает?
+  box-shadow: unset;
+}
+
+// @media screen and (max-width: $mobile) {
+//   .modal__container_type_side {
+  // @include position-absolute-mixin(false, 50%, -100%, false, false);
+  // max-width: 360px;
+  // height: auto;
+  // transform: translateX(-50%);
+  // transition: bottom 1.5s ease;
+//   }
+// }
+
+// .modal__container {
+//   @include flex-column-mixin;
+//   @include position-absolute-mixin(0, false, false, -700px, false);
+//   box-sizing: border-box;
+//   max-width: 700px;
+//   box-shadow: $drop-shadow;
+//   transition: right 0.5s ease;
+// }
+
+// @media screen and (max-width: $mobile) {
+//   .modal__container {
+//     @include position-absolute-mixin(false, 50%, -100%, false, false);
+//     max-width: 360px;
+//     height: auto;
+//     transform: translateX(-50%);
+//     transition: bottom 1.5s ease;
+//   }
+// }

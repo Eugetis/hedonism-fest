@@ -1,0 +1,11 @@
+@use 'variables' as *;
+
+.catalog__mob-filters-button {
+  display: none;
+}
+
+@media screen and (max-width: $mobile) {
+  .catalog__mob-filters-button {
+    display: flex;
+  }
+}

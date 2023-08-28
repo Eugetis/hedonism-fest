@@ -1,0 +1,26 @@
+@use 'variables' as *;
+
+.header__slide_content_cities {
+  height: 100%;
+  z-index: 3;
+  // translate: 100vw;
+}
+
+// translate: -100vw;
+
+// .header__popup-city-select {
+//   height: 100vh;
+//   margin-left: 20px;
+//   margin-top: 68px;
+//   width: 87%;
+//   display: none;
+
+//   }
+
+//   .header__popup-city-select_opened {
+//     display: flex;
+//     flex-direction: column;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//   }

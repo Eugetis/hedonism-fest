@@ -1,0 +1,25 @@
+@use 'variables' as *;
+
+.info-section__stats-container {
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  padding-bottom: $pad-40;
+}
+
+@media all and (max-width: $aux-1023) {
+  .info-section__stats-container {
+    padding-bottom: 0;
+  }
+}
+
+@media all and (max-width: $mobile) {
+  .info-section__stats-container {
+    max-width: 100%;
+    gap: 4px;
+    align-items: center;
+    text-align: center;
+  }
+}

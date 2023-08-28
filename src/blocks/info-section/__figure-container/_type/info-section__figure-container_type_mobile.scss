@@ -1,0 +1,13 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.info-section__figure-container_type_mobile {
+  display: none;
+}
+
+@media all and (max-width: $mobile) {
+  .info-section__figure-container_type_mobile {
+    display: block;
+    // min-height: calc(100vw - 40px);
+  }
+}

@@ -1,0 +1,38 @@
+// доделаю, чтобы ни при каком разрешении не было наезжания кнопки на картинку,
+// и при этом кнопка всегда присутствовала на первом экране на любом устройстве
+
+@use 'variables' as *;
+
+.intro__container {
+  max-width: $desktop-max;
+  aspect-ratio: 2/1;
+  padding-bottom: $pad-48;
+  background-image: url('../../../images/main-logo.svg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  row-gap: 8px;
+  box-sizing: border-box;
+}
+
+
+@media all and (max-width: $aux-1023) {
+  .intro__container {
+    padding-bottom: 0;
+  }
+}
+
+@media all and (max-width: 575px) {
+  .intro__container {
+    height: calc(100vh - 68px);
+    background-image: url('../../../images/main-logo-mobile.svg');
+    background-position: top;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}

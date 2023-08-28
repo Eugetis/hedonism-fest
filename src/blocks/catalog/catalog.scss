@@ -1,0 +1,15 @@
+@use 'variables' as *;
+
+.catalog {
+  width: 100%;
+  position: fixed;
+  top: 88px;
+  min-height: calc(100vh - 88px);
+}
+
+@media screen and (max-width: $tablet) {
+  .catalog {
+    min-height: calc(100vh - 68px);
+    top: 68px;
+  }
+}

@@ -1,0 +1,12 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.event__text {
+  @include text-desktop;
+}
+
+@media screen and (max-width: $mobile) {
+  .event__text {
+    @include text-mobile;
+  }
+}

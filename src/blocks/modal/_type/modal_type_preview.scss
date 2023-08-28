@@ -1,0 +1,13 @@
+@use 'variables' as *;
+
+.modal_type_preview {
+  background-color: transparent;
+}
+
+@media screen and (max-width: $mobile) {
+  .modal_type_preview {
+    background-color: rgba(0, 0, 0, 0.4);
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+}

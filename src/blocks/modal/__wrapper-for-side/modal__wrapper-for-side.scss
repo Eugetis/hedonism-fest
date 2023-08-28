@@ -1,0 +1,16 @@
+@use 'variables' as *;
+
+.modal__wrapper-for-side {
+  flex-grow: 1;
+  height: 100%;
+  margin: $centered;
+  max-width: $desktop-max;
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media screen and (max-width: $mobile) {
+  .modal__wrapper-for-side {
+    max-width: 100%;
+  }
+}

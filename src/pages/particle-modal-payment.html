@@ -1,0 +1,60 @@
+<!-- Модалка с формой покупки билетов -->
+<!-- должна открываться по кнопке "купить" в модалке с деталями мероприятия (открывать поверх нее!) -->
+<!-- должна открываться через добавление секции класса modal_opened -->
+
+<section class="modal modal_type_high-mob" aria-label="модальное окно покупки билетов">
+  <div class="modal__container modal__container_type_form">
+    <div class="modal__header">
+      <div class="modal__drag-line"></div>
+      <h2 class="modal__title">Купить билет</h2>
+      <button class="modal__close-button modal__close-button_type_icon" type="button"><span class="button__icon icon-cross link"></span></button>
+    </div>
+
+    <div class="modal__body">
+
+      <!-- добавить форме novalidate ?? -->
+      <!-- перепроверить, когда обновится блок form (был такой класс ниже) -->
+      <form class="modal__grow-section" name="form-payment">
+
+        <fieldset class="popup__form-fields" name="tickets-number-and-sum">
+          <!-- нужен класс для легенды в модалке -->
+          <legend>сумма и количество</legend>
+          <div class="form__options">
+            <input type="radio" id="100" class="form__input" name="preference" value="100" checked>
+            <label class="form__label" for="100">100</label>
+
+            <!-- сюда +- и рассчитываемая сумма -->
+          </div>
+        </fieldset>
+
+        <fieldset class="popup__form-handlers" name="email">
+          <legend>email</legend>
+          <div class="form__fields">
+            <input class="form__input" type="email" name="email" id="place" placeholder="укажите почту для отправки чека" required>
+          </div>
+        </fieldset>
+
+        <fieldset class="popup__form-fields" name="payment-method">
+          <legend>способ оплаты</legend>
+          <div class="popup__form-field-wrapper">
+            <input type="radio" id="credit-card" name="payment-method" value="credit-card" checked>
+            <label for="credit-card">банковской картой</label>
+            <input type="radio" id="paypal" name="payment-method" value="paypal">
+            <label for="paypal">PayPal</label>
+          </div>
+        </fieldset>
+
+        <p class="form__list-description">Нажимая кнопку «пожертвовать» вы соглашаетесь с условиями <a class="link link_type_text">оферты</a>, <a class="link link_type_text">политики</a> в отношении обработки
+          и защиты персональных данных и даёте <a class="link link_type_text">согласие</a> на их обработку</p>
+
+      </form>
+
+      <!-- тут был класс popup__form-handlers и тег fieldset -->
+      <div class="fixed-bar" name="handlers">
+        <button type="submit" form="form-payment" class="modal__button button button_type_filled" data-text="Перейти к оплате">Перейти к оплате</button>
+      </div>
+
+    </div>
+
+  </div>
+</section> <!-- конец модалки с формой покупки билетов -->

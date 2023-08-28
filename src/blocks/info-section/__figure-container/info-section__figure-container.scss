@@ -1,0 +1,21 @@
+@use 'variables' as *;
+
+.info-section__figure-container {
+  aspect-ratio: 1/1;
+  max-height: 480px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+
+// @media all and (max-width: $mobile) {
+//   .figures__container {
+//     aspect-ratio: auto;
+//     background-image: none;
+//     align-items: center;
+//   }
+// }

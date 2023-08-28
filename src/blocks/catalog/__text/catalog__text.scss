@@ -1,0 +1,6 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.catalog__text {
+  @include text-desktop;
+}

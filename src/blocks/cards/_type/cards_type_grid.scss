@@ -1,0 +1,17 @@
+@use 'variables' as *;
+
+.cards_type_grid {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+@media screen and (max-width: $mobile) {
+  .cards_type_grid {
+    gap: 40px;
+  }
+}

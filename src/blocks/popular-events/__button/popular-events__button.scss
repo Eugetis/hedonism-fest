@@ -1,0 +1,12 @@
+@use 'variables' as *;
+
+.popular-events__button {
+  max-width: fit-content;
+  margin-top: 32px;
+}
+
+@media screen and (max-width: $mobile) {
+  .popular-events__button {
+    margin: 28px 0 0 20px;
+  }
+}

@@ -1,0 +1,8 @@
+@use 'variables' as *;
+
+@media all and (max-width: $mobile) {
+  .info-section__button_style_invert {
+    border-color: $white;
+    color: $white;
+  }
+}

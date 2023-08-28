@@ -1,0 +1,19 @@
+@use 'variables' as *;
+
+.modal__container_type_preview {
+  max-width: 360px;
+  gap: 16px;
+  border-radius: $radius-large;
+  overflow: hidden;
+  // transition: right 0.5s ease; //какой?
+}
+
+@media screen and (max-width: $mobile) {
+  .modal__container_type_preview {
+    max-width: 100%;
+    width: 100%;
+    border-radius: $radius-large $radius-large 0 0;
+    overflow-y: hidden;
+    flex-grow: unset;
+  }
+}

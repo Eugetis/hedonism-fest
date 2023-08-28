@@ -1,0 +1,9 @@
+@use 'variables' as *;
+
+.catalog__filters-group {
+  width: 100%;
+  display: flex;
+  column-gap: 8px;
+  row-gap: 12px;
+  flex-wrap: wrap;
+}

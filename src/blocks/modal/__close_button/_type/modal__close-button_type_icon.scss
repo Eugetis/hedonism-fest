@@ -1,0 +1,19 @@
+@use 'variables' as *;
+
+.modal__close-button_type_icon {
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  color: $dark-primary;
+}
+
+@media screen and (max-width: $mobile) {
+  .modal__close-button_type_icon {
+  width: 20px;
+  height: 20px;
+  }
+}

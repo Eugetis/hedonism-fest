@@ -1,0 +1,11 @@
+@use 'variables' as *;
+
+.catalog__text_type_counter {
+  text-align: end;
+}
+
+@media screen and (max-width: $mobile) {
+  .catalog__text_type_counter {
+    display: none;
+  }
+}
