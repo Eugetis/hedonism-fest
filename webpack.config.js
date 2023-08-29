@@ -6,7 +6,7 @@ const stylesHandler = 'style-loader';
 
 module.exports = {
   entry: {
-    main: './src/index.js'
+    main: './src/components/index.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
