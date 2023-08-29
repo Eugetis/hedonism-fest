@@ -6,6 +6,7 @@
   margin: $centered;
   max-width: $desktop-max;
   padding: $pad-40 $pad-40 0 $pad-40;
+  box-sizing: border-box;
 }
 
 @media screen and (max-width: $mobile) {

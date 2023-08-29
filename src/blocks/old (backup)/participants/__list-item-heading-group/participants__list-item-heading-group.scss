@@ -1,0 +1,11 @@
+.participants__list-item-heading-group{
+    display: flex;
+    margin: 0 0 16px;
+}
+
+@media screen and (min-width: 1024px) {
+    .participants__list-item-heading-group{
+        margin: 0;
+        flex-grow: 1;
+    }
+}

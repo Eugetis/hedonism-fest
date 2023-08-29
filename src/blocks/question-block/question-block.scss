@@ -1,18 +1,26 @@
 @use 'variables' as *;
 
 .question-block {
-  padding: 20px 0;
+  padding: $pad-20 0;
   display: flex;
-  justify-content: space-between;
+  gap: 40px;
+  // justify-content: space-between;
+  box-sizing: border-box;
   width: 100%;
-  max-width: 880px;
+  border-bottom: $border-light;
+  width: 100%;
 }
+
+// @media all and (max-width: $aux-1023) {
+//   .question-block {
+//     padding: $pad-20 $pad-40;
+//   }
+// }
 
 @media all and (max-width: $mobile) {
   .question-block {
     flex-direction: column;
-    padding: 20px;
-    row-gap: 16px;
-    width: auto;
+    padding: $pad-20;
+    gap: 16px;
   }
 }

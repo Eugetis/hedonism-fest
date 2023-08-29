@@ -1,7 +1,13 @@
+// НОВЫЕ БЛОКИ - В КОНЕЦ СТРАНИЦЫ
+// ИЗМЕНЕНИЕ/ДОБАВЛЕНИЕ классов для существующих блоков добавлять/удалять/изменять там, где они лежать сейчас
+// СУЩЕСТВУЮЩИЕ БЛОКИ НЕ МЕНЯТЬ МЕСТАМИ
+
 @use '../vendor/normalize.css';
 @use '../fonts/fonts.scss';
 @use '../blocks/page/page.scss';
 @use '../blocks/page/__title/page__title.scss';
+@use '../blocks/page/__bottom-pushed/page__bottom-pushed.scss'; // отталкивает футер на 80px где нужно
+@use '../blocks/page/__grow/page__grow.scss';
 @use '../blocks/uikit-section/uikit-section.scss';
 @use '../blocks/section-constraints/section-constraints.scss';
 @use '../blocks/section-constraints/_size/section__constraints_size_large.scss';
@@ -9,6 +15,13 @@
 
 // стили html (тут плавный скролл по странице)
 @use '../blocks/html/html.scss';
+
+// стили для прозрачности ссылок по ховеру и для цвета текстовых ссылок
+@use '../blocks/link/link.scss';
+@use '../blocks/link/_type/link_type_text.scss';
+
+// внизу страницы лежит универсальный блок hidden со стилем display: none
+// он внизу, потому что иначе не перекрывает стили селекторов, которые идут здесь ниже него
 
 // стили кнопки
 @use '../blocks/button/button.scss';
@@ -162,15 +175,12 @@
 
 // стили блока пошаговой инструкции
 @use '../blocks/question-block/question-block.scss';
-@use '../blocks/question-block/__container/question-block__container.scss';
+@use '../blocks/question-block/__header/question-block__header.scss';
 @use '../blocks/question-block/__numbering/question-block__numbering.scss';
 @use '../blocks/question-block/__text/question-block__text.scss';
 @use '../blocks/question-block/__title/question-block__title.scss';
 
-
-//index.html sections
-
-//intro section
+//intro section (index.html)
 @use '../blocks/intro/intro.scss';
 @use '../blocks/intro/__link/intro__link.scss';
 @use '../blocks/intro/__text/intro__text.scss';
@@ -307,46 +317,21 @@
 @use '../blocks/form/__input/form__input.scss';
 @use '../blocks/form/__right-column/form__right-column.scss';
 @use '../blocks/form/__upload-container/form__upload-container.scss';
-
 /* Forms button */
 @use '../blocks/form/__button/form__button.scss';
 @use '../blocks/form/__button/_active/form__button_active.scss';
 @use '../blocks/form/__button/_type/button_type_long.scss';
 
-/* Forms part */
-@use '../blocks/participants/participants.scss';
-@use '../blocks/participants/__content/participants__content.scss';
-@use '../blocks/participants/__title/participants__title.scss';
-@use '../blocks/participants/__title/_hidden/participants__title_hidden.scss';
-@use '../blocks/participants/__container/participants__container.scss';
-@use '../blocks/participants/__heading/participants__heading.scss';
-@use '../blocks/participants/__subtitle/participants__subtitle.scss';
-@use '../blocks/participants/__list/participants__list.scss';
-@use '../blocks/participants/__list-item/participants__list-item.scss';
-@use '../blocks/participants/__list-item-heading/participants__list-item-heading.scss';
-@use '../blocks/participants/__list-item-heading/_center/participants__list-item-heading_center.scss';
-@use '../blocks/participants/__list-item-heading-group/participants__list-item-heading-group.scss';
-@use '../blocks/participants/__list-item-text/participants__list-item-text.scss';
-@use '../blocks/participants/__buttons-block/participants__buttons-block.scss';
-@use '../blocks/participants/__button/participants__button.scss';
-@use '../blocks/participants/__button/_active/participants__button_active.scss';
-@use '../blocks/participants/_hidden/participants_hidden.scss';
-
 //additional-pages styles
 @use '../blocks/additional-section/additional-section.scss';
+@use '../blocks/additional-section/_type/additional-section_type_purple.scss';
 @use '../blocks/additional-section/__wrapper/additional-section__wrapper.scss';
 @use '../blocks/additional-section/__container/additional-section__container.scss';
 @use '../blocks/additional-section/__image/additional-section__image.scss';
-@use '../blocks/additional-section/__subtitle/additional-section__subtitle.scss';
-@use '../blocks/additional-section/__title/additional-section__title.scss';
-@use '../blocks/additional-section/__button/additional-section__button.scss';
-//additional-sections модификаторс
-@use '../blocks/additional-section/_type/additional-section_type_purple.scss';
 @use '../blocks/additional-section/__image/_type/additional-section__image_type_404.scss';
-
-//link
-@use '../blocks/link/link.scss';
-@use '../blocks/link/_type/link_type_text.scss';
+@use '../blocks/additional-section/__title/additional-section__title.scss';
+@use '../blocks/additional-section/__subtitle/additional-section__subtitle.scss';
+@use '../blocks/additional-section/__button/additional-section__button.scss';
 
 //catalog
 @use '../blocks/catalog/catalog.scss';
@@ -363,11 +348,75 @@
 @use '../blocks/catalog/__content/catalog__content.scss';
 @use '../blocks/catalog/__header/catalog__header.scss';
 @use '../blocks/catalog/__events-container/catalog__events-container.scss';
+@use '../blocks/catalog/__events-container/_type/catalog__events-container_type_grid.scss';
+@use '../blocks/catalog/__events-container/_type/catalog__events-container_type_map.scss';
+@use '../blocks/catalog/__events-container/_type/catalog__events-container_type_no-events.scss';
 @use '../blocks/catalog/__events-container/_opened/catalog__events-container_opened.scss';
-@use '../blocks/catalog/__map-container/catalog__map-container.scss';
-@use '../blocks/catalog/__map-container/_opened/catalog__map-container_opened.scss';
 @use '../blocks/catalog/__mob-filters-button/catalog__mob-filters-button.scss';
 
-//fixed-bar
+//fixed-bar (стиль для блоков с кнопками, который в мобиле прилипает к низу страницы)
 @use '../blocks/fixed-bar/fixed-bar.scss';
-@use '../blocks/fixed-bar/_type/fixed-bar__desktop-sticky.scss';
+@use '../blocks/fixed-bar/_type/fixed-bar__desktop-sticky.scss'; // вариант для десктора (в модалку мероприятия)
+@use '../blocks/fixed-bar/_type/fixed-bar__align-right.scss'; // вариант для прижимания вправо в формах в десктопе
+
+
+
+
+
+// ДЛЯ НОВЫХ БЛОКОВ (стили существующих блоков добавлять/удалять/изменять там, где они лежать сейчас)
+
+
+// Никита - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+// Дмитрий - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+// Андрей - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+// Алексей - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+// Георгий - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+// Евгений - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+// блок participats -часть стилей отключена, часть изменена (папка с исходными стилями лежит в blocks/old(backups))
+@use '../blocks/participants/participants.scss';
+// @use '../blocks/participants/__content/participants__content.scss';
+@use '../blocks/participants/__title/participants__title.scss';
+@use '../blocks/participants/__title/_type/participants__title_type_mobile-start.scss';
+@use '../blocks/participants/__title/_type/participants__title_type_desktop.scss';
+@use '../blocks/participants/__title/_hidden/participants__title_hidden.scss';
+@use '../blocks/participants/__container/participants__container.scss';
+@use '../blocks/participants/__container/_type/participants__container_type_form.scss';
+@use '../blocks/participants/__heading/participants__heading.scss';
+@use '../blocks/participants/__subtitle/participants__subtitle.scss';
+@use '../blocks/participants/__list/participants__list.scss';
+@use '../blocks/participants/__list-item/participants__list-item.scss';
+// @use '../blocks/participants/__list-item-heading/participants__list-item-heading.scss';
+// @use '../blocks/participants/__list-item-heading/_center/participants__list-item-heading_center.scss';
+// @use '../blocks/participants/__list-item-heading-group/participants__list-item-heading-group.scss';
+// @use '../blocks/participants/__list-item-text/participants__list-item-text.scss';
+@use '../blocks/participants/__buttons-block/participants__buttons-block.scss';
+@use '../blocks/participants/__button/participants__button.scss';
+@use '../blocks/participants/__button/_active/participants__button_active.scss';
+// @use '../blocks/participants/_hidden/participants_hidden.scss';
+
+
+
+// универсальный класс-подмес для display: none
+@use '../blocks/hidden/hidden.scss';
