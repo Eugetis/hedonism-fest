@@ -13,6 +13,16 @@
 @use '../blocks/section-constraints/_size/section__constraints_size_large.scss';
 @use '../blocks/section-constraints/_size/section__constraints_size_small.scss';
 
+// классы для идентификации страницы, на которой находимся, чтобы инициализировать скрипты
+@use '../blocks/page/_id/page_id_index';
+@use '../blocks/page/_id/page_id_about';
+@use '../blocks/page/_id/page_id_catalog';
+@use '../blocks/page/_id/page_id_for-participants';
+@use '../blocks/page/_id/page_id_thanks-for-support';
+@use '../blocks/page/_id/page_id_thanks-for-application';
+@use '../blocks/page/_id/page_id_404';
+
+
 // стили html (тут плавный скролл по странице)
 @use '../blocks/html/html.scss';
 
