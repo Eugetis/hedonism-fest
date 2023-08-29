@@ -1,15 +1,79 @@
+// если что-то не работает из-за распределения по именам, можно написать куда нужно и тут же добавить коммент
+// обязательны комментарии, что делает скрипт (в идеале комментить даже константы, чтобы команда быстро ориентировалась)
+
+//----------------------------------------------------------------------
+// ИМПОРТЫ
+
 import './scss/styles.scss';
+
+// Никита
+
+
+// Дмитрий
+
+
+// Андрей
+
+
+// Алексей
+
+
+// Георгий
+
+
+// Евгений
+
+
+
+//----------------------------------------------------------------------
+// КОНСТАНТЫ
+
+// Никита
 const modalButton = document.querySelector('.modal__button');
 const modalCloseButton = document.querySelector('.modal__close-button')
 const modal = document.querySelector('.modal');
 const modalContainer = document.querySelector('.modal__container');
 
-// Dmitry
+// Дмитрий
 const tabSwitcher = document.querySelector('.tab-switcher');
 const buttonList = Array.from(tabSwitcher.querySelectorAll('.tab-switcher__button'));
-const mapContainer = document.querySelector('.catalog__map-container');
-const listContainer = document.querySelector('.catalog__events-container');
+const mapContainer = document.querySelector('.catalog__events-container_type_map');
+const listContainer = document.querySelector('.catalog__events-container_type_grid');
 
+// Андрей
+const sliderLine = document.querySelector('.gallery__slider-line');
+const sliderDots = document.querySelectorAll('.gallery__slider-radio');
+const sliderImages = document.querySelectorAll('.gallery__image');
+
+// Алексей
+
+
+// Георгий
+
+
+// Евгений
+
+
+
+//-----------------------------------------------------------------------------------------------
+// СКРИПТЫ
+
+// Никита - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+modalButton.addEventListener('click', (event) => {
+  modal.classList.add('modal_opened');
+  modalContainer.classList.add('modal__container_opened');
+})
+
+modalCloseButton.addEventListener('click', () => {
+  modal.classList.remove('modal_opened');
+  modalContainer.classList.remove('modal__container_opened');
+})
+
+// Никита -> end!
+
+
+// Дмитрий - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 let isMap = false;
 
 const handleTabEvent = (evt) => {
@@ -19,13 +83,13 @@ const handleTabEvent = (evt) => {
       isMap = true;
       // mapContainer.style.display = 'flex';
       // listContainer.style.display = 'none';
-      mapContainer.classList.add('catalog__map-container_opened');
+      mapContainer.classList.add('catalog__events-container_opened');
       listContainer.classList.remove('catalog__events-container_opened');
     } else {
       isMap = false;
       // mapContainer.style.display = 'none';
       // listContainer.style.display = 'grid';
-      mapContainer.classList.remove('catalog__map-container_opened');
+      mapContainer.classList.remove('catalog__events-container_opened');
       listContainer.classList.add('catalog__events-container_opened');
     }
 }
@@ -44,7 +108,7 @@ const toggleTabSwitcher = (evt) => {
   }
 }
 
-mapContainer.classList.remove('catalog__map-container_opened');
+mapContainer.classList.remove('catalog__events-container_opened');
 listContainer.classList.add('catalog__events-container_opened');
 
 buttonList.forEach((button) => {
@@ -53,32 +117,16 @@ buttonList.forEach((button) => {
   }
 });
 
-// Dmitry -> end!
+// Дмитрий -> end!
 
-// Никита
-modalButton.addEventListener('click', (event) => {
-  modal.classList.add('modal_opened');
-  modalContainer.classList.add('modal__container_opened');
-})
 
-modalCloseButton.addEventListener('click', () => {
-  modal.classList.remove('modal_opened');
-  modalContainer.classList.remove('modal__container_opened');
-})
-// Никита -> end!
-
-// console.log('hello');
-
-const sliderLine = document.querySelector('.gallery__slider-line');
-const sliderDots = document.querySelectorAll('.gallery__slider-radio');
-const sliderImages = document.querySelectorAll('.gallery__image');
+// Андрей - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // Переменные
 let sliderCount = 0;
 let sliderWidth;
 
 // console.log(sliderImages);
-
 
 window.addEventListener('resize', showSlide);
 
@@ -118,3 +166,31 @@ function activateSlider() {
 }
 
 activateSlider();
+
+// Андрей -> end!
+
+
+// Алексей - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+
+// Алексей -> end!
+
+
+// Георгий - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+
+// Георгий -> end!
+
+
+// Евгений - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+
+// Евгений -> end!
+
+//- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

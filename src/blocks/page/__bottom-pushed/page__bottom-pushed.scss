@@ -1,0 +1,11 @@
+@use 'variables' as *;
+
+.page__bottom-pushed {
+  margin-bottom: 80px;
+}
+
+@media screen and (max-width: $mobile) {
+  .page__bottom-pushed {
+    margin-bottom: 0;
+  }
+}

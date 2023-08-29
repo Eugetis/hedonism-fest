@@ -1,18 +1,17 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
 .question-block__numbering {
-  font-weight: 500;
-  font-size: 32px;
-  line-height: 36px;
+  @include h3-desktop;
   width: 77px;
-  margin: 0;
   padding: 0;
-  color: #3B3748;
+  color: $dark-primary;
 }
 
-@media all and (max-width: 950px) {
+@media all and (max-width: $mobile) {
   .question-block__numbering {
-    font-size: 24px;
-    line-height: 28px;
+    @include h3-mobile;
     width: 68px;
-    min-width: 68px;  
+    // min-width: 68px;
   }
 }

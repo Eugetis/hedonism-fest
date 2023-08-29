@@ -1,0 +1,17 @@
+@use 'variables' as *;
+
+.catalog__events-container_type_grid {
+  padding: $pad-20 $pad-32 $pad-40; // поставил паддинг 32px, чтобы нормально вставали 3 карточки на десктопе
+}
+
+@media screen and (max-width: $aux-1023) {
+  .catalog__events-container_type_grid {
+    padding: $pad-20;
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .catalog__events-container_type_grid {
+    padding: $pad-20 0;
+  }
+}

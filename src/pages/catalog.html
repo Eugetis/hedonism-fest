@@ -10,7 +10,7 @@
     <link rel="icon" href="" type="">
 </head>
 
-<!-- ВНИЗУ СТРАНИЦЫ - ШАБЛОН КАРТОЧКИ И МОДАЛКИ -->
+<!-- ВНИЗУ СТРАНИЦЫ - ШАБЛОН КАРТОЧКИ И ЧЕТЫРЕ МОДАЛКИ -->
 
 <body class="page">
     <%= require('html-loader!./header.html').default %>
@@ -84,7 +84,7 @@
 
             <!-- тут секция с сообщением, что результатов поиска нет
             (чтобы сделать видимой, надо добавить класс catalog__events-container_opened) -->
-            <!-- <section class="catalog__events-container catalog__events-container_opened">
+            <!-- <section class="catalog__events-container catalog__events-container_type_no-events">
               <div class="additional-section">
                 <div class="additional-section__wrapper">
                   <div class="additional-section__container">
@@ -98,15 +98,14 @@
             </section> -->
 
 
-            <section class="catalog__map-container">
+            <section class="catalog__events-container catalog__events-container_type_map">
               <!-- тут будет блок с яндекс картой -->
-              <!-- чтобы включить, нужно будет добавить класс catalog__map-container_opened -->
-              <!-- у убрать у следующего блока с гридом класс catalog__events-container_opened -->
+              <!-- чтобы включить, нужно будет добавить класс catalog__events-container_opened -->
             </section>
 
 
             <!-- тут будет 12 заглушек карточек (в конце лежит template - его нужно при необходимости поправить и использовать) -->
-            <section class="catalog__events-container">
+            <section class="catalog__events-container catalog__events-container_type_grid">
               <ul class="cards cards_type_grid">
 
                 <li class="cards__item">
@@ -125,7 +124,26 @@
                       <p class="cards__item-text">+ ещё 3</p>
                     </div>
                   </div>
-                  <button class="cards__item-like card-control"><span class="card-control__icon icon-heart-filled"></span></button>
+                  <button class="cards__item-like card-control link"><span class="card-control__icon icon-heart-filled"></span></button>
+                </li>
+
+                <li class="cards__item">
+                  <img class="cards__item-img" src="<%=require('../images/card-sample.jpg')%>" alt="Изображение карточки">
+                  <div class="cards__item-content">
+                    <div class="cards__item-data">
+                      <p class="cards__item-text">лекция</p>
+                      <p class="cards__item-text">1 мая, 12:30-13:50</p>
+                    </div>
+                    <div class="cards__item-info">
+                      <h2 class="cards__item-title">идентичность: почему нам сложно меняться?</h2>
+                      <p class="cards__item-description">лектор: Мария Бархатова</p>
+                    </div>
+                    <div class="cards__item-address">
+                      <p class="cards__item-text">улица Блохина, 22</p>
+                      <p class="cards__item-text">+ ещё 3</p>
+                    </div>
+                  </div>
+                  <button class="cards__item-like card-control link"><span class="card-control__icon icon-heart"></span></button>
                 </li>
 
                 <li class="cards__item">
@@ -163,7 +181,7 @@
                       <p class="cards__item-text">+ ещё 3</p>
                     </div>
                   </div>
-                  <button class="cards__item-like card-control"><span class="card-control__icon icon-heart"></span></button>
+                  <button class="cards__item-like card-control link"><span class="card-control__icon icon-heart"></span></button>
                 </li>
 
                 <li class="cards__item">
@@ -182,7 +200,7 @@
                       <p class="cards__item-text">+ ещё 3</p>
                     </div>
                   </div>
-                  <button class="cards__item-like card-control"><span class="card-control__icon icon-heart"></span></button>
+                  <button class="cards__item-like card-control link"><span class="card-control__icon icon-heart"></span></button>
                 </li>
 
                 <li class="cards__item">
@@ -201,7 +219,7 @@
                       <p class="cards__item-text">+ ещё 3</p>
                     </div>
                   </div>
-                  <button class="cards__item-like card-control"><span class="card-control__icon icon-heart"></span></button>
+                  <button class="cards__item-like card-control link"><span class="card-control__icon icon-heart"></span></button>
                 </li>
 
                 <li class="cards__item">
@@ -220,26 +238,7 @@
                       <p class="cards__item-text">+ ещё 3</p>
                     </div>
                   </div>
-                  <button class="cards__item-like card-control"><span class="card-control__icon icon-heart"></span></button>
-                </li>
-
-                <li class="cards__item">
-                  <img class="cards__item-img" src="<%=require('../images/card-sample.jpg')%>" alt="Изображение карточки">
-                  <div class="cards__item-content">
-                    <div class="cards__item-data">
-                      <p class="cards__item-text">лекция</p>
-                      <p class="cards__item-text">1 мая, 12:30-13:50</p>
-                    </div>
-                    <div class="cards__item-info">
-                      <h2 class="cards__item-title">идентичность: почему нам сложно меняться?</h2>
-                      <p class="cards__item-description">лектор: Мария Бархатова</p>
-                    </div>
-                    <div class="cards__item-address">
-                      <p class="cards__item-text">улица Блохина, 22</p>
-                      <p class="cards__item-text">+ ещё 3</p>
-                    </div>
-                  </div>
-                  <button class="cards__item-like card-control"><span class="card-control__icon icon-heart"></span></button>
+                  <button class="cards__item-like card-control link"><span class="card-control__icon icon-heart"></span></button>
                 </li>
 
                 <li class="cards__item">
@@ -259,7 +258,7 @@
                     </div>
                   </div>
                   <div class="cards__item-like">
-                    <button class="cards__item-btn-like"></button>
+                    <button class="cards__item-btn-like link"></button>
                   </div>
                 </li>
 
@@ -279,7 +278,7 @@
                       <p class="cards__item-text">+ ещё 3</p>
                     </div>
                   </div>
-                  <button class="cards__item-like card-control"><span class="card-control__icon icon-heart"></span></button>
+                  <button class="cards__item-like card-control link"><span class="card-control__icon icon-heart"></span></button>
                 </li>
 
                 <li class="cards__item">
@@ -298,7 +297,7 @@
                       <p class="cards__item-text">+ ещё 3</p>
                     </div>
                   </div>
-                  <button class="cards__item-like card-control"><span class="card-control__icon icon-heart"></span></button>
+                  <button class="cards__item-like card-control link"><span class="card-control__icon icon-heart"></span></button>
                 </li>
 
                 <li class="cards__item">
@@ -317,7 +316,7 @@
                       <p class="cards__item-text">+ ещё 3</p>
                     </div>
                   </div>
-                  <button class="cards__item-like card-control"><span class="card-control__icon icon-heart"></span></button>
+                  <button class="cards__item-like card-control link"><span class="card-control__icon icon-heart"></span></button>
                 </li>
 
                 <li class="cards__item">
@@ -336,7 +335,7 @@
                       <p class="cards__item-text">+ ещё 3</p>
                     </div>
                   </div>
-                  <button class="cards__item-like card-control"><span class="card-control__icon icon-heart"></span></button>
+                  <button class="cards__item-like card-control link"><span class="card-control__icon icon-heart"></span></button>
                 </li>
 
                 <li class="cards__item">
@@ -355,8 +354,9 @@
                       <p class="cards__item-text">+ ещё 3</p>
                     </div>
                   </div>
-                  <button class="cards__item-like card-control"><span class="card-control__icon icon-heart"></span></button>
+                  <button class="cards__item-like card-control link"><span class="card-control__icon icon-heart"></span></button>
                 </li>
+                <!-- конец заглушек карточек -->
 
                 <!-- шаблон карточки -->
                 <template id="event-card">
@@ -376,11 +376,10 @@
                         <p class="cards__item-text">+ ещё 3</p>
                       </div>
                     </div>
-                    <button class="cards__item-like card-control"><span class="card-control__icon icon-heart"></span></button>
+                    <button class="cards__item-like card-control link"><span class="card-control__icon icon-heart"></span></button>
                   </li>
                 </template>
 
-                <!-- конец заглушек карточек -->
               </ul>
 
             </section>

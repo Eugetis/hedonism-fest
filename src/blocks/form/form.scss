@@ -1,12 +1,12 @@
-.form{
+.form {
     display: flex;
     flex-direction: column;
     flex: 1 0 auto;
-    height: 90vh;
+    height: 90vh; // зачем тут?
 }
 
 @media screen and (min-width: 1024px) {
-    .form{
+    .form {
         padding: 0;
         flex: 0 0 0;
     }

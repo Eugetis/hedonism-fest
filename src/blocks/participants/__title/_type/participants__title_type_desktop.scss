@@ -1,0 +1,16 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.participants__title_type_desktop {
+  @include h1-desktop;
+  padding: $pad-40 $pad-40 0 $pad-40;
+  margin: $centered;
+  max-width: $desktop-max;
+  width: 100%;
+}
+
+@media screen and (max-width: $mobile) {
+  .participants__title_type_desktop {
+    display: none
+  }
+}
