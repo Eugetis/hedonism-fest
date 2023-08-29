@@ -1,17 +1,7 @@
 @use 'variables' as *;
 
 .form__upload-container {
-    display: flex;
-    flex-direction: column;
-    height: 220px;
-    justify-content: center;
-    align-items: center;
-    align-self: stretch;
-    border-radius: $radius-small;
-    border: $border-bold;
-    background: $light-primary;
-    position: relative;
-    z-index: 10;
+    
 }
 
 @media screen and (min-width: 1024px) {
@@ -30,12 +20,17 @@
 }
 
 .form__upload-container .form__label-file {
-    width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 220px;
+    border-radius: $radius-small;
+    border: $border-bold;
+    background: $light-primary;
+    position: relative;
+    z-index: 10;
+    width: 100%;
     transition: .3s;
 }
 

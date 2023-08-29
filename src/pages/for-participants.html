@@ -76,7 +76,7 @@
 
         <form class="form hidden">
 
-          <fieldset class="form__step" id="step-1">
+          <fieldset class="form__step hidden" id="step-1">
             <div class="form__container">
               <div class="form__heading">
                 <legend class="form__steps">шаг 1 из 4</legend>
@@ -131,8 +131,16 @@
                   <input type="radio" id="pref1" class="form__input" name="preference-checked" value="кафе/бар/ресторан" checked>
                   <label class="form__label" for="preference-checked">кафе/бар/ресторан</label>
                 </div>
-                <!-- тут должен быть селект города -->
                 <div class="form__fields">
+                  <label for="town" class="form__label">город</label>
+                  <select name="town" id="town" class="form__input">
+                    <option value="Москва">Москва</option>
+                    <option value="Санкт-Петербург">Санкт-Петербург</option>
+                    <option value="Сочи">Сочи</option>
+                    <option value="Калуга">Калуга</option>
+                    <option value="Екатеринбург">Екатеринбург</option>
+                  </select>
+
                   <label class="form__label" for="place">название заведения</label>
                   <input class="form__input" type="text" name="place" id="place" placeholder="введите название заведения">
 
@@ -250,6 +258,6 @@
 
   </main>
 
-    <!-- <%= require('html-loader!./footer.html').default %> -->
+    <%= require('html-loader!./footer.html').default %>
 </body>
 </html>
