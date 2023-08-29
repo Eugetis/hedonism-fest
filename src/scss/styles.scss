@@ -57,6 +57,7 @@
 @use '../blocks/tab-switcher/tab-switcher.scss';
 @use '../blocks/tab-switcher/__icon/tab-switcher__icon.scss';
 @use '../blocks/tab-switcher/__button/tab-switcher__button.scss';
+@use '../blocks/tab-switcher/__button/_active/tab-switcher__button_active.scss';
 
 // стили хедера (обсудить рефакторинг)
 @use '../blocks/header/header.scss';

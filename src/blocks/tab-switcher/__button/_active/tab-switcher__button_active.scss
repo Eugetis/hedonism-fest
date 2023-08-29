@@ -1,0 +1,8 @@
+@use 'variables' as *;
+
+.tab-switcher__button_active {
+  pointer-events: none;
+  cursor:none;
+  background: $color-primary;
+  color: $white;
+}

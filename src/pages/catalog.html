@@ -72,7 +72,10 @@
 
             <div class="catalog__header">
               <!-- после вставки свитчеров в хедер надо посмотреть, что будет на ширине 320px - скорее всего появится горизонтальный скролл -->
-              <button class="button button_type_filled" type="button">тут&nbsp;будут&nbsp;табы&#8209;свитчеры&nbsp;111</button>
+              <div class="tab-switcher">
+                <button class="tab-switcher__button"><span class="tab-switcher__icon icon-marker"></span>карта</button>
+                <button class="tab-switcher__button tab-switcher__button_active"><span class="tab-switcher__icon icon-list"></span>список</button>
+              </div>
               <p class="catalog__text catalog__text_type_counter">Показано 1&#8209;13&nbsp;из&nbsp;129</p>
               <!-- тут нужно js для расчета чисел (сначала для быстроты делаем рендеринг сразу всех, потом может будем подгружать по 12) -->
               <button class="catalog__mob-filters-button button button_type_border" type="button"><span class="tag-filter__icon icon-settings-sliders"></span>фильтры</button>
@@ -81,7 +84,7 @@
 
             <!-- тут секция с сообщением, что результатов поиска нет
             (чтобы сделать видимой, надо добавить класс catalog__events-container_opened) -->
-            <section class="catalog__events-container catalog__events-container_opened">
+            <!-- <section class="catalog__events-container catalog__events-container_opened">
               <div class="additional-section">
                 <div class="additional-section__wrapper">
                   <div class="additional-section__container">
@@ -92,7 +95,7 @@
                   <img class="additional-section__image" src="<%=require('../images/no-results.svg')%>" alt="расстроенный персонаж">
                 </div>
               </div>
-            </section>
+            </section> -->
 
 
             <section class="catalog__map-container">
