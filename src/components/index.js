@@ -6,6 +6,8 @@
 
 import '../scss/styles.scss';
 
+import forParticipants from './for-participants'
+
 // Никита
 
 

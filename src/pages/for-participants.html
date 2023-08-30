@@ -18,7 +18,7 @@
 
     <!-- <section class="participants__content"> -->
 
-      <section class="participants__container">
+      <section class="participants__container participants__container_type_content">
         <!-- ниже - альтеративный заголовок, который виден только до начала формы в мобиле -->
         <p class="participants__title participants__title_type_mobile-start">Стать участником</p>
 
@@ -65,7 +65,7 @@
         </ul>
 
         <div class="participants__buttons-block fixed-bar fixed-bar__align-right">
-          <button class="participants__button button button_type_filled" type="button">заполнить форму</button>
+          <button id="open-form-btn" class="participants__button button button_type_filled" type="button">заполнить форму</button>
         </div>
 
       </section>
@@ -101,7 +101,7 @@
               <input type="button" class="form__button form__button_active" value="продолжить">
             </div> -->
             <div class="participants__buttons-block fixed-bar fixed-bar__align-right">
-              <button class="participants__button button button_type_border" type="button" data-action="back">отмена</button>
+              <button class="participants__button button button_type_border" type="button" data-action="cancel">отмена</button>
               <button class="participants__button button button_type_filled" type="button" data-action="continue">продолжить</button>
             </div>
             <!-- ВНИМАНИЕ: в десктопе и мобиле отличаются текстовки кнопок - уточню, надо ли это делать -->
@@ -247,7 +247,7 @@
               </div> -->
               <div class="participants__buttons-block fixed-bar fixed-bar__align-right">
                 <button class="participants__button button button_type_border" type="button" data-action="back">отмена</button>
-                <button class="participants__button button button_type_filled" type="button" data-action="continue">продолжить</button>
+                <button class="participants__button button button_type_filled" type="submit" data-action="submit">продолжить</button>
               </div>
           </fieldset>
 
@@ -259,5 +259,6 @@
   </main>
 
     <%= require('html-loader!./footer.html').default %>
+    
 </body>
 </html>
