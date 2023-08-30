@@ -5,9 +5,11 @@
 // ИМПОРТЫ
 
 import '../scss/styles.scss';
+const { catalogController } = require('./catalog');
+
 
 // Никита
-
+catalogController();
 
 // Дмитрий
 
