@@ -1,3 +1,6 @@
+const { getCards } = require('./api');
+const { prepareCard } = require('./event');
+
 // ФУНКЦИОНАЛ СТРАНИЦЫ "КАТАЛОГ"
 
 // Если вдруг кому-то нужно что-то дописать в этом файле, помимо основного ответственного за эту функциональность,
@@ -7,6 +10,10 @@
 
 // Никита - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+export const catalogController = async () => {
+  const cards = await getCards();
+  prepareCard(cards);
+}
 
 // получение (нужен запрос к API в api.js) и вставка карточек мероприятий в грид (рендер - в events.js)
 
