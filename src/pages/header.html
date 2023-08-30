@@ -13,17 +13,31 @@
         <a href="../index.html" class="link">
           <img class="header__logo" src="../images/hedonism-fest-logo.png" alt="Логотип ГедонизмФест">
         </a>
-        <form class="header__form">
-          <!-- TODO: переделать в кастомный селект/дропдаун -->
-          <label for="city-select"><span class="button__icon icon-marker"></span></label>
-          <select class="header__city-select" name="city" id="city-select">
-            <option value="moscow">Москва</option>
-            <option value="petersburg" >Санкт-Петербург</option>
-            <option value="sochi">Сочи</option>
-            <option value="kaluga">Калуга</option>
-            <option value="ekatirinburg">Екатеринбург</option>
-          </select>
-        </form>
+        <div class="header__form">
+          <button type="button" class="header__button_city-selected">
+            <span class="button__icon icon-marker"></span>
+            <span class="dropdown__button-text">Санкт&nbsp;-&nbsp;Петербург</span>
+          </button>
+          <form class="header__form-city">
+            <label class="header__form-city-label" for="moscow">Москва
+              <input class="header__input-city-select" type="radio" name="city" id="moscow" value="Москва" />
+            </label>
+            <label class="header__form-city-label" for="petersburg">Санкт-Петербург
+              <input class="header__input-city-select" type="radio" name="city" id="petersburg"
+                value="Санкт&nbsp;-&nbsp;Петербург" checked />
+            </label>
+            <label class="header__form-city-label" for="sochi">Сочи
+              <input class="header__input-city-select" type="radio" name="city" id="sochi" value="Сочи" />
+            </label>
+            <label class="header__form-city-label" for="kaluga">Калуга
+              <input class="header__input-city-select" type="radio" name="city" id="kaluga" value="Калуга" />
+            </label>
+            <label class="header__form-city-label" for="ekatirinburg">Екатеринбург
+              <input class="header__input-city-select" type="radio" name="city" id="ekatirinburg"
+                value="Екатеринбург" />
+            </label>
+          </form>
+        </div>
       </div>
 
       <nav>

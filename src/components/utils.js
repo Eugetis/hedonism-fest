@@ -26,8 +26,15 @@
 // Андрей -> end!
 
 // Алексей - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+import {dropDownMenu} from '../components/constants.js';
 
+export const dropDownMenuOpen = function() {
+  dropDownMenu.classList.add('header__form-city_opened');
+}
 
+export const dropDownMenuClose = function() {
+  dropDownMenu.classList.remove('header__form-city_opened');
+}
 
 
 // Алексей -> end!
