@@ -107,7 +107,26 @@
             <!-- тут будет 12 заглушек карточек (в конце лежит template - его нужно при необходимости поправить и использовать) -->
             <section class="catalog__events-container catalog__events-container_type_grid">
               <ul class="cards cards_type_grid">
-
+                <template id="card">
+                  <li class="cards__item" data-id="0" data-coordinates="0">
+                    <img class="cards__item-img" src="" alt="">
+                    <div class="cards__item-content">
+                      <div class="cards__item-data">
+                        <p class="cards__item-text" id="cards__item-type"></p>
+                        <p class="cards__item-text" id="cards__item-date"></p>
+                      </div>
+                      <div class="cards__item-info">
+                        <h2 class="cards__item-title"></h2>
+                        <p class="cards__item-description"></p>
+                      </div>
+                      <div class="cards__item-address">
+                        <p class="cards__item-text" id="cards__item-address"></p>
+                        <p class="cards__item-text" id="cards__item-count"></p>
+                      </div>
+                    </div>
+                    <button class="cards__item-like card-control link"><span class="card-control__icon"></span></button>
+                  </li>
+                </template>
                 <li class="cards__item">
                   <img class="cards__item-img" src="<%=require('../images/card-sample.jpg')%>" alt="Изображение карточки">
                   <div class="cards__item-content">

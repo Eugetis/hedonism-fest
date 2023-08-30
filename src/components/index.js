@@ -5,10 +5,20 @@
 // ИМПОРТЫ
 
 import '../scss/styles.scss';
+import {cardsClickController} from './event';
+import {catalogController, modalController} from './catalog';
+
 
 // Никита
 
+// Столкнулся с проблемой, когда обьявил переменную cardsSection в constants.js
+// Вебпак заброковал это переменную, когда я ее импортировал и навесил .addEventListener
+// Поэтому обьявил сразу так
 
+document.querySelector('.cards').addEventListener('click', cardsClickController)
+if (document.querySelector('.catalog')) {
+  catalogController();
+}
 // Дмитрий
 
 

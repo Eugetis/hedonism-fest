@@ -1,3 +1,6 @@
+import {getCards, getCardById} from './api';
+import {prepareCard, modalCreate, modalHandler} from './event';
+
 // ФУНКЦИОНАЛ СТРАНИЦЫ "КАТАЛОГ"
 
 // Если вдруг кому-то нужно что-то дописать в этом файле, помимо основного ответственного за эту функциональность,
@@ -7,10 +10,19 @@
 
 // Никита - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+export const catalogController = async () => {
+  const cards = await getCards();
+  prepareCard(cards);
+}
 
 // получение (нужен запрос к API в api.js) и вставка карточек мероприятий в грид (рендер - в events.js)
 
 // Открытие модалки с полным описанием мероприятия
+export const modalController = async (id) => {
+  const card = await getCardById(id);
+  const preparedModal = modalCreate(card);
+  modalHandler(preparedModal, 'open');
+}
 
 
 // Никита -> end!
