@@ -12,13 +12,15 @@ import axios from 'axios';
 
 export const getCards = async () => {
   try {
-    const response = await axios.get('https://run.mocky.io/v3/e782198a-ac8f-4097-a5fc-83db97ed561b', {
+    const response = await axios.get('https://run.mocky.io/v3/8312251d-5b23-4c72-8dc7-0a37d70b7ea0', {
       headers: {
         'Content-Type': 'application/json'
       }
     })
 
-    return response.data;
+    if (response.status === 200) {
+      return response.data;
+    }
   } catch (e) {
     console.log(e.message, + ' getCards')
   }
@@ -32,9 +34,21 @@ export const getCities = async () => {
       }
     })
 
-    return response.data;
+    if (response.status === 200) {
+      return response.data;
+    }
   } catch (e) {
     console.log(e.message, ' getCities')
+  }
+}
+
+export const getCardById = async (id) => {
+  try {
+    const response = await getCards();
+    const cards = response.cards;
+    return cards.filter((card) => card.id === id);
+  } catch (e) {
+    console.log(e.message, ' getCardById');
   }
 }
 
