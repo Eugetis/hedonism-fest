@@ -188,10 +188,12 @@ dropDownMenuInputs.forEach(function (dropDownMenuInput) {
   dropDownMenuInput.addEventListener('click', function () {
     if (dropDownMenuInput.checked) {
       dropDownMenuButtonText.textContent = dropDownMenuInput.value;
+      localStorage.setItem('city' , dropDownMenuInput.value);
+      console.log(localStorage.getItem('city'));
     }
   })
 });
-
+dropDownMenuButtonText.textContent = localStorage.getItem('city');
 
 // Алексей -> end!
 
