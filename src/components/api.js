@@ -9,7 +9,7 @@ import axios from 'axios';
 
 
 // Никита - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
+// Функция которая тянет все карточки с API
 export const getCards = async () => {
   try {
     const response = await axios.get('https://run.mocky.io/v3/8312251d-5b23-4c72-8dc7-0a37d70b7ea0', {
@@ -25,7 +25,7 @@ export const getCards = async () => {
     console.log(e.message, + ' getCards')
   }
 }
-
+// Функция которая тянет города с API
 export const getCities = async () => {
   try {
     const response = await axios.get('https://run.mocky.io/v3/7cdf8973-35bd-40dd-b6e8-3d95ac446576', {
@@ -41,7 +41,7 @@ export const getCities = async () => {
     console.log(e.message, ' getCities')
   }
 }
-
+// Функция которая возвращает конкретную карточку по ID
 export const getCardById = async (id) => {
   try {
     const response = await getCards();
