@@ -1,4 +1,5 @@
-import {cardTemplate, cardGridSection} from './constants';
+import {cardTemplate, cardGridSection, modalTemplate} from './constants';
+import {modalController} from "./catalog";
 // РАБОТА С МЕРОПРИЯТИЕМ
 
 // Если вдруг кому-то нужно что-то дописать в этом файле, помимо основного ответственного за эту функциональность,
@@ -21,6 +22,42 @@ export const prepareCard = ({cards}) => {
   addCard(preparedCards);
 }
 
+export const modalCreate = ([card]) => {
+  const location = card.location.shift();
+  const modalElement = modalTemplate.querySelector('.modal').cloneNode(true);
+
+  modalElement.dataset.id = card.id;
+  modalElement.dataset.coordinates = card.coordinates;
+  modalElement.querySelector('.event__image').src = card.image;
+  modalElement.querySelector('.event__type').textContent = card.type;
+  modalElement.querySelector('.event__date').textContent = `${card.date}, ${card.timeDuration}`;
+  modalElement.querySelector('.event__title').textContent = card.name;
+  modalElement.querySelector('.event__text').innerHTML = card.description;
+  modalElement.querySelector('#table-lines__duration').textContent = card.duration;
+  modalElement.querySelector('#table-lines__price').textContent = `${card.price} ₽`;
+  modalElement.querySelector('#table-lines__place').textContent = card.placeName;
+  modalElement.querySelector('#table-lines__address').textContent = location.address;
+  modalElement.querySelector('#table-lines__phone').textContent = card.phone;
+  modalElement.querySelector('.button').textContent = `смотреть еще ${card.location.length -1}`;
+
+  return modalElement;
+}
+
+export const modalHandler = (modal, type) => {
+  document.querySelector('.page').append(modal);
+  modal.classList.add('modal_opened');
+
+  switch (type) {
+    case 'open':
+      document.querySelector('.page').append(modal);
+      modal.classList.add('modal_opened');
+      break;
+    case 'close':
+      modal.classList.remove('modal_opened');
+      document.querySelector('.page').remove(modal);
+  }
+}
+
 const createCard = (item) => {
   const location = item.location.shift();
   const cardElement = cardTemplate.querySelector('.cards__item').cloneNode(true);
@@ -41,7 +78,7 @@ const createCard = (item) => {
   cardElement.querySelector('.cards__item-title').textContent = item.name;
   cardElement.querySelector('.cards__item-description').textContent = item.description;
   cardElement.querySelector('#cards__item-address').textContent = location.address;
-  cardElement.querySelector('#cards__item-count').textContent = `+ еще ${item.location.length}`;
+  cardElement.querySelector('#cards__item-count').textContent = `+ еще ${item.location.length - 1}`;
 
   return cardElement;
 }
@@ -94,12 +131,15 @@ const removeLikeFromStorage = (id, likesArray) => {
 
 export const cardsClickController = (event) => {
   const target = event.target;
+  const cardId = event.target.closest('.cards__item').dataset.id;
   const classList = Array.from(target.classList).join(' ');
   const likeRegex = /card-control/g;
   let card = null;
   if (classList.match(likeRegex)) {
     card = target.closest('.cards__item');
-    addLikeToStorage(card);
+    return addLikeToStorage(card);
+  } else {
+    return modalController(cardId);
   }
 }
 
