@@ -17,7 +17,9 @@ export const getCards = async () => {
       }
     })
 
-    return response.data;
+    if (response.status === 200) {
+      return response.data;
+    }
   } catch (e) {
     console.log(e.message, + ' getCards')
   }
@@ -31,7 +33,9 @@ export const getCities = async () => {
       }
     })
 
-    return response.data;
+    if (response.status === 200) {
+      return response.data;
+    }
   } catch (e) {
     console.log(e.message, ' getCities')
   }
