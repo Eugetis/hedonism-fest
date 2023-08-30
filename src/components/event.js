@@ -84,7 +84,7 @@ const createCard = (item) => {
 }
 
 const cardLikeController = (id) => {
-  const likesArray = JSON.parse(getStorageValueByKey('likes'));
+  const likesArray = getStorageValueByKey('likes');
 
   if (likesArray === null) {
     return false;
