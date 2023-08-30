@@ -199,11 +199,16 @@ dropDownMenuInputs.forEach(function (dropDownMenuInput) {
     if (dropDownMenuInput.checked) {
       dropDownMenuButtonText.textContent = dropDownMenuInput.value;
       localStorage.setItem('city' , dropDownMenuInput.value);
-      console.log(localStorage.getItem('city'));
     }
   })
 });
+//сохранение значения кнопки и расположении галочки на инпуте
 dropDownMenuButtonText.textContent = localStorage.getItem('city');
+dropDownMenuInputs.forEach(function (dropDownMenuInput) {
+  if (dropDownMenuInput.value === dropDownMenuButtonText.textContent) {
+    dropDownMenuInput.checked = true;
+  }
+});
 
 // Алексей -> end!
 
