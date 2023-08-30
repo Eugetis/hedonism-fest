@@ -1,4 +1,4 @@
-const {cardTemplate, cardGridSection} = require('./constants');
+import {cardTemplate, cardGridSection} from './constants';
 // РАБОТА С МЕРОПРИЯТИЕМ
 
 // Если вдруг кому-то нужно что-то дописать в этом файле, помимо основного ответственного за эту функциональность,
@@ -24,7 +24,13 @@ export const prepareCard = ({cards}) => {
 const createCard = (item) => {
   const location = item.location.shift();
   const cardElement = cardTemplate.querySelector('.cards__item').cloneNode(true);
-  // Необходимо написать проверку есть-ли лайк на карточке
+  const span = cardElement.querySelector('.card-control__icon');
+
+  if (cardLikeController(item.id)) {
+    span.classList.add('icon-heart-filled');
+  } else {
+    span.classList.add('icon-heart');
+  }
 
   cardElement.dataset.id = item.id;
   cardElement.dataset.coordinates = location.coordinates;
@@ -40,9 +46,81 @@ const createCard = (item) => {
   return cardElement;
 }
 
-// рендер карточки мероприятия
+const cardLikeController = (id) => {
+  const likesArray = getStorageValueByKey('likes');
+
+  return likesArray.some((element) => element === id);
+}
+
+const cardLikeLocalController = (card, type) => {
+  const span = card.querySelector('.card-control__icon');
+  switch (type) {
+    case 'add':
+      span.classList.remove('icon-heart');
+      span.classList.add('icon-heart-filled');
+      break;
+
+    case 'delete':
+      span.classList.remove('icon-heart-filled');
+      span.classList.add('icon-heart');
+      break;
+  }
+}
+
+// рендер карточки мероприятия - готово
 
 // лайк мероприятия (на карточке и внутри модалки с описанием) с сохранением в local storage
+export const addLikeToStorage = (card) => {
+  const id = card.dataset.id;
+  if (!hasKeyInStorage('likes')) {
+    localStorage.setItem('likes', JSON.stringify([]));
+  }
+
+  const likesArray = getStorageValueByKey('likes');
+  if (hasLike(id, likesArray)) {
+    cardLikeLocalController(card, 'delete');
+    return removeLikeFromStorage(id, likesArray);
+  }
+
+  cardLikeLocalController(card, 'add');
+  likesArray.push(id);
+  localStorage.setItem('likes', JSON.stringify(likesArray));
+}
+
+const removeLikeFromStorage = (id, likesArray) => {
+  const clearedArray = likesArray.filter((item) => item !== id);
+  localStorage.setItem('likes', JSON.stringify(clearedArray));
+}
+
+export const cardsClickController = (event) => {
+  const target = event.target;
+  const classList = Array.from(target.classList).join(' ');
+  const likeRegex = /card-control/g;
+  let card = null;
+  if (classList.match(likeRegex)) {
+    card = target.closest('.cards__item');
+    addLikeToStorage(card);
+  }
+}
+
+const hasLike = (id, array) => {
+  return array.indexOf(id) !== -1;
+}
+
+const getStorageValueByKey = (key) => {
+  if (!hasKeyInStorage(key)) {
+    return null;
+  }
+
+  return JSON.parse(localStorage.getItem(key));
+}
+
+const hasKeyInStorage = (key) => {
+  if (localStorage.getItem(key) === null) {
+    return false;
+  }
+  return true;
+}
 
 // установка слушателя на кнопку "купить билет" для открытия модалки покупки (скрипт открытия модалок напишет Андрей)
 

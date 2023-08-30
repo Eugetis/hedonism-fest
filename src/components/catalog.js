@@ -1,5 +1,5 @@
-const { getCards } = require('./api');
-const { prepareCard } = require('./event');
+import {getCards} from './api';
+import {prepareCard} from './event';
 
 // ФУНКЦИОНАЛ СТРАНИЦЫ "КАТАЛОГ"
 
