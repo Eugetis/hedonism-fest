@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 // ТУТ БУДУТ ЗАПРОСЫ К ФЕЙКОВОМУ API
 
 // Если вдруг кому-то нужно что-то дописать в этом файле, помимо основного ответственного за эту функциональность,
@@ -50,6 +51,7 @@ export const getCardById = async (id) => {
     console.log(e.message, ' getCardById');
   }
 }
+
 
 // Никита -> end!
 
