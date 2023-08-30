@@ -69,12 +69,15 @@ const createCard = (item) => {
     span.classList.add('icon-heart');
   }
 
+  const dateContent = item.date.split(' ');
+  const date = `${dateContent[0]} ${dateContent[1].substring(0, 3)}...`
+
   cardElement.dataset.id = item.id;
   cardElement.dataset.coordinates = location.coordinates;
   cardElement.querySelector('.cards__item-img').src = item.image;
   cardElement.querySelector('.cards__item-img').alt = item.type;
   cardElement.querySelector('#cards__item-type').textContent = item.type;
-  cardElement.querySelector('#cards__item-date').textContent = `${item.date}, ${item.timeDuration}`;
+  cardElement.querySelector('#cards__item-date').textContent = `${date}, ${item.timeDuration}`;
   cardElement.querySelector('.cards__item-title').textContent = item.name;
   cardElement.querySelector('.cards__item-description').textContent = item.description;
   cardElement.querySelector('#cards__item-address').textContent = location.address;
