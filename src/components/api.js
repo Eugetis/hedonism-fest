@@ -1,4 +1,3 @@
-const axios = require('axios');
 // ТУТ БУДУТ ЗАПРОСЫ К ФЕЙКОВОМУ API
 
 // Если вдруг кому-то нужно что-то дописать в этом файле, помимо основного ответственного за эту функциональность,
@@ -9,33 +8,7 @@ const axios = require('axios');
 
 // Никита - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-const getCards = async () => {
-  try {
-    const response = await axios.get('https://run.mocky.io/v3/e782198a-ac8f-4097-a5fc-83db97ed561b', {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
 
-    return response.data;
-  } catch (e) {
-    console.log(e.message, + ' getCards')
-  }
-}
-
-const getCities = async () => {
-  try {
-    const response = await axios.get('https://run.mocky.io/v3/7cdf8973-35bd-40dd-b6e8-3d95ac446576', {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-
-    return response.data;
-  } catch (e) {
-    console.log(e.message, ' getCities')
-  }
-}
 
 // Никита -> end!
 
@@ -74,8 +47,3 @@ const getCities = async () => {
 // Евгений -> end!
 
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-module.exports = {
-  getCards,
-  getCities
-}
