@@ -19,7 +19,8 @@ export const modalTemplate = document?.querySelector('#modal')?.content;
 // Дмитрий -> end!
 
 // Андрей - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
+export const modalDonate = document.querySelector('.modal_id_donation');
+export const modalFilters = document.querySelector('.modal_id_mobile-filters');
 
 
 

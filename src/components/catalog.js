@@ -1,5 +1,7 @@
 import {getCards, getCardById} from './api';
 import {prepareCard, modalCreate, modalHandler} from './event';
+import { modalFilters } from './constants.js';
+import { openModal } from './modal.js';
 
 // ФУНКЦИОНАЛ СТРАНИЦЫ "КАТАЛОГ"
 
@@ -58,7 +60,13 @@ export const modalController = async (id) => {
 
 // Андрей - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+const catalogFiltersButton = document.querySelector('.catalog__mob-filters-button');
 
+export  function setCatalogEventListener() {
+  catalogFiltersButton.addEventListener('click', () => {
+    openModal(modalFilters);
+  });
+}
 
 
 // Андрей -> end!
