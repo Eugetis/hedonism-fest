@@ -30,7 +30,13 @@ import {  showSlide, activateSlider } from '../components/photo-slider.js';
 
 // Алексей
 import { dropDownMenuOpen, dropDownMenuClose } from '../components/utils.js';
-import { dropDownMenuButton, dropDownMenuElements, dropDownMenuInputs, header } from '../components/constants.js';
+import {
+  cardGridSection,
+  dropDownMenuButton,
+  dropDownMenuElements,
+  dropDownMenuInputs,
+  header
+} from '../components/constants.js';
 // Георгий
 
 
