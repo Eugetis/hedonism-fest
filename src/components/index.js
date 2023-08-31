@@ -5,8 +5,8 @@
 // ИМПОРТЫ
 
 import '../scss/styles.scss';
-import {cardsClickController} from './event';
-import {catalogController, modalController} from './catalog';
+import { cardsClickController } from './event';
+import { catalogController, modalController } from './catalog';
 
 
 // Никита
@@ -27,7 +27,7 @@ if (document.querySelector('.catalog')) {
 
 // Алексей
 import { dropDownMenuOpen, dropDownMenuClose } from '../components/utils.js';
-import { dropDownMenuButton, dropDownMenuElements, dropDownMenuInputs } from '../components/constants.js';
+import { dropDownMenuButton, dropDownMenuElements, dropDownMenuInputs, header } from '../components/constants.js';
 // Георгий
 
 
@@ -187,6 +187,12 @@ activateSlider();
 
 
 // Алексей - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+/*document.querySelector('.page').addEventListener('click', function(){
+  if(dropDownMenu.classList.contains('header__form-city_opened')) {
+    console.log('клик')
+    dropDownMenuClose();
+  }
+});*/
 //открытие дропдауна
 dropDownMenuButton.addEventListener('click', dropDownMenuOpen);
 //закрытие дропдауна
@@ -198,7 +204,7 @@ dropDownMenuInputs.forEach(function (dropDownMenuInput) {
   dropDownMenuInput.addEventListener('click', function () {
     if (dropDownMenuInput.checked) {
       dropDownMenuButtonText.textContent = dropDownMenuInput.value;
-      localStorage.setItem('city' , dropDownMenuInput.value);
+      localStorage.setItem('city', dropDownMenuInput.value);
     }
   })
 });
@@ -207,6 +213,15 @@ dropDownMenuButtonText.textContent = localStorage.getItem('city');
 dropDownMenuInputs.forEach(function (dropDownMenuInput) {
   if (dropDownMenuInput.value === dropDownMenuButtonText.textContent) {
     dropDownMenuInput.checked = true;
+  }
+});
+window.addEventListener('scroll', function () {
+  if (pageYOffset > 1500) {
+    header.classList.add('header__offset_1')
+    header.classList.remove('header__offset_2')
+  } else if (pageYOffset <= 1500) {
+    header.classList.remove('header__offset_1')
+    header.classList.add('header__offset_2')
   }
 });
 
