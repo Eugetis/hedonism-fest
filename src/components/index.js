@@ -6,7 +6,7 @@
 
 import '../scss/styles.scss';
 import { cardsClickController } from './event';
-import {catalogController, generalCardController, modalController} from './catalog';
+import { catalogController, generalCardController, modalController } from './catalog';
 
 
 import forParticipants from './for-participants';
@@ -35,7 +35,7 @@ if (document.querySelector('.page_id_index')) {
 import { updateCityOnMap } from './catalog'
 
 // Андрей
-import {  showSlide, activateSlider } from '../components/photo-slider.js';
+import { showSlide, activateSlider } from '../components/photo-slider.js';
 
 // Алексей
 import { dropDownMenuOpen, dropDownMenuClose } from '../components/utils.js';
@@ -143,7 +143,7 @@ dropDownMenuInputs.forEach(function (dropDownMenuInput) {
   })
 });
 //Проверка локалсторэдж, вставка в него дефолтного города
-if(!localStorage.getItem('city')) {
+if (!localStorage.getItem('city')) {
   localStorage.setItem('city', 'Москва');
 }
 
@@ -154,18 +154,18 @@ dropDownMenuInputs.forEach(function (dropDownMenuInput) {
     dropDownMenuInput.checked = true;
   }
 });
-//выезжающий по оси Y хедер
+
+//появляющийся при скролле хедер
 window.addEventListener('scroll', function () {
-  if (pageYOffset > 1500) {
-    header.classList.add('header__offset_1')
+  if (pageYOffset > 10) {
+    header.classList.add('header__offset_1');
     header.classList.remove('header__offset_2')
-  } else if (pageYOffset <= 1500) {
-    header.classList.remove('header__offset_1')
-    header.classList.add('header__offset_2')
+
+  } else if (pageYOffset <= 10) {
+    header.classList.remove('header__offset_1');
+    header.classList.add('header__offset_2');
   }
-});
-
-
+})
 
 // Алексей -> end!
 

@@ -1,4 +1,5 @@
 .header__offset_2 {
-  top: 0%;
-  transition: all 0.5s ease;
+  top: -50%;
+  transition: all 1s ease-in-out 0s;
+  visibility: hidden;
 }

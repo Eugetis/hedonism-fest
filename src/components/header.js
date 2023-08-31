@@ -8,7 +8,16 @@
 
 // Алексей - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-
+//выезжающий по оси Y хедер
+/*window.addEventListener('scroll', function () {
+  if (pageYOffset > 1500) {
+    header.classList.add('header__offset_1')
+    header.classList.remove('header__offset_2')
+  } else if (pageYOffset <= 1500) {
+    header.classList.remove('header__offset_1')
+    header.classList.add('header__offset_2')
+  }
+});*/
 
 // открытие дропдауна с выбором городов (список городов будем тянуть через запрос к API - сегодня подготовим)
 
