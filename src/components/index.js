@@ -45,10 +45,7 @@ const modal = document.querySelector('.modal');
 const modalContainer = document.querySelector('.modal__container');
 
 // Дмитрий
-const tabSwitcher = document.querySelector('.tab-switcher');
-const buttonList = Array.from(tabSwitcher.querySelectorAll('.tab-switcher__button'));
-const mapContainer = document.querySelector('.catalog__events-container_type_map');
-const listContainer = document.querySelector('.catalog__events-container_type_grid');
+
 
 // Андрей
 const sliderLine = document.querySelector('.gallery__slider-line');
@@ -84,48 +81,7 @@ modalCloseButton.addEventListener('click', () => {
 
 
 // Дмитрий - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-let isMap = false;
 
-const handleTabEvent = (evt) => {
-    evt.preventDefault();
-    toggleTabSwitcher(evt);
-    if (!isMap) {
-      isMap = true;
-      // mapContainer.style.display = 'flex';
-      // listContainer.style.display = 'none';
-      mapContainer.classList.add('catalog__events-container_opened');
-      listContainer.classList.remove('catalog__events-container_opened');
-    } else {
-      isMap = false;
-      // mapContainer.style.display = 'none';
-      // listContainer.style.display = 'grid';
-      mapContainer.classList.remove('catalog__events-container_opened');
-      listContainer.classList.add('catalog__events-container_opened');
-    }
-}
-
-const toggleTabSwitcher = (evt) => {
-  /* может сделать через перебор элементов свитча и в зависимости от актив вешать или нет*/
-  evt.target.classList.add('tab-switcher__button_active');
-  evt.target.removeEventListener('click', handleTabEvent);
-
-  if (evt.target.nextElementSibling != null) {
-    evt.target.nextElementSibling.classList.remove('tab-switcher__button_active');
-    evt.target.nextElementSibling.addEventListener('click', handleTabEvent);
-  } else {
-    evt.target.previousElementSibling.classList.remove('tab-switcher__button_active');
-    evt.target.previousElementSibling.addEventListener('click', handleTabEvent);
-  }
-}
-
-mapContainer.classList.remove('catalog__events-container_opened');
-listContainer.classList.add('catalog__events-container_opened');
-
-buttonList.forEach((button) => {
-  if (!button.matches('.tab-switcher__button_active')) {
-    button.addEventListener('click', handleTabEvent);
-  }
-});
 
 // Дмитрий -> end!
 

@@ -1,9 +1,10 @@
 @use 'variables' as *;
 
 .catalog__map-container {
-  display: block;
+  display: flex;//block;
   flex-grow: 1;
   box-sizing: border-box;
+  background-color: green;
 }
 
 // @media screen and (max-width: $mobile) {

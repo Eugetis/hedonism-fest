@@ -13,7 +13,9 @@ export const modalTemplate = document?.querySelector('#modal')?.content;
 // Никита -> end!
 
 // Дмитрий - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
+export const tabSwitcher = document.querySelector('.tab-switcher');
+export const mapContainer = document.querySelector('.catalog__events-container_type_map');
+export const listContainer = document.querySelector('.catalog__events-container_type_grid');
 
 
 // Дмитрий -> end!
