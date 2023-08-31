@@ -23,13 +23,20 @@ if (document.querySelector('.page_id_catalog')) {
 }
 // Дмитрий
 
+import { updateCityOnMap } from './catalog'
 
 // Андрей
 import {  showSlide, activateSlider } from '../components/photo-slider.js';
 
 // Алексей
 import { dropDownMenuOpen, dropDownMenuClose } from '../components/utils.js';
-import { dropDownMenuButton, dropDownMenuElements, dropDownMenuInputs, header } from '../components/constants.js';
+import {
+  cardGridSection,
+  dropDownMenuButton,
+  dropDownMenuElements,
+  dropDownMenuInputs,
+  header
+} from '../components/constants.js';
 // Георгий
 
 
@@ -47,10 +54,7 @@ const modal = document.querySelector('.modal');
 const modalContainer = document.querySelector('.modal__container');
 
 // Дмитрий
-/*const tabSwitcher = document.querySelector('.tab-switcher');
-const buttonList = Array.from(tabSwitcher.querySelectorAll('.tab-switcher__button'));
-const mapContainer = document.querySelector('.catalog__events-container_type_map');
-const listContainer = document.querySelector('.catalog__events-container_type_grid');*/
+
 
 // Андрей
 
@@ -90,48 +94,7 @@ modalCloseButton.addEventListener('click', () => {
 
 
 // Дмитрий - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-/*let isMap = false;
 
-const handleTabEvent = (evt) => {
-    evt.preventDefault();
-    toggleTabSwitcher(evt);
-    if (!isMap) {
-      isMap = true;
-      // mapContainer.style.display = 'flex';
-      // listContainer.style.display = 'none';
-      mapContainer.classList.add('catalog__events-container_opened');
-      listContainer.classList.remove('catalog__events-container_opened');
-    } else {
-      isMap = false;
-      // mapContainer.style.display = 'none';
-      // listContainer.style.display = 'grid';
-      mapContainer.classList.remove('catalog__events-container_opened');
-      listContainer.classList.add('catalog__events-container_opened');
-    }
-}
-
-const toggleTabSwitcher = (evt) => {*/
-/* может сделать через перебор элементов свитча и в зависимости от актив вешать или нет*/
-/*evt.target.classList.add('tab-switcher__button_active');
-evt.target.removeEventListener('click', handleTabEvent);
-
-if (evt.target.nextElementSibling != null) {
-  evt.target.nextElementSibling.classList.remove('tab-switcher__button_active');
-  evt.target.nextElementSibling.addEventListener('click', handleTabEvent);
-} else {
-  evt.target.previousElementSibling.classList.remove('tab-switcher__button_active');
-  evt.target.previousElementSibling.addEventListener('click', handleTabEvent);
-}
-}
-
-mapContainer.classList.remove('catalog__events-container_opened');
-listContainer.classList.add('catalog__events-container_opened');
-
-buttonList.forEach((button) => {
-if (!button.matches('.tab-switcher__button_active')) {
-  button.addEventListener('click', handleTabEvent);
-}
-});*/
 
 // Дмитрий -> end!
 
@@ -143,7 +106,9 @@ if (document.querySelector('.page_id_index')) {
   activateSlider();  
 }
 
-
+if (document.querySelector('.page_id_404') || document.querySelector('.page_id_thanks-for-application') || document.querySelector('.page_id_thanks-for-support')) {
+  document.querySelector('.footer').classList.add('footer_style_additional');
+}
 // Андрей -> end!
 
 
@@ -166,6 +131,10 @@ dropDownMenuInputs.forEach(function (dropDownMenuInput) {
     if (dropDownMenuInput.checked) {
       dropDownMenuButtonText.textContent = dropDownMenuInput.value;
       localStorage.setItem('city', dropDownMenuInput.value);
+      // Dmitry
+      // пинаем карту, чтобы обновилась по выбранному городу
+      updateCityOnMap();
+      // Dmitry -> end!
     }
   })
 });

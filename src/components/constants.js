@@ -7,13 +7,12 @@
 
 
 // Никита - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-export const cardGridSection = document.querySelector('.cards_type_grid'); // Секция карточек на странице catalog.html
-export const cardTemplate = cardGridSection?.querySelector('#card')?.content; // Карточка НЕ в развернутом виде
-export const modalTemplate = document?.querySelector('#modal')?.content;
 // Никита -> end!
 
 // Дмитрий - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
+export const tabSwitcher = document.querySelector('.tab-switcher');
+export const mapContainer = document.querySelector('.catalog__events-container_type_map');
+export const listContainer = document.querySelector('.catalog__events-container_type_grid');
 
 
 // Дмитрий -> end!
