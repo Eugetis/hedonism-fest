@@ -28,9 +28,11 @@ export const listContainer = document.querySelector('.catalog__events-container_
 // Андрей -> end!
 
 // Алексей - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-
-
+export const dropDownMenu = document.querySelector('.header__form-city');
+export const dropDownMenuButton = document.querySelector('.header__button_city-selected');
+export const dropDownMenuElements = Array.from(document.querySelectorAll('.header__form-city-label'));
+export const dropDownMenuInputs = Array.from(document.querySelectorAll('.header__input-city-select'));
+export const header = document.querySelector('.header');
 
 // Алексей -> end!
 

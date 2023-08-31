@@ -10,7 +10,7 @@ import {tabSwitcher, mapContainer, listContainer} from './constants';
 
 
 // Никита - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
+// Контроллер каталого секции cards_type_grid, сначала берет все карты, а потом передает их на рендер
 export const catalogController = async () => {
   // Dmitry
   initEventsContainer();
@@ -23,6 +23,10 @@ export const catalogController = async () => {
 // получение (нужен запрос к API в api.js) и вставка карточек мероприятий в грид (рендер - в events.js)
 
 // Открытие модалки с полным описанием мероприятия
+
+// Контроллер открывания модалки, который вызывается в момент клика по карточке в секции CARDS, в нее передается ID кликнутой карточки
+// Затем идет запрос на получение всех данных с API именно этой карточки, затем мы получаем нужный формат модального окна со всеми нужными данными в переменную preparedModal
+// Затем мы передаем preparedModal в modalHandler c type open, внутри modalHandler эта карточка добавляется в секции на странице и открывается
 export const modalController = async (id) => {
   const card = await getCardById(id);
   const preparedModal = modalCreate(card);

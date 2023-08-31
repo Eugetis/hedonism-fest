@@ -84,6 +84,8 @@
 
 // стили хедера (обсудить рефакторинг)
 @use '../blocks/header/header.scss';
+@use '../blocks/header/__offset/_1/header__offset_1.scss';
+@use '../blocks/header/__offset/_2/header__offset_2.scss';
 @use '../blocks/header/__top/header__top.scss';
 @use '../blocks/header/__wrapper/header__wrapper.scss';
 @use '../blocks/header/__logo-and-location/header__logo-and-location.scss';
@@ -113,6 +115,7 @@
 @use '../blocks/header/__wrapper/_closed/header__wrapper_closed.scss';
 
 @use '../blocks/header/__form-city/header__form-city.scss';
+@use '../blocks/header/__form-city/_opened/header__form-city_opened.scss';
 @use '../blocks/header/__nav-title/header__nav-title.scss';
 @use '../blocks/header/__subtext/header__subtext.scss';
 @use '../blocks/header/__subtext/_position/header__subtext_position_left.scss';
@@ -275,6 +278,11 @@
 @use '../blocks/modal/_type/modal_type_center.scss';
 @use '../blocks/modal/_type/modal_type_high-mob.scss';
 @use '../blocks/modal/_type/modal_type_preview.scss';
+@use '../blocks/modal/_id/modal_id_donation.scss';
+@use '../blocks/modal/_id/modal_id_event-full.scss';
+@use '../blocks/modal/_id/modal_id_event-mobile-preview.scss';
+@use '../blocks/modal/_id/modal_id_mobile-filters.scss';
+@use '../blocks/modal/_id/modal_id_payment.scss';
 @use '../blocks/modal/_opened/modal_opened.scss';
 @use '../blocks/modal/__wrapper-for-side/modal__wrapper-for-side.scss';
 @use '../blocks/modal/__container/modal__container.scss';

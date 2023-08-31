@@ -5,9 +5,11 @@
 // ИМПОРТЫ
 
 import '../scss/styles.scss';
-import {cardsClickController} from './event';
-import {catalogController, modalController} from './catalog';
+import { cardsClickController } from './event';
+import { catalogController, modalController } from './catalog';
 
+
+import forParticipants from './for-participants';
 
 // Никита
 
@@ -15,8 +17,8 @@ import {catalogController, modalController} from './catalog';
 // Вебпак заброковал это переменную, когда я ее импортировал и навесил .addEventListener
 // Поэтому обьявил сразу так
 
-document.querySelector('.cards').addEventListener('click', cardsClickController)
-if (document.querySelector('.catalog')) {
+if (document.querySelector('.page_id_catalog')) {
+  document.querySelector('.cards').addEventListener('click', cardsClickController);
   catalogController();
 }
 // Дмитрий
@@ -26,8 +28,8 @@ if (document.querySelector('.catalog')) {
 
 
 // Алексей
-
-
+import { dropDownMenuOpen, dropDownMenuClose } from '../components/utils.js';
+import { dropDownMenuButton, dropDownMenuElements, dropDownMenuInputs, header } from '../components/constants.js';
 // Георгий
 
 
@@ -53,6 +55,12 @@ const sliderDots = document.querySelectorAll('.gallery__slider-radio');
 const sliderImages = document.querySelectorAll('.gallery__image');
 
 // Алексей
+let dropDownMenuButtonText = document.querySelector('.dropdown__button-text');
+
+
+
+
+
 
 
 // Георгий
@@ -97,38 +105,38 @@ let sliderWidth;
 window.addEventListener('resize', showSlide);
 
 function showSlide() {
-    if (sliderLine) {
-        sliderWidth = document.querySelector('.gallery__slider').offsetWidth;
-        if (window.innerWidth < 768) {
-            sliderLine.style.width = sliderWidth * sliderImages.length + 'px';
+  if (sliderLine) {
+    sliderWidth = document.querySelector('.gallery__slider').offsetWidth;
+    if (window.innerWidth < 768) {
+      sliderLine.style.width = sliderWidth * sliderImages.length + 'px';
 
-        rollSlider();
-            } else {
-                sliderLine.style.transform = `translateX(0)`;
-                sliderLine.style.width = '100%';
-            }
+      rollSlider();
+    } else {
+      sliderLine.style.transform = `translateX(0)`;
+      sliderLine.style.width = '100%';
     }
+  }
 }
 
 showSlide();
 
 function rollSlider() {
-    sliderLine.style.transform = `translateX(${-sliderCount * sliderWidth}px)`;
+  sliderLine.style.transform = `translateX(${-sliderCount * sliderWidth}px)`;
 }
 
 function thisSlide(index) {
-    sliderDots.forEach(item => item.classList.remove('gallery__slider-radio_active'));
-    sliderDots[index].classList.add('gallery__slider-radio_active');
+  sliderDots.forEach(item => item.classList.remove('gallery__slider-radio_active'));
+  sliderDots[index].classList.add('gallery__slider-radio_active');
 }
 
 function activateSlider() {
-    sliderDots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            sliderCount = index;
-            rollSlider();
-            thisSlide(sliderCount);
-        })
+  sliderDots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      sliderCount = index;
+      rollSlider();
+      thisSlide(sliderCount);
     })
+  })
 }
 
 activateSlider();
@@ -137,9 +145,43 @@ activateSlider();
 
 
 // Алексей - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-
-
+/*document.querySelector('.page').addEventListener('click', function(){
+  if(dropDownMenu.classList.contains('header__form-city_opened')) {
+    console.log('клик')
+    dropDownMenuClose();
+  }
+});*/
+//открытие дропдауна
+dropDownMenuButton.addEventListener('click', dropDownMenuOpen);
+//закрытие дропдауна
+dropDownMenuElements.forEach(function (dropDownMenuElement) {
+  dropDownMenuElement.addEventListener('click', dropDownMenuClose);
+})
+//подставление значения выбранного пункта дропдауна
+dropDownMenuInputs.forEach(function (dropDownMenuInput) {
+  dropDownMenuInput.addEventListener('click', function () {
+    if (dropDownMenuInput.checked) {
+      dropDownMenuButtonText.textContent = dropDownMenuInput.value;
+      localStorage.setItem('city', dropDownMenuInput.value);
+    }
+  })
+});
+//сохранение значения кнопки и расположении галочки на инпуте
+dropDownMenuButtonText.textContent = localStorage.getItem('city');
+dropDownMenuInputs.forEach(function (dropDownMenuInput) {
+  if (dropDownMenuInput.value === dropDownMenuButtonText.textContent) {
+    dropDownMenuInput.checked = true;
+  }
+});
+window.addEventListener('scroll', function () {
+  if (pageYOffset > 1500) {
+    header.classList.add('header__offset_1')
+    header.classList.remove('header__offset_2')
+  } else if (pageYOffset <= 1500) {
+    header.classList.remove('header__offset_1')
+    header.classList.add('header__offset_2')
+  }
+});
 
 // Алексей -> end!
 
