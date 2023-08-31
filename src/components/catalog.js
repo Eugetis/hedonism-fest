@@ -13,6 +13,7 @@ import {tabSwitcher, mapContainer, listContainer} from './constants';
 // Контроллер каталого секции cards_type_grid, сначала берет все карты, а потом передает их на рендер
 export const catalogController = async () => {
   // Dmitry
+  // инициализация контейнера список\карта и установка слушателя свитча табов
   initEventsContainer();
   setTabSwitchEventListener();
   // Dmitry -> end!
@@ -38,29 +39,27 @@ export const modalController = async (id) => {
 
 // Дмитрий - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// переключение табов
 let isMap = false;
+// здесь храниться объект карты
 let myMap;
 
 //==============================
 // нас пнули из хедера, обновился город
 // через слушатель, если карта существует уже, то обновляем карту
 export function updateCityOnMap() {
-  if (myMap) getCity();
+  if (myMap) updateCity();
 }
 
-//const headerCitySelector = document.querySelector('.header__city-select');
-
-const getCity = () => {
-  //selectedCity = headerCitySelector.selectedOptions[0].textContent;
+// обновление карты на новый город
+const updateCity = () => {
   const selectedCity = localStorage.getItem('city');
   updateCoordsOnMap(selectedCity);
 }
-
 // =============================
 
 // =============================
 // map
+
 const defaultMapZoom = 11;
 
 const initMap = () => {
@@ -77,24 +76,27 @@ const initMap = () => {
       });
 }
 
-//export const catalogController = async () => {
+// рендер карты в контейнере
+// в первый раз - создаем карту (создаем её "ленивым подходом", асинхронно)
+// в последующие - просто обновляем её отображение
 const showMap = () => {
-    console.log(mapContainer.querySelector('.catalog__map-container'));
+    //console.log(mapContainer.querySelector('.catalog__map-container'));
     if (myMap) {
       myMap.container.fitToViewport();
     } else {
       myMap = initMap();
       ymaps.ready(myMap);
-      getCity();
+      updateCity();
     }
-    console.log(myMap);
+    //console.log(myMap);
 }
 
+// Запрос координат в апи карты по имени
 const getGeoByName = (name) => {
-  // Поиск координат
   return ymaps.geocode(name, {result: 1});
 }
 
+// установка карты на выбранный город
 const updateCoordsOnMap = async (selectedCity) => {
   const res = await getGeoByName(selectedCity);
     // Выбираем первый результат геокодирования.
@@ -104,26 +106,24 @@ const updateCoordsOnMap = async (selectedCity) => {
 }
 // =================================
 
+// переключение контейнера карта\список, если карта то актуализируем её
 const handleTabEvent = (evt) => {
     evt.preventDefault();
     toggleTabSwitcher(evt);
     if (!isMap) {
       isMap = true;
-      // mapContainer.style.display = 'flex';
-      // listContainer.style.display = 'none';
       mapContainer.classList.add('catalog__events-container_opened');
       listContainer.classList.remove('catalog__events-container_opened');
       showMap();
-      // теперь пинают карту из хедера headerCitySelector.addEventListener('click', getCity);
+      // теперь пинают карту из хедера headerCitySelector.addEventListener('click', updateCity);
     } else {
       isMap = false;
-      // mapContainer.style.display = 'none';
-      // listContainer.style.display = 'grid';
       mapContainer.classList.remove('catalog__events-container_opened');
       listContainer.classList.add('catalog__events-container_opened');
     }
 }
 
+// переключение свитча табов
 const toggleTabSwitcher = (evt) => {
   /* может сделать через перебор элементов свитча и в зависимости от актив вешать или нет*/
   evt.target.classList.add('tab-switcher__button_active');
@@ -138,11 +138,13 @@ const toggleTabSwitcher = (evt) => {
   }
 }
 
+// начальное состояние контейнера при попадании на каталог
 function initEventsContainer() {
   mapContainer.classList.remove('catalog__events-container_opened');
   listContainer.classList.add('catalog__events-container_opened');
 }
 
+// слушатель свитча табов
 function setTabSwitchEventListener() {
   const buttonList = Array.from(tabSwitcher.querySelectorAll('.tab-switcher__button'));
   buttonList.forEach((button) => {
