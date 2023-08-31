@@ -205,7 +205,7 @@ dropDownMenuInputs.forEach(function (dropDownMenuInput) {
 });
 //Проверка локалсторэдж, вставка в него дефолтного города
 if(!localStorage.getItem('city')) {
-  localStorage.setItem('city', 'Санкт-Петербург');
+  localStorage.setItem('city', 'Москва');
 }
 
 //сохранение значения кнопки и расположении галочки на инпуте
