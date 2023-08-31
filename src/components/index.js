@@ -40,6 +40,7 @@ import { openModal } from '../components/modal.js';
 import { modalDonate } from '../components/constants.js';
 import { setAboutEventListener } from '../components/about.js';
 import { setCatalogEventListener } from '../components/catalog.js';
+import { addScrollListener } from '../components/floating-button.js';
 
 // Алексей
 import { dropDownMenuOpen, dropDownMenuClose } from '../components/utils.js';
@@ -119,6 +120,7 @@ if (document.querySelector('.page_id_index')) {
   window.addEventListener('resize', showSlide);
   showSlide();
   activateSlider();
+  addScrollListener();
 }
 
 if (document.querySelector('.page_id_404') || document.querySelector('.page_id_thanks-for-application') || document.querySelector('.page_id_thanks-for-support')) {
@@ -131,6 +133,7 @@ donateButton.addEventListener('click', () => {
 
 if (document.querySelector('.page_id_about')) {
   setAboutEventListener();
+  addScrollListener();
 }
 
 if (document.querySelector('.page_id_catalog')) {
@@ -142,6 +145,7 @@ if (document.querySelector('.page_id_catalog')) {
     openModal(document.querySelector('.modal_id_payment'));
   });
 }
+
 
 // Андрей -> end!
 

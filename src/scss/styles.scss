@@ -68,6 +68,8 @@
 // стили floating button
 @use '../blocks/floating-button/floating-button.scss';
 @use '../blocks/floating-button/__icon/floating-button__icon.scss';
+@use '../blocks/floating-button/_type/floating-button_type_up.scss';
+@use '../blocks/floating-button/_hide/floating-button_hide.scss';
 
 // стили amount controls
 @use '../blocks/amount-controls/amount-controls.scss';
