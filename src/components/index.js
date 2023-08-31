@@ -35,7 +35,11 @@ if (document.querySelector('.page_id_index')) {
 import { updateCityOnMap } from './catalog'
 
 // Андрей
-import { showSlide, activateSlider } from '../components/photo-slider.js';
+import {  showSlide, activateSlider } from '../components/photo-slider.js';
+import { openModal } from '../components/modal.js';
+import { modalDonate } from '../components/constants.js';
+import { setAboutEventListener } from '../components/about.js';
+import { setCatalogEventListener } from '../components/catalog.js';
 
 // Алексей
 import { dropDownMenuOpen, dropDownMenuClose } from '../components/utils.js';
@@ -66,6 +70,8 @@ const modalContainer = document.querySelector('.modal__container');
 
 
 // Андрей
+const donateButton = document.querySelector('.header__button');
+
 
 
 // Алексей
@@ -118,6 +124,25 @@ if (document.querySelector('.page_id_index')) {
 if (document.querySelector('.page_id_404') || document.querySelector('.page_id_thanks-for-application') || document.querySelector('.page_id_thanks-for-support')) {
   document.querySelector('.footer').classList.add('footer_style_additional');
 }
+
+donateButton.addEventListener('click', () => {
+  openModal(modalDonate);
+})
+
+if (document.querySelector('.page_id_about')) {
+  setAboutEventListener();
+}
+
+if (document.querySelector('.page_id_catalog')) {
+  setCatalogEventListener();
+}
+
+if (document.querySelector('.page_id_catalog')) {
+  document.querySelector('.modal__button_type_ticket').addEventListener('click', () => {
+    openModal(document.querySelector('.modal_id_payment'));
+  });
+}
+
 // Андрей -> end!
 
 
