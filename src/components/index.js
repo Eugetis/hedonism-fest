@@ -29,7 +29,13 @@ if (document.querySelector('.page_id_catalog')) {
 
 // Алексей
 import { dropDownMenuOpen, dropDownMenuClose } from '../components/utils.js';
-import { dropDownMenuButton, dropDownMenuElements, dropDownMenuInputs, header } from '../components/constants.js';
+import {
+  cardGridSection,
+  dropDownMenuButton,
+  dropDownMenuElements,
+  dropDownMenuInputs,
+  header
+} from '../components/constants.js';
 // Георгий
 
 

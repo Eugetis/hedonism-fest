@@ -1,5 +1,8 @@
-import {cardTemplate, cardGridSection, modalTemplate} from './constants';
+const cardGridSection = document.querySelector('.cards_type_grid');
+const cardTemplate = cardGridSection.querySelector('#card').content;
+const modalTemplate = document.querySelector('#modal_id_event-full').content;
 import {modalController} from "./catalog";
+import {getCardById} from './api';
 // РАБОТА С МЕРОПРИЯТИЕМ
 
 // Если вдруг кому-то нужно что-то дописать в этом файле, помимо основного ответственного за эту функциональность,
@@ -28,12 +31,13 @@ export const prepareCard = ({cards}) => {
 export const modalCreate = ([card]) => {
   const location = card.location.shift();
   const modalElement = modalTemplate.querySelector('.modal').cloneNode(true);
+  const modalButton = modalElement.querySelector('#modal__button-like');
   const addressButton = modalElement.querySelector('.table-lines__button');
   const addressButtonIcon = modalElement.querySelector('.button__icon').outerHTML;
   addressButton.innerHTML = `смотреть еще ${card.location.length - 1}${addressButtonIcon}`
 
   modalElement.dataset.id = card.id;
-  modalElement.dataset.coordinates = card.coordinates;
+  modalElement.dataset.coordinates = location.coordinates;
   modalElement.querySelector('.event__image').src = card.image;
   modalElement.querySelector('.event__type').textContent = card.type;
   modalElement.querySelector('.event__date').textContent = `${card.date}, ${card.timeDuration}`;
@@ -45,11 +49,18 @@ export const modalCreate = ([card]) => {
   modalElement.querySelector('#table-lines__address').innerHTML = `${location.address}${addressButton.outerHTML}`;
   modalElement.querySelector('#table-lines__phone').textContent = card.phone;
 
+  if (cardLikeController(card.id)) {
+    modalButton.innerHTML = modalLikeHandler(modalElement, true);
+  } else {
+    modalButton.innerHTML = modalLikeHandler(modalElement, false);
+  }
+
   return modalElement;
 }
 
 // Функция которая принимает саму модалку и type (open, close), в зависимости от типа либо открывает модальное окно, либо закрывает его.
 export const modalHandler = (modal, type) => {
+  const modalButton = modal.querySelector('#modal__button-like');
   document.querySelector('.page').append(modal);
   modal.classList.add('modal_opened');
 
@@ -57,10 +68,46 @@ export const modalHandler = (modal, type) => {
     case 'open':
       document.querySelector('.page').append(modal);
       modal.classList.add('modal_opened');
+      modalButton.addEventListener('click', modalClickHandler);
       break;
     case 'close':
       modal.classList.remove('modal_opened');
       document.querySelector('.page').remove(modal);
+      modalButton.removeEventListener('click', modalClickHandler);
+  }
+}
+
+const modalClickHandler = async (event) => {
+  const modal = event.target.closest('.modal_id_event-full');
+  const modalId = modal.dataset.id;
+  const card = document.querySelector(`[data-id="${modalId}"]`)
+  const modalButton = event.target;
+
+  if (cardLikeController(modalId)) {
+    const likesArray = getStorageValueByKey('likes');
+    removeLikeFromStorage(modalId, likesArray);
+    modalButton.innerHTML = modalLikeHandler(modal, false);
+    return cardLikeLocalController(card, 'delete');
+  } else {
+    addLikeToStorage(card);
+    modalButton.innerHTML = modalLikeHandler(modal, true);
+    return cardLikeLocalController(card, 'add');
+  }
+}
+
+const modalLikeHandler = (modal, state) => {
+  const modalButton = modal.querySelector('#modal__button-like');
+  const modalButtonSpan = modalButton.querySelector('.event-icon');
+
+  switch (state) {
+    case true:
+      modalButtonSpan.classList.remove('icon-heart-filled')
+      modalButtonSpan.classList.add('icon-heart')
+      return `${modalButtonSpan.outerHTML}не хочу идти`;
+    case false:
+      modalButtonSpan.classList.remove('icon-heart')
+      modalButtonSpan.classList.add('icon-heart-filled')
+      return `${modalButtonSpan.outerHTML}хочу пойти`;
   }
 }
 
