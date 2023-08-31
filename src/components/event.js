@@ -1,8 +1,4 @@
-const cardGridSection = document.querySelector('.cards_type_grid');
-const cardTemplate = cardGridSection.querySelector('#card').content;
-const modalTemplate = document.querySelector('#modal_id_event-full').content;
 import {modalController} from "./catalog";
-import {getCardById} from './api';
 // РАБОТА С МЕРОПРИЯТИЕМ
 
 // Если вдруг кому-то нужно что-то дописать в этом файле, помимо основного ответственного за эту функциональность,
@@ -12,23 +8,21 @@ import {getCardById} from './api';
 
 // Никита - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // Функция addCard принимает подготовленный массив карточек из функции prepareCard и добавляет их в cardGridSection
-const addCard = (cards) => {
+export const addCard = (cards, section) => {
   cards.forEach((card) => {
-    cardGridSection.append(card);
+    section.append(card);
   })
 }
 
 // Функция собирает нужный формат карточек с помощью функции createCard и передает это дальше для рендера на странице в addCard
-export const prepareCard = ({cards}) => {
-  const preparedCards = cards.map((card) => {
-    return createCard(card)
-  })
-
-  addCard(preparedCards);
+export const prepareCard = ({cards}, cardTemplate) => {
+  return cards.map((card) => {
+    return createCard(card, cardTemplate)
+  });
 }
 
 // Функция которая собирает нужный формат для отрисовки модалки по клику на карточку.
-export const modalCreate = ([card]) => {
+export const modalCreate = ([card], modalTemplate) => {
   const location = card.location.shift();
   const modalElement = modalTemplate.querySelector('.modal').cloneNode(true);
   const modalButton = modalElement.querySelector('#modal__button-like');
@@ -114,7 +108,7 @@ const modalLikeHandler = (modal, state) => {
 }
 
 // Функция которая создает нужный формат карточки для отрисовки ее на странице.
-const createCard = (item) => {
+const createCard = (item, cardTemplate) => {
   const location = item.location.shift();
   const cardElement = cardTemplate.querySelector('.cards__item').cloneNode(true);
   const span = cardElement.querySelector('.card-control__icon');
@@ -204,11 +198,19 @@ export const cardsClickController = (event) => {
   const classList = Array.from(target.classList).join(' ');
   const likeRegex = /card-control/g;
   let card = null;
-  if (classList.match(likeRegex)) {
-    card = target.closest('.cards__item');
-    return addLikeToStorage(card);
+  if (document.querySelector('.page_id_index')) {
+    if (classList.match(likeRegex)) {
+      card = target.closest('.cards__item');
+      return addLikeToStorage(card);
+    }
   } else {
-    return modalController(cardId);
+    if (classList.match(likeRegex)) {
+      card = target.closest('.cards__item');
+      return addLikeToStorage(card);
+    } else {
+      const modalTemplate = document.querySelector('#modal_id_event-full').content;
+      return modalController(cardId, modalTemplate);
+    }
   }
 }
 
