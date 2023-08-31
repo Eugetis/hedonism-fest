@@ -335,6 +335,7 @@
 @use '../blocks/form/__input/form__input.scss';
 @use '../blocks/form/__right-column/form__right-column.scss';
 @use '../blocks/form/__upload-container/form__upload-container.scss';
+@use '../blocks/form/__upload-container/_dragover/form__upload-container_dragover.scss';
 /* Forms button */
 @use '../blocks/form/__button/form__button.scss';
 @use '../blocks/form/__button/_active/form__button_active.scss';

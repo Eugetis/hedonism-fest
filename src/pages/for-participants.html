@@ -18,7 +18,7 @@
 
     <!-- <section class="participants__content"> -->
 
-      <section class="participants__container participants__container_type_content">
+      <section class="participants__container participants__container_type_content hidden">
         <!-- ниже - альтеративный заголовок, который виден только до начала формы в мобиле -->
         <p class="participants__title participants__title_type_mobile-start">Стать участником</p>
 
@@ -72,9 +72,9 @@
 
 
       <!-- форма обернута в контейнер, чтобы задать геометрию секции без необходимости делать это в блоке form -->
-      <section class="participants__container participants__container_type_form hidden">
+      <section class="participants__container participants__container_type_form ">
 
-        <form class="form hidden">
+        <form class="form ">
 
           <fieldset class="form__step hidden" id="step-1">
             <div class="form__container">
@@ -206,7 +206,7 @@
               </div>
           </fieldset>
 
-          <fieldset class="form__step hidden" id="step-4">
+          <fieldset class="form__step " id="step-4">
             <div class="form__container">
               <div class="form__heading">
                 <legend class="form__steps">шаг 4 из 4</legend>
@@ -234,9 +234,9 @@
               </div>
               <div class="form__right-column">
                 <div class="form__fields">
-                  <div class="form__upload-container">
-                    <label class="form__label-file" for="file">загрузить с устройства</label>
-                    <input class="form__input-file" type="file" name="file" id="input-file" accept=".jpeg">
+                  <div class="form__upload-container" id="drop-area">
+                    <label class="form__label-file" for="input-file">загрузить с устройства</label>
+                    <input class="form__input-file" type="file" name="file" id="input-file">
                   </div>
                 </div>
               </div>
