@@ -3,4 +3,5 @@
 .cards__item-data {
   @include flex-center-row-mixin;
   justify-content: space-between;
+  gap: 12px;
 }
