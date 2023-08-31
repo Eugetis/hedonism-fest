@@ -2,10 +2,10 @@
 
 .header__slider {
   display: none; // модификатор header__slider_state_opened переключает display на flex, чтобы выезжало мобильное меню
-}
+  }
 
 
-@media screen and (max-width: $tablet) {
+@media screen and (max-width: $mobile) {
   .header__slider {
     height: calc(100vh - 68px);
     transition: transform 0.5s ease-in-out;
