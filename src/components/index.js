@@ -23,6 +23,7 @@ if (document.querySelector('.page_id_catalog')) {
 }
 // Дмитрий
 
+import { updateCityOnMap } from './catalog'
 
 // Андрей
 
@@ -163,6 +164,10 @@ dropDownMenuInputs.forEach(function (dropDownMenuInput) {
     if (dropDownMenuInput.checked) {
       dropDownMenuButtonText.textContent = dropDownMenuInput.value;
       localStorage.setItem('city', dropDownMenuInput.value);
+      // Dmitry
+      // пинаем карту, чтобы обновилась по выбранному городу
+      updateCityOnMap();
+      // Dmitry -> end!
     }
   })
 });

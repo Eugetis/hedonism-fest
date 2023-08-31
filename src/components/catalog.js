@@ -41,21 +41,22 @@ export const modalController = async (id) => {
 // переключение табов
 let isMap = false;
 let myMap;
-let selectedCity;
 
 //==============================
-// получаем текст выбранного option (город) из селектора в хедере
-// через слушатель и обновляем карту
+// нас пнули из хедера, обновился город
+// через слушатель, если карта существует уже, то обновляем карту
+export function updateCityOnMap() {
+  if (myMap) getCity();
+}
 
-const headerCitySelector = document.querySelector('.header__city-select');
+//const headerCitySelector = document.querySelector('.header__city-select');
 
 const getCity = () => {
-  selectedCity = headerCitySelector.selectedOptions[0].textContent;
+  //selectedCity = headerCitySelector.selectedOptions[0].textContent;
+  const selectedCity = localStorage.getItem('city');
   updateCoordsOnMap(selectedCity);
 }
 
-// слушателя вешаем при первом показе карты
-// headerCitySelector.addEventListener('change', getCity);
 // =============================
 
 // =============================
@@ -113,7 +114,7 @@ const handleTabEvent = (evt) => {
       mapContainer.classList.add('catalog__events-container_opened');
       listContainer.classList.remove('catalog__events-container_opened');
       showMap();
-      headerCitySelector.addEventListener('change', getCity);
+      // теперь пинают карту из хедера headerCitySelector.addEventListener('click', getCity);
     } else {
       isMap = false;
       // mapContainer.style.display = 'none';
