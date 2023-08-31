@@ -7,7 +7,6 @@
   z-index: 0;
   max-width: 320px;
   height: 388px;
-  // border: $border-light;
   background-color: $light-primary;
   border-radius: $radius-large;
   overflow: hidden;
@@ -21,8 +20,11 @@
 @media screen and (max-width: $mobile) {
   .cards__item {
     border-radius: $radius-none;
+    border-bottom: $border-light;
     max-width: 360px;
-    height: 398px;
+    width: 100%;
+    height: auto;
+    min-height: 398px;
   }
 }
 
