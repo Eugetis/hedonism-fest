@@ -1,7 +1,7 @@
 @use 'variables' as *;
 
 .catalog__events-container {
-  display: block;
+  display: none;
   flex-grow: 1;
   box-sizing: border-box;
   background-color: $light-secondary;
