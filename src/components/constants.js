@@ -31,6 +31,7 @@ export const dropDownMenuElements = Array.from(document.querySelectorAll('.heade
 export const dropDownMenuInputs = Array.from(document.querySelectorAll('.header__input-city-select'));
 export const header = document.querySelector('.header');
 
+
 // Алексей -> end!
 
 // Георгий - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

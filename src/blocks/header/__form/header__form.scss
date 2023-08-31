@@ -1,10 +1,18 @@
-@use 'variables' as *;
+@use "variables" as *;
 .header__form {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   margin-left: 40px;
   position: relative;
+}
+
+.header__form > span {
+  margin-right: 10px;
+}
+
+.header__form > button {
+  cursor: pointer;
 }
 
 @media screen and (max-width: $tablet) {

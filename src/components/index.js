@@ -122,12 +122,7 @@ if (document.querySelector('.page_id_404') || document.querySelector('.page_id_t
 
 
 // Алексей - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-/*document.querySelector('.page').addEventListener('click', function(){
-  if(dropDownMenu.classList.contains('header__form-city_opened')) {
-    console.log('клик')
-    dropDownMenuClose();
-  }
-});*/
+
 //открытие дропдауна
 dropDownMenuButton.addEventListener('click', dropDownMenuOpen);
 //закрытие дропдауна
@@ -138,7 +133,7 @@ dropDownMenuElements.forEach(function (dropDownMenuElement) {
 dropDownMenuInputs.forEach(function (dropDownMenuInput) {
   dropDownMenuInput.addEventListener('click', function () {
     if (dropDownMenuInput.checked) {
-      dropDownMenuButtonText.textContent = dropDownMenuInput.value;
+      dropDownMenuButtonText.innerText = dropDownMenuInput.value;
       localStorage.setItem('city', dropDownMenuInput.value);
       // Dmitry
       // пинаем карту, чтобы обновилась по выбранному городу
@@ -147,13 +142,19 @@ dropDownMenuInputs.forEach(function (dropDownMenuInput) {
     }
   })
 });
+//Проверка локалсторэдж, вставка в него дефолтного города
+if(!localStorage.getItem('city')) {
+  localStorage.setItem('city', 'Санкт-Петербург');
+}
+
 //сохранение значения кнопки и расположении галочки на инпуте
 dropDownMenuButtonText.textContent = localStorage.getItem('city');
 dropDownMenuInputs.forEach(function (dropDownMenuInput) {
-  if (dropDownMenuInput.value === dropDownMenuButtonText.textContent) {
+  if (dropDownMenuInput.value === dropDownMenuButtonText.innerText) {
     dropDownMenuInput.checked = true;
   }
 });
+//выезжающий по оси Y хедер
 window.addEventListener('scroll', function () {
   if (pageYOffset > 1500) {
     header.classList.add('header__offset_1')
@@ -163,6 +164,8 @@ window.addEventListener('scroll', function () {
     header.classList.add('header__offset_2')
   }
 });
+
+
 
 // Алексей -> end!
 
