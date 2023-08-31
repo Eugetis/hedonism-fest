@@ -8,12 +8,14 @@ import {modalController} from "./catalog";
 
 
 // Никита - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// Функция addCard принимает подготовленный массив карточек из функции prepareCard и добавляет их в cardGridSection
 const addCard = (cards) => {
   cards.forEach((card) => {
     cardGridSection.append(card);
   })
 }
 
+// Функция собирает нужный формат карточек с помощью функции createCard и передает это дальше для рендера на странице в addCard
 export const prepareCard = ({cards}) => {
   const preparedCards = cards.map((card) => {
     return createCard(card)
@@ -22,9 +24,13 @@ export const prepareCard = ({cards}) => {
   addCard(preparedCards);
 }
 
+// Функция которая собирает нужный формат для отрисовки модалки по клику на карточку.
 export const modalCreate = ([card]) => {
   const location = card.location.shift();
   const modalElement = modalTemplate.querySelector('.modal').cloneNode(true);
+  const addressButton = modalElement.querySelector('.table-lines__button');
+  const addressButtonIcon = modalElement.querySelector('.button__icon').outerHTML;
+  addressButton.innerHTML = `смотреть еще ${card.location.length - 1}${addressButtonIcon}`
 
   modalElement.dataset.id = card.id;
   modalElement.dataset.coordinates = card.coordinates;
@@ -36,13 +42,13 @@ export const modalCreate = ([card]) => {
   modalElement.querySelector('#table-lines__duration').textContent = card.duration;
   modalElement.querySelector('#table-lines__price').textContent = `${card.price} ₽`;
   modalElement.querySelector('#table-lines__place').textContent = card.placeName;
-  modalElement.querySelector('#table-lines__address').textContent = location.address;
+  modalElement.querySelector('#table-lines__address').innerHTML = `${location.address}${addressButton.outerHTML}`;
   modalElement.querySelector('#table-lines__phone').textContent = card.phone;
-  modalElement.querySelector('.button').textContent = `смотреть еще ${card.location.length -1}`;
 
   return modalElement;
 }
 
+// Функция которая принимает саму модалку и type (open, close), в зависимости от типа либо открывает модальное окно, либо закрывает его.
 export const modalHandler = (modal, type) => {
   document.querySelector('.page').append(modal);
   modal.classList.add('modal_opened');
@@ -58,6 +64,7 @@ export const modalHandler = (modal, type) => {
   }
 }
 
+// Функция которая создает нужный формат карточки для отрисовки ее на странице.
 const createCard = (item) => {
   const location = item.location.shift();
   const cardElement = cardTemplate.querySelector('.cards__item').cloneNode(true);
@@ -69,12 +76,15 @@ const createCard = (item) => {
     span.classList.add('icon-heart');
   }
 
+  const dateContent = item.date.split(' ');
+  const date = `${dateContent[0]} ${dateContent[1].substring(0, 3)}...`
+
   cardElement.dataset.id = item.id;
   cardElement.dataset.coordinates = location.coordinates;
   cardElement.querySelector('.cards__item-img').src = item.image;
   cardElement.querySelector('.cards__item-img').alt = item.type;
   cardElement.querySelector('#cards__item-type').textContent = item.type;
-  cardElement.querySelector('#cards__item-date').textContent = `${item.date}, ${item.timeDuration}`;
+  cardElement.querySelector('#cards__item-date').textContent = `${date}, ${item.timeDuration}`;
   cardElement.querySelector('.cards__item-title').textContent = item.name;
   cardElement.querySelector('.cards__item-description').textContent = item.description;
   cardElement.querySelector('#cards__item-address').textContent = location.address;
@@ -83,6 +93,7 @@ const createCard = (item) => {
   return cardElement;
 }
 
+// Функция которая отвечает за изначальную отрисовку лайки при рендере, она используется при создании карточки в createCard, если лайк на карточке был, то добавит одну иконку, если нет то другую
 const cardLikeController = (id) => {
   const likesArray = getStorageValueByKey('likes');
 
@@ -93,6 +104,7 @@ const cardLikeController = (id) => {
   return likesArray.some((element) => element === id);
 }
 
+// Функция которая отвечает за локальное добавления лайка (без перезагрузки страницы), то есть условно ajax, во время нажатии кнопки в зависимости от типа
 const cardLikeLocalController = (card, type) => {
   const span = card.querySelector('.card-control__icon');
   switch (type) {
@@ -111,6 +123,8 @@ const cardLikeLocalController = (card, type) => {
 // рендер карточки мероприятия - готово
 
 // лайк мероприятия (на карточке и внутри модалки с описанием) с сохранением в local storage
+
+// Функция которая добавляет ID карточки в localStorage, для того чтобы в дальнейшем после перезагрузки страницы добавились лайки на те карточки которые были лайкнуты ранее
 export const addLikeToStorage = (card) => {
   const id = card.dataset.id;
   if (!hasKeyInStorage('likes')) {
@@ -128,11 +142,13 @@ export const addLikeToStorage = (card) => {
   localStorage.setItem('likes', JSON.stringify(likesArray));
 }
 
+// Функция которая удаляет ID той карточки на которой стоял лайк
 const removeLikeFromStorage = (id, likesArray) => {
   const clearedArray = likesArray.filter((item) => item !== id);
   localStorage.setItem('likes', JSON.stringify(clearedArray));
 }
 
+// Функция которая отлавливает нажатия внутрии секции CARDS, и взависимости от нажатия производит какие-либо действия, если нажата кнопка лайка, то добавляет лайк, если нажато любое другое место, то открывает модалку
 export const cardsClickController = (event) => {
   const target = event.target;
   const cardId = event.target.closest('.cards__item').dataset.id;
@@ -147,10 +163,13 @@ export const cardsClickController = (event) => {
   }
 }
 
+// Функция которая принимает массив с ID карточками на которых стоят лайки и сам ID карточки которую надо проверить конкретно, возвращает true false
 const hasLike = (id, array) => {
   return array.indexOf(id) !== -1;
 }
 
+
+// Функция которая возвращает null если в localStorage нету key, в другом случае возвращает обьект по ключу key и его value
 const getStorageValueByKey = (key) => {
   if (!hasKeyInStorage(key)) {
     return null;
@@ -159,6 +178,7 @@ const getStorageValueByKey = (key) => {
   return JSON.parse(localStorage.getItem(key));
 }
 
+// Функция которая проверяет есть ли ключ в localStorage
 const hasKeyInStorage = (key) => {
   if (localStorage.getItem(key) === null) {
     return false;
