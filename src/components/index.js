@@ -181,16 +181,20 @@ dropDownMenuInputs.forEach(function (dropDownMenuInput) {
 });
 
 //появляющийся при скролле хедер
+if (document.querySelector('.page_id_index')) {
+   header.classList.add('header__offset');
 window.addEventListener('scroll', function () {
   if (pageYOffset > 10) {
+    header.classList.remove('header__offset');
     header.classList.add('header__offset_1');
-    header.classList.remove('header__offset_2')
+    header.classList.remove('header__offset_2');
 
   } else if (pageYOffset <= 10) {
     header.classList.remove('header__offset_1');
     header.classList.add('header__offset_2');
   }
 })
+}
 
 // Алексей -> end!
 

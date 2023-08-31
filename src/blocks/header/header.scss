@@ -2,9 +2,8 @@
 
 .header {
   position: fixed; // для index.html нужно дописать и включать модификатор, который управляет появлением шапки по скроллу
-  top: -50%;
+  top: 0;
   width: 100%;
   z-index: 1;
-  visibility: hidden;
-}
+ }
 
