@@ -1,4 +1,5 @@
 import {modalController} from "./catalog";
+import {openModal, closeModal} from "./modal";
 // РАБОТА С МЕРОПРИЯТИЕМ
 
 // Если вдруг кому-то нужно что-то дописать в этом файле, помимо основного ответственного за эту функциональность,
@@ -61,11 +62,11 @@ export const modalHandler = (modal, type) => {
   switch (type) {
     case 'open':
       document.querySelector('.page').append(modal);
-      modal.classList.add('modal_opened');
+      openModal(modal);
       modalButton.addEventListener('click', modalClickHandler);
       break;
     case 'close':
-      modal.classList.remove('modal_opened');
+      closeModal(modal);
       document.querySelector('.page').remove(modal);
       modalButton.removeEventListener('click', modalClickHandler);
   }
