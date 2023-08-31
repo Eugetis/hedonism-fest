@@ -200,6 +200,9 @@ window.addEventListener('scroll', function () {
 })
 }
 
+if (!document.querySelector('.page_id_index')) {
+  header.classList.add('header__offset_3');
+}
 // Алексей -> end!
 
 
