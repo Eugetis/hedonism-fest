@@ -1,5 +1,5 @@
 import {getCards, getCardById} from './api';
-import {prepareCard, modalCreate, modalHandler} from './event';
+import {prepareCard, modalCreate, modalHandler, addCard} from './event';
 import {tabSwitcher, mapContainer, listContainer} from './constants';
 
 // ФУНКЦИОНАЛ СТРАНИЦЫ "КАТАЛОГ"
@@ -11,14 +11,15 @@ import {tabSwitcher, mapContainer, listContainer} from './constants';
 
 // Никита - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // Контроллер каталого секции cards_type_grid, сначала берет все карты, а потом передает их на рендер
-export const catalogController = async () => {
+export const catalogController = async (section, template) => {
   // Dmitry
   // инициализация контейнера список\карта и установка слушателя свитча табов
   initEventsContainer();
   setTabSwitchEventListener();
   // Dmitry -> end!
   const cards = await getCards();
-  prepareCard(cards);
+  const preparedCards = prepareCard(cards, template);
+  return addCard(preparedCards, section);
 }
 
 // получение (нужен запрос к API в api.js) и вставка карточек мероприятий в грид (рендер - в events.js)
@@ -28,10 +29,16 @@ export const catalogController = async () => {
 // Контроллер открывания модалки, который вызывается в момент клика по карточке в секции CARDS, в нее передается ID кликнутой карточки
 // Затем идет запрос на получение всех данных с API именно этой карточки, затем мы получаем нужный формат модального окна со всеми нужными данными в переменную preparedModal
 // Затем мы передаем preparedModal в modalHandler c type open, внутри modalHandler эта карточка добавляется в секции на странице и открывается
-export const modalController = async (id) => {
+export const modalController = async (id, template) => {
   const card = await getCardById(id);
-  const preparedModal = modalCreate(card);
+  const preparedModal = modalCreate(card, template);
   modalHandler(preparedModal, 'open');
+}
+
+export const generalCardController = async (section, template) => {
+  const cards = await getCards();
+  const preparedCards = prepareCard(cards, template);
+  return addCard(preparedCards, section);
 }
 
 

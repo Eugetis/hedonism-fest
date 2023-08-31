@@ -6,7 +6,7 @@
 
 import '../scss/styles.scss';
 import { cardsClickController } from './event';
-import { catalogController, modalController } from './catalog';
+import {catalogController, generalCardController, modalController} from './catalog';
 
 
 import forParticipants from './for-participants';
@@ -18,8 +18,17 @@ import forParticipants from './for-participants';
 // Поэтому обьявил сразу так
 
 if (document.querySelector('.page_id_catalog')) {
+  const cardGridSection = document.querySelector('.cards_type_grid');
+  const cardTemplate = cardGridSection.querySelector('#card').content;
   document.querySelector('.cards').addEventListener('click', cardsClickController);
-  catalogController();
+  catalogController(cardGridSection, cardTemplate);
+}
+
+if (document.querySelector('.page_id_index')) {
+  const cardScrollSection = document.querySelector('.cards_type_scroll');
+  const cardTemplate = cardScrollSection.querySelector('#card').content;
+  document.querySelector('.cards').addEventListener('click', cardsClickController);
+  generalCardController(cardScrollSection, cardTemplate);
 }
 // Дмитрий
 
@@ -102,8 +111,8 @@ modalCloseButton.addEventListener('click', () => {
 // Андрей - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 if (document.querySelector('.page_id_index')) {
   window.addEventListener('resize', showSlide);
-  showSlide(); 
-  activateSlider();  
+  showSlide();
+  activateSlider();
 }
 
 if (document.querySelector('.page_id_404') || document.querySelector('.page_id_thanks-for-application') || document.querySelector('.page_id_thanks-for-support')) {
