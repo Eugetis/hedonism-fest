@@ -18,7 +18,7 @@
 
     <!-- <section class="participants__content"> -->
 
-      <section class="participants__container">
+      <section class="participants__container participants__container_type_content">
         <!-- ниже - альтеративный заголовок, который виден только до начала формы в мобиле -->
         <p class="participants__title participants__title_type_mobile-start">Стать участником</p>
 
@@ -65,7 +65,7 @@
         </ul>
 
         <div class="participants__buttons-block fixed-bar fixed-bar__align-right">
-          <button class="participants__button button button_type_filled" type="button">заполнить форму</button>
+          <button id="open-form-btn" class="participants__button button button_type_filled" type="button">заполнить форму</button>
         </div>
 
       </section>
@@ -76,7 +76,7 @@
 
         <form class="form hidden">
 
-          <fieldset class="form__step" id="step-1">
+          <fieldset class="form__step hidden" id="step-1">
             <div class="form__container">
               <div class="form__heading">
                 <legend class="form__steps">шаг 1 из 4</legend>
@@ -101,7 +101,7 @@
               <input type="button" class="form__button form__button_active" value="продолжить">
             </div> -->
             <div class="participants__buttons-block fixed-bar fixed-bar__align-right">
-              <button class="participants__button button button_type_border" type="button" data-action="back">отмена</button>
+              <button class="participants__button button button_type_border" type="button" data-action="cancel">отмена</button>
               <button class="participants__button button button_type_filled" type="button" data-action="continue">продолжить</button>
             </div>
             <!-- ВНИМАНИЕ: в десктопе и мобиле отличаются текстовки кнопок - уточню, надо ли это делать -->
@@ -131,8 +131,16 @@
                   <input type="radio" id="pref1" class="form__input" name="preference-checked" value="кафе/бар/ресторан" checked>
                   <label class="form__label" for="preference-checked">кафе/бар/ресторан</label>
                 </div>
-                <!-- тут должен быть селект города -->
                 <div class="form__fields">
+                  <label for="town" class="form__label">город</label>
+                  <select name="town" id="town" class="form__input">
+                    <option value="Москва">Москва</option>
+                    <option value="Санкт-Петербург">Санкт-Петербург</option>
+                    <option value="Сочи">Сочи</option>
+                    <option value="Калуга">Калуга</option>
+                    <option value="Екатеринбург">Екатеринбург</option>
+                  </select>
+
                   <label class="form__label" for="place">название заведения</label>
                   <input class="form__input" type="text" name="place" id="place" placeholder="введите название заведения">
 
@@ -228,7 +236,7 @@
                 <div class="form__fields">
                   <div class="form__upload-container">
                     <label class="form__label-file" for="file">загрузить с устройства</label>
-                    <input class="form__input-file" type="file" name="file" id="file">
+                    <input class="form__input-file" type="file" name="file" id="input-file" accept=".jpeg">
                   </div>
                 </div>
               </div>
@@ -239,7 +247,7 @@
               </div> -->
               <div class="participants__buttons-block fixed-bar fixed-bar__align-right">
                 <button class="participants__button button button_type_border" type="button" data-action="back">отмена</button>
-                <button class="participants__button button button_type_filled" type="button" data-action="continue">продолжить</button>
+                <button class="participants__button button button_type_filled" type="submit" data-action="submit">продолжить</button>
               </div>
           </fieldset>
 
@@ -250,6 +258,7 @@
 
   </main>
 
-    <!-- <%= require('html-loader!./footer.html').default %> -->
+    <%= require('html-loader!./footer.html').default %>
+    
 </body>
 </html>

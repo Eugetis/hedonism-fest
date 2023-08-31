@@ -9,6 +9,8 @@ import {cardsClickController} from './event';
 import {catalogController, modalController} from './catalog';
 
 
+import forParticipants from './for-participants'
+
 // Никита
 
 // Столкнулся с проблемой, когда обьявил переменную cardsSection в constants.js
