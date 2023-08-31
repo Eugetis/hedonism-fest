@@ -143,7 +143,9 @@ if (document.querySelector('.page_id_index')) {
   activateSlider();  
 }
 
-
+if (document.querySelector('.page_id_404') || document.querySelector('.page_id_thanks-for-application') || document.querySelector('.page_id_thanks-for-support')) {
+  document.querySelector('.footer').classList.add('footer_style_additional');
+}
 // Андрей -> end!
 
 
