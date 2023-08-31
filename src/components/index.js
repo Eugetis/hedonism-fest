@@ -9,7 +9,7 @@ import { cardsClickController } from './event';
 import { catalogController, modalController } from './catalog';
 
 
-import forParticipants from './for-participants'
+import forParticipants from './for-participants';
 
 // Никита
 

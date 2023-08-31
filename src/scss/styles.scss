@@ -278,6 +278,11 @@
 @use '../blocks/modal/_type/modal_type_center.scss';
 @use '../blocks/modal/_type/modal_type_high-mob.scss';
 @use '../blocks/modal/_type/modal_type_preview.scss';
+@use '../blocks/modal/_id/modal_id_donation.scss';
+@use '../blocks/modal/_id/modal_id_event-full.scss';
+@use '../blocks/modal/_id/modal_id_event-mobile-preview.scss';
+@use '../blocks/modal/_id/modal_id_mobile-filters.scss';
+@use '../blocks/modal/_id/modal_id_payment.scss';
 @use '../blocks/modal/_opened/modal_opened.scss';
 @use '../blocks/modal/__wrapper-for-side/modal__wrapper-for-side.scss';
 @use '../blocks/modal/__container/modal__container.scss';
