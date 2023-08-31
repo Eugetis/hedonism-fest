@@ -187,6 +187,7 @@ dropDownMenuInputs.forEach(function (dropDownMenuInput) {
 //появляющийся при скролле хедер
 if (document.querySelector('.page_id_index')) {
    header.classList.add('header__offset');
+   header.classList.add('header__offset_3');
 window.addEventListener('scroll', function () {
   if (pageYOffset > 10) {
     header.classList.remove('header__offset');
@@ -200,9 +201,6 @@ window.addEventListener('scroll', function () {
 })
 }
 
-if (!document.querySelector('.page_id_index')) {
-  header.classList.add('header__offset_3');
-}
 // Алексей -> end!
 
 
