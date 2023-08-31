@@ -17,8 +17,8 @@ import forParticipants from './for-participants'
 // Вебпак заброковал это переменную, когда я ее импортировал и навесил .addEventListener
 // Поэтому обьявил сразу так
 
-document.querySelector('.cards').addEventListener('click', cardsClickController)
-if (document.querySelector('.catalog')) {
+if (document.querySelector('.page_id_catalog')) {
+  document.querySelector('.cards').addEventListener('click', cardsClickController);
   catalogController();
 }
 // Дмитрий

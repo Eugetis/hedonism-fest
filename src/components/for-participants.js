@@ -6,25 +6,31 @@
 
 
 // Георгий - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-const contentSection = document.querySelector('.participants__container_type_content')
-const formSection = document.querySelector('.participants__container_type_form')
-const openFormBtn = document.querySelector('#open-form-btn')
-const form = document.querySelector('.form')
-const fieldsets = Array.from(form.querySelectorAll('.form__step'))
-const hidden = 'hidden'
+const hidden = 'hidden';
+
+// открываем конструкцию if-else (иначе сыпятся ошибки, что элементы не найдены)
+if (document.querySelector('.page_id_for-participants')) {
+
+  const contentSection = document.querySelector('.participants__container_type_content');
+  const formSection = document.querySelector('.participants__container_type_form');
+  const openFormBtn = document.querySelector('#open-form-btn');
+  const formParticipants = document.querySelector('.form');
+  const fieldsets = Array.from(formParticipants.querySelectorAll('.form__step'));
+
+
 
 // открытие формы
 function openForm() {
     contentSection.classList.add(hidden)
     formSection.classList.remove(hidden)
-    form.classList.remove(hidden)
+    formParticipants.classList.remove(hidden)
     showField(fieldsets[0])
 }
 // закрытие формы
 function closeForm() {
     contentSection.classList.remove(hidden)
     formSection.classList.add(hidden)
-    form.classList.add(hidden)
+    formParticipants.classList.add(hidden)
     fieldsets.forEach(field => hideField(field))
 }
 // отобразить филсет
@@ -79,6 +85,9 @@ setListeners()
 function handleFormSubmit(evt) {
     evt.preventDefault()
 }
+
+} // это закрытие конструкции if-else
+
 // ОСНОВНЫЕ ТРЕБОВАНИЯ К ВАЛИДАЦИИ - см. в ТЗ в Notion
 
 
