@@ -18,7 +18,8 @@ export const listContainer = document.querySelector('.catalog__events-container_
 // Дмитрий -> end!
 
 // Андрей - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
+export const modalDonate = document.querySelector('.modal_id_donation');
+export const modalFilters = document.querySelector('.modal_id_mobile-filters');
 
 
 

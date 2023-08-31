@@ -10,12 +10,31 @@
 
 
 // полный функционал открытия модалки с навешиванием слушателей
+export function openModal(modal) {
+  modal.classList.add('modal_opened');
+  modal.addEventListener('click', closeModalListener);
+  document.addEventListener('keydown', handleEscClose);
+}
 
 // полный функционал закрытия модалки с удалением слушателей
-
+function closeModal(modal) {
+  modal.classList.remove('modal_opened');
+  modal.removeEventListener('click', closeModalListener);
+  document.removeEventListener('keydown', handleEscClose);
+}
 // закрытие модалки по клику на оверлей
-
+function closeModalListener(evt) {
+  console.log(evt);
+  if (evt.target.classList.contains('modal') || evt.target.parentElement.classList.contains('modal__close-button')) {  
+    closeModal(evt.target.closest('.modal_opened'));
+  }  
+}
 // закрытие модалки по нажатию на Esc
+function handleEscClose(evt) {
+  if (evt.key === 'Escape') {
+    closeModal(document.querySelector('.modal_opened'));
+  }
+}
 
 // Универсальный обработчик закрытия модалки по крестику
 
