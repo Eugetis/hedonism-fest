@@ -77,6 +77,7 @@ export const modalHandler = (modal, type) => {
   }
 }
 
+// Функция которая отвечает за интерктивность кнопки "хочу пойти", добавляя нужный текст и цвет лайка взависимости от ситуации
 const modalClickHandler = async (event) => {
   const modal = event.target.closest('.modal_id_event-full');
   const modalId = modal.dataset.id;
@@ -95,6 +96,7 @@ const modalClickHandler = async (event) => {
   }
 }
 
+// Функция которая возвращает нужную разметку для кнопки "хочу пойти"
 const modalLikeHandler = (modal, state) => {
   const modalButton = modal.querySelector('#modal__button-like');
   const modalButtonSpan = modalButton.querySelector('.event-icon');
