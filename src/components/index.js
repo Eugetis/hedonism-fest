@@ -25,7 +25,7 @@ if (document.querySelector('.page_id_catalog')) {
 
 
 // Андрей
-
+import {  showSlide, activateSlider } from '../components/photo-slider.js';
 
 // Алексей
 import { dropDownMenuOpen, dropDownMenuClose } from '../components/utils.js';
@@ -53,9 +53,7 @@ const mapContainer = document.querySelector('.catalog__events-container_type_map
 const listContainer = document.querySelector('.catalog__events-container_type_grid');*/
 
 // Андрей
-const sliderLine = document.querySelector('.gallery__slider-line');
-const sliderDots = document.querySelectorAll('.gallery__slider-radio');
-const sliderImages = document.querySelectorAll('.gallery__image');
+
 
 // Алексей
 let dropDownMenuButtonText = document.querySelector('.dropdown__button-text');
@@ -139,51 +137,12 @@ if (!button.matches('.tab-switcher__button_active')) {
 
 
 // Андрей - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-// Переменные
-let sliderCount = 0;
-let sliderWidth;
-
-// console.log(sliderImages);
-
-window.addEventListener('resize', showSlide);
-
-function showSlide() {
-  if (sliderLine) {
-    sliderWidth = document.querySelector('.gallery__slider').offsetWidth;
-    if (window.innerWidth < 768) {
-      sliderLine.style.width = sliderWidth * sliderImages.length + 'px';
-
-      rollSlider();
-    } else {
-      sliderLine.style.transform = `translateX(0)`;
-      sliderLine.style.width = '100%';
-    }
-  }
+if (document.querySelector('.page_id_index')) {
+  window.addEventListener('resize', showSlide);
+  showSlide(); 
+  activateSlider();  
 }
 
-showSlide();
-
-function rollSlider() {
-  sliderLine.style.transform = `translateX(${-sliderCount * sliderWidth}px)`;
-}
-
-function thisSlide(index) {
-  sliderDots.forEach(item => item.classList.remove('gallery__slider-radio_active'));
-  sliderDots[index].classList.add('gallery__slider-radio_active');
-}
-
-function activateSlider() {
-  sliderDots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-      sliderCount = index;
-      rollSlider();
-      thisSlide(sliderCount);
-    })
-  })
-}
-
-activateSlider();
 
 // Андрей -> end!
 
