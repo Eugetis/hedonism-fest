@@ -6,16 +6,23 @@
   width: 100%;
   margin: 20px auto 20px;
   position: absolute;
-  bottom: -220px;
+  bottom: -330px;
   transition-property: opacity, visibility;
-  transition-duration: .3s, 0s;
-  transition-delay: 0s, .3s;
+  transition-duration: 0.3s, 0s;
+  transition-delay: 0s, .5s;
+  height: 288px;
+  width: 320px;
+  box-sizing: border-box;
+  padding: 24px;
+  border-radius: 24px;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0px 4px 12px 0px rgba(59, 55, 72, 0.12);
 }
 
 .header__form-city > label {
   font-size: 16px;
   font-weight: 400;
-  line-height: 40px;
+  line-height: 48px;
   letter-spacing: 0px;
   text-align: left;
   width: 100%;
