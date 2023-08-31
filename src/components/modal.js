@@ -17,7 +17,7 @@ export function openModal(modal) {
 }
 
 // полный функционал закрытия модалки с удалением слушателей
-function closeModal(modal) {
+export function closeModal(modal) {
   modal.classList.remove('modal_opened');
   modal.removeEventListener('click', closeModalListener);
   document.removeEventListener('keydown', handleEscClose);
@@ -25,9 +25,9 @@ function closeModal(modal) {
 // закрытие модалки по клику на оверлей
 function closeModalListener(evt) {
   console.log(evt);
-  if (evt.target.classList.contains('modal') || evt.target.parentElement.classList.contains('modal__close-button')) {  
+  if (evt.target.classList.contains('modal') || evt.target.parentElement.classList.contains('modal__close-button')) {
     closeModal(evt.target.closest('.modal_opened'));
-  }  
+  }
 }
 // закрытие модалки по нажатию на Esc
 function handleEscClose(evt) {
