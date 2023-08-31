@@ -120,7 +120,7 @@ const createCard = (item, cardTemplate) => {
   }
 
   const dateContent = item.date.split(' ');
-  const date = `${dateContent[0]} ${dateContent[1].substring(0, 3)}...`
+  const date = `${dateContent[0]} ${dateContent[1].substring(0, 3)}`
 
   cardElement.dataset.id = item.id;
   cardElement.dataset.coordinates = location.coordinates;
