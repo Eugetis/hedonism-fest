@@ -1,4 +1,3 @@
-import {cardTemplate, cardGridSection, modalTemplate} from './constants';
 import {modalController} from "./catalog";
 // РАБОТА С МЕРОПРИЯТИЕМ
 
@@ -9,31 +8,30 @@ import {modalController} from "./catalog";
 
 // Никита - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // Функция addCard принимает подготовленный массив карточек из функции prepareCard и добавляет их в cardGridSection
-const addCard = (cards) => {
+export const addCard = (cards, section) => {
   cards.forEach((card) => {
-    cardGridSection.append(card);
+    section.append(card);
   })
 }
 
 // Функция собирает нужный формат карточек с помощью функции createCard и передает это дальше для рендера на странице в addCard
-export const prepareCard = ({cards}) => {
-  const preparedCards = cards.map((card) => {
-    return createCard(card)
-  })
-
-  addCard(preparedCards);
+export const prepareCard = ({cards}, cardTemplate) => {
+  return cards.map((card) => {
+    return createCard(card, cardTemplate)
+  });
 }
 
 // Функция которая собирает нужный формат для отрисовки модалки по клику на карточку.
-export const modalCreate = ([card]) => {
+export const modalCreate = ([card], modalTemplate) => {
   const location = card.location.shift();
   const modalElement = modalTemplate.querySelector('.modal').cloneNode(true);
+  const modalButton = modalElement.querySelector('#modal__button-like');
   const addressButton = modalElement.querySelector('.table-lines__button');
   const addressButtonIcon = modalElement.querySelector('.button__icon').outerHTML;
   addressButton.innerHTML = `смотреть еще ${card.location.length - 1}${addressButtonIcon}`
 
   modalElement.dataset.id = card.id;
-  modalElement.dataset.coordinates = card.coordinates;
+  modalElement.dataset.coordinates = location.coordinates;
   modalElement.querySelector('.event__image').src = card.image;
   modalElement.querySelector('.event__type').textContent = card.type;
   modalElement.querySelector('.event__date').textContent = `${card.date}, ${card.timeDuration}`;
@@ -45,11 +43,18 @@ export const modalCreate = ([card]) => {
   modalElement.querySelector('#table-lines__address').innerHTML = `${location.address}${addressButton.outerHTML}`;
   modalElement.querySelector('#table-lines__phone').textContent = card.phone;
 
+  if (cardLikeController(card.id)) {
+    modalButton.innerHTML = modalLikeHandler(modalElement, true);
+  } else {
+    modalButton.innerHTML = modalLikeHandler(modalElement, false);
+  }
+
   return modalElement;
 }
 
 // Функция которая принимает саму модалку и type (open, close), в зависимости от типа либо открывает модальное окно, либо закрывает его.
 export const modalHandler = (modal, type) => {
+  const modalButton = modal.querySelector('#modal__button-like');
   document.querySelector('.page').append(modal);
   modal.classList.add('modal_opened');
 
@@ -57,15 +62,53 @@ export const modalHandler = (modal, type) => {
     case 'open':
       document.querySelector('.page').append(modal);
       modal.classList.add('modal_opened');
+      modalButton.addEventListener('click', modalClickHandler);
       break;
     case 'close':
       modal.classList.remove('modal_opened');
       document.querySelector('.page').remove(modal);
+      modalButton.removeEventListener('click', modalClickHandler);
+  }
+}
+
+// Функция которая отвечает за интерктивность кнопки "хочу пойти", добавляя нужный текст и цвет лайка взависимости от ситуации
+const modalClickHandler = async (event) => {
+  const modal = event.target.closest('.modal_id_event-full');
+  const modalId = modal.dataset.id;
+  const card = document.querySelector(`[data-id="${modalId}"]`)
+  const modalButton = event.target;
+
+  if (cardLikeController(modalId)) {
+    const likesArray = getStorageValueByKey('likes');
+    removeLikeFromStorage(modalId, likesArray);
+    modalButton.innerHTML = modalLikeHandler(modal, false);
+    return cardLikeLocalController(card, 'delete');
+  } else {
+    addLikeToStorage(card);
+    modalButton.innerHTML = modalLikeHandler(modal, true);
+    return cardLikeLocalController(card, 'add');
+  }
+}
+
+// Функция которая возвращает нужную разметку для кнопки "хочу пойти"
+const modalLikeHandler = (modal, state) => {
+  const modalButton = modal.querySelector('#modal__button-like');
+  const modalButtonSpan = modalButton.querySelector('.event-icon');
+
+  switch (state) {
+    case true:
+      modalButtonSpan.classList.remove('icon-heart-filled')
+      modalButtonSpan.classList.add('icon-heart')
+      return `${modalButtonSpan.outerHTML}не хочу идти`;
+    case false:
+      modalButtonSpan.classList.remove('icon-heart')
+      modalButtonSpan.classList.add('icon-heart-filled')
+      return `${modalButtonSpan.outerHTML}хочу пойти`;
   }
 }
 
 // Функция которая создает нужный формат карточки для отрисовки ее на странице.
-const createCard = (item) => {
+const createCard = (item, cardTemplate) => {
   const location = item.location.shift();
   const cardElement = cardTemplate.querySelector('.cards__item').cloneNode(true);
   const span = cardElement.querySelector('.card-control__icon');
@@ -155,11 +198,19 @@ export const cardsClickController = (event) => {
   const classList = Array.from(target.classList).join(' ');
   const likeRegex = /card-control/g;
   let card = null;
-  if (classList.match(likeRegex)) {
-    card = target.closest('.cards__item');
-    return addLikeToStorage(card);
+  if (document.querySelector('.page_id_index')) {
+    if (classList.match(likeRegex)) {
+      card = target.closest('.cards__item');
+      return addLikeToStorage(card);
+    }
   } else {
-    return modalController(cardId);
+    if (classList.match(likeRegex)) {
+      card = target.closest('.cards__item');
+      return addLikeToStorage(card);
+    } else {
+      const modalTemplate = document.querySelector('#modal_id_event-full').content;
+      return modalController(cardId, modalTemplate);
+    }
   }
 }
 

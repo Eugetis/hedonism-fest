@@ -2,8 +2,8 @@
   <!-- должна открываться по клику на карточку или на кнопку Подробнее в превьюшке на яндекс карте -->
   <!-- должна открываться через добавление секции класса modal_opened -->
 
-  <template id="modal modal_id_event-full">
-    <section class="modal" data-id="0" data-coordinates="0">
+  <template id="modal_id_event-full">
+    <section class="modal modal_id_event-full" data-id="0" data-coordinates="0">
       <div class="modal__wrapper-for-side">
         <div class="modal__container modal__container_type_side">
           <button class="modal__close-button modal__close-button_type_button card-control"><span class="card-control__icon icon-cross"></span></button>
@@ -37,8 +37,8 @@
                 </li>
                 <li class="table-lines__item">
                   <p class="table-lines__property">адрес</p>
-                  <p class="table-lines__value" id="table-lines__address">улица Блохина, 22
-                    <button class="button table-lines__button" id="table-lines__button" type="button"><span class="button__icon icon-arrow-right"></span></button>
+                  <p class="table-lines__value" id="table-lines__address">
+                    <button class="button table-lines__button" type="button"><span class="button__icon icon-arrow-right"></span></button>
                   </p>
                 </li>
                 <li class="table-lines__item">
@@ -63,7 +63,7 @@
             </div>
           </div>
           <div class="fixed-bar fixed-bar__desktop-sticky">
-            <button class="modal__button button button_type_border" type="button"><span class="button__icon icon-heart-filled event-icon"></span>хочу пойти</button>
+            <button class="modal__button button button_type_border" id="modal__button-like" type="button"><span class="button__icon icon-heart-filled event-icon"></span>хочу пойти</button>
             <button class="modal__button button button_type_filled" type="button">купить билет</button>
           </div>
         </div>
@@ -121,7 +121,7 @@
             <li class="table-lines__item">
               <p class="table-lines__property">адрес</p>
               <p class="table-lines__value" id="table-lines__address">улица Блохина, 22
-                <button class="button table-lines__button" id="table-lines__button" type="button">смотреть еще 3<span class="button__icon icon-arrow-right"></span></button>
+                <button class="button table-lines__button" type="button">смотреть еще 3<span class="button__icon icon-arrow-right"></span></button>
               </p>
             </li>
             <li class="table-lines__item">
