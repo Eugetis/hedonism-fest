@@ -1,5 +1,6 @@
 // ФУНКЦИОНАЛ НА СТРАНИЦЕ "О ФЕСТИВАЛЕ"
-
+import { openModal } from './modal.js';
+import { modalDonate } from './constants.js';
 // Если вдруг кому-то нужно что-то дописать в этом файле, помимо основного ответственного за эту функциональность,
 // лучше это делать внизу, где указаны имена. Если нужно что-то писать прямо посреди чужого кода, то отделяйте
 // свой код комментариями со своим именем перед и после вставляемого кода.
@@ -9,7 +10,13 @@
 
 
 // установка слушателя клика на кнопку "Поддержать" на странице "О ФЕСТИВАЛЕ"
+const aboutDonateButton = document.querySelector('.info-section__button_donate');
 
+export  function setAboutEventListener() {
+  aboutDonateButton.addEventListener('click', () => {
+    openModal(modalDonate);
+  });
+}
 
 // Андрей -> end!
 

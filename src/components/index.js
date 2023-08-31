@@ -6,7 +6,7 @@
 
 import '../scss/styles.scss';
 import { cardsClickController } from './event';
-import { catalogController, modalController } from './catalog';
+import { catalogController, generalCardController, modalController } from './catalog';
 
 
 import forParticipants from './for-participants';
@@ -18,18 +18,38 @@ import forParticipants from './for-participants';
 // Поэтому обьявил сразу так
 
 if (document.querySelector('.page_id_catalog')) {
+  const cardGridSection = document.querySelector('.cards_type_grid');
+  const cardTemplate = cardGridSection.querySelector('#card').content;
   document.querySelector('.cards').addEventListener('click', cardsClickController);
-  catalogController();
+  catalogController(cardGridSection, cardTemplate);
+}
+
+if (document.querySelector('.page_id_index')) {
+  const cardScrollSection = document.querySelector('.cards_type_scroll');
+  const cardTemplate = cardScrollSection.querySelector('#card').content;
+  document.querySelector('.cards').addEventListener('click', cardsClickController);
+  generalCardController(cardScrollSection, cardTemplate);
 }
 // Дмитрий
 
+import { updateCityOnMap } from './catalog'
 
 // Андрей
-
+import {  showSlide, activateSlider } from '../components/photo-slider.js';
+import { openModal } from '../components/modal.js';
+import { modalDonate } from '../components/constants.js';
+import { setAboutEventListener } from '../components/about.js';
+import { setCatalogEventListener } from '../components/catalog.js';
 
 // Алексей
 import { dropDownMenuOpen, dropDownMenuClose } from '../components/utils.js';
-import { dropDownMenuButton, dropDownMenuElements, dropDownMenuInputs, header } from '../components/constants.js';
+import {
+  cardGridSection,
+  dropDownMenuButton,
+  dropDownMenuElements,
+  dropDownMenuInputs,
+  header
+} from '../components/constants.js';
 // Георгий
 
 
@@ -47,15 +67,12 @@ const modal = document.querySelector('.modal');
 const modalContainer = document.querySelector('.modal__container');
 
 // Дмитрий
-/*const tabSwitcher = document.querySelector('.tab-switcher');
-const buttonList = Array.from(tabSwitcher.querySelectorAll('.tab-switcher__button'));
-const mapContainer = document.querySelector('.catalog__events-container_type_map');
-const listContainer = document.querySelector('.catalog__events-container_type_grid');*/
+
 
 // Андрей
-const sliderLine = document.querySelector('.gallery__slider-line');
-const sliderDots = document.querySelectorAll('.gallery__slider-radio');
-const sliderImages = document.querySelectorAll('.gallery__image');
+const donateButton = document.querySelector('.header__button');
+
+
 
 // Алексей
 let dropDownMenuButtonText = document.querySelector('.dropdown__button-text');
@@ -92,109 +109,45 @@ modalCloseButton.addEventListener('click', () => {
 
 
 // Дмитрий - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-/*let isMap = false;
 
-const handleTabEvent = (evt) => {
-    evt.preventDefault();
-    toggleTabSwitcher(evt);
-    if (!isMap) {
-      isMap = true;
-      // mapContainer.style.display = 'flex';
-      // listContainer.style.display = 'none';
-      mapContainer.classList.add('catalog__events-container_opened');
-      listContainer.classList.remove('catalog__events-container_opened');
-    } else {
-      isMap = false;
-      // mapContainer.style.display = 'none';
-      // listContainer.style.display = 'grid';
-      mapContainer.classList.remove('catalog__events-container_opened');
-      listContainer.classList.add('catalog__events-container_opened');
-    }
-}
-
-const toggleTabSwitcher = (evt) => {*/
-/* может сделать через перебор элементов свитча и в зависимости от актив вешать или нет*/
-/*evt.target.classList.add('tab-switcher__button_active');
-evt.target.removeEventListener('click', handleTabEvent);
-
-if (evt.target.nextElementSibling != null) {
-  evt.target.nextElementSibling.classList.remove('tab-switcher__button_active');
-  evt.target.nextElementSibling.addEventListener('click', handleTabEvent);
-} else {
-  evt.target.previousElementSibling.classList.remove('tab-switcher__button_active');
-  evt.target.previousElementSibling.addEventListener('click', handleTabEvent);
-}
-}
-
-mapContainer.classList.remove('catalog__events-container_opened');
-listContainer.classList.add('catalog__events-container_opened');
-
-buttonList.forEach((button) => {
-if (!button.matches('.tab-switcher__button_active')) {
-  button.addEventListener('click', handleTabEvent);
-}
-});*/
 
 // Дмитрий -> end!
 
 
 // Андрей - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-// Переменные
-let sliderCount = 0;
-let sliderWidth;
-
-// console.log(sliderImages);
-
-window.addEventListener('resize', showSlide);
-
-function showSlide() {
-  if (sliderLine) {
-    sliderWidth = document.querySelector('.gallery__slider').offsetWidth;
-    if (window.innerWidth < 768) {
-      sliderLine.style.width = sliderWidth * sliderImages.length + 'px';
-
-      rollSlider();
-    } else {
-      sliderLine.style.transform = `translateX(0)`;
-      sliderLine.style.width = '100%';
-    }
-  }
+if (document.querySelector('.page_id_index')) {
+  window.addEventListener('resize', showSlide);
+  showSlide();
+  activateSlider();
 }
 
-showSlide();
-
-function rollSlider() {
-  sliderLine.style.transform = `translateX(${-sliderCount * sliderWidth}px)`;
+if (document.querySelector('.page_id_404') || document.querySelector('.page_id_thanks-for-application') || document.querySelector('.page_id_thanks-for-support')) {
+  document.querySelector('.footer').classList.add('footer_style_additional');
 }
 
-function thisSlide(index) {
-  sliderDots.forEach(item => item.classList.remove('gallery__slider-radio_active'));
-  sliderDots[index].classList.add('gallery__slider-radio_active');
+donateButton.addEventListener('click', () => {
+  openModal(modalDonate);
+})
+
+if (document.querySelector('.page_id_about')) {
+  setAboutEventListener();
 }
 
-function activateSlider() {
-  sliderDots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-      sliderCount = index;
-      rollSlider();
-      thisSlide(sliderCount);
-    })
-  })
+if (document.querySelector('.page_id_catalog')) {
+  setCatalogEventListener();
 }
 
-activateSlider();
+if (document.querySelector('.page_id_catalog')) {
+  document.querySelector('.modal__button_type_ticket').addEventListener('click', () => {
+    openModal(document.querySelector('.modal_id_payment'));
+  });
+}
 
 // Андрей -> end!
 
 
 // Алексей - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-/*document.querySelector('.page').addEventListener('click', function(){
-  if(dropDownMenu.classList.contains('header__form-city_opened')) {
-    console.log('клик')
-    dropDownMenuClose();
-  }
-});*/
+
 //открытие дропдауна
 dropDownMenuButton.addEventListener('click', dropDownMenuOpen);
 //закрытие дропдауна
@@ -205,27 +158,39 @@ dropDownMenuElements.forEach(function (dropDownMenuElement) {
 dropDownMenuInputs.forEach(function (dropDownMenuInput) {
   dropDownMenuInput.addEventListener('click', function () {
     if (dropDownMenuInput.checked) {
-      dropDownMenuButtonText.textContent = dropDownMenuInput.value;
+      dropDownMenuButtonText.innerText = dropDownMenuInput.value;
       localStorage.setItem('city', dropDownMenuInput.value);
+      // Dmitry
+      // пинаем карту, чтобы обновилась по выбранному городу
+      updateCityOnMap();
+      // Dmitry -> end!
     }
   })
 });
+//Проверка локалсторэдж, вставка в него дефолтного города
+if (!localStorage.getItem('city')) {
+  localStorage.setItem('city', 'Москва');
+}
+
 //сохранение значения кнопки и расположении галочки на инпуте
 dropDownMenuButtonText.textContent = localStorage.getItem('city');
 dropDownMenuInputs.forEach(function (dropDownMenuInput) {
-  if (dropDownMenuInput.value === dropDownMenuButtonText.textContent) {
+  if (dropDownMenuInput.value === dropDownMenuButtonText.innerText) {
     dropDownMenuInput.checked = true;
   }
 });
+
+//появляющийся при скролле хедер
 window.addEventListener('scroll', function () {
-  if (pageYOffset > 1500) {
-    header.classList.add('header__offset_1')
+  if (pageYOffset > 10) {
+    header.classList.add('header__offset_1');
     header.classList.remove('header__offset_2')
-  } else if (pageYOffset <= 1500) {
-    header.classList.remove('header__offset_1')
-    header.classList.add('header__offset_2')
+
+  } else if (pageYOffset <= 10) {
+    header.classList.remove('header__offset_1');
+    header.classList.add('header__offset_2');
   }
-});
+})
 
 // Алексей -> end!
 

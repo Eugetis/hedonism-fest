@@ -1,9 +1,10 @@
 @use 'variables' as *;
 
 .header {
-  position: sticky; // для index.html нужно дописать и включать модификатор, который управляет появлением шапки по скроллу
-  top: 0;
+  position: fixed; // для index.html нужно дописать и включать модификатор, который управляет появлением шапки по скроллу
+  top: -50%;
   width: 100%;
   z-index: 1;
+  visibility: hidden;
 }
 

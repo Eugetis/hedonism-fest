@@ -109,6 +109,7 @@
 @use '../blocks/header/__slide/header__slide.scss';
 @use '../blocks/header/__slide/_content/header__slide_content_cities.scss';
 @use '../blocks/header/__slide/_content/header__slide_content_menu.scss';
+
 // разобраться с тремя
 @use '../blocks/header/__wrapper/_1/header__wrapper_1.scss';
 @use '../blocks/header/__wrapper/_3/header__wrapper_3.scss';
@@ -153,6 +154,7 @@
 @use '../blocks/cards/__item-content/cards__item-content.scss';
 @use '../blocks/cards/__item-data/cards__item-data.scss';
 @use '../blocks/cards/__item-text/cards__item-text.scss';
+@use '../blocks/cards/__item-text/_type/cards__item-text_type_fit.scss';
 @use '../blocks/cards/__item-title/cards__item-title.scss';
 @use '../blocks/cards/__item-description/cards__item-description.scss';
 @use '../blocks/cards/__item-like/cards__item-like.scss';
@@ -372,6 +374,7 @@
 @use '../blocks/catalog/__events-container/_type/catalog__events-container_type_no-events.scss';
 @use '../blocks/catalog/__events-container/_opened/catalog__events-container_opened.scss';
 @use '../blocks/catalog/__mob-filters-button/catalog__mob-filters-button.scss';
+@use '../blocks/catalog/__map-container/catalog__map-container.scss';
 
 //fixed-bar (стиль для блоков с кнопками, который в мобиле прилипает к низу страницы)
 @use '../blocks/fixed-bar/fixed-bar.scss';
