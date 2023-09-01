@@ -7,6 +7,8 @@
       <div class="modal__wrapper-for-side">
         <div class="modal__container modal__container_type_side">
           <button class="modal__close-button modal__close-button_type_button card-control"><span class="card-control__icon icon-cross"></span></button>
+
+          <!-- начало контейнера с описанием мероприятия -->
           <div class="event">
             <div class="event__header">
               <img class="event__image" alt="Изображение модального окна">
@@ -64,15 +66,152 @@
               </div>
             </div>
           </div>
+          <!-- конец контейнера с описанием мероприятия -->
+
+          <!-- начало липучего блока с кнопками (он лежит вне мероприятия для обеспечения своего поведения) -->
           <div class="fixed-bar fixed-bar__desktop-sticky">
-            <button class="modal__button button button_type_border" id="modal__button-like" type="button"><span class="button__icon icon-heart-filled event-icon"></span>хочу пойти</button>
+            <button class="modal__button button button_type_border" id="modal__button-like" type="button"><span class="button__icon icon-heart-filled"></span>хочу пойти</button>
             <button class="modal__button button button_type_filled" type="button">купить билет</button>
           </div>
+          <!-- конец липучего блока с кнопками -->
+
+          <!-- начало контейнера с доп адресами мероприятия -->
+          <!-- чтобы сделать его видимым, нужно добавить класс favourites-list_opened -->
+          <!-- стили написаны так, что скрывать описание мероприятия не нужно, этот контейнер перекроет сверху -->
+          <div class="favourites-list favourites-list_type_inside">
+
+            <div class="modal__header modal__header_type_extended">
+              <div>
+                <button class="button modal__button modal__button_type_narrow"><span class="button__icon icon-arrow-left"></span>назад</span></button>
+                <div class="modal__drag-line"></div>
+              </div>
+              <div class="modal__title-wrapper">
+                <h2 class="modal__title">все адреса</h2>
+                <button class="modal__close-button modal__close-button_type_icon" type="button"><span class="button__icon icon-cross link"></span></button>
+              </div>
+              <div class="modal__switchers-wrapper">
+                <div class="tab-switcher tab-switcher_type_fill">
+                  <button class="tab-switcher__button tab-switcher__button_type_fill"></span>карта</button>
+                  <button class="tab-switcher__button tab-switcher__button_type_fill tab-switcher__button_active">список</button>
+                </div>
+              </div>
+
+            </div>
+
+            <section class="catalog__events-container catalog__events-container_type_map">
+              <!-- чтобы включить, нужно будет добавить класс catalog__events-container_opened -->
+              <!-- тут будет блок с яндекс картой -->
+              <div class="catalog__map-container"></div>
+            </section>
+
+            <section class="catalog__events-container catalog__events-container_type_grid catalog__events-container_opened">
+              <ul class="cards cards_type_grid">
+                <li class="cards__item" data-id="0" data-coordinates="0">
+                  <img class="cards__item-img" src="https://images.unsplash.com/photo-1693224190984-27031cf1d32a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80" alt="Изображение карточки">
+                  <div class="cards__item-content">
+                    <div class="cards__item-data">
+                      <p class="cards__item-text" id="cards__item-type">лекция</p>
+                      <p class="cards__item-text cards__item-text_type_fit" id="cards__item-date">1 мая, 12:30-13:50</p>
+                    </div>
+                    <div class="cards__item-info">
+                      <h2 class="cards__item-title">идентичность: почему нам сложно меняться?</h2>
+                      <p class="cards__item-description">лектор: Мария Бархатова</p>
+                    </div>
+                    <div class="cards__item-address">
+                      <p class="cards__item-text" id="cards__item-address">улица Блохина, 22</p>
+                      <p class="cards__item-text cards__item-text_type_fit" id="cards__item-count">+ ещё 3</p>
+                    </div>
+                  </div>
+                  <button class="cards__item-like card-control link"><span class="card-control__icon icon-heart"></span></button>
+                </li>
+                <li class="cards__item" data-id="0" data-coordinates="0">
+                  <img class="cards__item-img" src="https://images.unsplash.com/photo-1693224190984-27031cf1d32a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80" alt="Изображение карточки">
+                  <div class="cards__item-content">
+                    <div class="cards__item-data">
+                      <p class="cards__item-text" id="cards__item-type">лекция</p>
+                      <p class="cards__item-text cards__item-text_type_fit" id="cards__item-date">1 мая, 12:30-13:50</p>
+                    </div>
+                    <div class="cards__item-info">
+                      <h2 class="cards__item-title">идентичность: почему нам сложно меняться?</h2>
+                      <p class="cards__item-description">лектор: Мария Бархатова</p>
+                    </div>
+                    <div class="cards__item-address">
+                      <p class="cards__item-text" id="cards__item-address">улица Блохина, 22</p>
+                      <p class="cards__item-text cards__item-text_type_fit" id="cards__item-count">+ ещё 3</p>
+                    </div>
+                  </div>
+                  <button class="cards__item-like card-control link"><span class="card-control__icon icon-heart"></span></button>
+                </li>
+                <li class="cards__item" data-id="0" data-coordinates="0">
+                  <img class="cards__item-img" src="https://images.unsplash.com/photo-1693224190984-27031cf1d32a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80" alt="Изображение карточки">
+                  <div class="cards__item-content">
+                    <div class="cards__item-data">
+                      <p class="cards__item-text" id="cards__item-type">лекция</p>
+                      <p class="cards__item-text cards__item-text_type_fit" id="cards__item-date">1 мая, 12:30-13:50</p>
+                    </div>
+                    <div class="cards__item-info">
+                      <h2 class="cards__item-title">идентичность: почему нам сложно меняться?</h2>
+                      <p class="cards__item-description">лектор: Мария Бархатова</p>
+                    </div>
+                    <div class="cards__item-address">
+                      <p class="cards__item-text" id="cards__item-address">улица Блохина, 22</p>
+                      <p class="cards__item-text cards__item-text_type_fit" id="cards__item-count">+ ещё 3</p>
+                    </div>
+                  </div>
+                  <button class="cards__item-like card-control link"><span class="card-control__icon icon-heart"></span></button>
+                </li>
+                <li class="cards__item" data-id="0" data-coordinates="0">
+                  <img class="cards__item-img" src="https://images.unsplash.com/photo-1693224190984-27031cf1d32a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80" alt="Изображение карточки">
+                  <div class="cards__item-content">
+                    <div class="cards__item-data">
+                      <p class="cards__item-text" id="cards__item-type">лекция</p>
+                      <p class="cards__item-text cards__item-text_type_fit" id="cards__item-date">1 мая, 12:30-13:50</p>
+                    </div>
+                    <div class="cards__item-info">
+                      <h2 class="cards__item-title">идентичность: почему нам сложно меняться?</h2>
+                      <p class="cards__item-description">лектор: Мария Бархатова</p>
+                    </div>
+                    <div class="cards__item-address">
+                      <p class="cards__item-text" id="cards__item-address">улица Блохина, 22</p>
+                      <p class="cards__item-text cards__item-text_type_fit" id="cards__item-count">+ ещё 3</p>
+                    </div>
+                  </div>
+                  <button class="cards__item-like card-control link"><span class="card-control__icon icon-heart"></span></button>
+                </li>
+                <li class="cards__item" data-id="0" data-coordinates="0">
+                  <img class="cards__item-img" src="https://images.unsplash.com/photo-1693224190984-27031cf1d32a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80" alt="Изображение карточки">
+                  <div class="cards__item-content">
+                    <div class="cards__item-data">
+                      <p class="cards__item-text" id="cards__item-type">лекция</p>
+                      <p class="cards__item-text cards__item-text_type_fit" id="cards__item-date">1 мая, 12:30-13:50</p>
+                    </div>
+                    <div class="cards__item-info">
+                      <h2 class="cards__item-title">идентичность: почему нам сложно меняться?</h2>
+                      <p class="cards__item-description">лектор: Мария Бархатова</p>
+                    </div>
+                    <div class="cards__item-address">
+                      <p class="cards__item-text" id="cards__item-address">улица Блохина, 22</p>
+                      <p class="cards__item-text cards__item-text_type_fit" id="cards__item-count">+ ещё 3</p>
+                    </div>
+                  </div>
+                  <button class="cards__item-like card-control link"><span class="card-control__icon icon-heart"></span></button>
+                </li>
+              </ul>
+
+            </section>
+
+          </div>
+          <!-- конец контейнера с доп адресами мероприятия -->
+
         </div>
       </div>
     </section> <!-- конец модалки с просмотром мероприятия -->
 
   </template>
+
+
+
+  <!-- нужна тут секция, если есть шаблон сверху? -->
   <section class="modal">
 
     <div class="modal__wrapper-for-side">
@@ -152,7 +291,7 @@
       </div>
 
       <div class="fixed-bar fixed-bar__desktop-sticky">
-        <button class="modal__button button button_type_border" type="button"><span class="button__icon icon-heart-filled event-icon"></span>хочу пойти</button>
+        <button class="modal__button button button_type_border" type="button"><span class="event__icon-liked button__icon icon-heart-filled"></span>хочу пойти</button>
         <button class="modal__button button button_type_filled modal__button_type_ticket" type="button">купить билет</button>
       </div>
 

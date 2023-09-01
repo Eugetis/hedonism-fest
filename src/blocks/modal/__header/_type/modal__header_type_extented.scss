@@ -1,0 +1,22 @@
+@use 'variables' as *;
+
+.modal__header_type_extended {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: unset;
+  align-items: unset;
+  gap: 0;
+  box-sizing: border-box;
+  padding: $pad-40 0 0;
+  background-color: $light-primary;
+  position: sticky;
+  z-index: 1;
+  top: 0;
+}
+
+@media screen and (max-width: $mobile) {
+  .modal__header_type_extended {
+    padding: $pad-16 0 0;
+  }
+}

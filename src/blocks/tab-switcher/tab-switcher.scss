@@ -9,7 +9,7 @@
   background: $light-secondary;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: $mobile) {
   .tab-switcher {
     border: $border-bold-light;
   }
