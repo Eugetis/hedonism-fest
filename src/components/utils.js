@@ -45,13 +45,13 @@ export const dropDownMenuMobileClose = function() {
 
 export const mobileMenuSliderOpen = function() {
   mobileMenuSlider.classList.remove('header__slider_state_opened');
-  headerMobileTop.classList.remove('header__slider_state_opened');
+  headerMobileTop.classList.remove('header__mobile-top_opened');
   page.classList.add('page__no-scroll');
 }
 export const mobileMenuSliderClose = function() {
   mobileMenuSlider.classList.add('header__slider_state_opened');
   page.classList.remove('page__no-scroll');
-  headerMobileTop.classList.add('header__slider_state_opened');
+  headerMobileTop.classList.add('header__mobile-top_opened');
 }
 
 // Алексей -> end!
