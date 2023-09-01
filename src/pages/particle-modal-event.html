@@ -42,7 +42,7 @@
                 <li class="table-lines__item">
                   <p class="table-lines__property">адрес</p>
                   <p class="table-lines__value" id="table-lines__address">
-                    <button class="button table-lines__button" type="button"><span class="button__icon icon-arrow-right"></span></button>
+                    <button class="button table-lines__button" id="button__address" type="button"><span class="button__icon icon-arrow-right"></span></button>
                   </p>
                 </li>
                 <li class="table-lines__item">
@@ -82,7 +82,7 @@
 
             <div class="modal__header modal__header_type_extended">
               <div>
-                <button class="button modal__button modal__button_type_narrow"><span class="button__icon icon-arrow-left"></span>назад</span></button>
+                <button class="button modal__button modal__button_type_narrow" id="button__back"><span class="button__icon icon-arrow-left"></span>назад</span></button>
                 <div class="modal__drag-line"></div>
               </div>
               <div class="modal__title-wrapper">
@@ -106,96 +106,6 @@
 
             <section class="catalog__events-container catalog__events-container_type_grid catalog__events-container_opened">
               <ul class="cards cards_type_grid">
-                <li class="cards__item" data-id="0" data-coordinates="0">
-                  <img class="cards__item-img" src="https://images.unsplash.com/photo-1693224190984-27031cf1d32a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80" alt="Изображение карточки">
-                  <div class="cards__item-content">
-                    <div class="cards__item-data">
-                      <p class="cards__item-text" id="cards__item-type">лекция</p>
-                      <p class="cards__item-text cards__item-text_type_fit" id="cards__item-date">1 мая, 12:30-13:50</p>
-                    </div>
-                    <div class="cards__item-info">
-                      <h2 class="cards__item-title">идентичность: почему нам сложно меняться?</h2>
-                      <p class="cards__item-description">лектор: Мария Бархатова</p>
-                    </div>
-                    <div class="cards__item-address">
-                      <p class="cards__item-text" id="cards__item-address">улица Блохина, 22</p>
-                      <p class="cards__item-text cards__item-text_type_fit" id="cards__item-count">+ ещё 3</p>
-                    </div>
-                  </div>
-                  <button class="cards__item-like card-control link"><span class="card-control__icon icon-heart"></span></button>
-                </li>
-                <li class="cards__item" data-id="0" data-coordinates="0">
-                  <img class="cards__item-img" src="https://images.unsplash.com/photo-1693224190984-27031cf1d32a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80" alt="Изображение карточки">
-                  <div class="cards__item-content">
-                    <div class="cards__item-data">
-                      <p class="cards__item-text" id="cards__item-type">лекция</p>
-                      <p class="cards__item-text cards__item-text_type_fit" id="cards__item-date">1 мая, 12:30-13:50</p>
-                    </div>
-                    <div class="cards__item-info">
-                      <h2 class="cards__item-title">идентичность: почему нам сложно меняться?</h2>
-                      <p class="cards__item-description">лектор: Мария Бархатова</p>
-                    </div>
-                    <div class="cards__item-address">
-                      <p class="cards__item-text" id="cards__item-address">улица Блохина, 22</p>
-                      <p class="cards__item-text cards__item-text_type_fit" id="cards__item-count">+ ещё 3</p>
-                    </div>
-                  </div>
-                  <button class="cards__item-like card-control link"><span class="card-control__icon icon-heart"></span></button>
-                </li>
-                <li class="cards__item" data-id="0" data-coordinates="0">
-                  <img class="cards__item-img" src="https://images.unsplash.com/photo-1693224190984-27031cf1d32a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80" alt="Изображение карточки">
-                  <div class="cards__item-content">
-                    <div class="cards__item-data">
-                      <p class="cards__item-text" id="cards__item-type">лекция</p>
-                      <p class="cards__item-text cards__item-text_type_fit" id="cards__item-date">1 мая, 12:30-13:50</p>
-                    </div>
-                    <div class="cards__item-info">
-                      <h2 class="cards__item-title">идентичность: почему нам сложно меняться?</h2>
-                      <p class="cards__item-description">лектор: Мария Бархатова</p>
-                    </div>
-                    <div class="cards__item-address">
-                      <p class="cards__item-text" id="cards__item-address">улица Блохина, 22</p>
-                      <p class="cards__item-text cards__item-text_type_fit" id="cards__item-count">+ ещё 3</p>
-                    </div>
-                  </div>
-                  <button class="cards__item-like card-control link"><span class="card-control__icon icon-heart"></span></button>
-                </li>
-                <li class="cards__item" data-id="0" data-coordinates="0">
-                  <img class="cards__item-img" src="https://images.unsplash.com/photo-1693224190984-27031cf1d32a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80" alt="Изображение карточки">
-                  <div class="cards__item-content">
-                    <div class="cards__item-data">
-                      <p class="cards__item-text" id="cards__item-type">лекция</p>
-                      <p class="cards__item-text cards__item-text_type_fit" id="cards__item-date">1 мая, 12:30-13:50</p>
-                    </div>
-                    <div class="cards__item-info">
-                      <h2 class="cards__item-title">идентичность: почему нам сложно меняться?</h2>
-                      <p class="cards__item-description">лектор: Мария Бархатова</p>
-                    </div>
-                    <div class="cards__item-address">
-                      <p class="cards__item-text" id="cards__item-address">улица Блохина, 22</p>
-                      <p class="cards__item-text cards__item-text_type_fit" id="cards__item-count">+ ещё 3</p>
-                    </div>
-                  </div>
-                  <button class="cards__item-like card-control link"><span class="card-control__icon icon-heart"></span></button>
-                </li>
-                <li class="cards__item" data-id="0" data-coordinates="0">
-                  <img class="cards__item-img" src="https://images.unsplash.com/photo-1693224190984-27031cf1d32a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2787&q=80" alt="Изображение карточки">
-                  <div class="cards__item-content">
-                    <div class="cards__item-data">
-                      <p class="cards__item-text" id="cards__item-type">лекция</p>
-                      <p class="cards__item-text cards__item-text_type_fit" id="cards__item-date">1 мая, 12:30-13:50</p>
-                    </div>
-                    <div class="cards__item-info">
-                      <h2 class="cards__item-title">идентичность: почему нам сложно меняться?</h2>
-                      <p class="cards__item-description">лектор: Мария Бархатова</p>
-                    </div>
-                    <div class="cards__item-address">
-                      <p class="cards__item-text" id="cards__item-address">улица Блохина, 22</p>
-                      <p class="cards__item-text cards__item-text_type_fit" id="cards__item-count">+ ещё 3</p>
-                    </div>
-                  </div>
-                  <button class="cards__item-like card-control link"><span class="card-control__icon icon-heart"></span></button>
-                </li>
               </ul>
 
             </section>

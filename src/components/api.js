@@ -46,7 +46,7 @@ export const getCardById = async (id) => {
   try {
     const response = await getCards();
     const cards = response.cards;
-    return cards.filter((card) => card.id === id);
+    return {cards: cards.filter((card) => card.id === id)};
   } catch (e) {
     console.log(e.message, ' getCardById');
   }
