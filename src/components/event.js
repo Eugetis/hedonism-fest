@@ -56,6 +56,7 @@ export const modalCreate = ([card], modalTemplate) => {
 // Функция которая принимает саму модалку и type (open, close), в зависимости от типа либо открывает модальное окно, либо закрывает его.
 export const modalHandler = (modal, type) => {
   const modalButton = modal.querySelector('#modal__button-like');
+  const modalCopyButton = modal.querySelector('.event__shares-button');
   document.querySelector('.page').append(modal);
   modal.classList.add('modal_opened');
 
@@ -64,11 +65,23 @@ export const modalHandler = (modal, type) => {
       document.querySelector('.page').append(modal);
       openModal(modal);
       modalButton.addEventListener('click', modalClickHandler);
+      modalCopyButton.addEventListener('click', modalCopyHandler);
       break;
     case 'close':
       closeModal(modal);
       document.querySelector('.page').remove(modal);
       modalButton.removeEventListener('click', modalClickHandler);
+      modalCopyButton.removeEventListener('click', modalCopyHandler);
+  }
+}
+
+const modalCopyHandler = (event) => {
+  const modal = event.target.closest('.modal_id_event-full');
+  const modalId = modal.dataset.id;
+  const currentLocation = `${window.location.href}?event=${modalId}`;
+
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(currentLocation).then(r => 'Текст скопирован').catch(e => console.error(e.message));
   }
 }
 
@@ -124,6 +137,7 @@ const createCard = (item, cardTemplate) => {
   const date = `${dateContent[0]} ${dateContent[1].substring(0, 3)}`
 
   cardElement.dataset.id = item.id;
+  cardElement.dataset.type = item.type;
   cardElement.dataset.coordinates = location.coordinates;
   cardElement.querySelector('.cards__item-img').src = item.image;
   cardElement.querySelector('.cards__item-img').alt = item.type;
@@ -229,7 +243,6 @@ const getStorageValueByKey = (key) => {
 
   return JSON.parse(localStorage.getItem(key));
 }
-
 // Функция которая проверяет есть ли ключ в localStorage
 const hasKeyInStorage = (key) => {
   if (localStorage.getItem(key) === null) {
@@ -237,6 +250,7 @@ const hasKeyInStorage = (key) => {
   }
   return true;
 }
+
 
 // установка слушателя на кнопку "купить билет" для открытия модалки покупки (скрипт открытия модалок напишет Андрей)
 
