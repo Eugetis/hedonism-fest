@@ -18,8 +18,6 @@
   @include text-desktop;
   text-align: center;
 
-  transition: all .2s ease-in-out .2s;
-
   &:hover {
     color: $hover;
     border: $border-hover;
