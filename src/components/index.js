@@ -5,8 +5,8 @@
 // ИМПОРТЫ
 
 import '../scss/styles.scss';
-import { cardsClickController } from './event';
-import { catalogController, generalCardController, modalController } from './catalog';
+import { cardsClickController, modalFavoriteController} from './event';
+import {catalogController, generalCardController} from './catalog';
 
 
 import forParticipants from './for-participants';
@@ -21,7 +21,9 @@ if (document.querySelector('.page_id_catalog')) {
   const cardGridSection = document.querySelector('.cards_type_grid');
   const cardTemplate = cardGridSection.querySelector('#card').content;
   document.querySelector('.cards').addEventListener('click', cardsClickController);
+  const buttonsFavorite = document.querySelectorAll('#button__favorite');
   catalogController(cardGridSection, cardTemplate);
+  buttonsFavorite.forEach((button) => button.addEventListener('click', modalFavoriteController))
 }
 
 if (document.querySelector('.page_id_index')) {
