@@ -1,0 +1,12 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.form__modal-fieldset-title {
+  @include h3-desktop;
+}
+
+@media screen and (max-width: $mobile) {
+  .form__modal-fieldset-title {
+    @include h3-mobile;
+  }
+}

@@ -436,6 +436,11 @@
 @use '../blocks/favourites-list/_opened/favourites-list_opened.scss';
 @use '../blocks/favourites-list/_type/favourites-list_type_inside.scss';
 
+@use '../blocks/form/_type/form_type_modal.scss';
+@use '../blocks/form/__options/_type/form__options_type_grid.scss';
+@use '../blocks/form/__fields-group/form__fields-group.scss';
+@use '../blocks/form/__modal-fieldset-title/form__modal-fieldset-title.scss';
+
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
