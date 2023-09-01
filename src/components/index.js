@@ -6,7 +6,7 @@
 
 import '../scss/styles.scss';
 import { cardsClickController } from './event';
-import {catalogController, generalCardController, modalController} from './catalog';
+import { catalogController, generalCardController, modalController } from './catalog';
 
 
 import forParticipants from './for-participants';
@@ -36,6 +36,11 @@ import { updateCityOnMap } from './catalog'
 
 // Андрей
 import {  showSlide, activateSlider } from '../components/photo-slider.js';
+import { openModal } from '../components/modal.js';
+import { modalDonate } from '../components/constants.js';
+import { setAboutEventListener } from '../components/about.js';
+import { setCatalogEventListener } from '../components/catalog.js';
+import { addScrollListener } from '../components/floating-button.js';
 
 // Алексей
 import { dropDownMenuOpen, dropDownMenuClose } from '../components/utils.js';
@@ -66,6 +71,8 @@ const modalContainer = document.querySelector('.modal__container');
 
 
 // Андрей
+const donateButton = document.querySelector('.header__button');
+
 
 
 // Алексей
@@ -113,21 +120,38 @@ if (document.querySelector('.page_id_index')) {
   window.addEventListener('resize', showSlide);
   showSlide();
   activateSlider();
+  addScrollListener();
 }
 
 if (document.querySelector('.page_id_404') || document.querySelector('.page_id_thanks-for-application') || document.querySelector('.page_id_thanks-for-support')) {
   document.querySelector('.footer').classList.add('footer_style_additional');
 }
+
+donateButton.addEventListener('click', () => {
+  openModal(modalDonate);
+})
+
+if (document.querySelector('.page_id_about')) {
+  setAboutEventListener();
+  addScrollListener();
+}
+
+if (document.querySelector('.page_id_catalog')) {
+  setCatalogEventListener();
+}
+
+if (document.querySelector('.page_id_catalog')) {
+  document.querySelector('.modal__button_type_ticket').addEventListener('click', () => {
+    openModal(document.querySelector('.modal_id_payment'));
+  });
+}
+
+
 // Андрей -> end!
 
 
 // Алексей - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-/*document.querySelector('.page').addEventListener('click', function(){
-  if(dropDownMenu.classList.contains('header__form-city_opened')) {
-    console.log('клик')
-    dropDownMenuClose();
-  }
-});*/
+
 //открытие дропдауна
 dropDownMenuButton.addEventListener('click', dropDownMenuOpen);
 //закрытие дропдауна
@@ -138,7 +162,7 @@ dropDownMenuElements.forEach(function (dropDownMenuElement) {
 dropDownMenuInputs.forEach(function (dropDownMenuInput) {
   dropDownMenuInput.addEventListener('click', function () {
     if (dropDownMenuInput.checked) {
-      dropDownMenuButtonText.textContent = dropDownMenuInput.value;
+      dropDownMenuButtonText.innerText = dropDownMenuInput.value;
       localStorage.setItem('city', dropDownMenuInput.value);
       // Dmitry
       // пинаем карту, чтобы обновилась по выбранному городу
@@ -147,22 +171,35 @@ dropDownMenuInputs.forEach(function (dropDownMenuInput) {
     }
   })
 });
+//Проверка локалсторэдж, вставка в него дефолтного города
+if (!localStorage.getItem('city')) {
+  localStorage.setItem('city', 'Москва');
+}
+
 //сохранение значения кнопки и расположении галочки на инпуте
 dropDownMenuButtonText.textContent = localStorage.getItem('city');
 dropDownMenuInputs.forEach(function (dropDownMenuInput) {
-  if (dropDownMenuInput.value === dropDownMenuButtonText.textContent) {
+  if (dropDownMenuInput.value === dropDownMenuButtonText.innerText) {
     dropDownMenuInput.checked = true;
   }
 });
+
+//появляющийся при скролле хедер
+if (document.querySelector('.page_id_index')) {
+   header.classList.add('header__offset');
+   header.classList.add('header__offset_3');
 window.addEventListener('scroll', function () {
-  if (pageYOffset > 1500) {
-    header.classList.add('header__offset_1')
-    header.classList.remove('header__offset_2')
-  } else if (pageYOffset <= 1500) {
-    header.classList.remove('header__offset_1')
-    header.classList.add('header__offset_2')
+  if (pageYOffset > 10) {
+    header.classList.remove('header__offset');
+    header.classList.add('header__offset_1');
+    header.classList.remove('header__offset_2');
+
+  } else if (pageYOffset <= 10) {
+    header.classList.remove('header__offset_1');
+    header.classList.add('header__offset_2');
   }
-});
+})
+}
 
 // Алексей -> end!
 

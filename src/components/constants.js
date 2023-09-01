@@ -18,7 +18,8 @@ export const listContainer = document.querySelector('.catalog__events-container_
 // Дмитрий -> end!
 
 // Андрей - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
+export const modalDonate = document.querySelector('.modal_id_donation');
+export const modalFilters = document.querySelector('.modal_id_mobile-filters');
 
 
 
@@ -30,6 +31,7 @@ export const dropDownMenuButton = document.querySelector('.header__button_city-s
 export const dropDownMenuElements = Array.from(document.querySelectorAll('.header__form-city-label'));
 export const dropDownMenuInputs = Array.from(document.querySelectorAll('.header__input-city-select'));
 export const header = document.querySelector('.header');
+
 
 // Алексей -> end!
 

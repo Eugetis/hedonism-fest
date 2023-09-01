@@ -69,6 +69,8 @@
 // стили floating button
 @use '../blocks/floating-button/floating-button.scss';
 @use '../blocks/floating-button/__icon/floating-button__icon.scss';
+@use '../blocks/floating-button/_type/floating-button_type_up.scss';
+@use '../blocks/floating-button/_hide/floating-button_hide.scss';
 
 // стили amount controls
 @use '../blocks/amount-controls/amount-controls.scss';
@@ -87,6 +89,8 @@
 @use '../blocks/header/header.scss';
 @use '../blocks/header/__offset/_1/header__offset_1.scss';
 @use '../blocks/header/__offset/_2/header__offset_2.scss';
+@use '../blocks/header/__offset/_3/header__offset_3.scss';
+@use '../blocks/header/__offset/header__offset.scss';
 @use '../blocks/header/__top/header__top.scss';
 @use '../blocks/header/__wrapper/header__wrapper.scss';
 @use '../blocks/header/__logo-and-location/header__logo-and-location.scss';
@@ -110,6 +114,7 @@
 @use '../blocks/header/__slide/header__slide.scss';
 @use '../blocks/header/__slide/_content/header__slide_content_cities.scss';
 @use '../blocks/header/__slide/_content/header__slide_content_menu.scss';
+
 // разобраться с тремя
 @use '../blocks/header/__wrapper/_1/header__wrapper_1.scss';
 @use '../blocks/header/__wrapper/_3/header__wrapper_3.scss';
@@ -409,6 +414,9 @@
 
 // Евгений - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+@use '../blocks/info-message/info-message.scss';
+@use '../blocks/info-message/__icon/info-message__icon.scss';
+@use '../blocks/info-message/__text/info-message__text.scss';
 
 
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

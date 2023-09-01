@@ -1,6 +1,8 @@
 import {getCards, getCardById} from './api';
 import {prepareCard, modalCreate, modalHandler, addCard, removeCards, addCardsToLocalStorage, getCardsFromLocaleStorage} from './event';
-import {tabSwitcher, mapContainer, listContainer} from './constants';
+import { modalFilters, tabSwitcher, mapContainer, listContainer } from './constants.js';
+import { openModal } from './modal.js';
+
 
 // ФУНКЦИОНАЛ СТРАНИЦЫ "КАТАЛОГ"
 
@@ -323,7 +325,13 @@ export const renderCardController =  (activeTags) => {
 
 // Андрей - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+const catalogFiltersButton = document.querySelector('.catalog__mob-filters-button');
 
+export  function setCatalogEventListener() {
+  catalogFiltersButton.addEventListener('click', () => {
+    openModal(modalFilters);
+  });
+}
 
 
 // Андрей -> end!

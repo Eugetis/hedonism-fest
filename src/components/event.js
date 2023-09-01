@@ -1,4 +1,5 @@
 import {modalController} from "./catalog";
+import {openModal, closeModal} from "./modal";
 // РАБОТА С МЕРОПРИЯТИЕМ
 
 // Если вдруг кому-то нужно что-то дописать в этом файле, помимо основного ответственного за эту функциональность,
@@ -71,11 +72,11 @@ export const modalHandler = (modal, type) => {
   switch (type) {
     case 'open':
       document.querySelector('.page').append(modal);
-      modal.classList.add('modal_opened');
+      openModal(modal);
       modalButton.addEventListener('click', modalClickHandler);
       break;
     case 'close':
-      modal.classList.remove('modal_opened');
+      closeModal(modal);
       document.querySelector('.page').remove(modal);
       modalButton.removeEventListener('click', modalClickHandler);
   }
@@ -130,7 +131,7 @@ const createCard = (item, cardTemplate) => {
   }
 
   const dateContent = item.date.split(' ');
-  const date = `${dateContent[0]} ${dateContent[1].substring(0, 3)}...`
+  const date = `${dateContent[0]} ${dateContent[1].substring(0, 3)}`
 
   cardElement.dataset.id = item.id;
   cardElement.dataset.coordinates = location.coordinates;

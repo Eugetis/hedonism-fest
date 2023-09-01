@@ -1,0 +1,13 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.info-message__text {
+  @include subtext-desktop;
+  color: $dark-primary;
+}
+
+@media screen and (max-width: $mobile) {
+  .info-message__text {
+    @include subtext-mobile;
+  }
+}
