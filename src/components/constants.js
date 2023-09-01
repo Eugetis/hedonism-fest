@@ -27,10 +27,19 @@ export const modalFilters = document.querySelector('.modal_id_mobile-filters');
 
 // Алексей - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 export const dropDownMenu = document.querySelector('.header__form-city');
+export const dropDownMenuMobile = document.querySelector ('.header__slide_content_cities');
 export const dropDownMenuButton = document.querySelector('.header__button_city-selected');
+export const dropDownMenuButtonBack = document.querySelector('.button__arrow-back-dropdown-mobile');
+export const mobileMenuButton = document.querySelector('.intro__menu-button');
+export const mobileMenuButtonSecondary = document.querySelector('.header__burger-button');
+export const mobileMenuButtonClose = document.querySelector('.icon-cross');
 export const dropDownMenuElements = Array.from(document.querySelectorAll('.header__form-city-label'));
 export const dropDownMenuInputs = Array.from(document.querySelectorAll('.header__input-city-select'));
 export const header = document.querySelector('.header');
+export const mobileMenuSlider = document.querySelector('.header__slider');
+export const page = document.querySelector('.page');
+export const headerMobileTop = document.querySelector('.header__mobile-top');
+
 
 
 // Алексей -> end!

@@ -1,0 +1,10 @@
+@use '_variables' as *;
+.header__form-city_slider {
+  position: static;
+  box-shadow: none;
+  background-color: $light-primary;
+  visibility: visible;
+  margin: 0;
+  width: 100%;
+  padding: 10px 0;
+}

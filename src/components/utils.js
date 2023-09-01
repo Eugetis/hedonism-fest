@@ -26,7 +26,7 @@
 // Андрей -> end!
 
 // Алексей - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-import {dropDownMenu} from '../components/constants.js';
+import {dropDownMenu, dropDownMenuMobile, mobileMenuSlider, page, headerMobileTop} from '../components/constants.js';
 
 export const dropDownMenuOpen = function() {
   dropDownMenu.classList.add('header__form-city_opened');
@@ -36,6 +36,23 @@ export const dropDownMenuClose = function() {
   dropDownMenu.classList.remove('header__form-city_opened');
 }
 
+export const dropDownMenuMobileOpen = function() {
+  dropDownMenuMobile.classList.remove('header__slide_content_cities_close')
+}
+export const dropDownMenuMobileClose = function() {
+  dropDownMenuMobile.classList.add('header__slide_content_cities_close')
+}
+
+export const mobileMenuSliderOpen = function() {
+  mobileMenuSlider.classList.remove('header__slider_state_opened');
+  headerMobileTop.classList.remove('header__slider_state_opened');
+  page.classList.add('page__no-scroll');
+}
+export const mobileMenuSliderClose = function() {
+  mobileMenuSlider.classList.add('header__slider_state_opened');
+  page.classList.remove('page__no-scroll');
+  headerMobileTop.classList.add('header__slider_state_opened');
+}
 
 // Алексей -> end!
 

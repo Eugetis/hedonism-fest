@@ -8,6 +8,7 @@
 @use '../blocks/page/__title/page__title.scss';
 @use '../blocks/page/__bottom-pushed/page__bottom-pushed.scss'; // отталкивает футер на 80px где нужно
 @use '../blocks/page/__grow/page__grow.scss';
+@use '../blocks/page/__no-scroll/page__no-scroll.scss'; //отключает скролл вниз при выезде бокового меню на мобилке
 @use '../blocks/uikit-section/uikit-section.scss';
 @use '../blocks/section-constraints/section-constraints.scss';
 @use '../blocks/section-constraints/_size/section__constraints_size_large.scss';
@@ -112,20 +113,24 @@
 @use '../blocks/header/__slider/_state/header__slider_state_opened.scss';
 @use '../blocks/header/__slide/header__slide.scss';
 @use '../blocks/header/__slide/_content/header__slide_content_cities.scss';
+@use '../blocks/header/__slide/_content/_close/header__slide_content_cities_close.scss';
 @use '../blocks/header/__slide/_content/header__slide_content_menu.scss';
 
 // разобраться с тремя
 @use '../blocks/header/__wrapper/_1/header__wrapper_1.scss';
 @use '../blocks/header/__wrapper/_3/header__wrapper_3.scss';
 @use '../blocks/header/__wrapper/_closed/header__wrapper_closed.scss';
-
+@use '../blocks/header/__wrapper/_mobile/header__wrapper_mobile.scss';
 @use '../blocks/header/__form-city/header__form-city.scss';
 @use '../blocks/header/__form-city/_opened/header__form-city_opened.scss';
+@use '../blocks/header/__form-city/_slider/header__form-city_slider.scss';
 @use '../blocks/header/__nav-title/header__nav-title.scss';
 @use '../blocks/header/__subtext/header__subtext.scss';
 @use '../blocks/header/__subtext/_position/header__subtext_position_left.scss';
 @use '../blocks/header/__button/_city-selected/header__button_city-selected.scss';
+@use '../blocks/header/__button/_city-selected-wrapper/header__button_city-selected-wrapper.scss';
 @use '../blocks/header/__input-city-select/header__input-city-select.scss';
+@use '../blocks/header/__mobile-top/header__mobile-top.scss';
 @use '../blocks/header/__mobile-section/header__mobile-section.scss';
 @use '../blocks/header/__mobile-section/_type/header__mobile-section_type_bottom.scss';
 @use '../blocks/header/__slide-bottom/header__slide-bottom.scss';

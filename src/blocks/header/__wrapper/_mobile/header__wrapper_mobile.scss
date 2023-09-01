@@ -1,0 +1,8 @@
+.header__wrapper_mobile {
+  overflow: hidden;
+  width: 100vw;
+  top: 68px;
+  height: calc(100vh - 68px);
+  z-index: 1;
+  position: fixed;
+}
