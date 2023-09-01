@@ -1,0 +1,17 @@
+@use "_variables" as *;
+
+.header__mobile-top {
+  background-color: #ffd400;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  height: 68px;
+  position: fixed;
+  top: 0;
+  transition: transform .5s ease-in-out;
+  width: 100vw;
+  z-index: 1;
+
+}
