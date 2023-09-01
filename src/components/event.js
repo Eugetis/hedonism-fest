@@ -11,7 +11,7 @@ import {getCardById} from "./api";
 // Никита - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // Функция addCard принимает подготовленный массив карточек из функции prepareCard и добавляет их в cardGridSection
 export const addCard = (cards, section, type = 'default', cardsCount) => {
-  if (type === 'address') {
+  if (type === 'count') {
     return cards.forEach((card) => {
       if (section.childElementCount !== cardsCount) {
         section.append(card);
@@ -89,6 +89,44 @@ export const modalCreate = ({cards}, modalTemplate) => {
   return modalElement;
 }
 
+export const modalFavoriteController = (event) => {
+  console.log(event.target);
+  const modal = document.querySelector('.modal_id_favourites');
+  modalFavoriteHandler(modal, 'open');
+}
+
+const modalFavoriteHandler = async (modal, type) => {
+  const modalBackButton = modal.querySelector('#button__back');
+  const catalogGridContainer = modal.querySelector('.cards_type_grid');
+  const cardTemplate = document.querySelector('.cards_type_grid').querySelector('#card').content;
+  switch (type) {
+    case 'open':
+      const events = await getFavoriteEvents();
+      const preparedCards = prepareCard(events, cardTemplate);
+      addCard(preparedCards, catalogGridContainer, 'count', preparedCards.length);
+      openModal(modal);
+      modalBackButton.addEventListener('click', modalBackHandler);
+      break;
+    case 'close':
+      closeModal(modal);
+      modalBackButton.removeEventListener('click', modalBackHandler);
+      document.removeEventListener('click', modalFavoriteController);
+  }
+}
+
+const getFavoriteEvents = async () => {
+  const eventsFromStorage = getStorageValueByKey('likes');
+  const result = {cards: []};
+
+  for (let i = 0; i < eventsFromStorage.length; i++) {
+    const {cards} = await getCardById(eventsFromStorage[i]);
+    const [card] = cards;
+    result.cards.push(card);
+  }
+
+  return result;
+}
+
 // Функция которая принимает саму модалку и type (open, close), в зависимости от типа либо открывает модальное окно, либо закрывает его.
 export const modalHandler = (modal, type) => {
   const modalButton = modal.querySelector('#modal__button-like');
@@ -119,6 +157,10 @@ export const modalHandler = (modal, type) => {
 }
 
 const modalBackHandler = (event) => {
+  if (event.target.closest('.modal_id_favourites')) {
+    const modal = event.target.closest('.modal_id_favourites');
+    return modal.classList.remove('modal_opened');
+  }
   const modal = event.target.closest('.modal_id_event-full');
   const favoriteList = modal.querySelector('.favourites-list');
   favoriteList.classList.remove('favourites-list_opened');
@@ -135,7 +177,7 @@ const modalAddressHandler = async (event) => {
   const cards = await getCardById(modalId);
   const cardCount = cards.cards[0].location.length - 1;
   const preparedCards = prepareCard(cards, cardTemplate, 'address');
-  addCard(preparedCards, modalContainer, 'address', cardCount);
+  addCard(preparedCards, modalContainer, 'count', cardCount);
   favoriteList.classList.add('favourites-list_opened');
 }
 
