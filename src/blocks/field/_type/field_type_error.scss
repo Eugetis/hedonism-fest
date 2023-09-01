@@ -1,0 +1,5 @@
+@use 'variables' as *;
+
+.field_type_error {
+    border: $border-bold-error;
+}

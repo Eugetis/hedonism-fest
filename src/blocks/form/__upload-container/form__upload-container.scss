@@ -1,5 +1,13 @@
 @use 'variables' as *;
 
+.form__upload-container {
+    border-radius: $radius-small;
+    border: $border-bold;
+    background: $light-primary;
+    transition: .3s;
+}
+
+
 @media screen and (min-width: 1024px) {
     .form__upload-container{
         width: 532px;
@@ -21,15 +29,13 @@
     justify-content: center;
     align-items: center;
     height: 220px;
-    border-radius: $radius-small;
-    border: $border-bold;
-    background: $light-primary;
     position: relative;
     width: 100%;
     transition: .3s;
 }
 
-.form__upload-container .form__label-file:hover {
+.form__upload-container:hover,
+.form__label-file:hover {
     cursor: pointer;
     opacity: .5;
 }

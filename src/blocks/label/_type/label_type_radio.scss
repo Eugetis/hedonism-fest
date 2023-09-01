@@ -1,0 +1,44 @@
+@use 'variables' as *;
+
+.label_type_radio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+	cursor: pointer;
+	user-select: none;
+    border-radius: $radius-small;
+    border: $border-bold;
+    padding: 12px 20px;
+    transition: .3s;
+}
+
+.label_type_radio:not(:last-of-type) {
+    margin-bottom: 12px;
+}
+
+.label_type_radio:has(input[type=radio]:checked) {
+    background: $color-primary;
+    color: $light-primary;
+}
+
+.label_type_radio:has(input[type=radio]:checked)::after {
+    content: '';
+    background: url(../../../images/icons/check.svg);
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 40px;
+}
+
+@media(hover:hover){
+    .label_type_radio:hover{
+        opacity: .5;
+    }
+}
+@media(hover:none){
+    .label_type_radio:active{
+        opacity: .5;
+    }
+}
