@@ -26,6 +26,7 @@ export const modalFilters = document.querySelector('.modal_id_mobile-filters');
 // Андрей -> end!
 
 // Алексей - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+export const dropDownMenuDesktop = document.querySelector('.header__form-city_1');
 export const dropDownMenu = document.querySelector('.header__form-city');
 export const dropDownMenuMobile = document.querySelector ('.header__slide_content_cities');
 export const dropDownMenuButton = document.querySelector('.header__button_city-selected');

@@ -43,7 +43,7 @@ import { setCatalogEventListener } from '../components/catalog.js';
 import { addScrollListener } from '../components/floating-button.js';
 
 // Алексей
-import { dropDownMenuOpen, dropDownMenuClose, dropDownMenuMobileOpen, dropDownMenuMobileClose, mobileMenuSliderOpen, mobileMenuSliderClose } from '../components/utils.js';
+import {dropDownMenuDesktopOpen, dropDownMenuOpen, dropDownMenuClose, dropDownMenuMobileOpen, dropDownMenuMobileClose, mobileMenuSliderOpen, mobileMenuSliderClose } from '../components/utils.js';
 import {
   cardGridSection,
   //dropDownMenuButtonMobile,
@@ -159,6 +159,7 @@ if (document.querySelector('.page_id_catalog')) {
 // Алексей - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 //открытие дропдауна
+dropDownMenuButton.addEventListener('click', dropDownMenuDesktopOpen);
 dropDownMenuButton.addEventListener('click', dropDownMenuOpen);
 //закрытие дропдауна
 dropDownMenuElements.forEach(function (dropDownMenuElement) {

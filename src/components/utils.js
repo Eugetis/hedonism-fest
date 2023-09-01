@@ -26,7 +26,15 @@
 // Андрей -> end!
 
 // Алексей - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-import {dropDownMenu, dropDownMenuMobile, mobileMenuSlider, page, headerMobileTop} from '../components/constants.js';
+import {dropDownMenu, dropDownMenuMobile, mobileMenuSlider, page, headerMobileTop, dropDownMenuDesktop} from '../components/constants.js';
+export const dropDownMenuDesktopOpen = function() {
+  dropDownMenuDesktop.classList.add('header__form-city_opened');
+  dropDownMenuDesktop.classList.remove('header__form-city_2');
+}
+
+export const dropDownMenuDesktopClose = function() {
+  dropDownMenuDesktop.classList.remove('header__form-city_opened');
+}
 
 export const dropDownMenuOpen = function() {
   dropDownMenu.classList.add('header__form-city_opened');
