@@ -8,7 +8,8 @@
 
 // Георгий - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-function showInputError(inputElement, {inputErrorClass}) {
+if (document.querySelector('.page_id_for-participants')) { // ЕВГЕНИЙ - завернул пока все в if, чтобы убрать ошибку при сборке
+  function showInputError(inputElement, {inputErrorClass}) {
     inputElement.classList.add(inputErrorClass);
 }
 function hideInputError(inputElement, {inputErrorClass}) {
@@ -62,7 +63,11 @@ enableValidation({
     submitButtonSelector: '.button__submit',
     inactiveButtonClass: 'button_type_disabled',
     inputErrorClass: 'field_type_error',
-})
+});
+
+};
+
+
 
 // предлагаю брать за основу наработки из проекта Место
 

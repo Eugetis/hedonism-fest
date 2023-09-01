@@ -9,3 +9,17 @@
   overflow-y: scroll;
   color: $dark-primary;
 }
+
+.favourites-list::-webkit-scrollbar {
+  width: 0;
+}
+
+.favourites-list::-webkit-scrollbar-track {
+  background-color: $light-primary;
+  border-radius: $radius-100;
+}
+
+.favourites-list::-webkit-scrollbar-thumb {
+  background-color: $color-primary-transparent;
+  border-radius: $radius-100;
+}

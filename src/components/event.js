@@ -64,7 +64,7 @@ export const modalCreate = ({cards}, modalTemplate) => {
   const modalElement = modalTemplate.querySelector('.modal').cloneNode(true);
   const modalButton = modalElement.querySelector('#modal__button-like');
   const addressButton = modalElement.querySelector('.table-lines__button');
-  const addressButtonIcon = modalElement.querySelector('.button__icon').outerHTML;
+  const addressButtonIcon = modalElement.querySelector('.icon-arrow-right').outerHTML;
   addressButton.innerHTML = `смотреть еще ${card.location.length}${addressButtonIcon}`
 
   modalElement.dataset.id = card.id;
