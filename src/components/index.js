@@ -43,7 +43,7 @@ import { setCatalogEventListener } from '../components/catalog.js';
 import { addScrollListener } from '../components/floating-button.js';
 
 // Алексей
-import {dropDownMenuDesktopOpen, dropDownMenuOpen, dropDownMenuClose, dropDownMenuMobileOpen, dropDownMenuMobileClose, mobileMenuSliderOpen, mobileMenuSliderClose } from '../components/utils.js';
+import {/*dropDownMenuDesktopOpen, dropDownMenuDesktopClose,*/ dropDownMenuOpen, dropDownMenuClose, dropDownMenuMobileOpen, dropDownMenuMobileClose, mobileMenuSliderOpen, mobileMenuSliderClose } from '../components/utils.js';
 import {
   cardGridSection,
   //dropDownMenuButtonMobile,
@@ -159,12 +159,15 @@ if (document.querySelector('.page_id_catalog')) {
 // Алексей - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 //открытие дропдауна
-dropDownMenuButton.addEventListener('click', dropDownMenuDesktopOpen);
+//dropDownMenuButton.addEventListener('click', dropDownMenuDesktopOpen);
 dropDownMenuButton.addEventListener('click', dropDownMenuOpen);
 //закрытие дропдауна
 dropDownMenuElements.forEach(function (dropDownMenuElement) {
   dropDownMenuElement.addEventListener('click', dropDownMenuClose);
 })
+/*dropDownMenuElements.forEach(function (dropDownMenuElement) {
+  dropDownMenuElement.addEventListener('click', dropDownMenuDesktopClose);
+})*/
 //открытие дропдауна на мобильной версии
 dropDownMenuButtonTextMobile.addEventListener('click', dropDownMenuMobileOpen);
 //закрытие дропдауна на мобильной версии
@@ -179,6 +182,7 @@ mobileMenuButtonClose.addEventListener('click', mobileMenuSliderClose);
 dropDownMenuInputs.forEach(function (dropDownMenuInput) {
   dropDownMenuInput.addEventListener('click', function () {
     if (dropDownMenuInput.checked) {
+      console.log(dropDownMenuInput.value);
       dropDownMenuButtonText.innerText = dropDownMenuInput.value;
       dropDownMenuButtonTextMobile.innerText = dropDownMenuInput.value;
       localStorage.setItem('city', dropDownMenuInput.value);
