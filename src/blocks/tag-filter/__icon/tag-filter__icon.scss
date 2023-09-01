@@ -2,6 +2,13 @@
 
 .tag-filter__icon {
   font: $icon-text-desktop;
+  display: block;
+  &:hover {
+    cursor: pointer;
+    background: $color-primary;
+    color: $light-primary;
+    border: $border-none;
+  }
 }
 
 @media screen and (max-width: $mobile) {

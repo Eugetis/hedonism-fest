@@ -52,6 +52,7 @@
 // стили фильтр-тегов
 @use '../blocks/tag-filter/tag-filter.scss';
 @use '../blocks/tag-filter/__icon/tag-filter__icon.scss';
+@use '../blocks/tag-filter/__icon/_type/tag-filter__icon_type_hidden.scss';
 @use '../blocks/tag-filter/_type/tag-filter_type_selected.scss';
 
 // стили контроллеров

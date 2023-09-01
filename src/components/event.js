@@ -15,6 +15,16 @@ export const addCard = (cards, section) => {
   })
 }
 
+// Dmitry
+// удаление всех карточек из контейнера (для перерисовки при отработке фильтров)
+export const removeCards = (section) => {
+    const cardItemList = section.querySelectorAll('.cards__item');
+    cardItemList.forEach(card => {
+      card.replaceWith();
+    });
+}
+// Dmitry -> end!
+
 // Функция собирает нужный формат карточек с помощью функции createCard и передает это дальше для рендера на странице в addCard
 export const prepareCard = ({cards}, cardTemplate) => {
   return cards.map((card) => {
@@ -252,7 +262,18 @@ const hasKeyInStorage = (key) => {
 
 
 // Дмитрий - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+// для фильтрации карточки берутся из local Storage, кладутся туда сразу при получении с сервера при первой отрисовке
+export const addCardsToLocalStorage = ({cards}) => {
+  if (!hasKeyInStorage('cards')) {
+    localStorage.setItem('cards', JSON.stringify([]));
+  }
 
+    localStorage.setItem('cards', JSON.stringify(Array.from(cards)));
+}
+
+export const getCardsFromLocaleStorage = () => {
+  return getStorageValueByKey('cards');
+}
 
 
 // Дмитрий -> end!
