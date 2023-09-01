@@ -117,7 +117,7 @@ const modalClickHandler = async (event) => {
 // Функция которая возвращает нужную разметку для кнопки "хочу пойти"
 const modalLikeHandler = (modal, state) => {
   const modalButton = modal.querySelector('#modal__button-like');
-  const modalButtonSpan = modalButton.querySelector('.event-icon');
+  const modalButtonSpan = modalButton.querySelector('.event__icon-liked');
 
   switch (state) {
     case true:

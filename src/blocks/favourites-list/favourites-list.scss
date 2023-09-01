@@ -1,0 +1,11 @@
+@use 'variables' as *;
+
+.favourites-list {
+  display: none;
+  flex-direction: column;
+  position: relative;
+  box-sizing: border-box;
+  flex-grow: 1;
+  overflow-y: scroll;
+  color: $dark-primary;
+}

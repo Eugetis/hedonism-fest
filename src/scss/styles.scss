@@ -81,9 +81,11 @@
 
 // стили переключателя вкладок
 @use '../blocks/tab-switcher/tab-switcher.scss';
+@use '../blocks/tab-switcher/_type/tab-switcher_type_fill.scss';
 @use '../blocks/tab-switcher/__icon/tab-switcher__icon.scss';
 @use '../blocks/tab-switcher/__button/tab-switcher__button.scss';
 @use '../blocks/tab-switcher/__button/_active/tab-switcher__button_active.scss';
+@use '../blocks/tab-switcher/__button/_type/tab-switcher__button_type_fill.scss';
 
 // стили хедера (обсудить рефакторинг)
 @use '../blocks/header/header.scss';
@@ -292,20 +294,26 @@
 @use '../blocks/modal/_id/modal_id_payment.scss';
 @use '../blocks/modal/_opened/modal_opened.scss';
 @use '../blocks/modal/__wrapper-for-side/modal__wrapper-for-side.scss';
+@use '../blocks/modal/__wrapper-for-side/_type/modal__wrapper-for-side_type_radius.scss';
 @use '../blocks/modal/__container/modal__container.scss';
 @use '../blocks/modal/__container/_type/modal__container_type_form.scss';
 @use '../blocks/modal/__container/_type/modal__container_type_side.scss';
 @use '../blocks/modal/__container/_type/modal__container_type_preview.scss';
+@use '../blocks/modal/__container/_type/modal__container_type_no-bkg.scss';
 @use '../blocks/modal/__container_opened/modal__container_opened.scss';
 @use '../blocks/modal/__header/modal__header.scss';
+@use '../blocks/modal/__header/_type/modal__header_type_extented.scss'; //
 @use '../blocks/modal/__drag-line/modal__drag-line.scss';
 @use '../blocks/modal/__title/modal__title.scss';
+@use '../blocks/modal/__title-wrapper/modal__title-wrapper.scss';
 @use '../blocks/modal/__close_button/modal__close-button.scss';
 @use '../blocks/modal/__close_button/_type/modal__close-button_type_icon.scss';
 @use '../blocks/modal/__close_button/_type/modal__close-button_type_button.scss';
 @use '../blocks/modal/__body/modal__body.scss';
 @use '../blocks/modal/__grow-section/modal__grow-section.scss';
 @use '../blocks/modal/__button/modal__button.scss';
+@use '../blocks/modal/__button/_type/modal__button_type_narrow.scss';
+@use '../blocks/modal/__switchers-wrapper/modal__switchers-wrapper.scss';
 
 // event (в модалке)
 @use '../blocks/event/event.scss';
@@ -321,7 +329,7 @@
 @use '../blocks/event/__table/event__table.scss';
 @use '../blocks/event/__actions/event__actions.scss';
 @use '../blocks/event/__button/event__button.scss';
-@use '../blocks/event/event-icon/event-icon.scss';
+@use '../blocks/event/__icon-liked/event__icon-liked.scss';
 @use '../blocks/event/__shares/event__shares.scss';
 @use '../blocks/event/__shares-icons/event__shares-icons.scss';
 @use '../blocks/event/__shares-social/event__shares-social.scss';
@@ -418,6 +426,9 @@
 @use '../blocks/info-message/__icon/info-message__icon.scss';
 @use '../blocks/info-message/__text/info-message__text.scss';
 
+@use '../blocks/favourites-list/favourites-list.scss';
+@use '../blocks/favourites-list/_opened/favourites-list_opened.scss';
+@use '../blocks/favourites-list/_type/favourites-list_type_inside.scss';
 
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

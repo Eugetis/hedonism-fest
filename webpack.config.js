@@ -119,6 +119,10 @@ module.exports = {
       template: path.resolve(__dirname, "src", "pages", "particle-modal-mobile-preview.html"),
       filename: 'particle-modal-mobile-preview.html'
     }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src", "pages", "particle-modal-favourite.html"),
+      filename: 'particle-modal-favourite.html'
+    }),
 
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),
