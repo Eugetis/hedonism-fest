@@ -103,7 +103,7 @@ const modalFavoriteHandler = async (modal, type) => {
     case 'open':
       const events = await getFavoriteEvents();
       const preparedCards = prepareCard(events, cardTemplate);
-      addCard(preparedCards, catalogGridContainer, 'count', preparedCards.length);
+      addCard(preparedCards, catalogGridContainer, 'count', preparedCards.length ? preparedCards.length : 0);
       openModal(modal);
       modalBackButton.addEventListener('click', modalBackHandler);
       break;
@@ -117,6 +117,9 @@ const modalFavoriteHandler = async (modal, type) => {
 const getFavoriteEvents = async () => {
   const eventsFromStorage = getStorageValueByKey('likes');
   const result = {cards: []};
+  if (!eventsFromStorage) {
+    return result;
+  }
 
   for (let i = 0; i < eventsFromStorage.length; i++) {
     const {cards} = await getCardById(eventsFromStorage[i]);
