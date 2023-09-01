@@ -173,7 +173,9 @@ dropDownMenuButtonTextMobile.addEventListener('click', dropDownMenuMobileOpen);
 //закрытие дропдауна на мобильной версии
 dropDownMenuButtonBack.addEventListener('click', dropDownMenuMobileClose);
 //выезд слайда с меню на мобильной версии
+if (document.querySelector('.page_id_index')) {
 mobileMenuButton.addEventListener('click', mobileMenuSliderOpen);
+}
 mobileMenuButtonSecondary.addEventListener('click', mobileMenuSliderOpen);
 mobileMenuButtonClose.addEventListener('click', mobileMenuSliderClose);
 
