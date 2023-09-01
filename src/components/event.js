@@ -1,5 +1,6 @@
 import {modalController} from "./catalog";
 import {openModal, closeModal} from "./modal";
+import {getCardById} from "./api";
 // РАБОТА С МЕРОПРИЯТИЕМ
 
 // Если вдруг кому-то нужно что-то дописать в этом файле, помимо основного ответственного за эту функциональность,
@@ -9,8 +10,18 @@ import {openModal, closeModal} from "./modal";
 
 // Никита - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // Функция addCard принимает подготовленный массив карточек из функции prepareCard и добавляет их в cardGridSection
-export const addCard = (cards, section) => {
-  cards.forEach((card) => {
+export const addCard = (cards, section, type = 'default', cardsCount) => {
+  if (type === 'address') {
+    return cards.forEach((card) => {
+      if (section.childElementCount !== cardsCount) {
+        section.append(card);
+      } else {
+        return null;
+      }
+    })
+  }
+
+  return cards.forEach((card) => {
     section.append(card);
   })
 }
@@ -26,20 +37,35 @@ export const removeCards = (section) => {
 // Dmitry -> end!
 
 // Функция собирает нужный формат карточек с помощью функции createCard и передает это дальше для рендера на странице в addCard
-export const prepareCard = ({cards}, cardTemplate) => {
+export const prepareCard = ({cards}, cardTemplate, type = 'default') => {
+  if (type === 'address') {
+    const [card] = cards;
+    const cardsCount = card.location.length - 1;
+    const cardLocation = card.location.splice(1, cardsCount);
+    const result = [];
+
+    for (let i = 0; i < cardsCount; i++) {
+      const location = cardLocation.shift();
+      const cardContent = createAddressCard(card, cardTemplate, location);
+      result.push(cardContent);
+    }
+
+    return result;
+  }
   return cards.map((card) => {
     return createCard(card, cardTemplate)
   });
 }
 
 // Функция которая собирает нужный формат для отрисовки модалки по клику на карточку.
-export const modalCreate = ([card], modalTemplate) => {
+export const modalCreate = ({cards}, modalTemplate) => {
+  const [card] = cards;
   const location = card.location.shift();
   const modalElement = modalTemplate.querySelector('.modal').cloneNode(true);
   const modalButton = modalElement.querySelector('#modal__button-like');
   const addressButton = modalElement.querySelector('.table-lines__button');
   const addressButtonIcon = modalElement.querySelector('.button__icon').outerHTML;
-  addressButton.innerHTML = `смотреть еще ${card.location.length - 1}${addressButtonIcon}`
+  addressButton.innerHTML = `смотреть еще ${card.location.length}${addressButtonIcon}`
 
   modalElement.dataset.id = card.id;
   modalElement.dataset.coordinates = location.coordinates;
@@ -67,6 +93,9 @@ export const modalCreate = ([card], modalTemplate) => {
 export const modalHandler = (modal, type) => {
   const modalButton = modal.querySelector('#modal__button-like');
   const modalCopyButton = modal.querySelector('.event__shares-button');
+  const modalAddressButton = modal.querySelector('#button__address');
+  const modalBackButton = modal.querySelector('#button__back');
+
   document.querySelector('.page').append(modal);
   modal.classList.add('modal_opened');
 
@@ -76,13 +105,38 @@ export const modalHandler = (modal, type) => {
       openModal(modal);
       modalButton.addEventListener('click', modalClickHandler);
       modalCopyButton.addEventListener('click', modalCopyHandler);
+      modalAddressButton.addEventListener('click', modalAddressHandler);
+      modalBackButton.addEventListener('click', modalBackHandler);
       break;
     case 'close':
       closeModal(modal);
       document.querySelector('.page').remove(modal);
       modalButton.removeEventListener('click', modalClickHandler);
       modalCopyButton.removeEventListener('click', modalCopyHandler);
+      modalAddressButton.removeEventListener('click', modalAddressHandler);
+      modalBackButton.removeEventListener('click', modalBackHandler);
   }
+}
+
+const modalBackHandler = (event) => {
+  const modal = event.target.closest('.modal_id_event-full');
+  const favoriteList = modal.querySelector('.favourites-list');
+  favoriteList.classList.remove('favourites-list_opened');
+}
+
+const modalAddressHandler = async (event) => {
+  const modal = event.target.closest('.modal_id_event-full');
+  const modalContainer = modal.querySelector('.catalog__events-container_type_grid').querySelector('.cards_type_grid');
+  const catalogGridContainer = document.querySelector('.cards_type_grid');
+  const modalId = modal.dataset.id;
+  const favoriteList = modal.querySelector('.favourites-list');
+  const cardTemplate = catalogGridContainer.querySelector('#card').content;
+
+  const cards = await getCardById(modalId);
+  const cardCount = cards.cards[0].location.length - 1;
+  const preparedCards = prepareCard(cards, cardTemplate, 'address');
+  addCard(preparedCards, modalContainer, 'address', cardCount);
+  favoriteList.classList.add('favourites-list_opened');
 }
 
 const modalCopyHandler = (event) => {
@@ -117,7 +171,7 @@ const modalClickHandler = async (event) => {
 // Функция которая возвращает нужную разметку для кнопки "хочу пойти"
 const modalLikeHandler = (modal, state) => {
   const modalButton = modal.querySelector('#modal__button-like');
-  const modalButtonSpan = modalButton.querySelector('.event__icon-liked');
+  const modalButtonSpan = modalButton.querySelector('.button__icon');
 
   switch (state) {
     case true:
@@ -156,7 +210,34 @@ const createCard = (item, cardTemplate) => {
   cardElement.querySelector('.cards__item-title').textContent = item.name;
   cardElement.querySelector('.cards__item-description').textContent = item.description;
   cardElement.querySelector('#cards__item-address').textContent = location.address;
-  cardElement.querySelector('#cards__item-count').textContent = `+ еще ${item.location.length - 1}`;
+  cardElement.querySelector('#cards__item-count').textContent = `+ еще ${item.location.length}`;
+
+  return cardElement;
+}
+
+const createAddressCard = (item, cardTemplate, location) => {
+  const cardElement = cardTemplate.querySelector('.cards__item').cloneNode(true);
+  const span = cardElement.querySelector('.card-control__icon');
+
+  if (cardLikeController(item.id)) {
+    span.classList.add('icon-heart-filled');
+  } else {
+    span.classList.add('icon-heart');
+  }
+
+  const dateContent = item.date.split(' ');
+  const date = `${dateContent[0]} ${dateContent[1].substring(0, 3)}`
+
+  cardElement.dataset.id = item.id;
+  cardElement.dataset.type = item.type;
+  cardElement.dataset.coordinates = location.coordinates;
+  cardElement.querySelector('.cards__item-img').src = item.image;
+  cardElement.querySelector('.cards__item-img').alt = item.type;
+  cardElement.querySelector('#cards__item-type').textContent = item.type;
+  cardElement.querySelector('#cards__item-date').textContent = `${date}, ${item.timeDuration}`;
+  cardElement.querySelector('.cards__item-title').textContent = item.name;
+  cardElement.querySelector('.cards__item-description').textContent = item.description;
+  cardElement.querySelector('#cards__item-address').textContent = location.address;
 
   return cardElement;
 }
