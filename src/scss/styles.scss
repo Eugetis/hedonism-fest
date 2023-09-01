@@ -39,6 +39,7 @@
 @use '../blocks/button/_type/button_type_filled.scss';
 @use '../blocks/button/_type/button_type_border.scss';
 @use '../blocks/button/_type/button_type_invert.scss';
+@use '../blocks/button/_type/button_type_disabled.scss'; // вынес отдельно стиль состояния
 @use '../blocks/button/__arrow-back/button__arrow-back.scss'; // вытащил из хедера - понять, что это?
 
 // стиль иконочного шрифта
@@ -142,8 +143,9 @@
 @use '../blocks/footer/__social/_type/footer__social_type_vk.scss';
 @use '../blocks/footer/__illustration/footer__illustration.scss';
 
-// стили полей (пока пусто)
+// стили полей
 @use '../blocks/field/field.scss';
+@use '../blocks/field/_type/field_type_error.scss';
 
 // стили блока с карточками
 @use '../blocks/cards/cards.scss';
@@ -330,10 +332,10 @@
 @use '../blocks/form/__steps/form__steps.scss';
 @use '../blocks/form/__title/form__title.scss';
 @use '../blocks/form/__options/form__options.scss';
+@use '../blocks/form/__label/form__label.scss';
 @use '../blocks/form/__list/form__list.scss';
 @use '../blocks/form/__list-description/form__list-description.scss';
 @use '../blocks/form/__fields/form__fields.scss';
-@use '../blocks/form/__label/form__label.scss';
 @use '../blocks/form/__input/form__input.scss';
 @use '../blocks/form/__right-column/form__right-column.scss';
 @use '../blocks/form/__upload-container/form__upload-container.scss';
@@ -405,7 +407,10 @@
 
 
 // Георгий - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
+@use '../blocks/label/label.scss';
+@use '../blocks/label/__text/label__text.scss';
+@use '../blocks/label/_type/label_type_radio.scss';
+@use '../blocks/label/_type/label_type_disabled.scss';
 
 
 // Евгений - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

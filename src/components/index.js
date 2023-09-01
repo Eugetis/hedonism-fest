@@ -9,7 +9,6 @@ import { cardsClickController } from './event';
 import { catalogController, generalCardController, modalController } from './catalog';
 
 
-import forParticipants from './for-participants';
 
 // Никита
 
@@ -51,7 +50,8 @@ import {
   header
 } from '../components/constants.js';
 // Георгий
-
+import forParticipants from './for-participants';
+import { enableValidation } from './validation';
 
 // Евгений
 

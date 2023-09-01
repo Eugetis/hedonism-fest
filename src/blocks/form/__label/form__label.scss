@@ -1,19 +1,7 @@
-@use 'variables' as *;
+// .form__label:not(:last-of-type) {
+//     margin-bottom: 16px;
+// }
 
 .form__label{
-    color: $dark-primary;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 20px;
-    margin-bottom: 8px;
-    padding: 0 20px;
-    position: relative;
-}
-
-@media screen and (min-width: 1024px) {
-    .form__label{
-        width: 532px;
-        box-sizing: border-box;
-    }
+    margin-top: 16px;
 }
