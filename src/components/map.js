@@ -235,9 +235,9 @@ const createGeoCollection = () => {
 const createClusterer = () => {
   const clusterIcons = [{
       href: require('./../images/icons/event/event-icon-zoom.svg'),
-      size: [40, 40],
+      size: [36, 36],
     // Отступ, чтобы центр картинки совпадал с центром кластера.
-    offset: [-20, -20]
+    offset: [-18, -18]
     }];
     return new ymaps.Clusterer( { clusterIcons: clusterIcons } );
 }
