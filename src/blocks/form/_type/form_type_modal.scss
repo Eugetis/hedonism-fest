@@ -2,9 +2,6 @@
 
 .form_type_modal {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  flex: 1 0 auto;
   height: unset;
   flex-grow: 1;
   position: relative;
@@ -13,6 +10,6 @@
 
 @media screen and (max-width: $mobile) {
   .form_type_modal {
-    gap: 16px;
+    padding: $pad-16 $pad-20;
   }
 }

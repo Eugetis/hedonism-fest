@@ -2,7 +2,7 @@
 <!-- должна открываться по кнопке "купить" в модалке с деталями мероприятия (открывать поверх нее!) -->
 <!-- должна открываться через добавление секции класса modal_opened -->
 
-<section class="modal modal_type_high-mob modal_id_payment" aria-label="модальное окно покупки билетов">
+<section class="modal modal_type_high-mob modal_id_payment modal_opened" aria-label="модальное окно покупки билетов" aria-hidden="true">
   <div class="modal__container modal__container_type_form">
     <div class="modal__header">
       <div class="modal__drag-line"></div>
@@ -51,7 +51,13 @@
 
       <!-- тут был класс popup__form-handlers и тег fieldset -->
       <div class="fixed-bar" name="handlers">
-        <button type="submit" form="form-payment" class="modal__button button button_type_filled" data-text="Перейти к оплате">Перейти к оплате</button>
+        <button
+          type="submit"
+          form="form-payment"
+          class="modal__button button button_type_filled"
+          onclick="window.location.href='./thanks-for-support.html'"
+          data-text="Перейти к оплате">Перейти к оплате
+        </button>
       </div>
 
     </div>

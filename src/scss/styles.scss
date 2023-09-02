@@ -7,7 +7,6 @@
 @use '../blocks/page/page.scss';
 @use '../blocks/page/__title/page__title.scss';
 @use '../blocks/page/__bottom-pushed/page__bottom-pushed.scss'; // отталкивает футер на 80px где нужно
-@use '../blocks/page/__grow/page__grow.scss';
 @use '../blocks/uikit-section/uikit-section.scss';
 @use '../blocks/section-constraints/section-constraints.scss';
 @use '../blocks/section-constraints/_size/section__constraints_size_large.scss';
@@ -149,10 +148,6 @@
 @use '../blocks/footer/__social/footer__social.scss';
 @use '../blocks/footer/__social/_type/footer__social_type_vk.scss';
 @use '../blocks/footer/__illustration/footer__illustration.scss';
-
-// стили полей
-@use '../blocks/field/field.scss';
-@use '../blocks/field/_type/field_type_error.scss';
 
 // стили блока с карточками
 @use '../blocks/cards/cards.scss';
@@ -339,20 +334,36 @@
 
 /* Form */
 @use '../blocks/form/form.scss';
-@use '../blocks/form/__container/form__container.scss';
-@use '../blocks/form/__heading/form__heading.scss';
-@use '../blocks/form/__step/form__step.scss';
-@use '../blocks/form/__steps/form__steps.scss';
-@use '../blocks/form/__title/form__title.scss';
-@use '../blocks/form/__options/form__options.scss';
-@use '../blocks/form/__label/form__label.scss';
+@use '../blocks/form/__step-content/form__step-content.scss';
+@use '../blocks/form/__step-container/form__step-container.scss';
+@use '../blocks/form/__step-legend/form__step-legend.scss';
+@use '../blocks/form/__step-legend-text/form__step-legend-text.scss';
+@use '../blocks/form/__step-legend-title/form__step-legend-title.scss';
 @use '../blocks/form/__list/form__list.scss';
-@use '../blocks/form/__list-description/form__list-description.scss';
-@use '../blocks/form/__fields/form__fields.scss';
-@use '../blocks/form/__input/form__input.scss';
-@use '../blocks/form/__right-column/form__right-column.scss';
+@use '../blocks/form/__step-fields-wrapper/form__step-fields-wrapper.scss';
+@use '../blocks/form/__step-fields-group/form__step-fields-group.scss';
+@use '../blocks/form/__radio-group-wrapper/form__radio-group-wrapper.scss';
+@use '../blocks/form/__radio-group-wrapper/_type/form__radio-group-wrapper_type_scenario-selected.scss';
+@use '../blocks/form/__radio-group-wrapper/_type/form__radio-group-wrapper_type_grid.scss';
+@use '../blocks/form/__radio-group-wrapper/_type/form__radio-group-wrapper_type_classic.scss';
 @use '../blocks/form/__upload-container/form__upload-container.scss';
 @use '../blocks/form/__upload-container/_dragover/form__upload-container_dragover.scss';
+@use '../blocks/form/__label/form__label.scss';
+@use '../blocks/form/__label/_type/form__label_type_upload-file.scss';
+@use '../blocks/form/__field-wrapper/form__field-wrapper.scss';
+@use '../blocks/form/__field/form__field.scss';
+@use '../blocks/form/__field/_type/form__field_type_input.scss';
+@use '../blocks/form/__field/_type/form__field_type_center.scss';
+@use '../blocks/form/__field/_type/form__field_type_radio-fill.scss';
+@use '../blocks/form/__field/_type/form__field_type_radio-fill-simple.scss';
+@use '../blocks/form/__field/_type/form__field_type_radio-round.scss';
+@use '../blocks/form/__field/_type/form__field_type_select.scss';
+@use '../blocks/form/__field/_type/form__field_type_textarea.scss';
+@use '../blocks/form/__field/_type/form__field_type_file.scss';
+@use '../blocks/form/__field/_type/form__field_type_error.scss';
+@use '../blocks/form/__field-error/form__field-error.scss';
+@use '../blocks/form/__field-error/_active/form__field-error_active.scss';
+
 /* Forms button */
 @use '../blocks/form/__button/form__button.scss';
 @use '../blocks/form/__button/_active/form__button_active.scss';
@@ -420,10 +431,10 @@
 
 
 // Георгий - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-@use '../blocks/label/label.scss';
-@use '../blocks/label/__text/label__text.scss';
-@use '../blocks/label/_type/label_type_radio.scss';
-@use '../blocks/label/_type/label_type_disabled.scss';
+// @use '../blocks/label/label.scss';
+// @use '../blocks/label/__text/label__text.scss';
+// @use '../blocks/label/_type/label_type_radio.scss';
+// @use '../blocks/label/_type/label_type_disabled.scss';
 
 
 // Евгений - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -437,9 +448,9 @@
 @use '../blocks/favourites-list/_type/favourites-list_type_inside.scss';
 
 @use '../blocks/form/_type/form_type_modal.scss';
-@use '../blocks/form/__options/_type/form__options_type_grid.scss';
-@use '../blocks/form/__fields-group/form__fields-group.scss';
+@use '../blocks/form/__modal-fieldset/form__modal-fieldset.scss';
 @use '../blocks/form/__modal-fieldset-title/form__modal-fieldset-title.scss';
+@use '../blocks/form/__modal-text/form__modal-text.scss';
 
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -447,25 +458,19 @@
 
 // блок participats -часть стилей отключена, часть изменена (папка с исходными стилями лежит в blocks/old(backups))
 @use '../blocks/participants/participants.scss';
-// @use '../blocks/participants/__content/participants__content.scss';
 @use '../blocks/participants/__title/participants__title.scss';
 @use '../blocks/participants/__title/_type/participants__title_type_mobile-start.scss';
 @use '../blocks/participants/__title/_type/participants__title_type_desktop.scss';
 @use '../blocks/participants/__title/_hidden/participants__title_hidden.scss';
 @use '../blocks/participants/__container/participants__container.scss';
 @use '../blocks/participants/__container/_type/participants__container_type_form.scss';
+@use '../blocks/participants/__container/_type/participants__container_type_content.scss';
 @use '../blocks/participants/__heading/participants__heading.scss';
 @use '../blocks/participants/__subtitle/participants__subtitle.scss';
 @use '../blocks/participants/__list/participants__list.scss';
-@use '../blocks/participants/__list-item/participants__list-item.scss';
-// @use '../blocks/participants/__list-item-heading/participants__list-item-heading.scss';
-// @use '../blocks/participants/__list-item-heading/_center/participants__list-item-heading_center.scss';
-// @use '../blocks/participants/__list-item-heading-group/participants__list-item-heading-group.scss';
-// @use '../blocks/participants/__list-item-text/participants__list-item-text.scss';
 @use '../blocks/participants/__buttons-block/participants__buttons-block.scss';
 @use '../blocks/participants/__button/participants__button.scss';
 @use '../blocks/participants/__button/_active/participants__button_active.scss';
-// @use '../blocks/participants/_hidden/participants_hidden.scss';
 
 
 

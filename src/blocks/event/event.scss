@@ -21,20 +21,3 @@
   background-color: $color-primary-transparent;
   border-radius: $radius-100;
 }
-
-// отключил стили скролл-бара, потому что из-за него появлялась горизонтальная прокрутка
-
-// .event::-webkit-scrollbar {
-//   width: 8px;
-//   background-color: $light-secondary;
-// }
-
-// .event::-webkit-scrollbar-track {
-//   margin-right: 40px;
-//   background-color: $light-secondary;
-// }
-
-// .event::-webkit-scrollbar-thumb {
-//   background-color: $dark-secondary;
-//   border-radius: 8px;
-// }

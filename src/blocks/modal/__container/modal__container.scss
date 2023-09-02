@@ -7,6 +7,9 @@
   background-color: $light-primary;
   box-sizing: border-box;
   box-shadow: $drop-shadow;
+
+  transition: opacity 1s linear;
+  opacity: 0;
 }
 
 @media screen and (max-width: $mobile) {

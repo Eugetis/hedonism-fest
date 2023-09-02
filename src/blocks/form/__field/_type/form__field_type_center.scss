@@ -1,0 +1,13 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.form__field_type_center {
+  @include btn-text-desktop;
+  text-align: center;
+}
+
+@media screen and (max-width: $mobile) {
+  .form__field_type_center {
+    @include btn-text-mobile;
+  }
+}

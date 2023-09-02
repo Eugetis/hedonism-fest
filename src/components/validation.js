@@ -57,12 +57,12 @@ function enableValidation({formSelector, fieldSelector, ...settings}) {
 }
 
 enableValidation({
-    formSelector: '.participants__form',
-    fieldSelector: '.form__step',
-    inputSelector: '.field',
+    formSelector: '.form',
+    fieldSelector: '.form__step-container',
+    inputSelector: '.form__field',
     submitButtonSelector: '.button__submit',
     inactiveButtonClass: 'button_type_disabled',
-    inputErrorClass: 'field_type_error',
+    inputErrorClass: 'form__field_type_error',
 });
 
 };

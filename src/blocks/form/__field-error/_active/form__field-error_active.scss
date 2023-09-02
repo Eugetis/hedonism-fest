@@ -1,0 +1,19 @@
+@use 'variables' as *;
+
+.form__field-error_active {
+  display: flex;
+}
+
+.form__field-error_active::before {
+  content: "\e816";
+  font: $icon-text-desktop;
+  color: $warning-error;
+}
+
+@media screen and (max-width: $mobile) {
+  .form__field-error_active::before {
+    content: "\e816";
+    font: $icon-text-mobile;
+    color: $warning-error;
+  }
+}

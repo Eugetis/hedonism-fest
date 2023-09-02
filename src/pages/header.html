@@ -135,7 +135,7 @@
 <!-- должна открываться по кнопке "пожертвовать" в хедере (и еще на паре страниц по индивидуальным кнопкам) -->
 <!-- должна открываться через добавление секции класса modal_opened -->
 
-<section class="modal modal_type_center modal_id_donation " aria-label="модальное окно пожертвования">
+<section class="modal modal_type_center modal_id_donation " aria-label="модальное окно пожертвования" aria-hidden="true">
   <div class="modal__container modal__container_type_form">
     <div class="modal__header">
       <div class="modal__drag-line"></div>
@@ -147,57 +147,86 @@
 
       <!-- добавить форме novalidate ?? -->
       <!-- перепроверить, когда обновится блок form (был такой класс ниже) -->
-      <form class="form form_type_modal" name="form-donation">
+      <form class="form form_type_modal" name="formDonation">
 
-        <fieldset class="form__fields-group" name="donation-sum">
+        <fieldset class="form__modal-fieldset" id="donation-sum">
           <h3 class="form__modal-fieldset-title">сумма</h3>
-          <div class="form__options form__options_type_grid">
-            <input type="radio" id="100" class="form__input" name="preference" value="100" checked>
-            <label class="form__label" for="100">100</label>
-
-            <input type="radio" id="300" class="form__input" name="preference" value="300">
-            <label class="form__label" for="300">300</label>
-
-            <input type="radio" id="500" class="form__input" name="preference" value="500">
-            <label class="form__label" for="500">500</label>
-
-            <input type="radio" id="1000" class="form__input" name="preference" value="1000">
-            <label class="form__label" for="1000">1000</label>
-
-            <input type="radio" id="3000" class="form__input" name="preference" value="3000">
-            <label class="form__label" for="3000">3000</label>
-
-            <!-- придумать, как добавить пункт с произвольной суммой -->
+          <div class="form__radio-group-wrapper form__radio-group-wrapper_type_grid">
+            <label class="form__field form__field_type_radio-fill-simple" for="100">
+              100 &#8381;
+              <input type="radio" name="donation" id="100" value="100" required>
+            </label>
+            <label class="form__field form__field_type_radio-fill-simple" for="300">
+              300 &#8381;
+              <input type="radio" name="donation" id="300" value="300" required>
+            </label>
+            <label class="form__field form__field_type_radio-fill-simple" for="500">
+              500 &#8381;
+              <input type="radio" name="donation" id="500" value="500" required>
+            </label>
+            <label class="form__field form__field_type_radio-fill-simple" for="1000">
+              1000 &#8381;
+              <input type="radio" name="donation" id="1000" value="1000" required>
+            </label>
+            <label class="form__field form__field_type_radio-fill-simple" for="3000">
+              3000 &#8381;
+              <input type="radio" name="donation" id="3000" value="3000" required>
+            </label>
+            <div class="form__field-wrapper">
+              <input
+                type="number"
+                class="form__field form__field_type_input form__field_type_center"
+                id="donation-custom"
+                name="donationCustom"
+                placeholder="другая сумма"
+                data-error-message="пожалуйста, введите корректный email">
+              <span class="form__field-error donation-custom-error"></span>
+            </div>
           </div>
         </fieldset>
 
-        <fieldset class="form__fields-group" name="email">
+        <fieldset class="form__modal-fieldset" id="email">
           <h3 class="form__modal-fieldset-title">email</h3>
-          <div class="form__fields">
-            <input class="form__input" type="email" name="email" id="place" placeholder="укажите почту для отправки чека" required>
+          <div class="form__field-wrapper">
+            <input
+              type="email"
+              class="form__field form__field_type_input"
+              id="donator-email"
+              name="donatorEmail"
+              placeholder="укажите почту для отправки чека"
+              data-error-message="пожалуйста, введите корректный email"
+              required>
+            <span class="form__field-error donator-email-error"></span>
           </div>
         </fieldset>
 
-        <fieldset class="form__fields-group" name="payment-method">
+        <fieldset class="form__modal-fieldset" id="payment-method">
           <h3 class="form__modal-fieldset-title">способ оплаты</h3>
-          <div class="popup__form-field-wrapper">
-            <label for="credit-card">банковской картой
-              <input type="radio" id="credit-card" name="payment-method" value="credit-card" checked>
+          <div class="form__radio-group-wrapper form__radio-group-wrapper_type_classic">
+            <label class="form__field form__field_type_radio-round" for="credit-card">
+              банковской картой
+              <input type="radio" name="paymentMethod" id="credit-card" value="credit-card" checked required>
             </label>
-            <label for="paypal">PayPal
-              <input type="radio" id="paypal" name="payment-method" value="paypal">
+            <label class="form__field form__field_type_radio-round" for="paypal">
+              PayPal
+              <input type="radio" name="paymentMethod" id="paypal" value="paypal" required>
             </label>
           </div>
+          <p class="form__modal-text">Нажимая кнопку «пожертвовать» вы соглашаетесь с условиями <a class="link link_type_text">оферты</a>, <a class="link link_type_text">политики</a> в отношении обработки
+            и защиты персональных данных и даёте <a class="link link_type_text">согласие</a> на их обработку</p>
         </fieldset>
-
-        <p class="form__list-description">Нажимая кнопку «пожертвовать» вы соглашаетесь с условиями <a class="link link_type_text">оферты</a>, <a class="link link_type_text">политики</a> в отношении обработки
-          и защиты персональных данных и даёте <a class="link link_type_text">согласие</a> на их обработку</p>
 
       </form>
 
       <!-- тут был класс popup__form-handlers и тег fieldset -->
       <div class="fixed-bar" name="handlers">
-        <button type="submit" form="form-donation" class="modal__button button button_type_filled" data-text="Перейти к оплате">Перейти к оплате</button>
+        <button
+          type="submit"
+          form="form-donation"
+          class="modal__button button button_type_filled"
+          onclick="window.location.href='./thanks-for-support.html'"
+          data-text="Перейти к оплате">Перейти к оплате
+        </button>
       </div>
 
     </div>

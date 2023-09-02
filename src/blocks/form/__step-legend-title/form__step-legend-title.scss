@@ -1,0 +1,12 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.form__step-legend-title {
+  @include h2-desktop;
+}
+
+@media screen and (max-width: $mobile) {
+  .form__step-legend-title {
+    @include h2-mobile;
+  }
+}

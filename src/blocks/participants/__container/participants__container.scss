@@ -8,6 +8,7 @@
   padding-top: 40px;
   box-sizing: border-box;
   max-width: 960px;
+  width: 100%;
   margin: $centered 80px;
 }
 
@@ -18,24 +19,5 @@
     padding-top: 0;
     height: fit-content;
     justify-content: space-between;
-  }
-}
-
-// @media screen and (min-width: 1024px) {
-//   .participants__container{
-//       height: fit-content;
-//       justify-content: space-between;
-//   }
-// }
-
-.section-constraints {
-  margin: $centered;
-  max-width: $desktop-max;
-  box-sizing: border-box;
-}
-
-@media all and (max-width: $mobile) {
-  .section-constraints {
-    max-width: 100%;
   }
 }

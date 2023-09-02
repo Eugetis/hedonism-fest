@@ -2,11 +2,13 @@
 
 .participants__button {
   margin-top: 8px;
+  min-width: 200px;
 }
 
 @media all and (max-width: $mobile) {
   .participants__button {
     margin-top: 0;
+    min-width: unset;
     width: 100%;
   }
 }

@@ -1,50 +1,66 @@
 @use 'variables' as *;
 
 .form__upload-container {
-    border-radius: $radius-small;
-    border: $border-bold;
-    background: $light-primary;
-    transition: .3s;
+  border-radius: $radius-small;
+  border: $border-bold-input;
+  background: $light-primary;
+  transition: .3s;
+  box-sizing: border-box;
 }
 
+.form__upload-container .form__field_type_file {
+  padding: unset;
+  background-color: unset;
+  border: unset;
+  border-radius: unset;
 
-@media screen and (min-width: 1024px) {
-    .form__upload-container{
-        width: 532px;
-        box-sizing: border-box;
-    }
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  position: absolute;
+  overflow: hidden;
+  clip-path: inset(0 0 0 0);
 }
 
-.form__upload-container .form__input-file {
-    width: 0.1px;
-    height: 0.1px;
-    opacity: 0;
-    position: absolute;
-    z-index: -10;
+.form__upload-container .form__label_type_upload-file {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  min-height: 300px;
+  position: relative;
+  width: 100%;
+  transition: .3s;
 }
 
-.form__upload-container .form__label-file {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 220px;
-    position: relative;
-    width: 100%;
-    transition: .3s;
+@media screen and (max-width: $mobile) {
+  .form__upload-container .form__label_type_upload-file {
+    min-height: 220px;
+  }
 }
 
-.form__upload-container:hover,
-.form__label-file:hover {
+.form__upload-container:hover, .form__label_type_upload-file:hover {
     cursor: pointer;
     opacity: .5;
 }
 
-.form__upload-container .form__label-file::before {
-    content: '';
-    background: url(../../../images/icons/upload.svg) no-repeat center;
-    display: block;
-    margin-bottom: 12px;
-    width: 24px;
-    height: 24px;
+.form__upload-container .form__label_type_upload-file::after {
+  content: 'перетащите фото сюда или загрузите с устройства';
+  display: block;
 }
+
+@media screen and (max-width: $mobile) {
+  .form__upload-container .form__label_type_upload-file::after {
+    content: 'загрузить с устройства';
+  }
+}
+
+.form__upload-container .form__label_type_upload-file::before {
+  content: '';
+  background: url(../../../images/icons/upload.svg) no-repeat center;
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+

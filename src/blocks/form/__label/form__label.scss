@@ -1,7 +1,18 @@
-// .form__label:not(:last-of-type) {
-//     margin-bottom: 16px;
-// }
+@use 'variables' as *;
+@use 'mixins' as *;
 
-.form__label{
-    margin-top: 16px;
+.form__label {
+  @include text-desktop;
+  color: $dark-secondary;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 $pad-24;
+}
+
+@media screen and (max-width: $mobile) {
+  .form__label {
+    @include text-mobile;
+    padding: 0 $pad-20;
+  }
 }

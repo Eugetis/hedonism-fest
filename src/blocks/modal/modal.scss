@@ -14,12 +14,9 @@
   align-items: center;
 
   visibility: hidden;
-  opacity: 0;
   pointer-events: none;
-  transition: visibility 1.5s ease, opacity 1.5s ease;
 
   box-sizing: border-box;
-  // padding: $pad-20;
   overflow-y: scroll;
   //разобраться, почему не скроллит до верха попапа
 }
