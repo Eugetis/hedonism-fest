@@ -8,6 +8,19 @@
   color: $dark-primary;
 }
 
+.event::-webkit-scrollbar {
+  width: 0;
+}
+
+.event::-webkit-scrollbar-track {
+  background-color: $light-primary;
+  border-radius: $radius-100;
+}
+
+.event::-webkit-scrollbar-thumb {
+  background-color: $color-primary-transparent;
+  border-radius: $radius-100;
+}
 
 // отключил стили скролл-бара, потому что из-за него появлялась горизонтальная прокрутка
 

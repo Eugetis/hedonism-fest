@@ -1,0 +1,13 @@
+@use 'variables' as *;
+
+.modal__switchers-wrapper {
+  width: 100%;
+  padding: $pad-20;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: $mobile) {
+  .modal__switchers-wrapper {
+    padding: $pad-12 $pad-20;
+  }
+}

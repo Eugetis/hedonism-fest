@@ -1,0 +1,14 @@
+@use 'variables' as *;
+
+.form__options_type_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  justify-items: center;
+}
+
+@media screen and (max-width: $mobile) {
+  .form__options_type_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -8,6 +8,7 @@
 @use '../blocks/page/__title/page__title.scss';
 @use '../blocks/page/__bottom-pushed/page__bottom-pushed.scss'; // отталкивает футер на 80px где нужно
 @use '../blocks/page/__grow/page__grow.scss';
+@use '../blocks/page/__no-scroll/page__no-scroll.scss'; //отключает скролл вниз при выезде бокового меню на мобилке
 @use '../blocks/uikit-section/uikit-section.scss';
 @use '../blocks/section-constraints/section-constraints.scss';
 @use '../blocks/section-constraints/_size/section__constraints_size_large.scss';
@@ -39,6 +40,7 @@
 @use '../blocks/button/_type/button_type_filled.scss';
 @use '../blocks/button/_type/button_type_border.scss';
 @use '../blocks/button/_type/button_type_invert.scss';
+@use '../blocks/button/_type/button_type_disabled.scss'; // вынес отдельно стиль состояния
 @use '../blocks/button/__arrow-back/button__arrow-back.scss'; // вытащил из хедера - понять, что это?
 
 // стиль иконочного шрифта
@@ -81,9 +83,11 @@
 
 // стили переключателя вкладок
 @use '../blocks/tab-switcher/tab-switcher.scss';
+@use '../blocks/tab-switcher/_type/tab-switcher_type_fill.scss';
 @use '../blocks/tab-switcher/__icon/tab-switcher__icon.scss';
 @use '../blocks/tab-switcher/__button/tab-switcher__button.scss';
 @use '../blocks/tab-switcher/__button/_active/tab-switcher__button_active.scss';
+@use '../blocks/tab-switcher/__button/_type/tab-switcher__button_type_fill.scss';
 
 // стили хедера (обсудить рефакторинг)
 @use '../blocks/header/header.scss';
@@ -113,20 +117,28 @@
 @use '../blocks/header/__slider/_state/header__slider_state_opened.scss';
 @use '../blocks/header/__slide/header__slide.scss';
 @use '../blocks/header/__slide/_content/header__slide_content_cities.scss';
+@use '../blocks/header/__slide/_content/_close/header__slide_content_cities_close.scss';
 @use '../blocks/header/__slide/_content/header__slide_content_menu.scss';
 
 // разобраться с тремя
 @use '../blocks/header/__wrapper/_1/header__wrapper_1.scss';
 @use '../blocks/header/__wrapper/_3/header__wrapper_3.scss';
 @use '../blocks/header/__wrapper/_closed/header__wrapper_closed.scss';
-
+@use '../blocks/header/__wrapper/_mobile/header__wrapper_mobile.scss';
+@use '../blocks/header/__wrapper/_mobile_1/header__wrapper_mobile_1.scss';
 @use '../blocks/header/__form-city/header__form-city.scss';
 @use '../blocks/header/__form-city/_opened/header__form-city_opened.scss';
+@use '../blocks/header/__form-city/_slider/header__form-city_slider.scss';
+@use '../blocks/header/__form-city/_1/header__form-city_1.scss';
+@use '../blocks/header/__form-city/_2/header__form-city_2.scss';
 @use '../blocks/header/__nav-title/header__nav-title.scss';
 @use '../blocks/header/__subtext/header__subtext.scss';
 @use '../blocks/header/__subtext/_position/header__subtext_position_left.scss';
 @use '../blocks/header/__button/_city-selected/header__button_city-selected.scss';
+@use '../blocks/header/__button/_city-selected-wrapper/header__button_city-selected-wrapper.scss';
 @use '../blocks/header/__input-city-select/header__input-city-select.scss';
+@use '../blocks/header/__mobile-top/header__mobile-top.scss';
+@use '../blocks/header/__mobile-top/_opened/header__mobile-top_opened.scss';
 @use '../blocks/header/__mobile-section/header__mobile-section.scss';
 @use '../blocks/header/__mobile-section/_type/header__mobile-section_type_bottom.scss';
 @use '../blocks/header/__slide-bottom/header__slide-bottom.scss';
@@ -147,8 +159,9 @@
 @use '../blocks/footer/__social/_type/footer__social_type_vk.scss';
 @use '../blocks/footer/__illustration/footer__illustration.scss';
 
-// стили полей (пока пусто)
+// стили полей
 @use '../blocks/field/field.scss';
+@use '../blocks/field/_type/field_type_error.scss';
 
 // стили блока с карточками
 @use '../blocks/cards/cards.scss';
@@ -292,20 +305,26 @@
 @use '../blocks/modal/_id/modal_id_payment.scss';
 @use '../blocks/modal/_opened/modal_opened.scss';
 @use '../blocks/modal/__wrapper-for-side/modal__wrapper-for-side.scss';
+@use '../blocks/modal/__wrapper-for-side/_type/modal__wrapper-for-side_type_radius.scss';
 @use '../blocks/modal/__container/modal__container.scss';
 @use '../blocks/modal/__container/_type/modal__container_type_form.scss';
 @use '../blocks/modal/__container/_type/modal__container_type_side.scss';
 @use '../blocks/modal/__container/_type/modal__container_type_preview.scss';
+@use '../blocks/modal/__container/_type/modal__container_type_no-bkg.scss';
 @use '../blocks/modal/__container_opened/modal__container_opened.scss';
 @use '../blocks/modal/__header/modal__header.scss';
+@use '../blocks/modal/__header/_type/modal__header_type_extented.scss'; //
 @use '../blocks/modal/__drag-line/modal__drag-line.scss';
 @use '../blocks/modal/__title/modal__title.scss';
+@use '../blocks/modal/__title-wrapper/modal__title-wrapper.scss';
 @use '../blocks/modal/__close_button/modal__close-button.scss';
 @use '../blocks/modal/__close_button/_type/modal__close-button_type_icon.scss';
 @use '../blocks/modal/__close_button/_type/modal__close-button_type_button.scss';
 @use '../blocks/modal/__body/modal__body.scss';
 @use '../blocks/modal/__grow-section/modal__grow-section.scss';
 @use '../blocks/modal/__button/modal__button.scss';
+@use '../blocks/modal/__button/_type/modal__button_type_narrow.scss';
+@use '../blocks/modal/__switchers-wrapper/modal__switchers-wrapper.scss';
 
 // event (в модалке)
 @use '../blocks/event/event.scss';
@@ -321,7 +340,7 @@
 @use '../blocks/event/__table/event__table.scss';
 @use '../blocks/event/__actions/event__actions.scss';
 @use '../blocks/event/__button/event__button.scss';
-@use '../blocks/event/event-icon/event-icon.scss';
+@use '../blocks/event/__icon-liked/event__icon-liked.scss';
 @use '../blocks/event/__shares/event__shares.scss';
 @use '../blocks/event/__shares-icons/event__shares-icons.scss';
 @use '../blocks/event/__shares-social/event__shares-social.scss';
@@ -335,13 +354,14 @@
 @use '../blocks/form/__steps/form__steps.scss';
 @use '../blocks/form/__title/form__title.scss';
 @use '../blocks/form/__options/form__options.scss';
+@use '../blocks/form/__label/form__label.scss';
 @use '../blocks/form/__list/form__list.scss';
 @use '../blocks/form/__list-description/form__list-description.scss';
 @use '../blocks/form/__fields/form__fields.scss';
-@use '../blocks/form/__label/form__label.scss';
 @use '../blocks/form/__input/form__input.scss';
 @use '../blocks/form/__right-column/form__right-column.scss';
 @use '../blocks/form/__upload-container/form__upload-container.scss';
+@use '../blocks/form/__upload-container/_dragover/form__upload-container_dragover.scss';
 /* Forms button */
 @use '../blocks/form/__button/form__button.scss';
 @use '../blocks/form/__button/_active/form__button_active.scss';
@@ -409,7 +429,10 @@
 
 
 // Георгий - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
+@use '../blocks/label/label.scss';
+@use '../blocks/label/__text/label__text.scss';
+@use '../blocks/label/_type/label_type_radio.scss';
+@use '../blocks/label/_type/label_type_disabled.scss';
 
 
 // Евгений - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -418,6 +441,14 @@
 @use '../blocks/info-message/__icon/info-message__icon.scss';
 @use '../blocks/info-message/__text/info-message__text.scss';
 
+@use '../blocks/favourites-list/favourites-list.scss';
+@use '../blocks/favourites-list/_opened/favourites-list_opened.scss';
+@use '../blocks/favourites-list/_type/favourites-list_type_inside.scss';
+
+@use '../blocks/form/_type/form_type_modal.scss';
+@use '../blocks/form/__options/_type/form__options_type_grid.scss';
+@use '../blocks/form/__fields-group/form__fields-group.scss';
+@use '../blocks/form/__modal-fieldset-title/form__modal-fieldset-title.scss';
 
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

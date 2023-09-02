@@ -1,4 +1,4 @@
-  <!-- ВНИЗУ ЛЕЖИТ МОДАЛКА ПОЖЕРТВОВАНИЯ -->
+<!-- ВНИЗУ ЛЕЖИТ МОДАЛКА ПОЖЕРТВОВАНИЯ -->
 
 <header class="header">
 
@@ -18,12 +18,12 @@
           <button type="button" class="header__button_city-selected dropdown__button-text">
           </button>
           <form class="header__form-city">
-            <label class="header__form-city-label" for="moscow">Москва
+            <label for="moscow" class="header__form-city-label">Москва
               <input class="header__input-city-select" type="radio" name="city" id="moscow" value="Москва" />
             </label>
             <label class="header__form-city-label" for="petersburg">Санкт-Петербург
               <input class="header__input-city-select" type="radio" name="city" id="petersburg"
-                value="Санкт&nbsp;-&nbsp;Петербург"/>
+                value="Санкт&nbsp;-&nbsp;Петербург" />
             </label>
             <label class="header__form-city-label" for="sochi">Сочи
               <input class="header__input-city-select" type="radio" name="city" id="sochi" value="Сочи" />
@@ -42,13 +42,14 @@
       <nav>
         <ul class="header__menu header__menu_type_desktop">
           <li class="header__menu-item"><a href="./catalog.html" class="header__link link">куда&nbsp;пойти</a></li>
-          <li class="header__menu-item"><a href="./for-participants.html" class="header__link link">стать&nbsp;участником</a></li>
+          <li class="header__menu-item"><a href="./for-participants.html"
+              class="header__link link">стать&nbsp;участником</a></li>
           <li class="header__menu-item"><a href="./about.html" class="header__link link">о&nbsp;фестивале</a></li>
         </ul>
       </nav>
 
       <div class="header__buttons">
-        <a href="#" class="button"><span class="button__icon icon-heart"></span>хочу&nbsp;пойти</a>
+        <a href="#" class="button" id="button__favorite"><span class="button__icon icon-heart"></span>хочу&nbsp;пойти</a>
         <button class="header__button button button_type_filled" type="button">поддержать</button>
         <button class="header__burger-button" type="button"><span class="button__icon icon-menu-burger"></span></button>
       </div>
@@ -57,100 +58,110 @@
 
   </div> <!-- конец шапки хедера -->
 
-  <!-- начало мобильного меню (внутри лежат 2 слайда/контейнера с контентом) -->
-  <!-- js должен по клику на гамбургер включать модификатор header__slider_state_opened, чтобы выезжало мобильное меню  -->
-  <div class="header__slider">
 
-    <!-- начало первого слайда открытого мобильного меню -->
-    <div class="header__slide header__slide_content_menu">
-
-      <div class="header__mobile-section">
-        <form class="header__form-city">
-          <p class="header__nav-title">Ваш город</p>
-          <button type="button" class="header__button_city-selected">
-            <span class="dropdown__button-text">Санкт-Петербург</span>
-            <span class="icon-angle-small-right"></span>
-          </button>
-        </form>
-      </div>
-
-      <div class="header__mobile-section">
-        <p class="header__subtext header__subtext_position_left">навигация</p>
-        <nav>
-          <ul class="header__menu header__menu_type_mobile">
-            <li class="header__menu-item"><a href="./catalog.html" class="header__link link">куда&nbsp;пойти</a></li>
-            <li class="header__menu-item"><a href="./for-participants.html" class="header__link link">стать&nbsp;участником</a></li>
-            <li class="header__menu-item"><a href="./about.html" class="header__link link">о&nbsp;фестивале</a></li>
-          </ul>
-        </nav>
-      </div>
-
-      <div class="header__slide-bottom">
-        <div class="header__mobile-section header__mobile-section_type_bottom">
-          <img class="header__logo_type_dropdown" src="../images/Nochlezhka-light.svg" alt="логотип Ночлежка">
-          <p class="header__subtext">благотворительная организация</p>
-        </div>
-        <div class="header__mobile-section header__mobile-section_type_bottom">
-          <button class="button button_type_filled" type="button">поддержать</button>
-        </div>
-      </div>
-
-    </div> <!-- конец первого слайда открытого мобильного меню -->
-
-    <!-- начало второго слайда открытого мобильного меню -->
-    <div class="header__slide header__slide_content_cities">
-    <!---header__popup-city-select_opened--><!--Добавить с помощью JS для показа блока-->
-
-      <button type="button" class="button__arrow-back"><span class="icon-arrow-left"></span>назад</button>
-      <p class="header__nav-title">Ваш город</p>
-      <form class="header__form-city">
-        <label for="moscow">Москва
-          <input class="header__input-city-select" type="radio" name="city" id="moscow" value="moscow" />
-        </label>
-        <label for="petersburg">Санкт-Петербург
-          <input class="header__input-city-select" type="radio" name="city" id="petersburg"
-            value="petersburg"/>
-        </label>
-        <label for="sochi">Сочи
-          <input class="header__input-city-select" type="radio" name="city" id="sochi" value="sochi" />
-        </label>
-        <label for="kaluga">Калуга
-          <input class="header__input-city-select" type="radio" name="city" id="kaluga" value="kaluga" />
-        </label>
-        <label for="ekatirinburg">Екатеринбург
-          <input class="header__input-city-select" type="radio" name="city" id="ekatirinburg"
-            value="ekatirinburg" />
-        </label>
-      </form>
-
-    </div> <!-- конец второго слайда открытого мобильного меню -->
-
-  </div> <!-- конец открытого мобильного меню -->
 
 </header>
+<!-- начало мобильного меню (внутри лежат 2 слайда/контейнера с контентом) -->
+<!-- js должен по клику на гамбургер включать модификатор header__slider_state_opened, чтобы выезжало мобильное меню  -->
+<div class="header__wrapper_mobile">
+  <div class="header__mobile-top header__mobile-top_opened">
+    <a href="../index.html" class="link">
+      <img class="header__logo" src="../images/hedonism-fest-logo.png" alt="Логотип ГедонизмФест">
+    </a>
+    <a href="#" class="button"><span class="button__icon icon-heart"></span>хочу&nbsp;пойти</a>
+    <button class="" type="button" style="background-color: rgba(255, 212, 0, 1); border: none;"><span class="button__icon icon-cross" ></span></button>
+  </div>
 
+<div class="header__slider header__slider_state_opened">
 
+  <!-- начало первого слайда открытого мобильного меню -->
+  <div class="header__slide header__slide_content_menu">
+
+    <div class="header__mobile-section">
+      <p class="header__subtext header__subtext_position_left">Ваш город</p>
+      <div class="header__button_city-selected-wrapper">
+        <button type="button"
+          class="header__button_city-selected header__button_city-selected-mobile dropdown__button-text-mobile">Санкт&nbsp;-&nbsp;Петербург
+        </button>
+        <span class="icon-angle-small-right"></span>
+      </div>
+    </div>
+
+    <div class="header__mobile-section">
+      <p class="header__subtext header__subtext_position_left">навигация</p>
+      <nav>
+        <ul class="header__menu header__menu_type_mobile">
+          <li class="header__menu-item"><a href="./catalog.html" class="header__link link">куда&nbsp;пойти</a></li>
+          <li class="header__menu-item"><a href="./for-participants.html"
+              class="header__link link">стать&nbsp;участником</a></li>
+          <li class="header__menu-item"><a href="./about.html" class="header__link link">о&nbsp;фестивале</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="header__slide-bottom">
+      <div class="header__mobile-section header__mobile-section_type_bottom">
+        <img class="header__logo_type_dropdown" src="../images/Nochlezhka-light.svg" alt="логотип Ночлежка">
+        <p class="header__subtext">благотворительная организация</p>
+      </div>
+      <div class="header__mobile-section header__mobile-section_type_bottom">
+        <button class="button button_type_filled" type="button">поддержать</button>
+      </div>
+    </div>
+
+  </div> <!-- конец первого слайда открытого мобильного меню -->
+
+  <!-- начало второго слайда открытого мобильного меню -->
+  <div class="header__slide_content_cities header__slide_content_cities_close">
+    <!---header__popup-city-select_opened--><!--Добавить с помощью JS для показа блока-->
+
+    <button type="button" class="button__arrow-back button__arrow-back-dropdown-mobile"><span class="icon-arrow-left"></span>назад</button>
+    <p class="header__subtext header__subtext_position_left">Ваш город</p>
+    <form class="header__form-city header__form-city_slider">
+      <label>Москва
+        <input class="header__input-city-select" type="radio" name="city" id="moscow" value="Москва" />
+      </label>
+      <label>Санкт-Петербург
+        <input class="header__input-city-select" type="radio" name="city" id="petersburg" value="Санкт&nbsp;-&nbsp;Петербург" />
+      </label>
+      <label>Сочи
+        <input class="header__input-city-select" type="radio" name="city" id="sochi" value="Сочи" />
+      </label>
+      <label>Калуга
+        <input class="header__input-city-select" type="radio" name="city" id="kaluga" value="Калуга" />
+      </label>
+      <label>Екатеринбург
+        <input class="header__input-city-select" type="radio" name="city" id="ekatirinburg" value="Екатеринбург" />
+      </label>
+    </form>
+
+  </div> <!-- конец второго слайда открытого мобильного меню -->
+
+</div> <!-- конец открытого мобильного меню -->
+</div>
 <!-- МОДАЛКА С ФОРМОЙ ПОЖЕРТВОВАНИЯ -->
 <!-- Лежит тут, т.к. должна быть доступна на любой странице, но через particle не хочет подтягиваться -->
 <!-- должна открываться по кнопке "пожертвовать" в хедере (и еще на паре страниц по индивидуальным кнопкам) -->
 <!-- должна открываться через добавление секции класса modal_opened -->
 
-<section class="modal modal_type_center modal_id_donation" aria-label="модальное окно пожертвования">
+<section class="modal modal_type_center modal_id_donation " aria-label="модальное окно пожертвования">
   <div class="modal__container modal__container_type_form">
     <div class="modal__header">
       <div class="modal__drag-line"></div>
       <h2 class="modal__title">Пожертвовать</h2>
-      <button class="modal__close-button modal__close-button_type_icon" type="button"><span class="button__icon icon-cross link"></span></button>
+      <button class="modal__close-button modal__close-button_type_icon" type="button"><span
+          class="button__icon icon-cross link"></span></button>
     </div>
 
     <div class="modal__body">
 
       <!-- добавить форме novalidate ?? -->
       <!-- перепроверить, когда обновится блок form (был такой класс ниже) -->
-      <form class="modal__grow-section" name="form-donation">
+      <form class="form form_type_modal" name="form-donation">
 
-        <fieldset class="popup__form-fields" name="donation-sum">
-          <div class="form__options">
+        <fieldset class="form__fields-group" name="donation-sum">
+          <h3 class="form__modal-fieldset-title">сумма</h3>
+          <div class="form__options form__options_type_grid">
             <input type="radio" id="100" class="form__input" name="preference" value="100" checked>
             <label class="form__label" for="100">100</label>
 
@@ -170,29 +181,35 @@
           </div>
         </fieldset>
 
-        <!-- <fieldset class="popup__form-handlers" name="email">
+        <fieldset class="form__fields-group" name="email">
+          <h3 class="form__modal-fieldset-title">email</h3>
           <div class="form__fields">
             <input class="form__input" type="email" name="email" id="place" placeholder="укажите почту для отправки чека" required>
           </div>
-        </fieldset> -->
+        </fieldset>
 
-        <fieldset class="popup__form-fields" name="payment-method">
+        <fieldset class="form__fields-group" name="payment-method">
+          <h3 class="form__modal-fieldset-title">способ оплаты</h3>
           <div class="popup__form-field-wrapper">
-            <input type="radio" id="credit-card" name="payment-method" value="credit-card" checked>
-            <label for="credit-card">банковской картой</label>
-            <input type="radio" id="paypal" name="payment-method" value="paypal">
-            <label for="paypal">PayPal</label>
+            <label for="credit-card">банковской картой
+              <input type="radio" id="credit-card" name="payment-method" value="credit-card" checked>
+            </label>
+            <label for="paypal">PayPal
+              <input type="radio" id="paypal" name="payment-method" value="paypal">
+            </label>
           </div>
         </fieldset>
 
-        <p class="form__list-description">Нажимая кнопку «пожертвовать» вы соглашаетесь с условиями <a class="link link_type_text">оферты</a>, <a class="link link_type_text">политики</a> в отношении обработки
+        <p class="form__list-description">Нажимая кнопку «пожертвовать» вы соглашаетесь с условиями <a
+            class="link link_type_text">оферты</a>, <a class="link link_type_text">политики</a> в отношении обработки
           и защиты персональных данных и даёте <a class="link link_type_text">согласие</a> на их обработку</p>
 
       </form>
 
       <!-- тут был класс popup__form-handlers и тег fieldset -->
       <div class="fixed-bar" name="handlers">
-        <button type="submit" form="form-donation" class="modal__button button button_type_filled" data-text="Перейти к оплате">Перейти к оплате</button>
+        <button type="submit" form="form-donation" class="modal__button button button_type_filled"
+          data-text="Перейти к оплате">Перейти к оплате</button>
       </div>
 
     </div>

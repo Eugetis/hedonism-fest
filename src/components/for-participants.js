@@ -85,6 +85,53 @@ setListeners()
 function handleFormSubmit(evt) {
     evt.preventDefault()
 }
+// DRAG and DROP
+// инициализация зоны для дропа
+const dropArea = document.getElementById('drop-area')
+
+// мб в байтах
+const BYTES_IN_MB = 1048576
+
+// полученный файл
+let fileInstance
+
+// отмена поведения событий по умолчанию
+Array.from(['dragenter', 'dragover', 'dragleave', 'drop']).forEach(eventName => {
+    dropArea.addEventListener(eventName, preventDefaults, false)
+})
+function preventDefaults (e) {
+    e.preventDefault()
+    e.stopPropagation()
+    return false
+}
+// подсвечивание области для перетаскивания
+Array.from(['dragenter', 'dragover']).forEach(eventName => {
+    dropArea.addEventListener(eventName, highlight, false)
+})
+Array.from(['dragleave', 'drop']).forEach(eventName => {
+    dropArea.addEventListener(eventName, unhighlight, false)
+})
+function highlight(e) {
+    dropArea.classList.add('form__upload-container_dragover')
+}
+function unhighlight(e) {
+    dropArea.classList.remove('form__upload-container_dragover')
+}
+
+dropArea.addEventListener('drop', evt => {
+    fileInstance = evt.dataTransfer.files[0]
+    if (fileInstance.size > 5 * BYTES_IN_MB) {
+      alert('Принимается файл до 5 МБ')
+      return false
+    }
+    if (fileInstance.type.startsWith('image/')) {
+      console.log(fileInstance)
+    } else {
+      alert('Можно загружать только изображения в формате .jpeg')
+      return false
+    }
+})
+
 
 } // это закрытие конструкции if-else
 

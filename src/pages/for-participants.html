@@ -74,7 +74,7 @@
       <!-- форма обернута в контейнер, чтобы задать геометрию секции без необходимости делать это в блоке form -->
       <section class="participants__container participants__container_type_form hidden">
 
-        <form class="form hidden">
+        <form class="form participants__form hidden">
 
           <fieldset class="form__step hidden" id="step-1">
             <div class="form__container">
@@ -82,18 +82,26 @@
                 <legend class="form__steps">шаг 1 из 4</legend>
                 <legend class="form__title">выберите категорию</legend>
               </div>
-              <div class="form__options">
-                <input type="radio" id="pref1" class="form__input" name="preference" value="кафе/бар/ресторан" checked>
-                <label class="form__label" for="pref1">кафе/бар/ресторан</label>
+              <div class="form__options form__fields">
+                <label class="label label_type_radio">
+                  кафе/бар/ресторан
+                  <input type="radio" class="field form__input" name="preference" value="кафе/бар/ресторан" required>
+                </label>
 
-                <input type="radio" id="pref2" class="form__input" name="preference" value="мастер-класс/лекция">
-                <label class="form__label" for="pref2">мастер-класс/лекция</label>
+                <label class="label label_type_radio label_type_disabled">
+                  мастер-класс/лекция
+                  <input type="radio" class="field form__input" name="preference" value="мастер-класс/лекция" disabled required>
+                </label>
 
-                <input type="radio" id="pref3" class="form__input" name="preference" value="посиделки/вечеринка">
-                <label class="form__label" for="pref3">посиделки/вечеринка</label>
+                <label class="label label_type_radio label_type_disabled">
+                  посиделки/вечеринка
+                  <input type="radio" class="field form__input" name="preference" value="посиделки/вечеринка" disabled required>
+                </label>
 
-                <input type="radio" id="pref4" class="form__input" name="preference" value="другое">
-                <label class="form__label" for="pref4">другое</label>
+                <label class="label label_type_radio label_type_disabled">
+                  другое
+                  <input type="radio" class="field form__input" name="preference" value="другое" disabled required>
+                </label>
               </div>
             </div>
             <!-- <div class="participants__buttons-block">
@@ -102,7 +110,7 @@
             </div> -->
             <div class="participants__buttons-block fixed-bar fixed-bar__align-right">
               <button class="participants__button button button_type_border" type="button" data-action="cancel">отмена</button>
-              <button class="participants__button button button_type_filled" type="button" data-action="continue">продолжить</button>
+              <button class="participants__button button button_type_filled button__submit" type="button" data-action="continue">продолжить</button>
             </div>
             <!-- ВНИМАНИЕ: в десктопе и мобиле отличаются текстовки кнопок - уточню, надо ли это делать -->
 
@@ -128,31 +136,42 @@
               </div>
               <div class="form__right-column">
                 <div class="form__options form__heading">
-                  <input type="radio" id="pref1" class="form__input" name="preference-checked" value="кафе/бар/ресторан" checked>
-                  <label class="form__label" for="preference-checked">кафе/бар/ресторан</label>
+                  <label class="label label_type_radio">
+                    кафе/бар/ресторан
+                    <input type="radio" class="field form__input" name="preference" value="кафе/бар/ресторан" checked required>
+                  </label>
                 </div>
                 <div class="form__fields">
-                  <label for="town" class="form__label">город</label>
-                  <select name="town" id="town" class="form__input">
-                    <option value="Москва">Москва</option>
-                    <option value="Санкт-Петербург">Санкт-Петербург</option>
-                    <option value="Сочи">Сочи</option>
-                    <option value="Калуга">Калуга</option>
-                    <option value="Екатеринбург">Екатеринбург</option>
-                  </select>
+                  <label class="label form__label">
+                    <span class="label__text">город</span>
+                    <select name="town" class="field form__input" required>
+                      <option value="Москва">Москва</option>
+                      <option value="Санкт-Петербург">Санкт-Петербург</option>
+                      <option value="Сочи">Сочи</option>
+                      <option value="Калуга">Калуга</option>
+                      <option value="Екатеринбург">Екатеринбург</option>
+                    </select>
+                  </label>
 
-                  <label class="form__label" for="place">название заведения</label>
-                  <input class="form__input" type="text" name="place" id="place" placeholder="введите название заведения">
+                  <label class="label form__label" for="place">
+                    <span class="label__text">название заведения</span>
+                    <input class="field form__input" type="text" name="place" id="place" placeholder="введите название заведения" required pattern="[a-zA-ZА-Яа-я ]+$">
+                  </label>
 
-                  <label class="form__label" for="name">контактное лицо</label>
-                  <input class="form__input" type="text" name="name" id="name" placeholder="введите ФИО">
+                  <label class="label form__label">
+                    <span class="label__text">контактное лицо</span>
+                    <input class="field form__input" type="text" name="name" id="name" placeholder="введите ФИО" required pattern="[a-zA-ZА-Яа-я ]+$">
+                  </label>
 
-                  <label class="form__label" for="tel">телефон для связи с организатором</label>
-                  <input class="form__input" type="tel" name="tel" id="tel" value="+7(">
+                  <label class="label form__label">
+                    <span class="label__text">телефон для связи с организатором</span>
+                    <input class="field form__input" type="tel" name="tel" id="tel" required>
+                  </label>
 
-                  <label class="form__label" for="about">описание</label>
-                  <textarea class="form__input" name="about" id="about" cols="30" rows="4" placeholder="Укажите, что из меню
-                  будет принимать участие в акции"></textarea>
+                  <label class="label form__label">
+                    <span class="label__text">описание</span>
+                    <textarea class="field form__input" name="about" id="about" cols="30" rows="4" placeholder="Укажите, что из меню будет принимать участие в акции"required pattern="[a-zA-ZА-Яа-я ]+$"></textarea>
+                  </label>
                 </div>
               </div>
             </div>
@@ -162,7 +181,7 @@
             </div> -->
             <div class="participants__buttons-block fixed-bar fixed-bar__align-right">
               <button class="participants__button button button_type_border" type="button" data-action="back">отмена</button>
-              <button class="participants__button button button_type_filled" type="button" data-action="continue">продолжить</button>
+              <button class="participants__button button button_type_filled button__submit" type="button" data-action="continue">продолжить</button>
             </div>
           </fieldset>
 
@@ -175,24 +194,35 @@
               </div>
               <div class="form__right-column">
                 <div class="form__fields">
-                  <label class="form__label" for="time">часы работы заведения</label>
-                  <input class="form__input" type="text" name="time" id="time" placeholder="например: 10:00-13:00, 13:00-19:00">
+                  <label class="label form__label">
+                    <span class="label__text">часы работы заведения</span>
+                    <input class="field form__input" type="text" name="time" placeholder="например: 10:00-13:00, 13:00-19:00" required>
+                  </label>
 
-                  <label class="form__label" for="address">адрес заведения</label>
-                  <input class="form__input" type="text" name="address" id="address" placeholder="каждый адрес с новой строки">
+                  <label class="label form__label">
+                    <span class="label__text">адрес заведения</span>
+                    <input class="field form__input" type="text" name="address" placeholder="каждый адрес с новой строки" required>
+                  </label>
 
-                  <label class="form__label" for="tel-org">номер телефона заведения</label>
-                  <input class="form__input" type="tel" name="tel-org" id="tel-org" value="+7(">
+                  <label class="label form__label">
+                    <span class="label__text">номер телефона заведения</span>
+                    <input class="field form__input" type="tel" name="tel-org" value="+7(" required>
+                  </label>
 
-                  <label class="form__label" for="link">ссылка на сайт</label>
-                  <input class="form__input" type="url" name="link" id="link" value="https://"></input>
+                  <label class="label form__label">
+                    <span class="label__text">ссылка на сайт</span>
+                    <input class="field form__input" type="url" name="link" value="https://"></input required>
+                  </label>
 
-                  <label class="form__label" for="link-soc">ссылки на соцсети</label>
-                  <input class="form__input" type="url" name="link-soc" id="link-soc" placeholder="каждую ссылку с новой строки"></input>
+                  <label class="label form__label">
+                    <span class="label__text">ссылки на соцсети</span>
+                    <input class="field form__input" type="url" name="link-soc" placeholder="каждую ссылку с новой строки"></input required>
+                  </label>
 
-                  <label class="form__label" for="about-org">описание</label>
-                  <textarea class="form__input" name="about-org" id="about-org" cols="30" rows="5" placeholder="напишите небольшое приглашение своим посетителям.
-                  Людям нравятся простые обращения, дружественный тон"></textarea>
+                  <label class="label form__label">
+                    <span class="label__text">описание</span>
+                    <textarea class="field form__input" name="about-org" cols="30" rows="5" placeholder="напишите небольшое приглашение своим посетителям. Людям нравятся простые обращения, дружественный тон" required></textarea>
+                  </label>
                 </div>
               </div>
             </div>
@@ -202,7 +232,7 @@
               </div> -->
               <div class="participants__buttons-block fixed-bar fixed-bar__align-right">
                 <button class="participants__button button button_type_border" type="button" data-action="back">отмена</button>
-                <button class="participants__button button button_type_filled" type="button" data-action="continue">продолжить</button>
+                <button class="participants__button button button_type_filled button__submit" type="button" data-action="continue">продолжить</button>
               </div>
           </fieldset>
 
@@ -234,9 +264,11 @@
               </div>
               <div class="form__right-column">
                 <div class="form__fields">
-                  <div class="form__upload-container">
-                    <label class="form__label-file" for="file">загрузить с устройства</label>
-                    <input class="form__input-file" type="file" name="file" id="input-file" accept=".jpeg">
+                  <div class="form__upload-container" id="drop-area">
+                    <label class="label form__label-file">
+                      <span class="label__text">загрузить с устройства</span>
+                      <input class="field form__input-file" type="file" name="file">
+                    </label>
                   </div>
                 </div>
               </div>
@@ -247,7 +279,7 @@
               </div> -->
               <div class="participants__buttons-block fixed-bar fixed-bar__align-right">
                 <button class="participants__button button button_type_border" type="button" data-action="back">отмена</button>
-                <button class="participants__button button button_type_filled" type="submit" data-action="submit">продолжить</button>
+                <button class="participants__button button button_type_filled button__submit" type="submit" data-action="submit">продолжить</button>
               </div>
           </fieldset>
 
