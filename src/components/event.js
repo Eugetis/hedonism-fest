@@ -220,12 +220,12 @@ const modalLikeHandler = (modal, state) => {
 
   switch (state) {
     case true:
-      modalButtonSpan.classList.remove('icon-heart-filled')
-      modalButtonSpan.classList.add('icon-heart')
-      return `${modalButtonSpan.outerHTML}не хочу идти`;
-    case false:
       modalButtonSpan.classList.remove('icon-heart')
-      modalButtonSpan.classList.add('icon-heart-filled')
+      modalButtonSpan.classList.add('card-control__icon_color_red', 'icon-heart-filled')
+      return `${modalButtonSpan.outerHTML}хочу пойти`;
+    case false:
+      modalButtonSpan.classList.add('icon-heart')
+      modalButtonSpan.classList.remove('card-control__icon_color_red', 'icon-heart-filled')
       return `${modalButtonSpan.outerHTML}хочу пойти`;
   }
 }
