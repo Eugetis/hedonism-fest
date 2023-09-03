@@ -33,7 +33,7 @@ if (document.querySelector('.page_id_index')) {
 }
 // Дмитрий
 
-import { updateCityOnMap } from './catalog'
+import { updateCityOnMap } from './map.js'
 
 // Андрей
 import { showSlide, activateSlider } from '../components/photo-slider.js';
@@ -44,10 +44,15 @@ import { setCatalogEventListener } from '../components/catalog.js';
 import { addScrollListener } from '../components/floating-button.js';
 
 // Алексей
-import { dropDownMenuOpen, dropDownMenuClose } from '../components/utils.js';
+import {/*dropDownMenuDesktopOpen, dropDownMenuDesktopClose,*/ dropDownMenuOpen, dropDownMenuClose, dropDownMenuMobileOpen, dropDownMenuMobileClose, mobileMenuSliderOpen, mobileMenuSliderClose } from '../components/utils.js';
 import {
   cardGridSection,
+  //dropDownMenuButtonMobile,
   dropDownMenuButton,
+  dropDownMenuButtonBack,
+  mobileMenuButton,
+  mobileMenuButtonSecondary,
+  mobileMenuButtonClose,
   dropDownMenuElements,
   dropDownMenuInputs,
   header
@@ -79,6 +84,7 @@ const donateButton = document.querySelector('.header__button');
 
 // Алексей
 let dropDownMenuButtonText = document.querySelector('.dropdown__button-text');
+let dropDownMenuButtonTextMobile = document.querySelector('.dropdown__button-text-mobile');
 
 
 
@@ -159,17 +165,36 @@ if (document.querySelector('.page_id_catalog')) {
 // Алексей - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 //открытие дропдауна
+//dropDownMenuButton.addEventListener('click', dropDownMenuDesktopOpen);
 dropDownMenuButton.addEventListener('click', dropDownMenuOpen);
 //закрытие дропдауна
 dropDownMenuElements.forEach(function (dropDownMenuElement) {
   dropDownMenuElement.addEventListener('click', dropDownMenuClose);
 })
+/*dropDownMenuElements.forEach(function (dropDownMenuElement) {
+  dropDownMenuElement.addEventListener('click', dropDownMenuDesktopClose);
+})*/
+//открытие дропдауна на мобильной версии
+dropDownMenuButtonTextMobile.addEventListener('click', dropDownMenuMobileOpen);
+//закрытие дропдауна на мобильной версии
+dropDownMenuButtonBack.addEventListener('click', dropDownMenuMobileClose);
+//выезд слайда с меню на мобильной версии
+if (document.querySelector('.page_id_index')) {
+mobileMenuButton.addEventListener('click', mobileMenuSliderOpen);
+}
+mobileMenuButtonSecondary.addEventListener('click', mobileMenuSliderOpen);
+mobileMenuButtonClose.addEventListener('click', mobileMenuSliderClose);
+
+
 //подставление значения выбранного пункта дропдауна
 dropDownMenuInputs.forEach(function (dropDownMenuInput) {
   dropDownMenuInput.addEventListener('click', function () {
     if (dropDownMenuInput.checked) {
+      console.log(dropDownMenuInput.value);
       dropDownMenuButtonText.innerText = dropDownMenuInput.value;
+      dropDownMenuButtonTextMobile.innerText = dropDownMenuInput.value;
       localStorage.setItem('city', dropDownMenuInput.value);
+      dropDownMenuMobileClose();
       // Dmitry
       // пинаем карту, чтобы обновилась по выбранному городу
       updateCityOnMap();
@@ -184,8 +209,12 @@ if (!localStorage.getItem('city')) {
 
 //сохранение значения кнопки и расположении галочки на инпуте
 dropDownMenuButtonText.textContent = localStorage.getItem('city');
+dropDownMenuButtonTextMobile.textContent = localStorage.getItem('city');
 dropDownMenuInputs.forEach(function (dropDownMenuInput) {
   if (dropDownMenuInput.value === dropDownMenuButtonText.innerText) {
+    dropDownMenuInput.checked = true;
+  } else if (dropDownMenuInput.value === dropDownMenuButtonTextMobile.innerText) {
+    console.log(dropDownMenuInput);
     dropDownMenuInput.checked = true;
   }
 });

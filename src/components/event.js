@@ -169,7 +169,7 @@ const modalBackHandler = (event) => {
   favoriteList.classList.remove('favourites-list_opened');
 }
 
-const modalAddressHandler = async (event) => {
+export const modalAddressHandler = async (event, id) => {
   const modal = event.target.closest('.modal_id_event-full');
   const modalContainer = modal.querySelector('.catalog__events-container_type_grid').querySelector('.cards_type_grid');
   const catalogGridContainer = document.querySelector('.cards_type_grid');
