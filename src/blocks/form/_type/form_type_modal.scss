@@ -1,0 +1,15 @@
+@use 'variables' as *;
+
+.form_type_modal {
+  width: 100%;
+  height: unset;
+  flex-grow: 1;
+  position: relative;
+  gap: 32px;
+}
+
+@media screen and (max-width: $mobile) {
+  .form_type_modal {
+    padding: $pad-16 $pad-20;
+  }
+}

@@ -1,0 +1,15 @@
+@use 'variables' as *;
+
+.form__radio-group-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: $mobile) {
+  .form__radio-group-wrapper {
+    padding: $pad-20;
+  }
+}

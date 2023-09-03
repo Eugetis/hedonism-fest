@@ -225,12 +225,30 @@
         <div class="test_controllers_flex">
 
           <!-- контейнер контроллера amount controls-->
-          <div class="amount-controls">
-            <button class="amount-controls amount-controls__minus-button"><span class="amount-controls__icon icon-minus-small"></span></button>
-            <input id="amount-input" name="amount-input" placeholder="1" required disabled
-                class="amount-controls amount-controls__input" type="text" inputmode="numeric" value="1">
+          <div class="form__amount-wrapper">
+            <button
+              class="button button_type_amount-minus"
+              type="button"
+              onclick="this.nextElementSibling.stepDown();">
+              <span class="button__icon button__icon_type_amount-control icon-minus-small"></span>
+            </button>
+            <input
+              type="number"
+              class="form__field form__field_type_amount"
+              id="amount-input"
+              name="amount-input"
+              placeholder="1"
+              inputmode="numeric"
+              min="1"
+              value="1"
+              required>
             </input>
-            <button class="amount-controls amount-controls__plus-button"><span class="amount-controls__icon icon-plus-small"></span></button>
+            <button
+              class="button button_type_amount-plus"
+              type="button"
+              onclick="this.previousElementSibling.stepUp();">
+              <span class="button__icon button__icon_type_amount-control icon-plus-small"></span>
+            </button>
           </div>
 
         </div>

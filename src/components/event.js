@@ -64,7 +64,7 @@ export const modalCreate = ({cards}, modalTemplate) => {
   const modalElement = modalTemplate.querySelector('.modal').cloneNode(true);
   const modalButton = modalElement.querySelector('#modal__button-like');
   const addressButton = modalElement.querySelector('.table-lines__button');
-  const addressButtonIcon = modalElement.querySelector('.button__icon').outerHTML;
+  const addressButtonIcon = modalElement.querySelector('.icon-arrow-right').outerHTML;
   addressButton.innerHTML = `смотреть еще ${card.location.length}${addressButtonIcon}`
 
   modalElement.dataset.id = card.id;
@@ -169,7 +169,7 @@ const modalBackHandler = (event) => {
   favoriteList.classList.remove('favourites-list_opened');
 }
 
-const modalAddressHandler = async (event) => {
+export const modalAddressHandler = async (event, id) => {
   const modal = event.target.closest('.modal_id_event-full');
   const modalContainer = modal.querySelector('.catalog__events-container_type_grid').querySelector('.cards_type_grid');
   const catalogGridContainer = document.querySelector('.cards_type_grid');

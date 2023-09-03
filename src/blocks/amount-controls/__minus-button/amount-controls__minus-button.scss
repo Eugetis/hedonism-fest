@@ -1,9 +1,0 @@
-@use 'variables' as *;
-
-.amount-controls__minus-button {
-  padding: $pad-12;
-  border-radius: $radius-small 0 0 $radius-small;
-  border: none;
-  background: $color-primary;
-  cursor: pointer;
-}

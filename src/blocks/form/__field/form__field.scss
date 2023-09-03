@@ -1,0 +1,50 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.form__field {
+  @include text-desktop;
+  color: $dark-primary;
+  display: block;
+  position: relative;
+  width: 100%;
+  min-height: 48px;
+  box-sizing: border-box;
+  padding: $pad-12 $pad-24;
+  background-color: $white;
+  border: $border-bold-input;
+  border-radius: $radius-large;
+}
+
+@media screen and (max-width: $mobile) {
+  .form__field {
+    @include text-mobile;
+    min-height: 44px;
+    padding: $pad-12 $pad-20;
+    border-radius: $radius-small;
+  }
+}
+
+.form__field:focus {
+  outline: none;
+  border: $border-bold-primary;
+}
+
+
+
+// стили плейсхолдера
+
+.form__field::-webkit-input-placeholder {
+  color: $dark-secondary;
+}
+
+.form__field::-moz-placeholder {
+  color: $dark-secondary;
+}
+
+.form__field::-ms-input-placeholder {
+  color: $dark-secondary;
+}
+
+.form__field::placeholder {
+  color: $dark-secondary;
+}

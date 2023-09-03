@@ -1,0 +1,73 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.form__field_type_radio-round {
+  @include btn-text-desktop;
+  background-color: $light-primary;
+  border: unset;
+  transition: all .1s linear;
+  padding: $pad-12 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+@media screen and (max-width: $mobile) {
+  .form__field_type_radio-round {
+    @include btn-text-mobile;
+  }
+}
+
+.form__field_type_radio-round input[type="radio"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(0 0 0 0);
+}
+
+
+.form__field_type_radio-round:has(input[type=radio])::before {
+  content: "\e823";
+  font: $icon-text-desktop;
+  color: $dark-primary;
+}
+
+@media screen and (max-width: $mobile) {
+  .form__field_type_radio-round:has(input[type=radio])::before {
+    font: $icon-text-mobile;
+  }
+}
+
+
+.form__field_type_radio-round:has(input[type="radio"]:disabled) {
+  color: $dark-secondary;
+  cursor: not-allowed;
+}
+
+.form__field_type_radio-round:has(input[type="radio"]:disabled::before) {
+  color: $dark-secondary;
+  cursor: not-allowed;
+}
+
+
+.form__field_type_radio-round:has(input[type=radio]:checked)::before {
+  content: "\e824";
+  font: $icon-text-desktop;
+  color: $color-primary;
+}
+
+@media screen and (max-width: $mobile) {
+  .form__field_type_radio-round:has(input[type=radio]:checked)::before {
+    font: $icon-text-mobile;
+  }
+}
+
+
+.form__field_type_radio-round:has(input[type=radio]:not(:disabled):not(:checked):hover) {
+  cursor: pointer;
+}
+
+.form__field_type_radio-round:has(input[type=radio]:not(:disabled):not(:checked):hover)::before {
+  color: $color-primary;
+}

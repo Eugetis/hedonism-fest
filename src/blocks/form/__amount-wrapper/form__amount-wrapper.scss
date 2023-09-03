@@ -1,0 +1,15 @@
+@use 'variables' as *;
+
+.form__amount-wrapper {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 48px;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: $mobile) {
+  .form__amount-wrapper {
+    min-height: 44px;
+  }
+}

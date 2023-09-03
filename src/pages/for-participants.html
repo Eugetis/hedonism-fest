@@ -13,10 +13,8 @@
 <body class="page page_id_for-participants">
   <%= require('html-loader!./header.html').default %>
 
-  <main class="page__grow">
+  <main class="participants">
     <h1 class="participants__title participants__title_type_desktop">Стать участником</h1>
-
-    <!-- <section class="participants__content"> -->
 
       <section class="participants__container participants__container_type_content">
         <!-- ниже - альтеративный заголовок, который виден только до начала формы в мобиле -->
@@ -74,181 +72,287 @@
       <!-- форма обернута в контейнер, чтобы задать геометрию секции без необходимости делать это в блоке form -->
       <section class="participants__container participants__container_type_form hidden">
 
-        <form class="form hidden">
+        <form class="form hidden" name="forParticipants">
 
-          <fieldset class="form__step hidden" id="step-1">
-            <div class="form__container">
-              <div class="form__heading">
-                <legend class="form__steps">шаг 1 из 4</legend>
-                <legend class="form__title">выберите категорию</legend>
+          <fieldset class="form__step-container hidden" id="step-1">
+            <div class="form__step-content">
+              <div class="form__step-legend">
+                <legend class="form__step-legend-text">шаг 1 из 4</legend>
+                <legend class="form__step-legend-title">выберите категорию</legend>
               </div>
-              <div class="form__options">
-                <input type="radio" id="pref1" class="form__input" name="preference" value="кафе/бар/ресторан" checked>
-                <label class="form__label" for="pref1">кафе/бар/ресторан</label>
+              <div class="form__step-fields-wrapper">
+                <div class="form__radio-group-wrapper">
+                  <label class="form__field form__field_type_radio-fill" for="cafe">
+                    кафе/бар/ресторан
+                    <input type="radio" name="category" id="cafe" value="cafe" required>
+                  </label>
 
-                <input type="radio" id="pref2" class="form__input" name="preference" value="мастер-класс/лекция">
-                <label class="form__label" for="pref2">мастер-класс/лекция</label>
+                  <label class="form__field form__field_type_radio-fill" for="lesson">
+                    мастер-класс/лекция
+                    <input type="radio" name="category" id="lesson" value="lesson" disabled required>
+                  </label>
 
-                <input type="radio" id="pref3" class="form__input" name="preference" value="посиделки/вечеринка">
-                <label class="form__label" for="pref3">посиделки/вечеринка</label>
+                  <label class="form__field form__field_type_radio-fill" for="party">
+                    посиделки/вечеринка
+                    <input type="radio" name="category" id="party" value="party" disabled required>
+                  </label>
 
-                <input type="radio" id="pref4" class="form__input" name="preference" value="другое">
-                <label class="form__label" for="pref4">другое</label>
+                  <label class="form__field form__field_type_radio-fill" for="another">
+                    другое
+                    <input type="radio" name="category" id="another" value="another" disabled required>
+                  </label>
+                </div>
               </div>
             </div>
-            <!-- <div class="participants__buttons-block">
-              <input type="button" class="form__button" value="отмена">
-              <input type="button" class="form__button form__button_active" value="продолжить">
-            </div> -->
+
             <div class="participants__buttons-block fixed-bar fixed-bar__align-right">
               <button class="participants__button button button_type_border" type="button" data-action="cancel">отмена</button>
-              <button class="participants__button button button_type_filled" type="button" data-action="continue">продолжить</button>
+              <button class="participants__button button button_type_filled button__submit" type="button" data-action="continue">далее</button>
             </div>
             <!-- ВНИМАНИЕ: в десктопе и мобиле отличаются текстовки кнопок - уточню, надо ли это делать -->
 
           </fieldset>
 
-          <fieldset class="form__step hidden" id="step-2">
-            <div class="form__container">
-              <div class="form__heading">
-                <legend class="form__steps">шаг 2 из 4</legend>
-                <legend class="form__title">заполните форму</legend>
-                <p class="form__list-description">Для участия вы можете выбрать:</p>
+          <fieldset class="form__step-container hidden" id="step-2">
+            <div class="form__step-content">
+              <div class="form__step-legend">
+                <legend class="form__step-legend-text">шаг 2 из 4</legend>
+                <legend class="form__step-legend-title">заполните форму</legend>
+                <p class="form__step-legend-text">Для участия вы можете выбрать:</p>
                 <ul class="form__list">
-                  <li class="form__list-item">
-                      определенную позицию из меню
-                  </li>
-                  <li class="form__list-item">
-                      группу позиций
-                  </li>
-                  <li class="form__list-item">
-                      процент от продаж определенных позиций или всего меню
-                  </li>
+                  <li>определенную позицию из меню</li>
+                  <li>группу позиций</li>
+                  <li>процент от продаж определенных позиций или всего меню</li>
                 </ul>
               </div>
-              <div class="form__right-column">
-                <div class="form__options form__heading">
-                  <input type="radio" id="pref1" class="form__input" name="preference-checked" value="кафе/бар/ресторан" checked>
-                  <label class="form__label" for="preference-checked">кафе/бар/ресторан</label>
+
+              <div class="form__step-fields-wrapper">
+
+                <div class="form__radio-group-wrapper form__radio-group-wrapper_type_scenario-selected">
+                  <label class="form__field form__field_type_radio-fill">
+                    кафе/бар/ресторан
+                    <input type="radio" value="cafe" checked>
+                  </label>
                 </div>
-                <div class="form__fields">
-                  <label for="town" class="form__label">город</label>
-                  <select name="town" id="town" class="form__input">
-                    <option value="Москва">Москва</option>
-                    <option value="Санкт-Петербург">Санкт-Петербург</option>
-                    <option value="Сочи">Сочи</option>
-                    <option value="Калуга">Калуга</option>
-                    <option value="Екатеринбург">Екатеринбург</option>
-                  </select>
 
-                  <label class="form__label" for="place">название заведения</label>
-                  <input class="form__input" type="text" name="place" id="place" placeholder="введите название заведения">
+                <div class="form__step-fields-group">
 
-                  <label class="form__label" for="name">контактное лицо</label>
-                  <input class="form__input" type="text" name="name" id="name" placeholder="введите ФИО">
+                  <!-- <div class="form__field-wrapper">
+                    <label class="form__label" for="city">город</label>
+                    <input type="text" class="form__field form__field_type_input" name="city" placeholder="выберите из списка" pattern="[a-zA-ZА-Яа-я ]+$" required>
+                  </div> -->
 
-                  <label class="form__label" for="tel">телефон для связи с организатором</label>
-                  <input class="form__input" type="tel" name="tel" id="tel" value="+7(">
+                  <div class="form__field-wrapper">
+                    <select class="form__field form__field_type_select" id="city" name="city">
+                      <option value="" disabled selected hidden>выберите из списка</option>
+                      <option value="moscow">Москва</option>
+                      <option value="spb">Санкт-Петербург</option>
+                      <option value="sochi">Сочи</option>
+                    </select>
+                  </div>
 
-                  <label class="form__label" for="about">описание</label>
-                  <textarea class="form__input" name="about" id="about" cols="30" rows="4" placeholder="Укажите, что из меню
-                  будет принимать участие в акции"></textarea>
+                  <div class="form__field-wrapper">
+                    <label class="form__label" for="place-name">название заведения</label>
+                    <input
+                      type="text"
+                      class="form__field form__field_type_input"
+                      id="place-name"
+                      name="placeName"
+                      placeholder="введите название заведения"
+                      pattern="^[A-Za-zА-Яа-яЁё\s]+$"
+                      data-error-message="разрешены только латинские, кириллические буквы и пробелы"
+                      required>
+                    <span class="form__field-error place-name-error"></span>
+                  </div>
+
+                  <div class="form__field-wrapper">
+                    <label class="form__label" for="contact-person">контактное лицо</label>
+                    <input
+                      type="text"
+                      class="form__field form__field_type_input"
+                      id="contact-person"
+                      name="contactPerson"
+                      placeholder="введите ФИО"
+                      pattern="^[A-Za-zА-Яа-яЁё\s]+$"
+                      data-error-message="разрешены только латинские, кириллические буквы и пробелы"
+                      required>
+                    <span class="form__field-error contact-person-error"></span>
+                  </div>
+
+                  <div class="form__field-wrapper">
+                    <label class="form__label" for="contact-telephone">телефон для связи с организатором</label>
+                    <input
+                      type="text"
+                      class="form__field form__field_type_input"
+                      id="contact-telephone"
+                      name="contacTelephone"
+                      value="+7("
+                      pattern="^(\+7)[\-\d\(\)\-]+$"
+                      data-error-message="телефон должен начинаться с +7, разрешены только цифры, знаки ),(,+,-"
+                      required>
+                    <span class="form__field-error contact-telephone-error"></span>
+                  </div>
+
+                  <div class="form__field-wrapper">
+                    <label class="form__label" for="description">описание</label>
+                    <textarea
+                      class="form__field form__field_type_textarea"
+                      rows="3"
+                      id="description"
+                      name="description"
+                      placeholder="Укажите, что из меню будет принимать участие в акции"
+                      pattern="^[A-Za-zА-Яа-яЁё\s]+$"
+                      data-error-message="разрешены только латинские, кириллические буквы и пробелы"
+                      required></textarea>
+                    <span class="form__field-error description-error"></span>
+                  </div>
+
                 </div>
+
               </div>
+
             </div>
-            <!-- <div class="participants__buttons-block">
-              <input type="button" class="form__button" value="назад">
-              <input type="button" class="form__button" value="продолжить">
-            </div> -->
+
             <div class="participants__buttons-block fixed-bar fixed-bar__align-right">
-              <button class="participants__button button button_type_border" type="button" data-action="back">отмена</button>
-              <button class="participants__button button button_type_filled" type="button" data-action="continue">продолжить</button>
+              <button class="participants__button button button_type_border" type="button" data-action="back">назад</button>
+              <button class="participants__button button button_type_filled button__submit" type="button" data-action="continue">далее</button>
             </div>
+
           </fieldset>
 
-          <fieldset class="form__step hidden" id="step-3">
-            <div class="form__container">
-              <div class="form__heading">
-                <legend class="form__steps">шаг 3 из 4</legend>
-                <legend class="form__title">укажите контакты и часы работы</legend>
-                <p class="form__list-description">Эти данные появятся в описании карточки вашего мероприятия в нашем каталоге событий</p>
+          <fieldset class="form__step-container hidden" id="step-3">
+            <div class="form__step-content">
+              <div class="form__step-legend">
+                <legend class="form__step-legend-text">шаг 3 из 4</legend>
+                <legend class="form__step-legend-title">укажите контакты и часы работы</legend>
+                <p class="form__step-legend-text">Эти данные появятся в описании карточки вашего мероприятия в нашем каталоге событий</p>
               </div>
-              <div class="form__right-column">
-                <div class="form__fields">
-                  <label class="form__label" for="time">часы работы заведения</label>
-                  <input class="form__input" type="text" name="time" id="time" placeholder="например: 10:00-13:00, 13:00-19:00">
+              <div class="form__step-fields-wrapper">
+                <div class="form__step-fields-group">
 
-                  <label class="form__label" for="address">адрес заведения</label>
-                  <input class="form__input" type="text" name="address" id="address" placeholder="каждый адрес с новой строки">
+                  <div class="form__field-wrapper">
+                    <label class="form__label" for="working-hours">часы работы заведения</label>
+                    <input
+                      type="text"
+                      class="form__field form__field_type_input"
+                      id="working-hours"
+                      name="workingHours"
+                      placeholder="например: 10:00-13:00, 13:00-19:00"
+                      pattern="^[0-2]\d:[0-5]\d\-[0-2]\d:[0-5]\d$"
+                      data-error-message="пожалуйста, введите время работы в формате чч:мм-чч:мм"
+                      required>
+                    <span class="form__field-error working-hours-error"></span>
+                  </div>
 
-                  <label class="form__label" for="tel-org">номер телефона заведения</label>
-                  <input class="form__input" type="tel" name="tel-org" id="tel-org" value="+7(">
+                  <div class="form__field-wrapper">
+                    <label class="form__label" for="place-address">адрес заведения</label>
+                    <input
+                      type="text"
+                      class="form__field form__field_type_input"
+                      id="place-address"
+                      name="placeAddress"
+                      placeholder="каждый адрес с новой строки"
+                      pattern="^[0-9A-Za-zА-Яа-яЁё\s]+$"
+                      data-error-message="разрешены только латинские, кириллические буквы и пробелы"
+                      required>
+                    <span class="form__field-error place-address-error"></span>
+                  </div>
 
-                  <label class="form__label" for="link">ссылка на сайт</label>
-                  <input class="form__input" type="url" name="link" id="link" value="https://"></input>
+                  <div class="form__field-wrapper">
+                    <label class="form__label" for="place-telephone">номер телефон заведения</label>
+                    <input
+                      type="text"
+                      class="form__field form__field_type_input"
+                      id="place-telephone"
+                      name="placeTelephone"
+                      value="+7("
+                      pattern="^(\+7)[\-\d\(\)\-]+$"
+                      data-error-message="телефон должен начинаться с +7, разрешены только цифры, знаки ),(,+,-"
+                      required>
+                    <span class="form__field-error place-telephone-error"></span>
+                  </div>
 
-                  <label class="form__label" for="link-soc">ссылки на соцсети</label>
-                  <input class="form__input" type="url" name="link-soc" id="link-soc" placeholder="каждую ссылку с новой строки"></input>
+                  <div class="form__field-wrapper">
+                    <label class="form__label" for="place-site">ссылка на сайт</label>
+                    <input
+                      type="url"
+                      class="form__field form__field_type_input"
+                      id="place-site"
+                      name="placeSite"
+                      value="https://"
+                      data-error-message="ссылка должна начинаться с https:// или http://"
+                      required>
+                    <span class="form__field-error place-site-error"></span>
+                  </div>
 
-                  <label class="form__label" for="about-org">описание</label>
-                  <textarea class="form__input" name="about-org" id="about-org" cols="30" rows="5" placeholder="напишите небольшое приглашение своим посетителям.
-                  Людям нравятся простые обращения, дружественный тон"></textarea>
+                  <div class="form__field-wrapper">
+                    <label class="form__label" for="place-socials">ссылки на соцсети</label>
+                    <input
+                      type="url"
+                      class="form__field form__field_type_input"
+                      id="place-socials"
+                      name="placeSocials"
+                      placeholder="каждую ссылку с новой строки"
+                      data-error-message="ссылка должна начинаться с https:// или http://"
+                      required>
+                    <span class="form__field-error place-socials-error"></span>
+                  </div>
+
+                  <div class="form__field-wrapper">
+                    <label class="form__label" for="place-description">описание</label>
+                    <textarea
+                      class="form__field form__field_type_textarea"
+                      rows="3"
+                      id="place-description"
+                      name="placeDescription"
+                      placeholder="Напишите небольшое приглашение своим посетителям. Людям нравятся простые обращения, дружественный тон"
+                      pattern="[a-zA-ZА-Яа-я ]+$"
+                      data-error-message="разрешены только латинские, кириллические буквы и пробелы"
+                      required></textarea>
+                    <span class="form__field-error place-descroption-error"></span>
+                  </div>
+
                 </div>
               </div>
             </div>
-              <!-- <div class="participants__buttons-block">
-                  <input type="button" class="form__button" value="назад">
-                  <input type="button" class="form__button" value="продолжить">
-              </div> -->
-              <div class="participants__buttons-block fixed-bar fixed-bar__align-right">
-                <button class="participants__button button button_type_border" type="button" data-action="back">отмена</button>
-                <button class="participants__button button button_type_filled" type="button" data-action="continue">продолжить</button>
-              </div>
+
+            <div class="participants__buttons-block fixed-bar fixed-bar__align-right">
+              <button class="participants__button button button_type_border" type="button" data-action="back">назад</button>
+              <button class="participants__button button button_type_filled button__submit" type="button" data-action="continue">далее</button>
+            </div>
           </fieldset>
 
-          <fieldset class="form__step hidden" id="step-4">
-            <div class="form__container">
-              <div class="form__heading">
-                <legend class="form__steps">шаг 4 из 4</legend>
-                <legend class="form__title">добавление фото</legend>
-                <p class="form__list-description">Как правило, профессиональные фото выглядят более привлекательно.</p>
-                <p class="form__list-description">Технические требования:</p>
-
+          <fieldset class="form__step-container hidden" id="step-4">
+            <div class="form__step-content">
+              <div class="form__step-legend">
+                <legend class="form__step-legend-text">шаг 4 из 4</legend>
+                <legend class="form__step-legend-title">добавление фото</legend>
+                <p class="form__step-legend-text">Как правило, профессиональные фото выглядят более привлекательно.</p>
+                <p class="form__step-legend-text">Технические требования:</p>
                 <ul class="form__list">
-                  <li class="form__list-item">
-                        формат: jpeg
-                  </li>
-                  <li class="form__list-item">
-                        вес: не более 5 МБ
-                  </li>
-                  <li class="form__list-item">
-                        альбомная ориентация
-                  </li>
-                  <li class="form__list-item">
-                        соотношение сторон: 16:9
-                  </li>
-                  <li class="form__list-item">
-                        ширина не менее 1600 пикселей
-                  </li>
+                  <li>формат: jpeg</li>
+                  <li>вес: не более 5 МБ</li>
+                  <li>альбомная ориентация</li>
+                  <li>соотношение сторон: 16:9</li>
+                  <li>ширина не менее 1600 пикселей</li>
                 </ul>
               </div>
-              <div class="form__right-column">
-                <div class="form__fields">
+
+              <div class="form__step-fields-wrapper">
+                <div class="form__step-fields-group">
                   <div class="form__upload-container">
-                    <label class="form__label-file" for="file">загрузить с устройства</label>
-                    <input class="form__input-file" type="file" name="file" id="input-file" accept=".jpeg">
+                    <label class="form__label form__label_type_upload-file" for="file"></label>
+                    <input class="form__field_type_file" type="file" accept="image/jpeg" id="file" name="file">
                   </div>
                 </div>
               </div>
+
             </div>
-              <!-- <div class="participants__buttons-block">
-                <input type="button" class="form__button" value="назад">
-                <input type="button" class="form__button" value="завершить">
-              </div> -->
-              <div class="participants__buttons-block fixed-bar fixed-bar__align-right">
-                <button class="participants__button button button_type_border" type="button" data-action="back">отмена</button>
-                <button class="participants__button button button_type_filled" type="submit" data-action="submit">продолжить</button>
-              </div>
+
+            <div class="participants__buttons-block fixed-bar fixed-bar__align-right">
+              <button class="participants__button button button_type_border" type="button" data-action="back">назад</button>
+              <button class="participants__button button button_type_filled button__submit" type="submit" data-action="submit">завершить</button>
+            </div>
           </fieldset>
 
         </form>

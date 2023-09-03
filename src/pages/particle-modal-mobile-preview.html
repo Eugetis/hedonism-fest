@@ -2,7 +2,7 @@
   <!-- должна открываться по клику на точку мероприятия на карте в Каталоге -->
   <!-- через добавление секции класса modal_opened -->
 
-  <section class="modal modal_type_preview  modal_id_event-mobile-preview" aria-label="модальное окно с превью мероприятия на карте">
+  <section class="modal modal_type_preview modal_id_event-mobile-preview" aria-label="модальное окно с превью мероприятия на карте" aria-hidden="true">
 
     <div class="modal__container modal__container_type_preview">
 
@@ -16,11 +16,10 @@
               <p class="preview__description">лектор: Мария Бархатова</p>
             </div>
             <div class="preview__address">
-              <p class="preview__text">улица Блохина, 22</p>
-              <p class="preview__text">+ ещё 3</p>
+              <p class="preview__text preview_id_address">улица Блохина, 22</p>
+              <p class="preview__text preview__text_type_fit preview_id_address-plus">+ ещё 3</p>
             </div>
             <button class="button button_type_filled" type="button">подробнее</button>
-
           </div>
 
     </div>

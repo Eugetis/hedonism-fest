@@ -6,17 +6,18 @@
 
 
 // Георгий - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-const hidden = 'hidden';
+
 
 // открываем конструкцию if-else (иначе сыпятся ошибки, что элементы не найдены)
 if (document.querySelector('.page_id_for-participants')) {
 
+  const hidden = 'hidden';
   const contentSection = document.querySelector('.participants__container_type_content');
   const formSection = document.querySelector('.participants__container_type_form');
   const openFormBtn = document.querySelector('#open-form-btn');
-  const formParticipants = document.querySelector('.form');
-  const fieldsets = Array.from(formParticipants.querySelectorAll('.form__step'));
-
+  // const formParticipants = document.querySelector('.form');
+  const formParticipants = document.forms.forParticipants;
+  const fieldsets = Array.from(formParticipants.querySelectorAll('.form__step-container'));
 
 
 // открытие формы
@@ -44,7 +45,7 @@ function hideField(field) {
 // скрипт перелистывания шагов формы
 function handleScroll(evt) {
     //найти текущий филсет
-    const currentField = evt.target.closest('.form__step')
+    const currentField = evt.target.closest('.form__step-container')
     // поиск подходящей кнопки по data-атрибуту
     if(evt.target.dataset.action === 'back') {
         hideField(currentField)
@@ -83,8 +84,55 @@ setListeners()
 
 // функция отправки формы (обсудить, что делаем, скорее всего отправим на фейковый API)
 function handleFormSubmit(evt) {
-    evt.preventDefault()
+  evt.preventDefault()
 }
+// DRAG and DROP
+// инициализация зоны для дропа
+const dropArea = document.querySelector('.form__upload-container');
+
+// мб в байтах
+const BYTES_IN_MB = 1048576;
+
+// полученный файл
+let fileInstance;
+
+// отмена поведения событий по умолчанию
+Array.from(['dragenter', 'dragover', 'dragleave', 'drop']).forEach(eventName => {
+  dropArea.addEventListener(eventName, preventDefaults, false);
+});
+function preventDefaults(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  return false;
+}
+// подсвечивание области для перетаскивания
+Array.from(['dragenter', 'dragover']).forEach(eventName => {
+  dropArea.addEventListener(eventName, highlight, false);
+});
+Array.from(['dragleave', 'drop']).forEach(eventName => {
+  dropArea.addEventListener(eventName, unhighlight, false);
+});
+function highlight(e) {
+  dropArea.classList.add('form__upload-container_dragover');
+}
+function unhighlight(e) {
+  dropArea.classList.remove('form__upload-container_dragover');
+}
+
+dropArea.addEventListener('drop', evt => {
+    fileInstance = evt.dataTransfer.files[0];
+    if (fileInstance.size > 5 * BYTES_IN_MB) {
+      alert('Принимается файл до 5 МБ');
+      return false;
+    }
+    if (fileInstance.type.startsWith('image/')) {
+      console.log(fileInstance);
+    } else {
+      alert('Можно загружать только изображения в формате .jpeg');
+      return false;
+    }
+});
+
 
 } // это закрытие конструкции if-else
 

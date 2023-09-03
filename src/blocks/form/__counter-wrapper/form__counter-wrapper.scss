@@ -1,0 +1,11 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.form__counter-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 8px;
+}

@@ -4,6 +4,9 @@
 .preview__text {
   @include subtext-desktop;
   color: $dark-secondary;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 @media screen and (max-width: $mobile) {

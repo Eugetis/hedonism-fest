@@ -1,8 +1,19 @@
 .modal_opened {
   visibility: visible;
-  opacity: 1;
   pointer-events: auto;
+  transition: visibility 1s ease;
 }
 
-// в js нужно при открытии модалки добавлять body (или классу page)
-// запрет прокрутки overflow: hidden (а при закрытии убирать его)
+.modal_opened .modal__container {
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+.modal_opened .modal__wrapper-for-side .modal__container {
+  opacity: 1;
+  transition: opacity 1s ease;
+}
+
+
+// есть вероятность, что плавное открытие/закрытие модалки с описанием мероприятия
+// не отрабатывет из-за того, что используется template

@@ -24,8 +24,7 @@ export function closeModal(modal) {
 }
 // закрытие модалки по клику на оверлей
 function closeModalListener(evt) {
-  console.log(evt);
-  if (evt.target.classList.contains('modal') || evt.target.parentElement.classList.contains('modal__close-button')) {
+  if (evt.target.classList.contains('modal') || evt.target.parentElement.classList.contains('modal__close-button') || evt.target.classList.contains('modal__close-button') || evt.target.classList.contains('modal__wrapper-for-side')) {
     closeModal(evt.target.closest('.modal_opened'));
   }
 }
