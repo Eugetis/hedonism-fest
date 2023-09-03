@@ -70,6 +70,7 @@ const openCustomBalloon = (object, position) => {
 
   const sidebar = document.querySelector('.catalog__section_type_grow');
   const sidebarWidth = sidebar.clientWidth;
+  const mobileWidth = 767; // точка перехода с мобайл на десктоп
 
   const htmlContainer = myMap.container.getParentElement();
 
@@ -86,7 +87,7 @@ const openCustomBalloon = (object, position) => {
     top -= modalHeight;
   }
 
-  if (sidebarWidth) {
+  if (htmlContainerlWidth + sidebarWidth > mobileWidth) {
     modalContainer.style.position = "absolute";
     modalContainer.style.top = `${top}px`;
     modalContainer.style.left = `${left}px`;
