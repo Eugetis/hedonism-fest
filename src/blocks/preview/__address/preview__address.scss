@@ -3,4 +3,5 @@
 .preview__address {
   @include flex-center-row-mixin;
   justify-content: space-between;
+  gap: 12px;
 }
