@@ -3,7 +3,7 @@
   <!-- должна открываться через добавление секции класса modal_opened -->
 
   <template id="modal_id_event-full">
-    <section class="modal modal_id_event-full" aria-label="модальное окно просмотра мероприятия" data-id="0" data-coordinates="0" aria-hidden="true">
+    <section class="modal modal_id_event-full" aria-label="модальное окно просмотра мероприятия" data-id="0" data-coordinates="0" data-price="0" aria-hidden="true">
       <div class="modal__wrapper-for-side">
         <div class="modal__container modal__container_type_side">
           <button class="modal__close-button modal__close-button_type_button card-control"><span class="card-control__icon icon-cross"></span></button>
@@ -71,7 +71,7 @@
           <!-- начало липучего блока с кнопками (он лежит вне мероприятия для обеспечения своего поведения) -->
           <div class="fixed-bar fixed-bar__desktop-sticky">
             <button class="modal__button button button_type_border" id="modal__button-like" type="button"><span class="button__icon icon-heart-filled"></span>хочу пойти</button>
-            <button class="modal__button button button_type_filled" type="button">купить билет</button>
+            <button class="modal__button button button_type_filled" id="modal__button-buy"  type="button">купить билет</button>
           </div>
           <!-- конец липучего блока с кнопками -->
 

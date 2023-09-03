@@ -69,6 +69,7 @@ export const modalCreate = ({cards}, modalTemplate) => {
 
   modalElement.dataset.id = card.id;
   modalElement.dataset.coordinates = location.coordinates;
+  modalElement.dataset.price = `${card.price}`
   modalElement.querySelector('.event__image').src = card.image;
   modalElement.querySelector('.event__type').textContent = card.type;
   modalElement.querySelector('.event__date').textContent = `${card.date}, ${card.timeDuration}`;
@@ -136,6 +137,7 @@ export const modalHandler = (modal, type) => {
   const modalCopyButton = modal.querySelector('.event__shares-button');
   const modalAddressButton = modal.querySelector('#button__address');
   const modalBackButton = modal.querySelector('#button__back');
+  const modalBuyButton = modal.querySelector('#modal__button-buy');
 
   document.querySelector('.page').append(modal);
   modal.classList.add('modal_opened');
@@ -148,6 +150,7 @@ export const modalHandler = (modal, type) => {
       modalCopyButton.addEventListener('click', modalCopyHandler);
       modalAddressButton.addEventListener('click', modalAddressHandler);
       modalBackButton.addEventListener('click', modalBackHandler);
+      modalBuyButton.addEventListener('click', modalBuyHandler);
       break;
     case 'close':
       closeModal(modal);
@@ -156,7 +159,84 @@ export const modalHandler = (modal, type) => {
       modalCopyButton.removeEventListener('click', modalCopyHandler);
       modalAddressButton.removeEventListener('click', modalAddressHandler);
       modalBackButton.removeEventListener('click', modalBackHandler);
+      modalBuyButton.removeEventListener('click', modalBuyHandler);
   }
+}
+
+const modalBuyHandler = (event) => {
+  const currentModal = event.target.closest('.modal_id_event-full');
+  const currentPrice = currentModal.dataset.price;
+  const paymentModalTemplate = document.querySelector('#payment-modal').content;
+  modalPaymentCreate(currentPrice, paymentModalTemplate);
+}
+
+const modalPaymentCreate = (price, template) => {
+  const page = document.querySelector('.page_id_catalog');
+  const modalPaymentTemplate = template.querySelector('.modal_id_payment').cloneNode(true);
+  const priceContent = modalPaymentTemplate.querySelector('#price');
+  modalPaymentTemplate.dataset.price = price;
+  priceContent.innerHTML = price;
+
+  page.append(modalPaymentTemplate);
+  openModal(modalPaymentTemplate);
+  priceChangerHandler(modalPaymentTemplate);
+}
+
+const priceChangerHandler = (modal) => {
+  const input = modal.querySelector('#amount-input');
+  const inputForm = modal.querySelector('.form__amount-wrapper');
+
+  inputForm.addEventListener('click', (event) => {
+    const target = event.target;
+
+    if (target.id === 'increment' || target.classList.contains('icon-plus-small')) {
+      inputStateManager('increment', input);
+    }
+
+    if (target.id === 'decrement' || target.classList.contains('icon-minus-small')) {
+      inputStateManager('decrement', input);
+    }
+
+    triggerInputChangeEvent(input);
+  })
+
+  input.addEventListener('input', (event) => inputHandler(event, modal))
+}
+
+const inputHandler = (event, modal, value) => {
+  const target = event.target;
+  let count = Number(target.placeholder);
+  const price = modal.dataset.price;
+  const priceContent = modal.querySelector('#price');
+  priceContent.innerHTML = `${Number(price) * count} &#8381;`
+}
+
+const inputStateManager = (state, input) => {
+  const inputPrevValue = input.value;
+
+  if (state === 'decrement' && Number(input.value) === 1) {
+    return null;
+  }
+
+  switch (state) {
+    case 'increment':
+      input.value = String(Number(inputPrevValue) + 1);
+      input.placeholder = input.value;
+      break;
+
+    case 'decrement':
+      input.value = String(Number(inputPrevValue) - 1);
+      input.placeholder = input.value;
+      break;
+  }
+}
+
+const triggerInputChangeEvent = (input) => {
+  const event = new Event('input', {
+    bubbles: true,
+    cancelable: true,
+  });
+  input.dispatchEvent(event);
 }
 
 const modalBackHandler = (event) => {
@@ -220,12 +300,12 @@ const modalLikeHandler = (modal, state) => {
 
   switch (state) {
     case true:
-      modalButtonSpan.classList.remove('icon-heart-filled')
-      modalButtonSpan.classList.add('icon-heart')
-      return `${modalButtonSpan.outerHTML}не хочу идти`;
-    case false:
       modalButtonSpan.classList.remove('icon-heart')
-      modalButtonSpan.classList.add('icon-heart-filled')
+      modalButtonSpan.classList.add('card-control__icon_color_red', 'icon-heart-filled')
+      return `${modalButtonSpan.outerHTML}хочу пойти`;
+    case false:
+      modalButtonSpan.classList.add('icon-heart')
+      modalButtonSpan.classList.remove('card-control__icon_color_red', 'icon-heart-filled')
       return `${modalButtonSpan.outerHTML}хочу пойти`;
   }
 }
