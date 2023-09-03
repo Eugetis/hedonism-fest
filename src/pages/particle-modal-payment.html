@@ -2,7 +2,7 @@
 <!-- должна открываться по кнопке "купить" в модалке с деталями мероприятия (открывать поверх нее!) -->
 <!-- должна открываться через добавление секции класса modal_opened -->
 
-<section class="modal modal_type_high-mob modal_id_payment modal_opened" aria-label="модальное окно покупки билетов" aria-hidden="true">
+<section class="modal modal_type_high-mob modal_id_payment" aria-label="модальное окно покупки билетов" aria-hidden="true">
   <div class="modal__container modal__container_type_form">
     <div class="modal__header">
       <div class="modal__drag-line"></div>
@@ -20,16 +20,16 @@
           <div class="form__counter-wrapper">
             <p class="form__accent-title">500 &#8381;</p>
 
-            <div class="amount-controls">
+            <div class="form__amount-wrapper">
               <button
-                class="amount-controls amount-controls__minus-button"
+                class="button button_type_amount-minus"
                 type="button"
                 onclick="this.nextElementSibling.stepDown();">
-                <span class="amount-controls__icon icon-minus-small"></span>
+                <span class="button__icon button__icon_type_amount-control icon-minus-small"></span>
               </button>
               <input
                 type="number"
-                class="amount-controls amount-controls__input"
+                class="form__field form__field_type_amount"
                 id="amount-input"
                 name="amount-input"
                 placeholder="1"
@@ -39,10 +39,10 @@
                 required>
               </input>
               <button
-                class="amount-controls amount-controls__plus-button"
+                class="button button_type_amount-plus"
                 type="button"
                 onclick="this.previousElementSibling.stepUp();">
-                <span class="amount-controls__icon icon-plus-small"></span>
+                <span class="button__icon button__icon_type_amount-control icon-plus-small"></span>
               </button>
             </div>
 

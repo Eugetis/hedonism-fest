@@ -2,7 +2,6 @@
 
 .form__step-content {
   width: 100%;
-  // height: fit-content;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -12,6 +11,8 @@
 
 @media screen and (max-width: $mobile) {
   .form__step-content {
+    position: relative;
+    height: 100%;
     flex-direction: column;
     justify-content: flex-start;
     flex-grow: 1;

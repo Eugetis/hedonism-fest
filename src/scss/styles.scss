@@ -73,11 +73,11 @@
 @use '../blocks/floating-button/_hide/floating-button_hide.scss';
 
 // стили amount controls
-@use '../blocks/amount-controls/amount-controls.scss';
-@use '../blocks/amount-controls/__icon/amount-controls__icon.scss';
-@use '../blocks/amount-controls/__minus-button/amount-controls__minus-button.scss';
-@use '../blocks/amount-controls/__plus-button/amount-controls__plus-button.scss';
-@use '../blocks/amount-controls/__input/amount-controls__input.scss';
+// @use '../blocks/amount-controls/amount-controls.scss';
+// @use '../blocks/amount-controls/__icon/amount-controls__icon.scss';
+// @use '../blocks/amount-controls/__minus-button/amount-controls__minus-button.scss';
+// @use '../blocks/amount-controls/__plus-button/amount-controls__plus-button.scss';
+// @use '../blocks/amount-controls/__input/amount-controls__input.scss';
 
 // стили переключателя вкладок
 @use '../blocks/tab-switcher/tab-switcher.scss';
@@ -453,6 +453,15 @@
 @use '../blocks/form/__modal-text/form__modal-text.scss';
 @use '../blocks/form/__accent-title/form__accent-title.scss';
 @use '../blocks/form/__counter-wrapper/form__counter-wrapper.scss';
+@use '../blocks/form/__amount-wrapper/form__amount-wrapper.scss';
+@use '../blocks/form/__field/_type/form__field_type_amount.scss';
+
+@use '../blocks/button/_type/button_type_amount-minus.scss';
+@use '../blocks/button/_type/button_type_amount-plus.scss';
+@use '../blocks/button/__icon/_type/button__icon_type_amount-control.scss';
+
+@use '../blocks/footer/_hidden/footer_hidden.scss';
+@use '../blocks/footer/_style/footer_style_move-down.scss';
 
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

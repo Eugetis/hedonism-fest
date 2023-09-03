@@ -1,6 +1,6 @@
 @use 'variables' as *;
 
-.amount-controls {
+.form__amount-wrapper {
   display:flex;
   justify-content: center;
   align-items: center;
@@ -9,7 +9,7 @@
 }
 
 @media screen and (max-width: $mobile) {
-  .amount-controls {
+  .form__amount-wrapper {
     min-height: 44px;
   }
 }

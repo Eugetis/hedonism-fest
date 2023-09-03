@@ -36,7 +36,7 @@ if (document.querySelector('.page_id_index')) {
 import { updateCityOnMap } from './catalog'
 
 // Андрей
-import {  showSlide, activateSlider } from '../components/photo-slider.js';
+import { showSlide, activateSlider } from '../components/photo-slider.js';
 import { openModal } from '../components/modal.js';
 import { modalDonate } from '../components/constants.js';
 import { setAboutEventListener } from '../components/about.js';
@@ -128,7 +128,11 @@ if (document.querySelector('.page_id_index')) {
 if (document.querySelector('.page_id_404') || document.querySelector('.page_id_thanks-for-application') || document.querySelector('.page_id_thanks-for-support')) {
   document.querySelector('.footer').classList.add('footer_style_additional');
 }
-
+// Евгений вклинился
+if (document.querySelector('.page_id_for-participants')) {
+  document.querySelector('.footer').classList.add('footer_hidden', 'footer_style_move-down');
+}
+// Евгений -> end!
 donateButton.addEventListener('click', () => {
   openModal(modalDonate);
 })

@@ -2,6 +2,7 @@
 @use 'variables' as *;
 
 .modal__container {
+  margin: auto;
   position: relative;
   @include flex-column-mixin;
   background-color: $light-primary;
