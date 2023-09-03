@@ -69,6 +69,7 @@ export const modalCreate = ({cards}, modalTemplate) => {
 
   modalElement.dataset.id = card.id;
   modalElement.dataset.coordinates = location.coordinates;
+  modalElement.dataset.price = `${card.price} &#8381;`
   modalElement.querySelector('.event__image').src = card.image;
   modalElement.querySelector('.event__type').textContent = card.type;
   modalElement.querySelector('.event__date').textContent = `${card.date}, ${card.timeDuration}`;
@@ -136,6 +137,7 @@ export const modalHandler = (modal, type) => {
   const modalCopyButton = modal.querySelector('.event__shares-button');
   const modalAddressButton = modal.querySelector('#button__address');
   const modalBackButton = modal.querySelector('#button__back');
+  const modalBuyButton = modal.querySelector('#modal__button-buy');
 
   document.querySelector('.page').append(modal);
   modal.classList.add('modal_opened');
@@ -148,6 +150,7 @@ export const modalHandler = (modal, type) => {
       modalCopyButton.addEventListener('click', modalCopyHandler);
       modalAddressButton.addEventListener('click', modalAddressHandler);
       modalBackButton.addEventListener('click', modalBackHandler);
+      modalBuyButton.addEventListener('click', modalBuyHandler);
       break;
     case 'close':
       closeModal(modal);
@@ -156,7 +159,26 @@ export const modalHandler = (modal, type) => {
       modalCopyButton.removeEventListener('click', modalCopyHandler);
       modalAddressButton.removeEventListener('click', modalAddressHandler);
       modalBackButton.removeEventListener('click', modalBackHandler);
+      modalBuyButton.removeEventListener('click', modalBuyHandler);
   }
+}
+
+const modalBuyHandler = (event) => {
+  const currentModal = event.target.closest('.modal_id_event-full');
+  const currentPrice = currentModal.dataset.price;
+  const paymentModalTemplate = document.querySelector('#payment-modal').content;
+  modalPaymentCreate(currentPrice, paymentModalTemplate);
+}
+
+const modalPaymentCreate = (price, template) => {
+  const page = document.querySelector('.page_id_catalog');
+  const modalPaymentTemplate = template.querySelector('.modal_id_payment').cloneNode(true);
+  const priceContent = modalPaymentTemplate.querySelector('#price');
+  modalPaymentTemplate.dataset.price = price;
+  priceContent.innerHTML = price;
+
+  page.append(modalPaymentTemplate);
+  openModal(modalPaymentTemplate);
 }
 
 const modalBackHandler = (event) => {
