@@ -1,0 +1,18 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.label {
+  @include btn-text-desktop;
+  color: $dark-primary;
+  width: 100%;
+  position: relative;
+  // display: flex;
+  // flex-direction: column;
+  // box-sizing: border-box;
+}
+
+@media screen and (max-width: $mobile) {
+  .label {
+    @include btn-text-mobile;
+  }
+}

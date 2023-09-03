@@ -1,0 +1,15 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.form__accent-title {
+  @include h2-desktop;
+  color: $color-primary;
+  min-width: fit-content;
+  width: 100%;
+}
+
+@media screen and (max-width: $mobile) {
+  .form__accent-title {
+    @include h2-mobile;
+  }
+}

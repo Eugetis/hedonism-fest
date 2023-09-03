@@ -1,0 +1,13 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.form__modal-text {
+  @include subtext-desktop;
+  color: $dark-secondary;
+}
+
+@media screen and (max-width: $mobile) {
+  .form__modal-text {
+    @include text-mobile;
+  }
+}

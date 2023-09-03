@@ -1,0 +1,22 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.form__field-error {
+  @include text-desktop;
+  color: $warning-error;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 $pad-24;
+  align-items: center;
+  gap: 12px;
+
+  display: none;
+}
+
+@media screen and (max-width: $mobile) {
+  .form__field-error {
+    @include text-mobile;
+    padding: 0 $pad-20;
+    gap: 8px;
+  }
+}

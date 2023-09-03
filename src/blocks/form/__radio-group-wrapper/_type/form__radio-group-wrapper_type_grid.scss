@@ -1,0 +1,14 @@
+@use 'variables' as *;
+
+.form__radio-group-wrapper_type_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}
+
+@media screen and (max-width: $mobile) {
+  .form__radio-group-wrapper_type_grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0;
+  }
+}
