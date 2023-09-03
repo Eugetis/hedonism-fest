@@ -69,7 +69,7 @@ export const modalCreate = ({cards}, modalTemplate) => {
 
   modalElement.dataset.id = card.id;
   modalElement.dataset.coordinates = location.coordinates;
-  modalElement.dataset.price = `${card.price} &#8381;`
+  modalElement.dataset.price = `${card.price}`
   modalElement.querySelector('.event__image').src = card.image;
   modalElement.querySelector('.event__type').textContent = card.type;
   modalElement.querySelector('.event__date').textContent = `${card.date}, ${card.timeDuration}`;
@@ -179,6 +179,64 @@ const modalPaymentCreate = (price, template) => {
 
   page.append(modalPaymentTemplate);
   openModal(modalPaymentTemplate);
+  priceChangerHandler(modalPaymentTemplate);
+}
+
+const priceChangerHandler = (modal) => {
+  const input = modal.querySelector('#amount-input');
+  const inputForm = modal.querySelector('.form__amount-wrapper');
+
+  inputForm.addEventListener('click', (event) => {
+    const target = event.target;
+
+    if (target.id === 'increment' || target.classList.contains('icon-plus-small')) {
+      inputStateManager('increment', input);
+    }
+
+    if (target.id === 'decrement' || target.classList.contains('icon-minus-small')) {
+      inputStateManager('decrement', input);
+    }
+
+    triggerInputChangeEvent(input);
+  })
+
+  input.addEventListener('input', (event) => inputHandler(event, modal))
+}
+
+const inputHandler = (event, modal, value) => {
+  const target = event.target;
+  let count = Number(target.placeholder);
+  const price = modal.dataset.price;
+  const priceContent = modal.querySelector('#price');
+  priceContent.innerHTML = `${Number(price) * count} &#8381;`
+}
+
+const inputStateManager = (state, input) => {
+  const inputPrevValue = input.value;
+
+  if (state === 'decrement' && Number(input.value) === 1) {
+    return null;
+  }
+
+  switch (state) {
+    case 'increment':
+      input.value = String(Number(inputPrevValue) + 1);
+      input.placeholder = input.value;
+      break;
+
+    case 'decrement':
+      input.value = String(Number(inputPrevValue) - 1);
+      input.placeholder = input.value;
+      break;
+  }
+}
+
+const triggerInputChangeEvent = (input) => {
+  const event = new Event('input', {
+    bubbles: true,
+    cancelable: true,
+  });
+  input.dispatchEvent(event);
 }
 
 const modalBackHandler = (event) => {
