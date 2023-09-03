@@ -153,6 +153,7 @@ export const modalHandler = (modal, type) => {
       modalBuyButton.addEventListener('click', modalBuyHandler);
       break;
     case 'close':
+      console.log('123', modal)
       closeModal(modal);
       document.querySelector('.page').remove(modal);
       modalButton.removeEventListener('click', modalClickHandler);

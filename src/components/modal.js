@@ -18,6 +18,9 @@ export function openModal(modal) {
 
 // полный функционал закрытия модалки с удалением слушателей
 export function closeModal(modal) {
+  if (document.querySelector('.page_id_catalog')) {
+    modal.remove();
+  }
   modal.classList.remove('modal_opened');
   modal.removeEventListener('click', closeModalListener);
   document.removeEventListener('keydown', handleEscClose);
