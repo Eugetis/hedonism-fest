@@ -14,7 +14,23 @@
 
 // Дмитрий - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+// 2D массив в плоский
+export const arrayValues = (array) => {
+  const result = [];
 
+  for (let i = 0; i < array.length; i++) {
+    for (let j = 0; j < array[i].length; j++) {
+      result.push(array[i][j]);
+    }
+  }
+
+  return result;
+}
+
+/// logger error to console
+export const logError = (err) => {
+  console.log(err)
+};
 
 // Дмитрий -> end!
 

@@ -33,7 +33,7 @@ if (document.querySelector('.page_id_index')) {
 }
 // Дмитрий
 
-import { updateCityOnMap } from './catalog'
+import { updateCityOnMap } from './map.js'
 
 // Андрей
 import {  showSlide, activateSlider } from '../components/photo-slider.js';
