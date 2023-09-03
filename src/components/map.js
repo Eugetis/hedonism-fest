@@ -1,7 +1,8 @@
 import { getFilteredCards } from './filters.js'
 import { arrayValues, logError } from './utils.js'
-import { getCardsFromLocaleStorage } from "./event.js"
+import { getCardsFromLocaleStorage, modalAddressHandler } from "./event.js"
 import { mapContainer } from './constants.js'
+import { openModal, closeModal } from './modal.js';
 
 // здесь храниться объект карты
 let myMap;
@@ -15,7 +16,7 @@ let myClusterer;
 
 // =============================
 // map
-const initMap = () => {
+function initMap() {
   // Создание карты.
   myMap = new ymaps.Map(mapContainer.querySelector('.catalog__map-container'), {
       // Координаты центра карты.
@@ -29,7 +30,8 @@ const initMap = () => {
   });
   initMapContent();
   myMap.container.fitToViewport();
-  return myMap;
+  addEventGeoObjects();
+  // return myMap;
 }
 
 const initMapContent= () => {
@@ -37,13 +39,102 @@ const initMapContent= () => {
   initGeoEventsOnMap();
 }
 
+// Преобразуем координаты курсора мыши в геокоординаты
+const coordPageToGlobal = (coords) => {
+  const projection = myMap.options.get('projection');
+  return projection.fromGlobalPixels(
+    myMap.converter.pageToGlobal(coords), myMap.getZoom()
+    ).join(', ');
+}
+
+// Преобразуем географические координаты в пиксели окна браузера
+const coordGlobalToPage = (coords) => {
+  const projection = myMap.options.get('projection');
+  return myMap.converter.globalToPage(
+    projection.toGlobalPixels(coords, myMap.getZoom()));
+}
+
+//
+const handleButtonCustomBalloon = (evt, id, modalSelector) => {
+  closeModal(modalSelector);
+  // Здесь надо вызвать модалку с передачей ей id карточки --> modal.....Handler(evt, id);
+}
+//
+const openCustomBalloon = (object, position) => {
+  let left = position[0];
+  let top = position[1];
+  console.log(position);
+
+  const modalSelector = document.querySelector('.modal_id_event-mobile-preview');
+  const modalContainer = modalSelector.querySelector('.modal__container');
+
+  const sidebar = document.querySelector('.catalog__section_type_grow');
+  const sidebarWidth = sidebar.clientWidth;
+
+  const htmlContainer = myMap.container.getParentElement();
+
+  const htmlContainerlWidth = htmlContainer.clientWidth;
+  const htmlContainerHeight = htmlContainer.clientHeight;
+
+  const modalWidth = modalContainer.scrollWidth;
+  const modalHeight = modalContainer.scrollHeight;
+
+  if ((left + modalWidth) > htmlContainerlWidth + sidebarWidth) {
+    left -= modalWidth;
+  }
+  if ((top + modalHeight) > htmlContainerHeight) {
+    top -= modalHeight;
+  }
+
+  if (sidebarWidth) {
+    modalContainer.style.position = "absolute";
+    modalContainer.style.top = `${top}px`;
+    modalContainer.style.left = `${left}px`;
+  }
+
+  const type = modalContainer.querySelector(".preview__text");
+  const title = modalContainer.querySelector(".preview__title");
+  const desc = modalContainer.querySelector(".preview__description");
+  const address = modalContainer.querySelector(".preview_id_address");
+  const addressPlus = modalContainer.querySelector(".preview_id_address-plus");
+
+  let geoObject = {};
+  if (object.options.getName() === 'cluster') {
+    const geoObjects = object.getGeoObjects();
+    geoObject = geoObjects[0];
+  } else {
+    geoObject = object;
+  }
+  const geoData = Object.values(geoObject.properties.get("data"));
+
+  type.textContent = geoData[1].type;
+  title.textContent = geoData[2].title;
+  desc.textContent = geoData[3].desc;
+  address.textContent = geoData[5].addressPlus[0].address;
+  const addresses = geoData[5].addressPlus.length-1;
+  addressPlus.textContent = `+ ещё ${addresses > 0 ? addresses : '' }`;
+
+  const button = modalContainer.querySelector(".button");
+  button.addEventListener('click', evt => handleButtonCustomBalloon(evt, geoData[0].id, modalSelector));
+
+  openModal(modalSelector);
+}
+//
+function addEventGeoObjects() {
+  myMap.geoObjects.events.add('click', function (e) {
+    // Получение ссылки на дочерний объект, на котором произошло событие.
+    var object = e.get('target');
+    // Получение позиции дочернего объекта, на котором произошло событие.
+    const position = e.get('domEvent').get('position');
+
+    openCustomBalloon(object, position);
+  });
+}
+
 // рендер карты в контейнере
 // в первый раз - создаем карту (создаем её "ленивым подходом", асинхронно)
 export const createMap = async () => {
-  // myMap = initMap();
-  // ymaps.ready(myMap);
-  // ymaps.ready(initMap);
-  myMap = await initMap();
+  ymaps.ready(initMap);
 }
 
 // в последующие - просто обновляем её отображение
@@ -78,7 +169,7 @@ const getCoordSelectedCity = () => {
 }
 // установка карты на выбранный город
 const updateCity = async () => {
-  setCenterMap(await getCoordSelectedCity());
+  setCenterZoomMap(await getCoordSelectedCity(), defaultMapZoom);
   showMap();
 }
 // =============================
@@ -101,7 +192,11 @@ const getCoordsByName = async (selectedCity) => {
 
 // установка центра карты по указанным координатам
 const setCenterMap = async (coords) => {
-  await myMap.setCenter(coords, defaultMapZoom);
+  await myMap.setCenter(coords);
+}
+// установка центра карты по указанным координатам и зуму
+const setCenterZoomMap = async (coords, zoom) => {
+  await myMap.setCenter(coords, zoom);
 }
 
 // ====================================
@@ -117,16 +212,6 @@ const typeToIcon = {
   'магазины': require('../images/icons/event/event-icon-shop.svg')
 }
 
-        // id: String,
-        // type: String,
-        // tags: String,
-        //location: [],
-        // date: String,
-        // city: String,
-        // name: String,
-        // timeDuration: String,
-        // duration: String,
-        // description: String
 // формируем массив объектов с геоинфо и из данных карточек
 const getGeoObjsFromCards = (cards) => {
   const infoGeoObjs = [];
@@ -145,7 +230,13 @@ const getGeoObjsFromCards = (cards) => {
         icon_imagesize: [36, 36],
         iconImageOffset: [0, 0],
 
-        location: [],
+        id: card.id,
+        type: card.type,
+        name: card.name,
+        date: card.date,
+        timeDuration: card.timeDuration ,
+        coords: [],
+        location: card.location
       }
 
       if (card.type in typeToIcon) {
@@ -158,9 +249,10 @@ const getGeoObjsFromCards = (cards) => {
       infoGeoObj.balloonContentBody = `${card.id}<br>${card.name}<br>${card.date}<br>${card.timeDuration}`;
       infoGeoObj.clusterCaption = card.type;
 
-      infoGeoObj.location = coord;
+      infoGeoObj.coords = coord;
 
       infoGeoObjs.push(infoGeoObj);
+
     });
 
   });
@@ -171,9 +263,9 @@ const getGeoObjsFromCards = (cards) => {
 // готовим и добавляем геоинфо из геоинфообъекта в (кластеризатор или геоколлекцию)
 const addInfoGeoObjToCollectioner = (infoGeoObj, collection) => {
   const balloonProp = {
-    balloonContent: infoGeoObj.balloonContent,
-    balloonContentBody: infoGeoObj.balloonContentBody,
-    clusterCaption: infoGeoObj.clusterCaption
+    // balloonContent: infoGeoObj.balloonContent,
+    // balloonContentBody: infoGeoObj.balloonContentBody,
+    // clusterCaption: infoGeoObj.clusterCaption
   };
   const placemarkProp = {
     iconLayout: infoGeoObj.iconLayout,
@@ -181,7 +273,22 @@ const addInfoGeoObjToCollectioner = (infoGeoObj, collection) => {
     icon_imagesize: infoGeoObj.icon_imagesize,
     iconImageOffset: infoGeoObj.iconImageOffset
   };
-  collection.add(new ymaps.Placemark(infoGeoObj.location, balloonProp, placemarkProp));
+
+  const myPlaceMark = new ymaps.Placemark(infoGeoObj.coords, balloonProp, placemarkProp);
+
+  myPlaceMark.properties.set({
+    data: [
+      { id: infoGeoObj.id },
+      { type: infoGeoObj.type },
+      { title: infoGeoObj.name },
+      { desc: `${infoGeoObj.date}, ${infoGeoObj.timeDuration}` },
+      { address: infoGeoObj.coords },
+      { addressPlus: infoGeoObj.location },
+    ]
+  });
+  myPlaceMark.options.set({}, {}, { hideIconOnBalloonOpen: false,  openBalloonOnClick: false });
+
+  collection.add(myPlaceMark);
 }
 
 // добавление коллекции (кластеризатора или геоколлекции) на карту
@@ -239,5 +346,12 @@ const createClusterer = () => {
     // Отступ, чтобы центр картинки совпадал с центром кластера.
     offset: [-18, -18]
     }];
-    return new ymaps.Clusterer( { clusterIcons: clusterIcons } );
+    return new ymaps.Clusterer( { clusterIcons: clusterIcons,
+                                  clusterHideIconOnBalloonOpen:false,
+                                  clusterDisableClickZoom:true,
+                                  clusterOpenBalloonOnClick:false
+                                } );
 }
+
+// ==================
+
