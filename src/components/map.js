@@ -3,6 +3,7 @@ import { arrayValues, logError } from './utils.js'
 import { getCardsFromLocaleStorage, modalAddressHandler } from "./event.js"
 import { mapContainer } from './constants.js'
 import { openModal, closeModal } from './modal.js';
+import {modalController} from "./catalog";
 
 // здесь храниться объект карты
 let myMap;
@@ -58,6 +59,9 @@ const coordGlobalToPage = (coords) => {
 const handleButtonCustomBalloon = (evt, id, modalSelector) => {
   closeModal(modalSelector);
   // Здесь надо вызвать модалку с передачей ей id карточки --> modal.....Handler(evt, id);
+  const modalTemplate = document.querySelector('#modal_id_event-full').content;
+  console.log(id);
+  modalController(id, modalTemplate);
 }
 //
 const openCustomBalloon = (object, position) => {
