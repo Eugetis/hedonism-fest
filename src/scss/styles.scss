@@ -7,7 +7,6 @@
 @use '../blocks/page/page.scss';
 @use '../blocks/page/__title/page__title.scss';
 @use '../blocks/page/__bottom-pushed/page__bottom-pushed.scss'; // отталкивает футер на 80px где нужно
-@use '../blocks/page/__grow/page__grow.scss';
 @use '../blocks/page/__no-scroll/page__no-scroll.scss'; //отключает скролл вниз при выезде бокового меню на мобилке
 @use '../blocks/uikit-section/uikit-section.scss';
 @use '../blocks/section-constraints/section-constraints.scss';
