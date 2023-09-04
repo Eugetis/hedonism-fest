@@ -426,6 +426,9 @@ const removeLikeFromStorage = (id, likesArray) => {
 // Функция которая отлавливает нажатия внутрии секции CARDS, и взависимости от нажатия производит какие-либо действия, если нажата кнопка лайка, то добавляет лайк, если нажато любое другое место, то открывает модалку
 export const cardsClickController = (event) => {
   const target = event.target;
+  if (target.classList.contains('cards_type_grid')) {
+    return null;
+  }
   const cardId = event.target.closest('.cards__item').dataset.id;
   const classList = Array.from(target.classList).join(' ');
   const likeRegex = /card-control/g;
