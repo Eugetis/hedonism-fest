@@ -25,6 +25,30 @@ if (document.querySelector('.page_id_catalog')) {
   buttonsFavorite.forEach((button) => button.addEventListener('click', modalFavoriteController))
 }
 
+if (document.querySelector('.page_id_404')) {
+  const cardScrollSection = document.querySelector('.cards_type_scroll');
+  const cardTemplate = cardScrollSection.querySelector('#card').content;
+  document.querySelector('.cards').addEventListener('click', cardsClickController);
+  generalCardController(cardScrollSection, cardTemplate);
+}
+
+
+if (document.querySelector('.page_id_thanks-for-application')) {
+  const cardScrollSection = document.querySelector('.cards_type_scroll');
+  const cardTemplate = cardScrollSection.querySelector('#card').content;
+  document.querySelector('.cards').addEventListener('click', cardsClickController);
+  generalCardController(cardScrollSection, cardTemplate);
+}
+
+if (document.querySelector('.page_id_thanks-for-support')) {
+  const cardScrollSection = document.querySelector('.cards_type_scroll');
+  const cardTemplate = cardScrollSection.querySelector('#card').content;
+  document.querySelector('.cards').addEventListener('click', cardsClickController);
+  generalCardController(cardScrollSection, cardTemplate);
+}
+
+
+
 if (document.querySelector('.page_id_index')) {
   const cardScrollSection = document.querySelector('.cards_type_scroll');
   const cardTemplate = cardScrollSection.querySelector('#card').content;
