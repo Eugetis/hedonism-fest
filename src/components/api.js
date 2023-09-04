@@ -12,7 +12,7 @@ import axios from 'axios';
 // Функция которая тянет все карточки с API
 export const getCards = async () => {
   try {
-    const response = await axios.get('https://run.mocky.io/v3/8312251d-5b23-4c72-8dc7-0a37d70b7ea0', {
+    const response = await axios.get('https://run.mocky.io/v3/5d1a1851-8618-4951-8153-6934dbc3c6e6', {
       headers: {
         'Content-Type': 'application/json'
       }
