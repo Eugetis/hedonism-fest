@@ -20,8 +20,11 @@ if (document.querySelector('.page_id_catalog')) {
   const cardGridSection = document.querySelector('.cards_type_grid');
   const cardTemplate = cardGridSection.querySelector('#card').content;
   document.querySelector('.cards').addEventListener('click', cardsClickController);
-  const buttonsFavorite = document.querySelectorAll('#button__favorite');
   catalogController(cardGridSection, cardTemplate);
+}
+
+if (document.querySelector('#button__favorite')) {
+  const buttonsFavorite = document.querySelectorAll('#button__favorite');
   buttonsFavorite.forEach((button) => button.addEventListener('click', modalFavoriteController))
 }
 

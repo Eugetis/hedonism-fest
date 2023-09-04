@@ -91,11 +91,36 @@ export const modalCreate = ({cards}, modalTemplate) => {
 }
 
 export const modalFavoriteController = (event) => {
+  if (!event.target.closest('.page_id_catalog')) {
+    return window.location.href = 'http://localhost:8080/catalog.html?event=favorite';
+  }
   const modal = document.querySelector('#modal-favorite').content;
   modalFavoriteHandler(modal, 'open');
 }
 
-const modalFavoriteHandler = async (modal, type) => {
+// export const modalFavoriteRedirect = () => {
+//   const modal = document.querySelector('#modal-favorite').content;
+// }
+
+export const catalogRedirectController = async () => {
+  const queryParams = new URLSearchParams(window.location.search);
+  const action = queryParams.get("event");
+
+  if (action === 'favorite') {
+    const modal = document.querySelector('#modal-favorite').content;
+    modalFavoriteHandler(modal, 'open');
+    return null;
+  }
+
+  if (action) {
+    const template = document.querySelector('#modal_id_event-full').content;
+    const card = await getCardById(action);
+    const preparedModal = modalCreate(card, template);
+    return modalHandler(preparedModal, 'open');
+  }
+}
+
+export const modalFavoriteHandler = async (modal, type) => {
   const page = document.querySelector('.page');
   const modalTemplate = modal.querySelector('.modal_id_favourites').cloneNode(true);
   const modalBackButton = modalTemplate.querySelector('#button__back');
@@ -478,6 +503,8 @@ const hasKeyInStorage = (key) => {
   }
   return true;
 }
+
+catalogRedirectController();
 
 
 // установка слушателя на кнопку "купить билет" для открытия модалки покупки (скрипт открытия модалок напишет Андрей)
