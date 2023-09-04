@@ -60,7 +60,18 @@ export const modalController = async (id, template) => {
 export const generalCardController = async (section, template) => {
   const cards = await getCards();
   const preparedCards = prepareCard(cards, template);
-  return addCard(preparedCards, section);
+  const cardsFiltered = getCardsByCount(preparedCards, 5);
+  return addCard(cardsFiltered, section);
+}
+
+const getCardsByCount = (cards, count) => {
+  const cardsByCount = [];
+
+  for (let i = 0; i < count; i ++) {
+    cardsByCount.push(cards[i]);
+  }
+
+  return cardsByCount;
 }
 
 // Никита -> end!
