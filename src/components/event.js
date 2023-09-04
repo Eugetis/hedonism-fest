@@ -154,7 +154,7 @@ export const modalHandler = (modal, type) => {
       break;
     case 'close':
       closeModal(modal);
-      document.querySelector('.page').remove(modal);
+      modal.remove();
       modalButton.removeEventListener('click', modalClickHandler);
       modalCopyButton.removeEventListener('click', modalCopyHandler);
       modalAddressButton.removeEventListener('click', modalAddressHandler);
