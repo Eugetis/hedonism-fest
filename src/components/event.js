@@ -1,5 +1,5 @@
 import {modalController} from "./catalog";
-import {openModal, closeModal} from "./modal";
+import {openModal, closeModal, removeModal} from "./modal";
 import {getCardById} from "./api";
 // РАБОТА С МЕРОПРИЯТИЕМ
 
@@ -105,11 +105,12 @@ const modalFavoriteHandler = async (modal, type) => {
       const events = await getFavoriteEvents();
       const preparedCards = prepareCard(events, cardTemplate);
       addCard(preparedCards, catalogGridContainer, 'count', preparedCards.length ? preparedCards.length : 0);
-      openModal(modal);
+      openModal(modal, true); // Dmitry
       modalBackButton.addEventListener('click', modalBackHandler);
       break;
     case 'close':
       closeModal(modal);
+      removeModal(modal); // Dmitry
       modalBackButton.removeEventListener('click', modalBackHandler);
       document.removeEventListener('click', modalFavoriteController);
   }
@@ -145,7 +146,7 @@ export const modalHandler = (modal, type) => {
   switch (type) {
     case 'open':
       document.querySelector('.page').append(modal);
-      openModal(modal);
+      openModal(modal, true); // Dmitry
       modalButton.addEventListener('click', modalClickHandler);
       modalCopyButton.addEventListener('click', modalCopyHandler);
       modalAddressButton.addEventListener('click', modalAddressHandler);
@@ -154,7 +155,7 @@ export const modalHandler = (modal, type) => {
       break;
     case 'close':
       closeModal(modal);
-      modal.remove();
+      removeModal(modal); // Dmitry
       modalButton.removeEventListener('click', modalClickHandler);
       modalCopyButton.removeEventListener('click', modalCopyHandler);
       modalAddressButton.removeEventListener('click', modalAddressHandler);
