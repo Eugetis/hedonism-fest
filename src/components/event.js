@@ -203,14 +203,19 @@ const priceChangerHandler = (modal) => {
     triggerInputChangeEvent(input);
   })
 
-  input.addEventListener('input', (event) => inputHandler(event, modal))
+  input.addEventListener('input', (event) => inputHandler(event, modal, input))
 }
 
-const inputHandler = (event, modal, value) => {
+const inputHandler = (event, modal) => {
   const target = event.target;
-  let count = Number(target.placeholder);
+  let count = Number(target.value);
   const price = modal.dataset.price;
   const priceContent = modal.querySelector('#price');
+
+  if (!event.target.value) {
+    count = 1;
+  }
+
   priceContent.innerHTML = `${Number(price) * count} &#8381;`
 }
 
