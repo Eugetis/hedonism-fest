@@ -58,19 +58,22 @@ const coordGlobalToPage = (coords) => {
 //
 const handleButtonCustomBalloon = (evt, id, modalSelector) => {
   closeModal(modalSelector);
+  modalSelector.remove();
   // Здесь надо вызвать модалку с передачей ей id карточки --> modal.....Handler(evt, id);
   const modalTemplate = document.querySelector('#modal_id_event-full').content;
-  console.log(id);
   modalController(id, modalTemplate);
 }
 //
 const openCustomBalloon = (object, position) => {
+  const mapModal = document.querySelector('#map-modal').content;
+  const mapModalTemplate = mapModal.querySelector('.modal_id_event-mobile-preview').cloneNode(true);
+  const page = document.querySelector('.page_id_catalog');
   let left = position[0];
   let top = position[1];
   console.log(position);
 
-  const modalSelector = document.querySelector('.modal_id_event-mobile-preview');
-  const modalContainer = modalSelector.querySelector('.modal__container');
+  // const modalSelector = document.querySelector('.modal_id_event-mobile-preview');
+  const modalContainer = mapModalTemplate.querySelector('.modal__container');
 
   const sidebar = document.querySelector('.catalog__section_type_grow');
   const sidebarWidth = sidebar.clientWidth;
@@ -120,9 +123,11 @@ const openCustomBalloon = (object, position) => {
   addressPlus.textContent = `+ ещё ${addresses > 0 ? addresses : '' }`;
 
   const button = modalContainer.querySelector(".button");
-  button.addEventListener('click', evt => handleButtonCustomBalloon(evt, geoData[0].id, modalSelector));
 
-  openModal(modalSelector);
+  button.addEventListener('click', evt => handleButtonCustomBalloon(evt, geoData[0].id, mapModalTemplate));
+
+  page.append(mapModalTemplate);
+  openModal(mapModalTemplate);
 }
 //
 function addEventGeoObjects() {
