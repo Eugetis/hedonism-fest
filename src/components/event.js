@@ -173,11 +173,12 @@ const modalBuyHandler = (event) => {
 }
 
 const modalPaymentCreate = (price, template) => {
+  const currency = '&#x20bd';
   const page = document.querySelector('.page_id_catalog');
   const modalPaymentTemplate = template.querySelector('.modal_id_payment').cloneNode(true);
   const priceContent = modalPaymentTemplate.querySelector('#price');
   modalPaymentTemplate.dataset.price = price;
-  priceContent.innerHTML = price;
+  priceContent.innerHTML = price + ' ' + currency;
 
   page.append(modalPaymentTemplate);
   openModal(modalPaymentTemplate);
