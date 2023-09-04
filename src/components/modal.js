@@ -18,6 +18,9 @@ export function openModal(modal) {
 
 // полный функционал закрытия модалки с удалением слушателей
 export function closeModal(modal) {
+  const currentUrl = window.location.href.split('?')[0];
+  window.history.pushState({ path: currentUrl }, "", currentUrl);
+
   modal.classList.remove('modal_opened');
   modal.removeEventListener('click', closeModalListener);
   document.removeEventListener('keydown', handleEscClose);

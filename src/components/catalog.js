@@ -33,6 +33,20 @@ export const catalogController = async (section, template) => {
   return addCard(preparedCards, section);
 }
 
+const catalogRedirectController = async () => {
+  const queryParams = new URLSearchParams(window.location.search);
+  const action = queryParams.get("event");
+
+  if (action) {
+    const template = document.querySelector('#modal_id_event-full').content;
+    const card = await getCardById(action);
+    const preparedModal = modalCreate(card, template);
+    modalHandler(preparedModal, 'open');
+  }
+}
+
+catalogRedirectController();
+
 // Dmitry
 
 // дергаем эту функцию как только обработали кнопки фильтрации для перерисовки карточек
