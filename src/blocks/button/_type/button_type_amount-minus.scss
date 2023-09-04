@@ -1,6 +1,7 @@
 @use 'variables' as *;
 
 .button_type_amount-minus {
+  min-width: 48px;
   width: 48px;
   padding: $pad-12;
   border-radius: $radius-small 0 0 $radius-small;
@@ -11,6 +12,7 @@
 
 @media screen and (max-width: $mobile) {
   .button_type_amount-minus {
+    min-width: 44px;
     width: 44px;
   }
 }

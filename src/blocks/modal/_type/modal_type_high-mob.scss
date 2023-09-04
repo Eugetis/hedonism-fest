@@ -1,9 +1,5 @@
 @use 'variables' as *;
 
-// .modal_type_high-mob {
-
-// }
-
 @media screen and (max-width: $mobile) {
   .modal_type_high-mob {
     padding: $pad-16 0 0;

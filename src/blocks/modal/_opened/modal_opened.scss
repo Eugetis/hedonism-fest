@@ -1,20 +1,126 @@
+@use 'variables' as *;
+
 .modal_opened {
-  visibility: visible; //
-  opacity: 1; //
   pointer-events: auto;
-  transition: all .5s ease-in;
+  animation: showModal .5s forwards; // даем анимацию самой модалке (с ее затемнением экрана)
 }
 
-// .modal_opened .modal__container {
-//   opacity: 1;
-//   transition: opacity 1s ease;
-// }
+// анимация появления самой модалки (с ее затемнением экрана)
+@keyframes showModal {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
 
-// .modal_opened .modal__wrapper-for-side .modal__container {
-//   opacity: 1;
-//   transition: opacity 1s ease;
-// }
+// анимация появления обычных модалок по центру
+@keyframes showModalContentFadeInScaleUp {
+  from {
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+// анимация появления модалки мероприятия справа
+@keyframes showModalContentSlideFromRight {
+  from {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// анимация появления мобильное модалки снизу
+@keyframes showModalMobileContentSlideFromBottom {
+  from {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 
-// есть вероятность, что плавное открытие/закрытие модалки с описанием мероприятия
-// не отрабатывет из-за того, что используется template
+// даем анимацию модалке пожертвования
+.modal_type_center.modal_opened .modal__container_type_form {
+	animation: showModalContentFadeInScaleUp .5s forwards;
+}
+
+// даем анимацию модалке покупки билета
+.modal_type_high-mob.modal_opened .modal__container_type_form {
+	animation: showModalContentFadeInScaleUp .5s forwards;
+}
+
+// даем анимацию модалке мероприятия
+.modal_type_side.modal_opened .modal__container_type_side {
+  animation: showModalContentSlideFromRight .5s forwards;
+}
+
+// даем анимацию модалке с избранными мероприятиями
+.modal_id_favourites.modal_opened .modal__container_type_side {
+  animation: showModalContentSlideFromRight .5s forwards;
+}
+
+// даем анимацию баллуну с превью мероприятия
+.modal_id_event-mobile-preview.modal_opened .modal__container_type_preview {
+	animation: showModalContentFadeInScaleUp .5s forwards;
+}
+
+
+// меняем анимацию модалок для мобильных
+@media screen and (max-width: $mobile) {
+
+  // модалка пожертвования
+  .modal_type_center.modal_opened .modal__container_type_form {
+    animation: showModalMobileContentSlideFromBottom .5s forwards;
+  }
+
+  // модалка покупки билета
+  .modal_type_high-mob.modal_opened .modal__container_type_form {
+    animation: showModalMobileContentSlideFromBottom .5s forwards;
+  }
+
+  // модалка мероприятия
+  .modal_type_side.modal_opened .modal__container_type_side {
+    animation: showModalMobileContentSlideFromBottom .5s forwards;
+  }
+
+  // модалка с избранными мероприятиями
+  .modal_id_favourites.modal_opened .modal__container_type_side {
+    animation: showModalMobileContentSlideFromBottom .5s forwards;
+  }
+
+  // модалка с мобильными фильтрами
+  .modal_id_mobile-filters.modal_opened .modal__container_type_form {
+    animation: showModalMobileContentSlideFromBottom .5s forwards;
+  }
+
+  // доп адреса внутри модалки мероприятия
+  .modal_type_side.modal_opened .favourites-list_type_inside {
+    animation: showModalMobileContentSlideFromBottom .5s forwards;
+  }
+
+  // превью мероприятия
+  .modal_id_event-mobile-preview.modal_opened .modal__container_type_preview {
+    animation: showModalMobileContentSlideFromBottom .5s forwards;
+  }
+}
