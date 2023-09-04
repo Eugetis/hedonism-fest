@@ -10,9 +10,9 @@
 
 
 // полный функционал открытия модалки с навешиванием слушателей
-export function openModal(modal, needRemoveOnClose) {
+export function openModal(modal) {
   modal.classList.add('modal_opened');
-  modal.addEventListener('click', evt => closeModalListener(evt, needRemoveOnClose));
+  modal.addEventListener('click', closeModalListener);
   document.addEventListener('keydown', handleEscClose);
 }
 
@@ -30,7 +30,12 @@ export function removeModal(modal) {
 function closeModalListener(evt, needRemoveOnClose) {
   if (evt.target.classList.contains('modal') || evt.target.parentElement.classList.contains('modal__close-button') || evt.target.classList.contains('modal__close-button') || evt.target.classList.contains('modal__wrapper-for-side')) {
     closeModal(evt.target.closest('.modal_opened'));
-    if (needRemoveOnClose) removeModal(evt.target.closest('.modal'));
+    removeModal(evt.target.closest('.modal'))
+    // if (evt.target.closest('.modal_id_favourites')) {
+    //   return null;
+    // } else {
+    //   removeModal(evt.target.closest('.modal'))
+    // }
   }
 }
 // закрытие модалки по нажатию на Esc

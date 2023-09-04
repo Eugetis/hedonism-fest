@@ -91,21 +91,23 @@ export const modalCreate = ({cards}, modalTemplate) => {
 }
 
 export const modalFavoriteController = (event) => {
-  console.log(event.target);
-  const modal = document.querySelector('.modal_id_favourites');
+  const modal = document.querySelector('#modal-favorite').content;
   modalFavoriteHandler(modal, 'open');
 }
 
 const modalFavoriteHandler = async (modal, type) => {
-  const modalBackButton = modal.querySelector('#button__back');
-  const catalogGridContainer = modal.querySelector('.cards_type_grid');
+  const page = document.querySelector('.page');
+  const modalTemplate = modal.querySelector('.modal_id_favourites').cloneNode(true);
+  const modalBackButton = modalTemplate.querySelector('#button__back');
+  const catalogGridContainer = modalTemplate.querySelector('.cards_type_grid');
   const cardTemplate = document.querySelector('.cards_type_grid').querySelector('#card').content;
   switch (type) {
     case 'open':
       const events = await getFavoriteEvents();
       const preparedCards = prepareCard(events, cardTemplate);
       addCard(preparedCards, catalogGridContainer, 'count', preparedCards.length ? preparedCards.length : 0);
-      openModal(modal, true); // Dmitry
+      page.append(modalTemplate);
+      openModal(modalTemplate); // Dmitry
       modalBackButton.addEventListener('click', modalBackHandler);
       break;
     case 'close':
@@ -141,7 +143,6 @@ export const modalHandler = (modal, type) => {
   const modalBuyButton = modal.querySelector('#modal__button-buy');
 
   document.querySelector('.page').append(modal);
-  modal.classList.add('modal_opened');
 
   switch (type) {
     case 'open':
@@ -172,11 +173,12 @@ const modalBuyHandler = (event) => {
 }
 
 const modalPaymentCreate = (price, template) => {
+  const currency = '&#x20bd';
   const page = document.querySelector('.page_id_catalog');
   const modalPaymentTemplate = template.querySelector('.modal_id_payment').cloneNode(true);
   const priceContent = modalPaymentTemplate.querySelector('#price');
   modalPaymentTemplate.dataset.price = price;
-  priceContent.innerHTML = price;
+  priceContent.innerHTML = price + ' ' + currency;
 
   page.append(modalPaymentTemplate);
   openModal(modalPaymentTemplate);
@@ -243,7 +245,7 @@ const triggerInputChangeEvent = (input) => {
 const modalBackHandler = (event) => {
   if (event.target.closest('.modal_id_favourites')) {
     const modal = event.target.closest('.modal_id_favourites');
-    return modal.classList.remove('modal_opened');
+    return closeModal(modal);
   }
   const modal = event.target.closest('.modal_id_event-full');
   const favoriteList = modal.querySelector('.favourites-list');
