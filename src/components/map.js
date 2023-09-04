@@ -97,7 +97,7 @@ const openCustomBalloon = (object, position) => {
     modalContainer.style.left = `${left}px`;
   }
 
-  const type = modalContainer.querySelector(".preview__text");
+  const type = modalContainer.querySelector(".preview_id_type");
   const title = modalContainer.querySelector(".preview__title");
   const desc = modalContainer.querySelector(".preview__description");
   const address = modalContainer.querySelector(".preview_id_address");
@@ -131,7 +131,6 @@ function addEventGeoObjects() {
     var object = e.get('target');
     // Получение позиции дочернего объекта, на котором произошло событие.
     const position = e.get('domEvent').get('position');
-
     openCustomBalloon(object, position);
   });
 }

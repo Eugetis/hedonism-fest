@@ -10,25 +10,27 @@
 
 
 // полный функционал открытия модалки с навешиванием слушателей
-export function openModal(modal) {
+export function openModal(modal, needRemoveOnClose) {
   modal.classList.add('modal_opened');
-  modal.addEventListener('click', closeModalListener);
+  modal.addEventListener('click', evt => closeModalListener(evt, needRemoveOnClose));
   document.addEventListener('keydown', handleEscClose);
 }
 
 // полный функционал закрытия модалки с удалением слушателей
 export function closeModal(modal) {
-  if (document.querySelector('.page_id_catalog')) {
-    modal.remove();
-  }
   modal.classList.remove('modal_opened');
   modal.removeEventListener('click', closeModalListener);
   document.removeEventListener('keydown', handleEscClose);
 }
+// удаление модалки
+export function removeModal(modal) {
+  modal.remove();
+}
 // закрытие модалки по клику на оверлей
-function closeModalListener(evt) {
+function closeModalListener(evt, needRemoveOnClose) {
   if (evt.target.classList.contains('modal') || evt.target.parentElement.classList.contains('modal__close-button') || evt.target.classList.contains('modal__close-button') || evt.target.classList.contains('modal__wrapper-for-side')) {
     closeModal(evt.target.closest('.modal_opened'));
+    if (needRemoveOnClose) removeModal(evt.target.closest('.modal'));
   }
 }
 // закрытие модалки по нажатию на Esc
