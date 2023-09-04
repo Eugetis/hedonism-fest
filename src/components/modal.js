@@ -30,12 +30,11 @@ export function removeModal(modal) {
 function closeModalListener(evt, needRemoveOnClose) {
   if (evt.target.classList.contains('modal') || evt.target.parentElement.classList.contains('modal__close-button') || evt.target.classList.contains('modal__close-button') || evt.target.classList.contains('modal__wrapper-for-side')) {
     closeModal(evt.target.closest('.modal_opened'));
-    removeModal(evt.target.closest('.modal'))
-    // if (evt.target.closest('.modal_id_favourites')) {
-    //   return null;
-    // } else {
-    //   removeModal(evt.target.closest('.modal'))
-    // }
+    if (evt.target.closest('.modal_id_mobile-filters')) {
+      return null
+    } else {
+      removeModal(evt.target.closest('.modal'))
+    }
   }
 }
 // закрытие модалки по нажатию на Esc
