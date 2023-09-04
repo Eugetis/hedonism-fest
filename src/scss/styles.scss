@@ -290,6 +290,7 @@
 
 // стили модалки
 @use '../blocks/modal/modal.scss';
+@use '../blocks/modal/_type/modal_type_side.scss';
 @use '../blocks/modal/_type/modal_type_center.scss';
 @use '../blocks/modal/_type/modal_type_high-mob.scss';
 @use '../blocks/modal/_type/modal_type_preview.scss';
@@ -306,7 +307,7 @@
 @use '../blocks/modal/__container/_type/modal__container_type_side.scss';
 @use '../blocks/modal/__container/_type/modal__container_type_preview.scss';
 @use '../blocks/modal/__container/_type/modal__container_type_no-bkg.scss';
-@use '../blocks/modal/__container_opened/modal__container_opened.scss';
+@use '../blocks/modal/__container/_opened/modal__container_opened.scss';
 @use '../blocks/modal/__header/modal__header.scss';
 @use '../blocks/modal/__header/_type/modal__header_type_extented.scss'; //
 @use '../blocks/modal/__drag-line/modal__drag-line.scss';
