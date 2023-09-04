@@ -440,7 +440,8 @@ export const cardsClickController = (event) => {
   const classList = Array.from(target.classList).join(' ');
   const likeRegex = /card-control/g;
   let card = null;
-  if (document.querySelector('.page_id_index')) {
+  if (document.querySelector('.page_id_index') || document.querySelector('.page_id_404') || document.querySelector('.page_id_thanks-for-application') || document.querySelector('.page_id_thanks-for-support')) {
+    window.location.href = 'http://localhost:8080/catalog.html?event=' + cardId;
     if (classList.match(likeRegex)) {
       card = target.closest('.cards__item');
       return addLikeToStorage(card);

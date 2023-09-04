@@ -47,9 +47,7 @@ if (document.querySelector('.page_id_thanks-for-support')) {
   generalCardController(cardScrollSection, cardTemplate);
 }
 
-
-
-if (document.querySelector('.page_id_index')) {
+if (document.querySelector('.cards_type_scroll')) {
   const cardScrollSection = document.querySelector('.cards_type_scroll');
   const cardTemplate = cardScrollSection.querySelector('#card').content;
   document.querySelector('.cards').addEventListener('click', cardsClickController);
