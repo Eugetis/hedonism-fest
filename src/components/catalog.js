@@ -1,5 +1,12 @@
 import {getCards, getCardById} from './api';
-import {prepareCard, modalCreate, modalHandler, addCard, removeCards, addCardsToLocalStorage, getCardsFromLocaleStorage} from './event';
+import {
+  prepareCard,
+  modalCreate,
+  modalHandler,
+  addCard,
+  removeCards,
+  addCardsToLocalStorage,
+} from './event';
 import { modalFilters, tabSwitcher, mapContainer, listContainer } from './constants.js';
 import { openModal } from './modal.js';
 import { createMap,showMap } from './map.js'
@@ -32,20 +39,6 @@ export const catalogController = async (section, template) => {
   const preparedCards = prepareCard(cards, template);
   return addCard(preparedCards, section);
 }
-
-const catalogRedirectController = async () => {
-  const queryParams = new URLSearchParams(window.location.search);
-  const action = queryParams.get("event");
-
-  if (action) {
-    const template = document.querySelector('#modal_id_event-full').content;
-    const card = await getCardById(action);
-    const preparedModal = modalCreate(card, template);
-    modalHandler(preparedModal, 'open');
-  }
-}
-
-catalogRedirectController();
 
 // Dmitry
 
