@@ -31,20 +31,27 @@ export function removeModal(modal) {
 }
 // закрытие модалки по клику на оверлей
 function closeModalListener(evt, needRemoveOnClose) {
-  if (evt.target.classList.contains('modal') || evt.target.parentElement.classList.contains('modal__close-button') || evt.target.classList.contains('modal__close-button') || evt.target.classList.contains('modal__wrapper-for-side')) {
-    closeModal(evt.target.closest('.modal_opened'));
-    if (evt.target.closest('.modal_id_mobile-filters')) {
-      return null
+  if (evt.target.classList.contains('modal') || evt.target.parentElement.classList.contains('modal__close-button') || evt.target.classList.contains('modal__close-button') || evt.target.classList.contains('modal__wrapper-for-side') || evt.target.classList.contains('.button__icon')) {
+    let modal = "";
+    if (evt.target.closest('.modal_id_donation')) {
+      modal = evt.target.closest('.modal_id_donation');
+      return closeModal(modal);
     } else {
-      if (evt.target.closest('.modal_id_favourites')) {
-        const modalMapContainer = evt.target.closest('.modal_id_favourites').querySelector('.catalog__map-container'); // Dmitry
-        const mapContainer = document.querySelector('.catalog__events-container_type_map'); // Dmitry
-        moveMapNode(modalMapContainer, mapContainer);
-        return null
-      }
-      removeModal(evt.target.closest('.modal'))
+      modal = evt.target.closest('.modal_opened');
+      return closeModal(modal);
     }
   }
+  if (evt.target.closest('.modal_id_mobile-filters')) {
+    return null
+  }
+
+  if (evt.target.closest('.modal_id_favourites')) {
+    const modalMapContainer = evt.target.closest('.modal_id_favourites').querySelector('.catalog__map-container'); // Dmitry
+    const mapContainer = document.querySelector('.catalog__events-container_type_map'); // Dmitry
+    moveMapNode(modalMapContainer, mapContainer);
+    return null
+  }
+  return removeModal(evt.target.closest('.modal'))
 }
 // закрытие модалки по нажатию на Esc
 function handleEscClose(evt) {
