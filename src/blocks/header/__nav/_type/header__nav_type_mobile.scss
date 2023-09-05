@@ -1,0 +1,9 @@
+@use 'variables' as *;
+
+@media screen and (max-width: $tablet) {
+  .header__nav_type_mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

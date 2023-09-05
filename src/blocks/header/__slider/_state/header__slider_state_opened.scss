@@ -1,7 +1,0 @@
-@use "variables" as *;
-@media screen and (max-width: $mobile) {
-  .header__slider_state_opened {
-    transform: translateX(100vw);
-    display: flex;
-  }
-}

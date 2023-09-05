@@ -1,0 +1,11 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+
+@media screen and (max-width: $tablet) {
+  .geo__list-item_type_mobile {
+    @include h3-mobile;
+    padding: 0 $pad-20;
+    min-height: 52px;
+  }
+}

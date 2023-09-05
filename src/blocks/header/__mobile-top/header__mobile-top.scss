@@ -1,7 +1,7 @@
-@use "_variables" as *;
+@use "variables" as *;
 
 .header__mobile-top {
-  background-color: #ffd400;
+  background-color: $color-accident;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -13,5 +13,4 @@
   transition: transform .5s ease-in-out;
   width: 100vw;
   z-index: 1;
-
 }

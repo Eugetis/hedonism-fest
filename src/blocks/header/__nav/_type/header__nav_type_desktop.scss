@@ -1,14 +1,14 @@
 @use 'variables' as *;
 
-.header__menu_type_desktop {
+.header__nav_type_desktop {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
 }
 
-@media screen and (max-width: $mobile) {
-  .header__menu_type_desktop {
+@media screen and (max-width: $tablet) {
+  .header__nav_type_desktop {
     display: none;
   }
 }

@@ -1,0 +1,34 @@
+@use 'variables' as *;
+
+.geo__list-input {
+  appearance: none;
+  z-index: 5;
+  }
+
+.geo__list-input:checked::after {
+  font: $icon-text-desktop;
+  content: '\e822';
+}
+
+.geo__list-input:active::after {
+  font: $icon-text-desktop;
+  content: '\e822';
+  color: white;
+}
+
+.geo__list-input:checked:active::after {
+  font: $icon-text-desktop;
+  content: '\e822';
+  color: unset;
+}
+
+@media screen and (max-width: $tablet) {
+  .geo__list-input:checked::after {
+    font: $icon-text-mobile;
+  }
+  .geo__list-input:active::after {
+    font: $icon-text-mobile;
+  }
+}
+
+
