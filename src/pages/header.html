@@ -10,33 +10,36 @@
     <div class="header__wrapper">
 
       <div class="header__logo-and-location">
+
         <a href="../index.html" class="link">
           <img class="header__logo" src="../images/hedonism-fest-logo.png" alt="Логотип ГедонизмФест">
         </a>
-        <div class="header__form">
-          <span class="button__icon icon-marker"></span>
-          <button type="button" class="header__button_city-selected dropdown__button-text">
-          </button>
-          <form class="header__form-city">
-            <label for="moscow" class="header__form-city-label">Москва
-              <input class="header__input-city-select" type="radio" name="city" id="moscow" value="Москва" />
-            </label>
-            <label class="header__form-city-label" for="petersburg">Санкт-Петербург
-              <input class="header__input-city-select" type="radio" name="city" id="petersburg"
-                value="Санкт&nbsp;-&nbsp;Петербург" />
-            </label>
-            <label class="header__form-city-label" for="sochi">Сочи
-              <input class="header__input-city-select" type="radio" name="city" id="sochi" value="Сочи" />
-            </label>
-            <label class="header__form-city-label" for="kaluga">Калуга
-              <input class="header__input-city-select" type="radio" name="city" id="kaluga" value="Калуга" />
-            </label>
-            <label class="header__form-city-label" for="ekatirinburg">Екатеринбург
-              <input class="header__input-city-select" type="radio" name="city" id="ekatirinburg"
-                value="Екатеринбург" />
-            </label>
-          </form>
+
+        <div class="header__geo">
+          <div class="geo">
+            <button class="header__button geo__button button"><span class="button__icon icon-marker"></span><span class="header__city-name"></span></button>
+            <div class="geo__list-container">
+              <label class="geo__list-item" for="moscow">Москва
+                <input class="geo__list-input" type="radio" name="city" id="moscow" value="Москва" />
+              </label>
+              <label class="geo__list-item" for="petersburg">Санкт&#8209;Петербург
+                <input class="geo__list-input" type="radio" name="city" id="petersburg"
+                  value="Санкт&#8209;Петербург" />
+              </label>
+              <label class="geo__list-item" for="sochi">Сочи
+                <input class="geo__list-input" type="radio" name="city" id="sochi" value="Сочи" />
+              </label>
+              <label class="geo__list-item" for="kaluga">Калуга
+                <input class="geo__list-input" type="radio" name="city" id="kaluga" value="Калуга" />
+              </label>
+              <label class="geo__list-item" for="ekatirinburg">Екатеринбург
+                <input class="geo__list-input" type="radio" name="city" id="ekatirinburg"
+                  value="Екатеринбург" />
+              </label>
+            </div>
+          </div>
         </div>
+
       </div>
 
       <nav>
@@ -50,7 +53,7 @@
 
       <div class="header__buttons">
         <a href="#" class="button" id="button__favorite"><span class="button__icon icon-heart"></span>хочу&nbsp;пойти</a>
-        <button class="header__button button button_type_filled" type="button">поддержать</button>
+        <button class="header__button header__button_type_donate button button_type_filled" type="button">поддержать</button>
         <button class="header__burger-button" type="button"><span class="button__icon icon-menu-burger"></span></button>
       </div>
 
@@ -58,9 +61,9 @@
 
   </div> <!-- конец шапки хедера -->
 
-
-
 </header>
+
+
 <!-- начало мобильного меню (внутри лежат 2 слайда/контейнера с контентом) -->
 <!-- js должен по клику на гамбургер включать модификатор header__slider_state_opened, чтобы выезжало мобильное меню  -->
 <div class="header__wrapper_mobile">
@@ -105,7 +108,7 @@
         <p class="header__subtext">благотворительная организация</p>
       </div>
       <div class="header__mobile-section header__mobile-section_type_bottom">
-        <button class="button button_type_filled" type="button">поддержать</button>
+        <button class="header__button_type_donate button button_type_filled" type="button">поддержать</button>
       </div>
     </div>
 
@@ -139,6 +142,8 @@
 
 </div> <!-- конец открытого мобильного меню -->
 </div>
+
+
 <!-- МОДАЛКА С ФОРМОЙ ПОЖЕРТВОВАНИЯ -->
 <!-- Лежит тут, т.к. должна быть доступна на любой странице, но через particle не хочет подтягиваться -->
 <!-- должна открываться по кнопке "пожертвовать" в хедере (и еще на паре страниц по индивидуальным кнопкам) -->

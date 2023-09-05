@@ -54,11 +54,11 @@ export const dropDownMenuDesktopClose = function() {
 }*/
 
 export const dropDownMenuOpen = function() {
-  dropDownMenu.classList.add('header__form-city_opened');
+  dropDownMenu.classList.add('geo__list-container_opened');
 }
 
 export const dropDownMenuClose = function() {
-  dropDownMenu.classList.remove('header__form-city_opened');
+  dropDownMenu.classList.remove('geo__list-container_opened');
 }
 
 export const dropDownMenuMobileOpen = function() {
@@ -72,12 +72,12 @@ export const dropDownMenuMobileClose = function() {
 export const mobileMenuSliderOpen = function() {
   mobileMenuSlider.classList.remove('header__slider_state_opened');
   headerMobileTop.classList.remove('header__mobile-top_opened');
-  page.classList.add('page__no-scroll');
+  page.classList.add('page_type_no-scroll');
   document.querySelector('.header__wrapper_mobile').classList.add('header__wrapper_mobile_1')
 }
 export const mobileMenuSliderClose = function() {
   mobileMenuSlider.classList.add('header__slider_state_opened');
-  page.classList.remove('page__no-scroll');
+  page.classList.remove('page_type_no-scroll');
   headerMobileTop.classList.add('header__mobile-top_opened');
   document.querySelector('.header__wrapper_mobile').classList.remove('header__wrapper_mobile_1')
 }

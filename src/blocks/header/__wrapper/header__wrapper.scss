@@ -1,7 +1,7 @@
 @use 'variables' as *;
 
 .header__wrapper {
-  min-height: 88px;
+  max-height: 88px;
   max-width: $desktop-max;
   margin: $centered;
   padding: $pad-20 $pad-40;
@@ -13,7 +13,7 @@
 
 @media screen and (max-width: $mobile) {
   .header__wrapper {
-    min-height: 68px;
+    max-height: 68px;
     padding: $pad-12 $pad-20;
     z-index: 5;
   }

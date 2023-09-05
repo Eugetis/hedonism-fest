@@ -100,15 +100,15 @@ const modalContainer = document.querySelector('.modal__container');
 
 
 // Андрей
-const donateButton = document.querySelector('.header__button');
+const donateButton = document.querySelector('.header__button_type_donate');
 
 
 
 // Алексей
-let dropDownMenuButtonText = document.querySelector('.dropdown__button-text');
+// let dropDownMenuButtonText = document.querySelector('.dropdown__button-text');
 let dropDownMenuButtonTextMobile = document.querySelector('.dropdown__button-text-mobile');
 
-
+let dropDownMenuButtonText = document.querySelector('.header__city-name');
 
 
 
@@ -159,6 +159,9 @@ if (document.querySelector('.page_id_404') || document.querySelector('.page_id_t
 // Евгений вклинился
 if (document.querySelector('.page_id_for-participants')) {
   document.querySelector('.footer').classList.add('footer_hidden', 'footer_style_move-down');
+}
+if (document.querySelector('.page_id_about')) {
+  document.querySelector('.footer').classList.add('footer_style_move-down');
 }
 // Евгений -> end!
 donateButton.addEventListener('click', () => {
@@ -212,7 +215,7 @@ mobileMenuButtonClose.addEventListener('click', mobileMenuSliderClose);
 dropDownMenuInputs.forEach(function (dropDownMenuInput) {
   dropDownMenuInput.addEventListener('click', function () {
     if (dropDownMenuInput.checked) {
-      console.log(dropDownMenuInput.value);
+      // console.log(dropDownMenuInput.value);
       dropDownMenuButtonText.innerText = dropDownMenuInput.value;
       dropDownMenuButtonTextMobile.innerText = dropDownMenuInput.value;
       localStorage.setItem('city', dropDownMenuInput.value);
@@ -243,19 +246,19 @@ dropDownMenuInputs.forEach(function (dropDownMenuInput) {
 
 //появляющийся при скролле хедер
 if (document.querySelector('.page_id_index')) {
-   header.classList.add('header__offset');
-   header.classList.add('header__offset_3');
-window.addEventListener('scroll', function () {
-  if (pageYOffset > 10) {
-    header.classList.remove('header__offset');
-    header.classList.add('header__offset_1');
-    header.classList.remove('header__offset_2');
+  header.classList.add('header__offset');
+  header.classList.add('header__offset_3');
+  window.addEventListener('scroll', function () {
+    if (pageYOffset > 10) {
+      header.classList.remove('header__offset');
+      header.classList.add('header__offset_1');
+      header.classList.remove('header__offset_2');
 
-  } else if (pageYOffset <= 10) {
-    header.classList.remove('header__offset_1');
-    header.classList.add('header__offset_2');
-  }
-})
+    } else if (pageYOffset <= 10) {
+      header.classList.remove('header__offset_1');
+      header.classList.add('header__offset_2');
+    }
+  })
 }
 
 // Алексей -> end!

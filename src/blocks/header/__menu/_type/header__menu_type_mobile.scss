@@ -4,7 +4,7 @@
   display: none;
 }
 
-@media screen and (max-width: $mobile) {
+@media screen and (max-width: $tablet) {
   .header__menu_type_mobile {
     display: flex;
     flex-direction: column;
