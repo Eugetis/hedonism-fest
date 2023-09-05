@@ -260,7 +260,6 @@ dropDownMenuInputs.forEach(function (dropDownMenuInput) {
   if (dropDownMenuInput.value === dropDownMenuButtonText.innerText) {
     dropDownMenuInput.checked = true;
   } else if (dropDownMenuInput.value === dropDownMenuButtonTextMobile.innerText) {
-    console.log(dropDownMenuInput);
     dropDownMenuInput.checked = true;
   }
 });
