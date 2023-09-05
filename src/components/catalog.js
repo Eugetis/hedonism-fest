@@ -7,7 +7,7 @@ import {
   removeCards,
   addCardsToLocalStorage,
 } from './event';
-import { modalFilters, tabSwitcher, mapContainer, listContainer } from './constants.js';
+import { modalFilters, tabSwitcher, mapContainer, listContainer} from './constants.js';
 import { openModal } from './modal.js';
 import { createMap,showMap } from './map.js'
 import { setFiltersEventListener } from './filters.js'
@@ -25,8 +25,8 @@ import { arrayValues } from './utils.js'
 export const catalogController = async (section, template) => {
   // Dmitry
   // инициализация контейнера список\карта и установка слушателя свитча табов
-  initEventsContainer();
-  setTabSwitchEventListener();
+  initEventsContainer(tabSwitcher);
+  setTabSwitchEventListener(tabSwitcher);
   // Dmitry -> end!
   const cards = await getCards();
   // Dmitry
@@ -85,26 +85,24 @@ const getCardsByCount = (cards, count) => {
 
 // Дмитрий - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// положение таба на переключателе
-let isMap = false;
-
 // переключение контейнера карта\список, если карта то актуализируем её
 const handleTabEvent = (evt) => {
   evt.preventDefault();
+
+  const target = evt.target.closest('.catalog__content') || evt.target.closest('.favourites-list');
+  const mapContainer = target.querySelector('.catalog__events-container_type_map');
+  const listContainer = target.querySelector('.catalog__events-container_type_grid');
 
   //переключаем табы на переключателе
   toggleTabSwitcher(evt);
 
   // переключаем отображение в контейнере карта\список
-  if (!isMap) {
-    isMap = true;
+  if (listContainer.classList.contains('catalog__events-container_opened')) {
     mapContainer.classList.add('catalog__events-container_opened');
     listContainer.classList.remove('catalog__events-container_opened');
-
     showMap();
 
   } else {
-      isMap = false;
       mapContainer.classList.remove('catalog__events-container_opened');
       listContainer.classList.add('catalog__events-container_opened');
     }
@@ -112,27 +110,30 @@ const handleTabEvent = (evt) => {
 
 // переключение свитча табов
 const toggleTabSwitcher = (evt) => {
-  /* может сделать через перебор элементов свитча и в зависимости от актив вешать или нет*/
-  evt.target.classList.add('tab-switcher__button_active');
-  evt.target.removeEventListener('click', handleTabEvent);
+  const buttonList = evt.target.closest('.tab-switcher').querySelectorAll('.tab-switcher__button');
 
-  if (evt.target.nextElementSibling != null) {
-    evt.target.nextElementSibling.classList.remove('tab-switcher__button_active');
-    evt.target.nextElementSibling.addEventListener('click', handleTabEvent);
-  } else {
-    evt.target.previousElementSibling.classList.remove('tab-switcher__button_active');
-    evt.target.previousElementSibling.addEventListener('click', handleTabEvent);
-  }
+  buttonList.forEach(button => {
+    if (button.classList.contains('tab-switcher__button_active')) {
+      button.classList.remove('tab-switcher__button_active');
+      button.addEventListener('click', handleTabEvent);
+    } else {
+      button.removeEventListener('click', handleTabEvent);
+      button.classList.add('tab-switcher__button_active');
+    }
+  });
 }
 
-// начальное состояние контейнера при попадании на каталог
-function initEventsContainer() {
+// начальное состояние контейнера при попадании на каталог или в модалку (определяет табСвитчер)
+export const initEventsContainer = (tabSwitcher) => {
+  const target = tabSwitcher.closest('.catalog__content') || tabSwitcher.closest('.favourites-list');
+  const mapContainer = target.querySelector('.catalog__events-container_type_map');
+  const listContainer = target.querySelector('.catalog__events-container_type_grid');
   mapContainer.classList.remove('catalog__events-container_opened');
   listContainer.classList.add('catalog__events-container_opened');
 }
 
 // слушатель свитча табов
-function setTabSwitchEventListener() {
+export const setTabSwitchEventListener = (tabSwitcher) => {
   const buttonList = Array.from(tabSwitcher.querySelectorAll('.tab-switcher__button'));
   buttonList.forEach((button) => {
       if (!button.matches('.tab-switcher__button_active')) {
