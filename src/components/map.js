@@ -1,7 +1,6 @@
 import { getFilteredCards } from './filters.js'
 import { arrayValues, logError } from './utils.js'
 import { getCardsFromLocaleStorage, modalAddressHandler } from "./event.js"
-import { mapContainer } from './constants.js'
 import { openModal, closeModal } from './modal.js';
 import {modalController} from "./catalog";
 
@@ -17,7 +16,7 @@ let myClusterer;
 
 // =============================
 // map
-function initMap() {
+function initMap(mapContainer) {
   // Создание карты.
   myMap = new ymaps.Map(mapContainer.querySelector('.catalog__map-container'), {
       // Координаты центра карты.
@@ -147,8 +146,8 @@ function addEventGeoObjects() {
 
 // рендер карты в контейнере
 // в первый раз - создаем карту (создаем её "ленивым подходом", асинхронно)
-export const createMap = async () => {
-  ymaps.ready(initMap);
+export const createMap = async (mapContainer) => {
+  if (!myMap) ymaps.ready(initMap(mapContainer));
 }
 
 // в последующие - просто обновляем её отображение

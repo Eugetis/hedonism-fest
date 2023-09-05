@@ -1,7 +1,7 @@
 import {modalController, setTabSwitchEventListener, initEventsContainer} from "./catalog";
 import {openModal, closeModal, removeModal} from "./modal";
 import {getCardById} from "./api";
-import { showMap, moveMapNode } from "./map";
+import { showMap, moveMapNode, createMap } from "./map";
 // РАБОТА С МЕРОПРИЯТИЕМ
 
 // Если вдруг кому-то нужно что-то дописать в этом файле, помимо основного ответственного за эту функциональность,
@@ -135,10 +135,11 @@ export const modalFavoriteHandler = async (modal, type) => {
       const events = await getFavoriteEvents();
       const preparedCards = prepareCard(events, cardTemplate);
       addCard(preparedCards, catalogGridContainer, 'count', preparedCards.length ? preparedCards.length : 0);
-      moveMapNode(mapContainer, modalMapContainer); // Dmitry
-      page.append(modalTemplate);
-      showMap();
       openModal(modalTemplate); // Dmitry
+      page.append(modalTemplate);
+      moveMapNode(mapContainer, modalMapContainer); // Dmitry
+      createMap(modalMapContainer); // там внутри проверка если карты еще нет она создастся (пришли с другой страницы сразу в модалку)
+      showMap();
       modalBackButton.addEventListener('click', modalBackHandler);
       initEventsContainer(modalTabSwitcher); // Dmitry
       setTabSwitchEventListener(modalTabSwitcher); // Dmitry
@@ -500,7 +501,7 @@ const hasLike = (id, array) => {
 
 
 // Функция которая возвращает null если в localStorage нету key, в другом случае возвращает обьект по ключу key и его value
-const getStorageValueByKey = (key) => {
+export const getStorageValueByKey = (key) => {
   if (!hasKeyInStorage(key)) {
     return null;
   }
