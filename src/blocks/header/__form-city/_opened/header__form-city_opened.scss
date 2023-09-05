@@ -1,7 +1,16 @@
+@keyframes openHeaderDropdown {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+  to {
+    display: flex;
+    visibility: visible;
+  }
+}
+
+
 .header__form-city_opened {
   display: flex;
-  animation-name: animate;
-  animation-duration: 0.5s;
-  transition: transform 0.5s ease-in-out;
-  visibility: visible;
+  animation: openHeaderDropdown 0.5s forwards;
 }

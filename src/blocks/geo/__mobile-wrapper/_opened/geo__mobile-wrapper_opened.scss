@@ -1,0 +1,15 @@
+@keyframes openMobileGeo {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+  to {
+    display: flex;
+    visibility: visible;
+  }
+}
+
+.geo__mobile-wrapper_opened {
+  display: flex;
+  animation: openMobileGeo 0.5s forwards;
+}

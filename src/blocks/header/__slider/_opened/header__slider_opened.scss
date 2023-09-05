@@ -1,0 +1,22 @@
+@use "variables" as *;
+
+@keyframes openSliderMenu {
+  from {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .header__slider_opened {
+    display: flex;
+    animation: openSliderMenu 0.5s forwards;
+  }
+}

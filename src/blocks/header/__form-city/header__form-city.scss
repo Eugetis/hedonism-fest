@@ -1,42 +1,49 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
 .header__form-city {
-  display: flex;
-  visibility: hidden;
+  display: none;
   flex-direction: column;
   align-items: flex-start;
+  height: auto; //
   width: 100%;
-  margin: 20px auto 20px;
-  position: absolute;
-  bottom: -314px;
-  transition-property: opacity, visibility;
-  transition-duration: 0.3s, 0s;
-  transition-delay: 0s, .5s;
-  height: 288px;
-  width: 320px;
+  min-width: 320px; //
   box-sizing: border-box;
-  padding: 24px 0;
-  border-radius: 24px;
-  background-color: rgba(255, 255, 255, 1);
-  box-shadow: 0px 4px 12px 0px rgba(59, 55, 72, 0.12);
+  padding: $pad-24 0;
+  border-radius: $radius-large;
+  background-color: $white;
+  box-shadow: $drop-shadow;
+
+  position: absolute;
+  left: 32px;
+  top: 52px;
+
+  // visibility: hidden;
+  // opacity: 0;
+  // transition-property: opacity, visibility;
+  // transition-duration: 0.3s, 0s;
+  // transition-delay: 0s, .5s;
 }
 
-.header__form-city > label {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 48px;
-  letter-spacing: 0px;
-  text-align: left;
+.header__form-city > .header__form-city-label {
+  @include text-desktop;
   width: 100%;
+  min-height: 48px;
   display: flex;
   justify-content: space-between;
+  gap: 8px;
   align-items: center;
-  padding: 0 24px;
+  padding: 0 $pad-24;
   box-sizing: border-box;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .header__form-city > .header__form-city-label:hover {
-  background-color: rgba(235, 233, 237, 1);
+  background-color: $light-primary;
 }
 
 .header__form-city > .header__form-city-label:active {
-  background-color: rgba(113, 0, 255, 1);
+  background-color: $color-primary;
 }

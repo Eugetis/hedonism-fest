@@ -1,0 +1,16 @@
+@use 'variables' as *;
+
+.geo {
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+@media screen and (max-width: $tablet) {
+  .geo {
+    min-height: 52px;
+    // justify-content: space-between;
+    // padding: 0 20px;
+    align-items: center;
+  }
+}

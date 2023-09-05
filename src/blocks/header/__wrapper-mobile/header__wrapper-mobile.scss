@@ -1,0 +1,21 @@
+@use 'variables' as *;
+
+.header__wrapper-mobile {
+  // тут дисплей отключить и в js включать перед слайдером
+  display: none;
+  overflow: hidden;
+  width: 100%;
+  top: 68px;
+  height: calc(100vh - 68px);
+  position: fixed;
+
+  z-index: 10;
+}
+
+// .header__wrapper_mobile {
+//   overflow: hidden;
+//   width: 100vw;
+//   top: 68px;
+//   height: calc(100vh - 68px);
+//   position: fixed;
+// }

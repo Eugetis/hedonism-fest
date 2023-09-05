@@ -1,0 +1,45 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.geo__list-item {
+  @include text-desktop;
+  width: 100%;
+  min-height: 48px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+  padding: 0 $pad-24;
+  box-sizing: border-box;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.geo__list-item:hover {
+  background-color: $light-secondary;
+  cursor: pointer;
+}
+
+.geo__list-item:active {
+  background-color: $color-primary;
+  color: $white;
+}
+
+
+.geo__list-item:has(.geo__list-input:focus) {
+  background-color: $color-primary;
+}
+
+.geo__list-item:has(.geo__list-input:checked) {
+  background-color: $light-secondary;
+}
+
+.geo__list-item:has(.geo__list-input:checked):hover {
+  pointer-events: none;
+}
+
+.geo__list-item:has(.geo__list-input:checked):active {
+  pointer-events: none;
+  color: unset;
+}
