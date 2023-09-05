@@ -40,6 +40,11 @@ const initMapContent= () => {
   initGeoEventsOnMap();
 }
 
+export const moveMapNode = (selectorFrom, selectorTo) => {
+  selectorTo.append(selectorFrom);
+  showMap();
+}
+
 // Преобразуем координаты курсора мыши в геокоординаты
 const coordPageToGlobal = (coords) => {
   const projection = myMap.options.get('projection');

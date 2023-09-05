@@ -3,7 +3,7 @@
 // Если вдруг кому-то нужно что-то дописать в этом файле, помимо основного ответственного за эту функциональность,
 // лучше это делать внизу, где указаны имена. Если нужно что-то писать прямо посреди чужого кода, то отделяйте
 // свой код комментариями со своим именем перед и после вставляемого кода.
-
+import { moveMapNode } from './map.js'
 
 // Андрей - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -36,6 +36,12 @@ function closeModalListener(evt, needRemoveOnClose) {
     if (evt.target.closest('.modal_id_mobile-filters')) {
       return null
     } else {
+      if (evt.target.closest('.modal_id_favourites')) {
+        const modalMapContainer = evt.target.closest('.modal_id_favourites').querySelector('.catalog__map-container'); // Dmitry
+        const mapContainer = document.querySelector('.catalog__events-container_type_map'); // Dmitry
+        moveMapNode(modalMapContainer, mapContainer);
+        return null
+      }
       removeModal(evt.target.closest('.modal'))
     }
   }
