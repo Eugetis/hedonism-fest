@@ -126,7 +126,7 @@ export const modalFavoriteHandler = async (modal, type) => {
   const modalBackButton = modalTemplate.querySelector('#button__back');
   const modalTabSwitcher = modalTemplate.querySelector('.tab-switcher'); // Dmitry
   const modalMapContainer = modalTemplate.querySelector('.catalog__events-container_type_map'); // Dmitry
-  const modalListContainer = modalTemplate.querySelector('.catalog__events-container_type_grid'); // Dmitry
+  const mapContainer = document.querySelector('.catalog__events-container_type_map').querySelector('.catalog__map-container');
   const catalogGridContainer = modalTemplate.querySelector('.cards_type_grid');
   const cardTemplate = document.querySelector('.cards_type_grid').querySelector('#card').content;
   switch (type) {
@@ -137,8 +137,10 @@ export const modalFavoriteHandler = async (modal, type) => {
       page.append(modalTemplate);
       openModal(modalTemplate); // Dmitry
       modalBackButton.addEventListener('click', modalBackHandler);
+      modalMapContainer.append(mapContainer);
       initEventsContainer(modalTabSwitcher); // Dmitry
       setTabSwitchEventListener(modalTabSwitcher); // Dmitry
+
       break;
     case 'close':
       closeModal(modal);
