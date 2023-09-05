@@ -1,0 +1,27 @@
+@use 'variables' as *;
+
+@keyframes headerSideSlideOnIndex {
+  from {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    top: 0;
+    transform: translateX(100%);
+  }
+  to {
+    position: fixed;
+    display: flex;
+    visibility: visible;
+    top: 0;
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+@media screen and (max-width: $tablet) {
+  .header__offset_type_index-side {
+    display: block;
+    animation: headerSideSlideOnIndex 0.5s forwards;
+  }
+}

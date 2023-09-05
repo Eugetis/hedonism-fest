@@ -1,4 +1,6 @@
-.header__city-name {
+@use 'variables' as *;
+
+.geo__city-name {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;

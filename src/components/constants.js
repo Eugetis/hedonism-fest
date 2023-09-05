@@ -30,11 +30,11 @@ export const modalFilters = document.querySelector('.modal_id_mobile-filters');
 // export const dropDownMenu = document.querySelector('.header__form-city');
 export const dropDownMenuDesktop = document.querySelector('.geo__list-container'); //
 export const dropDownMenu = document.querySelector('.geo__list-container'); //
-export const dropDownMenuMobile = document.querySelector ('.header__slide_content_cities');
+export const dropDownMenuMobile = document.querySelector ('.geo__mobile-wrapper');
 // export const dropDownMenuButton = document.querySelector('.header__button_city-selected');
 export const dropDownMenuButton = document.querySelector('.geo__button');
-export const dropDownMenuButtonBack = document.querySelector('.button__arrow-back-dropdown-mobile');
-export const mobileMenuButton = document.querySelector('.intro__menu-button');
+export const dropDownMenuButtonBack = document.querySelector('.geo__button_type_back');
+export const mobileMenuButtonIntro = document.querySelector('.intro__menu-button');
 export const mobileMenuButtonSecondary = document.querySelector('.header__burger-button');
 export const mobileMenuButtonClose = document.querySelector('.icon-cross');
 // export const dropDownMenuElements = Array.from(document.querySelectorAll('.geo__form-city-label'));
@@ -59,7 +59,7 @@ export const headerMobileTop = document.querySelector('.header__mobile-top');
 
 // Евгений - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-
+export const mobileHeaderWrapper = document.querySelector('.header__wrapper-mobile');
 
 
 // Евгений -> end!

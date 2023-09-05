@@ -17,7 +17,7 @@
 
         <div class="header__geo">
           <div class="geo">
-            <button class="header__button geo__button button"><span class="button__icon icon-marker"></span><span class="header__city-name"></span></button>
+            <button class="header__button geo__button button"><span class="button__icon icon-marker"></span><span class="geo__city-name"></span></button>
             <div class="geo__list-container">
               <label class="geo__list-item" for="moscow">Москва
                 <input class="geo__list-input" type="radio" name="city" id="moscow" value="Москва" />
@@ -43,11 +43,11 @@
       </div>
 
       <nav>
-        <ul class="header__menu header__menu_type_desktop">
-          <li class="header__menu-item"><a href="./catalog.html" class="header__link link">куда&nbsp;пойти</a></li>
-          <li class="header__menu-item"><a href="./for-participants.html"
+        <ul class="header__nav header__nav_type_desktop">
+          <li class="header__nav-item"><a href="./catalog.html" class="header__link link">куда&nbsp;пойти</a></li>
+          <li class="header__nav-item"><a href="./for-participants.html"
               class="header__link link">стать&nbsp;участником</a></li>
-          <li class="header__menu-item"><a href="./about.html" class="header__link link">о&nbsp;фестивале</a></li>
+          <li class="header__nav-item"><a href="./about.html" class="header__link link">о&nbsp;фестивале</a></li>
         </ul>
       </nav>
 
@@ -64,88 +64,84 @@
 </header>
 
 
-<!-- начало мобильного меню (внутри лежат 2 слайда/контейнера с контентом) -->
-<!-- js должен по клику на гамбургер включать модификатор header__slider_state_opened, чтобы выезжало мобильное меню  -->
-<div class="header__wrapper_mobile">
-  <div class="header__mobile-top header__mobile-top_opened">
-    <a href="../index.html" class="link">
-      <img class="header__logo" src="../images/hedonism-fest-logo.png" alt="Логотип ГедонизмФест">
-    </a>
-    <a href="#" class="button"><span class="button__icon icon-heart"></span>хочу&nbsp;пойти</a>
-    <button class="" type="button" style="background-color: rgba(255, 212, 0, 1); border: none;"><span class="button__icon icon-cross" ></span></button>
-  </div>
+<!-- начало мобильного меню -->
+<!-- js должен по клику на гамбургер включать модификатор header__slider_opened, чтобы выезжало мобильное меню  -->
+<div class="header__wrapper-mobile">
 
-<div class="header__slider header__slider_state_opened">
+  <div class="header__slider">
 
-  <!-- начало первого слайда открытого мобильного меню -->
-  <div class="header__slide header__slide_content_menu">
+    <!-- начало открытого мобильного меню -->
+    <div class="header__slide header__slide_content_menu">
 
-    <div class="header__mobile-section">
-      <p class="header__subtext header__subtext_position_left">Ваш город</p>
-      <div class="header__button_city-selected-wrapper">
-        <button type="button"
-          class="header__button_city-selected header__button_city-selected-mobile dropdown__button-text-mobile">Санкт&nbsp;-&nbsp;Петербург
-        </button>
-        <span class="icon-angle-small-right"></span>
+      <div class="header__mobile-section">
+        <p class="header__subtext header__subtext_position_left">Ваш город</p>
+        <div class="geo">
+
+          <button type="button" class="geo__button geo__button_type_mobile button">
+            <span class="geo__city-name geo__city-name_type_mobile"></span>
+            <span class="button__icon icon-angle-small-right"></span>
+          </button>
+
+          <!-- контейнер с выбором города для мобилы -->
+          <div class="geo__mobile-wrapper">
+            <button type="button" class="button geo__button geo__button_type_mobile geo__button_type_back"><span class="button__icon icon-arrow-left"></span>назад</button>
+            <p class="header__subtext header__subtext_position_left">Ваш город</p>
+            <div class="geo__list-container geo__list-container_type_mobile">
+              <label class="geo__list-item geo__list-item_type_mobile" for="moscow">Москва
+                <input class="geo__list-input" type="radio" name="city" id="moscow" value="Москва" />
+              </label>
+              <label class="geo__list-item geo__list-item_type_mobile" for="petersburg">Санкт&#8209;Петербург
+                <input class="geo__list-input" type="radio" name="city" id="petersburg"
+                  value="Санкт&#8209;Петербург" />
+              </label>
+              <label class="geo__list-item geo__list-item_type_mobile" for="sochi">Сочи
+                <input class="geo__list-input" type="radio" name="city" id="sochi" value="Сочи" />
+              </label>
+              <label class="geo__list-item geo__list-item_type_mobile" for="kaluga">Калуга
+                <input class="geo__list-input" type="radio" name="city" id="kaluga" value="Калуга" />
+              </label>
+              <label class="geo__list-item geo__list-item_type_mobile" for="ekatirinburg">Екатеринбург
+                <input class="geo__list-input" type="radio" name="city" id="ekatirinburg"
+                  value="Екатеринбург" />
+              </label>
+            </div>
+          </div>
+
+
+        </div>
       </div>
-    </div>
 
-    <div class="header__mobile-section">
-      <p class="header__subtext header__subtext_position_left">навигация</p>
-      <nav>
-        <ul class="header__menu header__menu_type_mobile">
-          <li class="header__menu-item"><a href="./catalog.html" class="header__link link">куда&nbsp;пойти</a></li>
-          <li class="header__menu-item"><a href="./for-participants.html"
-              class="header__link link">стать&nbsp;участником</a></li>
-          <li class="header__menu-item"><a href="./about.html" class="header__link link">о&nbsp;фестивале</a></li>
-        </ul>
-      </nav>
-    </div>
-
-    <div class="header__slide-bottom">
-      <div class="header__mobile-section header__mobile-section_type_bottom">
-        <img class="header__logo_type_dropdown" src="../images/Nochlezhka-light.svg" alt="логотип Ночлежка">
-        <p class="header__subtext">благотворительная организация</p>
+      <div class="header__mobile-section">
+        <p class="header__subtext header__subtext_position_left">навигация</p>
+        <nav>
+          <ul class="header__nav header__nav_type_mobile">
+            <li class="header__nav-item"><a href="./catalog.html" class="header__link link">куда&nbsp;пойти</a></li>
+            <li class="header__nav-item"><a href="./for-participants.html"
+                class="header__link link">стать&nbsp;участником</a></li>
+            <li class="header__nav-item"><a href="./about.html" class="header__link link">о&nbsp;фестивале</a></li>
+          </ul>
+        </nav>
       </div>
-      <div class="header__mobile-section header__mobile-section_type_bottom">
-        <button class="header__button_type_donate button button_type_filled" type="button">поддержать</button>
+
+      <div class="header__slide-bottom">
+        <div class="header__mobile-section header__mobile-section_type_bottom">
+          <img class="header__logo_type_dropdown" src="../images/Nochlezhka-light.svg" alt="логотип Ночлежка">
+          <p class="header__subtext">благотворительная организация</p>
+        </div>
+        <div class="header__mobile-section header__mobile-section_type_bottom">
+          <button class="header__button header__button_type_donate button button_type_filled" type="button">пожертвовать</button>
+        </div>
       </div>
-    </div>
 
-  </div> <!-- конец первого слайда открытого мобильного меню -->
+    </div> <!-- конец первого слайда открытого мобильного меню -->
 
-  <!-- начало второго слайда открытого мобильного меню -->
-  <div class="header__slide_content_cities header__slide_content_cities_close">
-    <!---header__popup-city-select_opened--><!--Добавить с помощью JS для показа блока-->
-
-    <button type="button" class="button__arrow-back button__arrow-back-dropdown-mobile"><span class="icon-arrow-left"></span>назад</button>
-    <p class="header__subtext header__subtext_position_left">Ваш город</p>
-    <form class="header__form-city header__form-city_slider">
-      <label>Москва
-        <input class="header__input-city-select" type="radio" name="city" id="moscow" value="Москва" />
-      </label>
-      <label>Санкт-Петербург
-        <input class="header__input-city-select" type="radio" name="city" id="petersburg" value="Санкт&nbsp;-&nbsp;Петербург" />
-      </label>
-      <label>Сочи
-        <input class="header__input-city-select" type="radio" name="city" id="sochi" value="Сочи" />
-      </label>
-      <label>Калуга
-        <input class="header__input-city-select" type="radio" name="city" id="kaluga" value="Калуга" />
-      </label>
-      <label>Екатеринбург
-        <input class="header__input-city-select" type="radio" name="city" id="ekatirinburg" value="Екатеринбург" />
-      </label>
-    </form>
-
-  </div> <!-- конец второго слайда открытого мобильного меню -->
-
-</div> <!-- конец открытого мобильного меню -->
+  </div> <!-- конец открытого мобильного меню -->
 </div>
 
 
+
 <!-- МОДАЛКА С ФОРМОЙ ПОЖЕРТВОВАНИЯ -->
-<!-- Лежит тут, т.к. должна быть доступна на любой странице, но через particle не хочет подтягиваться -->
+<!-- Лежит тут, т.к. должна быть доступна на любой странице -->
 <!-- должна открываться по кнопке "пожертвовать" в хедере (и еще на паре страниц по индивидуальным кнопкам) -->
 <!-- должна открываться через добавление секции класса modal_opened -->
 

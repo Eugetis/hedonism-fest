@@ -42,7 +42,7 @@ export const logError = (err) => {
 // Андрей -> end!
 
 // Алексей - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-import {dropDownMenu, dropDownMenuMobile, mobileMenuSlider, page, headerMobileTop, dropDownMenuDesktop} from '../components/constants.js';
+import {dropDownMenu, dropDownMenuMobile, mobileMenuSlider, page, header, headerMobileTop, dropDownMenuDesktop} from '../components/constants.js';
 /*export const dropDownMenuDesktopOpen = function() {
   dropDownMenuDesktop.classList.add('header__form-city_opened');
   dropDownMenuDesktop.classList.remove('header__form-city_2');
@@ -62,25 +62,89 @@ export const dropDownMenuClose = function() {
 }
 
 export const dropDownMenuMobileOpen = function() {
-  dropDownMenuMobile.classList.remove('header__slide_content_cities_close')
+  dropDownMenuMobile.classList.add('geo__mobile-wrapper_opened')
 
 }
+// export const dropDownMenuMobileOpen = function() {
+//   dropDownMenuMobile.classList.remove('header__slide_content_cities_close')
+
+// }
 export const dropDownMenuMobileClose = function() {
-  dropDownMenuMobile.classList.add('header__slide_content_cities_close')
+  dropDownMenuMobile.classList.remove('geo__mobile-wrapper_opened')
 }
+
+// //изменение иконки в хедере при открытии/закрытии мобильного меню
+// const toggleBurgerButtonIcon = (button, action) => {
+//   const spanIcon = button.querySelector('.button__icon');
+//   switch (action) {
+//     case 'opening':
+//       spanIcon.classList.remove('icon-menu-burger');
+//       spanIcon.classList.add('icon-cross');
+//       break;
+//     case 'closing':
+//       spanIcon.classList.remove('icon-cross');
+//       spanIcon.classList.add('icon-menu-burger');
+//       break;
+//   }
+// }
+// попытка менять иконку
+// export const mobileMenuSliderOpen = function(button) {
+//   mobileMenuSlider.classList.add('header__slider_opened');
+//   toggleBurgerButtonIcon(button, 'opening');
+//   // headerMobileTop.classList.add('header__mobile-top_opened');
+//   page.classList.add('page_type_no-scroll');
+//   // document.querySelector('.header__wrapper_mobile').classList.add('header__wrapper_mobile_1')
+// }
+// export const mobileMenuSliderClose = function(button) {
+//   mobileMenuSlider.classList.remove('header__slider_opened');
+//   toggleBurgerButtonIcon(button, 'closing');
+//   page.classList.remove('page_type_no-scroll');
+//   // headerMobileTop.classList.remove('header__mobile-top_opened');
+//   // document.querySelector('.header__wrapper_mobile').classList.remove('header__wrapper_mobile_1')
+// }
 
 export const mobileMenuSliderOpen = function() {
-  mobileMenuSlider.classList.remove('header__slider_state_opened');
-  headerMobileTop.classList.remove('header__mobile-top_opened');
+  mobileHeaderWrapper.classList.add('header__wrapper-mobile_opened');
+  mobileMenuSlider.classList.add('header__slider_opened');
+  // headerMobileTop.classList.add('header__mobile-top_opened');
   page.classList.add('page_type_no-scroll');
-  document.querySelector('.header__wrapper_mobile').classList.add('header__wrapper_mobile_1')
+  // document.querySelector('.header__wrapper_mobile').classList.add('header__wrapper_mobile_1')
 }
+
 export const mobileMenuSliderClose = function() {
-  mobileMenuSlider.classList.add('header__slider_state_opened');
-  page.classList.remove('page_type_no-scroll');
-  headerMobileTop.classList.add('header__mobile-top_opened');
-  document.querySelector('.header__wrapper_mobile').classList.remove('header__wrapper_mobile_1')
+  // тут навесил доп проверку, чтобы эта функция могла отработать и на открытом меню вверху главной страницы
+  if (document.querySelector('.page_id_index') && header.classList.contains('header__offset_type_index-side')) {
+    header.classList.remove('header__offset_type_index-side');
+    header.classList.add('header__offset');
+    mobileMenuSlider.classList.remove('header__slider_opened');
+    mobileHeaderWrapper.classList.remove('header__wrapper-mobile_opened');
+    page.classList.remove('page_type_no-scroll');
+  } else {
+    mobileMenuSlider.classList.remove('header__slider_opened');
+    mobileHeaderWrapper.classList.remove('header__wrapper-mobile_opened');
+    page.classList.remove('page_type_no-scroll');
+  }
 }
+
+// export const mobileMenuSliderClose = function() {
+//   mobileMenuSlider.classList.remove('header__slider_opened');
+//   mobileHeaderWrapper.classList.remove('header__wrapper-mobile_opened');
+//   page.classList.remove('page_type_no-scroll');
+//   // headerMobileTop.classList.remove('header__mobile-top_opened');
+//   // document.querySelector('.header__wrapper_mobile').classList.remove('header__wrapper_mobile_1')
+// }
+// export const mobileMenuSliderOpen = function() {
+//   mobileMenuSlider.classList.remove('header__slider_opened');
+//   headerMobileTop.classList.remove('header__mobile-top_opened');
+//   page.classList.add('page_type_no-scroll');
+//   document.querySelector('.header__wrapper_mobile').classList.add('header__wrapper_mobile_1')
+// }
+// export const mobileMenuSliderClose = function() {
+//   mobileMenuSlider.classList.add('header__slider_opened');
+//   page.classList.remove('page_type_no-scroll');
+//   headerMobileTop.classList.add('header__mobile-top_opened');
+//   document.querySelector('.header__wrapper_mobile').classList.remove('header__wrapper_mobile_1')
+// }
 
 // Алексей -> end!
 
@@ -93,7 +157,23 @@ export const mobileMenuSliderClose = function() {
 
 // Евгений - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+import { mobileHeaderWrapper } from '../components/constants.js';
 
+// функция открытия мобильного меню в самом верху главной страницы
+// задана проверка на наличие классов, которые присваиваются хедеру на старте,
+// если условия соблюдены, то хедеру добавляем класс, который заставляет его выехать сборку вместе с менюшкой
+export const mobileMenuIndexTopOpen = function() {
+  if (header.classList.contains('header__offset') || header.classList.contains('header__offset_2')) {
+    header.classList.add('header__offset_type_index-side');
+    mobileHeaderWrapper.classList.add('header__wrapper-mobile_opened');
+    mobileMenuSlider.classList.add('header__slider_opened');
+    page.classList.add('page_type_no-scroll');
+  } else {
+    mobileHeaderWrapper.classList.add('header__wrapper-mobile_opened');
+    mobileMenuSlider.classList.add('header__slider_opened');
+    page.classList.add('page_type_no-scroll');
+  }
+}
 
 
 // Евгений -> end!

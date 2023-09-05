@@ -40,7 +40,6 @@
 @use '../blocks/button/_type/button_type_border.scss';
 @use '../blocks/button/_type/button_type_invert.scss';
 @use '../blocks/button/_type/button_type_disabled.scss'; // вынес отдельно стиль состояния
-@use '../blocks/button/__arrow-back/button__arrow-back.scss'; // вытащил из хедера - понять, что это?
 
 // стиль иконочного шрифта
 @use '../blocks/icon-fonts/icon-fonts.scss';
@@ -93,6 +92,7 @@
 @use '../blocks/header/__offset/_1/header__offset_1.scss';
 @use '../blocks/header/__offset/_2/header__offset_2.scss';
 @use '../blocks/header/__offset/_3/header__offset_3.scss';
+@use '../blocks/header/__offset/_type/header__offset_type_index-side.scss';
 @use '../blocks/header/__offset/header__offset.scss';
 @use '../blocks/header/__top/header__top.scss';
 @use '../blocks/header/__wrapper/header__wrapper.scss';
@@ -100,12 +100,11 @@
 @use '../blocks/header/__logo/header__logo.scss';
 @use '../blocks/header/__logo/_type/header__logo_type_dropdown.scss';
 @use '../blocks/header/__city-select/header__city-select.scss';
-@use '../blocks/header/__city-name/header__city-name.scss'; //
 @use '../blocks/header/__geo/header__geo.scss';
-@use '../blocks/header/__menu/header__menu.scss';
-@use '../blocks/header/__menu/_type/header__menu_type_desktop.scss';
-@use '../blocks/header/__menu/_type/header__menu_type_mobile.scss';
-@use '../blocks/header/__menu-item/header__menu-item.scss';
+@use '../blocks/header/__nav/header__nav.scss';
+@use '../blocks/header/__nav/_type/header__nav_type_desktop.scss';
+@use '../blocks/header/__nav/_type/header__nav_type_mobile.scss';
+@use '../blocks/header/__nav-item/header__nav-item.scss';
 @use '../blocks/header/__link/header__link.scss';
 @use '../blocks/header/__buttons/header__buttons.scss';
 @use '../blocks/header/__button/header__button.scss';
@@ -115,7 +114,7 @@
 @use '../blocks/header/__button/_donate-mobile/header__button_donate-mobile.scss';//
 @use '../blocks/header/__burger-button/header__burger-button.scss';
 @use '../blocks/header/__slider/header__slider.scss';
-@use '../blocks/header/__slider/_state/header__slider_state_opened.scss';
+@use '../blocks/header/__slider/_opened/header__slider_opened.scss';
 @use '../blocks/header/__slide/header__slide.scss';
 @use '../blocks/header/__slide/_content/header__slide_content_cities.scss';
 @use '../blocks/header/__slide/_content/_close/header__slide_content_cities_close.scss';
@@ -125,8 +124,10 @@
 @use '../blocks/header/__wrapper/_1/header__wrapper_1.scss';
 @use '../blocks/header/__wrapper/_3/header__wrapper_3.scss';
 @use '../blocks/header/__wrapper/_closed/header__wrapper_closed.scss';
-@use '../blocks/header/__wrapper/_mobile/header__wrapper_mobile.scss';
-@use '../blocks/header/__wrapper/_mobile_1/header__wrapper_mobile_1.scss';
+// @use '../blocks/header/__wrapper/_mobile/header__wrapper_mobile.scss';
+@use '../blocks/header/__wrapper-mobile/header__wrapper-mobile.scss';
+@use '../blocks/header/__wrapper-mobile/_opened/header__wrapper-mobile_opened.scss';
+@use '../blocks/header/__wrapper/_mobile_1/header__wrapper_mobile_1.scss'; //
 @use '../blocks/header/__form-city/header__form-city.scss'; //
 @use '../blocks/header/__form-city/_opened/header__form-city_opened.scss'; //
 @use '../blocks/header/__form-city/_slider/header__form-city_slider.scss';
@@ -136,7 +137,7 @@
 @use '../blocks/header/__subtext/header__subtext.scss';
 @use '../blocks/header/__subtext/_position/header__subtext_position_left.scss';
 @use '../blocks/header/__button/_city-selected/header__button_city-selected.scss';
-@use '../blocks/header/__button/_city-selected-wrapper/header__button_city-selected-wrapper.scss';
+// @use '../blocks/header/__button/_city-selected-wrapper/header__button_city-selected-wrapper.scss';
 // @use '../blocks/header/__input-city-select/header__input-city-select.scss';
 @use '../blocks/header/__mobile-top/header__mobile-top.scss';
 @use '../blocks/header/__mobile-top/_opened/header__mobile-top_opened.scss';
@@ -479,12 +480,18 @@
 
 @use '../blocks/geo/geo.scss';
 @use '../blocks/geo/__button/geo__button.scss';
+@use '../blocks/geo/__button/_type/geo__button_type_mobile.scss';
+@use '../blocks/geo/__button/_type/geo__button_type_back.scss';
 @use '../blocks/geo/__list-container/geo__list-container.scss';
 @use '../blocks/geo/__list-container/_opened/geo__list-container_opened.scss';
+@use '../blocks/geo/__list-container/_type/geo__list-container_type_mobile.scss';
 @use '../blocks/geo/__list-item/geo__list-item.scss';
+@use '../blocks/geo/__list-item/_type/geo__list-item_type_mobile.scss';
 @use '../blocks/geo/__list-input/geo__list-input.scss';
-
-
+@use '../blocks/geo/__city-name/geo__city-name.scss'; //
+@use '../blocks/geo/__city-name/_type/geo__city-name_type_mobile.scss'; //
+@use '../blocks/geo/__mobile-wrapper/geo__mobile-wrapper.scss';
+@use '../blocks/geo/__mobile-wrapper/_opened/geo__mobile-wrapper_opened.scss';
 
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

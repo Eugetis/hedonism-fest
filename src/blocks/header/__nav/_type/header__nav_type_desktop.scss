@@ -1,6 +1,6 @@
 @use 'variables' as *;
 
-.header__menu_type_desktop {
+.header__nav_type_desktop {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -8,7 +8,7 @@
 }
 
 @media screen and (max-width: $tablet) {
-  .header__menu_type_desktop {
+  .header__nav_type_desktop {
     display: none;
   }
 }

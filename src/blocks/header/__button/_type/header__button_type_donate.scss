@@ -1,3 +1,15 @@
-.header__button_type_donate {
+@use 'variables' as *;
 
+@media screen and (max-width: $tablet) {
+  .header__button_type_donate {
+    display: flex;
+    max-height: 44px;
+    border-radius: $radius-small;
+  }
+
+  .header__buttons .header__button_type_donate {
+    display: none;
+  }
 }
+
+
