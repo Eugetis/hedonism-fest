@@ -1,6 +1,7 @@
 import {modalController, setTabSwitchEventListener, initEventsContainer} from "./catalog";
 import {openModal, closeModal, removeModal} from "./modal";
 import {getCardById} from "./api";
+import { showMap, moveMapNode } from "./map";
 // РАБОТА С МЕРОПРИЯТИЕМ
 
 // Если вдруг кому-то нужно что-то дописать в этом файле, помимо основного ответственного за эту функциональность,
@@ -127,8 +128,6 @@ export const modalFavoriteHandler = async (modal, type) => {
   const modalTabSwitcher = modalTemplate.querySelector('.tab-switcher'); // Dmitry
   const modalMapContainer = modalTemplate.querySelector('.catalog__events-container_type_map'); // Dmitry
   const mapContainer = document.querySelector('.catalog__events-container_type_map').querySelector('.catalog__map-container');
-  const mapContainerClone = mapContainer.cloneNode(true);
-  console.log(mapContainer, mapContainerClone)
   const catalogGridContainer = modalTemplate.querySelector('.cards_type_grid');
   const cardTemplate = document.querySelector('.cards_type_grid').querySelector('#card').content;
   switch (type) {
@@ -136,13 +135,13 @@ export const modalFavoriteHandler = async (modal, type) => {
       const events = await getFavoriteEvents();
       const preparedCards = prepareCard(events, cardTemplate);
       addCard(preparedCards, catalogGridContainer, 'count', preparedCards.length ? preparedCards.length : 0);
-      modalMapContainer.append(mapContainerClone);
+      moveMapNode(mapContainer, modalMapContainer); // Dmitry
       page.append(modalTemplate);
+      showMap();
       openModal(modalTemplate); // Dmitry
       modalBackButton.addEventListener('click', modalBackHandler);
       initEventsContainer(modalTabSwitcher); // Dmitry
       setTabSwitchEventListener(modalTabSwitcher); // Dmitry
-
       break;
     case 'close':
       closeModal(modal);
@@ -283,6 +282,9 @@ const triggerInputChangeEvent = (input) => {
 
 const modalBackHandler = (event) => {
   if (event.target.closest('.modal_id_favourites')) {
+    const modalMapContainer = event.target.closest('.modal_id_favourites').querySelector('.catalog__map-container'); // Dmitry
+    const mapContainer = document.querySelector('.catalog__events-container_type_map'); // Dmitry
+    moveMapNode(modalMapContainer, mapContainer);
     const modal = event.target.closest('.modal_id_favourites');
     return closeModal(modal);
   }
