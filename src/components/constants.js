@@ -14,6 +14,9 @@ export const tabSwitcher = document.querySelector('.tab-switcher');
 export const mapContainer = document.querySelector('.catalog__events-container_type_map');
 export const listContainer = document.querySelector('.catalog__events-container_type_grid');
 
+export const tabSwitchers = Array.from(document.querySelectorAll('.tab-switcher'));
+export const mapContainers = Array.from(document.querySelectorAll('.catalog__events-container_type_map'));
+export const listContainers = Array.from(document.querySelectorAll('.catalog__events-container_type_grid'));
 
 // Дмитрий -> end!
 

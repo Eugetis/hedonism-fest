@@ -1,4 +1,4 @@
-import {modalController} from "./catalog";
+import {modalController, setTabSwitchEventListener, initEventsContainer} from "./catalog";
 import {openModal, closeModal, removeModal} from "./modal";
 import {getCardById} from "./api";
 // РАБОТА С МЕРОПРИЯТИЕМ
@@ -124,6 +124,9 @@ export const modalFavoriteHandler = async (modal, type) => {
   const page = document.querySelector('.page');
   const modalTemplate = modal.querySelector('.modal_id_favourites').cloneNode(true);
   const modalBackButton = modalTemplate.querySelector('#button__back');
+  const modalTabSwitcher = modalTemplate.querySelector('.tab-switcher'); // Dmitry
+  const modalMapContainer = modalTemplate.querySelector('.catalog__events-container_type_map'); // Dmitry
+  const modalListContainer = modalTemplate.querySelector('.catalog__events-container_type_grid'); // Dmitry
   const catalogGridContainer = modalTemplate.querySelector('.cards_type_grid');
   const cardTemplate = document.querySelector('.cards_type_grid').querySelector('#card').content;
   switch (type) {
@@ -134,6 +137,8 @@ export const modalFavoriteHandler = async (modal, type) => {
       page.append(modalTemplate);
       openModal(modalTemplate); // Dmitry
       modalBackButton.addEventListener('click', modalBackHandler);
+      initEventsContainer(modalTabSwitcher); // Dmitry
+      setTabSwitchEventListener(modalTabSwitcher); // Dmitry
       break;
     case 'close':
       closeModal(modal);
