@@ -23,10 +23,10 @@ if (document.querySelector('.page_id_catalog')) {
   catalogController(cardGridSection, cardTemplate);
 }
 
-// if (document.querySelector('#button__favorite_ref')) {
-//   const buttonsFavorite = document.querySelectorAll('#button__favorite_ref');
-//   buttonsFavorite.forEach((button) => button.addEventListener('click', modalFavoriteControllerRef))
-// }
+if (document.querySelector('#button__favorite_ref')) {
+  const buttonsFavorite = document.querySelectorAll('#button__favorite_ref');
+  buttonsFavorite.forEach((button) => button.addEventListener('click', modalFavoriteControllerRef))
+}
 
 if (document.querySelector('.page_id_404')) {
   const cardScrollSection = document.querySelector('.cards_type_scroll');

@@ -37,16 +37,14 @@ function closeModalListener(evt) {
   if (evt.target.classList.contains('modal') || evt.target.parentElement.classList.contains('modal__close-button') || evt.target.classList.contains('modal__close-button') || evt.target.classList.contains('modal__wrapper-for-side') || evt.target.classList.contains('icon-cross')) {
     if (evt.target.closest('.modal_id_mobile-filters') || evt.target.closest('.modal_id_donation')) {
       closeModal(modal);
+    } else if (evt.target.closest('.modal_id_favourites')) {
+      const modalMapContainer = evt.target.closest('.modal_id_favourites').querySelector('.catalog__map-container'); // Dmitry
+      const mapContainer = document.querySelector('.catalog__events-container_type_map'); // Dmitry
+      moveMapNode(modalMapContainer, mapContainer);
     } else {
       closeModal(modal);
       removeModal(modal);
     }
-  }
-
-  if (evt.target.closest('.modal_id_favourites')) {
-    const modalMapContainer = evt.target.closest('.modal_id_favourites').querySelector('.catalog__map-container'); // Dmitry
-    const mapContainer = document.querySelector('.catalog__events-container_type_map'); // Dmitry
-    moveMapNode(modalMapContainer, mapContainer);
   }
 }
 // закрытие модалки по нажатию на Esc
