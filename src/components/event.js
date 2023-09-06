@@ -103,7 +103,7 @@ export const modalFavoriteControllerRef = (event) => {
 
 export const modalFavoriteController = (event) => {
   const filterGroup = document.querySelector('#eventTags');
-  const buttonFavorite = filterGroup.closest('.catalog__section').querySelector('#button__favorite_ref');
+  const buttonFavorite = filterGroup.closest('.catalog__section').querySelector('#button__favorite');
   buttonFavorite.classList.toggle('tag-filter_type_selected');
   if (checkFavorites()) {
     initEventsContainer(document.querySelector('.catalog__constraints').querySelector('.tab-switcher'));

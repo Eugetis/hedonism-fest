@@ -33,8 +33,10 @@ export function removeModal(modal) {
 // закрытие модалки по клику на оверлей
 function closeModalListener(evt) {
   const modal = evt.target.closest('.modal');
+  console.log(modal)
 
   if (evt.target.classList.contains('modal') || evt.target.parentElement.classList.contains('modal__close-button') || evt.target.classList.contains('modal__close-button') || evt.target.classList.contains('modal__wrapper-for-side') || evt.target.classList.contains('icon-cross')) {
+    closeModal(modal);
     if (evt.target.closest('.modal_id_mobile-filters') || evt.target.closest('.modal_id_donation')) {
       closeModal(modal);
     } else if (evt.target.closest('.modal_id_favourites')) {
