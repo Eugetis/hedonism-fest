@@ -1,5 +1,5 @@
 import { renderCatalog } from './catalog';
-import { getCardsFromLocaleStorage } from './event.js'
+import { getCardsFromLocaleStorage, modalFavoriteController } from './event.js'
 import { renderMapController } from './map.js'
 
 // ========================
@@ -70,7 +70,12 @@ export const setFiltersEventListener = () => {
       // для десктопа и мобилы каждый сет один на двоих
       const activeTagsSet = new Set;
       filterButtonsList.forEach(button => {
-        button.addEventListener('click', evt => filtersClickController(evt, activeTags));
+        // пока костыль
+        if (button.id === 'button__favorite') {
+          button.addEventListener('click', evt => modalFavoriteController(evt));
+        } else {
+          button.addEventListener('click', evt => filtersClickController(evt, activeTags));
+        }
 
         // при навешивании слушателя кнопки "все", в сет группы прописываем таг "все" (начальное сотояние группы фильтров)
         if (button.classList.contains('tag-filter_type_all')) {
@@ -121,7 +126,7 @@ export const filtersClickController = (evt, activeTags) => {
   // селектор для доставания ключа группы фильтров из верстки
   const subtitle = filtersGroup.closest('.catalog__section').querySelector('.catalog__subtitle');
   const activeTagsSet = activeTags[subtitle.id];        // сэт активных тагов данной группы фильтров
-  
+
   if (button.textContent === buttonAll.textContent) {     // если клик по кнопке "все"
     activateButton(buttonAll, activeTagsSet);
 
