@@ -5,7 +5,7 @@
 // ИМПОРТЫ
 
 import '../scss/styles.scss';
-import { cardsClickController, modalFavoriteControllerRef} from './event';
+import {cardsClickController, modalFavoriteControllerRef, modalFavoriteHandler, modalHandler} from './event';
 import {catalogController, generalCardController, } from './catalog';
 
 
@@ -19,6 +19,9 @@ import {catalogController, generalCardController, } from './catalog';
 if (document.querySelector('.page_id_catalog')) {
   const cardGridSection = document.querySelector('.cards_type_grid');
   const cardTemplate = cardGridSection.querySelector('#card').content;
+  const modal = document.querySelector('#modal-favorite').content;
+  const buttonsFavorite = document.querySelectorAll('#button__favorite_ref');
+  buttonsFavorite.forEach((button) => button.addEventListener('click', () => modalFavoriteHandler(modal, 'open')));
   document.querySelector('.cards').addEventListener('click', cardsClickController);
   catalogController(cardGridSection, cardTemplate);
 }
@@ -27,6 +30,7 @@ if (document.querySelector('#button__favorite_ref')) {
   const buttonsFavorite = document.querySelectorAll('#button__favorite_ref');
   buttonsFavorite.forEach((button) => button.addEventListener('click', modalFavoriteControllerRef))
 }
+
 
 if (document.querySelector('.page_id_404')) {
   const cardScrollSection = document.querySelector('.cards_type_scroll');
