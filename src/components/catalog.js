@@ -33,7 +33,7 @@ export const catalogController = async (section, template) => {
   // сохраняем все карточки сразу при первой отрисовке в local Storage
   // вешаем на все кнопки таг фильтров слушателей, которые вызывают универсалный контроллер фильтрации
   addCardsToLocalStorage(cards);
-  createMap(mapContainer);
+  await createMap(mapContainer);
   setFiltersEventListener();
   // Dmitry -> end!
   const preparedCards = prepareCard(cards, template);
@@ -86,9 +86,19 @@ const getCardsByCount = (cards, count) => {
 // Дмитрий - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 //
-const checkFavorites = () => {
+export const checkFavoritesRef = () => {
+  const filterGroup = document.querySelector('#eventTags');
+  const buttonFavorite = document.querySelector('#button__favorite_ref');
   const likesArray = getStorageValueByKey('likes');
-  return true; // временно заглушка likesArray.length > 0;
+  return !(buttonFavorite.classList.contains('tag-filter_type_selected') & (likesArray.length < 1));
+}
+//
+export const checkFavorites = () => {
+  const filterGroup = document.querySelector('#eventTags');
+  const buttonFavorite = filterGroup.closest('.catalog__section').querySelector('#button__favorite');
+  const likesArray = getStorageValueByKey('likes');
+  console.log(!buttonFavorite.classList.contains('tag-filter_type_selected') & (likesArray.length < 1));
+  return !(buttonFavorite.classList.contains('tag-filter_type_selected') & (likesArray.length < 1));
 }
 
 // переключаем отображение в контейнере карта\список
@@ -106,14 +116,14 @@ const toggleContainerView = (target) => {
   }
 }
 //
-const defaultContainerView = (target) => {
+export const defaultContainerView = (target) => {
   const mapContainer = target.querySelector('.catalog__events-container_type_map');
   const listContainer = target.querySelector('.catalog__events-container_type_grid');
   mapContainer.classList.remove('catalog__events-container_opened');
   listContainer.classList.add('catalog__events-container_opened');
 }
 //
-const showNoLikesPage = (target) => {
+export const showNoLikesPage = (target) => {
   const mapContainer = target.querySelector('.catalog__events-container_type_map');
   const listContainer = target.querySelector('.catalog__events-container_type_grid');
   const noLikesContainer = target.querySelector('.catalog__events-container_type_no-events')

@@ -16,7 +16,7 @@ let myClusterer;
 
 // =============================
 // map
-function initMap(mapContainer) {
+const  initMap = (mapContainer) => {
   // Создание карты.
   myMap = new ymaps.Map(mapContainer.querySelector('.catalog__map-container'), {
       // Координаты центра карты.
