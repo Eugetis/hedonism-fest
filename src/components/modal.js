@@ -29,6 +29,7 @@ export function closeModal(modal) {
 export function removeModal(modal) {
   modal.remove();
 }
+
 // закрытие модалки по клику на оверлей
 function closeModalListener(evt) {
   const modal = evt.target.closest('.modal');

@@ -22,7 +22,6 @@
 @use '../blocks/page/_id/page_id_thanks-for-application';
 @use '../blocks/page/_id/page_id_404';
 
-
 // стили html (тут плавный скролл по странице)
 @use '../blocks/html/html.scss';
 
@@ -30,16 +29,16 @@
 @use '../blocks/link/link.scss';
 @use '../blocks/link/_type/link_type_text.scss';
 
-// внизу страницы лежит универсальный блок hidden со стилем display: none
-// он внизу, потому что иначе не перекрывает стили селекторов, которые идут здесь ниже него
-
 // стили кнопки
 @use '../blocks/button/button.scss';
-@use '../blocks/button/__icon/button__icon.scss';
 @use '../blocks/button/_type/button_type_filled.scss';
 @use '../blocks/button/_type/button_type_border.scss';
 @use '../blocks/button/_type/button_type_invert.scss';
 @use '../blocks/button/_type/button_type_disabled.scss'; // вынес отдельно стиль состояния
+@use '../blocks/button/_type/button_type_amount-minus.scss';
+@use '../blocks/button/_type/button_type_amount-plus.scss';
+@use '../blocks/button/__icon/button__icon.scss';
+@use '../blocks/button/__icon/_type/button__icon_type_amount-control.scss';
 
 // стиль иконочного шрифта
 @use '../blocks/icon-fonts/icon-fonts.scss';
@@ -55,7 +54,6 @@
 @use '../blocks/tag-filter/__icon/_type/tag-filter__icon_type_hidden.scss';
 @use '../blocks/tag-filter/_type/tag-filter_type_selected.scss';
 
-// стили контроллеров
 // стили map pointer
 @use '../blocks/map-pointer/map-pointer.scss';
 @use '../blocks/map-pointer/__icon/map-pointer__icon.scss';
@@ -71,13 +69,6 @@
 @use '../blocks/floating-button/__icon/floating-button__icon.scss';
 @use '../blocks/floating-button/_type/floating-button_type_up.scss';
 @use '../blocks/floating-button/_hide/floating-button_hide.scss';
-
-// стили amount controls
-// @use '../blocks/amount-controls/amount-controls.scss';
-// @use '../blocks/amount-controls/__icon/amount-controls__icon.scss';
-// @use '../blocks/amount-controls/__minus-button/amount-controls__minus-button.scss';
-// @use '../blocks/amount-controls/__plus-button/amount-controls__plus-button.scss';
-// @use '../blocks/amount-controls/__input/amount-controls__input.scss';
 
 // стили переключателя вкладок
 @use '../blocks/tab-switcher/tab-switcher.scss';
@@ -108,9 +99,7 @@
 @use '../blocks/header/__link/header__link.scss';
 @use '../blocks/header/__buttons/header__buttons.scss';
 @use '../blocks/header/__button/header__button.scss';
-// @use '../blocks/header/__button/_type/header__button_type_geo.scss';
 @use '../blocks/header/__button/_type/header__button_type_donate.scss';
-// @use '../blocks/header/__button/_donate/header__button_donate.scss';//
 @use '../blocks/header/__button/_donate-mobile/header__button_donate-mobile.scss';//
 @use '../blocks/header/__burger-button/header__burger-button.scss';
 @use '../blocks/header/__slider/header__slider.scss';
@@ -124,7 +113,6 @@
 @use '../blocks/header/__wrapper/_1/header__wrapper_1.scss';
 @use '../blocks/header/__wrapper/_3/header__wrapper_3.scss';
 @use '../blocks/header/__wrapper/_closed/header__wrapper_closed.scss';
-// @use '../blocks/header/__wrapper/_mobile/header__wrapper_mobile.scss';
 @use '../blocks/header/__wrapper-mobile/header__wrapper-mobile.scss';
 @use '../blocks/header/__wrapper-mobile/_opened/header__wrapper-mobile_opened.scss';
 @use '../blocks/header/__wrapper/_mobile_1/header__wrapper_mobile_1.scss'; //
@@ -137,8 +125,6 @@
 @use '../blocks/header/__subtext/header__subtext.scss';
 @use '../blocks/header/__subtext/_position/header__subtext_position_left.scss';
 @use '../blocks/header/__button/_city-selected/header__button_city-selected.scss';
-// @use '../blocks/header/__button/_city-selected-wrapper/header__button_city-selected-wrapper.scss';
-// @use '../blocks/header/__input-city-select/header__input-city-select.scss';
 @use '../blocks/header/__mobile-top/header__mobile-top.scss';
 @use '../blocks/header/__mobile-top/_opened/header__mobile-top_opened.scss';
 @use '../blocks/header/__mobile-section/header__mobile-section.scss';
@@ -147,6 +133,8 @@
 
 // стили футера
 @use '../blocks/footer/footer.scss';
+@use '../blocks/footer/_hidden/footer_hidden.scss';
+@use '../blocks/footer/_style/footer_style_move-down.scss';
 @use '../blocks/footer/_style/footer_style_additional.scss';
 @use '../blocks/footer/__content/footer__content.scss';
 @use '../blocks/footer/__container/footer__container.scss';
@@ -195,6 +183,7 @@
 @use '../blocks/preview/__text/preview__text.scss';
 @use '../blocks/preview/__title/preview__title.scss';
 @use '../blocks/preview/__description/preview__description.scss';
+@use '../blocks/preview/__text/_type/preview__text_type_fit.scss';
 
 // стили строк таблицы
 @use '../blocks/table-lines/table-lines.scss';
@@ -281,7 +270,6 @@
 @use '../blocks/team/__link/_type/team__link_type_market.scss';
 @use '../blocks/team/__link/_type/team__link_type_surf.scss';
 
-
 // стили блока секции карточек со скроллом
 @use '../blocks/popular-events/popular-events.scss';
 @use '../blocks/popular-events/__title/popular-events__title.scss';
@@ -289,7 +277,6 @@
 @use '../blocks/popular-events/__container/popular-events__container.scss';
 @use '../blocks/popular-events/__button/popular-events__button.scss';
 @use '../blocks/popular-events/__constraints/popular-events__constraints.scss';
-
 
 // стили модалки
 @use '../blocks/modal/modal.scss';
@@ -345,8 +332,9 @@
 @use '../blocks/event/__shares-social/event__shares-social.scss';
 @use '../blocks/event/__shares-items/event__shares-items.scss';
 
-/* Form */
+// стили формы
 @use '../blocks/form/form.scss';
+@use '../blocks/form/_type/form_type_modal.scss';
 @use '../blocks/form/__step-content/form__step-content.scss';
 @use '../blocks/form/__step-container/form__step-container.scss';
 @use '../blocks/form/__step-legend/form__step-legend.scss';
@@ -376,8 +364,13 @@
 @use '../blocks/form/__field/_type/form__field_type_error.scss';
 @use '../blocks/form/__field-error/form__field-error.scss';
 @use '../blocks/form/__field-error/_active/form__field-error_active.scss';
-
-/* Forms button */
+@use '../blocks/form/__modal-fieldset/form__modal-fieldset.scss';
+@use '../blocks/form/__modal-fieldset-title/form__modal-fieldset-title.scss';
+@use '../blocks/form/__modal-text/form__modal-text.scss';
+@use '../blocks/form/__accent-title/form__accent-title.scss';
+@use '../blocks/form/__counter-wrapper/form__counter-wrapper.scss';
+@use '../blocks/form/__amount-wrapper/form__amount-wrapper.scss';
+@use '../blocks/form/__field/_type/form__field_type_amount.scss';
 @use '../blocks/form/__button/form__button.scss';
 @use '../blocks/form/__button/_active/form__button_active.scss';
 @use '../blocks/form/__button/_type/button_type_long.scss';
@@ -420,8 +413,50 @@
 @use '../blocks/fixed-bar/_type/fixed-bar__desktop-sticky.scss'; // вариант для десктора (в модалку мероприятия)
 @use '../blocks/fixed-bar/_type/fixed-bar__align-right.scss'; // вариант для прижимания вправо в формах в десктопе
 
+// информационное сообщение на плашке
+@use '../blocks/info-message/info-message.scss';
+@use '../blocks/info-message/__icon/info-message__icon.scss';
+@use '../blocks/info-message/__text/info-message__text.scss';
 
+// для избранного и доп адресов
+@use '../blocks/favourites-list/favourites-list.scss';
+@use '../blocks/favourites-list/_opened/favourites-list_opened.scss';
+@use '../blocks/favourites-list/_type/favourites-list_type_inside.scss';
 
+// блок геолокации
+@use '../blocks/geo/geo.scss';
+@use '../blocks/geo/__button/geo__button.scss';
+@use '../blocks/geo/__button/_type/geo__button_type_mobile.scss';
+@use '../blocks/geo/__button/_type/geo__button_type_back.scss';
+@use '../blocks/geo/__list-container/geo__list-container.scss';
+@use '../blocks/geo/__list-container/_opened/geo__list-container_opened.scss';
+@use '../blocks/geo/__list-container/_type/geo__list-container_type_mobile.scss';
+@use '../blocks/geo/__list-item/geo__list-item.scss';
+@use '../blocks/geo/__list-item/_type/geo__list-item_type_mobile.scss';
+@use '../blocks/geo/__list-input/geo__list-input.scss';
+@use '../blocks/geo/__city-name/geo__city-name.scss'; //
+@use '../blocks/geo/__city-name/_type/geo__city-name_type_mobile.scss'; //
+@use '../blocks/geo/__mobile-wrapper/geo__mobile-wrapper.scss';
+@use '../blocks/geo/__mobile-wrapper/_opened/geo__mobile-wrapper_opened.scss';
+
+// блок participats
+@use '../blocks/participants/participants.scss';
+@use '../blocks/participants/__title/participants__title.scss';
+@use '../blocks/participants/__title/_type/participants__title_type_mobile-start.scss';
+@use '../blocks/participants/__title/_type/participants__title_type_desktop.scss';
+@use '../blocks/participants/__title/_hidden/participants__title_hidden.scss';
+@use '../blocks/participants/__container/participants__container.scss';
+@use '../blocks/participants/__container/_type/participants__container_type_form.scss';
+@use '../blocks/participants/__container/_type/participants__container_type_content.scss';
+@use '../blocks/participants/__heading/participants__heading.scss';
+@use '../blocks/participants/__subtitle/participants__subtitle.scss';
+@use '../blocks/participants/__list/participants__list.scss';
+@use '../blocks/participants/__buttons-block/participants__buttons-block.scss';
+@use '../blocks/participants/__button/participants__button.scss';
+@use '../blocks/participants/__button/_active/participants__button_active.scss';
+
+// универсальный класс-подмес для display: none
+@use '../blocks/hidden/hidden.scss';
 
 
 // ДЛЯ НОВЫХ БЛОКОВ (стили существующих блоков добавлять/удалять/изменять там, где они лежать сейчас)
@@ -444,76 +479,14 @@
 
 
 // Георгий - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-// @use '../blocks/label/label.scss';
-// @use '../blocks/label/__text/label__text.scss';
-// @use '../blocks/label/_type/label_type_radio.scss';
-// @use '../blocks/label/_type/label_type_disabled.scss';
+
 
 
 // Евгений - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-@use '../blocks/info-message/info-message.scss';
-@use '../blocks/info-message/__icon/info-message__icon.scss';
-@use '../blocks/info-message/__text/info-message__text.scss';
 
-@use '../blocks/favourites-list/favourites-list.scss';
-@use '../blocks/favourites-list/_opened/favourites-list_opened.scss';
-@use '../blocks/favourites-list/_type/favourites-list_type_inside.scss';
-
-@use '../blocks/form/_type/form_type_modal.scss';
-@use '../blocks/form/__modal-fieldset/form__modal-fieldset.scss';
-@use '../blocks/form/__modal-fieldset-title/form__modal-fieldset-title.scss';
-@use '../blocks/form/__modal-text/form__modal-text.scss';
-@use '../blocks/form/__accent-title/form__accent-title.scss';
-@use '../blocks/form/__counter-wrapper/form__counter-wrapper.scss';
-@use '../blocks/form/__amount-wrapper/form__amount-wrapper.scss';
-@use '../blocks/form/__field/_type/form__field_type_amount.scss';
-
-@use '../blocks/button/_type/button_type_amount-minus.scss';
-@use '../blocks/button/_type/button_type_amount-plus.scss';
-@use '../blocks/button/__icon/_type/button__icon_type_amount-control.scss';
-
-@use '../blocks/footer/_hidden/footer_hidden.scss';
-@use '../blocks/footer/_style/footer_style_move-down.scss';
-
-@use '../blocks/preview/__text/_type/preview__text_type_fit.scss';
-
-@use '../blocks/geo/geo.scss';
-@use '../blocks/geo/__button/geo__button.scss';
-@use '../blocks/geo/__button/_type/geo__button_type_mobile.scss';
-@use '../blocks/geo/__button/_type/geo__button_type_back.scss';
-@use '../blocks/geo/__list-container/geo__list-container.scss';
-@use '../blocks/geo/__list-container/_opened/geo__list-container_opened.scss';
-@use '../blocks/geo/__list-container/_type/geo__list-container_type_mobile.scss';
-@use '../blocks/geo/__list-item/geo__list-item.scss';
-@use '../blocks/geo/__list-item/_type/geo__list-item_type_mobile.scss';
-@use '../blocks/geo/__list-input/geo__list-input.scss';
-@use '../blocks/geo/__city-name/geo__city-name.scss'; //
-@use '../blocks/geo/__city-name/_type/geo__city-name_type_mobile.scss'; //
-@use '../blocks/geo/__mobile-wrapper/geo__mobile-wrapper.scss';
-@use '../blocks/geo/__mobile-wrapper/_opened/geo__mobile-wrapper_opened.scss';
 
 //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
 
-// блок participats -часть стилей отключена, часть изменена (папка с исходными стилями лежит в blocks/old(backups))
-@use '../blocks/participants/participants.scss';
-@use '../blocks/participants/__title/participants__title.scss';
-@use '../blocks/participants/__title/_type/participants__title_type_mobile-start.scss';
-@use '../blocks/participants/__title/_type/participants__title_type_desktop.scss';
-@use '../blocks/participants/__title/_hidden/participants__title_hidden.scss';
-@use '../blocks/participants/__container/participants__container.scss';
-@use '../blocks/participants/__container/_type/participants__container_type_form.scss';
-@use '../blocks/participants/__container/_type/participants__container_type_content.scss';
-@use '../blocks/participants/__heading/participants__heading.scss';
-@use '../blocks/participants/__subtitle/participants__subtitle.scss';
-@use '../blocks/participants/__list/participants__list.scss';
-@use '../blocks/participants/__buttons-block/participants__buttons-block.scss';
-@use '../blocks/participants/__button/participants__button.scss';
-@use '../blocks/participants/__button/_active/participants__button_active.scss';
-
-
-
-// универсальный класс-подмес для display: none
-@use '../blocks/hidden/hidden.scss';

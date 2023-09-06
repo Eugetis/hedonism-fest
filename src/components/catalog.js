@@ -6,8 +6,9 @@ import {
   addCard,
   removeCards,
   addCardsToLocalStorage,
+  getStorageValueByKey
 } from './event';
-import { modalFilters, tabSwitcher, mapContainer, listContainer} from './constants.js';
+import { modalFilters, tabSwitcher, mapContainer} from './constants.js';
 import { openModal } from './modal.js';
 import { createMap,showMap } from './map.js'
 import { setFiltersEventListener } from './filters.js'
@@ -18,7 +19,6 @@ import { arrayValues } from './utils.js'
 // Если вдруг кому-то нужно что-то дописать в этом файле, помимо основного ответственного за эту функциональность,
 // лучше это делать внизу, где указаны имена. Если нужно что-то писать прямо посреди чужого кода, то отделяйте
 // свой код комментариями со своим именем перед и после вставляемого кода.
-
 
 // Никита - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // Контроллер каталого секции cards_type_grid, сначала берет все карты, а потом передает их на рендер
@@ -33,7 +33,7 @@ export const catalogController = async (section, template) => {
   // сохраняем все карточки сразу при первой отрисовке в local Storage
   // вешаем на все кнопки таг фильтров слушателей, которые вызывают универсалный контроллер фильтрации
   addCardsToLocalStorage(cards);
-  createMap();
+  await createMap(mapContainer);
   setFiltersEventListener();
   // Dmitry -> end!
   const preparedCards = prepareCard(cards, template);
@@ -85,27 +85,74 @@ const getCardsByCount = (cards, count) => {
 
 // Дмитрий - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+//
+export const checkFavoritesRef = () => {
+  const filterGroup = document.querySelector('#eventTags');
+  const buttonFavorite = document.querySelector('#button__favorite_ref');
+  const likesArray = getStorageValueByKey('likes');
+  return !(buttonFavorite.classList.contains('tag-filter_type_selected') & (likesArray.length < 1));
+}
+//
+export const checkFavorites = () => {
+  const filterGroup = document.querySelector('#eventTags');
+  const buttonFavorite = filterGroup.closest('.catalog__section').querySelector('#button__favorite');
+  const likesArray = getStorageValueByKey('likes');
+  console.log(!buttonFavorite.classList.contains('tag-filter_type_selected') & (likesArray.length < 1));
+  return !(buttonFavorite.classList.contains('tag-filter_type_selected') & (likesArray.length < 1));
+}
+
+// переключаем отображение в контейнере карта\список
+const toggleContainerView = (target) => {
+  const mapContainer = target.querySelector('.catalog__events-container_type_map');
+  const listContainer = target.querySelector('.catalog__events-container_type_grid');
+
+  if (listContainer.classList.contains('catalog__events-container_opened')) {
+    mapContainer.classList.add('catalog__events-container_opened');
+    listContainer.classList.remove('catalog__events-container_opened');
+    showMap();
+  } else {
+    mapContainer.classList.remove('catalog__events-container_opened');
+    listContainer.classList.add('catalog__events-container_opened');
+  }
+}
+//
+export const defaultContainerView = (target) => {
+  const mapContainer = target.querySelector('.catalog__events-container_type_map');
+  const listContainer = target.querySelector('.catalog__events-container_type_grid');
+  mapContainer.classList.remove('catalog__events-container_opened');
+  listContainer.classList.add('catalog__events-container_opened');
+}
+//
+export const showNoLikesPage = (target) => {
+  const mapContainer = target.querySelector('.catalog__events-container_type_map');
+  const listContainer = target.querySelector('.catalog__events-container_type_grid');
+  const noLikesContainer = target.querySelector('.catalog__events-container_type_no-events')
+
+  mapContainer.classList.remove('catalog__events-container_opened');
+  listContainer.classList.remove('catalog__events-container_opened');
+  noLikesContainer.classList.add('catalog__events-container_opened');
+}
 // переключение контейнера карта\список, если карта то актуализируем её
 const handleTabEvent = (evt) => {
   evt.preventDefault();
 
   const target = evt.target.closest('.catalog__content') || evt.target.closest('.favourites-list');
-  const mapContainer = target.querySelector('.catalog__events-container_type_map');
-  const listContainer = target.querySelector('.catalog__events-container_type_grid');
+  const noLikesContainer = target.querySelector('.catalog__events-container_type_no-events')
+  const inModal = target.classList.contains('favourites-list');
 
   //переключаем табы на переключателе
   toggleTabSwitcher(evt);
 
-  // переключаем отображение в контейнере карта\список
-  if (listContainer.classList.contains('catalog__events-container_opened')) {
-    mapContainer.classList.add('catalog__events-container_opened');
-    listContainer.classList.remove('catalog__events-container_opened');
-    showMap();
-
+  if (inModal) {
+    toggleContainerView(target);
   } else {
-      mapContainer.classList.remove('catalog__events-container_opened');
-      listContainer.classList.add('catalog__events-container_opened');
+    if (checkFavorites()) {
+      noLikesContainer.classList.remove('catalog__events-container_opened');
+      toggleContainerView(target);
+    } else {
+      showNoLikesPage(target);
     }
+  }
 }
 
 // переключение свитча табов
@@ -128,8 +175,21 @@ export const initEventsContainer = (tabSwitcher) => {
   const target = tabSwitcher.closest('.catalog__content') || tabSwitcher.closest('.favourites-list');
   const mapContainer = target.querySelector('.catalog__events-container_type_map');
   const listContainer = target.querySelector('.catalog__events-container_type_grid');
-  mapContainer.classList.remove('catalog__events-container_opened');
-  listContainer.classList.add('catalog__events-container_opened');
+  const noLikesContainer = target.querySelector('.catalog__events-container_type_no-events')
+  const inModal = target.classList.contains('favourites-list');
+
+  if (inModal) {
+    defaultContainerView(target);
+  } else {
+    if (checkFavorites()) {
+      defaultContainerView(target);
+      noLikesContainer.classList.remove('catalog__events-container_opened');
+    } else {
+      mapContainer.classList.remove('catalog__events-container_opened');
+      listContainer.classList.remove('catalog__events-container_opened');
+      noLikesContainer.classList.add('catalog__events-container_opened');
+    }
+  }
 }
 
 // слушатель свитча табов
