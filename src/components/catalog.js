@@ -95,7 +95,7 @@ export const checkFavoritesRef = () => {
 //
 export const checkFavorites = () => {
   const filterGroup = document.querySelector('#eventTags');
-  const buttonFavorite = filterGroup.closest('.catalog__section').querySelector('#button__favorite');
+  const buttonFavorite = filterGroup.closest('.catalog__section').querySelector('#button__favorite_ref');
   const likesArray = getStorageValueByKey('likes');
   console.log(!buttonFavorite.classList.contains('tag-filter_type_selected') & (likesArray.length < 1));
   return !(buttonFavorite.classList.contains('tag-filter_type_selected') & (likesArray.length < 1));
