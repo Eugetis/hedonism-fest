@@ -11,10 +11,12 @@
 
 @media all and (max-width: $mobile) {
   .gallery__slider-line {
+    --slider-line-width: 747px;
     padding: 0;
     gap: 0;
     display: flex;
     align-items: center;
-    transition: all 1s;
+    transition: all .7s;
+    width: var(--slider-line-width);
   }
 }

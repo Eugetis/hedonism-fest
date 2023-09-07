@@ -15,7 +15,11 @@ export function showSlide() {
   if (sliderLine) {
     sliderWidth = document.querySelector('.gallery__slider').offsetWidth;
     if (window.innerWidth < 768) {
-      sliderLine.style.width = sliderWidth * sliderImages.length + 'px';
+      //sliderLine.style.width = sliderWidth * sliderImages.length + 'px';
+      sliderLine.style.setProperty('--slider-line-width', sliderWidth * sliderImages.length + 'px');
+      sliderImages.forEach(image => {
+        image.style.setProperty('--slider-image-width', sliderWidth + 'px');
+      })
 
       rollSlider();
     } else {
