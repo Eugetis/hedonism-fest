@@ -5,13 +5,30 @@
   display: flex;
   align-items: center;
   gap: 24px;
-  overflow: hidden;
   margin: 0;
   padding: 0;
+
+}
+
+.team__list::-webkit-scrollbar {
+  height: 4px;
+}
+
+.team__list::-webkit-scrollbar-track {
+  background-color: $light-primary;
+  border-radius: $radius-100;
+}
+
+.team__list::-webkit-scrollbar-thumb {
+  background-color: $color-primary;
+  border-radius: $radius-100;
 }
 
 @media all and (max-width: $mobile) {
   .team__list {
     gap: 20px;
+    overflow-x: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: $color-primary $light-primary;
   }
 }
