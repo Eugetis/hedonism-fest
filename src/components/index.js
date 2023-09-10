@@ -64,6 +64,8 @@ if (document.querySelector('.cards_type_scroll')) {
 
 import { updateCityOnMap } from './map.js'
 
+
+
 // Андрей
 import { showSlide, activateSlider } from '../components/photo-slider.js';
 import { openModal } from '../components/modal.js';

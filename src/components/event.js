@@ -2,6 +2,7 @@ import {modalController, setTabSwitchEventListener, initEventsContainer, checkFa
 import {openModal, closeModal, removeModal} from "./modal";
 import {getCardById} from "./api";
 import { showMap, moveMapNode, createMap } from "./map";
+import { toggleButton } from "./filters";
 // РАБОТА С МЕРОПРИЯТИЕМ
 
 // Если вдруг кому-то нужно что-то дописать в этом файле, помимо основного ответственного за эту функциональность,
@@ -104,7 +105,9 @@ export const modalFavoriteControllerRef = (event) => {
 export const modalFavoriteController = (event) => {
   const filterGroup = document.querySelector('#eventTags');
   const buttonFavorite = filterGroup.closest('.catalog__section').querySelector('#button__favorite');
-  buttonFavorite.classList.toggle('tag-filter_type_selected');
+  const buttonAll = filterGroup.closest('.catalog__section').querySelector('.tag-filter_type_all')
+  toggleButton(buttonFavorite);
+  toggleButton(buttonAll);
   if (checkFavorites()) {
     initEventsContainer(document.querySelector('.catalog__constraints').querySelector('.tab-switcher'));
     if (!event.target.closest('.page_id_catalog')) {
@@ -170,7 +173,7 @@ export const modalFavoriteHandler = async (modal, type) => {
   }
 }
 
-const getFavoriteEvents = async () => {
+export const getFavoriteEvents = async () => {
   const eventsFromStorage = getStorageValueByKey('likes');
   const result = {cards: []};
   if (!eventsFromStorage) {
@@ -578,7 +581,16 @@ export const getCardsFromLocaleStorage = () => {
   return getStorageValueByKey('cards');
 }
 
-
+// возвращает массив событий из массива карточек
+export const getEventsListFromCards = (cardsObj, eventsList) => {
+  // получаем массив карточек
+  //const cardsObj = await getCards();
+  const cards = cardsObj.cards;
+  const cardEvents = cards.map(card => card.type);
+  // массив событий
+  const uniqEvents = cardEvents.filter((event, index) => cardEvents.indexOf(event) === index);
+  return uniqEvents.forEach(item => eventsList.push(item));
+}
 // Дмитрий -> end!
 
 // Андрей - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

@@ -6,9 +6,10 @@ import {
   addCard,
   removeCards,
   addCardsToLocalStorage,
-  getStorageValueByKey
+  getStorageValueByKey,
+  getEventsListFromCards
 } from './event';
-import { modalFilters, tabSwitcher, mapContainer} from './constants.js';
+import { modalFilters, tabSwitcher, mapContainer, eventsList } from './constants.js';
 import { openModal } from './modal.js';
 import { createMap,showMap } from './map.js'
 import { setFiltersEventListener } from './filters.js'
@@ -30,6 +31,10 @@ export const catalogController = async (section, template) => {
   // Dmitry -> end!
   const cards = await getCards();
   // Dmitry
+  // получаем список событий из карточек в eventsList
+  getEventsListFromCards(cards, eventsList);
+  // по нему инициализируем кнопки фильтров Тип события
+  //todo? -> initEventsFilterButtons(eventsList);
   // сохраняем все карточки сразу при первой отрисовке в local Storage
   // вешаем на все кнопки таг фильтров слушателей, которые вызывают универсалный контроллер фильтрации
   addCardsToLocalStorage(cards);
@@ -90,15 +95,22 @@ export const checkFavoritesRef = () => {
   const filterGroup = document.querySelector('#eventTags');
   const buttonFavorite = document.querySelector('#button__favorite_ref');
   const likesArray = getStorageValueByKey('likes');
-  return !(buttonFavorite.classList.contains('tag-filter_type_selected') & (likesArray.length < 1));
+  if (likesArray === null || likesArray.length === 0) {
+    console.log(!buttonFavorite.classList.contains('tag-filter_type_selected'));
+    return !(buttonFavorite.classList.contains('tag-filter_type_selected'));
+  }
+  return true;
 }
 //
 export const checkFavorites = () => {
   const filterGroup = document.querySelector('#eventTags');
   const buttonFavorite = filterGroup.closest('.catalog__section').querySelector('#button__favorite');
   const likesArray = getStorageValueByKey('likes');
-  console.log(!buttonFavorite.classList.contains('tag-filter_type_selected') & (likesArray.length < 1));
-  return !(buttonFavorite.classList.contains('tag-filter_type_selected') & (likesArray.length < 1));
+  if (likesArray === null || likesArray.length === 0) {
+    console.log(!buttonFavorite.classList.contains('tag-filter_type_selected'));
+    return !(buttonFavorite.classList.contains('tag-filter_type_selected'));
+  }
+  return true;
 }
 
 // переключаем отображение в контейнере карта\список

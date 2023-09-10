@@ -146,8 +146,12 @@ function addEventGeoObjects() {
 
 // рендер карты в контейнере
 // в первый раз - создаем карту (создаем её "ленивым подходом", асинхронно)
+// export const createMap = async (mapContainer) => {
+//   if (!myMap) ymaps.ready(initMap(mapContainer));
+// }
+
 export const createMap = async (mapContainer) => {
-  if (!myMap) ymaps.ready(initMap(mapContainer));
+  if (myMap === null ) ymaps.ready(initMap(mapContainer));
 }
 
 // в последующие - просто обновляем её отображение
@@ -218,7 +222,7 @@ const typeToIcon = {
   'разное': require('../images/icons/event/event-icon-other.svg'),
   'лекции': require('../images/icons/event/event-icon-workshop-lectures.svg'),
   'мастер-классы': require('../images/icons/event/event-icon-workshop-lectures.svg'),
-  'кофе': require('../images/icons/event/event-icon-coffee.svg'),
+  'кафе': require('../images/icons/event/event-icon-coffee.svg'),
   'музеи': require('../images/icons/event/event-icon-museum-tour.svg'),
   'экскурсии': require('../images/icons/event/event-icon-museum-tour.svg'),
   'доставка': require('../images/icons/event/event-icon-other.svg'),
