@@ -9,12 +9,6 @@
   overflow-y: scroll;
 }
 
-@media screen and (max-width: $tablet) {
-  .catalog__sidebar {
-    min-height: calc(100vh - 68px);
-  }
-}
-
 @media screen and (max-width: $mobile) {
   .catalog__sidebar {
     display: none;

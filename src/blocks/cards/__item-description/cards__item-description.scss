@@ -1,12 +1,20 @@
 @use 'variables' as *;
+@use 'mixins' as *;
 
 .cards__item-description {
-  margin: 0;
+  @include subtext-desktop;
   color: $dark-primary;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
+}
+
+@media screen and (max-width: $mobile) {
+  .cards__item-description {
+    @include text-mobile;
+    -webkit-line-clamp: 1;
+  }
 }
 

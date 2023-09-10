@@ -1,11 +1,11 @@
 @use 'variables' as *;
 
-.fixed-bar__align-right {
+.fixed-bar_type_align-right {
   justify-content: flex-end;
 }
 
 @media screen and (max-width: $mobile) {
-  .fixed-bar__align-right {
+  .fixed-bar_type_align-right {
     justify-content: space-between;
   }
 }

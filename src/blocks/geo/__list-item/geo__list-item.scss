@@ -31,12 +31,9 @@
   background-color: $color-primary;
 }
 
-.geo__list-item:has(.geo__list-input:checked) {
-  background-color: $light-secondary;
-}
-
 .geo__list-item:has(.geo__list-input:checked):hover {
   pointer-events: none;
+  background-color: $white;
 }
 
 .geo__list-item:has(.geo__list-input:checked):active {

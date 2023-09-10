@@ -230,7 +230,7 @@ export const setTabSwitchEventListener = (tabSwitcher) => {
 
 const catalogFiltersButton = document.querySelector('.catalog__mob-filters-button');
 
-export  function setCatalogEventListener() {
+export function setCatalogEventListener() {
   catalogFiltersButton.addEventListener('click', () => {
     openModal(modalFilters);
   });
