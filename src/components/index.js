@@ -79,12 +79,12 @@ import {
   //dropDownMenuButtonMobile,
   dropDownMenuButton,
   dropDownMenuButtonBack,
-  mobileMenuButtonIntro,
-  mobileMenuButtonSecondary,
+  mobileMenuButton,
   mobileMenuButtonClose,
   dropDownMenuElements,
   dropDownMenuInputs,
-  header
+  dropDownMenuButtonText,
+  dropDownMenuButtonTextMobile
 } from '../components/constants.js';
 // Георгий
 import forParticipants from './for-participants';
@@ -125,8 +125,8 @@ const validateSettings = {
 // let dropDownMenuButtonText = document.querySelector('.dropdown__button-text');
 
 let dropDownMenuButtonMobile = document.querySelector('.geo__button_type_mobile');
-let dropDownMenuButtonText = document.querySelector('.geo__city-name');
-let dropDownMenuButtonTextMobile = document.querySelector('.geo__city-name_type_mobile');
+// let dropDownMenuButtonText = document.querySelector('.geo__city-name');
+// let dropDownMenuButtonTextMobile = document.querySelector('.geo__city-name_type_mobile');
 
 
 
@@ -206,11 +206,11 @@ if (document.querySelector('.page_id_catalog')) {
   setCatalogEventListener();
 }
 
-if (document.querySelector('.page_id_catalog')) {
-  document.querySelector('.modal__button_type_ticket').addEventListener('click', () => {
-    openModal(document.querySelector('.modal_id_payment'));
-  });
-}
+// if (document.querySelector('.page_id_catalog')) {
+//   document.querySelector('.modal__button_type_ticket').addEventListener('click', () => {
+//     openModal(document.querySelector('.modal_id_payment'));
+//   });
+// }
 
 enableValidation(validateSettings);
 
@@ -233,24 +233,17 @@ dropDownMenuElements.forEach(function (dropDownMenuElement) {
 dropDownMenuButtonMobile.addEventListener('click', dropDownMenuMobileOpen);
 //закрытие дропдауна на мобильной версии
 dropDownMenuButtonBack.addEventListener('click', dropDownMenuMobileClose);
-//выезд слайда с меню на мобильной версии (УДАЛИЛ, ТАК КАК УБРАЛИ АЛЬТЕРНАТИВНЫЙ ХЕДЕР)
-// if (document.querySelector('.page_id_index')) {
-//   mobileMenuButtonIntro.addEventListener('click', mobileMenuIndexTopOpen);
-// }
 
 
 // открытие/закрытие мобильного меню
-mobileMenuButtonSecondary.addEventListener('click', mobileMenuSliderOpen);
+mobileMenuButton.addEventListener('click', mobileMenuSliderOpen);
 mobileMenuButtonClose.addEventListener('click', mobileMenuSliderClose);
-// mobileMenuButtonSecondary.addEventListener('click', mobileMenuSliderOpen(mobileMenuButtonSecondary));
-// mobileMenuButtonClose.addEventListener('click', mobileMenuSliderClose(mobileMenuButtonClose));
 
 
 //подставление значения выбранного пункта дропдауна
 dropDownMenuInputs.forEach(function (dropDownMenuInput) {
   dropDownMenuInput.addEventListener('click', function () {
     if (dropDownMenuInput.checked) {
-      // console.log(dropDownMenuInput.value);
       dropDownMenuButtonText.innerText = dropDownMenuInput.value;
       dropDownMenuButtonTextMobile.innerText = dropDownMenuInput.value;
       localStorage.setItem('city', dropDownMenuInput.value);
@@ -270,13 +263,7 @@ if (!localStorage.getItem('city')) {
 //сохранение значения кнопки и расположении галочки на инпуте
 dropDownMenuButtonText.textContent = localStorage.getItem('city');
 dropDownMenuButtonTextMobile.textContent = localStorage.getItem('city');
-dropDownMenuInputs.forEach(function (dropDownMenuInput) {
-  if (dropDownMenuInput.value === dropDownMenuButtonText.innerText) {
-    dropDownMenuInput.checked = true;
-  } else if (dropDownMenuInput.value === dropDownMenuButtonTextMobile.innerText) {
-    dropDownMenuInput.checked = true;
-  }
-});
+
 
 //появляющийся при скролле хедер
 // ЗАКОММЕНТИЛ, ТАК КАК ТЕПЕРЬ ХЕДЕР ДОЛЖЕН ВЕСТИ СЕБЯ КАК ОБЫЧНО

@@ -10,8 +10,8 @@
 @use '../blocks/page/_type//page_type_no-scroll.scss'; //отключает скролл вниз при выезде бокового меню на мобилке
 @use '../blocks/uikit-section/uikit-section.scss';
 @use '../blocks/section-constraints/section-constraints.scss';
-@use '../blocks/section-constraints/_size/section__constraints_size_large.scss';
-@use '../blocks/section-constraints/_size/section__constraints_size_small.scss';
+@use '../blocks/section-constraints/_size/section-constraints_size_large.scss';
+@use '../blocks/section-constraints/_size/section-constraints_size_small.scss';
 
 // классы для идентификации страницы, на которой находимся, чтобы инициализировать скрипты
 @use '../blocks/page/_id/page_id_index';
@@ -154,6 +154,7 @@
 @use '../blocks/cards/_type/cards_type_scroll.scss';
 @use '../blocks/cards/_type/cards_type_grid.scss';
 @use '../blocks/cards/__item/cards__item.scss';
+@use '../blocks/cards/__item/_type/cards__item_type_scroll.scss';
 @use '../blocks/cards/__item-img/cards__item-img.scss';
 @use '../blocks/cards/__item-content/cards__item-content.scss';
 @use '../blocks/cards/__item-data/cards__item-data.scss';
@@ -410,8 +411,8 @@
 
 //fixed-bar (стиль для блоков с кнопками, который в мобиле прилипает к низу страницы)
 @use '../blocks/fixed-bar/fixed-bar.scss';
-@use '../blocks/fixed-bar/_type/fixed-bar__desktop-sticky.scss'; // вариант для десктора (в модалку мероприятия)
-@use '../blocks/fixed-bar/_type/fixed-bar__align-right.scss'; // вариант для прижимания вправо в формах в десктопе
+@use '../blocks/fixed-bar/_type/fixed-bar_type_desktop-sticky.scss'; // вариант для десктора (в модалку мероприятия)
+@use '../blocks/fixed-bar/_type/fixed-bar_type_align-right.scss'; // вариант для прижимания вправо в формах в десктопе
 
 // информационное сообщение на плашке
 @use '../blocks/info-message/info-message.scss';

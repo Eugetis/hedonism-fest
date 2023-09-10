@@ -378,12 +378,12 @@ const modalLikeHandler = (modal, state) => {
 
   switch (state) {
     case true:
-      modalButtonSpan.classList.remove('icon-heart')
-      modalButtonSpan.classList.add('card-control__icon_color_red', 'icon-heart-filled')
+      modalButtonSpan.classList.remove('icon-heart');
+      modalButtonSpan.classList.add('card-control__icon_color_red', 'icon-heart-filled');
       return `${modalButtonSpan.outerHTML}хочу пойти`;
     case false:
-      modalButtonSpan.classList.add('icon-heart')
-      modalButtonSpan.classList.remove('card-control__icon_color_red', 'icon-heart-filled')
+      modalButtonSpan.classList.remove('card-control__icon_color_red', 'icon-heart-filled');
+      modalButtonSpan.classList.add('icon-heart');
       return `${modalButtonSpan.outerHTML}хочу пойти`;
   }
 }
@@ -392,10 +392,10 @@ const modalLikeHandler = (modal, state) => {
 const createCard = (item, cardTemplate) => {
   const location = item.location.shift();
   const cardElement = cardTemplate.querySelector('.cards__item').cloneNode(true);
-  const span = cardElement.querySelector('.card-control__icon');
+  const span = cardElement.querySelector('.card-control__icon', '.icon-heart');
 
   if (cardLikeController(item.id)) {
-    span.classList.add('icon-heart-filled');
+    span.classList.add('card-control__icon_color_red', 'icon-heart-filled');
   } else {
     span.classList.add('icon-heart');
   }
@@ -423,7 +423,7 @@ const createAddressCard = (item, cardTemplate, location) => {
   const span = cardElement.querySelector('.card-control__icon');
 
   if (cardLikeController(item.id)) {
-    span.classList.add('icon-heart-filled');
+    span.classList.add('card-control__icon_color_red', 'icon-heart-filled');
   } else {
     span.classList.add('icon-heart');
   }
@@ -458,16 +458,18 @@ const cardLikeController = (id) => {
 
 // Функция которая отвечает за локальное добавления лайка (без перезагрузки страницы), то есть условно ajax, во время нажатии кнопки в зависимости от типа
 const cardLikeLocalController = (card, type) => {
-  const span = card.querySelector('.card-control__icon');
+  const spanLike = card.querySelector('.cards__item-like').querySelector('.card-control__icon');
   switch (type) {
     case 'add':
-      span.classList.remove('icon-heart');
-      span.classList.add('icon-heart-filled');
+      spanLike.classList.remove('icon-heart');
+      spanLike.classList.add('card-control__icon_color_red', 'icon-heart-filled');
+      console.log(spanLike);
       break;
 
     case 'delete':
-      span.classList.remove('icon-heart-filled');
-      span.classList.add('icon-heart');
+      spanLike.classList.remove('card-control__icon_color_red', 'icon-heart-filled');
+      spanLike.classList.add('icon-heart');
+      console.log(spanLike);
       break;
   }
 }

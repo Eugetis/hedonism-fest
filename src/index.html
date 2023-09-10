@@ -7,16 +7,15 @@
     <meta name="keywords" content="HTML, CSS, JavaScript">
     <meta name="author" content="Евгений Тисленко, Никита Сазонов, Алексей Ефимов, Андрей Марахин, Георгий Медведский, Дмитрий Разумов">
     <title>ГедонизмФест - главная</title>
-    <link rel="icon" href="" type="">
 </head>
 
 <body class="page page_id_index">
     <%= require('html-loader!./pages/header.html').default %>
     <!-- TODO: на index.html нужно скриптом добавлять хедеру стиль для появления после скролла на Х расстояние (стиль нужно написать)  -->
-    <button class="floating-button floating-button_type_up floating-button_hide"><span class="floating-button__icon icon-arrow-up"></span></button>
+    <button class="floating-button floating-button_type_up floating-button_hide link"><span class="floating-button__icon icon-arrow-up"></span></button>
     <main>
 
-      <section class="intro">
+      <section class="intro" aria-label="обложка главной страницы">
         <!-- закомментил, потому что наставник в итоге сказал не делать этот альтернативный хедер на главной странице -->
         <!-- <div class="intro__header">
           <img class="intro__image" src="<%=require('./images/Nochlezhka.svg')%>" alt="логотип Ночлежка">
@@ -29,7 +28,7 @@
       </section>
 
       <section class="info-section" id="about">
-        <div class="section-constraints section__constraints_size_large info-section__constraints info-section__constraints_position_center">
+        <div class="section-constraints section-constraints_size_large info-section__constraints info-section__constraints_position_center">
           <div class="info-section__wrapper info-section__wrapper_size_small">
             <h2 class="info-section__title">просто приятно помогать</h2>
             <div class="info-section__content">
@@ -58,16 +57,16 @@
         </div>
       </section>
 
-      <section class="figures section-constraints section__constraints_size_large">
+      <section class="figures section-constraints section-constraints_size_large">
         <h2 class="figures__title">цифры дня</h2>
         <div class="figures__container">
-          <img class="figures__image" src="<%=require('./images/cookies.svg')%>">
+          <img class="figures__image" src="<%=require('./images/cookies.svg')%>" alt="иллюстрация печенек">
           <div class="figures__text-container">
             <p class="figures__stats">15&nbsp;000</p>
             <p class="figures__text">Столько печенья продали в поддержку акции</p>
           </div>
 
-          <img class="figures__image" src="<%=require('./images/flover.svg')%>">
+          <img class="figures__image" src="<%=require('./images/flover.svg')%>" alt="иллюстрация обедов">
           <div class="figures__text-container">
             <p class="figures__stats">2&nbsp;500</p>
             <p class="figures__text">cтолько обедов приготовили для нуждающихся</p>
@@ -76,7 +75,7 @@
       </section>
 
       <section class="info-section info-section_background_accident">
-        <div class="section-constraints section__constraints_size_large info-section__constraints info-section__constraints_position_center">
+        <div class="section-constraints section-constraints_size_large info-section__constraints info-section__constraints_position_center">
           <div class="info-section__wrapper info-section__wrapper_size_small">
             <h2 class="info-section__title">примите акцию у&nbsp;себя</h2>
             <div class="info-section__content">
@@ -89,7 +88,7 @@
       </section>
 
       <section class="gallery">
-        <div class="section-constraints section__constraints_size_large gallery__constraints">
+        <div class="section-constraints section-constraints_size_large gallery__constraints">
           <h2 class="gallery__title">#hedonismfest</h2>
           <p class="gallery__subtitle">Ставь хештег и попади в ленту на сайте</p>
           <div class="gallery__slider">
@@ -111,7 +110,7 @@
         </div>
       </section>
 
-      <section class="team section-constraints section__constraints_size_large">
+      <section class="team section-constraints section-constraints_size_large">
         <h2 class="team__title">уже в команде</h2>
         <ul class="team__list">
           <li class="team__element link">

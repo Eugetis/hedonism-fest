@@ -9,12 +9,6 @@
   overflow-y: scroll;
 }
 
-@media screen and (max-width: $tablet) {
-  .catalog__content {
-    height: calc(100vh - 68px);
-  }
-}
-
 // стили скролла в гриде с карточками
 
 .catalog__content::-webkit-scrollbar {
@@ -33,6 +27,9 @@
 }
 
 @media screen and (max-width: $mobile) {
+  .catalog__content {
+    height: calc(100vh - 68px);
+  }
   .catalog__content::-webkit-scrollbar-track {
     margin-top: 68px;
   }

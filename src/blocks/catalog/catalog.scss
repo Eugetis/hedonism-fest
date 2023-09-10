@@ -7,7 +7,7 @@
   min-height: calc(100vh - 88px);
 }
 
-@media screen and (max-width: $tablet) {
+@media screen and (max-width: $mobile) {
   .catalog {
     min-height: calc(100vh - 68px);
     top: 68px;
