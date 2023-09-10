@@ -151,7 +151,7 @@ function addEventGeoObjects() {
 // }
 
 export const createMap = async (mapContainer) => {
-  if (myMap === null ) ymaps.ready(initMap(mapContainer));
+  if (myMap == null) ymaps.ready(initMap(mapContainer));
 }
 
 // в последующие - просто обновляем её отображение

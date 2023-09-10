@@ -84,7 +84,7 @@
                 <div class="form__radio-group-wrapper">
                   <label class="form__field form__field_type_radio-fill" for="cafe">
                     кафе/бар/ресторан
-                    <input type="radio" name="category" id="cafe" value="cafe" required>
+                    <input type="radio" name="category" id="cafe" value="cafe" required checked>
                   </label>
 
                   <label class="form__field form__field_type_radio-fill" for="lesson">
@@ -138,7 +138,7 @@
                 <div class="form__step-fields-group">
 
                   <div class="form__field-wrapper">
-                    <select class="form__field form__field_type_select" id="city" name="city">
+                    <select class="form__field form__field_type_select" id="city" name="city" required>
                       <option value="" disabled selected hidden>выберите из списка</option>
                       <option value="moscow">Москва</option>
                       <option value="spb">Санкт-Петербург</option>
@@ -186,7 +186,8 @@
                       value="+7("
                       pattern="^(\+7)[\-\d\(\)\-]+$"
                       data-error-message="телефон должен начинаться с +7, разрешены только цифры, знаки ),(,+,-"
-                      required>
+                      required
+                      minlength="8">
                     <span class="form__field-error contact-telephone-error"></span>
                   </div>
 
@@ -265,7 +266,8 @@
                       value="+7("
                       pattern="^(\+7)[\-\d\(\)\-]+$"
                       data-error-message="телефон должен начинаться с +7, разрешены только цифры, знаки ),(,+,-"
-                      required>
+                      required
+                      minlength="7">
                     <span class="form__field-error place-telephone-error"></span>
                   </div>
 
@@ -306,7 +308,7 @@
                       pattern="[a-zA-ZА-Яа-я ]+$"
                       data-error-message="разрешены только латинские, кириллические буквы и пробелы"
                       required></textarea>
-                    <span class="form__field-error place-descroption-error"></span>
+                    <span class="form__field-error place-description-error"></span>
                   </div>
 
                 </div>

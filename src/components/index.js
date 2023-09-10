@@ -90,7 +90,7 @@ import {
 } from '../components/constants.js';
 // Георгий
 import forParticipants from './for-participants';
-import { enableValidation } from './validation';
+import { enableValidation } from './validation.js';
 
 // Евгений
 
@@ -112,6 +112,14 @@ const modalContainer = document.querySelector('.modal__container');
 const donateButtons = document.querySelectorAll('.header__button_type_donate');
 
 const donateButtonAbout = document.querySelector('.info-section__button_donate');
+const validateSettings = {
+  formSelector: '.form',
+  inputSelector: '.form__field',
+  submitButtonSelector: '.button__submit',
+  inactiveButtonClass: 'button_type_disabled',
+  inputErrorClass: 'form__field_type_error',
+  errorClass: 'form__field-error_active'
+};
 
 
 
@@ -205,6 +213,7 @@ if (document.querySelector('.page_id_catalog')) {
   });
 }
 
+enableValidation(validateSettings);
 
 // Андрей -> end!
 

@@ -163,7 +163,7 @@
           <div class="form__radio-group-wrapper form__radio-group-wrapper_type_grid">
             <label class="form__field form__field_type_radio-fill-simple" for="100">
               100 &#8381;
-              <input type="radio" name="donation" id="100" value="100" required>
+              <input type="radio" name="donation" id="100" value="100" required checked>
             </label>
             <label class="form__field form__field_type_radio-fill-simple" for="300">
               300 &#8381;
@@ -188,7 +188,8 @@
                 id="donation-custom"
                 name="donationCustom"
                 placeholder="другая сумма"
-                data-error-message="пожалуйста, введите корректный email">
+                data-error-message="пожалуйста, введите cумму пожертвования"
+                min = "10">
               <span class="form__field-error donation-custom-error"></span>
             </div>
           </div>
@@ -224,18 +225,18 @@
           <p class="form__modal-text">Нажимая кнопку «пожертвовать» вы соглашаетесь с условиями <a class="link link_type_text">оферты</a>, <a class="link link_type_text">политики</a> в отношении обработки
             и защиты персональных данных и даёте <a class="link link_type_text">согласие</a> на их обработку</p>
         </fieldset>
-
+        <div class="fixed-bar" name="handlers">
+          <button
+            type="submit"
+            form="form-donation"
+            class="modal__button button button_type_filled button__submit"
+            onclick="window.location.href='./thanks-for-support.html'"
+            data-text="Перейти к оплате">Перейти к оплате
+          </button>
+        </div>
       </form>
 
-      <div class="fixed-bar" name="handlers">
-        <button
-          type="submit"
-          form="form-donation"
-          class="modal__button button button_type_filled"
-          onclick="window.location.href='./thanks-for-support.html'"
-          data-text="Перейти к оплате">Перейти к оплате
-        </button>
-      </div>
+      
 
     </div>
 
