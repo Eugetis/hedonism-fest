@@ -146,8 +146,12 @@ function addEventGeoObjects() {
 
 // рендер карты в контейнере
 // в первый раз - создаем карту (создаем её "ленивым подходом", асинхронно)
+// export const createMap = async (mapContainer) => {
+//   if (!myMap) ymaps.ready(initMap(mapContainer));
+// }
+
 export const createMap = async (mapContainer) => {
-  if (!myMap) ymaps.ready(initMap(mapContainer));
+  if (myMap == null) ymaps.ready(initMap(mapContainer));
 }
 
 // в последующие - просто обновляем её отображение

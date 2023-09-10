@@ -90,15 +90,22 @@ export const checkFavoritesRef = () => {
   const filterGroup = document.querySelector('#eventTags');
   const buttonFavorite = document.querySelector('#button__favorite_ref');
   const likesArray = getStorageValueByKey('likes');
-  return !(buttonFavorite.classList.contains('tag-filter_type_selected') & (likesArray.length < 1));
+  if (likesArray === null || likesArray.length === 0) {
+    console.log(!buttonFavorite.classList.contains('tag-filter_type_selected'));
+    return !(buttonFavorite.classList.contains('tag-filter_type_selected'));
+  }
+  return true;
 }
 //
 export const checkFavorites = () => {
   const filterGroup = document.querySelector('#eventTags');
   const buttonFavorite = filterGroup.closest('.catalog__section').querySelector('#button__favorite');
   const likesArray = getStorageValueByKey('likes');
-  console.log(!buttonFavorite.classList.contains('tag-filter_type_selected') & (likesArray.length < 1));
-  return !(buttonFavorite.classList.contains('tag-filter_type_selected') & (likesArray.length < 1));
+  if (likesArray === null || likesArray.length === 0) {
+    console.log(!buttonFavorite.classList.contains('tag-filter_type_selected'));
+    return !(buttonFavorite.classList.contains('tag-filter_type_selected'));
+  }
+  return true;
 }
 
 // переключаем отображение в контейнере карта\список
