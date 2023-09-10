@@ -157,23 +157,24 @@ export const mobileMenuSliderClose = function() {
 
 // Евгений - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-import { mobileHeaderWrapper } from '../components/constants.js';
 
+// ЗАКОММЕНТИЛ ЭТО, ТАК КАК УБРАЛИ АЛЬТЕРНАТИВНЫЙ ХЕДЕР НА ГЛАВНОЙ
 // функция открытия мобильного меню в самом верху главной страницы
 // задана проверка на наличие классов, которые присваиваются хедеру на старте,
 // если условия соблюдены, то хедеру добавляем класс, который заставляет его выехать сборку вместе с менюшкой
-export const mobileMenuIndexTopOpen = function() {
-  if (header.classList.contains('header__offset') || header.classList.contains('header__offset_2')) {
-    header.classList.add('header__offset_type_index-side');
-    mobileHeaderWrapper.classList.add('header__wrapper-mobile_opened');
-    mobileMenuSlider.classList.add('header__slider_opened');
-    page.classList.add('page_type_no-scroll');
-  } else {
-    mobileHeaderWrapper.classList.add('header__wrapper-mobile_opened');
-    mobileMenuSlider.classList.add('header__slider_opened');
-    page.classList.add('page_type_no-scroll');
-  }
-}
+// import { mobileHeaderWrapper } from '../components/constants.js';
+// export const mobileMenuIndexTopOpen = function() {
+//   if (header.classList.contains('header__offset') || header.classList.contains('header__offset_2')) {
+//     header.classList.add('header__offset_type_index-side');
+//     mobileHeaderWrapper.classList.add('header__wrapper-mobile_opened');
+//     mobileMenuSlider.classList.add('header__slider_opened');
+//     page.classList.add('page_type_no-scroll');
+//   } else {
+//     mobileHeaderWrapper.classList.add('header__wrapper-mobile_opened');
+//     mobileMenuSlider.classList.add('header__slider_opened');
+//     page.classList.add('page_type_no-scroll');
+//   }
+// }
 
 
 // Евгений -> end!

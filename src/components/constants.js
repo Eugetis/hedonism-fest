@@ -37,7 +37,7 @@ export const dropDownMenuMobile = document.querySelector ('.geo__mobile-wrapper'
 // export const dropDownMenuButton = document.querySelector('.header__button_city-selected');
 export const dropDownMenuButton = document.querySelector('.geo__button');
 export const dropDownMenuButtonBack = document.querySelector('.geo__button_type_back');
-export const mobileMenuButtonIntro = document.querySelector('.intro__menu-button');
+// export const mobileMenuButtonIntro = document.querySelector('.intro__menu-button');
 export const mobileMenuButtonSecondary = document.querySelector('.header__burger-button');
 export const mobileMenuButtonClose = document.querySelector('.icon-cross');
 // export const dropDownMenuElements = Array.from(document.querySelectorAll('.geo__form-city-label'));
@@ -47,7 +47,7 @@ export const dropDownMenuInputs = Array.from(document.querySelectorAll('.geo__li
 export const header = document.querySelector('.header');
 export const mobileMenuSlider = document.querySelector('.header__slider');
 export const page = document.querySelector('.page');
-export const headerMobileTop = document.querySelector('.header__mobile-top');
+// export const headerMobileTop = document.querySelector('.header__mobile-top');
 
 
 

@@ -142,9 +142,10 @@ let dropDownMenuButtonTextMobile = document.querySelector('.geo__city-name_type_
 // СКРИПТЫ
 
 // открытие главной страниц без автоскролла вверх после перезагрузки
-window.onload = function () {
-  window.scrollTo(0, 0);
-}
+// ПРОВЕРИТЬ!!! ///////////////
+// window.onload = function () {
+//   window.scrollTo(0, 0);
+// }
 
 // Никита - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -218,24 +219,24 @@ enableValidation(validateSettings);
 
 // Алексей - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-//открытие дропдауна
+//открытие дропдауна с выбором города
 //dropDownMenuButton.addEventListener('click', dropDownMenuDesktopOpen);
 dropDownMenuButton.addEventListener('click', dropDownMenuOpen);
-//закрытие дропдауна
+//закрытие дропдауна с выбором города
 dropDownMenuElements.forEach(function (dropDownMenuElement) {
   dropDownMenuElement.addEventListener('click', dropDownMenuClose);
 })
 /*dropDownMenuElements.forEach(function (dropDownMenuElement) {
   dropDownMenuElement.addEventListener('click', dropDownMenuDesktopClose);
 })*/
-//открытие дропдауна на мобильной версии
+//открытие дропдауна на мобильной версии ///////////
 dropDownMenuButtonMobile.addEventListener('click', dropDownMenuMobileOpen);
 //закрытие дропдауна на мобильной версии
 dropDownMenuButtonBack.addEventListener('click', dropDownMenuMobileClose);
-//выезд слайда с меню на мобильной версии
-if (document.querySelector('.page_id_index')) {
-  mobileMenuButtonIntro.addEventListener('click', mobileMenuIndexTopOpen);
-}
+//выезд слайда с меню на мобильной версии (УДАЛИЛ, ТАК КАК УБРАЛИ АЛЬТЕРНАТИВНЫЙ ХЕДЕР)
+// if (document.querySelector('.page_id_index')) {
+//   mobileMenuButtonIntro.addEventListener('click', mobileMenuIndexTopOpen);
+// }
 
 
 // открытие/закрытие мобильного меню
@@ -278,20 +279,21 @@ dropDownMenuInputs.forEach(function (dropDownMenuInput) {
 });
 
 //появляющийся при скролле хедер
-if (document.querySelector('.page_id_index')) {
-  header.classList.add('header__offset');
-  header.classList.add('header__offset_3');
-  window.addEventListener('scroll', function () {
-    if (scrollY > 10) {
-      header.classList.remove('header__offset');
-      header.classList.add('header__offset_1');
-      header.classList.remove('header__offset_2');
-    } else {
-      header.classList.remove('header__offset_1');
-      header.classList.add('header__offset_2');
-    }
-  });
-}
+// ЗАКОММЕНТИЛ, ТАК КАК ТЕПЕРЬ ХЕДЕР ДОЛЖЕН ВЕСТИ СЕБЯ КАК ОБЫЧНО
+// if (document.querySelector('.page_id_index')) {
+//   header.classList.add('header__offset');
+//   header.classList.add('header__offset_3');
+//   window.addEventListener('scroll', function () {
+//     if (scrollY > 10) {
+//       header.classList.remove('header__offset');
+//       header.classList.add('header__offset_1');
+//       header.classList.remove('header__offset_2');
+//     } else {
+//       header.classList.remove('header__offset_1');
+//       header.classList.add('header__offset_2');
+//     }
+//   });
+// }
 
 // Алексей -> end!
 
