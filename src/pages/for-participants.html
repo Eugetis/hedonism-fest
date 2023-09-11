@@ -7,7 +7,6 @@
     <meta name="keywords" content="HTML, CSS, JavaScript">
     <meta name="author" content="Евгений Тисленко, Никита Сазонов, Алексей Ефимов, Андрей Марахин, Георгий Медведский, Дмитрий Разумов">
     <title>Участникам</title>
-    <link rel="icon" href="" type="">
 </head>
 
 <body class="page page_id_for-participants">
@@ -62,7 +61,7 @@
           </li>
         </ul>
 
-        <div class="participants__buttons-block fixed-bar fixed-bar__align-right">
+        <div class="participants__buttons-block fixed-bar fixed-bar_type_align-right">
           <button id="open-form-btn" class="participants__button button button_type_filled" type="button">заполнить форму</button>
         </div>
 
@@ -70,15 +69,15 @@
 
 
       <!-- форма обернута в контейнер, чтобы задать геометрию секции без необходимости делать это в блоке form -->
-      <section class="participants__container participants__container_type_form hidden">
+      <section class="participants__container participants__container_type_form hidden" aria-label="форма участника">
 
-        <form class="form hidden" name="forParticipants">
+        <form class="form hidden" name="forParticipants" id="forParticipants">
 
           <fieldset class="form__step-container hidden" id="step-1">
             <div class="form__step-content">
               <div class="form__step-legend">
-                <legend class="form__step-legend-text">шаг 1 из 4</legend>
-                <legend class="form__step-legend-title">выберите категорию</legend>
+                <p class="form__step-legend-text">шаг 1 из 4</p>
+                <p class="form__step-legend-title">выберите категорию</p>
               </div>
               <div class="form__step-fields-wrapper">
                 <div class="form__radio-group-wrapper">
@@ -105,7 +104,7 @@
               </div>
             </div>
 
-            <div class="participants__buttons-block fixed-bar fixed-bar__align-right">
+            <div class="participants__buttons-block fixed-bar fixed-bar_type_align-right">
               <button class="participants__button button button_type_border" type="button" data-action="cancel">отмена</button>
               <button class="participants__button button button_type_filled button__submit" type="button" data-action="continue">далее</button>
             </div>
@@ -116,8 +115,8 @@
           <fieldset class="form__step-container hidden" id="step-2">
             <div class="form__step-content">
               <div class="form__step-legend">
-                <legend class="form__step-legend-text">шаг 2 из 4</legend>
-                <legend class="form__step-legend-title">заполните форму</legend>
+                <p class="form__step-legend-text">шаг 2 из 4</p>
+                <p class="form__step-legend-title">заполните форму</p>
                 <p class="form__step-legend-text">Для участия вы можете выбрать:</p>
                 <ul class="form__list">
                   <li>определенную позицию из меню</li>
@@ -199,7 +198,6 @@
                       id="description"
                       name="description"
                       placeholder="Укажите, что из меню будет принимать участие в акции"
-                      pattern="^[A-Za-zА-Яа-яЁё\s]+$"
                       data-error-message="разрешены только латинские, кириллические буквы и пробелы"
                       required></textarea>
                     <span class="form__field-error description-error"></span>
@@ -211,7 +209,7 @@
 
             </div>
 
-            <div class="participants__buttons-block fixed-bar fixed-bar__align-right">
+            <div class="participants__buttons-block fixed-bar fixed-bar_type_align-right">
               <button class="participants__button button button_type_border" type="button" data-action="back">назад</button>
               <button class="participants__button button button_type_filled button__submit" type="button" data-action="continue">далее</button>
             </div>
@@ -221,8 +219,8 @@
           <fieldset class="form__step-container hidden" id="step-3">
             <div class="form__step-content">
               <div class="form__step-legend">
-                <legend class="form__step-legend-text">шаг 3 из 4</legend>
-                <legend class="form__step-legend-title">укажите контакты и часы работы</legend>
+                <p class="form__step-legend-text">шаг 3 из 4</p>
+                <p class="form__step-legend-title">укажите контакты и часы работы</p>
                 <p class="form__step-legend-text">Эти данные появятся в описании карточки вашего мероприятия в нашем каталоге событий</p>
               </div>
               <div class="form__step-fields-wrapper">
@@ -278,7 +276,7 @@
                       class="form__field form__field_type_input"
                       id="place-site"
                       name="placeSite"
-                      value="https://"
+                      placeholder="https://"
                       data-error-message="ссылка должна начинаться с https:// или http://"
                       required>
                     <span class="form__field-error place-site-error"></span>
@@ -305,7 +303,6 @@
                       id="place-description"
                       name="placeDescription"
                       placeholder="Напишите небольшое приглашение своим посетителям. Людям нравятся простые обращения, дружественный тон"
-                      pattern="[a-zA-ZА-Яа-я ]+$"
                       data-error-message="разрешены только латинские, кириллические буквы и пробелы"
                       required></textarea>
                     <span class="form__field-error place-description-error"></span>
@@ -315,7 +312,7 @@
               </div>
             </div>
 
-            <div class="participants__buttons-block fixed-bar fixed-bar__align-right">
+            <div class="participants__buttons-block fixed-bar fixed-bar_type_align-right">
               <button class="participants__button button button_type_border" type="button" data-action="back">назад</button>
               <button class="participants__button button button_type_filled button__submit" type="button" data-action="continue">далее</button>
             </div>
@@ -324,8 +321,8 @@
           <fieldset class="form__step-container hidden" id="step-4">
             <div class="form__step-content">
               <div class="form__step-legend">
-                <legend class="form__step-legend-text">шаг 4 из 4</legend>
-                <legend class="form__step-legend-title">добавление фото</legend>
+                <p class="form__step-legend-text">шаг 4 из 4</p>
+                <p class="form__step-legend-title">добавление фото</p>
                 <p class="form__step-legend-text">Как правило, профессиональные фото выглядят более привлекательно.</p>
                 <p class="form__step-legend-text">Технические требования:</p>
                 <ul class="form__list">
@@ -348,9 +345,14 @@
 
             </div>
 
-            <div class="participants__buttons-block fixed-bar fixed-bar__align-right">
+            <div class="participants__buttons-block fixed-bar fixed-bar_type_align-right">
               <button class="participants__button button button_type_border" type="button" data-action="back">назад</button>
-              <button class="participants__button button button_type_filled button__submit" type="submit" data-action="submit">завершить</button>
+              <button
+              class="participants__button button button_type_filled button__submit"
+              type="submit"
+              form="forParticipants"
+              onclick="window.location.href='./thanks-for-application.html'"
+              data-action="submit">завершить</button>
             </div>
           </fieldset>
 

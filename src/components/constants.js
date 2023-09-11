@@ -41,19 +41,19 @@ export const dropDownMenuMobile = document.querySelector ('.geo__mobile-wrapper'
 // export const dropDownMenuButton = document.querySelector('.header__button_city-selected');
 export const dropDownMenuButton = document.querySelector('.geo__button');
 export const dropDownMenuButtonBack = document.querySelector('.geo__button_type_back');
-export const mobileMenuButtonIntro = document.querySelector('.intro__menu-button');
-export const mobileMenuButtonSecondary = document.querySelector('.header__burger-button');
+export const mobileMenuButton = document.querySelector('.header__burger-button');
 export const mobileMenuButtonClose = document.querySelector('.icon-cross');
 // export const dropDownMenuElements = Array.from(document.querySelectorAll('.geo__form-city-label'));
 // export const dropDownMenuInputs = Array.from(document.querySelectorAll('.header__input-city-select'));
 export const dropDownMenuElements = Array.from(document.querySelectorAll('.geo__list-item')); //
-export const dropDownMenuInputs = Array.from(document.querySelectorAll('.geo__list-input')); //
+export const dropDownMenuInputs = Array.from(document.querySelector('.geo__list-container').querySelectorAll('.geo__list-input'));
 export const header = document.querySelector('.header');
 export const mobileMenuSlider = document.querySelector('.header__slider');
 export const page = document.querySelector('.page');
-export const headerMobileTop = document.querySelector('.header__mobile-top');
-
-
+// export const headerMobileTop = document.querySelector('.header__mobile-top');
+export const dropDownMenuButtonText = document.querySelector('.geo__city-name');
+export const dropDownMenuButtonTextMobile = document.querySelector('.geo__city-name_type_mobile');
+export const mobileMenuButtonIcon = mobileMenuButton.querySelector('.button__icon');
 
 // Алексей -> end!
 

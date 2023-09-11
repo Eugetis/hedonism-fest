@@ -1,11 +1,11 @@
 @use 'variables' as *;
 
-.section__constraints_size_small {
+.section-constraints_size_small {
   padding: $pad-40 $pad-40;
 }
 
 @media all and (max-width: $mobile) {
-  .section__constraints_size_small {
+  .section-constraints_size_small {
     padding: $pad-20 $pad-20;
   }
 }

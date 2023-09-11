@@ -1,12 +1,9 @@
 // ВСПОМОГАТЕЛЬНЫЕ СКРИПТЫ
 
-// Если вдруг кому-то нужно что-то дописать в этом файле, помимо основного ответственного за эту функциональность,
-// лучше это делать внизу, где указаны имена. Если нужно что-то писать прямо посреди чужого кода, то отделяйте
-// свой код комментариями со своим именем перед и после вставляемого кода.
-
 
 
 // Никита - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
 
 
 
@@ -45,109 +42,70 @@ export const clearLocalStorage = () => {
 // Андрей -> end!
 
 // Алексей - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-import {dropDownMenu, dropDownMenuMobile, mobileMenuSlider, page, header, headerMobileTop, dropDownMenuDesktop} from '../components/constants.js';
-/*export const dropDownMenuDesktopOpen = function() {
-  dropDownMenuDesktop.classList.add('header__form-city_opened');
-  dropDownMenuDesktop.classList.remove('header__form-city_2');
-}
 
-export const dropDownMenuDesktopClose = function() {
-  dropDownMenuDesktop.classList.remove('header__form-city_opened');
-  dropDownMenuDesktop.classList.add('header__form-city_2');
-}*/
+import {dropDownMenu, dropDownMenuMobile, mobileMenuSlider, page, mobileMenuButtonIcon, mobileHeaderWrapper, dropDownMenuButtonText, dropDownMenuButtonTextMobile, mobileMenuButton} from '../components/constants.js';
 
+
+// открытие дропдауна со списком городов в десктопе
 export const dropDownMenuOpen = function() {
   dropDownMenu.classList.add('geo__list-container_opened');
+  const dropDownMenuCityList = Array.from(dropDownMenu.querySelectorAll('.geo__list-input'));
+  dropDownMenuCityList.forEach((dropDownMenuInput) => {
+    if (dropDownMenuInput.value === dropDownMenuButtonText.innerText) {
+      dropDownMenuInput.checked = true;
+    }
+  });
+  document.addEventListener('mousedown', closeDropDownByOverlayClick);
 }
 
+// закрытие дропдауна со списком городов в десктопе
 export const dropDownMenuClose = function() {
+  document.removeEventListener('mousedown', closeDropDownByOverlayClick);
   dropDownMenu.classList.remove('geo__list-container_opened');
 }
 
-export const dropDownMenuMobileOpen = function() {
-  dropDownMenuMobile.classList.add('geo__mobile-wrapper_opened')
-
-}
-// export const dropDownMenuMobileOpen = function() {
-//   dropDownMenuMobile.classList.remove('header__slide_content_cities_close')
-
-// }
-export const dropDownMenuMobileClose = function() {
-  dropDownMenuMobile.classList.remove('geo__mobile-wrapper_opened')
-}
-
-// //изменение иконки в хедере при открытии/закрытии мобильного меню
-// const toggleBurgerButtonIcon = (button, action) => {
-//   const spanIcon = button.querySelector('.button__icon');
-//   switch (action) {
-//     case 'opening':
-//       spanIcon.classList.remove('icon-menu-burger');
-//       spanIcon.classList.add('icon-cross');
-//       break;
-//     case 'closing':
-//       spanIcon.classList.remove('icon-cross');
-//       spanIcon.classList.add('icon-menu-burger');
-//       break;
-//   }
-// }
-// попытка менять иконку
-// export const mobileMenuSliderOpen = function(button) {
-//   mobileMenuSlider.classList.add('header__slider_opened');
-//   toggleBurgerButtonIcon(button, 'opening');
-//   // headerMobileTop.classList.add('header__mobile-top_opened');
-//   page.classList.add('page_type_no-scroll');
-//   // document.querySelector('.header__wrapper_mobile').classList.add('header__wrapper_mobile_1')
-// }
-// export const mobileMenuSliderClose = function(button) {
-//   mobileMenuSlider.classList.remove('header__slider_opened');
-//   toggleBurgerButtonIcon(button, 'closing');
-//   page.classList.remove('page_type_no-scroll');
-//   // headerMobileTop.classList.remove('header__mobile-top_opened');
-//   // document.querySelector('.header__wrapper_mobile').classList.remove('header__wrapper_mobile_1')
-// }
-
-export const mobileMenuSliderOpen = function() {
-  mobileHeaderWrapper.classList.add('header__wrapper-mobile_opened');
-  mobileMenuSlider.classList.add('header__slider_opened');
-  // headerMobileTop.classList.add('header__mobile-top_opened');
-  page.classList.add('page_type_no-scroll');
-  // document.querySelector('.header__wrapper_mobile').classList.add('header__wrapper_mobile_1')
-}
-
-export const mobileMenuSliderClose = function() {
-  // тут навесил доп проверку, чтобы эта функция могла отработать и на открытом меню вверху главной страницы
-  if (document.querySelector('.page_id_index') && header.classList.contains('header__offset_type_index-side')) {
-    header.classList.remove('header__offset_type_index-side');
-    header.classList.add('header__offset');
-    mobileMenuSlider.classList.remove('header__slider_opened');
-    mobileHeaderWrapper.classList.remove('header__wrapper-mobile_opened');
-    page.classList.remove('page_type_no-scroll');
-  } else {
-    mobileMenuSlider.classList.remove('header__slider_opened');
-    mobileHeaderWrapper.classList.remove('header__wrapper-mobile_opened');
-    page.classList.remove('page_type_no-scroll');
+// функция закрытия дропдауна по клику вне элемента
+const closeDropDownByOverlayClick = function(evt) {
+  if (!dropDownMenu.contains(evt.target)) {
+    dropDownMenuClose();
   }
 }
 
-// export const mobileMenuSliderClose = function() {
-//   mobileMenuSlider.classList.remove('header__slider_opened');
-//   mobileHeaderWrapper.classList.remove('header__wrapper-mobile_opened');
-//   page.classList.remove('page_type_no-scroll');
-//   // headerMobileTop.classList.remove('header__mobile-top_opened');
-//   // document.querySelector('.header__wrapper_mobile').classList.remove('header__wrapper_mobile_1')
-// }
-// export const mobileMenuSliderOpen = function() {
-//   mobileMenuSlider.classList.remove('header__slider_opened');
-//   headerMobileTop.classList.remove('header__mobile-top_opened');
-//   page.classList.add('page_type_no-scroll');
-//   document.querySelector('.header__wrapper_mobile').classList.add('header__wrapper_mobile_1')
-// }
-// export const mobileMenuSliderClose = function() {
-//   mobileMenuSlider.classList.add('header__slider_opened');
-//   page.classList.remove('page_type_no-scroll');
-//   headerMobileTop.classList.add('header__mobile-top_opened');
-//   document.querySelector('.header__wrapper_mobile').classList.remove('header__wrapper_mobile_1')
-// }
+// открытие мобильного меню
+export const mobileMenuSliderOpen = function() {
+  mobileHeaderWrapper.classList.add('header__wrapper-mobile_opened');
+  mobileMenuSlider.classList.add('header__slider_opened');
+  mobileMenuButtonIcon.classList.remove('icon-menu-burger');
+  mobileMenuButtonIcon.classList.add('icon-cross');
+  mobileMenuButton.addEventListener('click', mobileMenuSliderClose);
+  page.classList.add('page_type_no-scroll');
+}
+
+// закрытие мобильного меню
+export const mobileMenuSliderClose = function() {
+  mobileMenuButton.removeEventListener('click', mobileMenuSliderClose);
+  mobileMenuButtonIcon.classList.remove('icon-cross');
+  mobileMenuButtonIcon.classList.add('icon-menu-burger');
+  mobileMenuSlider.classList.remove('header__slider_opened');
+  mobileHeaderWrapper.classList.remove('header__wrapper-mobile_opened');
+  page.classList.remove('page_type_no-scroll');
+}
+
+// открытие списка городов в мобиле
+export const dropDownMenuMobileOpen = function() {
+  dropDownMenuMobile.classList.add('geo__mobile-wrapper_opened');
+  const dropDownMenuCityListMobile = Array.from(dropDownMenuMobile.querySelectorAll('.geo__list-input'));
+  dropDownMenuCityListMobile.forEach((dropDownMenuInputMobile) => {
+    if (dropDownMenuInputMobile.value === dropDownMenuButtonTextMobile.innerText) {
+      dropDownMenuInputMobile.checked = true;
+    }
+  });
+}
+
+// закрытие списка городов в мобиле
+export const dropDownMenuMobileClose = function() {
+  dropDownMenuMobile.classList.remove('geo__mobile-wrapper_opened')
+}
 
 // Алексей -> end!
 
@@ -160,23 +118,7 @@ export const mobileMenuSliderClose = function() {
 
 // Евгений - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-import { mobileHeaderWrapper } from '../components/constants.js';
 
-// функция открытия мобильного меню в самом верху главной страницы
-// задана проверка на наличие классов, которые присваиваются хедеру на старте,
-// если условия соблюдены, то хедеру добавляем класс, который заставляет его выехать сборку вместе с менюшкой
-export const mobileMenuIndexTopOpen = function() {
-  if (header.classList.contains('header__offset') || header.classList.contains('header__offset_2')) {
-    header.classList.add('header__offset_type_index-side');
-    mobileHeaderWrapper.classList.add('header__wrapper-mobile_opened');
-    mobileMenuSlider.classList.add('header__slider_opened');
-    page.classList.add('page_type_no-scroll');
-  } else {
-    mobileHeaderWrapper.classList.add('header__wrapper-mobile_opened');
-    mobileMenuSlider.classList.add('header__slider_opened');
-    page.classList.add('page_type_no-scroll');
-  }
-}
 
 
 // Евгений -> end!

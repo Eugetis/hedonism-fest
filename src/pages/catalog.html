@@ -7,7 +7,6 @@
     <meta name="keywords" content="HTML, CSS, JavaScript">
     <meta name="author" content="Евгений Тисленко, Никита Сазонов, Алексей Ефимов, Андрей Марахин, Георгий Медведский, Дмитрий Разумов">
     <title>Каталог</title>
-    <link rel="icon" href="" type="">
     <script src="https://api-maps.yandex.ru/2.1/?apikey=e322b8e0-449e-4ab9-a4c2-1bca8355d634&lang=ru_RU" type="text/javascript"></script>
 </head>
 
@@ -27,7 +26,7 @@
 
             <div class="catalog__section catalog__section_type_grow">
               <div class="catalog__section">
-                <h2 class="catalog__title">Куда пойти</h2>
+                <h1 class="catalog__title">Куда пойти</h1>
               </div>
               <div class="catalog__section">
                 <h3 class="catalog__subtitle" id="eventTags">Тип события</h3>
@@ -88,9 +87,10 @@
               <div class="additional-section">
                 <div class="additional-section__wrapper">
                   <div class="additional-section__container">
-                    <h1 class="additional-section__title">ой!</h1>
+                    <h2 class="additional-section__title">ой!</h2>
                     <p class="additional-section__subtitle">в вашем списке сохранённых событий пока что пусто</p>
-                    <button class="additional-section__button button button_type_filled" type="button">смотреть все события</a>
+                    <!-- тут нужно ссылку на все события -->
+                    <a href="./catalog.html" class="additional-section__button button button_type_filled">смотреть все события</a>
                   </div>
                   <img class="additional-section__image" src="<%=require('../images/no-results.svg')%>" alt="расстроенный персонаж">
                 </div>
@@ -98,7 +98,7 @@
             </section>
 
 
-            <section class="catalog__events-container catalog__events-container_type_map">
+            <section class="catalog__events-container catalog__events-container_type_map" aria-label="карта событий">
               <!-- тут будет блок с яндекс картой -->
               <div class="catalog__map-container"></div>
               <!-- чтобы включить, нужно будет добавить класс catalog__events-container_opened -->
@@ -106,10 +106,10 @@
 
 
             <!-- сетка карточек -->
-            <section class="catalog__events-container catalog__events-container_type_grid">
+            <section class="catalog__events-container catalog__events-container_type_grid" aria-label="сетка событий">
               <ul class="cards cards_type_grid">
                 <template id="card">
-                  <li class="cards__item" data-id="0" data-coordinates="0" data-type="">
+                  <li class="cards__item link" data-id="0" data-coordinates="0" data-type="">
                     <img class="cards__item-img">
                     <div class="cards__item-content">
                       <div class="cards__item-data">
@@ -125,7 +125,7 @@
                         <p class="cards__item-text cards__item-text_type_fit" id="cards__item-count"></p>
                       </div>
                     </div>
-                    <button class="cards__item-like card-control link"><span class="card-control__icon"></span></button>
+                    <button class="cards__item-like card-control link"><span class="card-control__icon icon-heart"></span></button>
                   </li>
                 </template>
               </ul>
