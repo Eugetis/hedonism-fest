@@ -1,5 +1,4 @@
-import { getFilteredCards } from './filters.js'
-import { arrayValues, logError } from './utils.js'
+import { logError } from './utils.js'
 import { getCardsFromLocaleStorage, modalAddressHandler } from "./event.js"
 import { openModal, closeModal } from './modal.js';
 import {modalController} from "./catalog";
@@ -122,7 +121,7 @@ const openCustomBalloon = (object, position) => {
   type.textContent = geoData[1].type;
   title.textContent = geoData[2].title;
   desc.textContent = geoData[3].desc;
-  address.textContent = geoData[5].addressPlus[0].address;
+  address.textContent = geoData[4].address;
   const addresses = geoData[5].addressPlus.length-1;
   addressPlus.textContent = `+ ещё ${addresses > 0 ? addresses : '' }`;
 
@@ -146,11 +145,7 @@ function addEventGeoObjects() {
 
 // рендер карты в контейнере
 // в первый раз - создаем карту (создаем её "ленивым подходом", асинхронно)
-// export const createMap = async (mapContainer) => {
-//   if (!myMap) ymaps.ready(initMap(mapContainer));
-// }
-
-export const createMap = async (mapContainer) => {
+export const createMap = (mapContainer) => {
   if (myMap == null) ymaps.ready(initMap(mapContainer));
 }
 
@@ -170,6 +165,14 @@ export const updateMap = () => {
     } else {
       logError('объект карты не существует!');
     }
+}
+//
+export const enableMapClicks = (mapContainer) => {
+  mapContainer.querySelector('.catalog__map-container').style.pointerEvents = null;
+}
+//
+export const disableMapClicks = (mapContainer) => {
+  mapContainer.querySelector('.catalog__map-container').style.pointerEvents = 'none';
 }
 
 //==============================
@@ -253,6 +256,7 @@ const getGeoObjsFromCards = (cards) => {
         date: card.date,
         timeDuration: card.timeDuration ,
         coords: [],
+        address: l.address,
         location: card.location
       }
 
@@ -299,7 +303,7 @@ const addInfoGeoObjToCollectioner = (infoGeoObj, collection) => {
       { type: infoGeoObj.type },
       { title: infoGeoObj.name },
       { desc: `${infoGeoObj.date}, ${infoGeoObj.timeDuration}` },
-      { address: infoGeoObj.coords },
+      { address: infoGeoObj.address },
       { addressPlus: infoGeoObj.location },
     ]
   });
@@ -332,9 +336,10 @@ const initGeoEventsOnMap = () => {
 };
 
 // получаем набор отфильтрованных карточек и делаем рендеринг
-export const renderMapController =  (activeTags) => {
-  const filteredCards = getFilteredCards(activeTags);
-  const cards = arrayValues(Object.values(filteredCards));
+export const renderMapController =  (filteredCards) => {
+  //const filteredCards = getFilteredCards(activeTags);
+  //const cards = arrayValues(Object.values(filteredCards));
+  const cards = filteredCards;
 
   //clearCollectioner(myGeoCollection);
   clearCollectioner(myClusterer);

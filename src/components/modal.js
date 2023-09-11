@@ -4,6 +4,7 @@
 // лучше это делать внизу, где указаны имена. Если нужно что-то писать прямо посреди чужого кода, то отделяйте
 // свой код комментариями со своим именем перед и после вставляемого кода.
 import { moveMapNode } from './map.js'
+import { deactivateFavorite } from './filters.js'
 
 // Андрей - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -38,10 +39,12 @@ function closeModalListener(evt) {
     closeModal(modal);
     if (evt.target.closest('.modal_id_mobile-filters') || evt.target.closest('.modal_id_donation')) {
       closeModal(modal);
-    } else if (evt.target.closest('.modal_id_favourites')) {
-      const modalMapContainer = evt.target.closest('.modal_id_favourites').querySelector('.catalog__map-container'); // Dmitry
+    } else if (evt.target.closest('.modal_id_favourites') || evt.target.closest('.modal_id_event-full')) {
+      const target = evt.target.closest('.modal_id_favourites') || evt.target.closest('.modal_id_event-full');
+      const modalMapContainer = target.querySelector('.catalog__map-container'); // Dmitry
       const mapContainer = document.querySelector('.catalog__events-container_type_map'); // Dmitry
-      moveMapNode(modalMapContainer, mapContainer);
+      moveMapNode(modalMapContainer, mapContainer); // Dmitry
+      deactivateFavorite(); // Dmitry
     } else {
       closeModal(modal);
       removeModal(modal);

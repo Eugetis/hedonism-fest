@@ -19,7 +19,7 @@ export const mapContainers = Array.from(document.querySelectorAll('.catalog__eve
 export const listContainers = Array.from(document.querySelectorAll('.catalog__events-container_type_grid'));
 
 // 6 -сегодня, 7 - завтра, 8 - послезавтра, остальное датами
-export const eventDate = ['6 сентября', '7 сентября', '8 сентября', '9 сентября', '10 сентября', '11 сентября', '12 сентября'];
+export const eventDate = ['06 сентября', '07 сентября', '08 сентября', '09 сентября', '10 сентября', '11 сентября', '12 сентября'];
 // список событий в карточках,  заполняется из карточек функцией getEventsListFromCards()
 export let eventsList = [];
 // Дмитрий -> end!

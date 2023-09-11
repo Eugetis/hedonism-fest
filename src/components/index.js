@@ -5,9 +5,13 @@
 // ИМПОРТЫ
 
 import '../scss/styles.scss';
-import {cardsClickController, modalFavoriteControllerRef, modalFavoriteHandler, modalHandler} from './event';
+import {cardsClickController } from './event';
 import {catalogController, generalCardController, } from './catalog';
+import { clearLocalStorage } from './utils'
+import { updateLikeInHeader } from './header.js'
 
+//clearLocalStorage();
+updateLikeInHeader();
 
 
 // Никита
@@ -17,44 +21,40 @@ import {catalogController, generalCardController, } from './catalog';
 // Поэтому обьявил сразу так
 
 if (document.querySelector('.page_id_catalog')) {
+  updateLikeInHeader();
   const cardGridSection = document.querySelector('.cards_type_grid');
   const cardTemplate = cardGridSection.querySelector('#card').content;
-  const modal = document.querySelector('#modal-favorite').content;
-  const buttonsFavorite = document.querySelectorAll('#button__favorite_ref');
-  buttonsFavorite.forEach((button) => button.addEventListener('click', () => modalFavoriteHandler(modal, 'open')));
   document.querySelector('.cards').addEventListener('click', cardsClickController);
   catalogController(cardGridSection, cardTemplate);
 }
 
-if (document.querySelector('#button__favorite_ref')) {
-  const buttonsFavorite = document.querySelectorAll('#button__favorite_ref');
-  buttonsFavorite.forEach((button) => button.addEventListener('click', modalFavoriteControllerRef))
-}
-
-
 if (document.querySelector('.page_id_404')) {
+  updateLikeInHeader();
   const cardScrollSection = document.querySelector('.cards_type_scroll');
   const cardTemplate = cardScrollSection.querySelector('#card').content;
   document.querySelector('.cards').addEventListener('click', cardsClickController);
-  generalCardController(cardScrollSection, cardTemplate);
+  // generalCardController(cardScrollSection, cardTemplate);
 }
 
 
 if (document.querySelector('.page_id_thanks-for-application')) {
+  updateLikeInHeader();
   const cardScrollSection = document.querySelector('.cards_type_scroll');
   const cardTemplate = cardScrollSection.querySelector('#card').content;
   document.querySelector('.cards').addEventListener('click', cardsClickController);
-  generalCardController(cardScrollSection, cardTemplate);
+  // generalCardController(cardScrollSection, cardTemplate);
 }
 
 if (document.querySelector('.page_id_thanks-for-support')) {
+  updateLikeInHeader();
   const cardScrollSection = document.querySelector('.cards_type_scroll');
   const cardTemplate = cardScrollSection.querySelector('#card').content;
   document.querySelector('.cards').addEventListener('click', cardsClickController);
-  generalCardController(cardScrollSection, cardTemplate);
+  // generalCardController(cardScrollSection, cardTemplate);
 }
 
 if (document.querySelector('.cards_type_scroll')) {
+  updateLikeInHeader();
   const cardScrollSection = document.querySelector('.cards_type_scroll');
   const cardTemplate = cardScrollSection.querySelector('#card').content;
   document.querySelector('.cards').addEventListener('click', cardsClickController);
