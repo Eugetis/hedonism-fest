@@ -1,0 +1,13 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.geo__city-name_type_mobile {
+  display: none;
+}
+
+@media screen and (max-width: $tablet) {
+  .geo__city-name_type_mobile {
+    display: block;
+    @include h3-mobile;
+  }
+}

@@ -1,0 +1,100 @@
+<!-- Модалка с формой покупки билетов -->
+<!-- должна открываться по кнопке "купить" в модалке с деталями мероприятия (открывать поверх нее!) -->
+<!-- должна открываться через добавление секции класса modal_opened -->
+
+<template id="payment-modal">
+  <section class="modal modal_type_high-mob modal_id_payment" aria-label="модальное окно покупки билетов" aria-hidden="true" data-price="0">
+    <div class="modal__container modal__container_type_form">
+      <div class="modal__header">
+        <div class="modal__drag-line"></div>
+        <h2 class="modal__title">Купить билет</h2>
+        <button class="modal__close-button modal__close-button_type_icon" type="button"><span class="button__icon icon-cross link"></span></button>
+      </div>
+
+      <div class="modal__body">
+
+        <form class="form form_type_modal" id="formPayment" name="formPayment">
+          <!-- добавить форме novalidate ?? -->
+
+          <fieldset class="form__modal-fieldset" id="tickets-and-sum">
+            <h3 class="form__modal-fieldset-title">сумма и количество</h3>
+            <div class="form__counter-wrapper">
+              <p class="form__accent-title" id="price">500 &#8381;</p>
+
+              <div class="form__amount-wrapper">
+                <button
+                  class="button button_type_amount-minus"
+                  type="button"
+                  id="decrement">
+                  <span class="button__icon button__icon_type_amount-control icon-minus-small"></span>
+                </button>
+                <input
+                  type="number"
+                  class="form__field form__field_type_amount"
+                  id="amount-input"
+                  name="amount-input"
+                  placeholder="1"
+                  inputmode="numeric"
+                  min="1"
+                  value="1"
+                  required>
+                </input>
+                <button
+                  class="button button_type_amount-plus"
+                  type="button"
+                  id="increment">
+                  <span class="button__icon button__icon_type_amount-control icon-plus-small"></span>
+                </button>
+              </div>
+
+            </div>
+          </fieldset>
+
+          <fieldset class="form__modal-fieldset" id="email">
+            <h3 class="form__modal-fieldset-title">email</h3>
+            <div class="form__field-wrapper">
+              <input
+                type="email"
+                class="form__field form__field_type_input"
+                id="donator-email"
+                name="donatorEmail"
+                placeholder="укажите почту для отправки чека"
+                data-error-message="пожалуйста, введите корректный email"
+                required>
+              <span class="form__field-error donator-email-error"></span>
+            </div>
+          </fieldset>
+
+          <fieldset class="form__modal-fieldset" id="payment-method">
+            <h3 class="form__modal-fieldset-title">способ оплаты</h3>
+            <div class="form__radio-group-wrapper form__radio-group-wrapper_type_classic">
+              <label class="form__field form__field_type_radio-round" for="credit">
+                банковской картой
+                <input type="radio" name="paymentMethod" id="credit" value="credit-card" checked required>
+              </label>
+              <label class="form__field form__field_type_radio-round" for="pp">
+                PayPal
+                <input type="radio" name="paymentMethod" id="pp" value="paypal" required>
+              </label>
+            </div>
+            <p class="form__modal-text">Нажимая кнопку «пожертвовать» вы соглашаетесь с условиями <a class="link link_type_text">оферты</a>, <a class="link link_type_text">политики</a> в отношении обработки
+              и защиты персональных данных и даёте <a class="link link_type_text">согласие</a> на их обработку</p>
+          </fieldset>
+
+        </form>
+
+        <div class="fixed-bar" id="handlers">
+          <button
+            type="button"
+            form="formPayment"
+            class="modal__button button button_type_filled button__submit"
+            onclick="window.location.href='./thanks-for-support.html'"
+            data-text="Перейти к оплате">Перейти к оплате
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+</template> <!-- конец модалки с формой покупки билетов -->

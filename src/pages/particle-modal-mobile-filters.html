@@ -1,0 +1,59 @@
+<!-- модалка с фильтрами для мобилы -->
+<!-- должна открываться по кнопке "фильтры" (catalog__mob-filters-button) в Каталоге -->
+<!-- через добавление секции класса modal_opened -->
+
+<section class="modal modal_type_center modal_id_mobile-filters" aria-label="модальное окно с фильтрами" aria-hidden="true">
+
+  <div class="modal__container modal__container_type_form">
+    <div class="modal__header">
+      <div class="modal__drag-line"></div>
+      <h2 class="modal__title">Фильтры</h2>
+      <button class="modal__close-button modal__close-button_type_icon" type="button"><span class="button__icon icon-cross link"></span></button>
+    </div>
+
+    <div class="modal__body">
+      <div class="catalog__section catalog__section_type_grow">
+        <div class="catalog__section">
+          <h3 class="catalog__subtitle" id="eventTags">Тип события</h3>
+          <div class="catalog__filters-group">
+            <button class="tag-filter tag-filter_type_selected" id="button__all" type="button">все</button>
+            <button class="tag-filter" id="button__favorite" type="button">хочу пойти<span class="tag-filter__icon icon-cross-small tag-filter__icon_type_hidden"></span></button>
+            <button class="tag-filter" type="button">разное<span class="tag-filter__icon icon-cross-small tag-filter__icon_type_hidden"></span></button>
+            <button class="tag-filter" type="button">лекции<span class="tag-filter__icon icon-cross-small tag-filter__icon_type_hidden"></span></button>
+            <button class="tag-filter" type="button">мастер-классы<span class="tag-filter__icon icon-cross-small tag-filter__icon_type_hidden"></span></button>
+            <button class="tag-filter" type="button">кафе<span class="tag-filter__icon icon-cross-small tag-filter__icon_type_hidden"></span></button>
+            <button class="tag-filter" type="button">музеи<span class="tag-filter__icon icon-cross-small tag-filter__icon_type_hidden"></span></button>
+            <button class="tag-filter" type="button">экскурсии<span class="tag-filter__icon icon-cross-small tag-filter__icon_type_hidden"></span></button>
+            <button class="tag-filter" type="button">доставка<span class="tag-filter__icon icon-cross-small tag-filter__icon_type_hidden"></span></button>
+            <button class="tag-filter" type="button">магазины<span class="tag-filter__icon icon-cross-small tag-filter__icon_type_hidden"></span></button>
+          </div>
+        </div>
+        <div class="catalog__section">
+          <h3 class="catalog__subtitle" id="dayTags">Дни</h3>
+          <div class="catalog__filters-group">
+            <button class="tag-filter tag-filter_type_selected" id="button__all" type="button">все</button>
+            <button class="tag-filter" type="button">все</button>
+            <button class="tag-filter" type="button">сегодня<span class="tag-filter__icon icon-cross-small tag-filter__icon_type_hidden"></span></button>
+            <button class="tag-filter" type="button">завтра<span class="tag-filter__icon icon-cross-small tag-filter__icon_type_hidden"></span></button>
+            <button class="tag-filter" type="button">послезавтра<span class="tag-filter__icon icon-cross-small tag-filter__icon_type_hidden"></span></button>
+            <button class="tag-filter" type="button">чт, 09 сен.<span class="tag-filter__icon icon-cross-small tag-filter__icon_type_hidden"></span></button>
+            <button class="tag-filter" type="button">пт, 10 сен.<span class="tag-filter__icon icon-cross-small tag-filter__icon_type_hidden"></span></button>
+            <button class="tag-filter" type="button">сб, 11 сен.<span class="tag-filter__icon icon-cross-small tag-filter__icon_type_hidden"></span></button>
+            <button class="tag-filter" type="button">вс, 12 сен.<span class="tag-filter__icon icon-cross-small tag-filter__icon_type_hidden"></span></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="catalog__section catalog__section_type_bottom">
+        <h3 class="catalog__subtitle">Хотите принять участие в акции?</h3>
+        <p class="catalog__text">заполните заявку, и мы с вами обязательно свяжемся.</p>
+        <a href="#" class="button button_type_border">узнать подробности<span class="button__icon icon-arrow-right"></span></a>
+      </div>
+    </div>
+
+    <div class="fixed-bar">
+      <button class="modal__button button button_type_filled" type="button" >показать</button>
+    </div>
+  </div>
+  <!-- конец модалки с фильтрами для мобилы -->
+</section>

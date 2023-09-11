@@ -1,0 +1,12 @@
+@use 'variables' as *;
+
+.tab-switcher__icon {
+  font: $icon-text-desktop;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 576px) {
+  .tab-switcher__icon {
+    display: none;
+  }
+}

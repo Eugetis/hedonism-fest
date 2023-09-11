@@ -1,0 +1,17 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.question-block__numbering {
+  @include h3-desktop;
+  width: 77px;
+  padding: 0;
+  color: $dark-primary;
+}
+
+@media all and (max-width: $mobile) {
+  .question-block__numbering {
+    @include h3-mobile;
+    width: 68px;
+    // min-width: 68px;
+  }
+}

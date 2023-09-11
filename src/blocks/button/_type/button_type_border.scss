@@ -1,0 +1,12 @@
+@use 'variables' as *;
+
+.button_type_border {
+  color: $dark-primary;
+  border: $border-bold;
+}
+
+.button_type_border:hover {
+  border-color: $hover;
+  color: $hover;
+  cursor: pointer;
+}

@@ -1,0 +1,15 @@
+@use 'variables' as *;
+
+.cards__item-img {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+@media screen and (max-width: $mobile) {
+  .cards__item-img {
+    height: 202px;
+    min-height: 202px;
+  }
+}

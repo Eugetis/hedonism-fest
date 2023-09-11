@@ -1,0 +1,14 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.participants__title_type_mobile-start {
+  display: none;
+}
+
+@media screen and (max-width: $mobile) {
+  .participants__title {
+    display: block;
+    @include h1-mobile;
+    padding: $pad-20 $pad-20 0 $pad-20;
+  }
+}

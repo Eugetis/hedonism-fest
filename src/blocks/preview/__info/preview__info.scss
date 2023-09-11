@@ -1,0 +1,6 @@
+@use 'mixins' as *;
+
+.preview__info {
+  @include flex-column-mixin;
+  gap: 8px;
+}

@@ -1,0 +1,12 @@
+@use 'variables' as *;
+
+.info-section_background_accident {
+  background-color: $color-accident;
+}
+
+@media all and (max-width: $mobile) {
+  .info-section_background_accident {
+    background-color: $warning-error;
+    color: $white;
+  }
+}

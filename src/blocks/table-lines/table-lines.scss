@@ -1,0 +1,16 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.table-lines {
+  @include flex-column-mixin;
+  @include text-desktop;
+  max-width: 100%;
+  padding: 0;
+  color: $dark-primary;
+}
+
+@media screen and (max-width: $mobile) {
+  .table-lines {
+    @include text-mobile;
+  }
+}

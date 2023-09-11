@@ -1,0 +1,16 @@
+@use 'variables' as *;
+
+.team {
+  margin: $centered;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
+}
+
+@media all and (max-width: $mobile) {
+  .team {
+    background-color: $light-secondary;
+  }
+}

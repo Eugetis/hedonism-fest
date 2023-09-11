@@ -1,0 +1,14 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.question-block__text {
+  @include text-desktop;
+  // padding: 0;
+  width: 100%;
+}
+
+@media all and (max-width: $mobile) {
+  .question-block__text {
+    @include text-mobile;
+  }
+}

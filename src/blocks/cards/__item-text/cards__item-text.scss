@@ -1,0 +1,16 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.cards__item-text {
+  @include subtext-desktop;
+  color: $dark-secondary;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media screen and (max-width: $mobile) {
+  .cards__item-text {
+    @include text-mobile;
+  }
+}

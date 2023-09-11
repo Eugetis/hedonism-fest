@@ -1,0 +1,10 @@
+@use 'variables' as *;
+
+.geo__button_type_mobile {
+  min-height: 52px;
+}
+
+.geo__button_type_mobile:hover {
+  background-color: $light-secondary;
+  color: $dark-primary;
+}

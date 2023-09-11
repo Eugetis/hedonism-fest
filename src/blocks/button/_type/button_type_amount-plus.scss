@@ -1,0 +1,18 @@
+@use 'variables' as *;
+
+.button_type_amount-plus {
+  min-width: 48px;
+  width: 48px;
+  padding: $pad-12;
+  border-radius: 0 $radius-small $radius-small 0;
+  border: none;
+  background: $color-primary;
+  cursor: pointer;
+}
+
+@media screen and (max-width: $mobile) {
+  .button_type_amount-plus {
+    min-width: 44px;
+    width: 44px;
+  }
+}

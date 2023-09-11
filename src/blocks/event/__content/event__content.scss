@@ -1,0 +1,16 @@
+@use 'variables' as *;
+
+.event__content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: $pad-40;
+  flex-grow: 1;
+}
+
+@media screen and (max-width: $mobile) {
+  .event__content {
+    gap: 16px;
+    padding: $pad-20;
+  }
+}

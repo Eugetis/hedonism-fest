@@ -1,0 +1,13 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.event__date {
+  @include text-desktop;
+  color: $dark-secondary;
+}
+
+@media screen and (max-width: $mobile) {
+  .event__date {
+    @include text-mobile;
+  }
+}

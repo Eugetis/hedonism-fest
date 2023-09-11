@@ -1,0 +1,16 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.form__list {
+  @include text-desktop;
+  margin-top: 12px;
+  box-sizing: border-box;
+  padding: 0 0 0 $pad-24;
+}
+
+@media screen and (max-width: $mobile) {
+  .form__list {
+    @include text-mobile;
+    margin-top: 4px;
+  }
+}

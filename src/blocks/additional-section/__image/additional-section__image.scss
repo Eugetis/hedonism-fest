@@ -1,0 +1,13 @@
+.additional-section__image {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media all and (max-width: 767px) {
+  .additional-section__image {
+    transform: scale(1, 1);
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+}

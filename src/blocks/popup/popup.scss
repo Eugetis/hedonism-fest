@@ -1,0 +1,17 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.popup {
+  max-width: 360px;
+  height: 492px;
+  box-sizing: border-box;
+  padding: $pad-24 $pad-20;
+  background-color: $light-primary;
+  box-shadow: $drop-shadow;
+  border-radius: $radius-large;
+  @include text-mobile;
+  color: $dark-primary;
+  position: relative;
+  @include flex-column-mixin;
+  gap: 12px;
+}

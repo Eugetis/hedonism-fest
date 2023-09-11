@@ -1,0 +1,30 @@
+@use 'variables' as *;
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+
+  box-sizing: border-box;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media screen and (max-width: $mobile) {
+  .modal {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+}

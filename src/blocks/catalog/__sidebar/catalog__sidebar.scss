@@ -1,0 +1,33 @@
+@use 'variables' as *;
+
+.catalog__sidebar {
+  width: 370px;
+  min-width: 370px;
+  height: calc(100vh - 88px);
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+@media screen and (max-width: $mobile) {
+  .catalog__sidebar {
+    display: none;
+  }
+}
+
+
+// стили скролла в сайдбаре
+
+.catalog__sidebar::-webkit-scrollbar {
+  width: 0;
+}
+
+.catalog__sidebar::-webkit-scrollbar-track {
+  background-color: $light-primary;
+  border-radius: $radius-100;
+}
+
+.catalog__sidebar::-webkit-scrollbar-thumb {
+  background-color: $color-primary-transparent;
+  border-radius: $radius-100;
+}

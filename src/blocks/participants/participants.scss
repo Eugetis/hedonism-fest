@@ -1,0 +1,15 @@
+@use 'variables' as *;
+
+.participants {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-grow: 1;
+  margin: 0;
+}
+
+@media screen and (max-width: $mobile) {
+  .participants {
+    min-height: calc(100vh - 68px);
+  }
+}

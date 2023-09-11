@@ -1,0 +1,15 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.gallery__subtitle {
+  @include text-desktop;
+  margin: 24px 0 40px;
+}
+
+@media all and (max-width: $mobile) {
+  .gallery__subtitle {
+    @include text-mobile;
+    margin: 8px 0 20px;
+  }
+}
+

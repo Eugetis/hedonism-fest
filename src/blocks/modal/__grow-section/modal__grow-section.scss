@@ -1,0 +1,12 @@
+@use 'variables' as *;
+
+.modal__grow-section {
+  flex-grow: 1;
+  position: relative;
+}
+
+@media screen and (max-width: $mobile) {
+  .modal__grow-section {
+    flex-grow: 1;
+  }
+}

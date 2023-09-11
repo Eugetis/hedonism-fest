@@ -1,0 +1,32 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.form__field_type_amount {
+  min-width: 96px;
+  width: 96px;
+  max-height: 48px;
+  box-sizing: border-box;
+  padding: $pad-12;
+  color: $dark-secondary;
+  background: $white;
+  border: $border-bold-primary;
+  border-radius: unset;
+  text-align: center;
+  -moz-appearance: textfield;
+	-webkit-appearance: textfield;
+	appearance: textfield;
+}
+
+@media screen and (max-width: $mobile) {
+  .form__field_type_amount {
+    min-width: 48px;
+    width: 48px;
+    max-height: 44px;
+  }
+}
+
+.form__field_type_amount::-webkit-outer-spin-button,
+.form__field_type_amount::-webkit-inner-spin-button {
+	display: none;
+}
+

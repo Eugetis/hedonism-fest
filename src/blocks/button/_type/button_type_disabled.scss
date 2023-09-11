@@ -1,0 +1,8 @@
+@use 'variables' as *;
+
+.button_type_disabled {
+    pointer-events: none;
+    background: $light-secondary;
+    color: $dark-secondary;
+    border: none;
+}

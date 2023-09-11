@@ -1,0 +1,16 @@
+@use 'variables' as *;
+
+.tab-switcher {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  border-radius: $radius-btn-100;
+  border: $border-thick-light;
+  background: $light-secondary;
+}
+
+@media screen and (max-width: $mobile) {
+  .tab-switcher {
+    border: $border-bold-light;
+  }
+}

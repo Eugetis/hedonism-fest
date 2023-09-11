@@ -1,0 +1,21 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.participants__subtitle {
+  @include h2-desktop;
+}
+
+@media screen and (max-width: $mobile) {
+  .participants__subtitle{
+    @include h2-mobile;
+  }
+}
+
+// @media screen and (min-width: 1024px) {
+//   .participants__subtitle{
+//       font-size: 48px;
+//       line-height: 52px;
+//       letter-spacing: -0.48px;
+//       width: 500px;
+//   }
+// }

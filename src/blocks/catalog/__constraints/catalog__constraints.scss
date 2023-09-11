@@ -1,0 +1,8 @@
+@use 'variables' as *;
+
+.catalog__constraints {
+  margin: $centered;
+  max-width: $desktop-max;
+  box-sizing: border-box;
+  display: flex;
+}

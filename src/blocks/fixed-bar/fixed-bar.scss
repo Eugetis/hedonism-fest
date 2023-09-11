@@ -1,0 +1,22 @@
+@use 'variables' as *;
+
+.fixed-bar {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0;
+  background-color: $light-primary;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+@media screen and (max-width: $mobile) {
+  .fixed-bar {
+    padding: $pad-20;
+    box-shadow: $fixed-bar;
+    padding: $pad-20;
+    display: flex;
+    position: sticky;
+    bottom: 0;
+  }
+}

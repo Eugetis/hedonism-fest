@@ -1,0 +1,16 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.question-block__title {
+  @include h3-desktop;
+  width: 306px;
+  padding: 0;
+  color: $dark-primary;
+}
+
+@media all and (max-width: $mobile) {
+  .question-block__title {
+    @include h3-mobile;
+    width: 100%;
+  }
+}

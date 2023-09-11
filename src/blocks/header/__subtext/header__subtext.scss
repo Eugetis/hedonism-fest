@@ -1,0 +1,11 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.header__subtext {
+  @include text-mobile;
+  text-align: center;
+  color: $dark-secondary;
+  padding: 0 $pad-20;
+}
+
+

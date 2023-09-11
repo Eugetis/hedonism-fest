@@ -1,0 +1,17 @@
+@use 'variables' as *;
+
+.info-message {
+  width: 100%;
+  background-color: $color-accident;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-sizing: border-box;
+  padding: $pad-8 $pad-40;
+}
+
+@media screen and (max-width: $mobile) {
+  .info-message {
+    padding: $pad-8 $pad-20;
+  }
+}

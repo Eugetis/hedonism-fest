@@ -1,0 +1,38 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.cards_type_scroll {
+  @include flex-center-row-mixin;
+  max-width: $desktop-max;
+  overflow-x: scroll;
+  padding: $pad-24 0;
+  display: flex;
+  gap: 20px;
+  scrollbar-width: thin;
+  scrollbar-color: $color-primary $light-primary;
+}
+
+.cards_type_scroll::-webkit-scrollbar {
+  height: 4px;
+}
+
+.cards_type_scroll::-webkit-scrollbar-track {
+  background-color: $light-primary;
+  border-radius: $radius-100;
+}
+
+.cards_type_scroll::-webkit-scrollbar-thumb {
+  background-color: $color-primary;
+  border-radius: $radius-100;
+}
+
+@media screen and (max-width: $mobile) {
+  .cards_type_scroll {
+    padding: $pad-20 0;
+    margin: 0;
+  }
+  .cards_type_scroll::-webkit-scrollbar-track {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}

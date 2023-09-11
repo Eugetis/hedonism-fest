@@ -1,0 +1,29 @@
+@use 'variables' as *;
+
+@media screen and (max-width: $tablet) {
+  .geo__mobile-wrapper {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 100%;
+    height: calc(100vh - 88px);
+    background-color: $light-primary;
+    box-sizing: border-box;
+    padding: $pad-20 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .geo__mobile-wrapper {
+    height: calc(100vh - 68px);
+    top: 0;
+    left: 0;
+  }
+}
+
+
+
+

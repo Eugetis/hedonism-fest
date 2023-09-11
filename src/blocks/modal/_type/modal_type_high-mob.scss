@@ -1,0 +1,9 @@
+@use 'variables' as *;
+
+@media screen and (max-width: $mobile) {
+  .modal_type_high-mob {
+    padding: $pad-16 0 0;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}

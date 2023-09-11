@@ -1,0 +1,36 @@
+@use 'variables' as *;
+
+.catalog__content {
+  flex-grow: 1;
+  height: calc(100vh - 88px);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-y: scroll;
+}
+
+// стили скролла в гриде с карточками
+
+.catalog__content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.catalog__content::-webkit-scrollbar-track {
+  background-color: $light-primary;
+  border-radius: $radius-100;
+  margin-top: 88px;
+}
+
+.catalog__content::-webkit-scrollbar-thumb {
+  background-color: $color-primary;
+  border-radius: $radius-100;
+}
+
+@media screen and (max-width: $mobile) {
+  .catalog__content {
+    height: calc(100vh - 68px);
+  }
+  .catalog__content::-webkit-scrollbar-track {
+    margin-top: 68px;
+  }
+}

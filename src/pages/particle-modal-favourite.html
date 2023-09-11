@@ -1,0 +1,48 @@
+  <!-- Модалка с просмотром списка мероприятий, отмеченных "Хочу пойти" -->
+  <!-- должна открываться по клику на кнопку "Хочу пойти" в хедере или на фильтр-кнопку "Хочу пойти" в каталоге -->
+  <!-- должна открываться через добавление секции класса modal_opened -->
+
+<template id="modal-favorite">
+  <section class="modal modal_type_side modal_id_favourites" aria-label="модальное окно избранных мероприятий" aria-hidden="true">
+
+    <div class="modal__wrapper-for-side modal__wrapper-for-side_type_radius">
+      <div class="modal__container modal__container_type_side modal__container_type_no-bkg">
+
+        <div class="favourites-list favourites-list_opened">
+
+          <div class="modal__header modal__header_type_extended">
+            <div>
+              <button class="button modal__button modal__button_type_narrow" id="button__back"><span class="button__icon icon-arrow-left"></span>назад</span></button>
+              <div class="modal__drag-line"></div>
+            </div>
+            <div class="modal__title-wrapper">
+              <h2 class="modal__title">хочу пойти</h2>
+              <button class="modal__close-button modal__close-button_type_icon" type="button"><span class="button__icon icon-cross link"></span></button>
+            </div>
+            <div class="modal__switchers-wrapper">
+              <div class="tab-switcher tab-switcher_type_fill">
+                <button class="tab-switcher__button tab-switcher__button_type_fill"></span>карта</button>
+                <button class="tab-switcher__button tab-switcher__button_type_fill tab-switcher__button_active">список</button>
+              </div>
+            </div>
+
+          </div>
+
+          <section class="catalog__events-container catalog__events-container_type_map">
+            <!-- чтобы включить, нужно будет добавить класс catalog__events-container_opened -->
+            <!-- тут будет блок с яндекс картой -->
+          </section>
+
+          <section class="catalog__events-container catalog__events-container_type_grid catalog__events-container_opened">
+            <ul class="cards cards_type_grid">
+            </ul>
+
+          </section>
+
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+</template>

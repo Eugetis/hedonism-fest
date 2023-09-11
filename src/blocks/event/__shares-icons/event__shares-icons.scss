@@ -1,0 +1,13 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.event__shares-icons {
+  @include flex-center-row-mixin;
+  gap: 24px;
+}
+
+@media screen and (max-width: $mobile) {
+  .event__shares-icons {
+    gap: 16px;
+  }
+}

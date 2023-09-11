@@ -1,0 +1,14 @@
+@use 'variables' as *;
+
+.header__nav-item {
+  width: 100%;
+  padding: $pad-12;
+}
+
+@media screen and (max-width: $tablet) {
+  .header__nav-item {
+    box-sizing: border-box;
+    padding: $pad-12 $pad-20;
+    text-align: left;
+  }
+}

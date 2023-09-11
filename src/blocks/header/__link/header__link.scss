@@ -1,0 +1,17 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.header__link {
+  @include btn-text-desktop;
+  color: $dark-primary;
+  text-decoration: none;
+}
+
+@media screen and (max-width: $tablet) {
+  .header__link {
+    @include h3-mobile;
+    width: 100%;
+  }
+}
+
+

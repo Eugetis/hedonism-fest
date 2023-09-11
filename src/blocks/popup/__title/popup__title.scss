@@ -1,0 +1,6 @@
+@use 'mixins' as *;
+
+.popup__title {
+  max-width: 90%;
+  @include h2-mobile;
+}

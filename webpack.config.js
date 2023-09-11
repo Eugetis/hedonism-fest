@@ -1,0 +1,132 @@
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const stylesHandler = 'style-loader';
+
+module.exports = {
+  entry: {
+    main: './src/components/index.js'
+  },
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'main.js',
+    publicPath: '',
+  },
+  mode: 'development',
+  devServer: {
+    static: path.resolve(__dirname, './dist'),
+    open: true,
+    compress: true,
+    port: 8080
+  },
+  module: {
+    rules: [{
+        test: /\.js$/,
+        use: 'babel-loader',
+        exclude: '/node_modules/'
+      },
+      {
+        test: /\.(png|svg|jpg|gif|woff(2)?|eot|ttf|otf)$/,
+        type: 'asset/resource',
+      },
+      {
+				test: /\.s[ac]ss$/i,
+				use: [
+					stylesHandler, 'css-loader', 'postcss-loader', 'resolve-url-loader',
+					{
+						loader: 'sass-loader',
+						options: {
+							sourceMap: true,
+							sassOptions: {
+								includePaths: ['src/scss'],
+							},
+						},
+					},
+				],
+			},
+      {
+        test: /\.css$/,
+        use: [stylesHandler, MiniCssExtractPlugin.loader, {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1
+            }
+          },
+          'postcss-loader'
+        ]
+      },
+    ]
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src", "index.html"),
+      filename: 'index.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src", "pages", "about.html"),
+      filename: 'about.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src", "pages", "for-participants.html"),
+      filename: 'for-participants.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src", "pages", "catalog.html"),
+      filename: 'catalog.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src", "pages", "thanks-for-application.html"),
+      filename: 'thanks-for-application.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src", "pages", "thanks-for-support.html"),
+      filename: 'thanks-for-support.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src", "pages", "404.html"),
+      filename: '404.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src", "pages", "ui-kit.html"),
+      filename: 'ui-kit.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src", "pages", "footer.html"),
+      filename: 'footer.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src", "pages", "header.html"),
+      filename: 'header.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src", "pages", "particle-events-scroll.html"),
+      filename: 'particle-events-scroll.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src", "pages", "particle-modal-event.html"),
+      filename: 'particle-modal-event.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src", "pages", "particle-modal-payment.html"),
+      filename: 'particle-modal-payment.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src", "pages", "particle-modal-mobile-filters.html"),
+      filename: 'particle-modal-mobile-filters.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src", "pages", "particle-modal-mobile-preview.html"),
+      filename: 'particle-modal-mobile-preview.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src", "pages", "particle-modal-favourite.html"),
+      filename: 'particle-modal-favourite.html'
+    }),
+
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin(),
+  ]
+}
+
+

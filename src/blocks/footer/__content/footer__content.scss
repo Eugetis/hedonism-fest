@@ -1,0 +1,16 @@
+@use 'variables' as *;
+
+.footer__content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, auto));
+  column-gap: 40px;
+  width: 100%;
+}
+
+@media all and (max-width: $mobile) {
+  .footer__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 48px;
+    }
+}

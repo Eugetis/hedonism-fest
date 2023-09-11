@@ -1,0 +1,15 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.info-section__title {
+  @include h2-desktop;
+  margin-bottom: 24px;
+}
+
+@media all and (max-width: $mobile) {
+  .info-section__title {
+    @include h2-mobile;
+    margin-bottom: 12px;
+  }
+}
+

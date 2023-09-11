@@ -1,0 +1,244 @@
+<!-- ВНИЗУ ЛЕЖИТ МОДАЛКА ПОЖЕРТВОВАНИЯ -->
+
+<header class="header">
+
+  <!-- начало шапки хедера -->
+  <div class="header__top">
+
+    <div class="header__wrapper">
+
+      <div class="header__logo-and-location">
+
+        <a href="../index.html" class="link">
+          <img class="header__logo" src="../images/hedonism-fest-logo.png" alt="Логотип ГедонизмФест">
+        </a>
+
+        <div class="header__geo">
+          <div class="geo">
+            <button class="header__button geo__button button"><span class="button__icon icon-marker"></span><span class="geo__city-name"></span></button>
+            <div class="geo__list-container">
+              <label class="geo__list-item" for="moscow">Москва
+                <input class="geo__list-input" type="radio" name="city" id="moscow" value="Москва">
+              </label>
+              <label class="geo__list-item" for="petersburg">Санкт&#8209;Петербург
+                <input class="geo__list-input" type="radio" name="city" id="petersburg"
+                  value="Санкт&#8209;Петербург" />
+              </label>
+              <label class="geo__list-item" for="sochi">Сочи
+                <input class="geo__list-input" type="radio" name="city" id="sochi" value="Сочи" />
+              </label>
+              <label class="geo__list-item" for="kaluga">Калуга
+                <input class="geo__list-input" type="radio" name="city" id="kaluga" value="Калуга" />
+              </label>
+              <label class="geo__list-item" for="ekatirinburg">Екатеринбург
+                <input class="geo__list-input" type="radio" name="city" id="ekatirinburg"
+                  value="Екатеринбург" />
+              </label>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <nav>
+        <ul class="header__nav header__nav_type_desktop">
+          <li class="header__nav-item"><a href="./catalog.html" class="header__link link">куда&nbsp;пойти</a></li>
+          <li class="header__nav-item"><a href="./for-participants.html"
+              class="header__link link">стать&nbsp;участником</a></li>
+          <li class="header__nav-item"><a href="./about.html" class="header__link link">о&nbsp;фестивале</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__buttons">
+        <a href="#" class="button" id="button__favorite_ref"><span class="button__icon icon-heart"></span>хочу&nbsp;пойти</a>
+        <button class="header__button header__button_type_donate button button_type_filled" type="button">поддержать</button>
+        <button class="header__burger-button" type="button"><span class="button__icon icon-menu-burger"></span></button>
+      </div>
+
+    </div>
+
+  </div> <!-- конец шапки хедера -->
+
+</header>
+
+
+<!-- начало мобильного меню -->
+<!-- js должен по клику на гамбургер включать модификатор header__slider_opened, чтобы выезжало мобильное меню  -->
+<div class="header__wrapper-mobile">
+
+  <div class="header__slider">
+
+    <!-- начало открытого мобильного меню -->
+    <div class="header__slide header__slide_content_menu">
+
+      <div class="header__mobile-section">
+        <p class="header__subtext header__subtext_position_left">Ваш город</p>
+        <div class="geo">
+
+          <button type="button" class="geo__button geo__button_type_mobile button">
+            <span class="geo__city-name geo__city-name_type_mobile"></span>
+            <span class="button__icon icon-angle-small-right"></span>
+          </button>
+
+          <!-- контейнер с выбором города для мобилы -->
+          <div class="geo__mobile-wrapper">
+            <button type="button" class="button geo__button geo__button_type_mobile geo__button_type_back"><span class="button__icon icon-arrow-left"></span>назад</button>
+            <p class="header__subtext header__subtext_position_left">Ваш город</p>
+            <div class="geo__list-container geo__list-container_type_mobile">
+              <label class="geo__list-item geo__list-item_type_mobile" for="moscow-mob">Москва
+                <input class="geo__list-input" type="radio" name="city" id="moscow-mob" value="Москва" />
+              </label>
+              <label class="geo__list-item geo__list-item_type_mobile" for="petersburg-mob">Санкт&#8209;Петербург
+                <input class="geo__list-input" type="radio" name="city" id="petersburg-mob"
+                  value="Санкт&#8209;Петербург" />
+              </label>
+              <label class="geo__list-item geo__list-item_type_mobile" for="sochi-mob">Сочи
+                <input class="geo__list-input" type="radio" name="city" id="sochi-mob" value="Сочи" />
+              </label>
+              <label class="geo__list-item geo__list-item_type_mobile" for="kaluga-mob">Калуга
+                <input class="geo__list-input" type="radio" name="city" id="kaluga-mob" value="Калуга" />
+              </label>
+              <label class="geo__list-item geo__list-item_type_mobile" for="ekatirinburg-mob">Екатеринбург
+                <input class="geo__list-input" type="radio" name="city" id="ekatirinburg-mob"
+                  value="Екатеринбург" />
+              </label>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+      <div class="header__mobile-section">
+        <p class="header__subtext header__subtext_position_left">навигация</p>
+        <nav>
+          <ul class="header__nav header__nav_type_mobile">
+            <li class="header__nav-item"><a href="./catalog.html" class="header__link link">куда&nbsp;пойти</a></li>
+            <li class="header__nav-item"><a href="./for-participants.html"
+                class="header__link link">стать&nbsp;участником</a></li>
+            <li class="header__nav-item"><a href="./about.html" class="header__link link">о&nbsp;фестивале</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="header__slide-bottom">
+        <div class="header__mobile-section header__mobile-section_type_bottom">
+          <img class="header__logo_type_dropdown" src="../images/Nochlezhka-light.svg" alt="логотип Ночлежка">
+          <p class="header__subtext">благотворительная организация</p>
+        </div>
+        <div class="header__mobile-section header__mobile-section_type_bottom">
+          <button class="header__button header__button_type_donate button button_type_filled" type="button">пожертвовать</button>
+        </div>
+      </div>
+
+    </div> <!-- конец первого слайда открытого мобильного меню -->
+
+  </div> <!-- конец открытого мобильного меню -->
+</div>
+
+
+
+<!-- МОДАЛКА С ФОРМОЙ ПОЖЕРТВОВАНИЯ -->
+<!-- Лежит тут, т.к. должна быть доступна на любой странице -->
+<!-- должна открываться по кнопке "пожертвовать" в хедере (и еще на паре страниц по индивидуальным кнопкам) -->
+<!-- должна открываться через добавление секции класса modal_opened -->
+
+<section class="modal modal_type_center modal_id_donation " aria-label="модальное окно пожертвования" aria-hidden="true">
+  <div class="modal__container modal__container_type_form">
+    <div class="modal__header">
+      <div class="modal__drag-line"></div>
+      <h2 class="modal__title">Пожертвовать</h2>
+      <button class="modal__close-button modal__close-button_type_icon" type="button"><span
+          class="button__icon icon-cross link"></span></button>
+    </div>
+
+    <div class="modal__body">
+
+      <!-- добавить форме novalidate ?? -->
+      <!-- перепроверить, когда обновится блок form (был такой класс ниже) -->
+      <form class="form form_type_modal" id="formDonation" name="formDonation">
+
+        <fieldset class="form__modal-fieldset" id="donation-sum">
+          <h3 class="form__modal-fieldset-title">сумма</h3>
+          <div class="form__radio-group-wrapper form__radio-group-wrapper_type_grid">
+            <label class="form__field form__field_type_radio-fill-simple" for="100">
+              100 &#8381;
+              <input type="radio" name="donation" id="100" value="100" required checked>
+            </label>
+            <label class="form__field form__field_type_radio-fill-simple" for="300">
+              300 &#8381;
+              <input type="radio" name="donation" id="300" value="300" required>
+            </label>
+            <label class="form__field form__field_type_radio-fill-simple" for="500">
+              500 &#8381;
+              <input type="radio" name="donation" id="500" value="500" required>
+            </label>
+            <label class="form__field form__field_type_radio-fill-simple" for="1000">
+              1000 &#8381;
+              <input type="radio" name="donation" id="1000" value="1000" required>
+            </label>
+            <label class="form__field form__field_type_radio-fill-simple" for="3000">
+              3000 &#8381;
+              <input type="radio" name="donation" id="3000" value="3000" required>
+            </label>
+            <div class="form__field-wrapper">
+              <input
+                type="number"
+                class="form__field form__field_type_input form__field_type_center"
+                id="donation-custom"
+                name="donationCustom"
+                placeholder="другая сумма"
+                data-error-message="пожалуйста, введите cумму пожертвования"
+                min = "10">
+              <span class="form__field-error donation-custom-error"></span>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="form__modal-fieldset" id="email">
+          <h3 class="form__modal-fieldset-title">email</h3>
+          <div class="form__field-wrapper">
+            <input
+              type="email"
+              class="form__field form__field_type_input"
+              id="donator-email"
+              name="donatorEmail"
+              placeholder="укажите почту для отправки чека"
+              data-error-message="пожалуйста, введите корректный email"
+              required>
+            <span class="form__field-error donator-email-error"></span>
+          </div>
+        </fieldset>
+
+        <fieldset class="form__modal-fieldset" id="payment-method">
+          <h3 class="form__modal-fieldset-title">способ оплаты</h3>
+          <div class="form__radio-group-wrapper form__radio-group-wrapper_type_classic">
+            <label class="form__field form__field_type_radio-round" for="credit-card">
+              банковской картой
+              <input type="radio" name="paymentMethod" id="credit-card" value="credit-card" checked required>
+            </label>
+            <label class="form__field form__field_type_radio-round" for="paypal">
+              PayPal
+              <input type="radio" name="paymentMethod" id="paypal" value="paypal" required>
+            </label>
+          </div>
+          <p class="form__modal-text">Нажимая кнопку «пожертвовать» вы соглашаетесь с условиями <a class="link link_type_text">оферты</a>, <a class="link link_type_text">политики</a> в отношении обработки
+            и защиты персональных данных и даёте <a class="link link_type_text">согласие</a> на их обработку</p>
+        </fieldset>
+        <div class="fixed-bar" id="handlers">
+          <button
+            type="button"
+            form="formDonation"
+            class="modal__button button button_type_filled button__submit"
+            onclick="window.location.href='./thanks-for-support.html'"
+            data-text="Перейти к оплате">Перейти к оплате
+          </button>
+        </div>
+      </form>
+
+
+
+    </div>
+
+  </div>
+</section>

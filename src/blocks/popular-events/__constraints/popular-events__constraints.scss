@@ -1,0 +1,15 @@
+@use 'variables' as *;
+
+.popular-events__constraints {
+  margin: $centered;
+  max-width: $desktop-max;
+  box-sizing: border-box;
+  padding: $pad-80 $pad-40;
+}
+
+@media all and (max-width: $mobile) {
+  .popular-events__constraints {
+    max-width: 100%;
+    padding: $pad-40 0;
+  }
+}

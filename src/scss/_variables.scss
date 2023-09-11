@@ -1,0 +1,137 @@
+// ЦВЕТА - названы идентично фигме
+$color-primary: #7100ff;
+$color-accident: #ffd400;
+$dark-primary: #3b3748;
+$dark-secondary: #96949e;
+$light-primary: #fcfaf7;
+$light-secondary: #ebe9ed;
+$warning-error: #f40934;
+$green: #00b998;
+$white: #fff;
+$hover: #5100b8;
+$color-primary-transparent: rgba(#7100ff, .2);
+
+
+
+// ОСНОВНЫЕ БРЕЙКПОИНТЫ
+$desktop-max: 1440px; // максимальная ширина контента на декстопе
+// в этом проекте верстка пошла по пути desktop-first, поэтому указаны брейкпоинты в формате "MAX-WIDTH"
+$tablet: 1199px; // максимальная ширина для планшета (у нас проекте применяется в каталоге и хедере, чтобы не ломалась верстка)
+$aux-1023: 1023px; // вспомогательно, чтобы не ломалась верстка (каталог и еще пара мест)
+$mobile: 767px; // тут меняется на мобильные большинство стилей проекта
+// 575px брать не стал, верстка не ломается
+$tabletAlexey: 768px; // это бэкап, потом найти и поправить
+
+
+// ШРИФТЫ - здесь переменные только для основных свойств;
+// переменные применять через свойство font, например font: $h1-heading (предварительно подтянуть переменые через @use),
+// но проще будет делать @include mixin-name(предварительно подтянуть миксины через @use);
+// очередность сокращенных свойств: font-style font-weight font-size/-line-height font-family;
+// для каждого шрифта есть соотвествующий миксин (с межбукв.расстоянием, трансформом и пр., либо без таковых);
+
+// для десктопа
+$h1-desktop: normal 500 96px/96px 'TT Firs Neue', Arial, sans-serif; // заголовок страницы
+$h2-desktop: normal 500 48px/52px 'TT Firs Neue', Arial, sans-serif; // заголовок раздела
+$h3-desktop: normal 500 32px/36px 'TT Firs Neue', Arial, sans-serif; // заголовок блока - лид текст
+$h4-desktop: normal 500 24px/24px 'TT Firs Neue', Arial, sans-serif; // заголовок карточки
+$text-desktop: normal 400 18px/24px 'TT Firs Neue', Arial, sans-serif; // основной текст
+$subtext-desktop: normal 400 16px/20px 'TT Firs Neue', Arial, sans-serif; // дополнительный текст
+
+// для мобилы
+$h1-mobile: normal 500 44px/44px 'TT Firs Neue', Arial, sans-serif; // заголовок страницы
+$h2-mobile: normal 500 32px/36px 'TT Firs Neue', Arial, sans-serif; // заголовок раздела
+$h3-mobile: normal 500 24px/28px 'TT Firs Neue', Arial, sans-serif; // заголовок блока - лид текст
+$h4-mobile: normal 500 20px/24px 'TT Firs Neue', Arial, sans-serif; // заголовок карточки
+$text-mobile: normal 400 16px/20px 'TT Firs Neue', Arial, sans-serif; // основной текст
+$subtext-mobile: normal 400 16px/20px 'TT Firs Neue', Arial, sans-serif; // дополнительный текст
+
+// для кнопок
+$btn-text-desktop: normal 500 18px/24px 'TT Firs Neue', Arial, sans-serif; // текст кнопки десктоп
+$btn-text-mobile: normal 500 16px/20px 'TT Firs Neue', Arial, sans-serif; // текст кнопки мобила
+
+// иконочные шрифты
+$icon-text-desktop: normal normal 24px 'HF Icons'; // шрифт-иконка 24px/десктоп
+$icon-text-mobile: normal normal 20px 'HF Icons'; // шрифт-иконка 20px/мобила
+$icon-text-ico: normal normal 16px 'HF Icons'; // шрифт-иконка 16px/иконки мероприятий
+$icon-text: normal normal 100% 'HF Icons'; // шрифт-иконка без заданного размера по умолчанию
+
+
+
+// БОРДЕРЫ И СКРУГЛЕНИЯ УГЛОВ
+$border-none: 0;
+$border-thin: 1px solid $dark-primary;
+$border-light: 1px solid $light-secondary;
+$border-hover: 1px solid $hover;
+$border-bold: 2px solid $dark-primary;
+$border-bold-input: 2px solid $dark-secondary;
+$border-bold-white: 2px solid $white;
+$border-bold-primary: 2px solid $color-primary;
+$border-bold-error: 2px solid $warning-error;
+$border-bold-light: 2px solid $light-secondary;
+$border-thick-light: 4px solid $light-secondary;
+
+$radius-none: 0;
+$radius-large: 24px;
+$radius-small: 22px;
+$radius-btn-24: 24px;
+$radius-btn-26: 26px;
+$radius-top-26: 26px 26px 0 0;
+$radius-btn-100: 100px;
+$radius-100: 100px;
+
+
+
+// ТЕНИ - названы идентично фигме
+$drop-shadow: 0px 4px 12px 0px rgba($dark-primary, 0.12);
+$drop-shadow-small: 0px 2px 4px 0px rgba($dark-primary, 0.12);
+$divider-left: 1px 0px 0px 0px $light-secondary inset;
+$fixed-bar: 0px -8px 32px 0px rgba($dark-primary, 0.12);
+// в фигме есть еще два - пока не нашел их
+// $divider-top:
+// $divider-bottom:
+
+
+
+// ПАДДИНГИ, МАРЖИНЫ, ГЭПЫ
+$pad-4: 4px;
+$pad-8: 8px;
+$pad-12: 12px;
+$pad-16: 16px;
+$pad-20: 20px;
+$pad-24: 24px;
+$pad-28: 28px;
+$pad-32: 32px;
+$pad-36: 36px;
+$pad-40: 40px;
+$pad-48: 48px;
+$pad-80: 80px;
+$pad-89: 89px;
+$pad-120: 120px;
+$pad-160: 160px;
+$pad-240: 240px;
+$pad-320: 320px;
+
+$centered: 0 auto;
+
+$gap-4: 4px;
+$gap-8: 8px;
+
+
+// АЛЕКСЕЙ
+
+
+
+// АНДРЕЙ
+
+
+
+// ДМИТРИЙ
+
+
+
+// НИКИТА
+
+
+
+// ЕВГЕНИЙ
+

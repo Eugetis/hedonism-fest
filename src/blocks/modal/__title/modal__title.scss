@@ -1,0 +1,12 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.modal__title {
+  @include h2-desktop;
+}
+
+@media screen and (max-width: $mobile) {
+  .modal__title {
+    @include h2-mobile;
+  }
+}

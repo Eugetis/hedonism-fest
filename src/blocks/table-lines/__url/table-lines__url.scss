@@ -1,0 +1,17 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.table-lines__url {
+  @include btn-text-desktop;
+  color: $color-primary;
+  display: block;
+  word-break: break-word;
+  text-decoration: none;
+}
+
+@media screen and (max-width: $mobile) {
+  .table-lines__url {
+    @include btn-text-mobile;
+    max-width: 100%;
+  }
+}

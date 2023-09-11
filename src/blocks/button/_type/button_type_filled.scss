@@ -1,0 +1,12 @@
+@use 'variables' as *;
+
+.button_type_filled {
+  background: $color-primary;
+  color: $white;
+}
+
+.button_type_filled:hover {
+  background: $hover;
+  color: $white;
+  cursor: pointer;
+}

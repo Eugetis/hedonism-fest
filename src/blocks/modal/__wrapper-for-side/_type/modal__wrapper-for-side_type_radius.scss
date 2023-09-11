@@ -1,0 +1,9 @@
+@use 'variables' as *;
+
+@media screen and (max-width: $mobile) {
+  .modal__wrapper-for-side_type_radius {
+    overflow: hidden;
+    border: none;
+    border-radius: $radius-large $radius-large 0 0;
+  }
+}

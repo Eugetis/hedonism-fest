@@ -1,0 +1,15 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.footer__wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+@media all and (max-width: $mobile) {
+  .footer__wrapper {
+    flex-direction: column;
+    gap: 48px;
+  }
+}

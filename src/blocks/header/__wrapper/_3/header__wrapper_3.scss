@@ -1,0 +1,9 @@
+.header__wrapper_3 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; // подумать над flex-grow
+  align-items: center;
+  gap: 10px;
+}

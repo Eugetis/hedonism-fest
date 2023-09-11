@@ -1,0 +1,18 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.cards__item-btn-like {
+  all: unset;
+  cursor: pointer;
+  @include background("../../../images/icons/like-inactive.svg");
+  width: 24px;
+  height: 24px;
+  padding: $pad-12;
+}
+
+@media screen and (max-width: $mobile) {
+  .cards__item-btn-like {
+    width: 20px;
+    height: 20px;
+  }
+}

@@ -1,0 +1,25 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.geo__list-container {
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  height: auto; //
+  min-width: 320px; //
+  box-sizing: border-box;
+  padding: $pad-24 0;
+  border-radius: $radius-large;
+  background-color: $white;
+  box-shadow: $drop-shadow;
+
+  position: absolute;
+  left: 32px;
+  top: 52px;
+
+  // visibility: hidden;
+  // opacity: 0;
+  // transition-property: opacity, visibility;
+  // transition-duration: 0.3s, 0s;
+  // transition-delay: 0s, .5s;
+}

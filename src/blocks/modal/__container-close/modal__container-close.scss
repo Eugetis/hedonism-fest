@@ -1,0 +1,19 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.modal__container-close {
+  font: $icon-text-desktop;
+  padding: $pad-12;
+  border-radius: $radius-100;
+  background-color: $light-primary;
+  @include position-absolute-mixin(20px, false, false, 20px, false);
+  cursor: pointer;
+}
+
+@media screen and (max-width: $mobile) {
+  .modal__container-close {
+    font: $icon-text-mobile;
+    @include position-absolute-mixin(8px, false, false, 8px, false);
+  }
+}
+// поменять на кнопку

@@ -1,0 +1,14 @@
+@use 'variables' as *;
+
+.gallery__slider-button {
+  display: none;
+}
+
+@media all and (max-width: $mobile) {
+  .gallery__slider-button {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+    align-self: center;
+  }
+}

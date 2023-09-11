@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="RU">
+<html lang="RU" class="html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,34 +7,142 @@
     <meta name="keywords" content="HTML, CSS, JavaScript">
     <meta name="author" content="Евгений Тисленко, Никита Сазонов, Алексей Ефимов, Андрей Марахин, Георгий Медведский, Дмитрий Разумов">
     <title>ГедонизмФест - главная</title>
-    <link rel="icon" href="" type="">
-    <link rel="stylesheet" href="./pages/index.css">
 </head>
 
-<body class="page">
-    <header>
-      <!-- переписать ссылки в синтаксисе lodash -->
-      <img src="./images/hedonism-fest-logo.png" alt="Логотип">
-    </header>
-
+<body class="page page_id_index">
+    <%= require('html-loader!./pages/header.html').default %>
+    <!-- TODO: на index.html нужно скриптом добавлять хедеру стиль для появления после скролла на Х расстояние (стиль нужно написать)  -->
+    <button class="floating-button floating-button_type_up floating-button_hide link"><span class="floating-button__icon icon-arrow-up"></span></button>
     <main>
 
-      <!-- временно для навигации -->
-      <div>
-        <a href="./pages/about.html">Каталог</a>
-        <a href="./pages/for-participants.html">Участникам</a>
-        <a href="./pages/about.html">О фестивале</a>
-        <a href="./pages/thanks-for-application.html">Спасибо за заявку</a>
-        <a href="./pages/thanks-for-support.html">Спасибо за помощь</a>
-        <a href="./pages/404.html">404</a>
-        <a href="./pages/ui-kit.html">UI Kit</a>
-      </div>
+      <section class="intro" aria-label="обложка главной страницы">
+        <!-- закомментил, потому что наставник в итоге сказал не делать этот альтернативный хедер на главной странице -->
+        <!-- <div class="intro__header">
+          <img class="intro__image" src="<%=require('./images/Nochlezhka.svg')%>" alt="логотип Ночлежка">
+          <button class="intro__menu-button" type="button"><span class="button__icon icon-menu-burger"></span></button>
+        </div> -->
+        <div class="intro__container">
+          <p class="intro__text">узнать больше</p>
+          <a href="#about" class="intro__link floating-button link"><span class="floating-button__icon icon-arrow-down"></span></a>
+        </div>
+      </section>
+
+      <section class="info-section" id="about">
+        <div class="section-constraints section-constraints_size_large info-section__constraints info-section__constraints_position_center">
+          <div class="info-section__wrapper info-section__wrapper_size_small">
+            <h2 class="info-section__title">просто приятно помогать</h2>
+            <div class="info-section__content">
+              <p class="info-section__text">Пейте кофе в любимых заведениях, посещайте интересные мероприятия, устраивайте домашние посиделки с друзьями — и помогайте бездомным!</p>
+              <p class="info-section__text">Целую неделю 26 апреля — 2 мая вся выручка будет перечислена в пользу бездомных.</p>
+              <a href="./about.html" class="info-section__button button button_type_border">узнать подробнее</a>
+          </div>
+         </div>
+        </div>
+      </section>
+
+      <section class="popular-events">
+        <div class="popular-events__container popular-events__constraints">
+          <h2 class="popular-events__title">гедонизм-фест — это целая неделя, во время которой просто приятно</h2>
+          <div class="popular-events__tags">
+            <a href="#" class="button button_type_border">посетить мастер-класс<span class="button__icon icon-arrow-right"></span></a>
+            <a href="#" class="button button_type_border">выпить кофе<span class="button__icon icon-arrow-right"></span></a>
+            <a href="#" class="button button_type_border">не выходить из дома<span class="button__icon icon-arrow-right"></span></a>
+            <a href="#" class="button button_type_border">сходить на экскурсию<span class="button__icon icon-arrow-right"></span></a>
+            <a href="#" class="button button_type_border">побывать в музее<span class="button__icon icon-arrow-right"></span></a>
+          </div>
+          <!-- подгружаем часть секции из шалонного html файла со скроллом карточек -->
+          <!-- ВНИМАНИЕ! при клике на карточку тут предлагаю перебрасывать на страницу Каталог и открывать большую модалку там -->
+          <%= require('html-loader!./pages/particle-events-scroll.html').default %>
+          <a href="./catalog.html" class="popular-events__button button button_type_filled">смотреть все события</a>
+        </div>
+      </section>
+
+      <section class="figures section-constraints section-constraints_size_large">
+        <h2 class="figures__title">цифры дня</h2>
+        <div class="figures__container">
+          <img class="figures__image" src="<%=require('./images/cookies.svg')%>" alt="иллюстрация печенек">
+          <div class="figures__text-container">
+            <p class="figures__stats">15&nbsp;000</p>
+            <p class="figures__text">Столько печенья продали в поддержку акции</p>
+          </div>
+
+          <img class="figures__image" src="<%=require('./images/flover.svg')%>" alt="иллюстрация обедов">
+          <div class="figures__text-container">
+            <p class="figures__stats">2&nbsp;500</p>
+            <p class="figures__text">cтолько обедов приготовили для нуждающихся</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="info-section info-section_background_accident">
+        <div class="section-constraints section-constraints_size_large info-section__constraints info-section__constraints_position_center">
+          <div class="info-section__wrapper info-section__wrapper_size_small">
+            <h2 class="info-section__title">примите акцию у&nbsp;себя</h2>
+            <div class="info-section__content">
+              <p class="info-section__text">Кто может принять участие в акции?</p>
+              <p class="info-section__text">Абсолютно все. Продавайте кофе в своем кафе, устройте мастер-класс по вязанию или соберите друзей у себя дома. Помогать просто, узнайте подробности и заполните форму</p>
+              <a href="./for-participants.html" class="info-section__button info-section__button_style_invert button button_type_border">стать участником</a>
+          </div>
+         </div>
+        </div>
+      </section>
+
+      <section class="gallery">
+        <div class="section-constraints section-constraints_size_large gallery__constraints">
+          <h2 class="gallery__title">#hedonismfest</h2>
+          <p class="gallery__subtitle">Ставь хештег и попади в ленту на сайте</p>
+          <div class="gallery__slider">
+            <div class="gallery__slider-line">
+              <img class="gallery__image" src="<%=require('./images/coctail.jpg')%>" alt="пикник в парке">
+              <img class="gallery__image" src="<%=require('./images/picnic.jpg')%>" alt="девушка с бокалом">
+              <img class="gallery__image" src="<%=require('./images/chin-chin.jpg')%>" alt="бокалы с коктейлями">
+              <img class="gallery__image" src="<%=require('./images/museum.jpg')%>" alt="девушка в музее">
+              <img class="gallery__image" src="<%=require('./images/alco-party.jpg')%>" alt="вечеринка">
+            </div>
+            <div class="gallery__slider-button">
+              <div class="gallery__slider-radio gallery__slider-radio_active link"></div>
+              <div class="gallery__slider-radio link"></div>
+              <div class="gallery__slider-radio link"></div>
+              <div class="gallery__slider-radio link"></div>
+              <div class="gallery__slider-radio link"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="team section-constraints section-constraints_size_large">
+        <h2 class="team__title">уже в команде</h2>
+        <ul class="team__list">
+          <li class="team__element link">
+            <a class="team__link team__link_type_surf" href="https://www.surfcoffee.ru/" target="_blank"></a>
+          </li>
+          <li class="team__element link">
+            <a class="team__link team__link_type_gallery" href="https://www.galeria.spb.ru/" target="_blank"></a>
+          </li>
+          <li class="team__element link">
+            <a class="team__link team__link_type_market" href="https://www.vo-market.ru/" target="_blank"></a>
+          </li>
+          <li class="team__element link">
+            <a class="team__link team__link_type_surf" href="https://www.surfcoffee.ru/" target="_blank"></a>
+          </li>
+          <li class="team__element link">
+            <a class="team__link team__link_type_gallery" href="https://www.galeria.spb.ru/" target="_blank"></a>
+          </li>
+          <li class="team__element link">
+            <a class="team__link team__link_type_market" href="https://www.vo-market.ru/" target="_blank"></a>
+          </li>
+          <li class="team__element link">
+            <a class="team__link team__link_type_surf" href="https://www.surfcoffee.ru/" target="_blank"></a>
+          </li>
+          <li class="team__element link">
+            <a class="team__link team__link_type_gallery" href="https://www.galeria.spb.ru/" target="_blank"></a>
+          </li>
+        </ul>
+      </section>
 
     </main>
 
-    <footer>
-
-    </footer>
-
+    <%= require('html-loader!./pages/footer.html').default %>
 </body>
+
 </html>

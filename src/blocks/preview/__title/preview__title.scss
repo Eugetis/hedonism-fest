@@ -1,0 +1,18 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.preview__title {
+  @include h4-desktop;
+  color: $dark-primary;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+}
+
+@media screen and (max-width: $mobile) {
+  .preview__title {
+    @include h3-mobile;
+  }
+}

@@ -1,0 +1,98 @@
+@use 'variables' as *;
+
+
+// ШРИФТЫ для десктопа
+@mixin h1-desktop {
+  font: $h1-desktop;
+  letter-spacing: -1.92px;
+  text-transform: lowercase;
+  margin: 0;
+}
+@mixin h2-desktop {
+  font: $h2-desktop;
+  letter-spacing: -0.48px;
+  text-transform: lowercase;
+  margin: 0;
+}
+@mixin h3-desktop {
+  font: $h3-desktop;
+  letter-spacing: -0.32px;
+  text-transform: lowercase;
+  margin: 0;
+}
+@mixin h4-desktop {
+  font: $h4-desktop;
+  margin: 0;
+}
+@mixin text-desktop {
+  font: $text-desktop;
+  font-feature-settings: 'clig' off, 'liga' off;
+  margin: 0;
+}
+@mixin subtext-desktop {
+  font: $subtext-desktop;
+  font-feature-settings: 'clig' off, 'liga' off;
+  margin: 0;
+}
+
+// ШРИФТЫ для мобилы
+@mixin h1-mobile {
+  font: $h1-mobile;
+  margin: 0;
+}
+@mixin h2-mobile {
+  font: $h2-mobile;
+  margin: 0;
+}
+@mixin h3-mobile {
+  font: $h3-mobile;
+  margin: 0;
+}
+@mixin h4-mobile {
+  font: $h4-mobile;
+  font-feature-settings: 'clig' off, 'liga' off;
+  margin: 0;
+}
+@mixin text-mobile {
+  font: $text-mobile;
+  margin: 0;
+}
+@mixin subtext-mobile {
+  font: $subtext-mobile;
+  font-feature-settings: 'clig' off, 'liga' off;
+  margin: 0;
+}
+
+
+
+// Алексей
+
+
+
+// Андрей
+
+
+
+// Дмитрий
+@mixin btn-text-desktop {
+  font: $btn-text-desktop;
+  font-feature-settings: 'clig' off, 'liga' off;
+  margin: 0;
+}
+@mixin btn-text-mobile {
+  font: $btn-text-mobile;
+  font-feature-settings: 'clig' off, 'liga' off;
+  margin: 0;
+}
+
+// Никита
+
+
+// ЗАЧЕМ ОТДЕЛЬНАЯ ФУНКЦИЯ?
+// Георгий
+@mixin font-settings ($size, $style, $weight, $height){
+  font-size: $size;
+  font-style: $style;
+  font-weight: $weight;
+  line-height: $height;
+}

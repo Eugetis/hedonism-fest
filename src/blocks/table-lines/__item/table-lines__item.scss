@@ -1,0 +1,24 @@
+@use 'variables' as *;
+
+.table-lines__item {
+  list-style: none;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  box-sizing: border-box;
+  padding: $pad-12;
+  min-height: 48px;
+  gap: 24px;
+  background-color: $light-secondary;
+}
+
+.table-lines__item:nth-child(2n) {
+  background-color: $light-primary;
+}
+
+@media screen and (max-width: $mobile) {
+  .table-lines__item {
+    padding: $pad-8;
+    min-height: 36px;
+    gap: 16px;
+  }
+}

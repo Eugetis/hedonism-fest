@@ -1,0 +1,23 @@
+@use 'variables' as *;
+
+.participants__container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex-grow: 1;
+  padding-top: 40px;
+  box-sizing: border-box;
+  max-width: 960px;
+  width: 100%;
+  margin: $centered;
+}
+
+@media screen and (max-width: $mobile) {
+  .participants__container {
+    width: 100%;
+    gap: 0;
+    padding-top: 0;
+    height: fit-content;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,12 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.additional-section__title {
+  @include h2-desktop;
+}
+
+@media all and (max-width: $mobile) {
+  .additional-section__title {
+    @include h2-mobile;
+  }
+}

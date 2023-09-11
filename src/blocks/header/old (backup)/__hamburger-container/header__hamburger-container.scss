@@ -1,0 +1,14 @@
+@use 'variables' as *;
+.header__hamburger-container {
+  position: fixed;
+  z-index: 9999;
+  top: 25px;
+  right: 0px;
+  display: none;
+}
+
+@media screen and (max-width: $tabletAlexey) {
+  .header__hamburger-container {
+    display: block;
+  }
+}

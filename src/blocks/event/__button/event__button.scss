@@ -1,0 +1,11 @@
+@use 'variables' as *;
+
+.event__button {
+  padding: $pad-12 $pad-89;
+}
+
+@media screen and (max-width: $mobile) {
+  .event__button {
+    padding: $pad-12 $pad-20;
+  }
+}

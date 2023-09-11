@@ -1,0 +1,15 @@
+@keyframes openHeaderDropdown {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+  to {
+    display: flex;
+    visibility: visible;
+  }
+}
+
+.geo__list-container_opened {
+  display: flex;
+  animation: openHeaderDropdown 0.5s forwards;
+}

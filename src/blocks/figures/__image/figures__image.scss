@@ -1,0 +1,12 @@
+@use 'variables' as *;
+
+.figures__image {
+  display: none;
+}
+
+@media all and (max-width: $mobile) {
+  .figures__image {
+    display: block;
+    width: 100%;
+  }
+}

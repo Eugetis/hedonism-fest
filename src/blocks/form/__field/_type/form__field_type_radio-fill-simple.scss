@@ -1,0 +1,50 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.form__field_type_radio-fill-simple {
+  @include btn-text-desktop;
+  text-align: center;
+  background-color: $light-primary;
+  border: $border-bold;
+  transition: all .1s linear;
+}
+
+@media screen and (max-width: $mobile) {
+  .form__field_type_radio-fill {
+    @include btn-text-mobile;
+  }
+}
+
+.form__field_type_radio-fill-simple input[type="radio"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(0 0 0 0);
+}
+
+.form__field_type_radio-fill-simple:has(input[type="radio"]:disabled) {
+  background-color: $light-secondary;
+  border-color: $light-secondary;
+  color: $dark-secondary;
+  cursor: not-allowed;
+}
+
+.form__field_type_radio-fill-simple:has(input[type="radio"]:checked) {
+  background-color: $color-primary;
+  border-color: $color-primary;
+  color: $light-primary;
+}
+
+.form__field_type_radio-fill-simple:has(input[type="radio"]:checked:disabled) {
+  background-color: $color-primary;
+  border-color: $color-primary;
+  color: $light-primary;
+  cursor: not-allowed;
+}
+
+.form__field_type_radio-fill-simple:has(input[type="radio"]:not(:disabled):not(:checked):hover) {
+  border-color: $color-primary;
+  color: $color-primary;
+  cursor: pointer;
+}

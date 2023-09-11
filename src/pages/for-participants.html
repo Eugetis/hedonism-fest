@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="RU">
+<html lang="RU" >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,21 +7,363 @@
     <meta name="keywords" content="HTML, CSS, JavaScript">
     <meta name="author" content="Евгений Тисленко, Никита Сазонов, Алексей Ефимов, Андрей Марахин, Георгий Медведский, Дмитрий Разумов">
     <title>Участникам</title>
-    <link rel="icon" href="" type="">
 </head>
 
-<body class="page">
-    <header>
-      <h1>Участникам</h1>
-    </header>
+<body class="page page_id_for-participants">
+  <%= require('html-loader!./header.html').default %>
 
-    <main>
+  <main class="participants">
+    <h1 class="participants__title participants__title_type_desktop">Стать участником</h1>
 
-    </main>
+      <section class="participants__container participants__container_type_content">
+        <!-- ниже - альтеративный заголовок, который виден только до начала формы в мобиле -->
+        <p class="participants__title participants__title_type_mobile-start">Стать участником</p>
 
-    <footer>
+        <div class="participants__heading">
+          <h2 class="participants__subtitle">как участвовать?</h2>
+        </div>
 
-    </footer>
+        <ul class="participants__list">
+          <li class="question-block">
+            <div class="question-block__header">
+              <p class="question-block__numbering">1</p>
+              <h3 class="question-block__title">выбор категории</h3>
+            </div>
+            <p class="question-block__text">Определите, как вы хотите поддержать акцию: продавать напитки, блюда, провести мастер-класс или каким-то другим способом</p>
+          </li>
+          <li class="question-block">
+            <div class="question-block__header">
+              <p class="question-block__numbering">2</p>
+              <h3 class="question-block__title">фото и описание</h3>
+            </div>
+            <p class="question-block__text">Подготовьте описание и фото вашего заведения. Это нужно для создания карточки в нашем каталоге событий</p>
+          </li>
+          <li class="question-block">
+            <div class="question-block__header">
+              <p class="question-block__numbering">3</p>
+              <h3 class="question-block__title">ссылки и соцсети</h3>
+            </div>
+            <p class="question-block__text">Опубликуйте ссылку на вашу карточку в соцсетях, расскажите у себя на сайте, чтобы больше людей узнали о вашем участии</p>
+          </li>
+          <li class="question-block">
+            <div class="question-block__header">
+              <p class="question-block__numbering">4</p>
+              <h3 class="question-block__title">координатор</h3>
+            </div>
+            <p class="question-block__text">Далее с вами свяжется координатор акции, который будет помогать по любым вопросам до и во время акции</p>
+          </li>
+          <li class="question-block">
+            <div class="question-block__header">
+              <p class="question-block__numbering">5</p>
+              <h3 class="question-block__title">перевод средств</h3>
+            </div>
+            <p class="question-block__text">После акции переведите собранные пожертвования в Ночлежку через сайт или по безналичному расчету</p>
+          </li>
+        </ul>
+
+        <div class="participants__buttons-block fixed-bar fixed-bar_type_align-right">
+          <button id="open-form-btn" class="participants__button button button_type_filled" type="button">заполнить форму</button>
+        </div>
+
+      </section>
+
+
+      <!-- форма обернута в контейнер, чтобы задать геометрию секции без необходимости делать это в блоке form -->
+      <section class="participants__container participants__container_type_form hidden" aria-label="форма участника">
+
+        <form class="form hidden" name="forParticipants" id="forParticipants">
+
+          <fieldset class="form__step-container hidden" id="step-1">
+            <div class="form__step-content">
+              <div class="form__step-legend">
+                <p class="form__step-legend-text">шаг 1 из 4</p>
+                <p class="form__step-legend-title">выберите категорию</p>
+              </div>
+              <div class="form__step-fields-wrapper">
+                <div class="form__radio-group-wrapper">
+                  <label class="form__field form__field_type_radio-fill" for="cafe">
+                    кафе/бар/ресторан
+                    <input type="radio" name="category" id="cafe" value="cafe" required>
+                  </label>
+
+                  <label class="form__field form__field_type_radio-fill" for="lesson">
+                    мастер-класс/лекция
+                    <input type="radio" name="category" id="lesson" value="lesson" required>
+                  </label>
+
+                  <label class="form__field form__field_type_radio-fill" for="party">
+                    посиделки/вечеринка
+                    <input type="radio" name="category" id="party" value="party" required>
+                  </label>
+
+                  <label class="form__field form__field_type_radio-fill" for="another">
+                    другое
+                    <input type="radio" name="category" id="another" value="another" required>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="participants__buttons-block fixed-bar fixed-bar_type_align-right">
+              <button class="participants__button button button_type_border" type="button" data-action="cancel">отмена</button>
+              <button class="participants__button button button_type_filled button__submit" type="button" data-action="continue">далее</button>
+            </div>
+            <!-- ВНИМАНИЕ: в десктопе и мобиле отличаются текстовки кнопок - уточню, надо ли это делать -->
+
+          </fieldset>
+
+          <fieldset class="form__step-container hidden" id="step-2">
+            <div class="form__step-content">
+              <div class="form__step-legend">
+                <p class="form__step-legend-text">шаг 2 из 4</p>
+                <p class="form__step-legend-title">заполните форму</p>
+                <p class="form__step-legend-text">Для участия вы можете выбрать:</p>
+                <ul class="form__list">
+                  <li>определенную позицию из меню</li>
+                  <li>группу позиций</li>
+                  <li>процент от продаж определенных позиций или всего меню</li>
+                </ul>
+              </div>
+
+              <div class="form__step-fields-wrapper">
+
+                <div class="form__radio-group-wrapper form__radio-group-wrapper_type_scenario-selected">
+                  <label class="form__field form__field_type_radio-fill">
+                    кафе/бар/ресторан
+                    <input type="radio" value="cafe" checked>
+                  </label>
+                </div>
+
+                <div class="form__step-fields-group">
+
+                  <div class="form__field-wrapper">
+                    <select class="form__field form__field_type_select" id="city" name="city" required>
+                      <option value="" disabled selected hidden>выберите из списка</option>
+                      <option value="moscow">Москва</option>
+                      <option value="spb">Санкт-Петербург</option>
+                      <option value="sochi">Сочи</option>
+                      <option value="kaluga">Калуга</option>
+                      <option value="ekatirinburg">Екатеринбург</option>
+                    </select>
+                  </div>
+
+                  <div class="form__field-wrapper">
+                    <label class="form__label" for="place-name">название заведения</label>
+                    <input
+                      type="text"
+                      class="form__field form__field_type_input"
+                      id="place-name"
+                      name="placeName"
+                      placeholder="введите название заведения"
+                      pattern="^[A-Za-zА-Яа-яЁё\s]+$"
+                      data-error-message="разрешены только латинские, кириллические буквы и пробелы"
+                      required>
+                    <span class="form__field-error place-name-error"></span>
+                  </div>
+
+                  <div class="form__field-wrapper">
+                    <label class="form__label" for="contact-person">контактное лицо</label>
+                    <input
+                      type="text"
+                      class="form__field form__field_type_input"
+                      id="contact-person"
+                      name="contactPerson"
+                      placeholder="введите ФИО"
+                      pattern="^[A-Za-zА-Яа-яЁё\s]+$"
+                      data-error-message="разрешены только латинские, кириллические буквы и пробелы"
+                      required>
+                    <span class="form__field-error contact-person-error"></span>
+                  </div>
+
+                  <div class="form__field-wrapper">
+                    <label class="form__label" for="contact-telephone">телефон для связи с организатором</label>
+                    <input
+                      type="text"
+                      class="form__field form__field_type_input"
+                      id="contact-telephone"
+                      name="contacTelephone"
+                      value="+7("
+                      pattern="^(\+7)[\-\d\(\)\-]+$"
+                      data-error-message="телефон должен начинаться с +7, разрешены только цифры, знаки ),(,+,-"
+                      required
+                      minlength="8">
+                    <span class="form__field-error contact-telephone-error"></span>
+                  </div>
+
+                  <div class="form__field-wrapper">
+                    <label class="form__label" for="description">описание</label>
+                    <textarea
+                      class="form__field form__field_type_textarea"
+                      rows="3"
+                      id="description"
+                      name="description"
+                      placeholder="Укажите, что из меню будет принимать участие в акции"
+                      data-error-message="разрешены только латинские, кириллические буквы и пробелы"
+                      required></textarea>
+                    <span class="form__field-error description-error"></span>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="participants__buttons-block fixed-bar fixed-bar_type_align-right">
+              <button class="participants__button button button_type_border" type="button" data-action="back">назад</button>
+              <button class="participants__button button button_type_filled button__submit" type="button" data-action="continue">далее</button>
+            </div>
+
+          </fieldset>
+
+          <fieldset class="form__step-container hidden" id="step-3">
+            <div class="form__step-content">
+              <div class="form__step-legend">
+                <p class="form__step-legend-text">шаг 3 из 4</p>
+                <p class="form__step-legend-title">укажите контакты и часы работы</p>
+                <p class="form__step-legend-text">Эти данные появятся в описании карточки вашего мероприятия в нашем каталоге событий</p>
+              </div>
+              <div class="form__step-fields-wrapper">
+                <div class="form__step-fields-group">
+
+                  <div class="form__field-wrapper">
+                    <label class="form__label" for="working-hours">часы работы заведения</label>
+                    <input
+                      type="text"
+                      class="form__field form__field_type_input"
+                      id="working-hours"
+                      name="workingHours"
+                      placeholder="например: 10:00-13:00, 13:00-19:00"
+                      pattern="^[0-2]\d:[0-5]\d\-[0-2]\d:[0-5]\d$"
+                      data-error-message="пожалуйста, введите время работы в формате чч:мм-чч:мм"
+                      required>
+                    <span class="form__field-error working-hours-error"></span>
+                  </div>
+
+                  <div class="form__field-wrapper">
+                    <label class="form__label" for="place-address">адрес заведения</label>
+                    <input
+                      type="text"
+                      class="form__field form__field_type_input"
+                      id="place-address"
+                      name="placeAddress"
+                      placeholder="каждый адрес с новой строки"
+                      pattern="^[0-9A-Za-zА-Яа-яЁё\s]+$"
+                      data-error-message="разрешены только латинские, кириллические буквы и пробелы"
+                      required>
+                    <span class="form__field-error place-address-error"></span>
+                  </div>
+
+                  <div class="form__field-wrapper">
+                    <label class="form__label" for="place-telephone">номер телефон заведения</label>
+                    <input
+                      type="text"
+                      class="form__field form__field_type_input"
+                      id="place-telephone"
+                      name="placeTelephone"
+                      value="+7("
+                      pattern="^(\+7)[\-\d\(\)\-]+$"
+                      data-error-message="телефон должен начинаться с +7, разрешены только цифры, знаки ),(,+,-"
+                      required
+                      minlength="7">
+                    <span class="form__field-error place-telephone-error"></span>
+                  </div>
+
+                  <div class="form__field-wrapper">
+                    <label class="form__label" for="place-site">ссылка на сайт</label>
+                    <input
+                      type="url"
+                      class="form__field form__field_type_input"
+                      id="place-site"
+                      name="placeSite"
+                      placeholder="https://"
+                      data-error-message="ссылка должна начинаться с https:// или http://"
+                      required>
+                    <span class="form__field-error place-site-error"></span>
+                  </div>
+
+                  <div class="form__field-wrapper">
+                    <label class="form__label" for="place-socials">ссылки на соцсети</label>
+                    <input
+                      type="url"
+                      class="form__field form__field_type_input"
+                      id="place-socials"
+                      name="placeSocials"
+                      placeholder="каждую ссылку с новой строки"
+                      data-error-message="ссылка должна начинаться с https:// или http://"
+                      required>
+                    <span class="form__field-error place-socials-error"></span>
+                  </div>
+
+                  <div class="form__field-wrapper">
+                    <label class="form__label" for="place-description">описание</label>
+                    <textarea
+                      class="form__field form__field_type_textarea"
+                      rows="3"
+                      id="place-description"
+                      name="placeDescription"
+                      placeholder="Напишите небольшое приглашение своим посетителям. Людям нравятся простые обращения, дружественный тон"
+                      data-error-message="разрешены только латинские, кириллические буквы и пробелы"
+                      required></textarea>
+                    <span class="form__field-error place-description-error"></span>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="participants__buttons-block fixed-bar fixed-bar_type_align-right">
+              <button class="participants__button button button_type_border" type="button" data-action="back">назад</button>
+              <button class="participants__button button button_type_filled button__submit" type="button" data-action="continue">далее</button>
+            </div>
+          </fieldset>
+
+          <fieldset class="form__step-container hidden" id="step-4">
+            <div class="form__step-content">
+              <div class="form__step-legend">
+                <p class="form__step-legend-text">шаг 4 из 4</p>
+                <p class="form__step-legend-title">добавление фото</p>
+                <p class="form__step-legend-text">Как правило, профессиональные фото выглядят более привлекательно.</p>
+                <p class="form__step-legend-text">Технические требования:</p>
+                <ul class="form__list">
+                  <li>формат: jpeg</li>
+                  <li>вес: не более 5 МБ</li>
+                  <li>альбомная ориентация</li>
+                  <li>соотношение сторон: 16:9</li>
+                  <li>ширина не менее 1600 пикселей</li>
+                </ul>
+              </div>
+
+              <div class="form__step-fields-wrapper">
+                <div class="form__step-fields-group">
+                  <div class="form__upload-container">
+                    <label class="form__label form__label_type_upload-file" for="file"></label>
+                    <input class="form__field_type_file" type="file" accept="image/jpeg" id="file" name="file">
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="participants__buttons-block fixed-bar fixed-bar_type_align-right">
+              <button class="participants__button button button_type_border" type="button" data-action="back">назад</button>
+              <button
+              class="participants__button button button_type_filled button__submit"
+              type="button"
+              form="forParticipants"
+              onclick="window.location.href='../thanks-for-application.html'"
+              data-action="submit">завершить</button>
+            </div>
+          </fieldset>
+
+        </form>
+      </section>
+
+    <!-- </section> -->
+
+  </main>
+
+    <%= require('html-loader!./footer.html').default %>
 
 </body>
 </html>

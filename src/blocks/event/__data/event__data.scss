@@ -1,0 +1,14 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.event__data {
+  @include flex-center-row-mixin;
+  justify-content: space-between;
+  gap: 28px
+}
+
+@media screen and (max-width: $mobile) {
+  .event__data {
+    gap: 16px
+  }
+}

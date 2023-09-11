@@ -1,0 +1,11 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.header__nav-title {
+  @include subtext-desktop;
+  letter-spacing: 0px;
+  text-align: left;
+  color:  rgba(150, 148, 158, 1);
+}
+
+

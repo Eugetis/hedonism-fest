@@ -1,0 +1,28 @@
+@use 'variables' as *;
+
+.header__burger-button {
+  display: none;
+}
+
+@media all and (max-width: $tablet) {
+  .header__burger-button {
+    width: 24px; //
+    height: 24px; //
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    color: $dark-primary;
+    font: $icon-text-desktop;
+    cursor: pointer;
+  }
+}
+
+@media all and (max-width: $mobile) {
+  .header__burger-button {
+    width: 20px; //
+    height: 20px; //
+    font: $icon-text-mobile;
+  }
+}

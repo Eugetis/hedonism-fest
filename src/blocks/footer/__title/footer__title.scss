@@ -1,0 +1,13 @@
+@use 'mixins' as *;
+
+.footer__title {
+  @include h3-desktop;
+  transition-property: font-size;
+  transition-duration: 0.5s;
+}
+
+@media all and (max-width: 950px) {
+  .footer__title {
+    @include h3-mobile;
+  }
+}

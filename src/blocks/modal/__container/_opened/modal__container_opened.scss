@@ -1,0 +1,15 @@
+@use 'variables' as *;
+
+.modal__container_opened {
+  right: 0;
+  cursor: default;
+  transition: right 0.5s ease;
+}
+
+@media screen and (max-width: $mobile) {
+  .modal__container_opened {
+    right: unset;
+    bottom: 0;
+    transition: bottom 1.5s ease;
+  }
+}

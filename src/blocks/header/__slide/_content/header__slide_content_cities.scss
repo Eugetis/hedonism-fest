@@ -1,0 +1,49 @@
+@use 'variables' as *;
+
+@keyframes animate {
+  from {
+    opacity: 0
+  }
+  to {
+    opacity: 1
+  }
+}
+.header__slide_content_cities {
+  height: 100%;
+  z-index: 3;
+  position: absolute;
+  width: 100%;
+  background-color: $light-primary;
+  animation-name: animate;
+  animation-duration: 0.5s;
+  transition: transform 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.header__slide_content_cities > .button__arrow-back {
+  margin-left: 20px;
+  margin-bottom: 30px;
+}
+
+
+
+// translate: -100vw;
+
+// .header__popup-city-select {
+//   height: 100vh;
+//   margin-left: 20px;
+//   margin-top: 68px;
+//   width: 87%;
+//   display: none;
+
+//   }
+
+//   .header__popup-city-select_opened {
+//     display: flex;
+//     flex-direction: column;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//   }

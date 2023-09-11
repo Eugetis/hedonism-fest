@@ -1,0 +1,16 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.preview__text {
+  @include subtext-desktop;
+  color: $dark-secondary;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@media screen and (max-width: $mobile) {
+  .preview__text {
+    @include text-mobile;
+  }
+}

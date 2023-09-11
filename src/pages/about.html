@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="RU">
+<html lang="RU" class="html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,21 +7,132 @@
     <meta name="keywords" content="HTML, CSS, JavaScript">
     <meta name="author" content="Евгений Тисленко, Никита Сазонов, Алексей Ефимов, Андрей Марахин, Георгий Медведский, Дмитрий Разумов">
     <title>О фестивале</title>
-    <link rel="icon" href="" type="">
 </head>
 
-<body class="page">
-    <header>
-      <h1>О фестивале</h1>
-    </header>
+<body class="page page_id_about">
+  <%= require('html-loader!./header.html').default %>
+  <button class="floating-button floating-button_type_up floating-button_hide link"><span class="floating-button__icon icon-arrow-up"></span></button>
+  <main>
+    <h1 class="page__title">О фестивале</h1>
 
-    <main>
+    <section class="info-section">
+      <div class="section-constraints section-constraints_size_small info-section__constraints info-section__constraints_position_center">
+        <div class="info-section__wrapper info-section__wrapper_size_small">
+          <h2 class="info-section__title">Помогать, просто наслаждаясь жизнью — это реальность.</h2>
+          <div class="info-section__content">
+            <p class="info-section__text">ГедонизмФест — история о том, что благотворительность становится еще проще,
+              приятнее, она идет рука об руку с повседневными, приятными мелочами. И это просто и приятно.</p>
+            <p class="info-section__text">С 2014 года мы провели 15 акций Эспресс-помощь, за которые собрали 5 744 522 руб.
+              С помощью специалистов по социальной работе, юристов и психологов 600 человек выбрались с улицы и начали новую жизнь.</p>
+
+            <!-- элемент с цифрой пожертвований для мобилы -->
+            <div class="info-section__figure-wrapper">
+              <div class="info-section__figure-container info-section__figure-container_content_donation-mobile info-section__figure-container_type_mobile">
+              </div>
+              <div class="info-section__stats-container">
+                <h2 class="info-section__title info-section__title_type_figure">5 744 522 &#8381;</h2>
+                <p class="info-section__text">cтолько было собрано на&nbsp;работу Ночлежки</p>
+              </div>
+            </div>
+
+            <p class="info-section__text">Настало время расти. Наш фестиваль уже не умещался в привычных рамках и превратился
+              из однодневной акции в целый недельный ГедонизмФест, и что это, если не удовольствие?</p>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-section">
+      <div class="section-constraints section-constraints_size_small info-section__constraints info-section__constraints_position_right">
+        <div class="info-section__wrapper info-section__wrapper_align_center info-section__wrapper_size_large">
+          <div class="info-section__content">
+            <h2 class="info-section__title">зачем мы это делаем?</h2>
+            <p class="info-section__text">Бездомному человеку намного проще возвращаться к обычной жизни,
+              когда есть возможность не волноваться каждый день о том, где сегодня ночевать и что сегодня есть.</p>
+
+            <!-- элемент с числом людей для мобилы -->
+            <div class="info-section__figure-wrapper">
+              <div class="info-section__figure-container info-section__figure-container_content_people-mobile info-section__figure-container_type_mobile">
+              </div>
+              <div class="info-section__stats-container">
+                <h2 class="info-section__title info-section__title_type_figure">600</h2>
+                <p class="info-section__text">человек выбрались с&nbsp;улицы и&nbsp;начали новую жизнь</p>
+              </div>
+            </div>
+
+            <p class="info-section__text">Жизнь в человеческих условиях, поддержка наших специалистов по социальной работе,
+              юристов и психологов — это всё элементы реабилитации после травм и тяжести уличных месяцев или лет.</p>
+            <a href="https://homeless.ru/" target="_blank" class="info-section__button button button_type_border">наши проекты<span class="button__icon icon-arrow-right"></span></a>
+          </div>
+
+          <!-- элемент с цифрой пожертвований для десктопа -->
+          <div class="info-section__figure-container info-section__figure-container_content_donation info-section__figure-container_type_desktop">
+            <div class="info-section__stats-container info-section__stats-container_position_left">
+              <h2 class="info-section__title info-section__title_type_figure">5 744 522 &#8381;</h2>
+              <p class="info-section__text">cтолько было собрано на&nbsp;работу Ночлежки</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="info-section">
+      <div class="section-constraints section-constraints_size_small info-section__constraints info-section__constraints_position_left">
+        <div class="info-section__wrapper info-section__wrapper_align_center info-section__wrapper_size_large">
+
+          <!-- элемент с числом людей для десктопа -->
+          <div class="info-section__figure-container info-section__figure-container_content_people info-section__figure-container_type_desktop">
+            <div class="info-section__stats-container info-section__stats-container_position_right">
+              <h2 class="info-section__title info-section__title_type_figure">600</h2>
+              <p class="info-section__text">человек выбрались с&nbsp;улицы и&nbsp;начали новую жизнь</p>
+            </div>
+          </div>
+
+          <div class="info-section__content">
+            <h2 class="info-section__title">просто приятно помогать</h2>
+            <p class="info-section__text">Мы видим цель, и идем к ней вместе с вами — сейчас мы собираем деньги на работу
+              Консультационной службы.</p>
+            <p class="info-section__text">Сотрудники Консультационной службы в Москве и Санкт-Петербурге помогают людям,
+              оказавшимся на грани бездомности, не оказаться на улице, а тем, кто уже попал в беду, — справиться с проблемами,
+              которые привели человека на улицу.</p>
+
+            <!-- элемент с картинкой 30 лет для мобилы -->
+            <div class="info-section__figure-wrapper">
+              <div class="info-section__figure-container info-section__figure-container_content_ubilei-mobile info-section__figure-container_type_mobile">
+              </div>
+            </div>
+
+            <p class="info-section__text">В отличие от государственных служб, мы не смотрим, где у человека была последняя
+              регистрация и какое у него гражданство. Мы помогаем всем, кому можем помочь.</p>
+            <button type="button" class="info-section__button info-section__button_donate button button_type_filled">поддержать</button>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-section">
+      <div class="section-constraints section-constraints_size_small info-section__constraints info-section__constraints_position_right">
+        <div class="info-section__wrapper info-section__wrapper_align_center info-section__wrapper_size_large">
+          <div class="info-section__content">
+            <h2 class="info-section__title">Ночлежке 30 лет</h2>
+            <p class="info-section__text">Мы кормим нуждающихся людей, даём им крышу над головой, а наши специалисты помогают им выбраться с улицы и вернуться к обычной жизни. И наше главное богатство — это доверие людей.</p>
+            <p class="info-section__text">На сайте мы выкладываем полные годовые отчёты и даже зарплаты всех сотрудников. Спасибо всем, кто верит нам, в нас и в то, что люди не должны оставаться один на один со своей бедой.</p>
+            <a href="https://homeless.ru/" target="_blank" class="info-section__button button button_type_border">перейти на сайт<span class="button__icon icon-arrow-right"></span></a>
+          </div>
+          <div>
+
+          <!-- элемент с картинкой 30 лет для десктопа -->
+          <div class="info-section__figure-container info-section__figure-container_content_ubilei info-section__figure-container_type_desktop">
+          </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
 
     </main>
 
-    <footer>
-
-    </footer>
-
+    <%= require('html-loader!./footer.html').default %>
 </body>
 </html>

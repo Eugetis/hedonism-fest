@@ -1,0 +1,19 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.cards__item-title {
+  @include h4-desktop;
+  color: $dark-primary;
+  text-transform: lowercase;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+}
+
+@media screen and (max-width: $mobile) {
+  .cards__item-title {
+    @include h3-mobile;
+  }
+}

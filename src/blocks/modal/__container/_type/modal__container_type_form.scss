@@ -1,0 +1,18 @@
+@use 'variables' as *;
+
+.modal__container_type_form {
+  max-width: 612px;
+  gap: 20px;
+  border-radius: $radius-large;
+  padding: $pad-40;
+}
+
+@media screen and (max-width: $mobile) {
+  .modal__container_type_form {
+    max-width: 100%;
+    width: 100%;
+    gap: 0;
+    padding: 0;
+    border-radius: $radius-large $radius-large 0 0;
+  }
+}

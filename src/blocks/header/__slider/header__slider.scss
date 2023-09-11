@@ -1,0 +1,30 @@
+@use 'variables' as *;
+
+.header__slider {
+  display: none; // модификатор header__slider_opened переключает display на flex, чтобы выезжало мобильное меню
+}
+
+
+@media screen and (max-width: $tablet) {
+  .header__slider {
+    display: none;
+
+    height: calc(100vh - 88px);
+    background-color: $light-primary;
+    position: fixed;
+    top: 88px;
+    left: 0;
+    z-index: 5;
+    padding-top: $pad-20;
+    box-sizing: border-box;
+    transform: translateX(100vw);
+    transition: transform 0.5s ease-in-out;
+    }
+}
+
+@media screen and (max-width: $mobile) {
+  .header__slider {
+    height: calc(100vh - 68px);
+    top: 68px;
+  }
+}

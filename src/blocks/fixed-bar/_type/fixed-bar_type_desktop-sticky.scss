@@ -1,0 +1,16 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.fixed-bar_type_desktop-sticky {
+  padding: $pad-20;
+  box-shadow: $fixed-bar;
+  padding: $pad-20 $pad-40;
+  position: sticky;
+  bottom: 0;
+}
+
+@media screen and (max-width: $mobile) {
+  .fixed-bar_type_desktop-sticky {
+    padding: $pad-20;
+  }
+}

@@ -1,0 +1,49 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.header__form-city {
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  height: auto; //
+  width: 100%;
+  min-width: 320px; //
+  box-sizing: border-box;
+  padding: $pad-24 0;
+  border-radius: $radius-large;
+  background-color: $white;
+  box-shadow: $drop-shadow;
+
+  position: absolute;
+  left: 32px;
+  top: 52px;
+
+  // visibility: hidden;
+  // opacity: 0;
+  // transition-property: opacity, visibility;
+  // transition-duration: 0.3s, 0s;
+  // transition-delay: 0s, .5s;
+}
+
+.header__form-city > .header__form-city-label {
+  @include text-desktop;
+  width: 100%;
+  min-height: 48px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+  padding: 0 $pad-24;
+  box-sizing: border-box;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.header__form-city > .header__form-city-label:hover {
+  background-color: $light-primary;
+}
+
+.header__form-city > .header__form-city-label:active {
+  background-color: $color-primary;
+}

@@ -1,0 +1,21 @@
+@use 'variables' as *;
+
+.modal__header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  box-sizing: border-box;
+  padding: 0;
+  background-color: $light-primary;
+}
+
+@media screen and (max-width: $mobile) {
+  .modal__header {
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    padding: $pad-36 $pad-20 $pad-16;
+  }
+}

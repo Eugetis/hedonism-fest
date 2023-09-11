@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="RU">
+<html lang="RU" class="html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,21 +7,154 @@
     <meta name="keywords" content="HTML, CSS, JavaScript">
     <meta name="author" content="Евгений Тисленко, Никита Сазонов, Алексей Ефимов, Андрей Марахин, Георгий Медведский, Дмитрий Разумов">
     <title>Каталог</title>
-    <link rel="icon" href="" type="">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=e322b8e0-449e-4ab9-a4c2-1bca8355d634&lang=ru_RU" type="text/javascript"></script>
 </head>
 
-<body class="page">
-    <header>
-      <h1>Каталог</h1>
-    </header>
+<!-- ВНИЗУ СТРАНИЦЫ - ШАБЛОН КАРТОЧКИ И ЧЕТЫРЕ МОДАЛКИ -->
+
+<body class="page page_id_catalog">
+    <%= require('html-loader!./header.html').default %>
 
     <main>
 
+      <section class="catalog">
+
+        <div class="catalog__constraints">
+
+          <!-- начало сайдбара (виден только в десктопе) -->
+          <div class="catalog__sidebar">
+
+            <div class="catalog__section catalog__section_type_grow">
+              <div class="catalog__section">
+                <h1 class="catalog__title">Куда пойти</h1>
+              </div>
+              <div class="catalog__section">
+                <h3 class="catalog__subtitle" id="eventTags">Тип события</h3>
+                <div class="catalog__filters-group">
+                  <button class="tag-filter tag-filter_type_selected" id="button__all" type="button">все</button>
+                  <button class="tag-filter" id="button__favorite" type="button">хочу пойти<span class="tag-filter__icon icon-cross-small tag-filter__icon_type_hidden"></span></button>
+                  <button class="tag-filter" type="button">разное<span class="tag-filter__icon icon-cross-small tag-filter__icon_type_hidden"></span></button>
+                  <button class="tag-filter" type="button">лекции<span class="tag-filter__icon icon-cross-small tag-filter__icon_type_hidden"></span></button>
+                  <button class="tag-filter" type="button">мастер-классы<span class="tag-filter__icon icon-cross-small tag-filter__icon_type_hidden"></span></button>
+                  <button class="tag-filter" type="button">кафе<span class="tag-filter__icon icon-cross-small tag-filter__icon_type_hidden"></span></button>
+                  <button class="tag-filter" type="button">музеи<span class="tag-filter__icon icon-cross-small tag-filter__icon_type_hidden"></span></button>
+                  <button class="tag-filter" type="button">экскурсии<span class="tag-filter__icon icon-cross-small tag-filter__icon_type_hidden"></span></button>
+                  <button class="tag-filter" type="button">доставка<span class="tag-filter__icon icon-cross-small tag-filter__icon_type_hidden"></span></button>
+                  <button class="tag-filter" type="button">магазины<span class="tag-filter__icon icon-cross-small tag-filter__icon_type_hidden"></span></button>
+                </div>
+              </div>
+              <div class="catalog__section">
+                <h3 class="catalog__subtitle" id="dayTags">Дни</h3>
+                <div class="catalog__filters-group">
+                  <button class="tag-filter tag-filter_type_selected" id="button__all" type="button">все</button>
+                  <button class="tag-filter" type="button">сегодня<span class="tag-filter__icon icon-cross-small tag-filter__icon_type_hidden"></span></button>
+                  <button class="tag-filter" type="button">завтра<span class="tag-filter__icon icon-cross-small tag-filter__icon_type_hidden"></span></button>
+                  <button class="tag-filter" type="button">послезавтра<span class="tag-filter__icon icon-cross-small tag-filter__icon_type_hidden"></span></button>
+                  <button class="tag-filter" type="button">чт, 09 сен.<span class="tag-filter__icon icon-cross-small tag-filter__icon_type_hidden"></span></button>
+                  <button class="tag-filter" type="button">пт, 10 сен.<span class="tag-filter__icon icon-cross-small tag-filter__icon_type_hidden"></span></button>
+                  <button class="tag-filter" type="button">сб, 11 сен.<span class="tag-filter__icon icon-cross-small tag-filter__icon_type_hidden"></span></button>
+                  <button class="tag-filter" type="button">вс, 12 сен.<span class="tag-filter__icon icon-cross-small tag-filter__icon_type_hidden"></span></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="catalog__section catalog__section_type_bottom">
+              <h3 class="catalog__subtitle">Хотите принять участие в акции?</h3>
+              <p class="catalog__text">заполните заявку, и мы с вами обязательно свяжемся.</p>
+              <a href="./for-participants.html" class="button button_type_border">узнать подробности<span class="button__icon icon-arrow-right"></span></a>
+            </div>
+
+          </div>
+          <!-- конец сайдбара -->
+
+          <div class="catalog__content">
+
+            <div class="catalog__header">
+              <!-- после вставки свитчеров в хедер надо посмотреть, что будет на ширине 320px - скорее всего появится горизонтальный скролл -->
+              <div class="tab-switcher">
+                <button class="tab-switcher__button"><span class="tab-switcher__icon icon-marker"></span>карта</button>
+                <button class="tab-switcher__button tab-switcher__button_active"><span class="tab-switcher__icon icon-list"></span>список</button>
+              </div>
+              <p class="catalog__text catalog__text_type_counter">Показано 1&#8209;13&nbsp;из&nbsp;129</p>
+              <!-- тут нужно js для расчета чисел (сначала для быстроты делаем рендеринг сразу всех, потом может будем подгружать по 12) -->
+              <button class="catalog__mob-filters-button button button_type_border" type="button"><span class="tag-filter__icon icon-settings-sliders"></span>фильтры</button>
+            </div>
+
+
+            <!-- тут секция с сообщением, что результатов поиска нет
+            (чтобы сделать видимой, надо добавить класс catalog__events-container_opened) -->
+            <section class="catalog__events-container catalog__events-container_type_no-events">
+              <div class="additional-section">
+                <div class="additional-section__wrapper">
+                  <div class="additional-section__container">
+                    <h2 class="additional-section__title">ой!</h2>
+                    <p class="additional-section__subtitle">в вашем списке сохранённых событий пока что пусто</p>
+                    <!-- тут нужно ссылку на все события -->
+                    <a href="./catalog.html" class="additional-section__button button button_type_filled">смотреть все события</a>
+                  </div>
+                  <img class="additional-section__image" src="<%=require('../images/no-results.svg')%>" alt="расстроенный персонаж">
+                </div>
+              </div>
+            </section>
+
+
+            <section class="catalog__events-container catalog__events-container_type_map" aria-label="карта событий">
+              <!-- тут будет блок с яндекс картой -->
+              <div class="catalog__map-container"></div>
+              <!-- чтобы включить, нужно будет добавить класс catalog__events-container_opened -->
+            </section>
+
+
+            <!-- сетка карточек -->
+            <section class="catalog__events-container catalog__events-container_type_grid" aria-label="сетка событий">
+              <ul class="cards cards_type_grid">
+                <template id="card">
+                  <li class="cards__item link" data-id="0" data-coordinates="0" data-type="">
+                    <img class="cards__item-img">
+                    <div class="cards__item-content">
+                      <div class="cards__item-data">
+                        <p class="cards__item-text" id="cards__item-type"></p>
+                        <p class="cards__item-text cards__item-text_type_fit" id="cards__item-date"></p>
+                      </div>
+                      <div class="cards__item-info">
+                        <h2 class="cards__item-title"></h2>
+                        <p class="cards__item-description"></p>
+                      </div>
+                      <div class="cards__item-address">
+                        <p class="cards__item-text" id="cards__item-address"></p>
+                        <p class="cards__item-text cards__item-text_type_fit" id="cards__item-count"></p>
+                      </div>
+                    </div>
+                    <button class="cards__item-like card-control link"><span class="card-control__icon icon-heart"></span></button>
+                  </li>
+                </template>
+              </ul>
+
+            </section>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- подтягиваем модалку с мобильными фильтрами (открывается через добавление класса modal_opened) -->
+      <%= require('html-loader!./particle-modal-mobile-filters.html').default %>
+
+      <!-- подтягиваем модалку с формой оплатой билетов (открывается через добавление класса modal_opened) -->
+      <%= require('html-loader!./particle-modal-payment.html').default %>
+
+      <!-- подтягиваем модалку с просмотром мероприятия (открывается через добавление класса modal_opened) -->
+      <%= require('html-loader!./particle-modal-event.html').default %>
+
+      <!-- подтягиваем модалку с превьюшкой для мобилы (открывается через добавление класса modal_opened) -->
+      <%= require('html-loader!./particle-modal-mobile-preview.html').default %>
+
+      <!-- подтягиваем модалку со списком мероприятий "Хочу пойти" (открывается через добавление класса modal_opened) -->
+      <%= require('html-loader!./particle-modal-favourite.html').default %>
+
+
     </main>
 
-    <footer>
-
-    </footer>
-
+    <!-- в макетах показано, что тут не будет футера -->
+    <!-- <%= require('html-loader!./footer.html').default %> -->
 </body>
 </html>

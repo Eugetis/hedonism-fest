@@ -1,0 +1,12 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.event__title {
+  @include h3-desktop;
+}
+
+@media screen and (max-width: $mobile) {
+  .event__title {
+    @include h3-mobile;
+  }
+}

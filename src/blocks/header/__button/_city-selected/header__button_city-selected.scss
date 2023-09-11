@@ -1,0 +1,14 @@
+@use '_variables' as *;
+.header__button_city-selected {
+  width: 164px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 12px 20px 12px 0px;
+  border: none;
+  background-color: #FCFAF7;
+  font: $btn-text-desktop;
+  letter-spacing: 0px;
+  text-align: center;
+  color: $dark-primary;
+}

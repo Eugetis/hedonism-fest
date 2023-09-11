@@ -1,0 +1,15 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.modal__container_type_side {
+  max-width: 700px;
+  box-shadow: unset;
+  width: 100%;
+  margin: 0;
+}
+
+@media screen and (max-width: $mobile) {
+  .modal__container_type_side {
+    max-width: 100%;
+  }
+}

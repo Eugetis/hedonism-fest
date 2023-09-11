@@ -1,0 +1,13 @@
+@use 'variables' as *;
+
+.footer {
+  background-color: $light-secondary;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+@media all and (max-width: $mobile) {
+  .footer {
+    background-color: $color-accident;
+  }
+}

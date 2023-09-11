@@ -1,0 +1,7 @@
+@use 'variables' as *;
+
+@media screen and (max-width: $tablet) {
+  .header__button {
+    display: none;
+  }
+}

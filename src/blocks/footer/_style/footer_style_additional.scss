@@ -1,0 +1,11 @@
+@use 'variables' as *;
+
+.footer_style_additional {
+  background-color: $light-primary;
+}
+
+@media all and (max-width: $mobile) {
+  .footer_style_additional {
+    background-color: $color-accident;
+  }
+}

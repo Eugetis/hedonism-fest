@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="RU">
+<html lang="RU" class="html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,21 +7,35 @@
     <meta name="keywords" content="HTML, CSS, JavaScript">
     <meta name="author" content="Евгений Тисленко, Никита Сазонов, Алексей Ефимов, Андрей Марахин, Георгий Медведский, Дмитрий Разумов">
     <title>Спасибо за заявку</title>
-    <link rel="icon" href="" type="">
 </head>
 
-<body class="page">
-    <header>
-      <h1>Спасибо за заявку</h1>
-    </header>
+<body class="page page_id_thanks-for-application">
+    <%= require('html-loader!./header.html').default %>
 
     <main>
 
+      <section class="additional-section additional-section_type_purple">
+        <div class="additional-section__wrapper">
+          <div class="additional-section__container">
+            <h1 class="additional-section__title">спасибо за заявку!</h1>
+            <p class="additional-section__subtitle">с вами свяжутся в ближайшее время</p>
+            <a class="additional-section__button button button_type_border button_type_invert" href="../index.html">на главную</a>
+          </div>
+          <img class="additional-section__image" src="<%=require('../images/thanks-for-application.svg')%>" alt="ошибка">
+        </div>
+      </section>
+
+      <section class="popular-events">
+        <div class="popular-events__container popular-events__constraints">
+          <h2 class="popular-events__title">Просто приятно посетить</h2>
+          <!-- подгружаем часть секции из шалонного html файла со скроллом карточек -->
+          <%= require('html-loader!./particle-events-scroll.html').default %>
+          <a href="./catalog.html" class="popular-events__button button button_type_filled">смотреть все события</a>
+        </div>
+      </section>
+
     </main>
 
-    <footer>
-
-    </footer>
-
+    <%= require('html-loader!./footer.html').default %>
 </body>
 </html>

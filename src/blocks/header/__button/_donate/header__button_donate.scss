@@ -1,0 +1,14 @@
+@use 'variables' as *;
+.header__button_donate {
+  background-color: #7100FF;
+  color: #FCFAF7;
+  border-radius: 26px;
+  width: 153px;
+  height: 48px;
+  cursor: pointer;
+}
+@media screen and (max-width: $tablet) {
+  .header__button_donate {
+    display: none;
+  }
+}

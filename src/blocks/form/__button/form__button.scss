@@ -1,0 +1,40 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.form__button{
+    @include font-settings(16px, normal, 500, 20px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 20px;
+    border-radius: $radius-small;
+    border: $border-bold;
+    background: none;
+    cursor: pointer;
+    width: 48%;
+    transition: .3s;
+}
+
+@media(hover:hover){
+    .form__button:hover{
+        opacity: .5;
+    }
+}
+@media(hover:none){
+    .form__button:active{
+        opacity: .5;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .form__button{
+        @include font-settings(18px, normal, 500, 24px);
+        min-width: fit-content;
+        max-width: 204px;
+        padding: 12px 24px;
+        margin-left: 0;
+    }
+    .form__button:first-of-type{
+        margin-right: 14px;
+    }
+}

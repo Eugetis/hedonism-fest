@@ -1,0 +1,13 @@
+@use 'variables' as *;
+
+.catalog__map-container {
+  display: flex;//block;
+  flex-grow: 1;
+  box-sizing: border-box;
+}
+
+// @media screen and (max-width: $mobile) {
+//   .catalog__map-container {
+
+//   }
+// }

@@ -1,0 +1,16 @@
+@use 'variables' as *;
+
+.page {
+  width: 100%;
+  background-color: $light-primary;
+  font-family: 'TT Firs Neue', Arial, sans-serif;
+  color: $dark-primary;
+  position: relative;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}

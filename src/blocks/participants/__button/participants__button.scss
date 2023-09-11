@@ -1,0 +1,53 @@
+@use 'variables' as *;
+
+.participants__button {
+  margin-top: 8px;
+  min-width: 200px;
+}
+
+@media all and (max-width: $mobile) {
+  .participants__button {
+    margin-top: 0;
+    min-width: unset;
+    width: 100%;
+  }
+}
+
+
+
+// .participants__button{
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   padding: $pad-12 $pad-20;
+
+//   border-radius: $radius-small;
+//   border: $border-bold;
+//   background: none;
+//   cursor: pointer;
+//   width: 100%;
+//   transition: .3s;
+// }
+
+// @media(hover:hover){
+//   .participants__button:hover{
+//     opacity: .5;
+//   }
+// }
+// @media(hover:none){
+//   .participants__button:active{
+//     opacity: .5;
+//   }
+// }
+
+// @media screen and (min-width: 1024px) {
+//   .participants__button{
+//     min-width: fit-content;
+//     max-width: 204px;
+//     padding: $pad-12 $pad-24;
+//     margin-left: 0;
+//   }
+//   .participants__button:first-of-type{
+//     margin-right: 12px;
+//   }
+// }

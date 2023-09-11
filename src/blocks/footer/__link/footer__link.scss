@@ -1,0 +1,29 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.footer__link {
+  @include btn-text-desktop;
+  color: $dark-primary;
+  text-decoration: none;
+  width: 100%;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition-property: font-size;
+  transition-duration: 0.5s;
+
+}
+
+@media all and (max-width: 950px) {
+  .footer__link {
+    @include btn-text-mobile;
+    min-height: 44px;
+  }
+}
+
+@media all and (max-width: $mobile) {
+  .footer__link {
+    justify-content: space-between;
+  }
+}

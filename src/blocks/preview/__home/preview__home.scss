@@ -1,0 +1,17 @@
+@use 'variables' as *;
+
+.preview__home {
+  display: none;
+  margin: 0 auto;
+  width: 40px;
+  height: 4px;
+  border-radius: $radius-100;
+  background-color: $dark-secondary;
+}
+
+@media screen and (max-width: $mobile) {
+  .preview__home {
+    display: block;
+    line-height: 28px;
+  }
+}

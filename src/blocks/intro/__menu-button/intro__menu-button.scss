@@ -1,0 +1,23 @@
+@use 'variables' as *;
+
+.intro__menu-button {
+  display: none;
+}
+
+@media all and (max-width: $mobile) {
+  .intro__menu-button {
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    color: $dark-primary;
+    font: $icon-text-mobile;
+    cursor: pointer;
+  }
+}
+
+
+
