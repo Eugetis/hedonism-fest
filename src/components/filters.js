@@ -238,7 +238,8 @@ export const getFilterCards = () => {
     filteredCardsByDay = cards;
   }
 
-  activeTags['eventTags'].forEach(event => {
+  const events = (activeTags['eventTags'].size === 0) ? tags : activeTags['eventTags'];
+  events.forEach(event => {
     let res;
     res = filteredCardsByDay.filter(card => {
         return event.includes(card.type)
