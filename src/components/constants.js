@@ -49,7 +49,7 @@ export const page = document.querySelector('.page');
 // export const headerMobileTop = document.querySelector('.header__mobile-top');
 export const dropDownMenuButtonText = document.querySelector('.geo__city-name');
 export const dropDownMenuButtonTextMobile = document.querySelector('.geo__city-name_type_mobile');
-
+export const mobileMenuButtonIcon = mobileMenuButton.querySelector('.button__icon');
 
 // Алексей -> end!
 
