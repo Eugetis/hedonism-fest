@@ -157,7 +157,7 @@ const isValid = (formElement, inputElement, settings) => {
       // Если проходит, скроем
       hideInputError(formElement, inputElement, settings);
     }
-  } 
+  }
 };
 
 const hasInvalidInput = (inputList) => {
@@ -170,7 +170,7 @@ const hasInvalidInput = (inputList) => {
       return !inputElement.value;
     }
   })
-}; 
+};
 
 
 
@@ -183,7 +183,7 @@ const toggleButtonState = (inputList, buttonElement, settings) => {
     // иначе сделай кнопку активной
     enableButton(buttonElement, settings);
   }
-}; 
+};
 
 
 
@@ -203,13 +203,12 @@ const setEventListeners = (formElement, settings) => {
       inputElement.addEventListener('input', () => {
         // Внутри колбэка вызовем isValid,
         // передав ей форму и проверяемый элемент
-        console.log(inputElement);
         isValid(formElement, inputElement, settings);
         toggleButtonState(inputList, buttonElement, settings);
       });
     });
   }
-}; 
+};
 
 
 

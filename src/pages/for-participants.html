@@ -83,22 +83,22 @@
                 <div class="form__radio-group-wrapper">
                   <label class="form__field form__field_type_radio-fill" for="cafe">
                     кафе/бар/ресторан
-                    <input type="radio" name="category" id="cafe" value="cafe" required checked>
+                    <input type="radio" name="category" id="cafe" value="cafe" required>
                   </label>
 
                   <label class="form__field form__field_type_radio-fill" for="lesson">
                     мастер-класс/лекция
-                    <input type="radio" name="category" id="lesson" value="lesson" disabled required>
+                    <input type="radio" name="category" id="lesson" value="lesson" required>
                   </label>
 
                   <label class="form__field form__field_type_radio-fill" for="party">
                     посиделки/вечеринка
-                    <input type="radio" name="category" id="party" value="party" disabled required>
+                    <input type="radio" name="category" id="party" value="party" required>
                   </label>
 
                   <label class="form__field form__field_type_radio-fill" for="another">
                     другое
-                    <input type="radio" name="category" id="another" value="another" disabled required>
+                    <input type="radio" name="category" id="another" value="another" required>
                   </label>
                 </div>
               </div>
@@ -349,9 +349,9 @@
               <button class="participants__button button button_type_border" type="button" data-action="back">назад</button>
               <button
               class="participants__button button button_type_filled button__submit"
-              type="submit"
+              type="button"
               form="forParticipants"
-              onclick="window.location.href='./thanks-for-application.html'"
+              onclick="window.location.href='../thanks-for-application.html'"
               data-action="submit">завершить</button>
             </div>
           </fieldset>

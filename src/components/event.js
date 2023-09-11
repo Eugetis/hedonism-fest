@@ -452,13 +452,11 @@ const cardLikeLocalController = (card, type) => {
     case 'add':
       spanLike.classList.remove('icon-heart');
       spanLike.classList.add('card-control__icon_color_red', 'icon-heart-filled');
-      console.log(spanLike);
       break;
 
     case 'delete':
       spanLike.classList.remove('card-control__icon_color_red', 'icon-heart-filled');
       spanLike.classList.add('icon-heart');
-      console.log(spanLike);
       break;
   }
 }

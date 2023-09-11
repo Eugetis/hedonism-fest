@@ -50,7 +50,6 @@ export const setFiltersEventListener = () => {
 // контроллер обработки нажатия на кнопку "Хочу пойти" таг фильтров
 // в заключении дергает функцию обновления информации на страницах (список\карта)
 export const favoriteClickController = async (evt) => {
-  console.log('--> favoriteClickController');
 
   const target = evt.target;
   const button = target.closest('.tag-filter'); // нажатая кнопка фильтра

@@ -25,6 +25,7 @@ export const getCards = async () => {
     console.log(e.message, + ' getCards')
   }
 }
+
 // Функция которая тянет города с API
 export const getCities = async () => {
   try {
@@ -41,6 +42,7 @@ export const getCities = async () => {
     console.log(e.message, ' getCities')
   }
 }
+
 // Функция которая возвращает конкретную карточку по ID
 export const getCardById = async (id) => {
   try {

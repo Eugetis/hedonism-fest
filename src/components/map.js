@@ -73,7 +73,6 @@ const openCustomBalloon = (object, position) => {
   const page = document.querySelector('.page_id_catalog');
   let left = position[0];
   let top = position[1];
-  console.log(position);
 
   // const modalSelector = document.querySelector('.modal_id_event-mobile-preview');
   const modalContainer = mapModalTemplate.querySelector('.modal__container');
@@ -237,7 +236,6 @@ const getGeoObjsFromCards = (cards) => {
   const infoGeoObjs = [];
 
   cards.forEach(card => {
-    // console.log(card);
     card.location.forEach( l => {
       const coord = l.coordinates.split(', ');
       const infoGeoObj = {

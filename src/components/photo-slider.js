@@ -7,8 +7,6 @@ const sliderImages = document.querySelectorAll('.gallery__image');
 let sliderCount = 0;
 let sliderWidth;
 
-// console.log(sliderImages);
-
 window.addEventListener('resize', showSlide);
 
 export function showSlide() {

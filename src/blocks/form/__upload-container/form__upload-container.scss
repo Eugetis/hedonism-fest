@@ -6,6 +6,9 @@
   background: $light-primary;
   transition: .3s;
   box-sizing: border-box;
+
+  background-size:cover;
+  background-position: center;
 }
 
 .form__upload-container .form__field_type_file {

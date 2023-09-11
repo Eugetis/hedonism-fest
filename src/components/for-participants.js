@@ -36,8 +36,10 @@ function closeForm() {
 }
 // отобразить филсет
 function showField(field) {
-    field.classList.remove(hidden)
+    field.classList.remove(hidden);
+    window.scrollTo(0, 0);
 }
+
 // скрыть филдсет
 function hideField(field) {
     field.classList.add(hidden)
@@ -133,6 +135,22 @@ dropArea.addEventListener('drop', evt => {
     }
 });
 
+
+// Евгений - подстановка загруженной картинки на фон контейнера
+document.querySelector('.form__upload-container').addEventListener('change', readURL, true);
+
+function readURL() {
+  const uploadContainer = document.querySelector('.form__upload-container');
+  const image = uploadContainer.querySelector('.form__field_type_file').files[0];
+  const reader = new FileReader();
+  reader.onloadend = function() {
+    uploadContainer.style.backgroundImage = 'url(' + reader.result + ')';
+    uploadContainer.querySelector('.form__label_type_upload-file').style.opacity = 0;
+  }
+  if(image) {
+    reader.readAsDataURL(image);
+  }
+}
 
 } // это закрытие конструкции if-else
 
