@@ -1,7 +1,9 @@
-import {modalController, setTabSwitchEventListener, initEventsContainer, checkFavorites, checkFavoritesRef, showNoLikesPage} from "./catalog";
+import {modalController, setTabSwitchEventListener, initEventsContainer, catalogController, checkFavorites, checkFavoritesRef, showNoLikesPage} from "./catalog";
 import {openModal, closeModal, removeModal} from "./modal";
 import {getCardById} from "./api";
-import { showMap, moveMapNode, createMap } from "./map";
+import { moveMapNode, createMap, renderMapController } from "./map";
+import { renderFavoriteCards, deactivateFavorite } from "./filters";
+import { setLikeInHeader, clearLikeInHeader } from './header.js'
 // РАБОТА С МЕРОПРИЯТИЕМ
 
 // Если вдруг кому-то нужно что-то дописать в этом файле, помимо основного ответственного за эту функциональность,
@@ -43,6 +45,7 @@ export const prepareCard = ({cards}, cardTemplate, type = 'default') => {
     const [card] = cards;
     const cardsCount = card.location.length - 1;
     const cardLocation = card.location.splice(1, cardsCount);
+    //const cardLocation = card.location.slice(1, cardsCount);
     const result = [];
 
     for (let i = 0; i < cardsCount; i++) {
@@ -92,42 +95,24 @@ export const modalCreate = ({cards}, modalTemplate) => {
 }
 
 export const modalFavoriteControllerRef = (event) => {
-  if (checkFavoritesRef()) {
-    if (!event.target.closest('.page_id_catalog')) {
-      return window.location.href = 'http://localhost:8080/catalog.html?event=favorite';
-    }
+  if (!event.target.closest('.page_id_catalog')) {
+    return window.location.href = 'http://localhost:8080/catalog.html?event=favorite';
   } else {
-    showNoLikesPage(document.querySelector('.catalog__constraints'));
+    renderFavoriteCards();
   }
 }
 
-export const modalFavoriteController = (event) => {
-  const filterGroup = document.querySelector('#eventTags');
-  const buttonFavorite = filterGroup.closest('.catalog__section').querySelector('#button__favorite');
-  buttonFavorite.classList.toggle('tag-filter_type_selected');
-  if (checkFavorites()) {
-    initEventsContainer(document.querySelector('.catalog__constraints').querySelector('.tab-switcher'));
-    if (!event.target.closest('.page_id_catalog')) {
-      return window.location.href = 'http://localhost:8080/catalog.html?event=favorite';
-    }
-    const modal = document.querySelector('#modal-favorite').content;
-    modalFavoriteHandler(modal, 'open');
-  } else {
-    showNoLikesPage(document.querySelector('.catalog__constraints'));
-  }
+export const modalFavoriteController = (cards) => {
+  const modal = document.querySelector('#modal-favorite').content;
+   modalFavoriteHandler(modal, 'open', cards);
 }
-
-// export const modalFavoriteRedirect = () => {
-//   const modal = document.querySelector('#modal-favorite').content;
-// }
 
 export const catalogRedirectController = async () => {
   const queryParams = new URLSearchParams(window.location.search);
   const action = queryParams.get("event");
 
   if (action === 'favorite') {
-    const modal = document.querySelector('#modal-favorite').content;
-    modalFavoriteHandler(modal, 'open');
+    renderFavoriteCards();
     return null;
   }
 
@@ -139,7 +124,7 @@ export const catalogRedirectController = async () => {
   }
 }
 
-export const modalFavoriteHandler = async (modal, type) => {
+export const modalFavoriteHandler = (modal, type, cards) => {
   const page = document.querySelector('.page');
   const modalTemplate = modal.querySelector('.modal_id_favourites').cloneNode(true);
   const modalBackButton = modalTemplate.querySelector('#button__back');
@@ -150,14 +135,16 @@ export const modalFavoriteHandler = async (modal, type) => {
   const cardTemplate = document.querySelector('.cards_type_grid').querySelector('#card').content;
   switch (type) {
     case 'open':
-      const events = await getFavoriteEvents();
+      //const events = await getFavoriteEvents();   // Dmitry
+      const cardsCopy = structuredClone(cards);
+      const events = {cards};
       const preparedCards = prepareCard(events, cardTemplate);
       addCard(preparedCards, catalogGridContainer, 'count', preparedCards.length ? preparedCards.length : 0);
       openModal(modalTemplate); // Dmitry
       page.append(modalTemplate);
       moveMapNode(mapContainer, modalMapContainer); // Dmitry
       createMap(modalMapContainer); // там внутри проверка если карты еще нет она создастся (пришли с другой страницы сразу в модалку)
-      showMap();
+      renderMapController(cardsCopy);
       modalBackButton.addEventListener('click', modalBackHandler);
       initEventsContainer(modalTabSwitcher); // Dmitry
       setTabSwitchEventListener(modalTabSwitcher); // Dmitry
@@ -170,7 +157,7 @@ export const modalFavoriteHandler = async (modal, type) => {
   }
 }
 
-const getFavoriteEvents = async () => {
+export const getFavoriteEvents = async () => {
   const eventsFromStorage = getStorageValueByKey('likes');
   const result = {cards: []};
   if (!eventsFromStorage) {
@@ -305,6 +292,7 @@ const modalBackHandler = (event) => {
     const modalMapContainer = modal.querySelector('.catalog__map-container'); // Dmitry
     const mapContainer = document.querySelector('.catalog__events-container_type_map'); // Dmitry
     moveMapNode(modalMapContainer, mapContainer);
+    deactivateFavorite();
     closeModal(modal);
     removeModal(modal);
   } else {
@@ -330,6 +318,7 @@ export const modalAddressHandler = async (event, id) => {
   const mapContainer = document.querySelector('.catalog__events-container_type_map').querySelector('.catalog__map-container');
 
   const cards = await getCardById(modalId);
+  const cardsCopy = structuredClone(cards);
   const cardCount = cards.cards[0].location.length - 1;
   const preparedCards = prepareCard(cards, cardTemplate, 'address');
   addCard(preparedCards, modalContainer, 'count', cardCount);
@@ -337,7 +326,7 @@ export const modalAddressHandler = async (event, id) => {
 
   moveMapNode(mapContainer, modalMapContainer); // Dmitry
   createMap(modalMapContainer); // там внутри проверка если карты еще нет она создастся (пришли с другой страницы сразу в модалку)
-  showMap();
+  renderMapController(cardsCopy.cards);
   initEventsContainer(modalTabSwitcher); // Dmitry
   setTabSwitchEventListener(modalTabSwitcher); // Dmitry
 }
@@ -494,12 +483,16 @@ export const addLikeToStorage = (card) => {
   cardLikeLocalController(card, 'add');
   likesArray.push(id);
   localStorage.setItem('likes', JSON.stringify(likesArray));
+  setLikeInHeader();  // Dmitry
 }
 
 // Функция которая удаляет ID той карточки на которой стоял лайк
 const removeLikeFromStorage = (id, likesArray) => {
   const clearedArray = likesArray.filter((item) => item !== id);
   localStorage.setItem('likes', JSON.stringify(clearedArray));
+  if (clearedArray.length === 0) {  // Dmitry
+    clearLikeInHeader();            // Dmitry
+  }                                 // Dmitry
 }
 
 // Функция которая отлавливает нажатия внутрии секции CARDS, и взависимости от нажатия производит какие-либо действия, если нажата кнопка лайка, то добавляет лайк, если нажато любое другое место, то открывает модалку
@@ -544,7 +537,7 @@ export const getStorageValueByKey = (key) => {
   return JSON.parse(localStorage.getItem(key));
 }
 // Функция которая проверяет есть ли ключ в localStorage
-const hasKeyInStorage = (key) => {
+export const hasKeyInStorage = (key) => {
   if (localStorage.getItem(key) === null) {
     return false;
   }
@@ -580,7 +573,14 @@ export const getCardsFromLocaleStorage = () => {
   return getStorageValueByKey('cards');
 }
 
-
+// возвращает массив событий из массива карточек
+export const getEventsListFromCards = (cardsObj, eventsList) => {
+  const cards = cardsObj.cards;
+  const cardEvents = cards.map(card => card.type);
+  // массив событий
+  const uniqEvents = cardEvents.filter((event, index) => cardEvents.indexOf(event) === index);
+  return uniqEvents.forEach(item => eventsList.push(item));
+}
 // Дмитрий -> end!
 
 // Андрей - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

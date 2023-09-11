@@ -1,3 +1,4 @@
+import { modalFavoriteControllerRef, hasKeyInStorage, getStorageValueByKey } from './event.js'
 // что-то по теме
 
 // Если вдруг кому-то нужно что-то дописать в этом файле, помимо основного ответственного за эту функциональность,
@@ -52,9 +53,33 @@
 // Никита -> end!
 
 // Дмитрий - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+export const setLikeInHeader = () => {
+  const buttonFavorite = document.querySelector('#button__favorite_ref');
+  const span = buttonFavorite.querySelector('.button__icon');
+  span.classList.remove('icon-heart');
+  span.classList.add('icon-heart-filled');
+}
 
+export const clearLikeInHeader = () => {
+  const buttonFavorite = document.querySelector('#button__favorite_ref');
+  const span = buttonFavorite.querySelector('.button__icon');
+  span.classList.remove('icon-heart-filled');
+  span.classList.add('icon-heart');
+}
 
+const headerFavoriteButton = document.querySelector('#button__favorite_ref');
+headerFavoriteButton.addEventListener('click', evt => modalFavoriteControllerRef(evt));
 
+export const updateLikeInHeader = () => {
+  if (hasKeyInStorage('likes')) {
+    const likesArray = getStorageValueByKey('likes');
+    if (likesArray.length !== 0) {
+      setLikeInHeader();  // Dmitry
+    } else {
+      clearLikeInHeader();  // Dmitry
+    }
+  }
+}
 // Дмитрий -> end!
 
 // Андрей - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

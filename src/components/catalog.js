@@ -6,13 +6,12 @@ import {
   addCard,
   removeCards,
   addCardsToLocalStorage,
-  getStorageValueByKey
+  getEventsListFromCards
 } from './event';
-import { modalFilters, tabSwitcher, mapContainer} from './constants.js';
+import { modalFilters, tabSwitcher, mapContainer, eventsList } from './constants.js';
 import { openModal } from './modal.js';
-import { createMap,showMap } from './map.js'
-import { setFiltersEventListener } from './filters.js'
-import { arrayValues } from './utils.js'
+import { createMap, showMap, disableMapClicks, enableMapClicks } from './map.js'
+import { setFiltersEventListener, deactivateFavorite } from './filters.js'
 
 // ФУНКЦИОНАЛ СТРАНИЦЫ "КАТАЛОГ"
 
@@ -30,10 +29,14 @@ export const catalogController = async (section, template) => {
   // Dmitry -> end!
   const cards = await getCards();
   // Dmitry
+  // получаем список событий из карточек в eventsList
+  getEventsListFromCards(cards, eventsList);
+  // по нему инициализируем кнопки фильтров Тип события
+  //todo? -> initEventsFilterButtons(eventsList);
   // сохраняем все карточки сразу при первой отрисовке в local Storage
   // вешаем на все кнопки таг фильтров слушателей, которые вызывают универсалный контроллер фильтрации
   addCardsToLocalStorage(cards);
-  await createMap(mapContainer);
+  createMap(mapContainer);
   setFiltersEventListener();
   // Dmitry -> end!
   const preparedCards = prepareCard(cards, template);
@@ -45,8 +48,7 @@ export const catalogController = async (section, template) => {
 // дергаем эту функцию как только обработали кнопки фильтрации для перерисовки карточек
 export const renderCatalog = (section, template, filteredCards) => {
   removeCards(section);
-  const cards = arrayValues(Object.values(filteredCards));
-  const preparedCards = prepareCard({cards}, template);
+  const preparedCards = prepareCard({cards: filteredCards}, template);
   return addCard(preparedCards, section);
 }
 // Dmitry -> end!
@@ -85,29 +87,6 @@ const getCardsByCount = (cards, count) => {
 
 // Дмитрий - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-//
-export const checkFavoritesRef = () => {
-  const filterGroup = document.querySelector('#eventTags');
-  const buttonFavorite = document.querySelector('#button__favorite_ref');
-  const likesArray = getStorageValueByKey('likes');
-  if (likesArray === null || likesArray.length === 0) {
-    console.log(!buttonFavorite.classList.contains('tag-filter_type_selected'));
-    return !(buttonFavorite.classList.contains('tag-filter_type_selected'));
-  }
-  return true;
-}
-//
-export const checkFavorites = () => {
-  const filterGroup = document.querySelector('#eventTags');
-  const buttonFavorite = filterGroup.closest('.catalog__section').querySelector('#button__favorite');
-  const likesArray = getStorageValueByKey('likes');
-  if (likesArray === null || likesArray.length === 0) {
-    console.log(!buttonFavorite.classList.contains('tag-filter_type_selected'));
-    return !(buttonFavorite.classList.contains('tag-filter_type_selected'));
-  }
-  return true;
-}
-
 // переключаем отображение в контейнере карта\список
 const toggleContainerView = (target) => {
   const mapContainer = target.querySelector('.catalog__events-container_type_map');
@@ -117,17 +96,20 @@ const toggleContainerView = (target) => {
     mapContainer.classList.add('catalog__events-container_opened');
     listContainer.classList.remove('catalog__events-container_opened');
     showMap();
+    enableMapClicks(mapContainer);
   } else {
     mapContainer.classList.remove('catalog__events-container_opened');
     listContainer.classList.add('catalog__events-container_opened');
+    disableMapClicks(mapContainer);
   }
 }
 //
-export const defaultContainerView = (target) => {
+export const setDefaultContainerView = (target) => {
   const mapContainer = target.querySelector('.catalog__events-container_type_map');
   const listContainer = target.querySelector('.catalog__events-container_type_grid');
   mapContainer.classList.remove('catalog__events-container_opened');
   listContainer.classList.add('catalog__events-container_opened');
+  disableMapClicks(mapContainer);
 }
 //
 export const showNoLikesPage = (target) => {
@@ -138,27 +120,25 @@ export const showNoLikesPage = (target) => {
   mapContainer.classList.remove('catalog__events-container_opened');
   listContainer.classList.remove('catalog__events-container_opened');
   noLikesContainer.classList.add('catalog__events-container_opened');
+
+  disableMapClicks(mapContainer);
 }
 // переключение контейнера карта\список, если карта то актуализируем её
 const handleTabEvent = (evt) => {
   evt.preventDefault();
 
   const target = evt.target.closest('.catalog__content') || evt.target.closest('.favourites-list');
-  const noLikesContainer = target.querySelector('.catalog__events-container_type_no-events')
+  const noLikesContainer = document.querySelector('.catalog__events-container_type_no-events')
   const inModal = target.classList.contains('favourites-list');
 
   //переключаем табы на переключателе
   toggleTabSwitcher(evt);
 
-  if (inModal) {
-    toggleContainerView(target);
-  } else {
-    if (checkFavorites()) {
+  if (!noLikesContainer.classList.contains('catalog__events-container_opened')) {
+    if (!inModal) {
       noLikesContainer.classList.remove('catalog__events-container_opened');
-      toggleContainerView(target);
-    } else {
-      showNoLikesPage(target);
     }
+    toggleContainerView(target);
   }
 }
 
@@ -177,26 +157,46 @@ const toggleTabSwitcher = (evt) => {
   });
 }
 
+const setDefaultTabSwitcher = (target) => {
+  const buttonList = target.querySelectorAll('.tab-switcher__button');
+  buttonList.forEach(button => {
+    if (button.textContent === 'список') {
+      button.removeEventListener('click', handleTabEvent);
+      button.classList.add('tab-switcher__button_active');
+    } else {
+      button.classList.remove('tab-switcher__button_active');
+      button.addEventListener('click', handleTabEvent);
+    }
+  });
+}
+
+export const renderEventsContainer = (tabSwitcher) => {
+  const target = tabSwitcher.closest('.catalog__content') || tabSwitcher.closest('.favourites-list');
+  const inModal = target.classList.contains('favourites-list');
+
+  if (!inModal) {
+    const noLikesContainer = target.querySelector('.catalog__events-container_type_no-events')
+    noLikesContainer.classList.remove('catalog__events-container_opened');
+  }
+  setDefaultContainerView(target);
+  setDefaultTabSwitcher(target);
+}
+
 // начальное состояние контейнера при попадании на каталог или в модалку (определяет табСвитчер)
 export const initEventsContainer = (tabSwitcher) => {
   const target = tabSwitcher.closest('.catalog__content') || tabSwitcher.closest('.favourites-list');
-  const mapContainer = target.querySelector('.catalog__events-container_type_map');
-  const listContainer = target.querySelector('.catalog__events-container_type_grid');
-  const noLikesContainer = target.querySelector('.catalog__events-container_type_no-events')
   const inModal = target.classList.contains('favourites-list');
 
-  if (inModal) {
-    defaultContainerView(target);
-  } else {
-    if (checkFavorites()) {
-      defaultContainerView(target);
-      noLikesContainer.classList.remove('catalog__events-container_opened');
-    } else {
-      mapContainer.classList.remove('catalog__events-container_opened');
-      listContainer.classList.remove('catalog__events-container_opened');
-      noLikesContainer.classList.add('catalog__events-container_opened');
-    }
+  if (!inModal) {
+    const noLikesContainer = target.querySelector('.catalog__events-container_type_no-events')
+    noLikesContainer.classList.remove('catalog__events-container_opened');
+
+    const buttonViewAll = noLikesContainer.querySelector('.additional-section__button');
+    buttonViewAll.addEventListener('click', deactivateFavorite);
   }
+
+  setDefaultContainerView(target);
+  setDefaultTabSwitcher(target);
 }
 
 // слушатель свитча табов

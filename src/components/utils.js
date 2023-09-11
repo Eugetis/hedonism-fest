@@ -29,6 +29,9 @@ export const logError = (err) => {
   console.log(err)
 };
 
+export const clearLocalStorage = () => {
+  window.localStorage.clear();
+}
 // Дмитрий -> end!
 
 // Андрей - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
