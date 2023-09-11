@@ -13,7 +13,7 @@
 
       <div class="modal__body">
 
-        <form class="form form_type_modal" name="formPayment">
+        <form class="form form_type_modal" id="formPayment" name="formPayment">
           <!-- добавить форме novalidate ?? -->
 
           <fieldset class="form__modal-fieldset" id="tickets-and-sum">
@@ -83,10 +83,10 @@
 
         </form>
 
-        <div class="fixed-bar" name="handlers">
+        <div class="fixed-bar" id="handlers">
           <button
-            type="submit"
-            form="form-payment"
+            type="button"
+            form="formPayment"
             class="modal__button button button_type_filled button__submit"
             onclick="window.location.href='./thanks-for-support.html'"
             data-text="Перейти к оплате">Перейти к оплате

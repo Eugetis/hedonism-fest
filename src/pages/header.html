@@ -85,21 +85,21 @@
             <button type="button" class="button geo__button geo__button_type_mobile geo__button_type_back"><span class="button__icon icon-arrow-left"></span>назад</button>
             <p class="header__subtext header__subtext_position_left">Ваш город</p>
             <div class="geo__list-container geo__list-container_type_mobile">
-              <label class="geo__list-item geo__list-item_type_mobile" for="moscow">Москва
-                <input class="geo__list-input" type="radio" name="city" id="moscow" value="Москва" />
+              <label class="geo__list-item geo__list-item_type_mobile" for="moscow-mob">Москва
+                <input class="geo__list-input" type="radio" name="city" id="moscow-mob" value="Москва" />
               </label>
-              <label class="geo__list-item geo__list-item_type_mobile" for="petersburg">Санкт&#8209;Петербург
-                <input class="geo__list-input" type="radio" name="city" id="petersburg"
+              <label class="geo__list-item geo__list-item_type_mobile" for="petersburg-mob">Санкт&#8209;Петербург
+                <input class="geo__list-input" type="radio" name="city" id="petersburg-mob"
                   value="Санкт&#8209;Петербург" />
               </label>
-              <label class="geo__list-item geo__list-item_type_mobile" for="sochi">Сочи
-                <input class="geo__list-input" type="radio" name="city" id="sochi" value="Сочи" />
+              <label class="geo__list-item geo__list-item_type_mobile" for="sochi-mob">Сочи
+                <input class="geo__list-input" type="radio" name="city" id="sochi-mob" value="Сочи" />
               </label>
-              <label class="geo__list-item geo__list-item_type_mobile" for="kaluga">Калуга
-                <input class="geo__list-input" type="radio" name="city" id="kaluga" value="Калуга" />
+              <label class="geo__list-item geo__list-item_type_mobile" for="kaluga-mob">Калуга
+                <input class="geo__list-input" type="radio" name="city" id="kaluga-mob" value="Калуга" />
               </label>
-              <label class="geo__list-item geo__list-item_type_mobile" for="ekatirinburg">Екатеринбург
-                <input class="geo__list-input" type="radio" name="city" id="ekatirinburg"
+              <label class="geo__list-item geo__list-item_type_mobile" for="ekatirinburg-mob">Екатеринбург
+                <input class="geo__list-input" type="radio" name="city" id="ekatirinburg-mob"
                   value="Екатеринбург" />
               </label>
             </div>
@@ -156,7 +156,7 @@
 
       <!-- добавить форме novalidate ?? -->
       <!-- перепроверить, когда обновится блок form (был такой класс ниже) -->
-      <form class="form form_type_modal" name="formDonation">
+      <form class="form form_type_modal" id="formDonation" name="formDonation">
 
         <fieldset class="form__modal-fieldset" id="donation-sum">
           <h3 class="form__modal-fieldset-title">сумма</h3>
@@ -225,10 +225,10 @@
           <p class="form__modal-text">Нажимая кнопку «пожертвовать» вы соглашаетесь с условиями <a class="link link_type_text">оферты</a>, <a class="link link_type_text">политики</a> в отношении обработки
             и защиты персональных данных и даёте <a class="link link_type_text">согласие</a> на их обработку</p>
         </fieldset>
-        <div class="fixed-bar" name="handlers">
+        <div class="fixed-bar" id="handlers">
           <button
-            type="submit"
-            form="form-donation"
+            type="button"
+            form="formDonation"
             class="modal__button button button_type_filled button__submit"
             onclick="window.location.href='./thanks-for-support.html'"
             data-text="Перейти к оплате">Перейти к оплате
@@ -236,7 +236,7 @@
         </div>
       </form>
 
-      
+
 
     </div>
 
